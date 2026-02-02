@@ -1,0 +1,93 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: author.v1.AuthorizationService.CreateTenant
+          post: /tenant/create
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.UpdateTenant
+          post: /tenant/update
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.DeleteTenant
+          post: /tenant/delete
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.GetTenant
+          post: /tenant/get
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.ListTenant
+          post: /tenant/list
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.SearchTenant
+          post: /tenant/search
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.CreateRole
+          post: /role/create
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.UpdateRole
+          post: /role/update
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.DeleteRole
+          post: /role/delete
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.GetRole
+          post: /role/get
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.ListRole
+          post: /role/list
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.SearchRole
+          post: /role/search
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.CreatePermission
+          post: /permission/create
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.UpdatePermission
+          post: /permission/update
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.DeletePermission
+          post: /permission/delete
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.GetPermission
+          post: /permission/get
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.ListPermission
+          post: /permission/list
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.SearchPermission
+          post: /permission/search
+          body: "*"
+
+        - selector: author.v1.AuthorizationService.AssignPermission
+          post: /role-permission/assign
+          body: "*"  
+
+        - selector: author.v1.AuthorizationService.UnassignPermission
+          post: /role-permission/unassign
+          body: "*"  
+
+        - selector: author.v1.AuthorizationService.OverridePermission
+          post: /role-permission/override
+          body: "*"  
+
+        - selector: author.v1.AuthorizationService.SearchRolePermission
+          post: /role-permission/search
+          body: "*"

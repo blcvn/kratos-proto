@@ -1,0 +1,235 @@
+syntax = "proto3";
+
+package authen.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/authen;authen";
+option java_package = "com.blcvn.kratos.protos.authen";
+
+import "authen/base.proto";
+
+// =======================
+// Auth Service Definition
+// =======================
+service AuthenticateService {
+
+  // Register with username/password
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+
+  // Login with username/password
+  rpc Login(LoginRequest) returns (LoginResponse);
+
+  // Login with Google OAuth2
+  rpc LoginWithGoogle(LoginWithGoogleRequest) returns (LoginResponse);
+
+  // Logout (revoke refresh token / session)
+  rpc Logout(AuthenticationRequest) returns (AuthenticationResponse);
+
+  // Verify access token (used by Kong / internal services)
+  rpc VerifyToken(AuthenticationRequest) returns (TokenResponse);
+
+  // Renew access token using refresh token
+  rpc RenewAccessToken(AuthenticationRequest) returns (TokenResponse);
+
+  // Revoke Access Token
+  rpc RevokeAccessToken(RevokeTokenRequest) returns (TokenResponse);
+
+  // Revoke refresh token
+  rpc RevokeRefreshToken(RevokeTokenRequest) returns (TokenResponse);
+}
+
+// =======================
+// User-Role Service Definition
+// =======================
+service UserRoleService {
+  // Assign roles for user
+  rpc AssignRole(UserRoleRequest) returns (UserRoleResponse);
+
+  // Unassign roles for user
+  rpc UnassignRole(UserRoleRequest) returns (UserRoleResponse);
+
+  // Override roles for user
+  rpc OverrideRole(UserRoleRequest) returns (UserRoleResponse);
+
+  // Override roles for user
+  rpc ListRole(SearchRequest) returns (ListUserRoleResponse);
+
+  // Activate user
+  rpc ActiveUser(UserStatusRequest) returns (UserRoleResponse);
+
+  // Deactivate user
+  rpc InactiveUser(UserStatusRequest) returns (UserRoleResponse);
+}
+
+// =======================
+// Requests
+// =======================
+
+message RegisterPayload {
+  string tenant_id = 1;
+  string username  = 2;
+  string password  = 3;
+  string email = 4;
+  string display_name = 5;
+}
+
+message LoginPayload {
+  string tenant_id = 1;
+  string username  = 2;
+  string password  = 3;
+}
+
+message LoginWithGooglePayload {
+  string tenant_id = 1;
+
+  // ID Token received from Google OAuth
+  string google_id_token = 2;
+}
+
+message RolePayload {
+  string tenant_id = 1;
+  string user_id = 2;
+  repeated string roles = 3;
+}
+
+message UserStatusPayload {
+  string tenant_id = 1;
+  string user_id = 2;
+  Status status = 3;
+}
+
+message FilterPayload {
+    string keyword = 1;
+    string tenant_id = 2;
+    string role_id = 3;
+    string permission_id = 4;
+}
+
+message Pagination {
+    int64 total = 1;
+    int64 page = 2;
+    int64 limit = 3;
+}
+
+message SearchPayload {
+    FilterPayload filter = 1;
+    Pagination pagination = 2;
+}
+
+message SearchRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    SearchPayload payload = 3;
+}
+
+message RegisterRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    RegisterPayload payload = 3;
+}
+
+message LoginRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    LoginPayload payload = 3;
+}
+
+message LoginWithGoogleRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    LoginWithGooglePayload payload = 3;
+}
+
+message AuthenticationRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+}
+
+message RevokeTokenRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    TokenMessage token = 3;
+}
+
+message UserRoleRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    RolePayload payload = 3;
+}
+
+message UserStatusRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    UserStatusPayload payload = 3;
+}
+
+// =======================
+// Responses
+// =======================
+
+
+message UserInfo {
+  string user_id   = 1;
+  string tenant_id = 2;
+
+  string email     = 3;
+  string username  = 4;
+
+  repeated string roles = 5;
+
+  // Optional claims (do NOT include permissions)
+  map<string, string> attributes = 6;
+
+  Status status = 7;
+}
+
+message TokenMessage {
+    string access_token  = 1;
+    string refresh_token = 2;
+    int64  expires_in    = 3; // seconds
+    int64 expires_at = 4;   
+}
+
+message RegisterResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    UserInfo user = 4;
+}
+
+message LoginResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    UserInfo user = 4;
+    TokenMessage token = 5;
+}
+
+message TokenResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    UserInfo user = 4;
+    TokenMessage token = 5;
+}
+
+message AuthenticationResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+}
+
+message UserRoleResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    UserInfo user = 4;
+}
+
+message ListUserRoleResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    repeated string roles = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}

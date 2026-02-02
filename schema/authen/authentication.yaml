@@ -1,0 +1,62 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: authen.v1.AuthenticateService.Register
+          post: /authen/register
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.Login
+          post: /authen/login
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.LoginWithGoogle
+          post: /authen/login-with-google
+          body: "*"
+        - selector: authen.v1.AuthenticateService.Logout
+          post: /authen/logout
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.RevokeAccessToken
+          post: /authen/revoke-access-token
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.RevokeRefreshToken
+          post: /authen/revoke-refresh-token
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.RenewAccessToken
+          post: /authen/renew-access-token
+          body: "*"
+
+        - selector: authen.v1.AuthenticateService.VerifyToken
+          post: /authen/verify-token
+          body: "*"
+
+        - selector: authen.v1.UserRoleService.AssignRole
+          post: /user-role/assign-role
+          body: "*" 
+
+        - selector: authen.v1.UserRoleService.UnassignRole
+          post: /user-role/unassign-role
+          body: "*"   
+        
+        - selector: authen.v1.UserRoleService.OverrideRole
+          post: /user-role/override-role
+          body: "*"   
+
+        - selector: authen.v1.UserRoleService.ListRole
+          post: /user-role/list-role
+          body: "*"   
+
+        - selector: authen.v1.UserRoleService.ActiveUser
+          post: /user-status/active
+          body: "*"   
+        
+        - selector: authen.v1.UserRoleService.InactiveUser
+          post: /user-status/unactive
+          body: "*"   
+        
+        

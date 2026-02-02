@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+package author.v1;
+
+import "author/base.proto";
+
+option go_package = "github.com/blcvn/kratos-proto/go/author;author";
+option java_package = "com.blcvn.kratos.protos.author";
+
+// =======================
+// Authorization Service Definition
+// =======================
+service AuthorizationService {
+    rpc CreateTenant (TenantRequest) returns (TenantResponse);
+    rpc UpdateTenant (TenantRequest) returns (TenantResponse);
+    rpc DeleteTenant (TenantRequest) returns (TenantResponse);
+    rpc GetTenant (TenantRequest) returns (TenantResponse);
+    rpc ListTenant (ListTenantRequest) returns (ListTenantResponse);
+    rpc SearchTenant (SearchRequest) returns (ListTenantResponse);
+
+    rpc CreateRole (RoleRequest) returns (RoleResponse);
+    rpc UpdateRole (RoleRequest) returns (RoleResponse);
+    rpc DeleteRole (RoleRequest) returns (RoleResponse);
+    rpc GetRole (RoleRequest) returns (RoleResponse);
+    rpc ListRole (ListRoleRequest) returns (ListRoleResponse);
+    rpc SearchRole (SearchRequest) returns (ListRoleResponse);
+
+    rpc CreatePermission (PermissionRequest) returns (PermissionResponse);
+    rpc UpdatePermission (PermissionRequest) returns (PermissionResponse);
+    rpc DeletePermission (PermissionRequest) returns (PermissionResponse);
+    rpc GetPermission (PermissionRequest) returns (PermissionResponse);
+    rpc ListPermission (ListPermissionRequest) returns (ListPermissionResponse);
+    rpc SearchPermission (SearchRequest) returns (ListPermissionResponse);
+
+
+    rpc AssignPermission(RolePermissionRequest) returns (RolePermissionResponse);
+    rpc UnassignPermission(RolePermissionRequest) returns (RolePermissionResponse);
+    rpc OverridePermission(RolePermissionRequest) returns (RolePermissionResponse);
+    rpc SearchRolePermission (SearchRequest) returns (ListRolePermissionResponse);
+}
+
+message FilterPayload {
+    string keyword = 1;
+    string tenant_id = 2;
+    string role_id = 3;
+    string permission_id = 4;
+}
+
+message Pagination {
+    int64 total = 1;
+    int64 page = 2;
+    int64 limit = 3;
+}
+
+message TenantPayload {
+    string tenant_id = 1;
+    string name = 2;
+    string description = 3;
+    Status status = 4;
+    int64 created_at = 5;
+    int64 updated_at = 6;
+}
+
+message RolePayload {
+    string tenant_id = 1;
+    string role_id = 2;
+    string name = 3;
+    string description = 4;
+    Status status = 5;
+    int64 created_at = 6;
+    int64 updated_at = 7;
+}
+
+message PermissionPayload {
+    string tenant_id = 1;
+    string permission_id = 2;
+    string name = 3;
+    string description = 4;
+    Status status = 5;
+    int64 created_at = 6;
+    int64 updated_at = 7;
+}
+
+message SearchPayload {
+    FilterPayload filter = 1;
+    Pagination pagination = 2;
+}
+
+message RolePermissionPayload {
+    string role_id = 1;
+    repeated string permissions = 2;
+}
+
+message RolePermissionData {
+    RolePayload role = 1;
+    repeated PermissionPayload permissions = 2;
+}
+
+// =======================
+// Requests
+// =======================
+message TenantRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    TenantPayload payload = 3;
+}
+
+message ListTenantRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Pagination pagination = 3;
+}
+
+message RoleRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    RolePayload payload = 3;
+}
+
+message ListRoleRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Pagination pagination = 3;
+}
+
+message PermissionRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    PermissionPayload payload = 3;
+}
+
+message ListPermissionRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Pagination pagination = 3;
+}
+
+message SearchRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    SearchPayload payload = 3;
+}
+
+message RolePermissionRequest {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    RolePermissionPayload payload = 3;
+}
+
+
+// =======================
+// Responses
+// =======================
+message TenantResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    TenantPayload payload = 4;
+}
+
+message ListTenantResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    repeated TenantPayload payload = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}
+
+message RoleResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    RolePayload payload = 4;
+}
+
+message ListRoleResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    repeated RolePayload payload = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}
+
+message PermissionResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    PermissionPayload payload = 4;
+}
+
+message ListPermissionResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    repeated PermissionPayload payload = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}
+
+message RolePermissionResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    RolePermissionData payload = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}
+
+message ListRolePermissionResponse {
+    Metadata metadata = 1;
+    Signature signature = 2;
+    Result result = 3;
+    repeated RolePermissionData payload = 4;
+    Pagination pagination = 5;
+    FilterPayload filter = 6;
+}
