@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package feature.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/feature;feature";
+option java_package = "com.blcvn.kratos.protos.feature";
+
+enum ResultCode {
+  UNSPECIFIED = 0;              // Giá trị mặc định, không xác định
+  SUCCESS = 200;               // Thành công
+  BAD_REQUEST = 400;           // Lỗi validation hoặc request không hợp lệ
+  UNAUTHORIZED = 401;          // Chưa xác thực hoặc token không hợp lệ
+  FORBIDDEN = 403;             // Không có quyền truy cập
+  NOT_FOUND = 404;             // Không tìm thấy tài nguyên
+  DUPLICATE_REQUEST = 409;     // Request trùng lặp
+  UNPROCESSABLE_ENTITY = 422;  // Dữ liệu không thể xử lý
+  TOO_MANY_REQUESTS = 429;     // Quá nhiều request trong khoảng thời gian
+  INTERNAL = 500;              // Lỗi nội bộ của server
+  BAD_GATEWAY = 502;           // Lỗi gateway
+  SERVICE_UNAVAILABLE = 503;   // Dịch vụ không khả dụng
+  GATEWAY_TIMEOUT = 504;       // Gateway timeout
+}
+
+message Empty{}
+
+// Metadata chứa thông tin về request/response
+message Metadata {
+  string request_id = 1;    // ID định danh duy nhất cho request
+  int64 request_time = 2;   // Thời gian gửi request (Unix timestamp)
+  string version = 3;       // Phiên bản của protocol
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// Result định nghĩa cấu trúc kết quả trả về
+message Result {
+  ResultCode code = 1;     // Mã kết quả thực thi (enum)
+  string message = 2;     // Thông điệp mô tả kết quả
+}
+
+// Pagination định nghĩa cấu trúc phân trang
+message Pagination {
+  int32 page = 1;
+  int32 limit = 2;
+  string sort = 3;
+  int64 total = 4;
+}

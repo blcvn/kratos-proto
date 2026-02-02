@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package session.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/session;session";
+option java_package = "com.blcvn.kratos.protos.session";
+
+import "session/base.proto";
+
+// =======================
+// Session Service Definition
+// =======================
+service SessionService {
+  // Create Session
+  rpc CreateSession (CreateSessionRequest) returns (SessionReply);
+
+  // Update Session
+  rpc UpdateSession (UpdateSessionRequest) returns (SessionReply);
+
+  // Get Session
+  rpc GetSession (GetSessionRequest) returns (SessionReply);
+  
+  // Get Session By Project (Active)
+  rpc GetSessionByProject (GetSessionByProjectRequest) returns (SessionReply);
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message Session {
+  string id = 1;
+  string project_id = 2;
+  string current_feature_id = 3;
+  string status = 4; // active, paused, completed
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+// =======================
+// Requests & Payloads
+// =======================
+
+message CreateSessionPayload {
+  string project_id = 1;
+}
+
+message CreateSessionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateSessionPayload payload = 3;
+}
+
+message UpdateSessionPayload {
+  string id = 1;
+  string current_feature_id = 2;
+  string status = 3;
+}
+
+message UpdateSessionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateSessionPayload payload = 3;
+}
+
+message GetSessionRequest {
+  string id = 1;
+}
+
+message GetSessionByProjectRequest {
+  string project_id = 1;
+}
+
+// =======================
+// Responses
+// =======================
+
+message SessionReply {
+  Result result = 1;
+  Session payload = 2;
+}

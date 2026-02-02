@@ -1,0 +1,154 @@
+syntax = "proto3";
+
+package feature.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/feature;feature";
+option java_package = "com.blcvn.kratos.protos.feature";
+
+import "feature/base.proto";
+import "google/protobuf/struct.proto";
+
+// =======================
+// Feature Service Definition
+// =======================
+service FeatureService {
+  // Create Feature
+  rpc CreateFeature (CreateFeatureRequest) returns (FeatureReply);
+
+  // Update Feature
+  rpc UpdateFeature (UpdateFeatureRequest) returns (FeatureReply);
+
+  // Get Feature
+  rpc GetFeature (GetFeatureRequest) returns (FeatureReply);
+  
+  // List Features (Children of a parent or project root)
+  rpc ListFeatures (ListFeaturesRequest) returns (ListFeaturesReply);
+  
+  // Delete Feature
+  rpc DeleteFeature (DeleteFeatureRequest) returns (FeatureReply);
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message FeatureProgress {
+  int32 discovery = 1;
+  int32 analysis = 2;
+  int32 documentation = 3;
+  int32 usecase = 4;
+  int32 visualization = 5;
+  int32 validation = 6;
+  int32 publish = 7;
+  int32 overall = 8;
+}
+
+message FeatureArtifacts {
+  google.protobuf.Struct discovery = 1;
+  google.protobuf.Struct brd = 2;
+  google.protobuf.Struct urd = 3;
+  google.protobuf.Struct srs = 4;
+  repeated google.protobuf.Struct usecase = 5;
+  google.protobuf.Struct diagrams = 6;
+  google.protobuf.Struct validation = 7;
+}
+
+message FeatureData {
+  google.protobuf.Struct requirements = 1;
+  repeated google.protobuf.Struct use_cases = 2;
+  repeated google.protobuf.Struct answers = 3;
+  repeated google.protobuf.Struct conversation_history = 4;
+  repeated string skipped_questions = 5;
+}
+
+message Feature {
+  string id = 1;
+  string project_id = 2;
+  string parent_id = 3; // Empty string if no parent
+  string name = 4;
+  string description = 5;
+  int32 order = 6;
+  string status = 7; // active, paused, completed, archived
+  string current_phase = 8; // discovery, analysis, etc.
+  string current_step = 9;
+  google.protobuf.Struct progress = 10;
+  google.protobuf.Struct artifacts = 11;
+  google.protobuf.Struct data = 12;
+  string created_at = 13;
+  string updated_at = 14;
+  repeated Feature children = 15;
+}
+
+// =======================
+// Requests & Payloads
+// =======================
+
+message CreateFeaturePayload {
+  string project_id = 1;
+  string parent_id = 2;
+  string name = 3;
+  string description = 4;
+}
+
+message CreateFeatureRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateFeaturePayload payload = 3;
+}
+
+message UpdateFeaturePayload {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string status = 4;
+  string current_phase = 5;
+  string current_step = 6;
+  google.protobuf.Struct progress = 7;
+  google.protobuf.Struct artifacts = 8;
+  google.protobuf.Struct data = 9;
+}
+
+message UpdateFeatureRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateFeaturePayload payload = 3;
+}
+
+message GetFeatureRequest {
+  string id = 1;
+}
+
+message ListFeaturesPayload {
+  string project_id = 1;
+  string parent_id = 2; // Optional, to list children of a feature
+  string status = 3;
+  string search = 4;
+}
+
+message ListFeaturesRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Pagination pagination = 3;
+  ListFeaturesPayload payload = 4;
+}
+
+message DeleteFeatureRequest {
+  string id = 1;
+  Metadata metadata = 2;
+  Signature signature = 3;
+}
+
+// =======================
+// Responses
+// =======================
+
+message FeatureReply {
+  Result result = 1;
+  Feature payload = 2;
+}
+
+message ListFeaturesReply {
+  Result result = 1;
+  Pagination pagination = 2;
+  repeated Feature payload = 3;
+}

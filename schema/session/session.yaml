@@ -1,0 +1,19 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Session Service
+        - selector: session.v1.SessionService.CreateSession
+          post: /session/create
+          body: "*"
+
+        - selector: session.v1.SessionService.UpdateSession
+          put: /session/update
+          body: "*"
+
+        - selector: session.v1.SessionService.GetSession
+          get: /session/{id}
+
+        - selector: session.v1.SessionService.GetSessionByProject
+          get: /session/by-project/{project_id}

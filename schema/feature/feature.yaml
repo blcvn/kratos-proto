@@ -1,0 +1,23 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Feature Service
+        - selector: feature.v1.FeatureService.CreateFeature
+          post: /feature/create
+          body: "*"
+
+        - selector: feature.v1.FeatureService.UpdateFeature
+          put: /feature/update
+          body: "*"
+
+        - selector: feature.v1.FeatureService.GetFeature
+          get: /feature/{id}
+
+        - selector: feature.v1.FeatureService.ListFeatures
+          post: /feature/list
+          body: "*"
+
+        - selector: feature.v1.FeatureService.DeleteFeature
+          delete: /feature/{id}

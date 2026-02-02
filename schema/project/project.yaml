@@ -1,0 +1,23 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Project Service
+        - selector: project.v1.ProjectService.CreateProject
+          post: /project/create
+          body: "*"
+
+        - selector: project.v1.ProjectService.UpdateProject
+          put: /project/update
+          body: "*"
+
+        - selector: project.v1.ProjectService.ListProjects
+          post: /project/list
+          body: "*"
+
+        - selector: project.v1.ProjectService.GetProject
+          get: /project/{id}
+
+        - selector: project.v1.ProjectService.DeleteProject
+          delete: /project/{id}

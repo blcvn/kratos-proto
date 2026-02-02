@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+package project.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/project;project";
+option java_package = "com.blcvn.kratos.protos.project";
+
+import "project/base.proto";
+
+// =======================
+// Project Service Definition
+// =======================
+service ProjectService {
+  // Create Project
+  rpc CreateProject (CreateProjectRequest) returns (ProjectReply);
+
+  // Update Project
+  rpc UpdateProject (UpdateProjectRequest) returns (ProjectReply);
+  
+  // List Projects
+  rpc ListProjects (ListProjectsRequest) returns (ListProjectsReply);
+
+  // Get Project
+  rpc GetProject (GetProjectRequest) returns (ProjectReply);
+
+  // Delete Project
+  rpc DeleteProject (DeleteProjectRequest) returns (DeleteReply);
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message Project {
+  string id = 1;
+  string user_id = 2;
+  string name = 3;
+  string description = 4;
+  string status = 5; // active, paused, completed, archived
+  ConfluenceConfig confluence_config = 6;
+  int32 feature_count = 7;
+  int32 progress = 8;
+  string created_at = 9;
+  string updated_at = 10;
+}
+
+message ConfluenceConfig {
+  bool enabled = 1;
+  string space_key = 2;
+  string parent_page_id = 3;
+}
+
+// =======================
+// Requests & Payloads
+// =======================
+
+message CreateProjectPayload {
+  string name = 1;
+  string description = 2;
+  ConfluenceConfig confluence_config = 3;
+}
+
+message CreateProjectRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateProjectPayload payload = 3;
+}
+
+message UpdateProjectPayload {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string status = 4;
+  ConfluenceConfig confluence_config = 5;
+}
+
+message UpdateProjectRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateProjectPayload payload = 3;
+}
+
+message ListProjectsPayload {
+  string status = 1; // active, all, etc.
+  string search = 2;
+}
+
+message ListProjectsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Pagination pagination = 3;
+  ListProjectsPayload payload = 4;
+}
+
+message GetProjectRequest {
+  string id = 1;
+}
+
+message DeleteProjectRequest {
+  string id = 1;
+  Metadata metadata = 2;
+  Signature signature = 3;
+}
+
+// =======================
+// Responses
+// =======================
+
+message ProjectReply {
+  Result result = 1;
+  Project payload = 2;
+}
+
+message ListProjectsReply {
+  Result result = 1;
+  Pagination pagination = 2;
+  repeated Project payload = 3;
+}
+
+message DeleteReply {
+  Result result = 1;
+}
