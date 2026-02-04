@@ -97,16 +97,34 @@ def resolve_ref(ref, definitions):
     ref_name = ref.replace("#/definitions/", "")
     return definitions.get(ref_name)
 
-def schema_to_json_example(schema, definitions, indent=0):
-    """Convert schema to JSON example"""
+def schema_to_json_example(schema, definitions, indent=0, max_depth=10, visited=None):
+    """Convert schema to JSON example with recursion protection"""
+    if visited is None:
+        visited = set()
+    
     if not schema:
         return "{}"
     
+    # Check max depth to prevent infinite recursion
+    if indent > max_depth * 2:  # indent increases by 2 each level
+        return '"..."'
+    
     # Handle $ref
     if "$ref" in schema:
-        ref_schema = resolve_ref(schema["$ref"], definitions)
+        ref_name = schema["$ref"]
+        
+        # Check if we've already visited this reference to prevent circular loops
+        if ref_name in visited:
+            return '"..."'
+        
+        ref_schema = resolve_ref(ref_name, definitions)
         if ref_schema:
-            return schema_to_json_example(ref_schema, definitions, indent)
+            # Add to visited set before recursing
+            visited.add(ref_name)
+            result = schema_to_json_example(ref_schema, definitions, indent, max_depth, visited)
+            # Remove from visited after processing to allow the same type in different branches
+            visited.discard(ref_name)
+            return result
         return "{}"
     
     schema_type = schema.get("type", "object")
@@ -119,7 +137,7 @@ def schema_to_json_example(schema, definitions, indent=0):
         
         items = []
         for prop_name, prop_schema in props.items():
-            prop_example = schema_to_json_example(prop_schema, definitions, indent + 2)
+            prop_example = schema_to_json_example(prop_schema, definitions, indent + 2, max_depth, visited)
             items.append(" " * (indent + 2) + f'"{prop_name}": {prop_example}')
         
         if not items:
@@ -130,7 +148,7 @@ def schema_to_json_example(schema, definitions, indent=0):
     
     elif schema_type == "array":
         items_schema = schema.get("items", {})
-        item_example = schema_to_json_example(items_schema, definitions, indent + 2)
+        item_example = schema_to_json_example(items_schema, definitions, indent + 2, max_depth, visited)
         return f"[\n{ ' ' * (indent + 2)}{item_example}\n{ ' ' * indent}]"
     
     elif schema_type == "string":

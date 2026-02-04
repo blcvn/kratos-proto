@@ -1,0 +1,1108 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "prompt/prompt.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "PromptService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/prompts/experiments": {
+      "post": {
+        "summary": "Experiment Management",
+        "operationId": "PromptService_CreateExperiment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateExperimentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateExperimentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/experiments/{id}": {
+      "get": {
+        "operationId": "PromptService_GetExperiment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetExperimentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/experiments/{id}/complete": {
+      "post": {
+        "operationId": "PromptService_CompleteExperiment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CompleteExperimentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PromptServiceCompleteExperimentBody"
+            }
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/render": {
+      "post": {
+        "summary": "Template Rendering",
+        "operationId": "PromptService_RenderTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RenderTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RenderTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/templates": {
+      "get": {
+        "operationId": "PromptService_ListTemplates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListTemplatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ENV_UNSPECIFIED",
+              "DEV",
+              "STAGING",
+              "PROD"
+            ],
+            "default": "ENV_UNSPECIFIED"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TEMPLATE_UNSPECIFIED",
+              "ACTIVE",
+              "INACTIVE",
+              "ARCHIVED"
+            ],
+            "default": "TEMPLATE_UNSPECIFIED"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      },
+      "post": {
+        "summary": "Template Management",
+        "operationId": "PromptService_CreateTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateTemplateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/templates/{id}": {
+      "get": {
+        "operationId": "PromptService_GetTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      },
+      "delete": {
+        "operationId": "PromptService_DeleteTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ResponseEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    },
+    "/prompts/templates/{payload.id}": {
+      "put": {
+        "operationId": "PromptService_UpdateTemplate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateTemplateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "payload.id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PromptServiceUpdateTemplateBody"
+            }
+          }
+        ],
+        "tags": [
+          "PromptService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "PromptServiceCompleteExperimentBody": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "winner_id": {
+          "type": "string"
+        }
+      }
+    },
+    "PromptServiceUpdateTemplateBody": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "template": {
+              "type": "string"
+            },
+            "variables": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "$ref": "#/definitions/v1Variable"
+              }
+            },
+            "status": {
+              "$ref": "#/definitions/v1TemplateStatus"
+            }
+          }
+        }
+      }
+    },
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CompleteExperimentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "experiment": {
+          "$ref": "#/definitions/v1PromptExperiment"
+        }
+      }
+    },
+    "v1CreateExperimentPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "template_a_id": {
+          "type": "string"
+        },
+        "template_b_id": {
+          "type": "string"
+        },
+        "traffic_split": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1CreateExperimentRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1CreateExperimentPayload"
+        }
+      }
+    },
+    "v1CreateExperimentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "experiment": {
+          "$ref": "#/definitions/v1PromptExperiment"
+        }
+      }
+    },
+    "v1CreateTemplatePayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "environment": {
+          "$ref": "#/definitions/v1Environment"
+        },
+        "template": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Variable"
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1CreateTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1CreateTemplatePayload"
+        }
+      }
+    },
+    "v1CreateTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "template": {
+          "$ref": "#/definitions/v1PromptTemplate"
+        }
+      }
+    },
+    "v1Environment": {
+      "type": "string",
+      "enum": [
+        "ENV_UNSPECIFIED",
+        "DEV",
+        "STAGING",
+        "PROD"
+      ],
+      "default": "ENV_UNSPECIFIED"
+    },
+    "v1GetExperimentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "experiment": {
+          "$ref": "#/definitions/v1PromptExperiment"
+        }
+      }
+    },
+    "v1GetTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "template": {
+          "$ref": "#/definitions/v1PromptTemplate"
+        }
+      }
+    },
+    "v1ListTemplatesResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "templates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PromptTemplate"
+          }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PromptExperiment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "template_a_id": {
+          "type": "string"
+        },
+        "template_b_id": {
+          "type": "string"
+        },
+        "traffic_split": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "winner_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1PromptTemplate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "environment": {
+          "$ref": "#/definitions/v1Environment"
+        },
+        "template": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Variable"
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1TemplateStatus"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1RenderTemplatePayload": {
+      "type": "object",
+      "properties": {
+        "template_id": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1RenderTemplateRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1RenderTemplatePayload"
+        }
+      }
+    },
+    "v1RenderTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "rendered": {
+          "$ref": "#/definitions/v1RenderedPrompt"
+        }
+      }
+    },
+    "v1RenderedPrompt": {
+      "type": "object",
+      "properties": {
+        "template_id": {
+          "type": "string"
+        },
+        "rendered_text": {
+          "type": "string"
+        },
+        "variables_used": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ResponseEmpty": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "NOT_FOUND",
+        "CONFLICT",
+        "INTERNAL"
+      ],
+      "default": "UNSPECIFIED"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    },
+    "v1TemplateStatus": {
+      "type": "string",
+      "enum": [
+        "TEMPLATE_UNSPECIFIED",
+        "ACTIVE",
+        "INACTIVE",
+        "ARCHIVED"
+      ],
+      "default": "TEMPLATE_UNSPECIFIED"
+    },
+    "v1UpdateTemplatePayload": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "template": {
+          "type": "string"
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Variable"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1TemplateStatus"
+        }
+      }
+    },
+    "v1UpdateTemplateResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "template": {
+          "$ref": "#/definitions/v1PromptTemplate"
+        }
+      }
+    },
+    "v1Variable": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "default_value": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

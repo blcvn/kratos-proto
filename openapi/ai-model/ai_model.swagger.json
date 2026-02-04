@@ -1,0 +1,895 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ai-model/ai_model.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AIModelService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ai/models": {
+      "get": {
+        "operationId": "AIModelService_ListModels",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListModelsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "filter.provider",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter.status",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "STATUS_UNSPECIFIED",
+              "ACTIVE",
+              "DISABLED",
+              "DEPRECATED"
+            ],
+            "default": "STATUS_UNSPECIFIED"
+          },
+          {
+            "name": "filter.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "filter.page_size",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      },
+      "post": {
+        "summary": "Model Management (Admin APIs)",
+        "operationId": "AIModelService_CreateModel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateModelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateModelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      }
+    },
+    "/ai/models/stats": {
+      "get": {
+        "summary": "Analytics",
+        "operationId": "AIModelService_GetUsageStats",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUsageStatsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "filter.model_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter.start_date",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter.end_date",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      }
+    },
+    "/ai/models/{id}": {
+      "get": {
+        "operationId": "AIModelService_GetModel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetModelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      },
+      "delete": {
+        "operationId": "AIModelService_DeleteModel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ResponseEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      }
+    },
+    "/ai/models/{payload.id}": {
+      "put": {
+        "operationId": "AIModelService_UpdateModel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateModelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "payload.id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AIModelServiceUpdateModelBody"
+            }
+          }
+        ],
+        "tags": [
+          "AIModelService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "AIModelServiceUpdateModelBody": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "config": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "quota_daily": {
+              "type": "string",
+              "format": "int64"
+            },
+            "quota_monthly": {
+              "type": "string",
+              "format": "int64"
+            },
+            "status": {
+              "$ref": "#/definitions/v1ModelStatus"
+            }
+          }
+        }
+      }
+    },
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AIModel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "base_url": {
+          "type": "string"
+        },
+        "vault_path": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "quota_daily": {
+          "type": "string",
+          "format": "int64"
+        },
+        "quota_monthly": {
+          "type": "string",
+          "format": "int64"
+        },
+        "cost_per_1k_tokens": {
+          "type": "number",
+          "format": "double"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ModelStatus"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1CreateModelPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "base_url": {
+          "type": "string"
+        },
+        "vault_path": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "quota_daily": {
+          "type": "string",
+          "format": "int64"
+        },
+        "quota_monthly": {
+          "type": "string",
+          "format": "int64"
+        },
+        "cost_per_1k_tokens": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1CreateModelRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1CreateModelPayload"
+        }
+      }
+    },
+    "v1CreateModelResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "model": {
+          "$ref": "#/definitions/v1AIModel"
+        }
+      }
+    },
+    "v1GetModelResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "model": {
+          "$ref": "#/definitions/v1AIModel"
+        }
+      }
+    },
+    "v1GetUsageStatsResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UsageStats"
+          }
+        }
+      }
+    },
+    "v1ListModelsResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1AIModel"
+          }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ModelFilter": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ModelStatus"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page_size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1ModelStatus": {
+      "type": "string",
+      "enum": [
+        "STATUS_UNSPECIFIED",
+        "ACTIVE",
+        "DISABLED",
+        "DEPRECATED"
+      ],
+      "default": "STATUS_UNSPECIFIED"
+    },
+    "v1ResponseEmpty": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        }
+      },
+      "title": "=======================\nRequest Messages\n======================="
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "CONFLICT",
+        "INTERNAL",
+        "SERVICE_UNAVAILABLE"
+      ],
+      "default": "UNSPECIFIED"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    },
+    "v1UpdateModelPayload": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "quota_daily": {
+          "type": "string",
+          "format": "int64"
+        },
+        "quota_monthly": {
+          "type": "string",
+          "format": "int64"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ModelStatus"
+        }
+      }
+    },
+    "v1UpdateModelResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "model": {
+          "$ref": "#/definitions/v1AIModel"
+        }
+      }
+    },
+    "v1UsageStats": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "model_name": {
+          "type": "string"
+        },
+        "total_requests": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_tokens": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_cost": {
+          "type": "number",
+          "format": "double"
+        },
+        "avg_latency_ms": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "success_rate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1UsageStatsFilter": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

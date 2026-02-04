@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package baagent.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ba-agent;baagent";
+option java_package = "com.blcvn.kratos.protos.baagent";
+
+import "ba-agent/base.proto";
+
+// =======================
+// BA Agent Service
+// =======================
+service BAAgentService {
+  // Task Execution
+  rpc ExecuteTask(ExecuteTaskRequest) returns (ExecuteTaskResponse);
+  rpc StreamExecuteTask(ExecuteTaskRequest) returns (stream StreamExecuteTaskResponse);
+  rpc GetTask(GetTaskRequest) returns (GetTaskResponse);
+  
+  // Tools
+  rpc ListTools(ListToolsRequest) returns (ListToolsResponse);
+  
+  // Memory
+  rpc GetMemory(GetMemoryRequest) returns (GetMemoryResponse);
+  rpc ClearMemory(ClearMemoryRequest) returns (ClearMemoryResponse);
+}
+
+// =======================
+// Request Messages
+// =======================
+
+message ExecuteTaskPayload {
+  string user_id = 1;
+  string session_id = 2;
+  string task_description = 3;
+  int32 max_iterations = 4;
+}
+
+message ExecuteTaskRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  ExecuteTaskPayload payload = 3;
+}
+
+message GetTaskRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string task_id = 3;
+}
+
+message ListToolsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message GetMemoryRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string session_id = 3;
+}
+
+message ClearMemoryRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string session_id = 3;
+}
+
+// =======================
+// Response Messages
+// =======================
+
+message ExecuteTaskResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AgentTask task = 4;
+}
+
+message StreamExecuteTaskResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  ReActStep step = 4;
+  bool is_final = 5;
+}
+
+message GetTaskResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AgentTask task = 4;
+}
+
+message ListToolsResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated Tool tools = 4;
+}
+
+message GetMemoryResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Memory memory = 4;
+}
+
+message ClearMemoryResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+}

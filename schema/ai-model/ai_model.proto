@@ -1,0 +1,191 @@
+syntax = "proto3";
+
+package ai.model.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-model;aimodel";
+option java_package = "com.blcvn.kratos.protos.aimodel";
+
+import "ai-model/base.proto";
+
+// =======================
+// AI Model Service
+// =======================
+service AIModelService {
+  // Model Management (Admin APIs)
+  rpc CreateModel(CreateModelRequest) returns (CreateModelResponse);
+  rpc GetModel(GetModelRequest) returns (GetModelResponse);
+  rpc ListModels(ListModelsRequest) returns (ListModelsResponse);
+  rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse);
+  rpc DeleteModel(DeleteModelRequest) returns (ResponseEmpty);
+  
+  // Internal APIs (gRPC only - no HTTP mapping)
+  rpc GetCredentials(GetCredentialsRequest) returns (GetCredentialsResponse);
+  rpc LogUsage(LogUsageRequest) returns (ResponseEmpty);
+  rpc CheckQuota(CheckQuotaRequest) returns (CheckQuotaResponse);
+  
+  // Analytics
+  rpc GetUsageStats(GetUsageStatsRequest) returns (GetUsageStatsResponse);
+}
+
+// =======================
+// Request Messages
+// =======================
+message ResponseEmpty {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+}
+
+
+message CreateModelPayload {
+  string name = 1;
+  string provider = 2;
+  string model_id = 3;
+  string base_url = 4;
+  string vault_path = 5;
+  map<string, string> config = 6;
+  int64 quota_daily = 7;
+  int64 quota_monthly = 8;
+  double cost_per_1k_tokens = 9;
+}
+
+message UpdateModelPayload {
+  string id = 1;
+  string name = 2;
+  map<string, string> config = 3;
+  int64 quota_daily = 4;
+  int64 quota_monthly = 5;
+  ModelStatus status = 6;
+}
+
+message ModelFilter {
+  string provider = 1;
+  ModelStatus status = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message LogUsagePayload {
+  string model_id = 1;
+  string user_id = 2;
+  string session_id = 3;
+  string prompt_hash = 4;
+  int64 tokens_used = 5;
+  int32 latency_ms = 6;
+  UsageStatus status = 7;
+  string error_message = 8;
+}
+
+message UsageStatsFilter {
+  string model_id = 1;
+  string start_date = 2;
+  string end_date = 3;
+}
+
+message CreateModelRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateModelPayload payload = 3;
+}
+
+message GetModelRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+message ListModelsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  ModelFilter filter = 3;
+}
+
+message UpdateModelRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateModelPayload payload = 3;
+}
+
+message DeleteModelRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+message GetCredentialsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string model_id = 3;
+}
+
+message LogUsageRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  LogUsagePayload payload = 3;
+}
+
+message CheckQuotaRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string model_id = 3;
+}
+
+message GetUsageStatsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UsageStatsFilter filter = 3;
+}
+
+// =======================
+// Response Messages
+// =======================
+
+message CreateModelResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AIModel model = 4;
+}
+
+message GetModelResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AIModel model = 4;
+}
+
+message ListModelsResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated AIModel models = 4;
+  int32 total = 5;
+}
+
+message UpdateModelResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AIModel model = 4;
+}
+
+message GetCredentialsResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Credentials credentials = 4;
+}
+
+message CheckQuotaResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  QuotaStatus quota = 4;
+}
+
+message GetUsageStatsResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated UsageStats stats = 4;
+}

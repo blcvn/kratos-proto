@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package aiproxy.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-proxy;aiproxy";
+option java_package = "com.blcvn.kratos.protos.aiproxy";
+
+import "ai-proxy/base.proto";
+
+// =======================
+// AI Proxy Service
+// =======================
+service AIProxyService {
+  // Completion APIs
+  rpc Complete(CompleteRequest) returns (CompleteResponse);
+  rpc StreamComplete(CompleteRequest) returns (stream StreamCompleteResponse);
+  
+  // Health & Monitoring
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse);
+  rpc GetProviderStatus(GetProviderStatusRequest) returns (GetProviderStatusResponse);
+}
+
+// =======================
+// Request Messages
+// =======================
+
+message CompletePayload {
+  string model_id = 1;
+  string prompt = 2;
+  int32 max_tokens = 3;
+  double temperature = 4;
+  double top_p = 5;
+  repeated string stop = 6;
+  bool stream = 7;
+}
+
+message CompleteRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CompletePayload payload = 3;
+}
+
+message HealthCheckRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message GetProviderStatusRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+// =======================
+// Response Messages
+// =======================
+
+message CompleteResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  CompletionResponse completion = 4;
+}
+
+message StreamCompleteResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  CompletionChunk chunk = 4;
+}
+
+message HealthCheckResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  string status = 4;
+}
+
+message GetProviderStatusResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated ProviderHealth providers = 4;
+}

@@ -1,0 +1,39 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    # Template Management
+    - selector: prompt.v1.PromptService.CreateTemplate
+      post: /prompts/templates
+      body: "*"
+    
+    - selector: prompt.v1.PromptService.GetTemplate
+      get: /prompts/templates/{id}
+    
+    - selector: prompt.v1.PromptService.ListTemplates
+      get: /prompts/templates
+    
+    - selector: prompt.v1.PromptService.UpdateTemplate
+      put: /prompts/templates/{payload.id}
+      body: "*"
+    
+    - selector: prompt.v1.PromptService.DeleteTemplate
+      delete: /prompts/templates/{id}
+    
+    # Template Rendering
+    - selector: prompt.v1.PromptService.RenderTemplate
+      post: /prompts/render
+      body: "*"
+    
+    # Experiment Management
+    - selector: prompt.v1.PromptService.CreateExperiment
+      post: /prompts/experiments
+      body: "*"
+    
+    - selector: prompt.v1.PromptService.GetExperiment
+      get: /prompts/experiments/{id}
+    
+    - selector: prompt.v1.PromptService.CompleteExperiment
+      post: /prompts/experiments/{id}/complete
+      body: "*"

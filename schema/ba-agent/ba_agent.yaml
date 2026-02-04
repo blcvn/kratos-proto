@@ -1,0 +1,25 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    # Task Execution
+    - selector: baagent.v1.BAAgentService.ExecuteTask
+      post: /agent/execute
+      body: "*"
+    
+    - selector: baagent.v1.BAAgentService.GetTask
+      get: /agent/tasks/{task_id}
+    
+    # Tools
+    - selector: baagent.v1.BAAgentService.ListTools
+      get: /agent/tools
+    
+    # Memory
+    - selector: baagent.v1.BAAgentService.GetMemory
+      get: /agent/memory/{session_id}
+    
+    - selector: baagent.v1.BAAgentService.ClearMemory
+      delete: /agent/memory/{session_id}
+    
+    # StreamExecuteTask has no HTTP mapping (gRPC streaming only)

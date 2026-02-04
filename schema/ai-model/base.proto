@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package ai.model.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-model;aimodel";
+option java_package = "com.blcvn.kratos.protos.aimodel";
+
+import "google/protobuf/timestamp.proto";
+
+// =======================
+// Common Types
+// =======================
+
+enum ResultCode {
+  UNSPECIFIED = 0;
+  SUCCESS = 200;
+  BAD_REQUEST = 400;
+  UNAUTHORIZED = 401;
+  FORBIDDEN = 403;
+  NOT_FOUND = 404;
+  CONFLICT = 409;
+  INTERNAL = 500;
+  SERVICE_UNAVAILABLE = 503;
+}
+
+enum ModelStatus {
+  STATUS_UNSPECIFIED = 0;
+  ACTIVE = 1;
+  DISABLED = 2;
+  DEPRECATED = 3;
+}
+
+enum UsageStatus {
+  USAGE_UNSPECIFIED = 0;
+  SUCCESS_STATUS = 1;
+  ERROR_STATUS = 2;
+  TIMEOUT_STATUS = 3;
+}
+
+message Empty {}
+
+message Metadata {
+  string request_id = 1;
+  int64 request_time = 2;
+  string version = 3;
+}
+
+message Result {
+  ResultCode code = 1;
+  string message = 2;
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message AIModel {
+  string id = 1;
+  string name = 2;
+  string provider = 3;
+  string model_id = 4;
+  string base_url = 5;
+  string vault_path = 6;
+  map<string, string> config = 7;
+  int64 quota_daily = 8;
+  int64 quota_monthly = 9;
+  double cost_per_1k_tokens = 10;
+  ModelStatus status = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message UsageLog {
+  string id = 1;
+  string model_id = 2;
+  string user_id = 3;
+  string session_id = 4;
+  string prompt_hash = 5;
+  int64 tokens_used = 6;
+  double cost = 7;
+  int32 latency_ms = 8;
+  UsageStatus status = 9;
+  string error_message = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message Credentials {
+  string api_key = 1;
+  string base_url = 2;
+  map<string, string> headers = 3;
+}
+
+message QuotaStatus {
+  bool exceeded = 1;
+  int64 daily_used = 2;
+  int64 daily_limit = 3;
+  int64 monthly_used = 4;
+  int64 monthly_limit = 5;
+  string reset_time = 6;
+}
+
+message UsageStats {
+  string model_id = 1;
+  string model_name = 2;
+  int64 total_requests = 3;
+  int64 total_tokens = 4;
+  double total_cost = 5;
+  int32 avg_latency_ms = 6;
+  double success_rate = 7;
+}

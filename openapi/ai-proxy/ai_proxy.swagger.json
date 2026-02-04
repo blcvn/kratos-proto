@@ -1,0 +1,467 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ai-proxy/ai_proxy.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AIProxyService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ai/complete": {
+      "post": {
+        "summary": "Completion APIs",
+        "operationId": "AIProxyService_Complete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CompleteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CompleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AIProxyService"
+        ]
+      }
+    },
+    "/ai/health": {
+      "get": {
+        "summary": "Health \u0026 Monitoring",
+        "operationId": "AIProxyService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "AIProxyService"
+        ]
+      }
+    },
+    "/ai/providers/status": {
+      "get": {
+        "operationId": "AIProxyService_GetProviderStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetProviderStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "AIProxyService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CompletePayload": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "max_tokens": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "temperature": {
+          "type": "number",
+          "format": "double"
+        },
+        "top_p": {
+          "type": "number",
+          "format": "double"
+        },
+        "stop": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stream": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CompleteRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1CompletePayload"
+        }
+      }
+    },
+    "v1CompleteResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "completion": {
+          "$ref": "#/definitions/v1CompletionResponse"
+        }
+      }
+    },
+    "v1CompletionResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "tokens_used": {
+          "type": "string",
+          "format": "int64"
+        },
+        "latency_ms": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "from_cache": {
+          "type": "boolean"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1GetProviderStatusResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ProviderHealth"
+          }
+        }
+      }
+    },
+    "v1HealthCheckResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ProviderHealth": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ProviderStatus"
+        },
+        "success_rate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avg_latency_ms": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "circuit_breaker_state": {
+          "type": "string"
+        },
+        "last_check": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ProviderStatus": {
+      "type": "string",
+      "enum": [
+        "PROVIDER_UNKNOWN",
+        "AVAILABLE",
+        "DEGRADED",
+        "UNAVAILABLE"
+      ],
+      "default": "PROVIDER_UNKNOWN"
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "SERVICE_UNAVAILABLE"
+      ],
+      "default": "UNSPECIFIED"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    }
+  }
+}

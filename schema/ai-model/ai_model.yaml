@@ -1,0 +1,29 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    # Model Management APIs
+    - selector: ai.model.v1.AIModelService.CreateModel
+      post: /ai/models
+      body: "*"
+    
+    - selector: ai.model.v1.AIModelService.GetModel
+      get: /ai/models/{id}
+    
+    - selector: ai.model.v1.AIModelService.ListModels
+      get: /ai/models
+    
+    - selector: ai.model.v1.AIModelService.UpdateModel
+      put: /ai/models/{payload.id}
+      body: "*"
+    
+    - selector: ai.model.v1.AIModelService.DeleteModel
+      delete: /ai/models/{id}
+    
+    # Analytics API
+    - selector: ai.model.v1.AIModelService.GetUsageStats
+      get: /ai/models/stats
+    
+    # Internal APIs (GetCredentials, LogUsage, CheckQuota) have NO HTTP mapping
+    # They are gRPC-only for internal service-to-service communication

@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package aiproxy.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-proxy;aiproxy";
+option java_package = "com.blcvn.kratos.protos.aiproxy";
+
+import "google/protobuf/timestamp.proto";
+
+// =======================
+// Common Types
+// =======================
+
+enum ResultCode {
+  UNSPECIFIED = 0;
+  SUCCESS = 200;
+  BAD_REQUEST = 400;
+  UNAUTHORIZED = 401;
+  TOO_MANY_REQUESTS = 429;
+  INTERNAL = 500;
+  SERVICE_UNAVAILABLE = 503;
+}
+
+enum ProviderStatus {
+  PROVIDER_UNKNOWN = 0;
+  AVAILABLE = 1;
+  DEGRADED = 2;
+  UNAVAILABLE = 3;
+}
+
+message Empty {}
+
+message Metadata {
+  string request_id = 1;
+  int64 request_time = 2;
+  string version = 3;
+}
+
+message Result {
+  ResultCode code = 1;
+  string message = 2;
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message CompletionRequest {
+  string model_id = 1;
+  string prompt = 2;
+  int32 max_tokens = 3;
+  double temperature = 4;
+  double top_p = 5;
+  repeated string stop = 6;
+  map<string, string> metadata = 7;
+}
+
+message CompletionResponse {
+  string id = 1;
+  string model_id = 2;
+  string text = 3;
+  int64 tokens_used = 4;
+  int32 latency_ms = 5;
+  bool from_cache = 6;
+  string provider = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message CompletionChunk {
+  string id = 1;
+  string text = 2;
+  bool is_final = 3;
+}
+
+message ProviderHealth {
+  string provider = 1;
+  ProviderStatus status = 2;
+  int32 success_rate = 3;
+  int32 avg_latency_ms = 4;
+  string circuit_breaker_state = 5;
+  google.protobuf.Timestamp last_check = 6;
+}

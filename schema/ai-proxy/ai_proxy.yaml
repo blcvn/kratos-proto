@@ -1,0 +1,18 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    # Completion API
+    - selector: aiproxy.v1.AIProxyService.Complete
+      post: /ai/complete
+      body: "*"
+    
+    # Health & Monitoring
+    - selector: aiproxy.v1.AIProxyService.HealthCheck
+      get: /ai/health
+    
+    - selector: aiproxy.v1.AIProxyService.GetProviderStatus
+      get: /ai/providers/status
+    
+    # StreamComplete has no HTTP mapping (gRPC streaming only)

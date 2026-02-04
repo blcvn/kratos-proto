@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package baagent.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ba-agent;baagent";
+option java_package = "com.blcvn.kratos.protos.baagent";
+
+import "google/protobuf/timestamp.proto";
+
+// =======================
+// Common Types
+// =======================
+
+enum ResultCode {
+  UNSPECIFIED = 0;
+  SUCCESS = 200;
+  BAD_REQUEST = 400;
+  INTERNAL = 500;
+}
+
+enum TaskStatus {
+  TASK_PENDING = 0;
+  TASK_RUNNING = 1;
+  TASK_COMPLETED = 2;
+  TASK_FAILED = 3;
+}
+
+message Empty {}
+
+message Metadata {
+  string request_id = 1;
+  int64 request_time = 2;
+  string version = 3;
+}
+
+message Result {
+  ResultCode code = 1;
+  string message = 2;
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message Tool {
+  string name = 1;
+  string description = 2;
+  string input_schema = 3;
+}
+
+message ReActStep {
+  int32 step_number = 1;
+  string thought = 2;
+  string action = 3;
+  map<string, string> action_params = 4;
+  string observation = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+message AgentTask {
+  string id = 1;
+  string user_id = 2;
+  string session_id = 3;
+  string task_description = 4;
+  TaskStatus status = 5;
+  repeated ReActStep steps = 6;
+  string final_response = 7;
+  int32 iterations_used = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp completed_at = 10;
+}
+
+message Memory {
+  string session_id = 1;
+  repeated string short_term = 2;
+  repeated string long_term_ids = 3;
+}
