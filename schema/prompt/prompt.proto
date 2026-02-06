@@ -3,40 +3,34 @@ syntax = "proto3";
 package prompt.v1;
 
 option go_package = "github.com/blcvn/kratos-proto/go/prompt;prompt";
-option java_package = "com.blcvn.kratos.protos.prompt";
 
 import "prompt/base.proto";
 
-// =======================
-// Prompt Service
-// =======================
 service PromptService {
   // Template Management
-  rpc CreateTemplate(CreateTemplateRequest) returns (CreateTemplateResponse);
-  rpc GetTemplate(GetTemplateRequest) returns (GetTemplateResponse);
-  rpc ListTemplates(ListTemplatesRequest) returns (ListTemplatesResponse);
-  rpc UpdateTemplate(UpdateTemplateRequest) returns (UpdateTemplateResponse);
-  rpc DeleteTemplate(DeleteTemplateRequest) returns (ResponseEmpty);
-  
+  rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse);
+  rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse);
+  rpc ListTemplates (ListTemplatesRequest) returns (ListTemplatesResponse);
+  rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse);
+  rpc DeleteTemplate (DeleteTemplateRequest) returns (ResponseEmpty);
+
   // Template Rendering
-  rpc RenderTemplate(RenderTemplateRequest) returns (RenderTemplateResponse);
-  
+  rpc RenderTemplate (RenderTemplateRequest) returns (RenderTemplateResponse);
+
   // Experiment Management
-  rpc CreateExperiment(CreateExperimentRequest) returns (CreateExperimentResponse);
-  rpc GetExperiment(GetExperimentRequest) returns (GetExperimentResponse);
-  rpc CompleteExperiment(CompleteExperimentRequest) returns (CompleteExperimentResponse);
+  rpc CreateExperiment (CreateExperimentRequest) returns (CreateExperimentResponse);
+  rpc GetExperiment (GetExperimentRequest) returns (GetExperimentResponse);
+  rpc CompleteExperiment (CompleteExperimentRequest) returns (CompleteExperimentResponse);
 }
 
-// =======================
-// Request Messages
-// =======================
-
+// Common Response
 message ResponseEmpty {
   Metadata metadata = 1;
   Signature signature = 2;
   Result result = 3;
 }
 
+// Create Template
 message CreateTemplatePayload {
   string name = 1;
   string version = 2;
@@ -46,86 +40,11 @@ message CreateTemplatePayload {
   map<string, string> metadata = 6;
 }
 
-message UpdateTemplatePayload {
-  string id = 1;
-  string template = 2;
-  repeated Variable variables = 3;
-  TemplateStatus status = 4;
-}
-
-message RenderTemplatePayload {
-  string template_id = 1;
-  map<string, string> variables = 2;
-}
-
-message CreateExperimentPayload {
-  string name = 1;
-  string template_a_id = 2;
-  string template_b_id = 3;
-  int32 traffic_split = 4;
-}
-
 message CreateTemplateRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   CreateTemplatePayload payload = 3;
 }
-
-message GetTemplateRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string id = 3;
-}
-
-message ListTemplatesRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Environment environment = 3;
-  TemplateStatus status = 4;
-  int32 page = 5;
-  int32 page_size = 6;
-}
-
-message UpdateTemplateRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  UpdateTemplatePayload payload = 3;
-}
-
-message DeleteTemplateRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string id = 3;
-}
-
-message RenderTemplateRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  RenderTemplatePayload payload = 3;
-}
-
-message CreateExperimentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  CreateExperimentPayload payload = 3;
-}
-
-message GetExperimentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string id = 3;
-}
-
-message CompleteExperimentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string id = 3;
-  string winner_id = 4;
-}
-
-// =======================
-// Response Messages
-// =======================
 
 message CreateTemplateResponse {
   Metadata metadata = 1;
@@ -134,11 +53,28 @@ message CreateTemplateResponse {
   PromptTemplate template = 4;
 }
 
+// Get Template
+message GetTemplateRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
 message GetTemplateResponse {
   Metadata metadata = 1;
   Signature signature = 2;
   Result result = 3;
   PromptTemplate template = 4;
+}
+
+// List Templates
+message ListTemplatesRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Environment environment = 3;
+  TemplateStatus status = 4;
+  int32 page = 5;
+  int32 page_size = 6;
 }
 
 message ListTemplatesResponse {
@@ -149,11 +85,44 @@ message ListTemplatesResponse {
   int32 total = 5;
 }
 
+// Update Template
+message UpdateTemplatePayload {
+  string id = 1;
+  string template = 2;
+  repeated Variable variables = 3;
+  TemplateStatus status = 4;
+}
+
+message UpdateTemplateRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateTemplatePayload payload = 3;
+}
+
 message UpdateTemplateResponse {
   Metadata metadata = 1;
   Signature signature = 2;
   Result result = 3;
-  PromptTemplate template = 4;
+  PromptTemplate model = 4;
+}
+
+// Delete Template
+message DeleteTemplateRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+// Render Template
+message RenderTemplatePayload {
+  string template_id = 1;
+  map<string, string> variables = 2;
+}
+
+message RenderTemplateRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  RenderTemplatePayload payload = 3;
 }
 
 message RenderTemplateResponse {
@@ -163,6 +132,20 @@ message RenderTemplateResponse {
   RenderedPrompt rendered = 4;
 }
 
+// Create Experiment
+message CreateExperimentPayload {
+  string name = 1;
+  string template_a_id = 2;
+  string template_b_id = 3;
+  int32 traffic_split = 4;
+}
+
+message CreateExperimentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateExperimentPayload payload = 3;
+}
+
 message CreateExperimentResponse {
   Metadata metadata = 1;
   Signature signature = 2;
@@ -170,11 +153,30 @@ message CreateExperimentResponse {
   PromptExperiment experiment = 4;
 }
 
+// Get Experiment
+message GetExperimentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
 message GetExperimentResponse {
   Metadata metadata = 1;
   Signature signature = 2;
   Result result = 3;
   PromptExperiment experiment = 4;
+}
+
+// Complete Experiment
+message CompleteExperimentPayload {
+  string winner_id = 1;
+}
+
+message CompleteExperimentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  CompleteExperimentPayload payload = 4;
 }
 
 message CompleteExperimentResponse {

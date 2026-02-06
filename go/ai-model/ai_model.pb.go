@@ -90,7 +90,7 @@ type CreateModelPayload struct {
 	Provider         string                 `protobuf:"bytes,2,opt,name=provider,proto3" json:"provider,omitempty"`
 	ModelId          string                 `protobuf:"bytes,3,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	BaseUrl          string                 `protobuf:"bytes,4,opt,name=base_url,json=baseUrl,proto3" json:"base_url,omitempty"`
-	VaultPath        string                 `protobuf:"bytes,5,opt,name=vault_path,json=vaultPath,proto3" json:"vault_path,omitempty"`
+	ApiKey           string                 `protobuf:"bytes,5,opt,name=api_key,json=apiKey,proto3" json:"api_key,omitempty"`
 	Config           map[string]string      `protobuf:"bytes,6,rep,name=config,proto3" json:"config,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	QuotaDaily       int64                  `protobuf:"varint,7,opt,name=quota_daily,json=quotaDaily,proto3" json:"quota_daily,omitempty"`
 	QuotaMonthly     int64                  `protobuf:"varint,8,opt,name=quota_monthly,json=quotaMonthly,proto3" json:"quota_monthly,omitempty"`
@@ -157,9 +157,9 @@ func (x *CreateModelPayload) GetBaseUrl() string {
 	return ""
 }
 
-func (x *CreateModelPayload) GetVaultPath() string {
+func (x *CreateModelPayload) GetApiKey() string {
 	if x != nil {
-		return x.VaultPath
+		return x.ApiKey
 	}
 	return ""
 }
@@ -1536,14 +1536,13 @@ const file_ai_model_ai_model_proto_rawDesc = "" +
 	"\rResponseEmpty\x121\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x15.ai.model.v1.MetadataR\bmetadata\x124\n" +
 	"\tsignature\x18\x02 \x01(\v2\x16.ai.model.v1.SignatureR\tsignature\x12+\n" +
-	"\x06result\x18\x03 \x01(\v2\x13.ai.model.v1.ResultR\x06result\"\x8c\x03\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.ai.model.v1.ResultR\x06result\"\x86\x03\n" +
 	"\x12CreateModelPayload\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n" +
 	"\bprovider\x18\x02 \x01(\tR\bprovider\x12\x19\n" +
 	"\bmodel_id\x18\x03 \x01(\tR\amodelId\x12\x19\n" +
-	"\bbase_url\x18\x04 \x01(\tR\abaseUrl\x12\x1d\n" +
-	"\n" +
-	"vault_path\x18\x05 \x01(\tR\tvaultPath\x12C\n" +
+	"\bbase_url\x18\x04 \x01(\tR\abaseUrl\x12\x17\n" +
+	"\aapi_key\x18\x05 \x01(\tR\x06apiKey\x12C\n" +
 	"\x06config\x18\x06 \x03(\v2+.ai.model.v1.CreateModelPayload.ConfigEntryR\x06config\x12\x1f\n" +
 	"\vquota_daily\x18\a \x01(\x03R\n" +
 	"quotaDaily\x12#\n" +

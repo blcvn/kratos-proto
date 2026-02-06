@@ -3186,6 +3186,816 @@ public final class Base {
 
   }
 
+  public interface ChatMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.ChatMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+     * @return The enum numeric value on the wire for role.
+     */
+    int getRoleValue();
+    /**
+     * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+     * @return The role.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role getRole();
+
+    /**
+     * <code>string content = 2;</code>
+     * @return The content.
+     */
+    java.lang.String getContent();
+    /**
+     * <code>string content = 2;</code>
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.ChatMessage}
+   */
+  public static final class ChatMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.ChatMessage)
+      ChatMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChatMessage.newBuilder() to construct.
+    private ChatMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChatMessage() {
+      role_ = 0;
+      content_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChatMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChatMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              role_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.class, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code aiproxy.v1.ChatMessage.Role}
+     */
+    public enum Role
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ROLE_UNSPECIFIED = 0;</code>
+       */
+      ROLE_UNSPECIFIED(0),
+      /**
+       * <code>SYSTEM = 1;</code>
+       */
+      SYSTEM(1),
+      /**
+       * <code>USER = 2;</code>
+       */
+      USER(2),
+      /**
+       * <code>ASSISTANT = 3;</code>
+       */
+      ASSISTANT(3),
+      /**
+       * <code>TOOL = 4;</code>
+       */
+      TOOL(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ROLE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ROLE_UNSPECIFIED_VALUE = 0;
+      /**
+       * <code>SYSTEM = 1;</code>
+       */
+      public static final int SYSTEM_VALUE = 1;
+      /**
+       * <code>USER = 2;</code>
+       */
+      public static final int USER_VALUE = 2;
+      /**
+       * <code>ASSISTANT = 3;</code>
+       */
+      public static final int ASSISTANT_VALUE = 3;
+      /**
+       * <code>TOOL = 4;</code>
+       */
+      public static final int TOOL_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Role valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Role forNumber(int value) {
+        switch (value) {
+          case 0: return ROLE_UNSPECIFIED;
+          case 1: return SYSTEM;
+          case 2: return USER;
+          case 3: return ASSISTANT;
+          case 4: return TOOL;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Role>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Role> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Role>() {
+              public Role findValueByNumber(int number) {
+                return Role.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Role[] VALUES = values();
+
+      public static Role valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Role(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:aiproxy.v1.ChatMessage.Role)
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 1;
+    private int role_;
+    /**
+     * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+     * @return The enum numeric value on the wire for role.
+     */
+    @java.lang.Override public int getRoleValue() {
+      return role_;
+    }
+    /**
+     * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+     * @return The role.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role getRole() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role result = com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.valueOf(role_);
+      return result == null ? com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.UNRECOGNIZED : result;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object content_;
+    /**
+     * <code>string content = 2;</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string content = 2;</code>
+     * @return The bytes for content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (role_ != com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.ROLE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, role_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (role_ != com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.ROLE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, role_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.ChatMessage)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.ChatMessage other = (com.blcvn.kratos.protos.aiproxy.Base.ChatMessage) obj;
+
+      if (role_ != other.role_) return false;
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + role_;
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.ChatMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.ChatMessage)
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.class, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        role_ = 0;
+
+        content_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage build() {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessage result = new com.blcvn.kratos.protos.aiproxy.Base.ChatMessage(this);
+        result.role_ = role_;
+        result.content_ = content_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.ChatMessage) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.ChatMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance()) return this;
+        if (other.role_ != 0) {
+          setRoleValue(other.getRoleValue());
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.ChatMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int role_ = 0;
+      /**
+       * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+       * @return The enum numeric value on the wire for role.
+       */
+      @java.lang.Override public int getRoleValue() {
+        return role_;
+      }
+      /**
+       * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+       * @param value The enum numeric value on the wire for role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleValue(int value) {
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+       * @return The role.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role getRole() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role result = com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.valueOf(role_);
+        return result == null ? com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRole(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Role value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        role_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ChatMessage.Role role = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRole() {
+        
+        role_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       * <code>string content = 2;</code>
+       * @return The content.
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string content = 2;</code>
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string content = 2;</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content = 2;</code>
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.ChatMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.ChatMessage)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.ChatMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.ChatMessage();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChatMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ChatMessage>() {
+      @java.lang.Override
+      public ChatMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChatMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChatMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChatMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CompletionRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:aiproxy.v1.CompletionRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -3213,6 +4023,30 @@ public final class Base {
      */
     com.google.protobuf.ByteString
         getPromptBytes();
+
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> 
+        getMessagesList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index);
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    int getMessagesCount();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+        getMessagesOrBuilderList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+        int index);
 
     /**
      * <code>int32 max_tokens = 3;</code>
@@ -3306,6 +4140,7 @@ public final class Base {
     private CompletionRequest() {
       modelId_ = "";
       prompt_ = "";
+      messages_ = java.util.Collections.emptyList();
       stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -3369,24 +4204,33 @@ public final class Base {
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 stop_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               stop_.add(s);
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 metadata_ = com.google.protobuf.MapField.newMapField(
                     MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               metadata_.getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                messages_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              messages_.add(
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3404,8 +4248,11 @@ public final class Base {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           stop_ = stop_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          messages_ = java.util.Collections.unmodifiableList(messages_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3510,6 +4357,46 @@ public final class Base {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MESSAGES_FIELD_NUMBER = 8;
+    private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> messages_;
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> getMessagesList() {
+      return messages_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+        getMessagesOrBuilderList() {
+      return messages_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public int getMessagesCount() {
+      return messages_.size();
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index) {
+      return messages_.get(index);
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+        int index) {
+      return messages_.get(index);
     }
 
     public static final int MAX_TOKENS_FIELD_NUMBER = 3;
@@ -3699,6 +4586,9 @@ public final class Base {
           internalGetMetadata(),
           MetadataDefaultEntryHolder.defaultEntry,
           7);
+      for (int i = 0; i < messages_.size(); i++) {
+        output.writeMessage(8, messages_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3744,6 +4634,10 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(7, metadata__);
       }
+      for (int i = 0; i < messages_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, messages_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3763,6 +4657,8 @@ public final class Base {
           .equals(other.getModelId())) return false;
       if (!getPrompt()
           .equals(other.getPrompt())) return false;
+      if (!getMessagesList()
+          .equals(other.getMessagesList())) return false;
       if (getMaxTokens()
           != other.getMaxTokens()) return false;
       if (java.lang.Double.doubleToLongBits(getTemperature())
@@ -3790,6 +4686,10 @@ public final class Base {
       hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + PROMPT_FIELD_NUMBER;
       hash = (53 * hash) + getPrompt().hashCode();
+      if (getMessagesCount() > 0) {
+        hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + getMessagesList().hashCode();
+      }
       hash = (37 * hash) + MAX_TOKENS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxTokens();
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
@@ -3956,6 +4856,7 @@ public final class Base {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getMessagesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3965,6 +4866,12 @@ public final class Base {
 
         prompt_ = "";
 
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          messagesBuilder_.clear();
+        }
         maxTokens_ = 0;
 
         temperature_ = 0D;
@@ -3972,7 +4879,7 @@ public final class Base {
         topP_ = 0D;
 
         stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableMetadata().clear();
         return this;
       }
@@ -4003,12 +4910,21 @@ public final class Base {
         int from_bitField0_ = bitField0_;
         result.modelId_ = modelId_;
         result.prompt_ = prompt_;
+        if (messagesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            messages_ = java.util.Collections.unmodifiableList(messages_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.messages_ = messages_;
+        } else {
+          result.messages_ = messagesBuilder_.build();
+        }
         result.maxTokens_ = maxTokens_;
         result.temperature_ = temperature_;
         result.topP_ = topP_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           stop_ = stop_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.stop_ = stop_;
         result.metadata_ = internalGetMetadata();
@@ -4069,6 +4985,32 @@ public final class Base {
           prompt_ = other.prompt_;
           onChanged();
         }
+        if (messagesBuilder_ == null) {
+          if (!other.messages_.isEmpty()) {
+            if (messages_.isEmpty()) {
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMessagesIsMutable();
+              messages_.addAll(other.messages_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.messages_.isEmpty()) {
+            if (messagesBuilder_.isEmpty()) {
+              messagesBuilder_.dispose();
+              messagesBuilder_ = null;
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              messagesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMessagesFieldBuilder() : null;
+            } else {
+              messagesBuilder_.addAllMessages(other.messages_);
+            }
+          }
+        }
         if (other.getMaxTokens() != 0) {
           setMaxTokens(other.getMaxTokens());
         }
@@ -4081,7 +5023,7 @@ public final class Base {
         if (!other.stop_.isEmpty()) {
           if (stop_.isEmpty()) {
             stop_ = other.stop_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStopIsMutable();
             stop_.addAll(other.stop_);
@@ -4272,6 +5214,246 @@ public final class Base {
         return this;
       }
 
+      private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> messages_ =
+        java.util.Collections.emptyList();
+      private void ensureMessagesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          messages_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage>(messages_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> messagesBuilder_;
+
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> getMessagesList() {
+        if (messagesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(messages_);
+        } else {
+          return messagesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public int getMessagesCount() {
+        if (messagesBuilder_ == null) {
+          return messages_.size();
+        } else {
+          return messagesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);
+        } else {
+          return messagesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder setMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.set(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder setMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addAllMessages(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> values) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, messages_);
+          onChanged();
+        } else {
+          messagesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder clearMessages() {
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          messagesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder removeMessages(int index) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.remove(index);
+          onChanged();
+        } else {
+          messagesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder getMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+          int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);  } else {
+          return messagesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+           getMessagesOrBuilderList() {
+        if (messagesBuilder_ != null) {
+          return messagesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(messages_);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder addMessagesBuilder() {
+        return getMessagesFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder addMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder> 
+           getMessagesBuilderList() {
+        return getMessagesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+          getMessagesFieldBuilder() {
+        if (messagesBuilder_ == null) {
+          messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder>(
+                  messages_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          messages_ = null;
+        }
+        return messagesBuilder_;
+      }
+
       private int maxTokens_ ;
       /**
        * <code>int32 max_tokens = 3;</code>
@@ -4367,9 +5549,9 @@ public final class Base {
 
       private com.google.protobuf.LazyStringList stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureStopIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           stop_ = new com.google.protobuf.LazyStringArrayList(stop_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -4454,7 +5636,7 @@ public final class Base {
        */
       public Builder clearStop() {
         stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4696,10 +5878,22 @@ public final class Base {
         getTextBytes();
 
     /**
-     * <code>int64 tokens_used = 4;</code>
-     * @return The tokensUsed.
+     * <code>int32 prompt_tokens = 9;</code>
+     * @return The promptTokens.
      */
-    long getTokensUsed();
+    int getPromptTokens();
+
+    /**
+     * <code>int32 completion_tokens = 10;</code>
+     * @return The completionTokens.
+     */
+    int getCompletionTokens();
+
+    /**
+     * <code>int32 total_tokens = 11;</code>
+     * @return The totalTokens.
+     */
+    int getTotalTokens();
 
     /**
      * <code>int32 latency_ms = 5;</code>
@@ -4807,11 +6001,6 @@ public final class Base {
               text_ = s;
               break;
             }
-            case 32: {
-
-              tokensUsed_ = input.readInt64();
-              break;
-            }
             case 40: {
 
               latencyMs_ = input.readInt32();
@@ -4839,6 +6028,21 @@ public final class Base {
                 createdAt_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 72: {
+
+              promptTokens_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              completionTokens_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              totalTokens_ = input.readInt32();
               break;
             }
             default: {
@@ -4987,15 +6191,37 @@ public final class Base {
       }
     }
 
-    public static final int TOKENS_USED_FIELD_NUMBER = 4;
-    private long tokensUsed_;
+    public static final int PROMPT_TOKENS_FIELD_NUMBER = 9;
+    private int promptTokens_;
     /**
-     * <code>int64 tokens_used = 4;</code>
-     * @return The tokensUsed.
+     * <code>int32 prompt_tokens = 9;</code>
+     * @return The promptTokens.
      */
     @java.lang.Override
-    public long getTokensUsed() {
-      return tokensUsed_;
+    public int getPromptTokens() {
+      return promptTokens_;
+    }
+
+    public static final int COMPLETION_TOKENS_FIELD_NUMBER = 10;
+    private int completionTokens_;
+    /**
+     * <code>int32 completion_tokens = 10;</code>
+     * @return The completionTokens.
+     */
+    @java.lang.Override
+    public int getCompletionTokens() {
+      return completionTokens_;
+    }
+
+    public static final int TOTAL_TOKENS_FIELD_NUMBER = 11;
+    private int totalTokens_;
+    /**
+     * <code>int32 total_tokens = 11;</code>
+     * @return The totalTokens.
+     */
+    @java.lang.Override
+    public int getTotalTokens() {
+      return totalTokens_;
     }
 
     public static final int LATENCY_MS_FIELD_NUMBER = 5;
@@ -5107,9 +6333,6 @@ public final class Base {
       if (!getTextBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
       }
-      if (tokensUsed_ != 0L) {
-        output.writeInt64(4, tokensUsed_);
-      }
       if (latencyMs_ != 0) {
         output.writeInt32(5, latencyMs_);
       }
@@ -5121,6 +6344,15 @@ public final class Base {
       }
       if (createdAt_ != null) {
         output.writeMessage(8, getCreatedAt());
+      }
+      if (promptTokens_ != 0) {
+        output.writeInt32(9, promptTokens_);
+      }
+      if (completionTokens_ != 0) {
+        output.writeInt32(10, completionTokens_);
+      }
+      if (totalTokens_ != 0) {
+        output.writeInt32(11, totalTokens_);
       }
       unknownFields.writeTo(output);
     }
@@ -5140,10 +6372,6 @@ public final class Base {
       if (!getTextBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
       }
-      if (tokensUsed_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, tokensUsed_);
-      }
       if (latencyMs_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, latencyMs_);
@@ -5158,6 +6386,18 @@ public final class Base {
       if (createdAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getCreatedAt());
+      }
+      if (promptTokens_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, promptTokens_);
+      }
+      if (completionTokens_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, completionTokens_);
+      }
+      if (totalTokens_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, totalTokens_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5180,8 +6420,12 @@ public final class Base {
           .equals(other.getModelId())) return false;
       if (!getText()
           .equals(other.getText())) return false;
-      if (getTokensUsed()
-          != other.getTokensUsed()) return false;
+      if (getPromptTokens()
+          != other.getPromptTokens()) return false;
+      if (getCompletionTokens()
+          != other.getCompletionTokens()) return false;
+      if (getTotalTokens()
+          != other.getTotalTokens()) return false;
       if (getLatencyMs()
           != other.getLatencyMs()) return false;
       if (getFromCache()
@@ -5210,9 +6454,12 @@ public final class Base {
       hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
-      hash = (37 * hash) + TOKENS_USED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTokensUsed());
+      hash = (37 * hash) + PROMPT_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getPromptTokens();
+      hash = (37 * hash) + COMPLETION_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getCompletionTokens();
+      hash = (37 * hash) + TOTAL_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalTokens();
       hash = (37 * hash) + LATENCY_MS_FIELD_NUMBER;
       hash = (53 * hash) + getLatencyMs();
       hash = (37 * hash) + FROM_CACHE_FIELD_NUMBER;
@@ -5363,7 +6610,11 @@ public final class Base {
 
         text_ = "";
 
-        tokensUsed_ = 0L;
+        promptTokens_ = 0;
+
+        completionTokens_ = 0;
+
+        totalTokens_ = 0;
 
         latencyMs_ = 0;
 
@@ -5406,7 +6657,9 @@ public final class Base {
         result.id_ = id_;
         result.modelId_ = modelId_;
         result.text_ = text_;
-        result.tokensUsed_ = tokensUsed_;
+        result.promptTokens_ = promptTokens_;
+        result.completionTokens_ = completionTokens_;
+        result.totalTokens_ = totalTokens_;
         result.latencyMs_ = latencyMs_;
         result.fromCache_ = fromCache_;
         result.provider_ = provider_;
@@ -5475,8 +6728,14 @@ public final class Base {
           text_ = other.text_;
           onChanged();
         }
-        if (other.getTokensUsed() != 0L) {
-          setTokensUsed(other.getTokensUsed());
+        if (other.getPromptTokens() != 0) {
+          setPromptTokens(other.getPromptTokens());
+        }
+        if (other.getCompletionTokens() != 0) {
+          setCompletionTokens(other.getCompletionTokens());
+        }
+        if (other.getTotalTokens() != 0) {
+          setTotalTokens(other.getTotalTokens());
         }
         if (other.getLatencyMs() != 0) {
           setLatencyMs(other.getLatencyMs());
@@ -5748,33 +7007,95 @@ public final class Base {
         return this;
       }
 
-      private long tokensUsed_ ;
+      private int promptTokens_ ;
       /**
-       * <code>int64 tokens_used = 4;</code>
-       * @return The tokensUsed.
+       * <code>int32 prompt_tokens = 9;</code>
+       * @return The promptTokens.
        */
       @java.lang.Override
-      public long getTokensUsed() {
-        return tokensUsed_;
+      public int getPromptTokens() {
+        return promptTokens_;
       }
       /**
-       * <code>int64 tokens_used = 4;</code>
-       * @param value The tokensUsed to set.
+       * <code>int32 prompt_tokens = 9;</code>
+       * @param value The promptTokens to set.
        * @return This builder for chaining.
        */
-      public Builder setTokensUsed(long value) {
+      public Builder setPromptTokens(int value) {
         
-        tokensUsed_ = value;
+        promptTokens_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 tokens_used = 4;</code>
+       * <code>int32 prompt_tokens = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTokensUsed() {
+      public Builder clearPromptTokens() {
         
-        tokensUsed_ = 0L;
+        promptTokens_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int completionTokens_ ;
+      /**
+       * <code>int32 completion_tokens = 10;</code>
+       * @return The completionTokens.
+       */
+      @java.lang.Override
+      public int getCompletionTokens() {
+        return completionTokens_;
+      }
+      /**
+       * <code>int32 completion_tokens = 10;</code>
+       * @param value The completionTokens to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompletionTokens(int value) {
+        
+        completionTokens_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 completion_tokens = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompletionTokens() {
+        
+        completionTokens_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalTokens_ ;
+      /**
+       * <code>int32 total_tokens = 11;</code>
+       * @return The totalTokens.
+       */
+      @java.lang.Override
+      public int getTotalTokens() {
+        return totalTokens_;
+      }
+      /**
+       * <code>int32 total_tokens = 11;</code>
+       * @param value The totalTokens to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalTokens(int value) {
+        
+        totalTokens_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 total_tokens = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalTokens() {
+        
+        totalTokens_ = 0;
         onChanged();
         return this;
       }
@@ -8066,6 +9387,11 @@ public final class Base {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_aiproxy_v1_Signature_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_ChatMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_aiproxy_v1_CompletionRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8107,33 +9433,39 @@ public final class Base {
       "ssage\030\002 \001(\t\"\215\001\n\tSignature\0223\n\006s_type\030\001 \001(" +
       "\0162#.aiproxy.v1.Signature.SignatureType\022\t" +
       "\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureType\022\017\n" +
-      "\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\353\001\n\021" +
-      "CompletionRequest\022\020\n\010model_id\030\001 \001(\t\022\016\n\006p" +
-      "rompt\030\002 \001(\t\022\022\n\nmax_tokens\030\003 \001(\005\022\023\n\013tempe" +
-      "rature\030\004 \001(\001\022\r\n\005top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(" +
-      "\t\022=\n\010metadata\030\007 \003(\0132+.aiproxy.v1.Complet" +
-      "ionRequest.MetadataEntry\032/\n\rMetadataEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\277\001\n\022Co" +
-      "mpletionResponse\022\n\n\002id\030\001 \001(\t\022\020\n\010model_id" +
-      "\030\002 \001(\t\022\014\n\004text\030\003 \001(\t\022\023\n\013tokens_used\030\004 \001(" +
-      "\003\022\022\n\nlatency_ms\030\005 \001(\005\022\022\n\nfrom_cache\030\006 \001(" +
-      "\010\022\020\n\010provider\030\007 \001(\t\022.\n\ncreated_at\030\010 \001(\0132" +
-      "\032.google.protobuf.Timestamp\"=\n\017Completio" +
-      "nChunk\022\n\n\002id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010is_f" +
-      "inal\030\003 \001(\010\"\313\001\n\016ProviderHealth\022\020\n\010provide" +
-      "r\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.aiproxy.v1.Pro" +
-      "viderStatus\022\024\n\014success_rate\030\003 \001(\005\022\026\n\016avg" +
-      "_latency_ms\030\004 \001(\005\022\035\n\025circuit_breaker_sta" +
-      "te\030\005 \001(\t\022.\n\nlast_check\030\006 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp*\221\001\n\nResultCode\022\017\n\013UNSPE" +
-      "CIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_REQUEST\020\220\003" +
-      "\022\021\n\014UNAUTHORIZED\020\221\003\022\026\n\021TOO_MANY_REQUESTS" +
-      "\020\255\003\022\r\n\010INTERNAL\020\364\003\022\030\n\023SERVICE_UNAVAILABL" +
-      "E\020\367\003*T\n\016ProviderStatus\022\024\n\020PROVIDER_UNKNO" +
-      "WN\020\000\022\r\n\tAVAILABLE\020\001\022\014\n\010DEGRADED\020\002\022\017\n\013UNA" +
-      "VAILABLE\020\003BT\n\037com.blcvn.kratos.protos.ai" +
-      "proxyZ1github.com/blcvn/kratos-proto/go/" +
-      "ai-proxy;aiproxyb\006proto3"
+      "\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\227\001\n\013" +
+      "ChatMessage\022*\n\004role\030\001 \001(\0162\034.aiproxy.v1.C" +
+      "hatMessage.Role\022\017\n\007content\030\002 \001(\t\"K\n\004Role" +
+      "\022\024\n\020ROLE_UNSPECIFIED\020\000\022\n\n\006SYSTEM\020\001\022\010\n\004US" +
+      "ER\020\002\022\r\n\tASSISTANT\020\003\022\010\n\004TOOL\020\004\"\226\002\n\021Comple" +
+      "tionRequest\022\020\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030" +
+      "\002 \001(\t\022)\n\010messages\030\010 \003(\0132\027.aiproxy.v1.Cha" +
+      "tMessage\022\022\n\nmax_tokens\030\003 \001(\005\022\023\n\013temperat" +
+      "ure\030\004 \001(\001\022\r\n\005top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022=" +
+      "\n\010metadata\030\007 \003(\0132+.aiproxy.v1.Completion" +
+      "Request.MetadataEntry\032/\n\rMetadataEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\362\001\n\022Compl" +
+      "etionResponse\022\n\n\002id\030\001 \001(\t\022\020\n\010model_id\030\002 " +
+      "\001(\t\022\014\n\004text\030\003 \001(\t\022\025\n\rprompt_tokens\030\t \001(\005" +
+      "\022\031\n\021completion_tokens\030\n \001(\005\022\024\n\014total_tok" +
+      "ens\030\013 \001(\005\022\022\n\nlatency_ms\030\005 \001(\005\022\022\n\nfrom_ca" +
+      "che\030\006 \001(\010\022\020\n\010provider\030\007 \001(\t\022.\n\ncreated_a" +
+      "t\030\010 \001(\0132\032.google.protobuf.Timestamp\"=\n\017C" +
+      "ompletionChunk\022\n\n\002id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t" +
+      "\022\020\n\010is_final\030\003 \001(\010\"\313\001\n\016ProviderHealth\022\020\n" +
+      "\010provider\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.aiprox" +
+      "y.v1.ProviderStatus\022\024\n\014success_rate\030\003 \001(" +
+      "\005\022\026\n\016avg_latency_ms\030\004 \001(\005\022\035\n\025circuit_bre" +
+      "aker_state\030\005 \001(\t\022.\n\nlast_check\030\006 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp*\221\001\n\nResultCode\022" +
+      "\017\n\013UNSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_RE" +
+      "QUEST\020\220\003\022\021\n\014UNAUTHORIZED\020\221\003\022\026\n\021TOO_MANY_" +
+      "REQUESTS\020\255\003\022\r\n\010INTERNAL\020\364\003\022\030\n\023SERVICE_UN" +
+      "AVAILABLE\020\367\003*T\n\016ProviderStatus\022\024\n\020PROVID" +
+      "ER_UNKNOWN\020\000\022\r\n\tAVAILABLE\020\001\022\014\n\010DEGRADED\020" +
+      "\002\022\017\n\013UNAVAILABLE\020\003BT\n\037com.blcvn.kratos.p" +
+      "rotos.aiproxyZ1github.com/blcvn/kratos-p" +
+      "roto/go/ai-proxy;aiproxyb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8164,12 +9496,18 @@ public final class Base {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_Signature_descriptor,
         new java.lang.String[] { "SType", "S", "B", });
-    internal_static_aiproxy_v1_CompletionRequest_descriptor =
+    internal_static_aiproxy_v1_ChatMessage_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_ChatMessage_descriptor,
+        new java.lang.String[] { "Role", "Content", });
+    internal_static_aiproxy_v1_CompletionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_aiproxy_v1_CompletionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionRequest_descriptor,
-        new java.lang.String[] { "ModelId", "Prompt", "MaxTokens", "Temperature", "TopP", "Stop", "Metadata", });
+        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Metadata", });
     internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_descriptor =
       internal_static_aiproxy_v1_CompletionRequest_descriptor.getNestedTypes().get(0);
     internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_fieldAccessorTable = new
@@ -8177,19 +9515,19 @@ public final class Base {
         internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_aiproxy_v1_CompletionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_aiproxy_v1_CompletionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionResponse_descriptor,
-        new java.lang.String[] { "Id", "ModelId", "Text", "TokensUsed", "LatencyMs", "FromCache", "Provider", "CreatedAt", });
+        new java.lang.String[] { "Id", "ModelId", "Text", "PromptTokens", "CompletionTokens", "TotalTokens", "LatencyMs", "FromCache", "Provider", "CreatedAt", });
     internal_static_aiproxy_v1_CompletionChunk_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_aiproxy_v1_CompletionChunk_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionChunk_descriptor,
         new java.lang.String[] { "Id", "Text", "IsFinal", });
     internal_static_aiproxy_v1_ProviderHealth_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_aiproxy_v1_ProviderHealth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_ProviderHealth_descriptor,

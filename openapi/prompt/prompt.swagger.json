@@ -544,8 +544,8 @@
         "signature": {
           "$ref": "#/definitions/v1Signature"
         },
-        "winner_id": {
-          "type": "string"
+        "payload": {
+          "$ref": "#/definitions/v1CompleteExperimentPayload"
         }
       }
     },
@@ -574,7 +574,8 @@
             "status": {
               "$ref": "#/definitions/v1TemplateStatus"
             }
-          }
+          },
+          "title": "Update Template"
         }
       }
     },
@@ -618,6 +619,15 @@
         }
       }
     },
+    "v1CompleteExperimentPayload": {
+      "type": "object",
+      "properties": {
+        "winner_id": {
+          "type": "string"
+        }
+      },
+      "title": "Complete Experiment"
+    },
     "v1CompleteExperimentResponse": {
       "type": "object",
       "properties": {
@@ -651,7 +661,8 @@
           "type": "integer",
           "format": "int32"
         }
-      }
+      },
+      "title": "Create Experiment"
     },
     "v1CreateExperimentRequest": {
       "type": "object",
@@ -712,7 +723,8 @@
             "type": "string"
           }
         }
-      }
+      },
+      "title": "Create Template"
     },
     "v1CreateTemplateRequest": {
       "type": "object",
@@ -930,7 +942,8 @@
             "type": "string"
           }
         }
-      }
+      },
+      "title": "Render Template"
     },
     "v1RenderTemplateRequest": {
       "type": "object",
@@ -977,6 +990,9 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "version_used": {
+          "type": "string"
         }
       }
     },
@@ -992,7 +1008,8 @@
         "result": {
           "$ref": "#/definitions/v1Result"
         }
-      }
+      },
+      "title": "Common Response"
     },
     "v1Result": {
       "type": "object",
@@ -1065,7 +1082,8 @@
         "status": {
           "$ref": "#/definitions/v1TemplateStatus"
         }
-      }
+      },
+      "title": "Update Template"
     },
     "v1UpdateTemplateResponse": {
       "type": "object",
@@ -1079,7 +1097,7 @@
         "result": {
           "$ref": "#/definitions/v1Result"
         },
-        "template": {
+        "model": {
           "$ref": "#/definitions/v1PromptTemplate"
         }
       }

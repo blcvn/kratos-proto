@@ -531,9 +531,6 @@
         "base_url": {
           "type": "string"
         },
-        "vault_path": {
-          "type": "string"
-        },
         "config": {
           "type": "object",
           "additionalProperties": {
@@ -580,7 +577,7 @@
         "base_url": {
           "type": "string"
         },
-        "vault_path": {
+        "api_key": {
           "type": "string"
         },
         "config": {

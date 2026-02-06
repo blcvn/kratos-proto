@@ -188,6 +188,61 @@ func (Signature_SignatureType) EnumDescriptor() ([]byte, []int) {
 	return file_ai_proxy_base_proto_rawDescGZIP(), []int{3, 0}
 }
 
+type ChatMessage_Role int32
+
+const (
+	ChatMessage_ROLE_UNSPECIFIED ChatMessage_Role = 0
+	ChatMessage_SYSTEM           ChatMessage_Role = 1
+	ChatMessage_USER             ChatMessage_Role = 2
+	ChatMessage_ASSISTANT        ChatMessage_Role = 3
+	ChatMessage_TOOL             ChatMessage_Role = 4
+)
+
+// Enum value maps for ChatMessage_Role.
+var (
+	ChatMessage_Role_name = map[int32]string{
+		0: "ROLE_UNSPECIFIED",
+		1: "SYSTEM",
+		2: "USER",
+		3: "ASSISTANT",
+		4: "TOOL",
+	}
+	ChatMessage_Role_value = map[string]int32{
+		"ROLE_UNSPECIFIED": 0,
+		"SYSTEM":           1,
+		"USER":             2,
+		"ASSISTANT":        3,
+		"TOOL":             4,
+	}
+)
+
+func (x ChatMessage_Role) Enum() *ChatMessage_Role {
+	p := new(ChatMessage_Role)
+	*p = x
+	return p
+}
+
+func (x ChatMessage_Role) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ChatMessage_Role) Descriptor() protoreflect.EnumDescriptor {
+	return file_ai_proxy_base_proto_enumTypes[3].Descriptor()
+}
+
+func (ChatMessage_Role) Type() protoreflect.EnumType {
+	return &file_ai_proxy_base_proto_enumTypes[3]
+}
+
+func (x ChatMessage_Role) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ChatMessage_Role.Descriptor instead.
+func (ChatMessage_Role) EnumDescriptor() ([]byte, []int) {
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{4, 0}
+}
+
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -397,10 +452,63 @@ func (x *Signature) GetB() []byte {
 	return nil
 }
 
+type ChatMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Role          ChatMessage_Role       `protobuf:"varint,1,opt,name=role,proto3,enum=aiproxy.v1.ChatMessage_Role" json:"role,omitempty"`
+	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChatMessage) Reset() {
+	*x = ChatMessage{}
+	mi := &file_ai_proxy_base_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChatMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChatMessage) ProtoMessage() {}
+
+func (x *ChatMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ai_proxy_base_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChatMessage.ProtoReflect.Descriptor instead.
+func (*ChatMessage) Descriptor() ([]byte, []int) {
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ChatMessage) GetRole() ChatMessage_Role {
+	if x != nil {
+		return x.Role
+	}
+	return ChatMessage_ROLE_UNSPECIFIED
+}
+
+func (x *ChatMessage) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
 type CompletionRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ModelId       string                 `protobuf:"bytes,1,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	Prompt        string                 `protobuf:"bytes,2,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Messages      []*ChatMessage         `protobuf:"bytes,8,rep,name=messages,proto3" json:"messages,omitempty"`
 	MaxTokens     int32                  `protobuf:"varint,3,opt,name=max_tokens,json=maxTokens,proto3" json:"max_tokens,omitempty"`
 	Temperature   float64                `protobuf:"fixed64,4,opt,name=temperature,proto3" json:"temperature,omitempty"`
 	TopP          float64                `protobuf:"fixed64,5,opt,name=top_p,json=topP,proto3" json:"top_p,omitempty"`
@@ -412,7 +520,7 @@ type CompletionRequest struct {
 
 func (x *CompletionRequest) Reset() {
 	*x = CompletionRequest{}
-	mi := &file_ai_proxy_base_proto_msgTypes[4]
+	mi := &file_ai_proxy_base_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -424,7 +532,7 @@ func (x *CompletionRequest) String() string {
 func (*CompletionRequest) ProtoMessage() {}
 
 func (x *CompletionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_ai_proxy_base_proto_msgTypes[4]
+	mi := &file_ai_proxy_base_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -437,7 +545,7 @@ func (x *CompletionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompletionRequest.ProtoReflect.Descriptor instead.
 func (*CompletionRequest) Descriptor() ([]byte, []int) {
-	return file_ai_proxy_base_proto_rawDescGZIP(), []int{4}
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CompletionRequest) GetModelId() string {
@@ -452,6 +560,13 @@ func (x *CompletionRequest) GetPrompt() string {
 		return x.Prompt
 	}
 	return ""
+}
+
+func (x *CompletionRequest) GetMessages() []*ChatMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
 }
 
 func (x *CompletionRequest) GetMaxTokens() int32 {
@@ -490,22 +605,24 @@ func (x *CompletionRequest) GetMetadata() map[string]string {
 }
 
 type CompletionResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ModelId       string                 `protobuf:"bytes,2,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	Text          string                 `protobuf:"bytes,3,opt,name=text,proto3" json:"text,omitempty"`
-	TokensUsed    int64                  `protobuf:"varint,4,opt,name=tokens_used,json=tokensUsed,proto3" json:"tokens_used,omitempty"`
-	LatencyMs     int32                  `protobuf:"varint,5,opt,name=latency_ms,json=latencyMs,proto3" json:"latency_ms,omitempty"`
-	FromCache     bool                   `protobuf:"varint,6,opt,name=from_cache,json=fromCache,proto3" json:"from_cache,omitempty"`
-	Provider      string                 `protobuf:"bytes,7,opt,name=provider,proto3" json:"provider,omitempty"`
-	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ModelId          string                 `protobuf:"bytes,2,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	Text             string                 `protobuf:"bytes,3,opt,name=text,proto3" json:"text,omitempty"`
+	PromptTokens     int32                  `protobuf:"varint,9,opt,name=prompt_tokens,json=promptTokens,proto3" json:"prompt_tokens,omitempty"`
+	CompletionTokens int32                  `protobuf:"varint,10,opt,name=completion_tokens,json=completionTokens,proto3" json:"completion_tokens,omitempty"`
+	TotalTokens      int32                  `protobuf:"varint,11,opt,name=total_tokens,json=totalTokens,proto3" json:"total_tokens,omitempty"`
+	LatencyMs        int32                  `protobuf:"varint,5,opt,name=latency_ms,json=latencyMs,proto3" json:"latency_ms,omitempty"`
+	FromCache        bool                   `protobuf:"varint,6,opt,name=from_cache,json=fromCache,proto3" json:"from_cache,omitempty"`
+	Provider         string                 `protobuf:"bytes,7,opt,name=provider,proto3" json:"provider,omitempty"`
+	CreatedAt        *timestamp.Timestamp   `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *CompletionResponse) Reset() {
 	*x = CompletionResponse{}
-	mi := &file_ai_proxy_base_proto_msgTypes[5]
+	mi := &file_ai_proxy_base_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -517,7 +634,7 @@ func (x *CompletionResponse) String() string {
 func (*CompletionResponse) ProtoMessage() {}
 
 func (x *CompletionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ai_proxy_base_proto_msgTypes[5]
+	mi := &file_ai_proxy_base_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -530,7 +647,7 @@ func (x *CompletionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompletionResponse.ProtoReflect.Descriptor instead.
 func (*CompletionResponse) Descriptor() ([]byte, []int) {
-	return file_ai_proxy_base_proto_rawDescGZIP(), []int{5}
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CompletionResponse) GetId() string {
@@ -554,9 +671,23 @@ func (x *CompletionResponse) GetText() string {
 	return ""
 }
 
-func (x *CompletionResponse) GetTokensUsed() int64 {
+func (x *CompletionResponse) GetPromptTokens() int32 {
 	if x != nil {
-		return x.TokensUsed
+		return x.PromptTokens
+	}
+	return 0
+}
+
+func (x *CompletionResponse) GetCompletionTokens() int32 {
+	if x != nil {
+		return x.CompletionTokens
+	}
+	return 0
+}
+
+func (x *CompletionResponse) GetTotalTokens() int32 {
+	if x != nil {
+		return x.TotalTokens
 	}
 	return 0
 }
@@ -600,7 +731,7 @@ type CompletionChunk struct {
 
 func (x *CompletionChunk) Reset() {
 	*x = CompletionChunk{}
-	mi := &file_ai_proxy_base_proto_msgTypes[6]
+	mi := &file_ai_proxy_base_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -612,7 +743,7 @@ func (x *CompletionChunk) String() string {
 func (*CompletionChunk) ProtoMessage() {}
 
 func (x *CompletionChunk) ProtoReflect() protoreflect.Message {
-	mi := &file_ai_proxy_base_proto_msgTypes[6]
+	mi := &file_ai_proxy_base_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -625,7 +756,7 @@ func (x *CompletionChunk) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompletionChunk.ProtoReflect.Descriptor instead.
 func (*CompletionChunk) Descriptor() ([]byte, []int) {
-	return file_ai_proxy_base_proto_rawDescGZIP(), []int{6}
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CompletionChunk) GetId() string {
@@ -663,7 +794,7 @@ type ProviderHealth struct {
 
 func (x *ProviderHealth) Reset() {
 	*x = ProviderHealth{}
-	mi := &file_ai_proxy_base_proto_msgTypes[7]
+	mi := &file_ai_proxy_base_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -675,7 +806,7 @@ func (x *ProviderHealth) String() string {
 func (*ProviderHealth) ProtoMessage() {}
 
 func (x *ProviderHealth) ProtoReflect() protoreflect.Message {
-	mi := &file_ai_proxy_base_proto_msgTypes[7]
+	mi := &file_ai_proxy_base_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -688,7 +819,7 @@ func (x *ProviderHealth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProviderHealth.ProtoReflect.Descriptor instead.
 func (*ProviderHealth) Descriptor() ([]byte, []int) {
-	return file_ai_proxy_base_proto_rawDescGZIP(), []int{7}
+	return file_ai_proxy_base_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ProviderHealth) GetProvider() string {
@@ -756,10 +887,21 @@ const file_ai_proxy_base_proto_rawDesc = "" +
 	"\vNO_USE_TYPE\x10\x00\x12\x05\n" +
 	"\x01J\x10\x01\x12\x05\n" +
 	"\x01C\x10\x02\x12\x05\n" +
-	"\x01S\x10\x03\"\xb6\x02\n" +
+	"\x01S\x10\x03\"\xa6\x01\n" +
+	"\vChatMessage\x120\n" +
+	"\x04role\x18\x01 \x01(\x0e2\x1c.aiproxy.v1.ChatMessage.RoleR\x04role\x12\x18\n" +
+	"\acontent\x18\x02 \x01(\tR\acontent\"K\n" +
+	"\x04Role\x12\x14\n" +
+	"\x10ROLE_UNSPECIFIED\x10\x00\x12\n" +
+	"\n" +
+	"\x06SYSTEM\x10\x01\x12\b\n" +
+	"\x04USER\x10\x02\x12\r\n" +
+	"\tASSISTANT\x10\x03\x12\b\n" +
+	"\x04TOOL\x10\x04\"\xeb\x02\n" +
 	"\x11CompletionRequest\x12\x19\n" +
 	"\bmodel_id\x18\x01 \x01(\tR\amodelId\x12\x16\n" +
-	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12\x1d\n" +
+	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x123\n" +
+	"\bmessages\x18\b \x03(\v2\x17.aiproxy.v1.ChatMessageR\bmessages\x12\x1d\n" +
 	"\n" +
 	"max_tokens\x18\x03 \x01(\x05R\tmaxTokens\x12 \n" +
 	"\vtemperature\x18\x04 \x01(\x01R\vtemperature\x12\x13\n" +
@@ -768,13 +910,15 @@ const file_ai_proxy_base_proto_rawDesc = "" +
 	"\bmetadata\x18\a \x03(\v2+.aiproxy.v1.CompletionRequest.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x89\x02\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xdd\x02\n" +
 	"\x12CompletionResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bmodel_id\x18\x02 \x01(\tR\amodelId\x12\x12\n" +
-	"\x04text\x18\x03 \x01(\tR\x04text\x12\x1f\n" +
-	"\vtokens_used\x18\x04 \x01(\x03R\n" +
-	"tokensUsed\x12\x1d\n" +
+	"\x04text\x18\x03 \x01(\tR\x04text\x12#\n" +
+	"\rprompt_tokens\x18\t \x01(\x05R\fpromptTokens\x12+\n" +
+	"\x11completion_tokens\x18\n" +
+	" \x01(\x05R\x10completionTokens\x12!\n" +
+	"\ftotal_tokens\x18\v \x01(\x05R\vtotalTokens\x12\x1d\n" +
 	"\n" +
 	"latency_ms\x18\x05 \x01(\x05R\tlatencyMs\x12\x1d\n" +
 	"\n" +
@@ -822,35 +966,39 @@ func file_ai_proxy_base_proto_rawDescGZIP() []byte {
 	return file_ai_proxy_base_proto_rawDescData
 }
 
-var file_ai_proxy_base_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_ai_proxy_base_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_ai_proxy_base_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_ai_proxy_base_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_ai_proxy_base_proto_goTypes = []any{
 	(ResultCode)(0),              // 0: aiproxy.v1.ResultCode
 	(ProviderStatus)(0),          // 1: aiproxy.v1.ProviderStatus
 	(Signature_SignatureType)(0), // 2: aiproxy.v1.Signature.SignatureType
-	(*Empty)(nil),                // 3: aiproxy.v1.Empty
-	(*Metadata)(nil),             // 4: aiproxy.v1.Metadata
-	(*Result)(nil),               // 5: aiproxy.v1.Result
-	(*Signature)(nil),            // 6: aiproxy.v1.Signature
-	(*CompletionRequest)(nil),    // 7: aiproxy.v1.CompletionRequest
-	(*CompletionResponse)(nil),   // 8: aiproxy.v1.CompletionResponse
-	(*CompletionChunk)(nil),      // 9: aiproxy.v1.CompletionChunk
-	(*ProviderHealth)(nil),       // 10: aiproxy.v1.ProviderHealth
-	nil,                          // 11: aiproxy.v1.CompletionRequest.MetadataEntry
-	(*timestamp.Timestamp)(nil),  // 12: google.protobuf.Timestamp
+	(ChatMessage_Role)(0),        // 3: aiproxy.v1.ChatMessage.Role
+	(*Empty)(nil),                // 4: aiproxy.v1.Empty
+	(*Metadata)(nil),             // 5: aiproxy.v1.Metadata
+	(*Result)(nil),               // 6: aiproxy.v1.Result
+	(*Signature)(nil),            // 7: aiproxy.v1.Signature
+	(*ChatMessage)(nil),          // 8: aiproxy.v1.ChatMessage
+	(*CompletionRequest)(nil),    // 9: aiproxy.v1.CompletionRequest
+	(*CompletionResponse)(nil),   // 10: aiproxy.v1.CompletionResponse
+	(*CompletionChunk)(nil),      // 11: aiproxy.v1.CompletionChunk
+	(*ProviderHealth)(nil),       // 12: aiproxy.v1.ProviderHealth
+	nil,                          // 13: aiproxy.v1.CompletionRequest.MetadataEntry
+	(*timestamp.Timestamp)(nil),  // 14: google.protobuf.Timestamp
 }
 var file_ai_proxy_base_proto_depIdxs = []int32{
 	0,  // 0: aiproxy.v1.Result.code:type_name -> aiproxy.v1.ResultCode
 	2,  // 1: aiproxy.v1.Signature.s_type:type_name -> aiproxy.v1.Signature.SignatureType
-	11, // 2: aiproxy.v1.CompletionRequest.metadata:type_name -> aiproxy.v1.CompletionRequest.MetadataEntry
-	12, // 3: aiproxy.v1.CompletionResponse.created_at:type_name -> google.protobuf.Timestamp
-	1,  // 4: aiproxy.v1.ProviderHealth.status:type_name -> aiproxy.v1.ProviderStatus
-	12, // 5: aiproxy.v1.ProviderHealth.last_check:type_name -> google.protobuf.Timestamp
-	6,  // [6:6] is the sub-list for method output_type
-	6,  // [6:6] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	3,  // 2: aiproxy.v1.ChatMessage.role:type_name -> aiproxy.v1.ChatMessage.Role
+	8,  // 3: aiproxy.v1.CompletionRequest.messages:type_name -> aiproxy.v1.ChatMessage
+	13, // 4: aiproxy.v1.CompletionRequest.metadata:type_name -> aiproxy.v1.CompletionRequest.MetadataEntry
+	14, // 5: aiproxy.v1.CompletionResponse.created_at:type_name -> google.protobuf.Timestamp
+	1,  // 6: aiproxy.v1.ProviderHealth.status:type_name -> aiproxy.v1.ProviderStatus
+	14, // 7: aiproxy.v1.ProviderHealth.last_check:type_name -> google.protobuf.Timestamp
+	8,  // [8:8] is the sub-list for method output_type
+	8,  // [8:8] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ai_proxy_base_proto_init() }
@@ -863,8 +1011,8 @@ func file_ai_proxy_base_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ai_proxy_base_proto_rawDesc), len(file_ai_proxy_base_proto_rawDesc)),
-			NumEnums:      3,
-			NumMessages:   9,
+			NumEnums:      4,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -145,7 +145,9 @@
     "s": "...",
     "b": "..."
   },
-  "winner_id": "..."
+  "payload": {
+    "winner_id": "..."
+  }
 }
 ```
 
@@ -241,7 +243,8 @@
   "rendered": {
     "template_id": "...",
     "rendered_text": "...",
-    "variables_used": {}
+    "variables_used": {},
+    "version_used": "..."
   }
 }
 ```
@@ -565,7 +568,7 @@
     "code": "...",
     "message": "..."
   },
-  "template": {
+  "model": {
     "id": "...",
     "name": "...",
     "version": "...",

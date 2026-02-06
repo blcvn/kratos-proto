@@ -767,6 +767,7 @@ type RenderedPrompt struct {
 	TemplateId    string                 `protobuf:"bytes,1,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
 	RenderedText  string                 `protobuf:"bytes,2,opt,name=rendered_text,json=renderedText,proto3" json:"rendered_text,omitempty"`
 	VariablesUsed map[string]string      `protobuf:"bytes,3,rep,name=variables_used,json=variablesUsed,proto3" json:"variables_used,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	VersionUsed   string                 `protobuf:"bytes,4,opt,name=version_used,json=versionUsed,proto3" json:"version_used,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -820,6 +821,13 @@ func (x *RenderedPrompt) GetVariablesUsed() map[string]string {
 		return x.VariablesUsed
 	}
 	return nil
+}
+
+func (x *RenderedPrompt) GetVersionUsed() string {
+	if x != nil {
+		return x.VersionUsed
+	}
+	return ""
 }
 
 var File_prompt_base_proto protoreflect.FileDescriptor
@@ -885,12 +893,13 @@ const file_prompt_base_proto_rawDesc = "" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x1a:\n" +
 	"\fMetricsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"\xed\x01\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"\x90\x02\n" +
 	"\x0eRenderedPrompt\x12\x1f\n" +
 	"\vtemplate_id\x18\x01 \x01(\tR\n" +
 	"templateId\x12#\n" +
 	"\rrendered_text\x18\x02 \x01(\tR\frenderedText\x12S\n" +
-	"\x0evariables_used\x18\x03 \x03(\v2,.prompt.v1.RenderedPrompt.VariablesUsedEntryR\rvariablesUsed\x1a@\n" +
+	"\x0evariables_used\x18\x03 \x03(\v2,.prompt.v1.RenderedPrompt.VariablesUsedEntryR\rvariablesUsed\x12!\n" +
+	"\fversion_used\x18\x04 \x01(\tR\vversionUsed\x1a@\n" +
 	"\x12VariablesUsedEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01*k\n" +

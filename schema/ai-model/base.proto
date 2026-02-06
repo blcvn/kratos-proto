@@ -74,7 +74,7 @@ message AIModel {
   string provider = 3;
   string model_id = 4;
   string base_url = 5;
-  string vault_path = 6;
+
   map<string, string> config = 7;
   int64 quota_daily = 8;
   int64 quota_monthly = 9;

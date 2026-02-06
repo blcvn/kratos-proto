@@ -22,4 +22,12 @@ http:
     - selector: baagent.v1.BAAgentService.ClearMemory
       delete: /agent/memory/{session_id}
     
-    # StreamExecuteTask has no HTTP mapping (gRPC streaming only)
+    # Task Input
+    - selector: baagent.v1.BAAgentService.SubmitInput
+      post: /agent/tasks/{task_id}/input
+      body: "*"
+
+    # Stream Execution
+    - selector: baagent.v1.BAAgentService.StreamExecuteTask
+      post: /agent/execute/stream
+      body: "*"

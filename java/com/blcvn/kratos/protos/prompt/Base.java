@@ -9047,6 +9047,18 @@ public final class Base {
 
     java.lang.String getVariablesUsedOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>string version_used = 4;</code>
+     * @return The versionUsed.
+     */
+    java.lang.String getVersionUsed();
+    /**
+     * <code>string version_used = 4;</code>
+     * @return The bytes for versionUsed.
+     */
+    com.google.protobuf.ByteString
+        getVersionUsedBytes();
   }
   /**
    * Protobuf type {@code prompt.v1.RenderedPrompt}
@@ -9063,6 +9075,7 @@ public final class Base {
     private RenderedPrompt() {
       templateId_ = "";
       renderedText_ = "";
+      versionUsed_ = "";
     }
 
     @java.lang.Override
@@ -9119,6 +9132,12 @@ public final class Base {
                   VariablesUsedDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               variablesUsed_.getMutableMap().put(
                   variablesUsed__.getKey(), variablesUsed__.getValue());
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              versionUsed_ = s;
               break;
             }
             default: {
@@ -9322,6 +9341,44 @@ public final class Base {
       return map.get(key);
     }
 
+    public static final int VERSION_USED_FIELD_NUMBER = 4;
+    private volatile java.lang.Object versionUsed_;
+    /**
+     * <code>string version_used = 4;</code>
+     * @return The versionUsed.
+     */
+    @java.lang.Override
+    public java.lang.String getVersionUsed() {
+      java.lang.Object ref = versionUsed_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionUsed_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string version_used = 4;</code>
+     * @return The bytes for versionUsed.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionUsedBytes() {
+      java.lang.Object ref = versionUsed_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionUsed_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9348,6 +9405,9 @@ public final class Base {
           internalGetVariablesUsed(),
           VariablesUsedDefaultEntryHolder.defaultEntry,
           3);
+      if (!getVersionUsedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, versionUsed_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9373,6 +9433,9 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, variablesUsed__);
       }
+      if (!getVersionUsedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, versionUsed_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9394,6 +9457,8 @@ public final class Base {
           .equals(other.getRenderedText())) return false;
       if (!internalGetVariablesUsed().equals(
           other.internalGetVariablesUsed())) return false;
+      if (!getVersionUsed()
+          .equals(other.getVersionUsed())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9413,6 +9478,8 @@ public final class Base {
         hash = (37 * hash) + VARIABLES_USED_FIELD_NUMBER;
         hash = (53 * hash) + internalGetVariablesUsed().hashCode();
       }
+      hash = (37 * hash) + VERSION_USED_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionUsed().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9573,6 +9640,8 @@ public final class Base {
         renderedText_ = "";
 
         internalGetMutableVariablesUsed().clear();
+        versionUsed_ = "";
+
         return this;
       }
 
@@ -9604,6 +9673,7 @@ public final class Base {
         result.renderedText_ = renderedText_;
         result.variablesUsed_ = internalGetVariablesUsed();
         result.variablesUsed_.makeImmutable();
+        result.versionUsed_ = versionUsed_;
         onBuilt();
         return result;
       }
@@ -9662,6 +9732,10 @@ public final class Base {
         }
         internalGetMutableVariablesUsed().mergeFrom(
             other.internalGetVariablesUsed());
+        if (!other.getVersionUsed().isEmpty()) {
+          versionUsed_ = other.versionUsed_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9971,6 +10045,82 @@ public final class Base {
             .putAll(values);
         return this;
       }
+
+      private java.lang.Object versionUsed_ = "";
+      /**
+       * <code>string version_used = 4;</code>
+       * @return The versionUsed.
+       */
+      public java.lang.String getVersionUsed() {
+        java.lang.Object ref = versionUsed_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          versionUsed_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string version_used = 4;</code>
+       * @return The bytes for versionUsed.
+       */
+      public com.google.protobuf.ByteString
+          getVersionUsedBytes() {
+        java.lang.Object ref = versionUsed_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          versionUsed_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string version_used = 4;</code>
+       * @param value The versionUsed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionUsed(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        versionUsed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version_used = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersionUsed() {
+        
+        versionUsed_ = getDefaultInstance().getVersionUsed();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version_used = 4;</code>
+       * @param value The bytes for versionUsed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionUsedBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        versionUsed_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10119,20 +10269,20 @@ public final class Base {
       "gle.protobuf.Timestamp\0220\n\014completed_at\030\n" +
       " \001(\0132\032.google.protobuf.Timestamp\032.\n\014Metr" +
       "icsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001" +
-      "\"\270\001\n\016RenderedPrompt\022\023\n\013template_id\030\001 \001(\t" +
+      "\"\316\001\n\016RenderedPrompt\022\023\n\013template_id\030\001 \001(\t" +
       "\022\025\n\rrendered_text\030\002 \001(\t\022D\n\016variables_use" +
       "d\030\003 \003(\0132,.prompt.v1.RenderedPrompt.Varia" +
-      "blesUsedEntry\0324\n\022VariablesUsedEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*k\n\nResultCod" +
-      "e\022\017\n\013UNSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_" +
-      "REQUEST\020\220\003\022\016\n\tNOT_FOUND\020\224\003\022\r\n\010CONFLICT\020\231" +
-      "\003\022\r\n\010INTERNAL\020\364\003*R\n\016TemplateStatus\022\030\n\024TE" +
-      "MPLATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INAC" +
-      "TIVE\020\002\022\014\n\010ARCHIVED\020\003*B\n\013Environment\022\023\n\017E" +
-      "NV_UNSPECIFIED\020\000\022\007\n\003DEV\020\001\022\013\n\007STAGING\020\002\022\010" +
-      "\n\004PROD\020\003BP\n\036com.blcvn.kratos.protos.prom" +
-      "ptZ.github.com/blcvn/kratos-proto/go/pro" +
-      "mpt;promptb\006proto3"
+      "blesUsedEntry\022\024\n\014version_used\030\004 \001(\t\0324\n\022V" +
+      "ariablesUsedEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001*k\n\nResultCode\022\017\n\013UNSPECIFIED\020\000" +
+      "\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_REQUEST\020\220\003\022\016\n\tNOT_" +
+      "FOUND\020\224\003\022\r\n\010CONFLICT\020\231\003\022\r\n\010INTERNAL\020\364\003*R" +
+      "\n\016TemplateStatus\022\030\n\024TEMPLATE_UNSPECIFIED" +
+      "\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022\014\n\010ARCHIVED" +
+      "\020\003*B\n\013Environment\022\023\n\017ENV_UNSPECIFIED\020\000\022\007" +
+      "\n\003DEV\020\001\022\013\n\007STAGING\020\002\022\010\n\004PROD\020\003BP\n\036com.bl" +
+      "cvn.kratos.protos.promptZ.github.com/blc" +
+      "vn/kratos-proto/go/prompt;promptb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10198,7 +10348,7 @@ public final class Base {
     internal_static_prompt_v1_RenderedPrompt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_RenderedPrompt_descriptor,
-        new java.lang.String[] { "TemplateId", "RenderedText", "VariablesUsed", });
+        new java.lang.String[] { "TemplateId", "RenderedText", "VariablesUsed", "VersionUsed", });
     internal_static_prompt_v1_RenderedPrompt_VariablesUsedEntry_descriptor =
       internal_static_prompt_v1_RenderedPrompt_descriptor.getNestedTypes().get(0);
     internal_static_prompt_v1_RenderedPrompt_VariablesUsedEntry_fieldAccessorTable = new

@@ -49,6 +49,47 @@
         ]
       }
     },
+    "/agent/execute/stream": {
+      "post": {
+        "operationId": "BAAgentService_StreamExecuteTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/v1StreamExecuteTaskResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/rpcStatus"
+                }
+              },
+              "title": "Stream result of v1StreamExecuteTaskResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExecuteTaskRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BAAgentService"
+        ]
+      }
+    },
     "/agent/memory/{session_id}": {
       "get": {
         "summary": "Memory",
@@ -282,6 +323,53 @@
         ]
       }
     },
+    "/agent/tasks/{task_id}/input": {
+      "post": {
+        "operationId": "BAAgentService_SubmitInput",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/v1StreamExecuteTaskResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/rpcStatus"
+                }
+              },
+              "title": "Stream result of v1StreamExecuteTaskResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BAAgentServiceSubmitInputBody"
+            }
+          }
+        ],
+        "tags": [
+          "BAAgentService"
+        ]
+      }
+    },
     "/agent/tools": {
       "get": {
         "summary": "Tools",
@@ -357,6 +445,20 @@
     }
   },
   "definitions": {
+    "BAAgentServiceSubmitInputBody": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "input_data": {
+          "type": "string"
+        }
+      }
+    },
     "SignatureSignatureType": {
       "type": "string",
       "enum": [
@@ -468,6 +570,17 @@
         "max_iterations": {
           "type": "integer",
           "format": "int32"
+        },
+        "workflow_mode": {
+          "type": "string",
+          "title": "\"interactive\" (default) or \"pipeline\" (future)"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ReActStep"
+          }
         }
       }
     },
@@ -660,13 +773,34 @@
       },
       "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
     },
+    "v1StreamExecuteTaskResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "step": {
+          "$ref": "#/definitions/v1ReActStep"
+        },
+        "is_final": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1TaskStatus": {
       "type": "string",
       "enum": [
         "TASK_PENDING",
         "TASK_RUNNING",
         "TASK_COMPLETED",
-        "TASK_FAILED"
+        "TASK_FAILED",
+        "TASK_WAITING_FOR_INPUT"
       ],
       "default": "TASK_PENDING"
     },

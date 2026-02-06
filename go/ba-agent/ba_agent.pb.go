@@ -27,6 +27,8 @@ type ExecuteTaskPayload struct {
 	SessionId       string                 `protobuf:"bytes,2,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 	TaskDescription string                 `protobuf:"bytes,3,opt,name=task_description,json=taskDescription,proto3" json:"task_description,omitempty"`
 	MaxIterations   int32                  `protobuf:"varint,4,opt,name=max_iterations,json=maxIterations,proto3" json:"max_iterations,omitempty"`
+	WorkflowMode    string                 `protobuf:"bytes,5,opt,name=workflow_mode,json=workflowMode,proto3" json:"workflow_mode,omitempty"` // "interactive" (default) or "pipeline" (future)
+	History         []*ReActStep           `protobuf:"bytes,6,rep,name=history,proto3" json:"history,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -87,6 +89,20 @@ func (x *ExecuteTaskPayload) GetMaxIterations() int32 {
 		return x.MaxIterations
 	}
 	return 0
+}
+
+func (x *ExecuteTaskPayload) GetWorkflowMode() string {
+	if x != nil {
+		return x.WorkflowMode
+	}
+	return ""
+}
+
+func (x *ExecuteTaskPayload) GetHistory() []*ReActStep {
+	if x != nil {
+		return x.History
+	}
+	return nil
 }
 
 type ExecuteTaskRequest struct {
@@ -381,6 +397,74 @@ func (x *ClearMemoryRequest) GetSessionId() string {
 	return ""
 }
 
+type SubmitInputRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	TaskId        string                 `protobuf:"bytes,3,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	InputData     string                 `protobuf:"bytes,4,opt,name=input_data,json=inputData,proto3" json:"input_data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitInputRequest) Reset() {
+	*x = SubmitInputRequest{}
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitInputRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitInputRequest) ProtoMessage() {}
+
+func (x *SubmitInputRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitInputRequest.ProtoReflect.Descriptor instead.
+func (*SubmitInputRequest) Descriptor() ([]byte, []int) {
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *SubmitInputRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *SubmitInputRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *SubmitInputRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
+}
+
+func (x *SubmitInputRequest) GetInputData() string {
+	if x != nil {
+		return x.InputData
+	}
+	return ""
+}
+
 type ExecuteTaskResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -393,7 +477,7 @@ type ExecuteTaskResponse struct {
 
 func (x *ExecuteTaskResponse) Reset() {
 	*x = ExecuteTaskResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[6]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -405,7 +489,7 @@ func (x *ExecuteTaskResponse) String() string {
 func (*ExecuteTaskResponse) ProtoMessage() {}
 
 func (x *ExecuteTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[6]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -418,7 +502,7 @@ func (x *ExecuteTaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExecuteTaskResponse.ProtoReflect.Descriptor instead.
 func (*ExecuteTaskResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{6}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ExecuteTaskResponse) GetMetadata() *Metadata {
@@ -462,7 +546,7 @@ type StreamExecuteTaskResponse struct {
 
 func (x *StreamExecuteTaskResponse) Reset() {
 	*x = StreamExecuteTaskResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[7]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -474,7 +558,7 @@ func (x *StreamExecuteTaskResponse) String() string {
 func (*StreamExecuteTaskResponse) ProtoMessage() {}
 
 func (x *StreamExecuteTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[7]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -487,7 +571,7 @@ func (x *StreamExecuteTaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamExecuteTaskResponse.ProtoReflect.Descriptor instead.
 func (*StreamExecuteTaskResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{7}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *StreamExecuteTaskResponse) GetMetadata() *Metadata {
@@ -537,7 +621,7 @@ type GetTaskResponse struct {
 
 func (x *GetTaskResponse) Reset() {
 	*x = GetTaskResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[8]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -549,7 +633,7 @@ func (x *GetTaskResponse) String() string {
 func (*GetTaskResponse) ProtoMessage() {}
 
 func (x *GetTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[8]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -562,7 +646,7 @@ func (x *GetTaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTaskResponse.ProtoReflect.Descriptor instead.
 func (*GetTaskResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{8}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetTaskResponse) GetMetadata() *Metadata {
@@ -605,7 +689,7 @@ type ListToolsResponse struct {
 
 func (x *ListToolsResponse) Reset() {
 	*x = ListToolsResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[9]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -617,7 +701,7 @@ func (x *ListToolsResponse) String() string {
 func (*ListToolsResponse) ProtoMessage() {}
 
 func (x *ListToolsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[9]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +714,7 @@ func (x *ListToolsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListToolsResponse.ProtoReflect.Descriptor instead.
 func (*ListToolsResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{9}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListToolsResponse) GetMetadata() *Metadata {
@@ -673,7 +757,7 @@ type GetMemoryResponse struct {
 
 func (x *GetMemoryResponse) Reset() {
 	*x = GetMemoryResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[10]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -685,7 +769,7 @@ func (x *GetMemoryResponse) String() string {
 func (*GetMemoryResponse) ProtoMessage() {}
 
 func (x *GetMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[10]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -698,7 +782,7 @@ func (x *GetMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMemoryResponse.ProtoReflect.Descriptor instead.
 func (*GetMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{10}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetMemoryResponse) GetMetadata() *Metadata {
@@ -740,7 +824,7 @@ type ClearMemoryResponse struct {
 
 func (x *ClearMemoryResponse) Reset() {
 	*x = ClearMemoryResponse{}
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[11]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -752,7 +836,7 @@ func (x *ClearMemoryResponse) String() string {
 func (*ClearMemoryResponse) ProtoMessage() {}
 
 func (x *ClearMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_ba_agent_proto_msgTypes[11]
+	mi := &file_ba_agent_ba_agent_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -765,7 +849,7 @@ func (x *ClearMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClearMemoryResponse.ProtoReflect.Descriptor instead.
 func (*ClearMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{11}
+	return file_ba_agent_ba_agent_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ClearMemoryResponse) GetMetadata() *Metadata {
@@ -794,13 +878,15 @@ var File_ba_agent_ba_agent_proto protoreflect.FileDescriptor
 const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\n" +
 	"\x17ba-agent/ba_agent.proto\x12\n" +
-	"baagent.v1\x1a\x13ba-agent/base.proto\"\x9e\x01\n" +
+	"baagent.v1\x1a\x13ba-agent/base.proto\"\xf4\x01\n" +
 	"\x12ExecuteTaskPayload\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x02 \x01(\tR\tsessionId\x12)\n" +
 	"\x10task_description\x18\x03 \x01(\tR\x0ftaskDescription\x12%\n" +
-	"\x0emax_iterations\x18\x04 \x01(\x05R\rmaxIterations\"\xb5\x01\n" +
+	"\x0emax_iterations\x18\x04 \x01(\x05R\rmaxIterations\x12#\n" +
+	"\rworkflow_mode\x18\x05 \x01(\tR\fworkflowMode\x12/\n" +
+	"\ahistory\x18\x06 \x03(\v2\x15.baagent.v1.ReActStepR\ahistory\"\xb5\x01\n" +
 	"\x12ExecuteTaskRequest\x120\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x128\n" +
@@ -821,7 +907,13 @@ const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x1d\n" +
 	"\n" +
-	"session_id\x18\x03 \x01(\tR\tsessionId\"\xd3\x01\n" +
+	"session_id\x18\x03 \x01(\tR\tsessionId\"\xb3\x01\n" +
+	"\x12SubmitInputRequest\x120\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
+	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x17\n" +
+	"\atask_id\x18\x03 \x01(\tR\x06taskId\x12\x1d\n" +
+	"\n" +
+	"input_data\x18\x04 \x01(\tR\tinputData\"\xd3\x01\n" +
 	"\x13ExecuteTaskResponse\x120\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12*\n" +
@@ -851,9 +943,10 @@ const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\x13ClearMemoryResponse\x120\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12*\n" +
-	"\x06result\x18\x03 \x01(\v2\x12.baagent.v1.ResultR\x06result2\xe6\x03\n" +
+	"\x06result\x18\x03 \x01(\v2\x12.baagent.v1.ResultR\x06result2\xbe\x04\n" +
 	"\x0eBAAgentService\x12N\n" +
-	"\vExecuteTask\x12\x1e.baagent.v1.ExecuteTaskRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\x12\\\n" +
+	"\vExecuteTask\x12\x1e.baagent.v1.ExecuteTaskRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\x12V\n" +
+	"\vSubmitInput\x12\x1e.baagent.v1.SubmitInputRequest\x1a%.baagent.v1.StreamExecuteTaskResponse0\x01\x12\\\n" +
 	"\x11StreamExecuteTask\x12\x1e.baagent.v1.ExecuteTaskRequest\x1a%.baagent.v1.StreamExecuteTaskResponse0\x01\x12B\n" +
 	"\aGetTask\x12\x1a.baagent.v1.GetTaskRequest\x1a\x1b.baagent.v1.GetTaskResponse\x12H\n" +
 	"\tListTools\x12\x1c.baagent.v1.ListToolsRequest\x1a\x1d.baagent.v1.ListToolsResponse\x12H\n" +
@@ -873,7 +966,7 @@ func file_ba_agent_ba_agent_proto_rawDescGZIP() []byte {
 	return file_ba_agent_ba_agent_proto_rawDescData
 }
 
-var file_ba_agent_ba_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_ba_agent_ba_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_ba_agent_ba_agent_proto_goTypes = []any{
 	(*ExecuteTaskPayload)(nil),        // 0: baagent.v1.ExecuteTaskPayload
 	(*ExecuteTaskRequest)(nil),        // 1: baagent.v1.ExecuteTaskRequest
@@ -881,72 +974,78 @@ var file_ba_agent_ba_agent_proto_goTypes = []any{
 	(*ListToolsRequest)(nil),          // 3: baagent.v1.ListToolsRequest
 	(*GetMemoryRequest)(nil),          // 4: baagent.v1.GetMemoryRequest
 	(*ClearMemoryRequest)(nil),        // 5: baagent.v1.ClearMemoryRequest
-	(*ExecuteTaskResponse)(nil),       // 6: baagent.v1.ExecuteTaskResponse
-	(*StreamExecuteTaskResponse)(nil), // 7: baagent.v1.StreamExecuteTaskResponse
-	(*GetTaskResponse)(nil),           // 8: baagent.v1.GetTaskResponse
-	(*ListToolsResponse)(nil),         // 9: baagent.v1.ListToolsResponse
-	(*GetMemoryResponse)(nil),         // 10: baagent.v1.GetMemoryResponse
-	(*ClearMemoryResponse)(nil),       // 11: baagent.v1.ClearMemoryResponse
-	(*Metadata)(nil),                  // 12: baagent.v1.Metadata
-	(*Signature)(nil),                 // 13: baagent.v1.Signature
-	(*Result)(nil),                    // 14: baagent.v1.Result
-	(*AgentTask)(nil),                 // 15: baagent.v1.AgentTask
-	(*ReActStep)(nil),                 // 16: baagent.v1.ReActStep
-	(*Tool)(nil),                      // 17: baagent.v1.Tool
-	(*Memory)(nil),                    // 18: baagent.v1.Memory
+	(*SubmitInputRequest)(nil),        // 6: baagent.v1.SubmitInputRequest
+	(*ExecuteTaskResponse)(nil),       // 7: baagent.v1.ExecuteTaskResponse
+	(*StreamExecuteTaskResponse)(nil), // 8: baagent.v1.StreamExecuteTaskResponse
+	(*GetTaskResponse)(nil),           // 9: baagent.v1.GetTaskResponse
+	(*ListToolsResponse)(nil),         // 10: baagent.v1.ListToolsResponse
+	(*GetMemoryResponse)(nil),         // 11: baagent.v1.GetMemoryResponse
+	(*ClearMemoryResponse)(nil),       // 12: baagent.v1.ClearMemoryResponse
+	(*ReActStep)(nil),                 // 13: baagent.v1.ReActStep
+	(*Metadata)(nil),                  // 14: baagent.v1.Metadata
+	(*Signature)(nil),                 // 15: baagent.v1.Signature
+	(*Result)(nil),                    // 16: baagent.v1.Result
+	(*AgentTask)(nil),                 // 17: baagent.v1.AgentTask
+	(*Tool)(nil),                      // 18: baagent.v1.Tool
+	(*Memory)(nil),                    // 19: baagent.v1.Memory
 }
 var file_ba_agent_ba_agent_proto_depIdxs = []int32{
-	12, // 0: baagent.v1.ExecuteTaskRequest.metadata:type_name -> baagent.v1.Metadata
-	13, // 1: baagent.v1.ExecuteTaskRequest.signature:type_name -> baagent.v1.Signature
-	0,  // 2: baagent.v1.ExecuteTaskRequest.payload:type_name -> baagent.v1.ExecuteTaskPayload
-	12, // 3: baagent.v1.GetTaskRequest.metadata:type_name -> baagent.v1.Metadata
-	13, // 4: baagent.v1.GetTaskRequest.signature:type_name -> baagent.v1.Signature
-	12, // 5: baagent.v1.ListToolsRequest.metadata:type_name -> baagent.v1.Metadata
-	13, // 6: baagent.v1.ListToolsRequest.signature:type_name -> baagent.v1.Signature
-	12, // 7: baagent.v1.GetMemoryRequest.metadata:type_name -> baagent.v1.Metadata
-	13, // 8: baagent.v1.GetMemoryRequest.signature:type_name -> baagent.v1.Signature
-	12, // 9: baagent.v1.ClearMemoryRequest.metadata:type_name -> baagent.v1.Metadata
-	13, // 10: baagent.v1.ClearMemoryRequest.signature:type_name -> baagent.v1.Signature
-	12, // 11: baagent.v1.ExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 12: baagent.v1.ExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
-	14, // 13: baagent.v1.ExecuteTaskResponse.result:type_name -> baagent.v1.Result
-	15, // 14: baagent.v1.ExecuteTaskResponse.task:type_name -> baagent.v1.AgentTask
-	12, // 15: baagent.v1.StreamExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 16: baagent.v1.StreamExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
-	14, // 17: baagent.v1.StreamExecuteTaskResponse.result:type_name -> baagent.v1.Result
-	16, // 18: baagent.v1.StreamExecuteTaskResponse.step:type_name -> baagent.v1.ReActStep
-	12, // 19: baagent.v1.GetTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 20: baagent.v1.GetTaskResponse.signature:type_name -> baagent.v1.Signature
-	14, // 21: baagent.v1.GetTaskResponse.result:type_name -> baagent.v1.Result
-	15, // 22: baagent.v1.GetTaskResponse.task:type_name -> baagent.v1.AgentTask
-	12, // 23: baagent.v1.ListToolsResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 24: baagent.v1.ListToolsResponse.signature:type_name -> baagent.v1.Signature
-	14, // 25: baagent.v1.ListToolsResponse.result:type_name -> baagent.v1.Result
-	17, // 26: baagent.v1.ListToolsResponse.tools:type_name -> baagent.v1.Tool
-	12, // 27: baagent.v1.GetMemoryResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 28: baagent.v1.GetMemoryResponse.signature:type_name -> baagent.v1.Signature
-	14, // 29: baagent.v1.GetMemoryResponse.result:type_name -> baagent.v1.Result
-	18, // 30: baagent.v1.GetMemoryResponse.memory:type_name -> baagent.v1.Memory
-	12, // 31: baagent.v1.ClearMemoryResponse.metadata:type_name -> baagent.v1.Metadata
-	13, // 32: baagent.v1.ClearMemoryResponse.signature:type_name -> baagent.v1.Signature
-	14, // 33: baagent.v1.ClearMemoryResponse.result:type_name -> baagent.v1.Result
-	1,  // 34: baagent.v1.BAAgentService.ExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
-	1,  // 35: baagent.v1.BAAgentService.StreamExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
-	2,  // 36: baagent.v1.BAAgentService.GetTask:input_type -> baagent.v1.GetTaskRequest
-	3,  // 37: baagent.v1.BAAgentService.ListTools:input_type -> baagent.v1.ListToolsRequest
-	4,  // 38: baagent.v1.BAAgentService.GetMemory:input_type -> baagent.v1.GetMemoryRequest
-	5,  // 39: baagent.v1.BAAgentService.ClearMemory:input_type -> baagent.v1.ClearMemoryRequest
-	6,  // 40: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
-	7,  // 41: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
-	8,  // 42: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
-	9,  // 43: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
-	10, // 44: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
-	11, // 45: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
-	40, // [40:46] is the sub-list for method output_type
-	34, // [34:40] is the sub-list for method input_type
-	34, // [34:34] is the sub-list for extension type_name
-	34, // [34:34] is the sub-list for extension extendee
-	0,  // [0:34] is the sub-list for field type_name
+	13, // 0: baagent.v1.ExecuteTaskPayload.history:type_name -> baagent.v1.ReActStep
+	14, // 1: baagent.v1.ExecuteTaskRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 2: baagent.v1.ExecuteTaskRequest.signature:type_name -> baagent.v1.Signature
+	0,  // 3: baagent.v1.ExecuteTaskRequest.payload:type_name -> baagent.v1.ExecuteTaskPayload
+	14, // 4: baagent.v1.GetTaskRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 5: baagent.v1.GetTaskRequest.signature:type_name -> baagent.v1.Signature
+	14, // 6: baagent.v1.ListToolsRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 7: baagent.v1.ListToolsRequest.signature:type_name -> baagent.v1.Signature
+	14, // 8: baagent.v1.GetMemoryRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 9: baagent.v1.GetMemoryRequest.signature:type_name -> baagent.v1.Signature
+	14, // 10: baagent.v1.ClearMemoryRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 11: baagent.v1.ClearMemoryRequest.signature:type_name -> baagent.v1.Signature
+	14, // 12: baagent.v1.SubmitInputRequest.metadata:type_name -> baagent.v1.Metadata
+	15, // 13: baagent.v1.SubmitInputRequest.signature:type_name -> baagent.v1.Signature
+	14, // 14: baagent.v1.ExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 15: baagent.v1.ExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
+	16, // 16: baagent.v1.ExecuteTaskResponse.result:type_name -> baagent.v1.Result
+	17, // 17: baagent.v1.ExecuteTaskResponse.task:type_name -> baagent.v1.AgentTask
+	14, // 18: baagent.v1.StreamExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 19: baagent.v1.StreamExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
+	16, // 20: baagent.v1.StreamExecuteTaskResponse.result:type_name -> baagent.v1.Result
+	13, // 21: baagent.v1.StreamExecuteTaskResponse.step:type_name -> baagent.v1.ReActStep
+	14, // 22: baagent.v1.GetTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 23: baagent.v1.GetTaskResponse.signature:type_name -> baagent.v1.Signature
+	16, // 24: baagent.v1.GetTaskResponse.result:type_name -> baagent.v1.Result
+	17, // 25: baagent.v1.GetTaskResponse.task:type_name -> baagent.v1.AgentTask
+	14, // 26: baagent.v1.ListToolsResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 27: baagent.v1.ListToolsResponse.signature:type_name -> baagent.v1.Signature
+	16, // 28: baagent.v1.ListToolsResponse.result:type_name -> baagent.v1.Result
+	18, // 29: baagent.v1.ListToolsResponse.tools:type_name -> baagent.v1.Tool
+	14, // 30: baagent.v1.GetMemoryResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 31: baagent.v1.GetMemoryResponse.signature:type_name -> baagent.v1.Signature
+	16, // 32: baagent.v1.GetMemoryResponse.result:type_name -> baagent.v1.Result
+	19, // 33: baagent.v1.GetMemoryResponse.memory:type_name -> baagent.v1.Memory
+	14, // 34: baagent.v1.ClearMemoryResponse.metadata:type_name -> baagent.v1.Metadata
+	15, // 35: baagent.v1.ClearMemoryResponse.signature:type_name -> baagent.v1.Signature
+	16, // 36: baagent.v1.ClearMemoryResponse.result:type_name -> baagent.v1.Result
+	1,  // 37: baagent.v1.BAAgentService.ExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
+	6,  // 38: baagent.v1.BAAgentService.SubmitInput:input_type -> baagent.v1.SubmitInputRequest
+	1,  // 39: baagent.v1.BAAgentService.StreamExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
+	2,  // 40: baagent.v1.BAAgentService.GetTask:input_type -> baagent.v1.GetTaskRequest
+	3,  // 41: baagent.v1.BAAgentService.ListTools:input_type -> baagent.v1.ListToolsRequest
+	4,  // 42: baagent.v1.BAAgentService.GetMemory:input_type -> baagent.v1.GetMemoryRequest
+	5,  // 43: baagent.v1.BAAgentService.ClearMemory:input_type -> baagent.v1.ClearMemoryRequest
+	7,  // 44: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
+	8,  // 45: baagent.v1.BAAgentService.SubmitInput:output_type -> baagent.v1.StreamExecuteTaskResponse
+	8,  // 46: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
+	9,  // 47: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
+	10, // 48: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
+	11, // 49: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
+	12, // 50: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
+	44, // [44:51] is the sub-list for method output_type
+	37, // [37:44] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_ba_agent_ba_agent_proto_init() }
@@ -961,7 +1060,7 @@ func file_ba_agent_ba_agent_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ba_agent_ba_agent_proto_rawDesc), len(file_ba_agent_ba_agent_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   12,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

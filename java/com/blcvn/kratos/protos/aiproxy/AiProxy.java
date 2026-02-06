@@ -43,6 +43,30 @@ public final class AiProxy {
         getPromptBytes();
 
     /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> 
+        getMessagesList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index);
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    int getMessagesCount();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+        getMessagesOrBuilderList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+        int index);
+
+    /**
      * <code>int32 max_tokens = 3;</code>
      * @return The maxTokens.
      */
@@ -106,6 +130,7 @@ public final class AiProxy {
     private CompletePayload() {
       modelId_ = "";
       prompt_ = "";
+      messages_ = java.util.Collections.emptyList();
       stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -169,9 +194,9 @@ public final class AiProxy {
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 stop_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               stop_.add(s);
               break;
@@ -179,6 +204,15 @@ public final class AiProxy {
             case 56: {
 
               stream_ = input.readBool();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                messages_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              messages_.add(
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -196,8 +230,11 @@ public final class AiProxy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           stop_ = stop_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          messages_ = java.util.Collections.unmodifiableList(messages_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -290,6 +327,46 @@ public final class AiProxy {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MESSAGES_FIELD_NUMBER = 8;
+    private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> messages_;
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> getMessagesList() {
+      return messages_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+        getMessagesOrBuilderList() {
+      return messages_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public int getMessagesCount() {
+      return messages_.size();
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index) {
+      return messages_.get(index);
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+        int index) {
+      return messages_.get(index);
     }
 
     public static final int MAX_TOKENS_FIELD_NUMBER = 3;
@@ -406,6 +483,9 @@ public final class AiProxy {
       if (stream_ != false) {
         output.writeBool(7, stream_);
       }
+      for (int i = 0; i < messages_.size(); i++) {
+        output.writeMessage(8, messages_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -445,6 +525,10 @@ public final class AiProxy {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, stream_);
       }
+      for (int i = 0; i < messages_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, messages_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -464,6 +548,8 @@ public final class AiProxy {
           .equals(other.getModelId())) return false;
       if (!getPrompt()
           .equals(other.getPrompt())) return false;
+      if (!getMessagesList()
+          .equals(other.getMessagesList())) return false;
       if (getMaxTokens()
           != other.getMaxTokens()) return false;
       if (java.lang.Double.doubleToLongBits(getTemperature())
@@ -491,6 +577,10 @@ public final class AiProxy {
       hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + PROMPT_FIELD_NUMBER;
       hash = (53 * hash) + getPrompt().hashCode();
+      if (getMessagesCount() > 0) {
+        hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + getMessagesList().hashCode();
+      }
       hash = (37 * hash) + MAX_TOKENS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxTokens();
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
@@ -634,6 +724,7 @@ public final class AiProxy {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getMessagesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -643,6 +734,12 @@ public final class AiProxy {
 
         prompt_ = "";
 
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          messagesBuilder_.clear();
+        }
         maxTokens_ = 0;
 
         temperature_ = 0D;
@@ -650,7 +747,7 @@ public final class AiProxy {
         topP_ = 0D;
 
         stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         stream_ = false;
 
         return this;
@@ -682,12 +779,21 @@ public final class AiProxy {
         int from_bitField0_ = bitField0_;
         result.modelId_ = modelId_;
         result.prompt_ = prompt_;
+        if (messagesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            messages_ = java.util.Collections.unmodifiableList(messages_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.messages_ = messages_;
+        } else {
+          result.messages_ = messagesBuilder_.build();
+        }
         result.maxTokens_ = maxTokens_;
         result.temperature_ = temperature_;
         result.topP_ = topP_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           stop_ = stop_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.stop_ = stop_;
         result.stream_ = stream_;
@@ -747,6 +853,32 @@ public final class AiProxy {
           prompt_ = other.prompt_;
           onChanged();
         }
+        if (messagesBuilder_ == null) {
+          if (!other.messages_.isEmpty()) {
+            if (messages_.isEmpty()) {
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMessagesIsMutable();
+              messages_.addAll(other.messages_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.messages_.isEmpty()) {
+            if (messagesBuilder_.isEmpty()) {
+              messagesBuilder_.dispose();
+              messagesBuilder_ = null;
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              messagesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMessagesFieldBuilder() : null;
+            } else {
+              messagesBuilder_.addAllMessages(other.messages_);
+            }
+          }
+        }
         if (other.getMaxTokens() != 0) {
           setMaxTokens(other.getMaxTokens());
         }
@@ -759,7 +891,7 @@ public final class AiProxy {
         if (!other.stop_.isEmpty()) {
           if (stop_.isEmpty()) {
             stop_ = other.stop_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStopIsMutable();
             stop_.addAll(other.stop_);
@@ -951,6 +1083,246 @@ public final class AiProxy {
         return this;
       }
 
+      private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> messages_ =
+        java.util.Collections.emptyList();
+      private void ensureMessagesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          messages_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage>(messages_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> messagesBuilder_;
+
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> getMessagesList() {
+        if (messagesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(messages_);
+        } else {
+          return messagesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public int getMessagesCount() {
+        if (messagesBuilder_ == null) {
+          return messages_.size();
+        } else {
+          return messagesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getMessages(int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);
+        } else {
+          return messagesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder setMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.set(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder setMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addMessages(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder addAllMessages(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessage> values) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, messages_);
+          onChanged();
+        } else {
+          messagesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder clearMessages() {
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          messagesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public Builder removeMessages(int index) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.remove(index);
+          onChanged();
+        } else {
+          messagesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder getMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder getMessagesOrBuilder(
+          int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);  } else {
+          return messagesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+           getMessagesOrBuilderList() {
+        if (messagesBuilder_ != null) {
+          return messagesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(messages_);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder addMessagesBuilder() {
+        return getMessagesFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder addMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessage messages = 8;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder> 
+           getMessagesBuilderList() {
+        return getMessagesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder> 
+          getMessagesFieldBuilder() {
+        if (messagesBuilder_ == null) {
+          messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ChatMessage, com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessageOrBuilder>(
+                  messages_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          messages_ = null;
+        }
+        return messagesBuilder_;
+      }
+
       private int maxTokens_ ;
       /**
        * <code>int32 max_tokens = 3;</code>
@@ -1046,9 +1418,9 @@ public final class AiProxy {
 
       private com.google.protobuf.LazyStringList stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureStopIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           stop_ = new com.google.protobuf.LazyStringArrayList(stop_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -1133,7 +1505,7 @@ public final class AiProxy {
        */
       public Builder clearStop() {
         stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -9001,49 +9373,50 @@ public final class AiProxy {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ai-proxy/ai_proxy.proto\022\naiproxy.v1\032\023a" +
-      "i-proxy/base.proto\"\211\001\n\017CompletePayload\022\020" +
-      "\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030\002 \001(\t\022\022\n\nmax_" +
-      "tokens\030\003 \001(\005\022\023\n\013temperature\030\004 \001(\001\022\r\n\005top" +
-      "_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022\016\n\006stream\030\007 \001(\010\"\221" +
-      "\001\n\017CompleteRequest\022&\n\010metadata\030\001 \001(\0132\024.a" +
-      "iproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
-      "aiproxy.v1.Signature\022,\n\007payload\030\003 \001(\0132\033." +
-      "aiproxy.v1.CompletePayload\"f\n\022HealthChec" +
-      "kRequest\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1." +
-      "Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1" +
-      ".Signature\"l\n\030GetProviderStatusRequest\022&" +
-      "\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metadata\022(" +
-      "\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Signature" +
-      "\"\274\001\n\020CompleteResponse\022&\n\010metadata\030\001 \001(\0132" +
+      "i-proxy/base.proto\"\264\001\n\017CompletePayload\022\020" +
+      "\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030\002 \001(\t\022)\n\010mess" +
+      "ages\030\010 \003(\0132\027.aiproxy.v1.ChatMessage\022\022\n\nm" +
+      "ax_tokens\030\003 \001(\005\022\023\n\013temperature\030\004 \001(\001\022\r\n\005" +
+      "top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022\016\n\006stream\030\007 \001(" +
+      "\010\"\221\001\n\017CompleteRequest\022&\n\010metadata\030\001 \001(\0132" +
+      "\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\013" +
+      "2\025.aiproxy.v1.Signature\022,\n\007payload\030\003 \001(\013" +
+      "2\033.aiproxy.v1.CompletePayload\"f\n\022HealthC" +
+      "heckRequest\022&\n\010metadata\030\001 \001(\0132\024.aiproxy." +
+      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy" +
+      ".v1.Signature\"l\n\030GetProviderStatusReques" +
+      "t\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metadat" +
+      "a\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Signat" +
+      "ure\"\274\001\n\020CompleteResponse\022&\n\010metadata\030\001 \001" +
+      "(\0132\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 " +
+      "\001(\0132\025.aiproxy.v1.Signature\022\"\n\006result\030\003 \001" +
+      "(\0132\022.aiproxy.v1.Result\0222\n\ncompletion\030\004 \001" +
+      "(\0132\036.aiproxy.v1.CompletionResponse\"\272\001\n\026S" +
+      "treamCompleteResponse\022&\n\010metadata\030\001 \001(\0132" +
       "\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\013" +
       "2\025.aiproxy.v1.Signature\022\"\n\006result\030\003 \001(\0132" +
-      "\022.aiproxy.v1.Result\0222\n\ncompletion\030\004 \001(\0132" +
-      "\036.aiproxy.v1.CompletionResponse\"\272\001\n\026Stre" +
-      "amCompleteResponse\022&\n\010metadata\030\001 \001(\0132\024.a" +
-      "iproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
-      "aiproxy.v1.Signature\022\"\n\006result\030\003 \001(\0132\022.a" +
-      "iproxy.v1.Result\022*\n\005chunk\030\004 \001(\0132\033.aiprox" +
-      "y.v1.CompletionChunk\"\233\001\n\023HealthCheckResp" +
-      "onse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Meta" +
-      "data\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Sig" +
-      "nature\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1.Resu" +
-      "lt\022\016\n\006status\030\004 \001(\t\"\300\001\n\031GetProviderStatus" +
-      "Response\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1." +
-      "Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1" +
-      ".Signature\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1." +
-      "Result\022-\n\tproviders\030\004 \003(\0132\032.aiproxy.v1.P" +
-      "roviderHealth2\336\002\n\016AIProxyService\022E\n\010Comp" +
-      "lete\022\033.aiproxy.v1.CompleteRequest\032\034.aipr" +
-      "oxy.v1.CompleteResponse\022S\n\016StreamComplet" +
-      "e\022\033.aiproxy.v1.CompleteRequest\032\".aiproxy" +
-      ".v1.StreamCompleteResponse0\001\022N\n\013HealthCh" +
-      "eck\022\036.aiproxy.v1.HealthCheckRequest\032\037.ai" +
-      "proxy.v1.HealthCheckResponse\022`\n\021GetProvi" +
-      "derStatus\022$.aiproxy.v1.GetProviderStatus" +
-      "Request\032%.aiproxy.v1.GetProviderStatusRe" +
-      "sponseBT\n\037com.blcvn.kratos.protos.aiprox" +
-      "yZ1github.com/blcvn/kratos-proto/go/ai-p" +
-      "roxy;aiproxyb\006proto3"
+      "\022.aiproxy.v1.Result\022*\n\005chunk\030\004 \001(\0132\033.aip" +
+      "roxy.v1.CompletionChunk\"\233\001\n\023HealthCheckR" +
+      "esponse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.M" +
+      "etadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1." +
+      "Signature\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1.R" +
+      "esult\022\016\n\006status\030\004 \001(\t\"\300\001\n\031GetProviderSta" +
+      "tusResponse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy." +
+      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy" +
+      ".v1.Signature\022\"\n\006result\030\003 \001(\0132\022.aiproxy." +
+      "v1.Result\022-\n\tproviders\030\004 \003(\0132\032.aiproxy.v" +
+      "1.ProviderHealth2\336\002\n\016AIProxyService\022E\n\010C" +
+      "omplete\022\033.aiproxy.v1.CompleteRequest\032\034.a" +
+      "iproxy.v1.CompleteResponse\022S\n\016StreamComp" +
+      "lete\022\033.aiproxy.v1.CompleteRequest\032\".aipr" +
+      "oxy.v1.StreamCompleteResponse0\001\022N\n\013Healt" +
+      "hCheck\022\036.aiproxy.v1.HealthCheckRequest\032\037" +
+      ".aiproxy.v1.HealthCheckResponse\022`\n\021GetPr" +
+      "oviderStatus\022$.aiproxy.v1.GetProviderSta" +
+      "tusRequest\032%.aiproxy.v1.GetProviderStatu" +
+      "sResponseBT\n\037com.blcvn.kratos.protos.aip" +
+      "roxyZ1github.com/blcvn/kratos-proto/go/a" +
+      "i-proxy;aiproxyb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9055,7 +9428,7 @@ public final class AiProxy {
     internal_static_aiproxy_v1_CompletePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletePayload_descriptor,
-        new java.lang.String[] { "ModelId", "Prompt", "MaxTokens", "Temperature", "TopP", "Stop", "Stream", });
+        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Stream", });
     internal_static_aiproxy_v1_CompleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_aiproxy_v1_CompleteRequest_fieldAccessorTable = new

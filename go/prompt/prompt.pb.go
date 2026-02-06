@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Common Response
 type ResponseEmpty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -81,6 +82,7 @@ func (x *ResponseEmpty) GetResult() *Result {
 	return nil
 }
 
+// Create Template
 type CreateTemplatePayload struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
@@ -165,194 +167,6 @@ func (x *CreateTemplatePayload) GetMetadata() map[string]string {
 	return nil
 }
 
-type UpdateTemplatePayload struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Template      string                 `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
-	Variables     []*Variable            `protobuf:"bytes,3,rep,name=variables,proto3" json:"variables,omitempty"`
-	Status        TemplateStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=prompt.v1.TemplateStatus" json:"status,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UpdateTemplatePayload) Reset() {
-	*x = UpdateTemplatePayload{}
-	mi := &file_prompt_prompt_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UpdateTemplatePayload) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateTemplatePayload) ProtoMessage() {}
-
-func (x *UpdateTemplatePayload) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateTemplatePayload.ProtoReflect.Descriptor instead.
-func (*UpdateTemplatePayload) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *UpdateTemplatePayload) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *UpdateTemplatePayload) GetTemplate() string {
-	if x != nil {
-		return x.Template
-	}
-	return ""
-}
-
-func (x *UpdateTemplatePayload) GetVariables() []*Variable {
-	if x != nil {
-		return x.Variables
-	}
-	return nil
-}
-
-func (x *UpdateTemplatePayload) GetStatus() TemplateStatus {
-	if x != nil {
-		return x.Status
-	}
-	return TemplateStatus_TEMPLATE_UNSPECIFIED
-}
-
-type RenderTemplatePayload struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TemplateId    string                 `protobuf:"bytes,1,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
-	Variables     map[string]string      `protobuf:"bytes,2,rep,name=variables,proto3" json:"variables,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *RenderTemplatePayload) Reset() {
-	*x = RenderTemplatePayload{}
-	mi := &file_prompt_prompt_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RenderTemplatePayload) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RenderTemplatePayload) ProtoMessage() {}
-
-func (x *RenderTemplatePayload) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RenderTemplatePayload.ProtoReflect.Descriptor instead.
-func (*RenderTemplatePayload) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *RenderTemplatePayload) GetTemplateId() string {
-	if x != nil {
-		return x.TemplateId
-	}
-	return ""
-}
-
-func (x *RenderTemplatePayload) GetVariables() map[string]string {
-	if x != nil {
-		return x.Variables
-	}
-	return nil
-}
-
-type CreateExperimentPayload struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	TemplateAId   string                 `protobuf:"bytes,2,opt,name=template_a_id,json=templateAId,proto3" json:"template_a_id,omitempty"`
-	TemplateBId   string                 `protobuf:"bytes,3,opt,name=template_b_id,json=templateBId,proto3" json:"template_b_id,omitempty"`
-	TrafficSplit  int32                  `protobuf:"varint,4,opt,name=traffic_split,json=trafficSplit,proto3" json:"traffic_split,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateExperimentPayload) Reset() {
-	*x = CreateExperimentPayload{}
-	mi := &file_prompt_prompt_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateExperimentPayload) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateExperimentPayload) ProtoMessage() {}
-
-func (x *CreateExperimentPayload) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateExperimentPayload.ProtoReflect.Descriptor instead.
-func (*CreateExperimentPayload) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *CreateExperimentPayload) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *CreateExperimentPayload) GetTemplateAId() string {
-	if x != nil {
-		return x.TemplateAId
-	}
-	return ""
-}
-
-func (x *CreateExperimentPayload) GetTemplateBId() string {
-	if x != nil {
-		return x.TemplateBId
-	}
-	return ""
-}
-
-func (x *CreateExperimentPayload) GetTrafficSplit() int32 {
-	if x != nil {
-		return x.TrafficSplit
-	}
-	return 0
-}
-
 type CreateTemplateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -364,7 +178,7 @@ type CreateTemplateRequest struct {
 
 func (x *CreateTemplateRequest) Reset() {
 	*x = CreateTemplateRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[5]
+	mi := &file_prompt_prompt_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -376,7 +190,7 @@ func (x *CreateTemplateRequest) String() string {
 func (*CreateTemplateRequest) ProtoMessage() {}
 
 func (x *CreateTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[5]
+	mi := &file_prompt_prompt_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -389,7 +203,7 @@ func (x *CreateTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTemplateRequest.ProtoReflect.Descriptor instead.
 func (*CreateTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{5}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateTemplateRequest) GetMetadata() *Metadata {
@@ -413,6 +227,75 @@ func (x *CreateTemplateRequest) GetPayload() *CreateTemplatePayload {
 	return nil
 }
 
+type CreateTemplateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Template      *PromptTemplate        `protobuf:"bytes,4,opt,name=template,proto3" json:"template,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTemplateResponse) Reset() {
+	*x = CreateTemplateResponse{}
+	mi := &file_prompt_prompt_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTemplateResponse) ProtoMessage() {}
+
+func (x *CreateTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTemplateResponse.ProtoReflect.Descriptor instead.
+func (*CreateTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CreateTemplateResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *CreateTemplateResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *CreateTemplateResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *CreateTemplateResponse) GetTemplate() *PromptTemplate {
+	if x != nil {
+		return x.Template
+	}
+	return nil
+}
+
+// Get Template
 type GetTemplateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -424,7 +307,7 @@ type GetTemplateRequest struct {
 
 func (x *GetTemplateRequest) Reset() {
 	*x = GetTemplateRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[6]
+	mi := &file_prompt_prompt_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -436,7 +319,7 @@ func (x *GetTemplateRequest) String() string {
 func (*GetTemplateRequest) ProtoMessage() {}
 
 func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[6]
+	mi := &file_prompt_prompt_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -449,7 +332,7 @@ func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTemplateRequest.ProtoReflect.Descriptor instead.
 func (*GetTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{6}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetTemplateRequest) GetMetadata() *Metadata {
@@ -473,6 +356,75 @@ func (x *GetTemplateRequest) GetId() string {
 	return ""
 }
 
+type GetTemplateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Template      *PromptTemplate        `protobuf:"bytes,4,opt,name=template,proto3" json:"template,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTemplateResponse) Reset() {
+	*x = GetTemplateResponse{}
+	mi := &file_prompt_prompt_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTemplateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTemplateResponse) ProtoMessage() {}
+
+func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTemplateResponse.ProtoReflect.Descriptor instead.
+func (*GetTemplateResponse) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetTemplateResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetTemplateResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *GetTemplateResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *GetTemplateResponse) GetTemplate() *PromptTemplate {
+	if x != nil {
+		return x.Template
+	}
+	return nil
+}
+
+// List Templates
 type ListTemplatesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -487,7 +439,7 @@ type ListTemplatesRequest struct {
 
 func (x *ListTemplatesRequest) Reset() {
 	*x = ListTemplatesRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[7]
+	mi := &file_prompt_prompt_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -499,7 +451,7 @@ func (x *ListTemplatesRequest) String() string {
 func (*ListTemplatesRequest) ProtoMessage() {}
 
 func (x *ListTemplatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[7]
+	mi := &file_prompt_prompt_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -512,7 +464,7 @@ func (x *ListTemplatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTemplatesRequest.ProtoReflect.Descriptor instead.
 func (*ListTemplatesRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{7}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ListTemplatesRequest) GetMetadata() *Metadata {
@@ -557,510 +509,6 @@ func (x *ListTemplatesRequest) GetPageSize() int32 {
 	return 0
 }
 
-type UpdateTemplateRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Payload       *UpdateTemplatePayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UpdateTemplateRequest) Reset() {
-	*x = UpdateTemplateRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UpdateTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateTemplateRequest) ProtoMessage() {}
-
-func (x *UpdateTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateTemplateRequest.ProtoReflect.Descriptor instead.
-func (*UpdateTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *UpdateTemplateRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *UpdateTemplateRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *UpdateTemplateRequest) GetPayload() *UpdateTemplatePayload {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
-type DeleteTemplateRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteTemplateRequest) Reset() {
-	*x = DeleteTemplateRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[9]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteTemplateRequest) ProtoMessage() {}
-
-func (x *DeleteTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[9]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteTemplateRequest.ProtoReflect.Descriptor instead.
-func (*DeleteTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *DeleteTemplateRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *DeleteTemplateRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *DeleteTemplateRequest) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-type RenderTemplateRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Payload       *RenderTemplatePayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *RenderTemplateRequest) Reset() {
-	*x = RenderTemplateRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[10]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RenderTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RenderTemplateRequest) ProtoMessage() {}
-
-func (x *RenderTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[10]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RenderTemplateRequest.ProtoReflect.Descriptor instead.
-func (*RenderTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *RenderTemplateRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *RenderTemplateRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *RenderTemplateRequest) GetPayload() *RenderTemplatePayload {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
-type CreateExperimentRequest struct {
-	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Metadata      *Metadata                `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature               `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Payload       *CreateExperimentPayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateExperimentRequest) Reset() {
-	*x = CreateExperimentRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateExperimentRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateExperimentRequest) ProtoMessage() {}
-
-func (x *CreateExperimentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateExperimentRequest.ProtoReflect.Descriptor instead.
-func (*CreateExperimentRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *CreateExperimentRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *CreateExperimentRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *CreateExperimentRequest) GetPayload() *CreateExperimentPayload {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
-type GetExperimentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetExperimentRequest) Reset() {
-	*x = GetExperimentRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetExperimentRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetExperimentRequest) ProtoMessage() {}
-
-func (x *GetExperimentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetExperimentRequest.ProtoReflect.Descriptor instead.
-func (*GetExperimentRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *GetExperimentRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *GetExperimentRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *GetExperimentRequest) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-type CompleteExperimentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
-	WinnerId      string                 `protobuf:"bytes,4,opt,name=winner_id,json=winnerId,proto3" json:"winner_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CompleteExperimentRequest) Reset() {
-	*x = CompleteExperimentRequest{}
-	mi := &file_prompt_prompt_proto_msgTypes[13]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CompleteExperimentRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CompleteExperimentRequest) ProtoMessage() {}
-
-func (x *CompleteExperimentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[13]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CompleteExperimentRequest.ProtoReflect.Descriptor instead.
-func (*CompleteExperimentRequest) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *CompleteExperimentRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *CompleteExperimentRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *CompleteExperimentRequest) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *CompleteExperimentRequest) GetWinnerId() string {
-	if x != nil {
-		return x.WinnerId
-	}
-	return ""
-}
-
-type CreateTemplateResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Template      *PromptTemplate        `protobuf:"bytes,4,opt,name=template,proto3" json:"template,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateTemplateResponse) Reset() {
-	*x = CreateTemplateResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[14]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateTemplateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateTemplateResponse) ProtoMessage() {}
-
-func (x *CreateTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[14]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateTemplateResponse.ProtoReflect.Descriptor instead.
-func (*CreateTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *CreateTemplateResponse) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *CreateTemplateResponse) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *CreateTemplateResponse) GetResult() *Result {
-	if x != nil {
-		return x.Result
-	}
-	return nil
-}
-
-func (x *CreateTemplateResponse) GetTemplate() *PromptTemplate {
-	if x != nil {
-		return x.Template
-	}
-	return nil
-}
-
-type GetTemplateResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Template      *PromptTemplate        `protobuf:"bytes,4,opt,name=template,proto3" json:"template,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetTemplateResponse) Reset() {
-	*x = GetTemplateResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[15]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetTemplateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetTemplateResponse) ProtoMessage() {}
-
-func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[15]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetTemplateResponse.ProtoReflect.Descriptor instead.
-func (*GetTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *GetTemplateResponse) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *GetTemplateResponse) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *GetTemplateResponse) GetResult() *Result {
-	if x != nil {
-		return x.Result
-	}
-	return nil
-}
-
-func (x *GetTemplateResponse) GetTemplate() *PromptTemplate {
-	if x != nil {
-		return x.Template
-	}
-	return nil
-}
-
 type ListTemplatesResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -1074,7 +522,7 @@ type ListTemplatesResponse struct {
 
 func (x *ListTemplatesResponse) Reset() {
 	*x = ListTemplatesResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[16]
+	mi := &file_prompt_prompt_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1086,7 +534,7 @@ func (x *ListTemplatesResponse) String() string {
 func (*ListTemplatesResponse) ProtoMessage() {}
 
 func (x *ListTemplatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[16]
+	mi := &file_prompt_prompt_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1099,7 +547,7 @@ func (x *ListTemplatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTemplatesResponse.ProtoReflect.Descriptor instead.
 func (*ListTemplatesResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{16}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListTemplatesResponse) GetMetadata() *Metadata {
@@ -1137,19 +585,148 @@ func (x *ListTemplatesResponse) GetTotal() int32 {
 	return 0
 }
 
+// Update Template
+type UpdateTemplatePayload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Template      string                 `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
+	Variables     []*Variable            `protobuf:"bytes,3,rep,name=variables,proto3" json:"variables,omitempty"`
+	Status        TemplateStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=prompt.v1.TemplateStatus" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateTemplatePayload) Reset() {
+	*x = UpdateTemplatePayload{}
+	mi := &file_prompt_prompt_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateTemplatePayload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateTemplatePayload) ProtoMessage() {}
+
+func (x *UpdateTemplatePayload) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateTemplatePayload.ProtoReflect.Descriptor instead.
+func (*UpdateTemplatePayload) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateTemplatePayload) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateTemplatePayload) GetTemplate() string {
+	if x != nil {
+		return x.Template
+	}
+	return ""
+}
+
+func (x *UpdateTemplatePayload) GetVariables() []*Variable {
+	if x != nil {
+		return x.Variables
+	}
+	return nil
+}
+
+func (x *UpdateTemplatePayload) GetStatus() TemplateStatus {
+	if x != nil {
+		return x.Status
+	}
+	return TemplateStatus_TEMPLATE_UNSPECIFIED
+}
+
+type UpdateTemplateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Payload       *UpdateTemplatePayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateTemplateRequest) Reset() {
+	*x = UpdateTemplateRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateTemplateRequest) ProtoMessage() {}
+
+func (x *UpdateTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateTemplateRequest.ProtoReflect.Descriptor instead.
+func (*UpdateTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *UpdateTemplateRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *UpdateTemplateRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *UpdateTemplateRequest) GetPayload() *UpdateTemplatePayload {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
 type UpdateTemplateResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
 	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Template      *PromptTemplate        `protobuf:"bytes,4,opt,name=template,proto3" json:"template,omitempty"`
+	Model         *PromptTemplate        `protobuf:"bytes,4,opt,name=model,proto3" json:"model,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UpdateTemplateResponse) Reset() {
 	*x = UpdateTemplateResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[17]
+	mi := &file_prompt_prompt_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1161,7 +738,7 @@ func (x *UpdateTemplateResponse) String() string {
 func (*UpdateTemplateResponse) ProtoMessage() {}
 
 func (x *UpdateTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[17]
+	mi := &file_prompt_prompt_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1174,7 +751,7 @@ func (x *UpdateTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTemplateResponse.ProtoReflect.Descriptor instead.
 func (*UpdateTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{17}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateTemplateResponse) GetMetadata() *Metadata {
@@ -1198,9 +775,183 @@ func (x *UpdateTemplateResponse) GetResult() *Result {
 	return nil
 }
 
-func (x *UpdateTemplateResponse) GetTemplate() *PromptTemplate {
+func (x *UpdateTemplateResponse) GetModel() *PromptTemplate {
 	if x != nil {
-		return x.Template
+		return x.Model
+	}
+	return nil
+}
+
+// Delete Template
+type DeleteTemplateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTemplateRequest) Reset() {
+	*x = DeleteTemplateRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTemplateRequest) ProtoMessage() {}
+
+func (x *DeleteTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTemplateRequest.ProtoReflect.Descriptor instead.
+func (*DeleteTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DeleteTemplateRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *DeleteTemplateRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *DeleteTemplateRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+// Render Template
+type RenderTemplatePayload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TemplateId    string                 `protobuf:"bytes,1,opt,name=template_id,json=templateId,proto3" json:"template_id,omitempty"`
+	Variables     map[string]string      `protobuf:"bytes,2,rep,name=variables,proto3" json:"variables,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenderTemplatePayload) Reset() {
+	*x = RenderTemplatePayload{}
+	mi := &file_prompt_prompt_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenderTemplatePayload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenderTemplatePayload) ProtoMessage() {}
+
+func (x *RenderTemplatePayload) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenderTemplatePayload.ProtoReflect.Descriptor instead.
+func (*RenderTemplatePayload) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RenderTemplatePayload) GetTemplateId() string {
+	if x != nil {
+		return x.TemplateId
+	}
+	return ""
+}
+
+func (x *RenderTemplatePayload) GetVariables() map[string]string {
+	if x != nil {
+		return x.Variables
+	}
+	return nil
+}
+
+type RenderTemplateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Payload       *RenderTemplatePayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenderTemplateRequest) Reset() {
+	*x = RenderTemplateRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenderTemplateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenderTemplateRequest) ProtoMessage() {}
+
+func (x *RenderTemplateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenderTemplateRequest.ProtoReflect.Descriptor instead.
+func (*RenderTemplateRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *RenderTemplateRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *RenderTemplateRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *RenderTemplateRequest) GetPayload() *RenderTemplatePayload {
+	if x != nil {
+		return x.Payload
 	}
 	return nil
 }
@@ -1217,7 +968,7 @@ type RenderTemplateResponse struct {
 
 func (x *RenderTemplateResponse) Reset() {
 	*x = RenderTemplateResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[18]
+	mi := &file_prompt_prompt_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1229,7 +980,7 @@ func (x *RenderTemplateResponse) String() string {
 func (*RenderTemplateResponse) ProtoMessage() {}
 
 func (x *RenderTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[18]
+	mi := &file_prompt_prompt_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1242,7 +993,7 @@ func (x *RenderTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenderTemplateResponse.ProtoReflect.Descriptor instead.
 func (*RenderTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{18}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RenderTemplateResponse) GetMetadata() *Metadata {
@@ -1273,6 +1024,135 @@ func (x *RenderTemplateResponse) GetRendered() *RenderedPrompt {
 	return nil
 }
 
+// Create Experiment
+type CreateExperimentPayload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	TemplateAId   string                 `protobuf:"bytes,2,opt,name=template_a_id,json=templateAId,proto3" json:"template_a_id,omitempty"`
+	TemplateBId   string                 `protobuf:"bytes,3,opt,name=template_b_id,json=templateBId,proto3" json:"template_b_id,omitempty"`
+	TrafficSplit  int32                  `protobuf:"varint,4,opt,name=traffic_split,json=trafficSplit,proto3" json:"traffic_split,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateExperimentPayload) Reset() {
+	*x = CreateExperimentPayload{}
+	mi := &file_prompt_prompt_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateExperimentPayload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateExperimentPayload) ProtoMessage() {}
+
+func (x *CreateExperimentPayload) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateExperimentPayload.ProtoReflect.Descriptor instead.
+func (*CreateExperimentPayload) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *CreateExperimentPayload) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateExperimentPayload) GetTemplateAId() string {
+	if x != nil {
+		return x.TemplateAId
+	}
+	return ""
+}
+
+func (x *CreateExperimentPayload) GetTemplateBId() string {
+	if x != nil {
+		return x.TemplateBId
+	}
+	return ""
+}
+
+func (x *CreateExperimentPayload) GetTrafficSplit() int32 {
+	if x != nil {
+		return x.TrafficSplit
+	}
+	return 0
+}
+
+type CreateExperimentRequest struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Metadata      *Metadata                `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature               `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Payload       *CreateExperimentPayload `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateExperimentRequest) Reset() {
+	*x = CreateExperimentRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateExperimentRequest) ProtoMessage() {}
+
+func (x *CreateExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateExperimentRequest.ProtoReflect.Descriptor instead.
+func (*CreateExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *CreateExperimentRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *CreateExperimentRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *CreateExperimentRequest) GetPayload() *CreateExperimentPayload {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
 type CreateExperimentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -1285,7 +1165,7 @@ type CreateExperimentResponse struct {
 
 func (x *CreateExperimentResponse) Reset() {
 	*x = CreateExperimentResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[19]
+	mi := &file_prompt_prompt_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1297,7 +1177,7 @@ func (x *CreateExperimentResponse) String() string {
 func (*CreateExperimentResponse) ProtoMessage() {}
 
 func (x *CreateExperimentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[19]
+	mi := &file_prompt_prompt_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1310,7 +1190,7 @@ func (x *CreateExperimentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateExperimentResponse.ProtoReflect.Descriptor instead.
 func (*CreateExperimentResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{19}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *CreateExperimentResponse) GetMetadata() *Metadata {
@@ -1341,6 +1221,67 @@ func (x *CreateExperimentResponse) GetExperiment() *PromptExperiment {
 	return nil
 }
 
+// Get Experiment
+type GetExperimentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetExperimentRequest) Reset() {
+	*x = GetExperimentRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetExperimentRequest) ProtoMessage() {}
+
+func (x *GetExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetExperimentRequest.ProtoReflect.Descriptor instead.
+func (*GetExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *GetExperimentRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetExperimentRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *GetExperimentRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 type GetExperimentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -1353,7 +1294,7 @@ type GetExperimentResponse struct {
 
 func (x *GetExperimentResponse) Reset() {
 	*x = GetExperimentResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[20]
+	mi := &file_prompt_prompt_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1365,7 +1306,7 @@ func (x *GetExperimentResponse) String() string {
 func (*GetExperimentResponse) ProtoMessage() {}
 
 func (x *GetExperimentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[20]
+	mi := &file_prompt_prompt_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1378,7 +1319,7 @@ func (x *GetExperimentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetExperimentResponse.ProtoReflect.Descriptor instead.
 func (*GetExperimentResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{20}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetExperimentResponse) GetMetadata() *Metadata {
@@ -1409,6 +1350,119 @@ func (x *GetExperimentResponse) GetExperiment() *PromptExperiment {
 	return nil
 }
 
+// Complete Experiment
+type CompleteExperimentPayload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	WinnerId      string                 `protobuf:"bytes,1,opt,name=winner_id,json=winnerId,proto3" json:"winner_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteExperimentPayload) Reset() {
+	*x = CompleteExperimentPayload{}
+	mi := &file_prompt_prompt_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteExperimentPayload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteExperimentPayload) ProtoMessage() {}
+
+func (x *CompleteExperimentPayload) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteExperimentPayload.ProtoReflect.Descriptor instead.
+func (*CompleteExperimentPayload) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *CompleteExperimentPayload) GetWinnerId() string {
+	if x != nil {
+		return x.WinnerId
+	}
+	return ""
+}
+
+type CompleteExperimentRequest struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Metadata      *Metadata                  `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature                 `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Id            string                     `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
+	Payload       *CompleteExperimentPayload `protobuf:"bytes,4,opt,name=payload,proto3" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteExperimentRequest) Reset() {
+	*x = CompleteExperimentRequest{}
+	mi := &file_prompt_prompt_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteExperimentRequest) ProtoMessage() {}
+
+func (x *CompleteExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_prompt_prompt_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteExperimentRequest.ProtoReflect.Descriptor instead.
+func (*CompleteExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *CompleteExperimentRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *CompleteExperimentRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *CompleteExperimentRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CompleteExperimentRequest) GetPayload() *CompleteExperimentPayload {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
 type CompleteExperimentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -1421,7 +1475,7 @@ type CompleteExperimentResponse struct {
 
 func (x *CompleteExperimentResponse) Reset() {
 	*x = CompleteExperimentResponse{}
-	mi := &file_prompt_prompt_proto_msgTypes[21]
+	mi := &file_prompt_prompt_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1433,7 +1487,7 @@ func (x *CompleteExperimentResponse) String() string {
 func (*CompleteExperimentResponse) ProtoMessage() {}
 
 func (x *CompleteExperimentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_prompt_prompt_proto_msgTypes[21]
+	mi := &file_prompt_prompt_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1446,7 +1500,7 @@ func (x *CompleteExperimentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompleteExperimentResponse.ProtoReflect.Descriptor instead.
 func (*CompleteExperimentResponse) Descriptor() ([]byte, []int) {
-	return file_prompt_prompt_proto_rawDescGZIP(), []int{21}
+	return file_prompt_prompt_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *CompleteExperimentResponse) GetMetadata() *Metadata {
@@ -1495,104 +1549,106 @@ const file_prompt_prompt_proto_rawDesc = "" +
 	"\bmetadata\x18\x06 \x03(\v2..prompt.v1.CreateTemplatePayload.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xa9\x01\n" +
-	"\x15UpdateTemplatePayload\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
-	"\btemplate\x18\x02 \x01(\tR\btemplate\x121\n" +
-	"\tvariables\x18\x03 \x03(\v2\x13.prompt.v1.VariableR\tvariables\x121\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x19.prompt.v1.TemplateStatusR\x06status\"\xc5\x01\n" +
-	"\x15RenderTemplatePayload\x12\x1f\n" +
-	"\vtemplate_id\x18\x01 \x01(\tR\n" +
-	"templateId\x12M\n" +
-	"\tvariables\x18\x02 \x03(\v2/.prompt.v1.RenderTemplatePayload.VariablesEntryR\tvariables\x1a<\n" +
-	"\x0eVariablesEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9a\x01\n" +
-	"\x17CreateExperimentPayload\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
-	"\rtemplate_a_id\x18\x02 \x01(\tR\vtemplateAId\x12\"\n" +
-	"\rtemplate_b_id\x18\x03 \x01(\tR\vtemplateBId\x12#\n" +
-	"\rtraffic_split\x18\x04 \x01(\x05R\ftrafficSplit\"\xb8\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb8\x01\n" +
 	"\x15CreateTemplateRequest\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12:\n" +
-	"\apayload\x18\x03 \x01(\v2 .prompt.v1.CreateTemplatePayloadR\apayload\"\x89\x01\n" +
+	"\apayload\x18\x03 \x01(\v2 .prompt.v1.CreateTemplatePayloadR\apayload\"\xdf\x01\n" +
+	"\x16CreateTemplateResponse\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
+	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
+	"\btemplate\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\btemplate\"\x89\x01\n" +
 	"\x12GetTemplateRequest\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
-	"\x02id\x18\x03 \x01(\tR\x02id\"\x99\x02\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id\"\xdc\x01\n" +
+	"\x13GetTemplateResponse\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
+	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
+	"\btemplate\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\btemplate\"\x99\x02\n" +
 	"\x14ListTemplatesRequest\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x128\n" +
 	"\venvironment\x18\x03 \x01(\x0e2\x16.prompt.v1.EnvironmentR\venvironment\x121\n" +
 	"\x06status\x18\x04 \x01(\x0e2\x19.prompt.v1.TemplateStatusR\x06status\x12\x12\n" +
 	"\x04page\x18\x05 \x01(\x05R\x04page\x12\x1b\n" +
-	"\tpage_size\x18\x06 \x01(\x05R\bpageSize\"\xb8\x01\n" +
-	"\x15UpdateTemplateRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12:\n" +
-	"\apayload\x18\x03 \x01(\v2 .prompt.v1.UpdateTemplatePayloadR\apayload\"\x8c\x01\n" +
-	"\x15DeleteTemplateRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
-	"\x02id\x18\x03 \x01(\tR\x02id\"\xb8\x01\n" +
-	"\x15RenderTemplateRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12:\n" +
-	"\apayload\x18\x03 \x01(\v2 .prompt.v1.RenderTemplatePayloadR\apayload\"\xbc\x01\n" +
-	"\x17CreateExperimentRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12<\n" +
-	"\apayload\x18\x03 \x01(\v2\".prompt.v1.CreateExperimentPayloadR\apayload\"\x8b\x01\n" +
-	"\x14GetExperimentRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
-	"\x02id\x18\x03 \x01(\tR\x02id\"\xad\x01\n" +
-	"\x19CompleteExperimentRequest\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
-	"\x02id\x18\x03 \x01(\tR\x02id\x12\x1b\n" +
-	"\twinner_id\x18\x04 \x01(\tR\bwinnerId\"\xdf\x01\n" +
-	"\x16CreateTemplateResponse\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
-	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
-	"\btemplate\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\btemplate\"\xdc\x01\n" +
-	"\x13GetTemplateResponse\x12/\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
-	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
-	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
-	"\btemplate\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\btemplate\"\xf6\x01\n" +
+	"\tpage_size\x18\x06 \x01(\x05R\bpageSize\"\xf6\x01\n" +
 	"\x15ListTemplatesResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
 	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x127\n" +
 	"\ttemplates\x18\x04 \x03(\v2\x19.prompt.v1.PromptTemplateR\ttemplates\x12\x14\n" +
-	"\x05total\x18\x05 \x01(\x05R\x05total\"\xdf\x01\n" +
+	"\x05total\x18\x05 \x01(\x05R\x05total\"\xa9\x01\n" +
+	"\x15UpdateTemplatePayload\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
+	"\btemplate\x18\x02 \x01(\tR\btemplate\x121\n" +
+	"\tvariables\x18\x03 \x03(\v2\x13.prompt.v1.VariableR\tvariables\x121\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x19.prompt.v1.TemplateStatusR\x06status\"\xb8\x01\n" +
+	"\x15UpdateTemplateRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12:\n" +
+	"\apayload\x18\x03 \x01(\v2 .prompt.v1.UpdateTemplatePayloadR\apayload\"\xd9\x01\n" +
 	"\x16UpdateTemplateResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
-	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
-	"\btemplate\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\btemplate\"\xdf\x01\n" +
+	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x12/\n" +
+	"\x05model\x18\x04 \x01(\v2\x19.prompt.v1.PromptTemplateR\x05model\"\x8c\x01\n" +
+	"\x15DeleteTemplateRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id\"\xc5\x01\n" +
+	"\x15RenderTemplatePayload\x12\x1f\n" +
+	"\vtemplate_id\x18\x01 \x01(\tR\n" +
+	"templateId\x12M\n" +
+	"\tvariables\x18\x02 \x03(\v2/.prompt.v1.RenderTemplatePayload.VariablesEntryR\tvariables\x1a<\n" +
+	"\x0eVariablesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb8\x01\n" +
+	"\x15RenderTemplateRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12:\n" +
+	"\apayload\x18\x03 \x01(\v2 .prompt.v1.RenderTemplatePayloadR\apayload\"\xdf\x01\n" +
 	"\x16RenderTemplateResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
 	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x125\n" +
-	"\brendered\x18\x04 \x01(\v2\x19.prompt.v1.RenderedPromptR\brendered\"\xe7\x01\n" +
+	"\brendered\x18\x04 \x01(\v2\x19.prompt.v1.RenderedPromptR\brendered\"\x9a\x01\n" +
+	"\x17CreateExperimentPayload\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
+	"\rtemplate_a_id\x18\x02 \x01(\tR\vtemplateAId\x12\"\n" +
+	"\rtemplate_b_id\x18\x03 \x01(\tR\vtemplateBId\x12#\n" +
+	"\rtraffic_split\x18\x04 \x01(\x05R\ftrafficSplit\"\xbc\x01\n" +
+	"\x17CreateExperimentRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12<\n" +
+	"\apayload\x18\x03 \x01(\v2\".prompt.v1.CreateExperimentPayloadR\apayload\"\xe7\x01\n" +
 	"\x18CreateExperimentResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
 	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x12;\n" +
 	"\n" +
 	"experiment\x18\x04 \x01(\v2\x1b.prompt.v1.PromptExperimentR\n" +
-	"experiment\"\xe4\x01\n" +
+	"experiment\"\x8b\x01\n" +
+	"\x14GetExperimentRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id\"\xe4\x01\n" +
 	"\x15GetExperimentResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
 	"\x06result\x18\x03 \x01(\v2\x11.prompt.v1.ResultR\x06result\x12;\n" +
 	"\n" +
 	"experiment\x18\x04 \x01(\v2\x1b.prompt.v1.PromptExperimentR\n" +
-	"experiment\"\xe9\x01\n" +
+	"experiment\"8\n" +
+	"\x19CompleteExperimentPayload\x12\x1b\n" +
+	"\twinner_id\x18\x01 \x01(\tR\bwinnerId\"\xd0\x01\n" +
+	"\x19CompleteExperimentRequest\x12/\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
+	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12\x0e\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id\x12>\n" +
+	"\apayload\x18\x04 \x01(\v2$.prompt.v1.CompleteExperimentPayloadR\apayload\"\xe9\x01\n" +
 	"\x1aCompleteExperimentResponse\x12/\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x13.prompt.v1.MetadataR\bmetadata\x122\n" +
 	"\tsignature\x18\x02 \x01(\v2\x14.prompt.v1.SignatureR\tsignature\x12)\n" +
@@ -1609,8 +1665,7 @@ const file_prompt_prompt_proto_rawDesc = "" +
 	"\x0eRenderTemplate\x12 .prompt.v1.RenderTemplateRequest\x1a!.prompt.v1.RenderTemplateResponse\x12[\n" +
 	"\x10CreateExperiment\x12\".prompt.v1.CreateExperimentRequest\x1a#.prompt.v1.CreateExperimentResponse\x12R\n" +
 	"\rGetExperiment\x12\x1f.prompt.v1.GetExperimentRequest\x1a .prompt.v1.GetExperimentResponse\x12a\n" +
-	"\x12CompleteExperiment\x12$.prompt.v1.CompleteExperimentRequest\x1a%.prompt.v1.CompleteExperimentResponseBP\n" +
-	"\x1ecom.blcvn.kratos.protos.promptZ.github.com/blcvn/kratos-proto/go/prompt;promptb\x06proto3"
+	"\x12CompleteExperiment\x12$.prompt.v1.CompleteExperimentRequest\x1a%.prompt.v1.CompleteExperimentResponseB0Z.github.com/blcvn/kratos-proto/go/prompt;promptb\x06proto3"
 
 var (
 	file_prompt_prompt_proto_rawDescOnce sync.Once
@@ -1624,131 +1679,133 @@ func file_prompt_prompt_proto_rawDescGZIP() []byte {
 	return file_prompt_prompt_proto_rawDescData
 }
 
-var file_prompt_prompt_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_prompt_prompt_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
 var file_prompt_prompt_proto_goTypes = []any{
 	(*ResponseEmpty)(nil),              // 0: prompt.v1.ResponseEmpty
 	(*CreateTemplatePayload)(nil),      // 1: prompt.v1.CreateTemplatePayload
-	(*UpdateTemplatePayload)(nil),      // 2: prompt.v1.UpdateTemplatePayload
-	(*RenderTemplatePayload)(nil),      // 3: prompt.v1.RenderTemplatePayload
-	(*CreateExperimentPayload)(nil),    // 4: prompt.v1.CreateExperimentPayload
-	(*CreateTemplateRequest)(nil),      // 5: prompt.v1.CreateTemplateRequest
-	(*GetTemplateRequest)(nil),         // 6: prompt.v1.GetTemplateRequest
-	(*ListTemplatesRequest)(nil),       // 7: prompt.v1.ListTemplatesRequest
-	(*UpdateTemplateRequest)(nil),      // 8: prompt.v1.UpdateTemplateRequest
-	(*DeleteTemplateRequest)(nil),      // 9: prompt.v1.DeleteTemplateRequest
-	(*RenderTemplateRequest)(nil),      // 10: prompt.v1.RenderTemplateRequest
-	(*CreateExperimentRequest)(nil),    // 11: prompt.v1.CreateExperimentRequest
-	(*GetExperimentRequest)(nil),       // 12: prompt.v1.GetExperimentRequest
-	(*CompleteExperimentRequest)(nil),  // 13: prompt.v1.CompleteExperimentRequest
-	(*CreateTemplateResponse)(nil),     // 14: prompt.v1.CreateTemplateResponse
-	(*GetTemplateResponse)(nil),        // 15: prompt.v1.GetTemplateResponse
-	(*ListTemplatesResponse)(nil),      // 16: prompt.v1.ListTemplatesResponse
-	(*UpdateTemplateResponse)(nil),     // 17: prompt.v1.UpdateTemplateResponse
-	(*RenderTemplateResponse)(nil),     // 18: prompt.v1.RenderTemplateResponse
-	(*CreateExperimentResponse)(nil),   // 19: prompt.v1.CreateExperimentResponse
-	(*GetExperimentResponse)(nil),      // 20: prompt.v1.GetExperimentResponse
-	(*CompleteExperimentResponse)(nil), // 21: prompt.v1.CompleteExperimentResponse
-	nil,                                // 22: prompt.v1.CreateTemplatePayload.MetadataEntry
-	nil,                                // 23: prompt.v1.RenderTemplatePayload.VariablesEntry
-	(*Metadata)(nil),                   // 24: prompt.v1.Metadata
-	(*Signature)(nil),                  // 25: prompt.v1.Signature
-	(*Result)(nil),                     // 26: prompt.v1.Result
-	(Environment)(0),                   // 27: prompt.v1.Environment
-	(*Variable)(nil),                   // 28: prompt.v1.Variable
-	(TemplateStatus)(0),                // 29: prompt.v1.TemplateStatus
+	(*CreateTemplateRequest)(nil),      // 2: prompt.v1.CreateTemplateRequest
+	(*CreateTemplateResponse)(nil),     // 3: prompt.v1.CreateTemplateResponse
+	(*GetTemplateRequest)(nil),         // 4: prompt.v1.GetTemplateRequest
+	(*GetTemplateResponse)(nil),        // 5: prompt.v1.GetTemplateResponse
+	(*ListTemplatesRequest)(nil),       // 6: prompt.v1.ListTemplatesRequest
+	(*ListTemplatesResponse)(nil),      // 7: prompt.v1.ListTemplatesResponse
+	(*UpdateTemplatePayload)(nil),      // 8: prompt.v1.UpdateTemplatePayload
+	(*UpdateTemplateRequest)(nil),      // 9: prompt.v1.UpdateTemplateRequest
+	(*UpdateTemplateResponse)(nil),     // 10: prompt.v1.UpdateTemplateResponse
+	(*DeleteTemplateRequest)(nil),      // 11: prompt.v1.DeleteTemplateRequest
+	(*RenderTemplatePayload)(nil),      // 12: prompt.v1.RenderTemplatePayload
+	(*RenderTemplateRequest)(nil),      // 13: prompt.v1.RenderTemplateRequest
+	(*RenderTemplateResponse)(nil),     // 14: prompt.v1.RenderTemplateResponse
+	(*CreateExperimentPayload)(nil),    // 15: prompt.v1.CreateExperimentPayload
+	(*CreateExperimentRequest)(nil),    // 16: prompt.v1.CreateExperimentRequest
+	(*CreateExperimentResponse)(nil),   // 17: prompt.v1.CreateExperimentResponse
+	(*GetExperimentRequest)(nil),       // 18: prompt.v1.GetExperimentRequest
+	(*GetExperimentResponse)(nil),      // 19: prompt.v1.GetExperimentResponse
+	(*CompleteExperimentPayload)(nil),  // 20: prompt.v1.CompleteExperimentPayload
+	(*CompleteExperimentRequest)(nil),  // 21: prompt.v1.CompleteExperimentRequest
+	(*CompleteExperimentResponse)(nil), // 22: prompt.v1.CompleteExperimentResponse
+	nil,                                // 23: prompt.v1.CreateTemplatePayload.MetadataEntry
+	nil,                                // 24: prompt.v1.RenderTemplatePayload.VariablesEntry
+	(*Metadata)(nil),                   // 25: prompt.v1.Metadata
+	(*Signature)(nil),                  // 26: prompt.v1.Signature
+	(*Result)(nil),                     // 27: prompt.v1.Result
+	(Environment)(0),                   // 28: prompt.v1.Environment
+	(*Variable)(nil),                   // 29: prompt.v1.Variable
 	(*PromptTemplate)(nil),             // 30: prompt.v1.PromptTemplate
-	(*RenderedPrompt)(nil),             // 31: prompt.v1.RenderedPrompt
-	(*PromptExperiment)(nil),           // 32: prompt.v1.PromptExperiment
+	(TemplateStatus)(0),                // 31: prompt.v1.TemplateStatus
+	(*RenderedPrompt)(nil),             // 32: prompt.v1.RenderedPrompt
+	(*PromptExperiment)(nil),           // 33: prompt.v1.PromptExperiment
 }
 var file_prompt_prompt_proto_depIdxs = []int32{
-	24, // 0: prompt.v1.ResponseEmpty.metadata:type_name -> prompt.v1.Metadata
-	25, // 1: prompt.v1.ResponseEmpty.signature:type_name -> prompt.v1.Signature
-	26, // 2: prompt.v1.ResponseEmpty.result:type_name -> prompt.v1.Result
-	27, // 3: prompt.v1.CreateTemplatePayload.environment:type_name -> prompt.v1.Environment
-	28, // 4: prompt.v1.CreateTemplatePayload.variables:type_name -> prompt.v1.Variable
-	22, // 5: prompt.v1.CreateTemplatePayload.metadata:type_name -> prompt.v1.CreateTemplatePayload.MetadataEntry
-	28, // 6: prompt.v1.UpdateTemplatePayload.variables:type_name -> prompt.v1.Variable
-	29, // 7: prompt.v1.UpdateTemplatePayload.status:type_name -> prompt.v1.TemplateStatus
-	23, // 8: prompt.v1.RenderTemplatePayload.variables:type_name -> prompt.v1.RenderTemplatePayload.VariablesEntry
-	24, // 9: prompt.v1.CreateTemplateRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 10: prompt.v1.CreateTemplateRequest.signature:type_name -> prompt.v1.Signature
-	1,  // 11: prompt.v1.CreateTemplateRequest.payload:type_name -> prompt.v1.CreateTemplatePayload
-	24, // 12: prompt.v1.GetTemplateRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 13: prompt.v1.GetTemplateRequest.signature:type_name -> prompt.v1.Signature
-	24, // 14: prompt.v1.ListTemplatesRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 15: prompt.v1.ListTemplatesRequest.signature:type_name -> prompt.v1.Signature
-	27, // 16: prompt.v1.ListTemplatesRequest.environment:type_name -> prompt.v1.Environment
-	29, // 17: prompt.v1.ListTemplatesRequest.status:type_name -> prompt.v1.TemplateStatus
-	24, // 18: prompt.v1.UpdateTemplateRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 19: prompt.v1.UpdateTemplateRequest.signature:type_name -> prompt.v1.Signature
-	2,  // 20: prompt.v1.UpdateTemplateRequest.payload:type_name -> prompt.v1.UpdateTemplatePayload
-	24, // 21: prompt.v1.DeleteTemplateRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 22: prompt.v1.DeleteTemplateRequest.signature:type_name -> prompt.v1.Signature
-	24, // 23: prompt.v1.RenderTemplateRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 24: prompt.v1.RenderTemplateRequest.signature:type_name -> prompt.v1.Signature
-	3,  // 25: prompt.v1.RenderTemplateRequest.payload:type_name -> prompt.v1.RenderTemplatePayload
-	24, // 26: prompt.v1.CreateExperimentRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 27: prompt.v1.CreateExperimentRequest.signature:type_name -> prompt.v1.Signature
-	4,  // 28: prompt.v1.CreateExperimentRequest.payload:type_name -> prompt.v1.CreateExperimentPayload
-	24, // 29: prompt.v1.GetExperimentRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 30: prompt.v1.GetExperimentRequest.signature:type_name -> prompt.v1.Signature
-	24, // 31: prompt.v1.CompleteExperimentRequest.metadata:type_name -> prompt.v1.Metadata
-	25, // 32: prompt.v1.CompleteExperimentRequest.signature:type_name -> prompt.v1.Signature
-	24, // 33: prompt.v1.CreateTemplateResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 34: prompt.v1.CreateTemplateResponse.signature:type_name -> prompt.v1.Signature
-	26, // 35: prompt.v1.CreateTemplateResponse.result:type_name -> prompt.v1.Result
-	30, // 36: prompt.v1.CreateTemplateResponse.template:type_name -> prompt.v1.PromptTemplate
-	24, // 37: prompt.v1.GetTemplateResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 38: prompt.v1.GetTemplateResponse.signature:type_name -> prompt.v1.Signature
-	26, // 39: prompt.v1.GetTemplateResponse.result:type_name -> prompt.v1.Result
-	30, // 40: prompt.v1.GetTemplateResponse.template:type_name -> prompt.v1.PromptTemplate
-	24, // 41: prompt.v1.ListTemplatesResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 42: prompt.v1.ListTemplatesResponse.signature:type_name -> prompt.v1.Signature
-	26, // 43: prompt.v1.ListTemplatesResponse.result:type_name -> prompt.v1.Result
-	30, // 44: prompt.v1.ListTemplatesResponse.templates:type_name -> prompt.v1.PromptTemplate
-	24, // 45: prompt.v1.UpdateTemplateResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 46: prompt.v1.UpdateTemplateResponse.signature:type_name -> prompt.v1.Signature
-	26, // 47: prompt.v1.UpdateTemplateResponse.result:type_name -> prompt.v1.Result
-	30, // 48: prompt.v1.UpdateTemplateResponse.template:type_name -> prompt.v1.PromptTemplate
-	24, // 49: prompt.v1.RenderTemplateResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 50: prompt.v1.RenderTemplateResponse.signature:type_name -> prompt.v1.Signature
-	26, // 51: prompt.v1.RenderTemplateResponse.result:type_name -> prompt.v1.Result
-	31, // 52: prompt.v1.RenderTemplateResponse.rendered:type_name -> prompt.v1.RenderedPrompt
-	24, // 53: prompt.v1.CreateExperimentResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 54: prompt.v1.CreateExperimentResponse.signature:type_name -> prompt.v1.Signature
-	26, // 55: prompt.v1.CreateExperimentResponse.result:type_name -> prompt.v1.Result
-	32, // 56: prompt.v1.CreateExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
-	24, // 57: prompt.v1.GetExperimentResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 58: prompt.v1.GetExperimentResponse.signature:type_name -> prompt.v1.Signature
-	26, // 59: prompt.v1.GetExperimentResponse.result:type_name -> prompt.v1.Result
-	32, // 60: prompt.v1.GetExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
-	24, // 61: prompt.v1.CompleteExperimentResponse.metadata:type_name -> prompt.v1.Metadata
-	25, // 62: prompt.v1.CompleteExperimentResponse.signature:type_name -> prompt.v1.Signature
-	26, // 63: prompt.v1.CompleteExperimentResponse.result:type_name -> prompt.v1.Result
-	32, // 64: prompt.v1.CompleteExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
-	5,  // 65: prompt.v1.PromptService.CreateTemplate:input_type -> prompt.v1.CreateTemplateRequest
-	6,  // 66: prompt.v1.PromptService.GetTemplate:input_type -> prompt.v1.GetTemplateRequest
-	7,  // 67: prompt.v1.PromptService.ListTemplates:input_type -> prompt.v1.ListTemplatesRequest
-	8,  // 68: prompt.v1.PromptService.UpdateTemplate:input_type -> prompt.v1.UpdateTemplateRequest
-	9,  // 69: prompt.v1.PromptService.DeleteTemplate:input_type -> prompt.v1.DeleteTemplateRequest
-	10, // 70: prompt.v1.PromptService.RenderTemplate:input_type -> prompt.v1.RenderTemplateRequest
-	11, // 71: prompt.v1.PromptService.CreateExperiment:input_type -> prompt.v1.CreateExperimentRequest
-	12, // 72: prompt.v1.PromptService.GetExperiment:input_type -> prompt.v1.GetExperimentRequest
-	13, // 73: prompt.v1.PromptService.CompleteExperiment:input_type -> prompt.v1.CompleteExperimentRequest
-	14, // 74: prompt.v1.PromptService.CreateTemplate:output_type -> prompt.v1.CreateTemplateResponse
-	15, // 75: prompt.v1.PromptService.GetTemplate:output_type -> prompt.v1.GetTemplateResponse
-	16, // 76: prompt.v1.PromptService.ListTemplates:output_type -> prompt.v1.ListTemplatesResponse
-	17, // 77: prompt.v1.PromptService.UpdateTemplate:output_type -> prompt.v1.UpdateTemplateResponse
-	0,  // 78: prompt.v1.PromptService.DeleteTemplate:output_type -> prompt.v1.ResponseEmpty
-	18, // 79: prompt.v1.PromptService.RenderTemplate:output_type -> prompt.v1.RenderTemplateResponse
-	19, // 80: prompt.v1.PromptService.CreateExperiment:output_type -> prompt.v1.CreateExperimentResponse
-	20, // 81: prompt.v1.PromptService.GetExperiment:output_type -> prompt.v1.GetExperimentResponse
-	21, // 82: prompt.v1.PromptService.CompleteExperiment:output_type -> prompt.v1.CompleteExperimentResponse
-	74, // [74:83] is the sub-list for method output_type
-	65, // [65:74] is the sub-list for method input_type
-	65, // [65:65] is the sub-list for extension type_name
-	65, // [65:65] is the sub-list for extension extendee
-	0,  // [0:65] is the sub-list for field type_name
+	25, // 0: prompt.v1.ResponseEmpty.metadata:type_name -> prompt.v1.Metadata
+	26, // 1: prompt.v1.ResponseEmpty.signature:type_name -> prompt.v1.Signature
+	27, // 2: prompt.v1.ResponseEmpty.result:type_name -> prompt.v1.Result
+	28, // 3: prompt.v1.CreateTemplatePayload.environment:type_name -> prompt.v1.Environment
+	29, // 4: prompt.v1.CreateTemplatePayload.variables:type_name -> prompt.v1.Variable
+	23, // 5: prompt.v1.CreateTemplatePayload.metadata:type_name -> prompt.v1.CreateTemplatePayload.MetadataEntry
+	25, // 6: prompt.v1.CreateTemplateRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 7: prompt.v1.CreateTemplateRequest.signature:type_name -> prompt.v1.Signature
+	1,  // 8: prompt.v1.CreateTemplateRequest.payload:type_name -> prompt.v1.CreateTemplatePayload
+	25, // 9: prompt.v1.CreateTemplateResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 10: prompt.v1.CreateTemplateResponse.signature:type_name -> prompt.v1.Signature
+	27, // 11: prompt.v1.CreateTemplateResponse.result:type_name -> prompt.v1.Result
+	30, // 12: prompt.v1.CreateTemplateResponse.template:type_name -> prompt.v1.PromptTemplate
+	25, // 13: prompt.v1.GetTemplateRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 14: prompt.v1.GetTemplateRequest.signature:type_name -> prompt.v1.Signature
+	25, // 15: prompt.v1.GetTemplateResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 16: prompt.v1.GetTemplateResponse.signature:type_name -> prompt.v1.Signature
+	27, // 17: prompt.v1.GetTemplateResponse.result:type_name -> prompt.v1.Result
+	30, // 18: prompt.v1.GetTemplateResponse.template:type_name -> prompt.v1.PromptTemplate
+	25, // 19: prompt.v1.ListTemplatesRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 20: prompt.v1.ListTemplatesRequest.signature:type_name -> prompt.v1.Signature
+	28, // 21: prompt.v1.ListTemplatesRequest.environment:type_name -> prompt.v1.Environment
+	31, // 22: prompt.v1.ListTemplatesRequest.status:type_name -> prompt.v1.TemplateStatus
+	25, // 23: prompt.v1.ListTemplatesResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 24: prompt.v1.ListTemplatesResponse.signature:type_name -> prompt.v1.Signature
+	27, // 25: prompt.v1.ListTemplatesResponse.result:type_name -> prompt.v1.Result
+	30, // 26: prompt.v1.ListTemplatesResponse.templates:type_name -> prompt.v1.PromptTemplate
+	29, // 27: prompt.v1.UpdateTemplatePayload.variables:type_name -> prompt.v1.Variable
+	31, // 28: prompt.v1.UpdateTemplatePayload.status:type_name -> prompt.v1.TemplateStatus
+	25, // 29: prompt.v1.UpdateTemplateRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 30: prompt.v1.UpdateTemplateRequest.signature:type_name -> prompt.v1.Signature
+	8,  // 31: prompt.v1.UpdateTemplateRequest.payload:type_name -> prompt.v1.UpdateTemplatePayload
+	25, // 32: prompt.v1.UpdateTemplateResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 33: prompt.v1.UpdateTemplateResponse.signature:type_name -> prompt.v1.Signature
+	27, // 34: prompt.v1.UpdateTemplateResponse.result:type_name -> prompt.v1.Result
+	30, // 35: prompt.v1.UpdateTemplateResponse.model:type_name -> prompt.v1.PromptTemplate
+	25, // 36: prompt.v1.DeleteTemplateRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 37: prompt.v1.DeleteTemplateRequest.signature:type_name -> prompt.v1.Signature
+	24, // 38: prompt.v1.RenderTemplatePayload.variables:type_name -> prompt.v1.RenderTemplatePayload.VariablesEntry
+	25, // 39: prompt.v1.RenderTemplateRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 40: prompt.v1.RenderTemplateRequest.signature:type_name -> prompt.v1.Signature
+	12, // 41: prompt.v1.RenderTemplateRequest.payload:type_name -> prompt.v1.RenderTemplatePayload
+	25, // 42: prompt.v1.RenderTemplateResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 43: prompt.v1.RenderTemplateResponse.signature:type_name -> prompt.v1.Signature
+	27, // 44: prompt.v1.RenderTemplateResponse.result:type_name -> prompt.v1.Result
+	32, // 45: prompt.v1.RenderTemplateResponse.rendered:type_name -> prompt.v1.RenderedPrompt
+	25, // 46: prompt.v1.CreateExperimentRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 47: prompt.v1.CreateExperimentRequest.signature:type_name -> prompt.v1.Signature
+	15, // 48: prompt.v1.CreateExperimentRequest.payload:type_name -> prompt.v1.CreateExperimentPayload
+	25, // 49: prompt.v1.CreateExperimentResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 50: prompt.v1.CreateExperimentResponse.signature:type_name -> prompt.v1.Signature
+	27, // 51: prompt.v1.CreateExperimentResponse.result:type_name -> prompt.v1.Result
+	33, // 52: prompt.v1.CreateExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
+	25, // 53: prompt.v1.GetExperimentRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 54: prompt.v1.GetExperimentRequest.signature:type_name -> prompt.v1.Signature
+	25, // 55: prompt.v1.GetExperimentResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 56: prompt.v1.GetExperimentResponse.signature:type_name -> prompt.v1.Signature
+	27, // 57: prompt.v1.GetExperimentResponse.result:type_name -> prompt.v1.Result
+	33, // 58: prompt.v1.GetExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
+	25, // 59: prompt.v1.CompleteExperimentRequest.metadata:type_name -> prompt.v1.Metadata
+	26, // 60: prompt.v1.CompleteExperimentRequest.signature:type_name -> prompt.v1.Signature
+	20, // 61: prompt.v1.CompleteExperimentRequest.payload:type_name -> prompt.v1.CompleteExperimentPayload
+	25, // 62: prompt.v1.CompleteExperimentResponse.metadata:type_name -> prompt.v1.Metadata
+	26, // 63: prompt.v1.CompleteExperimentResponse.signature:type_name -> prompt.v1.Signature
+	27, // 64: prompt.v1.CompleteExperimentResponse.result:type_name -> prompt.v1.Result
+	33, // 65: prompt.v1.CompleteExperimentResponse.experiment:type_name -> prompt.v1.PromptExperiment
+	2,  // 66: prompt.v1.PromptService.CreateTemplate:input_type -> prompt.v1.CreateTemplateRequest
+	4,  // 67: prompt.v1.PromptService.GetTemplate:input_type -> prompt.v1.GetTemplateRequest
+	6,  // 68: prompt.v1.PromptService.ListTemplates:input_type -> prompt.v1.ListTemplatesRequest
+	9,  // 69: prompt.v1.PromptService.UpdateTemplate:input_type -> prompt.v1.UpdateTemplateRequest
+	11, // 70: prompt.v1.PromptService.DeleteTemplate:input_type -> prompt.v1.DeleteTemplateRequest
+	13, // 71: prompt.v1.PromptService.RenderTemplate:input_type -> prompt.v1.RenderTemplateRequest
+	16, // 72: prompt.v1.PromptService.CreateExperiment:input_type -> prompt.v1.CreateExperimentRequest
+	18, // 73: prompt.v1.PromptService.GetExperiment:input_type -> prompt.v1.GetExperimentRequest
+	21, // 74: prompt.v1.PromptService.CompleteExperiment:input_type -> prompt.v1.CompleteExperimentRequest
+	3,  // 75: prompt.v1.PromptService.CreateTemplate:output_type -> prompt.v1.CreateTemplateResponse
+	5,  // 76: prompt.v1.PromptService.GetTemplate:output_type -> prompt.v1.GetTemplateResponse
+	7,  // 77: prompt.v1.PromptService.ListTemplates:output_type -> prompt.v1.ListTemplatesResponse
+	10, // 78: prompt.v1.PromptService.UpdateTemplate:output_type -> prompt.v1.UpdateTemplateResponse
+	0,  // 79: prompt.v1.PromptService.DeleteTemplate:output_type -> prompt.v1.ResponseEmpty
+	14, // 80: prompt.v1.PromptService.RenderTemplate:output_type -> prompt.v1.RenderTemplateResponse
+	17, // 81: prompt.v1.PromptService.CreateExperiment:output_type -> prompt.v1.CreateExperimentResponse
+	19, // 82: prompt.v1.PromptService.GetExperiment:output_type -> prompt.v1.GetExperimentResponse
+	22, // 83: prompt.v1.PromptService.CompleteExperiment:output_type -> prompt.v1.CompleteExperimentResponse
+	75, // [75:84] is the sub-list for method output_type
+	66, // [66:75] is the sub-list for method input_type
+	66, // [66:66] is the sub-list for extension type_name
+	66, // [66:66] is the sub-list for extension extendee
+	0,  // [0:66] is the sub-list for field type_name
 }
 
 func init() { file_prompt_prompt_proto_init() }
@@ -1763,7 +1820,7 @@ func file_prompt_prompt_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_prompt_prompt_proto_rawDesc), len(file_prompt_prompt_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   24,
+			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

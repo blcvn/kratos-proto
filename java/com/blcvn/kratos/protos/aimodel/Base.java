@@ -3395,18 +3395,6 @@ public final class Base {
         getBaseUrlBytes();
 
     /**
-     * <code>string vault_path = 6;</code>
-     * @return The vaultPath.
-     */
-    java.lang.String getVaultPath();
-    /**
-     * <code>string vault_path = 6;</code>
-     * @return The bytes for vaultPath.
-     */
-    com.google.protobuf.ByteString
-        getVaultPathBytes();
-
-    /**
      * <code>map&lt;string, string&gt; config = 7;</code>
      */
     int getConfigCount();
@@ -3517,7 +3505,6 @@ public final class Base {
       provider_ = "";
       modelId_ = "";
       baseUrl_ = "";
-      vaultPath_ = "";
       status_ = 0;
     }
 
@@ -3580,12 +3567,6 @@ public final class Base {
               java.lang.String s = input.readStringRequireUtf8();
 
               baseUrl_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vaultPath_ = s;
               break;
             }
             case 58: {
@@ -3882,44 +3863,6 @@ public final class Base {
       }
     }
 
-    public static final int VAULT_PATH_FIELD_NUMBER = 6;
-    private volatile java.lang.Object vaultPath_;
-    /**
-     * <code>string vault_path = 6;</code>
-     * @return The vaultPath.
-     */
-    @java.lang.Override
-    public java.lang.String getVaultPath() {
-      java.lang.Object ref = vaultPath_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vaultPath_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string vault_path = 6;</code>
-     * @return The bytes for vaultPath.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVaultPathBytes() {
-      java.lang.Object ref = vaultPath_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vaultPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int CONFIG_FIELD_NUMBER = 7;
     private static final class ConfigDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
@@ -4134,9 +4077,6 @@ public final class Base {
       if (!getBaseUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, baseUrl_);
       }
-      if (!getVaultPathBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vaultPath_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
@@ -4184,9 +4124,6 @@ public final class Base {
       }
       if (!getBaseUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, baseUrl_);
-      }
-      if (!getVaultPathBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vaultPath_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetConfig().getMap().entrySet()) {
@@ -4247,8 +4184,6 @@ public final class Base {
           .equals(other.getModelId())) return false;
       if (!getBaseUrl()
           .equals(other.getBaseUrl())) return false;
-      if (!getVaultPath()
-          .equals(other.getVaultPath())) return false;
       if (!internalGetConfig().equals(
           other.internalGetConfig())) return false;
       if (getQuotaDaily()
@@ -4290,8 +4225,6 @@ public final class Base {
       hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + BASE_URL_FIELD_NUMBER;
       hash = (53 * hash) + getBaseUrl().hashCode();
-      hash = (37 * hash) + VAULT_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getVaultPath().hashCode();
       if (!internalGetConfig().getMap().isEmpty()) {
         hash = (37 * hash) + CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + internalGetConfig().hashCode();
@@ -4480,8 +4413,6 @@ public final class Base {
 
         baseUrl_ = "";
 
-        vaultPath_ = "";
-
         internalGetMutableConfig().clear();
         quotaDaily_ = 0L;
 
@@ -4535,7 +4466,6 @@ public final class Base {
         result.provider_ = provider_;
         result.modelId_ = modelId_;
         result.baseUrl_ = baseUrl_;
-        result.vaultPath_ = vaultPath_;
         result.config_ = internalGetConfig();
         result.config_.makeImmutable();
         result.quotaDaily_ = quotaDaily_;
@@ -4618,10 +4548,6 @@ public final class Base {
         }
         if (!other.getBaseUrl().isEmpty()) {
           baseUrl_ = other.baseUrl_;
-          onChanged();
-        }
-        if (!other.getVaultPath().isEmpty()) {
-          vaultPath_ = other.vaultPath_;
           onChanged();
         }
         internalGetMutableConfig().mergeFrom(
@@ -5050,82 +4976,6 @@ public final class Base {
   checkByteStringIsUtf8(value);
         
         baseUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object vaultPath_ = "";
-      /**
-       * <code>string vault_path = 6;</code>
-       * @return The vaultPath.
-       */
-      public java.lang.String getVaultPath() {
-        java.lang.Object ref = vaultPath_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          vaultPath_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string vault_path = 6;</code>
-       * @return The bytes for vaultPath.
-       */
-      public com.google.protobuf.ByteString
-          getVaultPathBytes() {
-        java.lang.Object ref = vaultPath_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          vaultPath_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string vault_path = 6;</code>
-       * @param value The vaultPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVaultPath(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        vaultPath_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string vault_path = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVaultPath() {
-        
-        vaultPath_ = getDefaultInstance().getVaultPath();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string vault_path = 6;</code>
-       * @param value The bytes for vaultPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVaultPathBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        vaultPath_ = value;
         onChanged();
         return this;
       }
@@ -10643,47 +10493,47 @@ public final class Base {
       "message\030\002 \001(\t\"\216\001\n\tSignature\0224\n\006s_type\030\001 " +
       "\001(\0162$.ai.model.v1.Signature.SignatureTyp" +
       "e\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureType" +
-      "\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\240" +
+      "\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\214" +
       "\003\n\007AIModel\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\020\n\010" +
       "provider\030\003 \001(\t\022\020\n\010model_id\030\004 \001(\t\022\020\n\010base" +
-      "_url\030\005 \001(\t\022\022\n\nvault_path\030\006 \001(\t\0220\n\006config" +
-      "\030\007 \003(\0132 .ai.model.v1.AIModel.ConfigEntry" +
-      "\022\023\n\013quota_daily\030\010 \001(\003\022\025\n\rquota_monthly\030\t" +
-      " \001(\003\022\032\n\022cost_per_1k_tokens\030\n \001(\001\022(\n\006stat" +
-      "us\030\013 \001(\0162\030.ai.model.v1.ModelStatus\022.\n\ncr" +
-      "eated_at\030\014 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\022.\n\nupdated_at\030\r \001(\0132\032.google.protobuf" +
-      ".Timestamp\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"\212\002\n\010UsageLog\022\n\n\002id\030\001 \001" +
-      "(\t\022\020\n\010model_id\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\t\022\022\n" +
-      "\nsession_id\030\004 \001(\t\022\023\n\013prompt_hash\030\005 \001(\t\022\023" +
-      "\n\013tokens_used\030\006 \001(\003\022\014\n\004cost\030\007 \001(\001\022\022\n\nlat" +
-      "ency_ms\030\010 \001(\005\022(\n\006status\030\t \001(\0162\030.ai.model" +
-      ".v1.UsageStatus\022\025\n\rerror_message\030\n \001(\t\022." +
-      "\n\ncreated_at\030\013 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\"\230\001\n\013Credentials\022\017\n\007api_key\030\001 \001(\t\022" +
-      "\020\n\010base_url\030\002 \001(\t\0226\n\007headers\030\003 \003(\0132%.ai." +
-      "model.v1.Credentials.HeadersEntry\032.\n\014Hea" +
-      "dersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"\211\001\n\013QuotaStatus\022\020\n\010exceeded\030\001 \001(\010\022\022\n\nd" +
-      "aily_used\030\002 \001(\003\022\023\n\013daily_limit\030\003 \001(\003\022\024\n\014" +
-      "monthly_used\030\004 \001(\003\022\025\n\rmonthly_limit\030\005 \001(" +
-      "\003\022\022\n\nreset_time\030\006 \001(\t\"\242\001\n\nUsageStats\022\020\n\010" +
-      "model_id\030\001 \001(\t\022\022\n\nmodel_name\030\002 \001(\t\022\026\n\016to" +
-      "tal_requests\030\003 \001(\003\022\024\n\014total_tokens\030\004 \001(\003" +
-      "\022\022\n\ntotal_cost\030\005 \001(\001\022\026\n\016avg_latency_ms\030\006" +
-      " \001(\005\022\024\n\014success_rate\030\007 \001(\001*\250\001\n\nResultCod" +
-      "e\022\017\n\013UNSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_" +
-      "REQUEST\020\220\003\022\021\n\014UNAUTHORIZED\020\221\003\022\016\n\tFORBIDD" +
-      "EN\020\223\003\022\016\n\tNOT_FOUND\020\224\003\022\r\n\010CONFLICT\020\231\003\022\r\n\010" +
-      "INTERNAL\020\364\003\022\030\n\023SERVICE_UNAVAILABLE\020\367\003*O\n" +
-      "\013ModelStatus\022\026\n\022STATUS_UNSPECIFIED\020\000\022\n\n\006" +
-      "ACTIVE\020\001\022\014\n\010DISABLED\020\002\022\016\n\nDEPRECATED\020\003*^" +
-      "\n\013UsageStatus\022\025\n\021USAGE_UNSPECIFIED\020\000\022\022\n\016" +
-      "SUCCESS_STATUS\020\001\022\020\n\014ERROR_STATUS\020\002\022\022\n\016TI" +
-      "MEOUT_STATUS\020\003BT\n\037com.blcvn.kratos.proto" +
-      "s.aimodelZ1github.com/blcvn/kratos-proto" +
-      "/go/ai-model;aimodelb\006proto3"
+      "_url\030\005 \001(\t\0220\n\006config\030\007 \003(\0132 .ai.model.v1" +
+      ".AIModel.ConfigEntry\022\023\n\013quota_daily\030\010 \001(" +
+      "\003\022\025\n\rquota_monthly\030\t \001(\003\022\032\n\022cost_per_1k_" +
+      "tokens\030\n \001(\001\022(\n\006status\030\013 \001(\0162\030.ai.model." +
+      "v1.ModelStatus\022.\n\ncreated_at\030\014 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022.\n\nupdated_at\030\r \001" +
+      "(\0132\032.google.protobuf.Timestamp\032-\n\013Config" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\212\002" +
+      "\n\010UsageLog\022\n\n\002id\030\001 \001(\t\022\020\n\010model_id\030\002 \001(\t" +
+      "\022\017\n\007user_id\030\003 \001(\t\022\022\n\nsession_id\030\004 \001(\t\022\023\n" +
+      "\013prompt_hash\030\005 \001(\t\022\023\n\013tokens_used\030\006 \001(\003\022" +
+      "\014\n\004cost\030\007 \001(\001\022\022\n\nlatency_ms\030\010 \001(\005\022(\n\006sta" +
+      "tus\030\t \001(\0162\030.ai.model.v1.UsageStatus\022\025\n\re" +
+      "rror_message\030\n \001(\t\022.\n\ncreated_at\030\013 \001(\0132\032" +
+      ".google.protobuf.Timestamp\"\230\001\n\013Credentia" +
+      "ls\022\017\n\007api_key\030\001 \001(\t\022\020\n\010base_url\030\002 \001(\t\0226\n" +
+      "\007headers\030\003 \003(\0132%.ai.model.v1.Credentials" +
+      ".HeadersEntry\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\211\001\n\013QuotaStatus\022\020\n" +
+      "\010exceeded\030\001 \001(\010\022\022\n\ndaily_used\030\002 \001(\003\022\023\n\013d" +
+      "aily_limit\030\003 \001(\003\022\024\n\014monthly_used\030\004 \001(\003\022\025" +
+      "\n\rmonthly_limit\030\005 \001(\003\022\022\n\nreset_time\030\006 \001(" +
+      "\t\"\242\001\n\nUsageStats\022\020\n\010model_id\030\001 \001(\t\022\022\n\nmo" +
+      "del_name\030\002 \001(\t\022\026\n\016total_requests\030\003 \001(\003\022\024" +
+      "\n\014total_tokens\030\004 \001(\003\022\022\n\ntotal_cost\030\005 \001(\001" +
+      "\022\026\n\016avg_latency_ms\030\006 \001(\005\022\024\n\014success_rate" +
+      "\030\007 \001(\001*\250\001\n\nResultCode\022\017\n\013UNSPECIFIED\020\000\022\014" +
+      "\n\007SUCCESS\020\310\001\022\020\n\013BAD_REQUEST\020\220\003\022\021\n\014UNAUTH" +
+      "ORIZED\020\221\003\022\016\n\tFORBIDDEN\020\223\003\022\016\n\tNOT_FOUND\020\224" +
+      "\003\022\r\n\010CONFLICT\020\231\003\022\r\n\010INTERNAL\020\364\003\022\030\n\023SERVI" +
+      "CE_UNAVAILABLE\020\367\003*O\n\013ModelStatus\022\026\n\022STAT" +
+      "US_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010DISABLED" +
+      "\020\002\022\016\n\nDEPRECATED\020\003*^\n\013UsageStatus\022\025\n\021USA" +
+      "GE_UNSPECIFIED\020\000\022\022\n\016SUCCESS_STATUS\020\001\022\020\n\014" +
+      "ERROR_STATUS\020\002\022\022\n\016TIMEOUT_STATUS\020\003BT\n\037co" +
+      "m.blcvn.kratos.protos.aimodelZ1github.co" +
+      "m/blcvn/kratos-proto/go/ai-model;aimodel" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10719,7 +10569,7 @@ public final class Base {
     internal_static_ai_model_v1_AIModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ai_model_v1_AIModel_descriptor,
-        new java.lang.String[] { "Id", "Name", "Provider", "ModelId", "BaseUrl", "VaultPath", "Config", "QuotaDaily", "QuotaMonthly", "CostPer1KTokens", "Status", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "Name", "Provider", "ModelId", "BaseUrl", "Config", "QuotaDaily", "QuotaMonthly", "CostPer1KTokens", "Status", "CreatedAt", "UpdatedAt", });
     internal_static_ai_model_v1_AIModel_ConfigEntry_descriptor =
       internal_static_ai_model_v1_AIModel_descriptor.getNestedTypes().get(0);
     internal_static_ai_model_v1_AIModel_ConfigEntry_fieldAccessorTable = new

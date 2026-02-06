@@ -13,6 +13,7 @@ import "ba-agent/base.proto";
 service BAAgentService {
   // Task Execution
   rpc ExecuteTask(ExecuteTaskRequest) returns (ExecuteTaskResponse);
+  rpc SubmitInput(SubmitInputRequest) returns (stream StreamExecuteTaskResponse);
   rpc StreamExecuteTask(ExecuteTaskRequest) returns (stream StreamExecuteTaskResponse);
   rpc GetTask(GetTaskRequest) returns (GetTaskResponse);
   
@@ -33,6 +34,8 @@ message ExecuteTaskPayload {
   string session_id = 2;
   string task_description = 3;
   int32 max_iterations = 4;
+  string workflow_mode = 5; // "interactive" (default) or "pipeline" (future)
+  repeated ReActStep history = 6;
 }
 
 message ExecuteTaskRequest {
@@ -62,6 +65,13 @@ message ClearMemoryRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   string session_id = 3;
+}
+
+message SubmitInputRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string task_id = 3;
+  string input_data = 4;
 }
 
 // =======================

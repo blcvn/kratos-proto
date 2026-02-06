@@ -33,10 +33,6 @@ const (
 // PromptServiceClient is the client API for PromptService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-//
-// =======================
-// Prompt Service
-// =======================
 type PromptServiceClient interface {
 	// Template Management
 	CreateTemplate(ctx context.Context, in *CreateTemplateRequest, opts ...grpc.CallOption) (*CreateTemplateResponse, error)
@@ -153,10 +149,6 @@ func (c *promptServiceClient) CompleteExperiment(ctx context.Context, in *Comple
 // PromptServiceServer is the server API for PromptService service.
 // All implementations must embed UnimplementedPromptServiceServer
 // for forward compatibility.
-//
-// =======================
-// Prompt Service
-// =======================
 type PromptServiceServer interface {
 	// Template Management
 	CreateTemplate(context.Context, *CreateTemplateRequest) (*CreateTemplateResponse, error)

@@ -42,7 +42,7 @@ message CreateModelPayload {
   string provider = 2;
   string model_id = 3;
   string base_url = 4;
-  string vault_path = 5;
+  string api_key = 5;
   map<string, string> config = 6;
   int64 quota_daily = 7;
   int64 quota_monthly = 8;

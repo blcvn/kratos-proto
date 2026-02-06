@@ -161,6 +161,10 @@ public final class Base {
      * <code>TASK_FAILED = 3;</code>
      */
     TASK_FAILED(3),
+    /**
+     * <code>TASK_WAITING_FOR_INPUT = 4;</code>
+     */
+    TASK_WAITING_FOR_INPUT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -180,6 +184,10 @@ public final class Base {
      * <code>TASK_FAILED = 3;</code>
      */
     public static final int TASK_FAILED_VALUE = 3;
+    /**
+     * <code>TASK_WAITING_FOR_INPUT = 4;</code>
+     */
+    public static final int TASK_WAITING_FOR_INPUT_VALUE = 4;
 
 
     public final int getNumber() {
@@ -210,6 +218,7 @@ public final class Base {
         case 1: return TASK_RUNNING;
         case 2: return TASK_COMPLETED;
         case 3: return TASK_FAILED;
+        case 4: return TASK_WAITING_FOR_INPUT;
         default: return null;
       }
     }
@@ -8701,11 +8710,12 @@ public final class Base {
       "\n\nsession_id\030\001 \001(\t\022\022\n\nshort_term\030\002 \003(\t\022\025" +
       "\n\rlong_term_ids\030\003 \003(\t*L\n\nResultCode\022\017\n\013U" +
       "NSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_REQUES" +
-      "T\020\220\003\022\r\n\010INTERNAL\020\364\003*U\n\nTaskStatus\022\020\n\014TAS" +
+      "T\020\220\003\022\r\n\010INTERNAL\020\364\003*q\n\nTaskStatus\022\020\n\014TAS" +
       "K_PENDING\020\000\022\020\n\014TASK_RUNNING\020\001\022\022\n\016TASK_CO" +
-      "MPLETED\020\002\022\017\n\013TASK_FAILED\020\003BT\n\037com.blcvn." +
-      "kratos.protos.baagentZ1github.com/blcvn/" +
-      "kratos-proto/go/ba-agent;baagentb\006proto3"
+      "MPLETED\020\002\022\017\n\013TASK_FAILED\020\003\022\032\n\026TASK_WAITI" +
+      "NG_FOR_INPUT\020\004BT\n\037com.blcvn.kratos.proto" +
+      "s.baagentZ1github.com/blcvn/kratos-proto" +
+      "/go/ba-agent;baagentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

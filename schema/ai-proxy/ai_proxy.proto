@@ -27,6 +27,7 @@ service AIProxyService {
 message CompletePayload {
   string model_id = 1;
   string prompt = 2;
+  repeated ChatMessage messages = 8;
   int32 max_tokens = 3;
   double temperature = 4;
   double top_p = 5;

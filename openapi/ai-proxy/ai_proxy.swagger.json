@@ -196,6 +196,17 @@
     }
   },
   "definitions": {
+    "ChatMessageRole": {
+      "type": "string",
+      "enum": [
+        "ROLE_UNSPECIFIED",
+        "SYSTEM",
+        "USER",
+        "ASSISTANT",
+        "TOOL"
+      ],
+      "default": "ROLE_UNSPECIFIED"
+    },
     "SignatureSignatureType": {
       "type": "string",
       "enum": [
@@ -236,6 +247,17 @@
         }
       }
     },
+    "v1ChatMessage": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "$ref": "#/definitions/ChatMessageRole"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
     "v1CompletePayload": {
       "type": "object",
       "properties": {
@@ -244,6 +266,13 @@
         },
         "prompt": {
           "type": "string"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChatMessage"
+          }
         },
         "max_tokens": {
           "type": "integer",
@@ -311,9 +340,17 @@
         "text": {
           "type": "string"
         },
-        "tokens_used": {
-          "type": "string",
-          "format": "int64"
+        "prompt_tokens": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completion_tokens": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_tokens": {
+          "type": "integer",
+          "format": "int32"
         },
         "latency_ms": {
           "type": "integer",

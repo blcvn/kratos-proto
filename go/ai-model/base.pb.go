@@ -462,7 +462,6 @@ type AIModel struct {
 	Provider         string                 `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
 	ModelId          string                 `protobuf:"bytes,4,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	BaseUrl          string                 `protobuf:"bytes,5,opt,name=base_url,json=baseUrl,proto3" json:"base_url,omitempty"`
-	VaultPath        string                 `protobuf:"bytes,6,opt,name=vault_path,json=vaultPath,proto3" json:"vault_path,omitempty"`
 	Config           map[string]string      `protobuf:"bytes,7,rep,name=config,proto3" json:"config,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	QuotaDaily       int64                  `protobuf:"varint,8,opt,name=quota_daily,json=quotaDaily,proto3" json:"quota_daily,omitempty"`
 	QuotaMonthly     int64                  `protobuf:"varint,9,opt,name=quota_monthly,json=quotaMonthly,proto3" json:"quota_monthly,omitempty"`
@@ -535,13 +534,6 @@ func (x *AIModel) GetModelId() string {
 func (x *AIModel) GetBaseUrl() string {
 	if x != nil {
 		return x.BaseUrl
-	}
-	return ""
-}
-
-func (x *AIModel) GetVaultPath() string {
-	if x != nil {
-		return x.VaultPath
 	}
 	return ""
 }
@@ -977,15 +969,13 @@ const file_ai_model_base_proto_rawDesc = "" +
 	"\vNO_USE_TYPE\x10\x00\x12\x05\n" +
 	"\x01J\x10\x01\x12\x05\n" +
 	"\x01C\x10\x02\x12\x05\n" +
-	"\x01S\x10\x03\"\xae\x04\n" +
+	"\x01S\x10\x03\"\x8f\x04\n" +
 	"\aAIModel\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
 	"\bprovider\x18\x03 \x01(\tR\bprovider\x12\x19\n" +
 	"\bmodel_id\x18\x04 \x01(\tR\amodelId\x12\x19\n" +
-	"\bbase_url\x18\x05 \x01(\tR\abaseUrl\x12\x1d\n" +
-	"\n" +
-	"vault_path\x18\x06 \x01(\tR\tvaultPath\x128\n" +
+	"\bbase_url\x18\x05 \x01(\tR\abaseUrl\x128\n" +
 	"\x06config\x18\a \x03(\v2 .ai.model.v1.AIModel.ConfigEntryR\x06config\x12\x1f\n" +
 	"\vquota_daily\x18\b \x01(\x03R\n" +
 	"quotaDaily\x12#\n" +

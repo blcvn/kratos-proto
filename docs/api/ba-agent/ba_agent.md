@@ -25,7 +25,18 @@
     "user_id": "...",
     "session_id": "...",
     "task_description": "...",
-    "max_iterations": 1000
+    "max_iterations": 1000,
+    "workflow_mode": "...",
+    "history": [
+      {
+        "step_number": 1000,
+        "thought": "...",
+        "action": "...",
+        "action_params": {},
+        "observation": "...",
+        "created_at": "2025-..."
+      }
+    ]
   }
 }
 ```
@@ -68,6 +79,98 @@
     "iterations_used": 1000,
     "created_at": "2025-...",
     "completed_at": "2025-..."
+  }
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /agent/execute/stream
+- Mô tả: Gửi yêu cầu
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "payload": {
+    "user_id": "...",
+    "session_id": "...",
+    "task_description": "...",
+    "max_iterations": 1000,
+    "workflow_mode": "...",
+    "history": [
+      {
+        "step_number": 1000,
+        "thought": "...",
+        "action": "...",
+        "action_params": {},
+        "observation": "...",
+        "created_at": "2025-..."
+      }
+    ]
+  }
+}
+```
+
+- Response 200 (object):
+
+```json
+{
+  "result": {
+    "metadata": {
+      "request_id": "...",
+      "request_time": "...",
+      "version": "..."
+    },
+    "signature": {
+      "s_type": "...",
+      "s": "...",
+      "b": "..."
+    },
+    "result": {
+      "code": "...",
+      "message": "..."
+    },
+    "step": {
+      "step_number": 1000,
+      "thought": "...",
+      "action": "...",
+      "action_params": {},
+      "observation": "...",
+      "created_at": "2025-..."
+    },
+    "is_final": true
+  },
+  "error": {
+    "code": 1000,
+    "message": "...",
+    "details": [
+      {
+        "@type": "..."
+      }
+    ]
   }
 }
 ```
@@ -215,6 +318,82 @@
     "iterations_used": 1000,
     "created_at": "2025-...",
     "completed_at": "2025-..."
+  }
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /agent/tasks/{task_id}/input
+- Mô tả: Gửi yêu cầu theo `task_id`
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "input_data": "..."
+}
+```
+
+- Response 200 (object):
+
+```json
+{
+  "result": {
+    "metadata": {
+      "request_id": "...",
+      "request_time": "...",
+      "version": "..."
+    },
+    "signature": {
+      "s_type": "...",
+      "s": "...",
+      "b": "..."
+    },
+    "result": {
+      "code": "...",
+      "message": "..."
+    },
+    "step": {
+      "step_number": 1000,
+      "thought": "...",
+      "action": "...",
+      "action_params": {},
+      "observation": "...",
+      "created_at": "2025-..."
+    },
+    "is_final": true
+  },
+  "error": {
+    "code": 1000,
+    "message": "...",
+    "details": [
+      {
+        "@type": "..."
+      }
+    ]
   }
 }
 ```

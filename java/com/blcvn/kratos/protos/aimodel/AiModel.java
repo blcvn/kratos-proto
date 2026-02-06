@@ -1106,16 +1106,16 @@ public final class AiModel {
         getBaseUrlBytes();
 
     /**
-     * <code>string vault_path = 5;</code>
-     * @return The vaultPath.
+     * <code>string api_key = 5;</code>
+     * @return The apiKey.
      */
-    java.lang.String getVaultPath();
+    java.lang.String getApiKey();
     /**
-     * <code>string vault_path = 5;</code>
-     * @return The bytes for vaultPath.
+     * <code>string api_key = 5;</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getVaultPathBytes();
+        getApiKeyBytes();
 
     /**
      * <code>map&lt;string, string&gt; config = 6;</code>
@@ -1186,7 +1186,7 @@ public final class AiModel {
       provider_ = "";
       modelId_ = "";
       baseUrl_ = "";
-      vaultPath_ = "";
+      apiKey_ = "";
     }
 
     @java.lang.Override
@@ -1247,7 +1247,7 @@ public final class AiModel {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vaultPath_ = s;
+              apiKey_ = s;
               break;
             }
             case 50: {
@@ -1474,38 +1474,38 @@ public final class AiModel {
       }
     }
 
-    public static final int VAULT_PATH_FIELD_NUMBER = 5;
-    private volatile java.lang.Object vaultPath_;
+    public static final int API_KEY_FIELD_NUMBER = 5;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string vault_path = 5;</code>
-     * @return The vaultPath.
+     * <code>string api_key = 5;</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getVaultPath() {
-      java.lang.Object ref = vaultPath_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vaultPath_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string vault_path = 5;</code>
-     * @return The bytes for vaultPath.
+     * <code>string api_key = 5;</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVaultPathBytes() {
-      java.lang.Object ref = vaultPath_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vaultPath_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1652,8 +1652,8 @@ public final class AiModel {
       if (!getBaseUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, baseUrl_);
       }
-      if (!getVaultPathBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, vaultPath_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, apiKey_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
@@ -1691,8 +1691,8 @@ public final class AiModel {
       if (!getBaseUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, baseUrl_);
       }
-      if (!getVaultPathBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, vaultPath_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, apiKey_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetConfig().getMap().entrySet()) {
@@ -1739,8 +1739,8 @@ public final class AiModel {
           .equals(other.getModelId())) return false;
       if (!getBaseUrl()
           .equals(other.getBaseUrl())) return false;
-      if (!getVaultPath()
-          .equals(other.getVaultPath())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (!internalGetConfig().equals(
           other.internalGetConfig())) return false;
       if (getQuotaDaily()
@@ -1769,8 +1769,8 @@ public final class AiModel {
       hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + BASE_URL_FIELD_NUMBER;
       hash = (53 * hash) + getBaseUrl().hashCode();
-      hash = (37 * hash) + VAULT_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getVaultPath().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       if (!internalGetConfig().getMap().isEmpty()) {
         hash = (37 * hash) + CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + internalGetConfig().hashCode();
@@ -1947,7 +1947,7 @@ public final class AiModel {
 
         baseUrl_ = "";
 
-        vaultPath_ = "";
+        apiKey_ = "";
 
         internalGetMutableConfig().clear();
         quotaDaily_ = 0L;
@@ -1987,7 +1987,7 @@ public final class AiModel {
         result.provider_ = provider_;
         result.modelId_ = modelId_;
         result.baseUrl_ = baseUrl_;
-        result.vaultPath_ = vaultPath_;
+        result.apiKey_ = apiKey_;
         result.config_ = internalGetConfig();
         result.config_.makeImmutable();
         result.quotaDaily_ = quotaDaily_;
@@ -2057,8 +2057,8 @@ public final class AiModel {
           baseUrl_ = other.baseUrl_;
           onChanged();
         }
-        if (!other.getVaultPath().isEmpty()) {
-          vaultPath_ = other.vaultPath_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         internalGetMutableConfig().mergeFrom(
@@ -2406,78 +2406,78 @@ public final class AiModel {
         return this;
       }
 
-      private java.lang.Object vaultPath_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string vault_path = 5;</code>
-       * @return The vaultPath.
+       * <code>string api_key = 5;</code>
+       * @return The apiKey.
        */
-      public java.lang.String getVaultPath() {
-        java.lang.Object ref = vaultPath_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vaultPath_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string vault_path = 5;</code>
-       * @return The bytes for vaultPath.
+       * <code>string api_key = 5;</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getVaultPathBytes() {
-        java.lang.Object ref = vaultPath_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vaultPath_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string vault_path = 5;</code>
-       * @param value The vaultPath to set.
+       * <code>string api_key = 5;</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setVaultPath(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        vaultPath_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string vault_path = 5;</code>
+       * <code>string api_key = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVaultPath() {
+      public Builder clearApiKey() {
         
-        vaultPath_ = getDefaultInstance().getVaultPath();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string vault_path = 5;</code>
-       * @param value The bytes for vaultPath to set.
+       * <code>string api_key = 5;</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setVaultPathBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        vaultPath_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -25329,115 +25329,115 @@ public final class AiModel {
       "ai-model/base.proto\"\210\001\n\rResponseEmpty\022\'\n" +
       "\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)" +
       "\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signatur" +
-      "e\022#\n\006result\030\003 \001(\0132\023.ai.model.v1.Result\"\240" +
+      "e\022#\n\006result\030\003 \001(\0132\023.ai.model.v1.Result\"\235" +
       "\002\n\022CreateModelPayload\022\014\n\004name\030\001 \001(\t\022\020\n\010p" +
       "rovider\030\002 \001(\t\022\020\n\010model_id\030\003 \001(\t\022\020\n\010base_" +
-      "url\030\004 \001(\t\022\022\n\nvault_path\030\005 \001(\t\022;\n\006config\030" +
-      "\006 \003(\0132+.ai.model.v1.CreateModelPayload.C" +
-      "onfigEntry\022\023\n\013quota_daily\030\007 \001(\003\022\025\n\rquota" +
-      "_monthly\030\010 \001(\003\022\032\n\022cost_per_1k_tokens\030\t \001" +
-      "(\001\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"\360\001\n\022UpdateModelPayload\022\n\n\002id\030\001" +
-      " \001(\t\022\014\n\004name\030\002 \001(\t\022;\n\006config\030\003 \003(\0132+.ai." +
-      "model.v1.UpdateModelPayload.ConfigEntry\022" +
-      "\023\n\013quota_daily\030\004 \001(\003\022\025\n\rquota_monthly\030\005 " +
-      "\001(\003\022(\n\006status\030\006 \001(\0162\030.ai.model.v1.ModelS" +
-      "tatus\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"j\n\013ModelFilter\022\020\n\010provider\030" +
-      "\001 \001(\t\022(\n\006status\030\002 \001(\0162\030.ai.model.v1.Mode" +
-      "lStatus\022\014\n\004page\030\003 \001(\005\022\021\n\tpage_size\030\004 \001(\005" +
-      "\"\307\001\n\017LogUsagePayload\022\020\n\010model_id\030\001 \001(\t\022\017" +
-      "\n\007user_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(\t\022\023\n\013p" +
-      "rompt_hash\030\004 \001(\t\022\023\n\013tokens_used\030\005 \001(\003\022\022\n" +
-      "\nlatency_ms\030\006 \001(\005\022(\n\006status\030\007 \001(\0162\030.ai.m" +
-      "odel.v1.UsageStatus\022\025\n\rerror_message\030\010 \001" +
-      "(\t\"J\n\020UsageStatsFilter\022\020\n\010model_id\030\001 \001(\t" +
-      "\022\022\n\nstart_date\030\002 \001(\t\022\020\n\010end_date\030\003 \001(\t\"\232" +
-      "\001\n\022CreateModelRequest\022\'\n\010metadata\030\001 \001(\0132" +
-      "\025.ai.model.v1.Metadata\022)\n\tsignature\030\002 \001(" +
-      "\0132\026.ai.model.v1.Signature\0220\n\007payload\030\003 \001" +
-      "(\0132\037.ai.model.v1.CreateModelPayload\"q\n\017G" +
-      "etModelRequest\022\'\n\010metadata\030\001 \001(\0132\025.ai.mo" +
-      "del.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai." +
-      "model.v1.Signature\022\n\n\002id\030\003 \001(\t\"\221\001\n\021ListM" +
-      "odelsRequest\022\'\n\010metadata\030\001 \001(\0132\025.ai.mode" +
-      "l.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.mo" +
-      "del.v1.Signature\022(\n\006filter\030\003 \001(\0132\030.ai.mo" +
-      "del.v1.ModelFilter\"\232\001\n\022UpdateModelReques" +
-      "t\022\'\n\010metadata\030\001 \001(\0132\025.ai.model.v1.Metada" +
-      "ta\022)\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Sign" +
-      "ature\0220\n\007payload\030\003 \001(\0132\037.ai.model.v1.Upd" +
-      "ateModelPayload\"t\n\022DeleteModelRequest\022\'\n" +
-      "\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)" +
-      "\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signatur" +
-      "e\022\n\n\002id\030\003 \001(\t\"}\n\025GetCredentialsRequest\022\'" +
+      "url\030\004 \001(\t\022\017\n\007api_key\030\005 \001(\t\022;\n\006config\030\006 \003" +
+      "(\0132+.ai.model.v1.CreateModelPayload.Conf" +
+      "igEntry\022\023\n\013quota_daily\030\007 \001(\003\022\025\n\rquota_mo" +
+      "nthly\030\010 \001(\003\022\032\n\022cost_per_1k_tokens\030\t \001(\001\032" +
+      "-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001\"\360\001\n\022UpdateModelPayload\022\n\n\002id\030\001 \001(" +
+      "\t\022\014\n\004name\030\002 \001(\t\022;\n\006config\030\003 \003(\0132+.ai.mod" +
+      "el.v1.UpdateModelPayload.ConfigEntry\022\023\n\013" +
+      "quota_daily\030\004 \001(\003\022\025\n\rquota_monthly\030\005 \001(\003" +
+      "\022(\n\006status\030\006 \001(\0162\030.ai.model.v1.ModelStat" +
+      "us\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"j\n\013ModelFilter\022\020\n\010provider\030\001 \001" +
+      "(\t\022(\n\006status\030\002 \001(\0162\030.ai.model.v1.ModelSt" +
+      "atus\022\014\n\004page\030\003 \001(\005\022\021\n\tpage_size\030\004 \001(\005\"\307\001" +
+      "\n\017LogUsagePayload\022\020\n\010model_id\030\001 \001(\t\022\017\n\007u" +
+      "ser_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(\t\022\023\n\013prom" +
+      "pt_hash\030\004 \001(\t\022\023\n\013tokens_used\030\005 \001(\003\022\022\n\nla" +
+      "tency_ms\030\006 \001(\005\022(\n\006status\030\007 \001(\0162\030.ai.mode" +
+      "l.v1.UsageStatus\022\025\n\rerror_message\030\010 \001(\t\"" +
+      "J\n\020UsageStatsFilter\022\020\n\010model_id\030\001 \001(\t\022\022\n" +
+      "\nstart_date\030\002 \001(\t\022\020\n\010end_date\030\003 \001(\t\"\232\001\n\022" +
+      "CreateModelRequest\022\'\n\010metadata\030\001 \001(\0132\025.a" +
+      "i.model.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
+      ".ai.model.v1.Signature\0220\n\007payload\030\003 \001(\0132" +
+      "\037.ai.model.v1.CreateModelPayload\"q\n\017GetM" +
+      "odelRequest\022\'\n\010metadata\030\001 \001(\0132\025.ai.model" +
+      ".v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.mod" +
+      "el.v1.Signature\022\n\n\002id\030\003 \001(\t\"\221\001\n\021ListMode" +
+      "lsRequest\022\'\n\010metadata\030\001 \001(\0132\025.ai.model.v" +
+      "1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.model" +
+      ".v1.Signature\022(\n\006filter\030\003 \001(\0132\030.ai.model" +
+      ".v1.ModelFilter\"\232\001\n\022UpdateModelRequest\022\'" +
       "\n\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022" +
       ")\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signatu" +
-      "re\022\020\n\010model_id\030\003 \001(\t\"\224\001\n\017LogUsageRequest" +
-      "\022\'\n\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadat" +
-      "a\022)\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signa" +
-      "ture\022-\n\007payload\030\003 \001(\0132\034.ai.model.v1.LogU" +
-      "sagePayload\"y\n\021CheckQuotaRequest\022\'\n\010meta" +
-      "data\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsig" +
-      "nature\030\002 \001(\0132\026.ai.model.v1.Signature\022\020\n\010" +
-      "model_id\030\003 \001(\t\"\231\001\n\024GetUsageStatsRequest\022" +
-      "\'\n\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadata" +
-      "\022)\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signat" +
-      "ure\022-\n\006filter\030\003 \001(\0132\035.ai.model.v1.UsageS" +
-      "tatsFilter\"\263\001\n\023CreateModelResponse\022\'\n\010me" +
+      "re\0220\n\007payload\030\003 \001(\0132\037.ai.model.v1.Update" +
+      "ModelPayload\"t\n\022DeleteModelRequest\022\'\n\010me" +
       "tadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\ts" +
-      "ignature\030\002 \001(\0132\026.ai.model.v1.Signature\022#" +
-      "\n\006result\030\003 \001(\0132\023.ai.model.v1.Result\022#\n\005m" +
-      "odel\030\004 \001(\0132\024.ai.model.v1.AIModel\"\260\001\n\020Get" +
-      "ModelResponse\022\'\n\010metadata\030\001 \001(\0132\025.ai.mod" +
-      "el.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.m" +
-      "odel.v1.Signature\022#\n\006result\030\003 \001(\0132\023.ai.m" +
-      "odel.v1.Result\022#\n\005model\030\004 \001(\0132\024.ai.model" +
-      ".v1.AIModel\"\302\001\n\022ListModelsResponse\022\'\n\010me" +
-      "tadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\ts" +
-      "ignature\030\002 \001(\0132\026.ai.model.v1.Signature\022#" +
-      "\n\006result\030\003 \001(\0132\023.ai.model.v1.Result\022$\n\006m" +
-      "odels\030\004 \003(\0132\024.ai.model.v1.AIModel\022\r\n\005tot" +
-      "al\030\005 \001(\005\"\263\001\n\023UpdateModelResponse\022\'\n\010meta" +
-      "data\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsig" +
-      "nature\030\002 \001(\0132\026.ai.model.v1.Signature\022#\n\006" +
-      "result\030\003 \001(\0132\023.ai.model.v1.Result\022#\n\005mod" +
-      "el\030\004 \001(\0132\024.ai.model.v1.AIModel\"\300\001\n\026GetCr" +
-      "edentialsResponse\022\'\n\010metadata\030\001 \001(\0132\025.ai" +
-      ".model.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026." +
-      "ai.model.v1.Signature\022#\n\006result\030\003 \001(\0132\023." +
-      "ai.model.v1.Result\022-\n\013credentials\030\004 \001(\0132" +
-      "\030.ai.model.v1.Credentials\"\266\001\n\022CheckQuota" +
-      "Response\022\'\n\010metadata\030\001 \001(\0132\025.ai.model.v1" +
-      ".Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.model." +
-      "v1.Signature\022#\n\006result\030\003 \001(\0132\023.ai.model." +
-      "v1.Result\022\'\n\005quota\030\004 \001(\0132\030.ai.model.v1.Q" +
-      "uotaStatus\"\270\001\n\025GetUsageStatsResponse\022\'\n\010" +
+      "ignature\030\002 \001(\0132\026.ai.model.v1.Signature\022\n" +
+      "\n\002id\030\003 \001(\t\"}\n\025GetCredentialsRequest\022\'\n\010m" +
+      "etadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\t" +
+      "signature\030\002 \001(\0132\026.ai.model.v1.Signature\022" +
+      "\020\n\010model_id\030\003 \001(\t\"\224\001\n\017LogUsageRequest\022\'\n" +
+      "\010metadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)" +
+      "\n\tsignature\030\002 \001(\0132\026.ai.model.v1.Signatur" +
+      "e\022-\n\007payload\030\003 \001(\0132\034.ai.model.v1.LogUsag" +
+      "ePayload\"y\n\021CheckQuotaRequest\022\'\n\010metadat" +
+      "a\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsignat" +
+      "ure\030\002 \001(\0132\026.ai.model.v1.Signature\022\020\n\010mod" +
+      "el_id\030\003 \001(\t\"\231\001\n\024GetUsageStatsRequest\022\'\n\010" +
       "metadata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n" +
       "\tsignature\030\002 \001(\0132\026.ai.model.v1.Signature" +
-      "\022#\n\006result\030\003 \001(\0132\023.ai.model.v1.Result\022&\n" +
-      "\005stats\030\004 \003(\0132\027.ai.model.v1.UsageStats2\340\005" +
-      "\n\016AIModelService\022P\n\013CreateModel\022\037.ai.mod" +
-      "el.v1.CreateModelRequest\032 .ai.model.v1.C" +
-      "reateModelResponse\022G\n\010GetModel\022\034.ai.mode" +
-      "l.v1.GetModelRequest\032\035.ai.model.v1.GetMo" +
-      "delResponse\022M\n\nListModels\022\036.ai.model.v1." +
-      "ListModelsRequest\032\037.ai.model.v1.ListMode" +
-      "lsResponse\022P\n\013UpdateModel\022\037.ai.model.v1." +
-      "UpdateModelRequest\032 .ai.model.v1.UpdateM" +
-      "odelResponse\022J\n\013DeleteModel\022\037.ai.model.v" +
-      "1.DeleteModelRequest\032\032.ai.model.v1.Respo" +
-      "nseEmpty\022Y\n\016GetCredentials\022\".ai.model.v1" +
-      ".GetCredentialsRequest\032#.ai.model.v1.Get" +
-      "CredentialsResponse\022D\n\010LogUsage\022\034.ai.mod" +
-      "el.v1.LogUsageRequest\032\032.ai.model.v1.Resp" +
-      "onseEmpty\022M\n\nCheckQuota\022\036.ai.model.v1.Ch" +
-      "eckQuotaRequest\032\037.ai.model.v1.CheckQuota" +
-      "Response\022V\n\rGetUsageStats\022!.ai.model.v1." +
-      "GetUsageStatsRequest\032\".ai.model.v1.GetUs" +
-      "ageStatsResponseBT\n\037com.blcvn.kratos.pro" +
-      "tos.aimodelZ1github.com/blcvn/kratos-pro" +
-      "to/go/ai-model;aimodelb\006proto3"
+      "\022-\n\006filter\030\003 \001(\0132\035.ai.model.v1.UsageStat" +
+      "sFilter\"\263\001\n\023CreateModelResponse\022\'\n\010metad" +
+      "ata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsign" +
+      "ature\030\002 \001(\0132\026.ai.model.v1.Signature\022#\n\006r" +
+      "esult\030\003 \001(\0132\023.ai.model.v1.Result\022#\n\005mode" +
+      "l\030\004 \001(\0132\024.ai.model.v1.AIModel\"\260\001\n\020GetMod" +
+      "elResponse\022\'\n\010metadata\030\001 \001(\0132\025.ai.model." +
+      "v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai.mode" +
+      "l.v1.Signature\022#\n\006result\030\003 \001(\0132\023.ai.mode" +
+      "l.v1.Result\022#\n\005model\030\004 \001(\0132\024.ai.model.v1" +
+      ".AIModel\"\302\001\n\022ListModelsResponse\022\'\n\010metad" +
+      "ata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsign" +
+      "ature\030\002 \001(\0132\026.ai.model.v1.Signature\022#\n\006r" +
+      "esult\030\003 \001(\0132\023.ai.model.v1.Result\022$\n\006mode" +
+      "ls\030\004 \003(\0132\024.ai.model.v1.AIModel\022\r\n\005total\030" +
+      "\005 \001(\005\"\263\001\n\023UpdateModelResponse\022\'\n\010metadat" +
+      "a\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsignat" +
+      "ure\030\002 \001(\0132\026.ai.model.v1.Signature\022#\n\006res" +
+      "ult\030\003 \001(\0132\023.ai.model.v1.Result\022#\n\005model\030" +
+      "\004 \001(\0132\024.ai.model.v1.AIModel\"\300\001\n\026GetCrede" +
+      "ntialsResponse\022\'\n\010metadata\030\001 \001(\0132\025.ai.mo" +
+      "del.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.ai." +
+      "model.v1.Signature\022#\n\006result\030\003 \001(\0132\023.ai." +
+      "model.v1.Result\022-\n\013credentials\030\004 \001(\0132\030.a" +
+      "i.model.v1.Credentials\"\266\001\n\022CheckQuotaRes" +
+      "ponse\022\'\n\010metadata\030\001 \001(\0132\025.ai.model.v1.Me" +
+      "tadata\022)\n\tsignature\030\002 \001(\0132\026.ai.model.v1." +
+      "Signature\022#\n\006result\030\003 \001(\0132\023.ai.model.v1." +
+      "Result\022\'\n\005quota\030\004 \001(\0132\030.ai.model.v1.Quot" +
+      "aStatus\"\270\001\n\025GetUsageStatsResponse\022\'\n\010met" +
+      "adata\030\001 \001(\0132\025.ai.model.v1.Metadata\022)\n\tsi" +
+      "gnature\030\002 \001(\0132\026.ai.model.v1.Signature\022#\n" +
+      "\006result\030\003 \001(\0132\023.ai.model.v1.Result\022&\n\005st" +
+      "ats\030\004 \003(\0132\027.ai.model.v1.UsageStats2\340\005\n\016A" +
+      "IModelService\022P\n\013CreateModel\022\037.ai.model." +
+      "v1.CreateModelRequest\032 .ai.model.v1.Crea" +
+      "teModelResponse\022G\n\010GetModel\022\034.ai.model.v" +
+      "1.GetModelRequest\032\035.ai.model.v1.GetModel" +
+      "Response\022M\n\nListModels\022\036.ai.model.v1.Lis" +
+      "tModelsRequest\032\037.ai.model.v1.ListModelsR" +
+      "esponse\022P\n\013UpdateModel\022\037.ai.model.v1.Upd" +
+      "ateModelRequest\032 .ai.model.v1.UpdateMode" +
+      "lResponse\022J\n\013DeleteModel\022\037.ai.model.v1.D" +
+      "eleteModelRequest\032\032.ai.model.v1.Response" +
+      "Empty\022Y\n\016GetCredentials\022\".ai.model.v1.Ge" +
+      "tCredentialsRequest\032#.ai.model.v1.GetCre" +
+      "dentialsResponse\022D\n\010LogUsage\022\034.ai.model." +
+      "v1.LogUsageRequest\032\032.ai.model.v1.Respons" +
+      "eEmpty\022M\n\nCheckQuota\022\036.ai.model.v1.Check" +
+      "QuotaRequest\032\037.ai.model.v1.CheckQuotaRes" +
+      "ponse\022V\n\rGetUsageStats\022!.ai.model.v1.Get" +
+      "UsageStatsRequest\032\".ai.model.v1.GetUsage" +
+      "StatsResponseBT\n\037com.blcvn.kratos.protos" +
+      ".aimodelZ1github.com/blcvn/kratos-proto/" +
+      "go/ai-model;aimodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -25455,7 +25455,7 @@ public final class AiModel {
     internal_static_ai_model_v1_CreateModelPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ai_model_v1_CreateModelPayload_descriptor,
-        new java.lang.String[] { "Name", "Provider", "ModelId", "BaseUrl", "VaultPath", "Config", "QuotaDaily", "QuotaMonthly", "CostPer1KTokens", });
+        new java.lang.String[] { "Name", "Provider", "ModelId", "BaseUrl", "ApiKey", "Config", "QuotaDaily", "QuotaMonthly", "CostPer1KTokens", });
     internal_static_ai_model_v1_CreateModelPayload_ConfigEntry_descriptor =
       internal_static_ai_model_v1_CreateModelPayload_descriptor.getNestedTypes().get(0);
     internal_static_ai_model_v1_CreateModelPayload_ConfigEntry_fieldAccessorTable = new

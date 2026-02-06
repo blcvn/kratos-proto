@@ -62,6 +62,61 @@ func local_request_BAAgentService_ExecuteTask_0(ctx context.Context, marshaler r
 	return msg, metadata, err
 }
 
+func request_BAAgentService_SubmitInput_0(ctx context.Context, marshaler runtime.Marshaler, client BAAgentServiceClient, req *http.Request, pathParams map[string]string) (BAAgentService_SubmitInputClient, runtime.ServerMetadata, error) {
+	var (
+		protoReq SubmitInputRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	val, ok := pathParams["task_id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "task_id")
+	}
+	protoReq.TaskId, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "task_id", err)
+	}
+	stream, err := client.SubmitInput(ctx, &protoReq)
+	if err != nil {
+		return nil, metadata, err
+	}
+	header, err := stream.Header()
+	if err != nil {
+		return nil, metadata, err
+	}
+	metadata.HeaderMD = header
+	return stream, metadata, nil
+}
+
+func request_BAAgentService_StreamExecuteTask_0(ctx context.Context, marshaler runtime.Marshaler, client BAAgentServiceClient, req *http.Request, pathParams map[string]string) (BAAgentService_StreamExecuteTaskClient, runtime.ServerMetadata, error) {
+	var (
+		protoReq ExecuteTaskRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	stream, err := client.StreamExecuteTask(ctx, &protoReq)
+	if err != nil {
+		return nil, metadata, err
+	}
+	header, err := stream.Header()
+	if err != nil {
+		return nil, metadata, err
+	}
+	metadata.HeaderMD = header
+	return stream, metadata, nil
+}
+
 var filter_BAAgentService_GetTask_0 = &utilities.DoubleArray{Encoding: map[string]int{"task_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_BAAgentService_GetTask_0(ctx context.Context, marshaler runtime.Marshaler, client BAAgentServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -282,6 +337,20 @@ func RegisterBAAgentServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		}
 		forward_BAAgentService_ExecuteTask_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+
+	mux.Handle(http.MethodPost, pattern_BAAgentService_SubmitInput_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		err := status.Error(codes.Unimplemented, "streaming calls are not yet supported in the in-process transport")
+		_, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+		return
+	})
+
+	mux.Handle(http.MethodPost, pattern_BAAgentService_StreamExecuteTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		err := status.Error(codes.Unimplemented, "streaming calls are not yet supported in the in-process transport")
+		_, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+		return
+	})
 	mux.Handle(http.MethodGet, pattern_BAAgentService_GetTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -419,6 +488,40 @@ func RegisterBAAgentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		}
 		forward_BAAgentService_ExecuteTask_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodPost, pattern_BAAgentService_SubmitInput_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/baagent.v1.BAAgentService/SubmitInput", runtime.WithHTTPPathPattern("/agent/tasks/{task_id}/input"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_BAAgentService_SubmitInput_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_BAAgentService_SubmitInput_0(annotatedContext, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodPost, pattern_BAAgentService_StreamExecuteTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/baagent.v1.BAAgentService/StreamExecuteTask", runtime.WithHTTPPathPattern("/agent/execute/stream"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_BAAgentService_StreamExecuteTask_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_BAAgentService_StreamExecuteTask_0(annotatedContext, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodGet, pattern_BAAgentService_GetTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -491,17 +594,21 @@ func RegisterBAAgentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_BAAgentService_ExecuteTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"agent", "execute"}, ""))
-	pattern_BAAgentService_GetTask_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "tasks", "task_id"}, ""))
-	pattern_BAAgentService_ListTools_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"agent", "tools"}, ""))
-	pattern_BAAgentService_GetMemory_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "memory", "session_id"}, ""))
-	pattern_BAAgentService_ClearMemory_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "memory", "session_id"}, ""))
+	pattern_BAAgentService_ExecuteTask_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"agent", "execute"}, ""))
+	pattern_BAAgentService_SubmitInput_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"agent", "tasks", "task_id", "input"}, ""))
+	pattern_BAAgentService_StreamExecuteTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"agent", "execute", "stream"}, ""))
+	pattern_BAAgentService_GetTask_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "tasks", "task_id"}, ""))
+	pattern_BAAgentService_ListTools_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"agent", "tools"}, ""))
+	pattern_BAAgentService_GetMemory_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "memory", "session_id"}, ""))
+	pattern_BAAgentService_ClearMemory_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"agent", "memory", "session_id"}, ""))
 )
 
 var (
-	forward_BAAgentService_ExecuteTask_0 = runtime.ForwardResponseMessage
-	forward_BAAgentService_GetTask_0     = runtime.ForwardResponseMessage
-	forward_BAAgentService_ListTools_0   = runtime.ForwardResponseMessage
-	forward_BAAgentService_GetMemory_0   = runtime.ForwardResponseMessage
-	forward_BAAgentService_ClearMemory_0 = runtime.ForwardResponseMessage
+	forward_BAAgentService_ExecuteTask_0       = runtime.ForwardResponseMessage
+	forward_BAAgentService_SubmitInput_0       = runtime.ForwardResponseStream
+	forward_BAAgentService_StreamExecuteTask_0 = runtime.ForwardResponseStream
+	forward_BAAgentService_GetTask_0           = runtime.ForwardResponseMessage
+	forward_BAAgentService_ListTools_0         = runtime.ForwardResponseMessage
+	forward_BAAgentService_GetMemory_0         = runtime.ForwardResponseMessage
+	forward_BAAgentService_ClearMemory_0       = runtime.ForwardResponseMessage
 )

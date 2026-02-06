@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	BAAgentService_ExecuteTask_FullMethodName       = "/baagent.v1.BAAgentService/ExecuteTask"
+	BAAgentService_SubmitInput_FullMethodName       = "/baagent.v1.BAAgentService/SubmitInput"
 	BAAgentService_StreamExecuteTask_FullMethodName = "/baagent.v1.BAAgentService/StreamExecuteTask"
 	BAAgentService_GetTask_FullMethodName           = "/baagent.v1.BAAgentService/GetTask"
 	BAAgentService_ListTools_FullMethodName         = "/baagent.v1.BAAgentService/ListTools"
@@ -37,6 +38,7 @@ const (
 type BAAgentServiceClient interface {
 	// Task Execution
 	ExecuteTask(ctx context.Context, in *ExecuteTaskRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	SubmitInput(ctx context.Context, in *SubmitInputRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamExecuteTaskResponse], error)
 	StreamExecuteTask(ctx context.Context, in *ExecuteTaskRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamExecuteTaskResponse], error)
 	GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*GetTaskResponse, error)
 	// Tools
@@ -64,9 +66,28 @@ func (c *bAAgentServiceClient) ExecuteTask(ctx context.Context, in *ExecuteTaskR
 	return out, nil
 }
 
+func (c *bAAgentServiceClient) SubmitInput(ctx context.Context, in *SubmitInputRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamExecuteTaskResponse], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &BAAgentService_ServiceDesc.Streams[0], BAAgentService_SubmitInput_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[SubmitInputRequest, StreamExecuteTaskResponse]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type BAAgentService_SubmitInputClient = grpc.ServerStreamingClient[StreamExecuteTaskResponse]
+
 func (c *bAAgentServiceClient) StreamExecuteTask(ctx context.Context, in *ExecuteTaskRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamExecuteTaskResponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &BAAgentService_ServiceDesc.Streams[0], BAAgentService_StreamExecuteTask_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &BAAgentService_ServiceDesc.Streams[1], BAAgentService_StreamExecuteTask_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,6 +154,7 @@ func (c *bAAgentServiceClient) ClearMemory(ctx context.Context, in *ClearMemoryR
 type BAAgentServiceServer interface {
 	// Task Execution
 	ExecuteTask(context.Context, *ExecuteTaskRequest) (*ExecuteTaskResponse, error)
+	SubmitInput(*SubmitInputRequest, grpc.ServerStreamingServer[StreamExecuteTaskResponse]) error
 	StreamExecuteTask(*ExecuteTaskRequest, grpc.ServerStreamingServer[StreamExecuteTaskResponse]) error
 	GetTask(context.Context, *GetTaskRequest) (*GetTaskResponse, error)
 	// Tools
@@ -152,6 +174,9 @@ type UnimplementedBAAgentServiceServer struct{}
 
 func (UnimplementedBAAgentServiceServer) ExecuteTask(context.Context, *ExecuteTaskRequest) (*ExecuteTaskResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ExecuteTask not implemented")
+}
+func (UnimplementedBAAgentServiceServer) SubmitInput(*SubmitInputRequest, grpc.ServerStreamingServer[StreamExecuteTaskResponse]) error {
+	return status.Error(codes.Unimplemented, "method SubmitInput not implemented")
 }
 func (UnimplementedBAAgentServiceServer) StreamExecuteTask(*ExecuteTaskRequest, grpc.ServerStreamingServer[StreamExecuteTaskResponse]) error {
 	return status.Error(codes.Unimplemented, "method StreamExecuteTask not implemented")
@@ -206,6 +231,17 @@ func _BAAgentService_ExecuteTask_Handler(srv interface{}, ctx context.Context, d
 	}
 	return interceptor(ctx, in, info, handler)
 }
+
+func _BAAgentService_SubmitInput_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(SubmitInputRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(BAAgentServiceServer).SubmitInput(m, &grpc.GenericServerStream[SubmitInputRequest, StreamExecuteTaskResponse]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type BAAgentService_SubmitInputServer = grpc.ServerStreamingServer[StreamExecuteTaskResponse]
 
 func _BAAgentService_StreamExecuteTask_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ExecuteTaskRequest)
@@ -319,6 +355,11 @@ var BAAgentService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "SubmitInput",
+			Handler:       _BAAgentService_SubmitInput_Handler,
+			ServerStreams: true,
+		},
 		{
 			StreamName:    "StreamExecuteTask",
 			Handler:       _BAAgentService_StreamExecuteTask_Handler,

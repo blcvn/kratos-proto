@@ -104,4 +104,5 @@ message RenderedPrompt {
   string template_id = 1;
   string rendered_text = 2;
   map<string, string> variables_used = 3;
+  string version_used = 4;
 }

@@ -77,10 +77,11 @@ func (ResultCode) EnumDescriptor() ([]byte, []int) {
 type TaskStatus int32
 
 const (
-	TaskStatus_TASK_PENDING   TaskStatus = 0
-	TaskStatus_TASK_RUNNING   TaskStatus = 1
-	TaskStatus_TASK_COMPLETED TaskStatus = 2
-	TaskStatus_TASK_FAILED    TaskStatus = 3
+	TaskStatus_TASK_PENDING           TaskStatus = 0
+	TaskStatus_TASK_RUNNING           TaskStatus = 1
+	TaskStatus_TASK_COMPLETED         TaskStatus = 2
+	TaskStatus_TASK_FAILED            TaskStatus = 3
+	TaskStatus_TASK_WAITING_FOR_INPUT TaskStatus = 4
 )
 
 // Enum value maps for TaskStatus.
@@ -90,12 +91,14 @@ var (
 		1: "TASK_RUNNING",
 		2: "TASK_COMPLETED",
 		3: "TASK_FAILED",
+		4: "TASK_WAITING_FOR_INPUT",
 	}
 	TaskStatus_value = map[string]int32{
-		"TASK_PENDING":   0,
-		"TASK_RUNNING":   1,
-		"TASK_COMPLETED": 2,
-		"TASK_FAILED":    3,
+		"TASK_PENDING":           0,
+		"TASK_RUNNING":           1,
+		"TASK_COMPLETED":         2,
+		"TASK_FAILED":            3,
+		"TASK_WAITING_FOR_INPUT": 4,
 	}
 )
 
@@ -773,13 +776,14 @@ const file_ba_agent_base_proto_rawDesc = "" +
 	"\vUNSPECIFIED\x10\x00\x12\f\n" +
 	"\aSUCCESS\x10\xc8\x01\x12\x10\n" +
 	"\vBAD_REQUEST\x10\x90\x03\x12\r\n" +
-	"\bINTERNAL\x10\xf4\x03*U\n" +
+	"\bINTERNAL\x10\xf4\x03*q\n" +
 	"\n" +
 	"TaskStatus\x12\x10\n" +
 	"\fTASK_PENDING\x10\x00\x12\x10\n" +
 	"\fTASK_RUNNING\x10\x01\x12\x12\n" +
 	"\x0eTASK_COMPLETED\x10\x02\x12\x0f\n" +
-	"\vTASK_FAILED\x10\x03BT\n" +
+	"\vTASK_FAILED\x10\x03\x12\x1a\n" +
+	"\x16TASK_WAITING_FOR_INPUT\x10\x04BT\n" +
 	"\x1fcom.blcvn.kratos.protos.baagentZ1github.com/blcvn/kratos-proto/go/ba-agent;baagentb\x06proto3"
 
 var (

@@ -40,6 +40,11 @@ public object BAAgentServiceGrpcKt {
     @JvmStatic
     get() = BAAgentServiceGrpc.getExecuteTaskMethod()
 
+  public val submitInputMethod:
+      MethodDescriptor<BaAgent.SubmitInputRequest, BaAgent.StreamExecuteTaskResponse>
+    @JvmStatic
+    get() = BAAgentServiceGrpc.getSubmitInputMethod()
+
   public val streamExecuteTaskMethod:
       MethodDescriptor<BaAgent.ExecuteTaskRequest, BaAgent.StreamExecuteTaskResponse>
     @JvmStatic
@@ -90,6 +95,28 @@ public object BAAgentServiceGrpcKt {
         Metadata()): BaAgent.ExecuteTaskResponse = unaryRpc(
       channel,
       BAAgentServiceGrpc.getExecuteTaskMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Returns a [Flow] that, when collected, executes this RPC and emits responses from the
+     * server as they arrive.  That flow finishes normally if the server closes its response with
+     * [`Status.OK`][io.grpc.Status], and fails by throwing a [StatusException] otherwise.  If
+     * collecting the flow downstream fails exceptionally (including via cancellation), the RPC
+     * is cancelled with that exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return A flow that, when collected, emits the responses from the server.
+     */
+    public fun submitInput(request: BaAgent.SubmitInputRequest, headers: Metadata = Metadata()):
+        Flow<BaAgent.StreamExecuteTaskResponse> = serverStreamingRpc(
+      channel,
+      BAAgentServiceGrpc.getSubmitInputMethod(),
       request,
       callOptions,
       headers
@@ -228,6 +255,22 @@ public object BAAgentServiceGrpcKt {
         StatusException(UNIMPLEMENTED.withDescription("Method baagent.v1.BAAgentService.ExecuteTask is unimplemented"))
 
     /**
+     * Returns a [Flow] of responses to an RPC for baagent.v1.BAAgentService.SubmitInput.
+     *
+     * If creating or collecting the returned flow fails with a [StatusException], the RPC
+     * will fail with the corresponding [io.grpc.Status].  If it fails with a
+     * [java.util.concurrent.CancellationException], the RPC will fail with status
+     * `Status.CANCELLED`.  If creating
+     * or collecting the returned flow fails for any other reason, the RPC will fail with
+     * `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open fun submitInput(request: BaAgent.SubmitInputRequest):
+        Flow<BaAgent.StreamExecuteTaskResponse> = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method baagent.v1.BAAgentService.SubmitInput is unimplemented"))
+
+    /**
      * Returns a [Flow] of responses to an RPC for baagent.v1.BAAgentService.StreamExecuteTask.
      *
      * If creating or collecting the returned flow fails with a [StatusException], the RPC
@@ -308,6 +351,11 @@ public object BAAgentServiceGrpcKt {
       context = this.context,
       descriptor = BAAgentServiceGrpc.getExecuteTaskMethod(),
       implementation = ::executeTask
+    ))
+      .addMethod(serverStreamingServerMethodDefinition(
+      context = this.context,
+      descriptor = BAAgentServiceGrpc.getSubmitInputMethod(),
+      implementation = ::submitInput
     ))
       .addMethod(serverStreamingServerMethodDefinition(
       context = this.context,

@@ -24,6 +24,12 @@
   "payload": {
     "model_id": "...",
     "prompt": "...",
+    "messages": [
+      {
+        "role": "...",
+        "content": "..."
+      }
+    ],
     "max_tokens": 1000,
     "temperature": 1000.0,
     "top_p": 1000.0,
@@ -57,7 +63,9 @@
     "id": "...",
     "model_id": "...",
     "text": "...",
-    "tokens_used": "...",
+    "prompt_tokens": 1000,
+    "completion_tokens": 1000,
+    "total_tokens": 1000,
     "latency_ms": 1000,
     "from_cache": true,
     "provider": "...",

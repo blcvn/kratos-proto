@@ -59,6 +59,50 @@ public final class BaAgent {
      * @return The maxIterations.
      */
     int getMaxIterations();
+
+    /**
+     * <pre>
+     * "interactive" (default) or "pipeline" (future)
+     * </pre>
+     *
+     * <code>string workflow_mode = 5;</code>
+     * @return The workflowMode.
+     */
+    java.lang.String getWorkflowMode();
+    /**
+     * <pre>
+     * "interactive" (default) or "pipeline" (future)
+     * </pre>
+     *
+     * <code>string workflow_mode = 5;</code>
+     * @return The bytes for workflowMode.
+     */
+    com.google.protobuf.ByteString
+        getWorkflowModeBytes();
+
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep> 
+        getHistoryList();
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.ReActStep getHistory(int index);
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    int getHistoryCount();
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder> 
+        getHistoryOrBuilderList();
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder getHistoryOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code baagent.v1.ExecuteTaskPayload}
@@ -76,6 +120,8 @@ public final class BaAgent {
       userId_ = "";
       sessionId_ = "";
       taskDescription_ = "";
+      workflowMode_ = "";
+      history_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -98,6 +144,7 @@ public final class BaAgent {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -131,6 +178,21 @@ public final class BaAgent {
               maxIterations_ = input.readInt32();
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              workflowMode_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                history_ = new java.util.ArrayList<com.blcvn.kratos.protos.baagent.Base.ReActStep>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              history_.add(
+                  input.readMessage(com.blcvn.kratos.protos.baagent.Base.ReActStep.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +208,9 @@ public final class BaAgent {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          history_ = java.util.Collections.unmodifiableList(history_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -288,6 +353,92 @@ public final class BaAgent {
       return maxIterations_;
     }
 
+    public static final int WORKFLOW_MODE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object workflowMode_;
+    /**
+     * <pre>
+     * "interactive" (default) or "pipeline" (future)
+     * </pre>
+     *
+     * <code>string workflow_mode = 5;</code>
+     * @return The workflowMode.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkflowMode() {
+      java.lang.Object ref = workflowMode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workflowMode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * "interactive" (default) or "pipeline" (future)
+     * </pre>
+     *
+     * <code>string workflow_mode = 5;</code>
+     * @return The bytes for workflowMode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWorkflowModeBytes() {
+      java.lang.Object ref = workflowMode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workflowMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HISTORY_FIELD_NUMBER = 6;
+    private java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep> history_;
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep> getHistoryList() {
+      return history_;
+    }
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder> 
+        getHistoryOrBuilderList() {
+      return history_;
+    }
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    @java.lang.Override
+    public int getHistoryCount() {
+      return history_.size();
+    }
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.ReActStep getHistory(int index) {
+      return history_.get(index);
+    }
+    /**
+     * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder getHistoryOrBuilder(
+        int index) {
+      return history_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -314,6 +465,12 @@ public final class BaAgent {
       if (maxIterations_ != 0) {
         output.writeInt32(4, maxIterations_);
       }
+      if (!getWorkflowModeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, workflowMode_);
+      }
+      for (int i = 0; i < history_.size(); i++) {
+        output.writeMessage(6, history_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -335,6 +492,13 @@ public final class BaAgent {
       if (maxIterations_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, maxIterations_);
+      }
+      if (!getWorkflowModeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, workflowMode_);
+      }
+      for (int i = 0; i < history_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, history_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -359,6 +523,10 @@ public final class BaAgent {
           .equals(other.getTaskDescription())) return false;
       if (getMaxIterations()
           != other.getMaxIterations()) return false;
+      if (!getWorkflowMode()
+          .equals(other.getWorkflowMode())) return false;
+      if (!getHistoryList()
+          .equals(other.getHistoryList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -378,6 +546,12 @@ public final class BaAgent {
       hash = (53 * hash) + getTaskDescription().hashCode();
       hash = (37 * hash) + MAX_ITERATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxIterations();
+      hash = (37 * hash) + WORKFLOW_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowMode().hashCode();
+      if (getHistoryCount() > 0) {
+        hash = (37 * hash) + HISTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getHistoryList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -506,6 +680,7 @@ public final class BaAgent {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getHistoryFieldBuilder();
         }
       }
       @java.lang.Override
@@ -519,6 +694,14 @@ public final class BaAgent {
 
         maxIterations_ = 0;
 
+        workflowMode_ = "";
+
+        if (historyBuilder_ == null) {
+          history_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          historyBuilder_.clear();
+        }
         return this;
       }
 
@@ -545,10 +728,21 @@ public final class BaAgent {
       @java.lang.Override
       public com.blcvn.kratos.protos.baagent.BaAgent.ExecuteTaskPayload buildPartial() {
         com.blcvn.kratos.protos.baagent.BaAgent.ExecuteTaskPayload result = new com.blcvn.kratos.protos.baagent.BaAgent.ExecuteTaskPayload(this);
+        int from_bitField0_ = bitField0_;
         result.userId_ = userId_;
         result.sessionId_ = sessionId_;
         result.taskDescription_ = taskDescription_;
         result.maxIterations_ = maxIterations_;
+        result.workflowMode_ = workflowMode_;
+        if (historyBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            history_ = java.util.Collections.unmodifiableList(history_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.history_ = history_;
+        } else {
+          result.history_ = historyBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -612,6 +806,36 @@ public final class BaAgent {
         if (other.getMaxIterations() != 0) {
           setMaxIterations(other.getMaxIterations());
         }
+        if (!other.getWorkflowMode().isEmpty()) {
+          workflowMode_ = other.workflowMode_;
+          onChanged();
+        }
+        if (historyBuilder_ == null) {
+          if (!other.history_.isEmpty()) {
+            if (history_.isEmpty()) {
+              history_ = other.history_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureHistoryIsMutable();
+              history_.addAll(other.history_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.history_.isEmpty()) {
+            if (historyBuilder_.isEmpty()) {
+              historyBuilder_.dispose();
+              historyBuilder_ = null;
+              history_ = other.history_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              historyBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getHistoryFieldBuilder() : null;
+            } else {
+              historyBuilder_.addAllMessages(other.history_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -640,6 +864,7 @@ public final class BaAgent {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object userId_ = "";
       /**
@@ -898,6 +1123,342 @@ public final class BaAgent {
         maxIterations_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.lang.Object workflowMode_ = "";
+      /**
+       * <pre>
+       * "interactive" (default) or "pipeline" (future)
+       * </pre>
+       *
+       * <code>string workflow_mode = 5;</code>
+       * @return The workflowMode.
+       */
+      public java.lang.String getWorkflowMode() {
+        java.lang.Object ref = workflowMode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workflowMode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * "interactive" (default) or "pipeline" (future)
+       * </pre>
+       *
+       * <code>string workflow_mode = 5;</code>
+       * @return The bytes for workflowMode.
+       */
+      public com.google.protobuf.ByteString
+          getWorkflowModeBytes() {
+        java.lang.Object ref = workflowMode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          workflowMode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * "interactive" (default) or "pipeline" (future)
+       * </pre>
+       *
+       * <code>string workflow_mode = 5;</code>
+       * @param value The workflowMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkflowMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        workflowMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * "interactive" (default) or "pipeline" (future)
+       * </pre>
+       *
+       * <code>string workflow_mode = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkflowMode() {
+        
+        workflowMode_ = getDefaultInstance().getWorkflowMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * "interactive" (default) or "pipeline" (future)
+       * </pre>
+       *
+       * <code>string workflow_mode = 5;</code>
+       * @param value The bytes for workflowMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkflowModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        workflowMode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep> history_ =
+        java.util.Collections.emptyList();
+      private void ensureHistoryIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          history_ = new java.util.ArrayList<com.blcvn.kratos.protos.baagent.Base.ReActStep>(history_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.ReActStep, com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder, com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder> historyBuilder_;
+
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep> getHistoryList() {
+        if (historyBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(history_);
+        } else {
+          return historyBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public int getHistoryCount() {
+        if (historyBuilder_ == null) {
+          return history_.size();
+        } else {
+          return historyBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ReActStep getHistory(int index) {
+        if (historyBuilder_ == null) {
+          return history_.get(index);
+        } else {
+          return historyBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder setHistory(
+          int index, com.blcvn.kratos.protos.baagent.Base.ReActStep value) {
+        if (historyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHistoryIsMutable();
+          history_.set(index, value);
+          onChanged();
+        } else {
+          historyBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder setHistory(
+          int index, com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder builderForValue) {
+        if (historyBuilder_ == null) {
+          ensureHistoryIsMutable();
+          history_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          historyBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder addHistory(com.blcvn.kratos.protos.baagent.Base.ReActStep value) {
+        if (historyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHistoryIsMutable();
+          history_.add(value);
+          onChanged();
+        } else {
+          historyBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder addHistory(
+          int index, com.blcvn.kratos.protos.baagent.Base.ReActStep value) {
+        if (historyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHistoryIsMutable();
+          history_.add(index, value);
+          onChanged();
+        } else {
+          historyBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder addHistory(
+          com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder builderForValue) {
+        if (historyBuilder_ == null) {
+          ensureHistoryIsMutable();
+          history_.add(builderForValue.build());
+          onChanged();
+        } else {
+          historyBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder addHistory(
+          int index, com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder builderForValue) {
+        if (historyBuilder_ == null) {
+          ensureHistoryIsMutable();
+          history_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          historyBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder addAllHistory(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.baagent.Base.ReActStep> values) {
+        if (historyBuilder_ == null) {
+          ensureHistoryIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, history_);
+          onChanged();
+        } else {
+          historyBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder clearHistory() {
+        if (historyBuilder_ == null) {
+          history_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          historyBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public Builder removeHistory(int index) {
+        if (historyBuilder_ == null) {
+          ensureHistoryIsMutable();
+          history_.remove(index);
+          onChanged();
+        } else {
+          historyBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder getHistoryBuilder(
+          int index) {
+        return getHistoryFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder getHistoryOrBuilder(
+          int index) {
+        if (historyBuilder_ == null) {
+          return history_.get(index);  } else {
+          return historyBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder> 
+           getHistoryOrBuilderList() {
+        if (historyBuilder_ != null) {
+          return historyBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(history_);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder addHistoryBuilder() {
+        return getHistoryFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.baagent.Base.ReActStep.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder addHistoryBuilder(
+          int index) {
+        return getHistoryFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.baagent.Base.ReActStep.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .baagent.v1.ReActStep history = 6;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder> 
+           getHistoryBuilderList() {
+        return getHistoryFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.ReActStep, com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder, com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder> 
+          getHistoryFieldBuilder() {
+        if (historyBuilder_ == null) {
+          historyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.ReActStep, com.blcvn.kratos.protos.baagent.Base.ReActStep.Builder, com.blcvn.kratos.protos.baagent.Base.ReActStepOrBuilder>(
+                  history_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          history_ = null;
+        }
+        return historyBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5720,6 +6281,1130 @@ public final class BaAgent {
 
     @java.lang.Override
     public com.blcvn.kratos.protos.baagent.BaAgent.ClearMemoryRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SubmitInputRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.SubmitInputRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string task_id = 3;</code>
+     * @return The taskId.
+     */
+    java.lang.String getTaskId();
+    /**
+     * <code>string task_id = 3;</code>
+     * @return The bytes for taskId.
+     */
+    com.google.protobuf.ByteString
+        getTaskIdBytes();
+
+    /**
+     * <code>string input_data = 4;</code>
+     * @return The inputData.
+     */
+    java.lang.String getInputData();
+    /**
+     * <code>string input_data = 4;</code>
+     * @return The bytes for inputData.
+     */
+    com.google.protobuf.ByteString
+        getInputDataBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.SubmitInputRequest}
+   */
+  public static final class SubmitInputRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.SubmitInputRequest)
+      SubmitInputRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubmitInputRequest.newBuilder() to construct.
+    private SubmitInputRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubmitInputRequest() {
+      taskId_ = "";
+      inputData_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SubmitInputRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubmitInputRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              inputData_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_SubmitInputRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int TASK_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object taskId_;
+    /**
+     * <code>string task_id = 3;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public java.lang.String getTaskId() {
+      java.lang.Object ref = taskId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string task_id = 3;</code>
+     * @return The bytes for taskId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTaskIdBytes() {
+      java.lang.Object ref = taskId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INPUT_DATA_FIELD_NUMBER = 4;
+    private volatile java.lang.Object inputData_;
+    /**
+     * <code>string input_data = 4;</code>
+     * @return The inputData.
+     */
+    @java.lang.Override
+    public java.lang.String getInputData() {
+      java.lang.Object ref = inputData_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputData_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string input_data = 4;</code>
+     * @return The bytes for inputData.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInputDataBytes() {
+      java.lang.Object ref = inputData_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inputData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getTaskIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskId_);
+      }
+      if (!getInputDataBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, inputData_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getTaskIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskId_);
+      }
+      if (!getInputDataBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, inputData_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest other = (com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getTaskId()
+          .equals(other.getTaskId())) return false;
+      if (!getInputData()
+          .equals(other.getInputData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskId().hashCode();
+      hash = (37 * hash) + INPUT_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInputData().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.SubmitInputRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.SubmitInputRequest)
+        com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_SubmitInputRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        taskId_ = "";
+
+        inputData_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_SubmitInputRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest result = new com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.taskId_ = taskId_;
+        result.inputData_ = inputData_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getTaskId().isEmpty()) {
+          taskId_ = other.taskId_;
+          onChanged();
+        }
+        if (!other.getInputData().isEmpty()) {
+          inputData_ = other.inputData_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object taskId_ = "";
+      /**
+       * <code>string task_id = 3;</code>
+       * @return The taskId.
+       */
+      public java.lang.String getTaskId() {
+        java.lang.Object ref = taskId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string task_id = 3;</code>
+       * @return The bytes for taskId.
+       */
+      public com.google.protobuf.ByteString
+          getTaskIdBytes() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string task_id = 3;</code>
+       * @param value The taskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string task_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskId() {
+        
+        taskId_ = getDefaultInstance().getTaskId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string task_id = 3;</code>
+       * @param value The bytes for taskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object inputData_ = "";
+      /**
+       * <code>string input_data = 4;</code>
+       * @return The inputData.
+       */
+      public java.lang.String getInputData() {
+        java.lang.Object ref = inputData_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputData_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string input_data = 4;</code>
+       * @return The bytes for inputData.
+       */
+      public com.google.protobuf.ByteString
+          getInputDataBytes() {
+        java.lang.Object ref = inputData_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inputData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string input_data = 4;</code>
+       * @param value The inputData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        inputData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string input_data = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInputData() {
+        
+        inputData_ = getDefaultInstance().getInputData();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string input_data = 4;</code>
+       * @param value The bytes for inputData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inputData_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.SubmitInputRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.SubmitInputRequest)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubmitInputRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SubmitInputRequest>() {
+      @java.lang.Override
+      public SubmitInputRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubmitInputRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubmitInputRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubmitInputRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13176,6 +14861,11 @@ public final class BaAgent {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_baagent_v1_ClearMemoryRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_SubmitInputRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_baagent_v1_ExecuteTaskResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -13215,66 +14905,73 @@ public final class BaAgent {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ba-agent/ba_agent.proto\022\nbaagent.v1\032\023b" +
-      "a-agent/base.proto\"k\n\022ExecuteTaskPayload" +
-      "\022\017\n\007user_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030\n" +
-      "\020task_description\030\003 \001(\t\022\026\n\016max_iteration" +
-      "s\030\004 \001(\005\"\227\001\n\022ExecuteTaskRequest\022&\n\010metada" +
-      "ta\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignat" +
-      "ure\030\002 \001(\0132\025.baagent.v1.Signature\022/\n\007payl" +
-      "oad\030\003 \001(\0132\036.baagent.v1.ExecuteTaskPayloa" +
-      "d\"s\n\016GetTaskRequest\022&\n\010metadata\030\001 \001(\0132\024." +
-      "baagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025" +
-      ".baagent.v1.Signature\022\017\n\007task_id\030\003 \001(\t\"d" +
-      "\n\020ListToolsRequest\022&\n\010metadata\030\001 \001(\0132\024.b" +
-      "aagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
-      "baagent.v1.Signature\"x\n\020GetMemoryRequest" +
-      "\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata" +
-      "\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signatu" +
-      "re\022\022\n\nsession_id\030\003 \001(\t\"z\n\022ClearMemoryReq" +
-      "uest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Meta" +
-      "data\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sig" +
-      "nature\022\022\n\nsession_id\030\003 \001(\t\"\260\001\n\023ExecuteTa" +
-      "skResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v" +
-      "1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent." +
-      "v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baagent.v" +
-      "1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v1.Agen" +
-      "tTask\"\310\001\n\031StreamExecuteTaskResponse\022&\n\010m" +
-      "etadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\ts" +
-      "ignature\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n" +
-      "\006result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004ste" +
-      "p\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010is_fin" +
-      "al\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010metadata" +
+      "a-agent/base.proto\"\252\001\n\022ExecuteTaskPayloa" +
+      "d\022\017\n\007user_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030" +
+      "\n\020task_description\030\003 \001(\t\022\026\n\016max_iteratio" +
+      "ns\030\004 \001(\005\022\025\n\rworkflow_mode\030\005 \001(\t\022&\n\007histo" +
+      "ry\030\006 \003(\0132\025.baagent.v1.ReActStep\"\227\001\n\022Exec" +
+      "uteTaskRequest\022&\n\010metadata\030\001 \001(\0132\024.baage" +
+      "nt.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baag" +
+      "ent.v1.Signature\022/\n\007payload\030\003 \001(\0132\036.baag" +
+      "ent.v1.ExecuteTaskPayload\"s\n\016GetTaskRequ" +
+      "est\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metad" +
+      "ata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sign" +
+      "ature\022\017\n\007task_id\030\003 \001(\t\"d\n\020ListToolsReque" +
+      "st\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metada" +
+      "ta\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signa" +
+      "ture\"x\n\020GetMemoryRequest\022&\n\010metadata\030\001 \001" +
+      "(\0132\024.baagent.v1.Metadata\022(\n\tsignature\030\002 " +
+      "\001(\0132\025.baagent.v1.Signature\022\022\n\nsession_id" +
+      "\030\003 \001(\t\"z\n\022ClearMemoryRequest\022&\n\010metadata" +
       "\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignatur" +
-      "e\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006result" +
-      "\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task\030\004 \001(\013" +
-      "2\025.baagent.v1.AgentTask\"\252\001\n\021ListToolsRes" +
-      "ponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Met" +
-      "adata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Si" +
-      "gnature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Res" +
-      "ult\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.Tool\"\255\001\n" +
-      "\021GetMemoryResponse\022&\n\010metadata\030\001 \001(\0132\024.b" +
-      "aagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
-      "baagent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022.b" +
-      "aagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022.baage" +
-      "nt.v1.Memory\"\213\001\n\023ClearMemoryResponse\022&\n\010" +
-      "metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\t" +
-      "signature\030\002 \001(\0132\025.baagent.v1.Signature\022\"" +
-      "\n\006result\030\003 \001(\0132\022.baagent.v1.Result2\346\003\n\016B" +
-      "AAgentService\022N\n\013ExecuteTask\022\036.baagent.v" +
-      "1.ExecuteTaskRequest\032\037.baagent.v1.Execut" +
-      "eTaskResponse\022\\\n\021StreamExecuteTask\022\036.baa" +
-      "gent.v1.ExecuteTaskRequest\032%.baagent.v1." +
-      "StreamExecuteTaskResponse0\001\022B\n\007GetTask\022\032" +
-      ".baagent.v1.GetTaskRequest\032\033.baagent.v1." +
-      "GetTaskResponse\022H\n\tListTools\022\034.baagent.v" +
-      "1.ListToolsRequest\032\035.baagent.v1.ListTool" +
-      "sResponse\022H\n\tGetMemory\022\034.baagent.v1.GetM" +
-      "emoryRequest\032\035.baagent.v1.GetMemoryRespo" +
-      "nse\022N\n\013ClearMemory\022\036.baagent.v1.ClearMem" +
-      "oryRequest\032\037.baagent.v1.ClearMemoryRespo" +
-      "nseBT\n\037com.blcvn.kratos.protos.baagentZ1" +
-      "github.com/blcvn/kratos-proto/go/ba-agen" +
-      "t;baagentb\006proto3"
+      "e\030\002 \001(\0132\025.baagent.v1.Signature\022\022\n\nsessio" +
+      "n_id\030\003 \001(\t\"\213\001\n\022SubmitInputRequest\022&\n\010met" +
+      "adata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsig" +
+      "nature\030\002 \001(\0132\025.baagent.v1.Signature\022\017\n\007t" +
+      "ask_id\030\003 \001(\t\022\022\n\ninput_data\030\004 \001(\t\"\260\001\n\023Exe" +
+      "cuteTaskResponse\022&\n\010metadata\030\001 \001(\0132\024.baa" +
+      "gent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.ba" +
+      "agent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baa" +
+      "gent.v1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v" +
+      "1.AgentTask\"\310\001\n\031StreamExecuteTaskRespons" +
+      "e\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metadat" +
+      "a\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signat" +
+      "ure\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result\022" +
+      "#\n\004step\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010" +
+      "is_final\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010me" +
+      "tadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsi" +
+      "gnature\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006" +
+      "result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task" +
+      "\030\004 \001(\0132\025.baagent.v1.AgentTask\"\252\001\n\021ListTo" +
+      "olsResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent." +
+      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent" +
+      ".v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baagent." +
+      "v1.Result\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.To" +
+      "ol\"\255\001\n\021GetMemoryResponse\022&\n\010metadata\030\001 \001" +
+      "(\0132\024.baagent.v1.Metadata\022(\n\tsignature\030\002 " +
+      "\001(\0132\025.baagent.v1.Signature\022\"\n\006result\030\003 \001" +
+      "(\0132\022.baagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022" +
+      ".baagent.v1.Memory\"\213\001\n\023ClearMemoryRespon" +
+      "se\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metada" +
+      "ta\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signa" +
+      "ture\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result" +
+      "2\276\004\n\016BAAgentService\022N\n\013ExecuteTask\022\036.baa" +
+      "gent.v1.ExecuteTaskRequest\032\037.baagent.v1." +
+      "ExecuteTaskResponse\022V\n\013SubmitInput\022\036.baa" +
+      "gent.v1.SubmitInputRequest\032%.baagent.v1." +
+      "StreamExecuteTaskResponse0\001\022\\\n\021StreamExe" +
+      "cuteTask\022\036.baagent.v1.ExecuteTaskRequest" +
+      "\032%.baagent.v1.StreamExecuteTaskResponse0" +
+      "\001\022B\n\007GetTask\022\032.baagent.v1.GetTaskRequest" +
+      "\032\033.baagent.v1.GetTaskResponse\022H\n\tListToo" +
+      "ls\022\034.baagent.v1.ListToolsRequest\032\035.baage" +
+      "nt.v1.ListToolsResponse\022H\n\tGetMemory\022\034.b" +
+      "aagent.v1.GetMemoryRequest\032\035.baagent.v1." +
+      "GetMemoryResponse\022N\n\013ClearMemory\022\036.baage" +
+      "nt.v1.ClearMemoryRequest\032\037.baagent.v1.Cl" +
+      "earMemoryResponseBT\n\037com.blcvn.kratos.pr" +
+      "otos.baagentZ1github.com/blcvn/kratos-pr" +
+      "oto/go/ba-agent;baagentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13286,7 +14983,7 @@ public final class BaAgent {
     internal_static_baagent_v1_ExecuteTaskPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ExecuteTaskPayload_descriptor,
-        new java.lang.String[] { "UserId", "SessionId", "TaskDescription", "MaxIterations", });
+        new java.lang.String[] { "UserId", "SessionId", "TaskDescription", "MaxIterations", "WorkflowMode", "History", });
     internal_static_baagent_v1_ExecuteTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_baagent_v1_ExecuteTaskRequest_fieldAccessorTable = new
@@ -13317,38 +15014,44 @@ public final class BaAgent {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ClearMemoryRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "SessionId", });
-    internal_static_baagent_v1_ExecuteTaskResponse_descriptor =
+    internal_static_baagent_v1_SubmitInputRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_SubmitInputRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "TaskId", "InputData", });
+    internal_static_baagent_v1_ExecuteTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_baagent_v1_ExecuteTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ExecuteTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Task", });
     internal_static_baagent_v1_StreamExecuteTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_baagent_v1_StreamExecuteTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_StreamExecuteTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Step", "IsFinal", });
     internal_static_baagent_v1_GetTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_baagent_v1_GetTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Task", });
     internal_static_baagent_v1_ListToolsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_baagent_v1_ListToolsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ListToolsResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Tools", });
     internal_static_baagent_v1_GetMemoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_baagent_v1_GetMemoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetMemoryResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Memory", });
     internal_static_baagent_v1_ClearMemoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_baagent_v1_ClearMemoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ClearMemoryResponse_descriptor,

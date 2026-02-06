@@ -59,9 +59,22 @@ message Signature {
 // Domain Models
 // =======================
 
+message ChatMessage {
+  enum Role {
+    ROLE_UNSPECIFIED = 0;
+    SYSTEM = 1;
+    USER = 2;
+    ASSISTANT = 3;
+    TOOL = 4;
+  }
+  Role role = 1;
+  string content = 2;
+}
+
 message CompletionRequest {
   string model_id = 1;
   string prompt = 2;
+  repeated ChatMessage messages = 8;
   int32 max_tokens = 3;
   double temperature = 4;
   double top_p = 5;
@@ -73,7 +86,9 @@ message CompletionResponse {
   string id = 1;
   string model_id = 2;
   string text = 3;
-  int64 tokens_used = 4;
+  int32 prompt_tokens = 9;
+  int32 completion_tokens = 10;
+  int32 total_tokens = 11;
   int32 latency_ms = 5;
   bool from_cache = 6;
   string provider = 7;

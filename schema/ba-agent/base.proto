@@ -23,6 +23,7 @@ enum TaskStatus {
   TASK_RUNNING = 1;
   TASK_COMPLETED = 2;
   TASK_FAILED = 3;
+  TASK_WAITING_FOR_INPUT = 4;
 }
 
 message Empty {}

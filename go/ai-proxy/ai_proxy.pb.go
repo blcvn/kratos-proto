@@ -25,6 +25,7 @@ type CompletePayload struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ModelId       string                 `protobuf:"bytes,1,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	Prompt        string                 `protobuf:"bytes,2,opt,name=prompt,proto3" json:"prompt,omitempty"`
+	Messages      []*ChatMessage         `protobuf:"bytes,8,rep,name=messages,proto3" json:"messages,omitempty"`
 	MaxTokens     int32                  `protobuf:"varint,3,opt,name=max_tokens,json=maxTokens,proto3" json:"max_tokens,omitempty"`
 	Temperature   float64                `protobuf:"fixed64,4,opt,name=temperature,proto3" json:"temperature,omitempty"`
 	TopP          float64                `protobuf:"fixed64,5,opt,name=top_p,json=topP,proto3" json:"top_p,omitempty"`
@@ -76,6 +77,13 @@ func (x *CompletePayload) GetPrompt() string {
 		return x.Prompt
 	}
 	return ""
+}
+
+func (x *CompletePayload) GetMessages() []*ChatMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
 }
 
 func (x *CompletePayload) GetMaxTokens() int32 {
@@ -554,10 +562,11 @@ var File_ai_proxy_ai_proxy_proto protoreflect.FileDescriptor
 const file_ai_proxy_ai_proxy_proto_rawDesc = "" +
 	"\n" +
 	"\x17ai-proxy/ai_proxy.proto\x12\n" +
-	"aiproxy.v1\x1a\x13ai-proxy/base.proto\"\xc6\x01\n" +
+	"aiproxy.v1\x1a\x13ai-proxy/base.proto\"\xfb\x01\n" +
 	"\x0fCompletePayload\x12\x19\n" +
 	"\bmodel_id\x18\x01 \x01(\tR\amodelId\x12\x16\n" +
-	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12\x1d\n" +
+	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x123\n" +
+	"\bmessages\x18\b \x03(\v2\x17.aiproxy.v1.ChatMessageR\bmessages\x12\x1d\n" +
 	"\n" +
 	"max_tokens\x18\x03 \x01(\x05R\tmaxTokens\x12 \n" +
 	"\vtemperature\x18\x04 \x01(\x01R\vtemperature\x12\x13\n" +
@@ -625,49 +634,51 @@ var file_ai_proxy_ai_proxy_proto_goTypes = []any{
 	(*StreamCompleteResponse)(nil),    // 5: aiproxy.v1.StreamCompleteResponse
 	(*HealthCheckResponse)(nil),       // 6: aiproxy.v1.HealthCheckResponse
 	(*GetProviderStatusResponse)(nil), // 7: aiproxy.v1.GetProviderStatusResponse
-	(*Metadata)(nil),                  // 8: aiproxy.v1.Metadata
-	(*Signature)(nil),                 // 9: aiproxy.v1.Signature
-	(*Result)(nil),                    // 10: aiproxy.v1.Result
-	(*CompletionResponse)(nil),        // 11: aiproxy.v1.CompletionResponse
-	(*CompletionChunk)(nil),           // 12: aiproxy.v1.CompletionChunk
-	(*ProviderHealth)(nil),            // 13: aiproxy.v1.ProviderHealth
+	(*ChatMessage)(nil),               // 8: aiproxy.v1.ChatMessage
+	(*Metadata)(nil),                  // 9: aiproxy.v1.Metadata
+	(*Signature)(nil),                 // 10: aiproxy.v1.Signature
+	(*Result)(nil),                    // 11: aiproxy.v1.Result
+	(*CompletionResponse)(nil),        // 12: aiproxy.v1.CompletionResponse
+	(*CompletionChunk)(nil),           // 13: aiproxy.v1.CompletionChunk
+	(*ProviderHealth)(nil),            // 14: aiproxy.v1.ProviderHealth
 }
 var file_ai_proxy_ai_proxy_proto_depIdxs = []int32{
-	8,  // 0: aiproxy.v1.CompleteRequest.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 1: aiproxy.v1.CompleteRequest.signature:type_name -> aiproxy.v1.Signature
-	0,  // 2: aiproxy.v1.CompleteRequest.payload:type_name -> aiproxy.v1.CompletePayload
-	8,  // 3: aiproxy.v1.HealthCheckRequest.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 4: aiproxy.v1.HealthCheckRequest.signature:type_name -> aiproxy.v1.Signature
-	8,  // 5: aiproxy.v1.GetProviderStatusRequest.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 6: aiproxy.v1.GetProviderStatusRequest.signature:type_name -> aiproxy.v1.Signature
-	8,  // 7: aiproxy.v1.CompleteResponse.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 8: aiproxy.v1.CompleteResponse.signature:type_name -> aiproxy.v1.Signature
-	10, // 9: aiproxy.v1.CompleteResponse.result:type_name -> aiproxy.v1.Result
-	11, // 10: aiproxy.v1.CompleteResponse.completion:type_name -> aiproxy.v1.CompletionResponse
-	8,  // 11: aiproxy.v1.StreamCompleteResponse.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 12: aiproxy.v1.StreamCompleteResponse.signature:type_name -> aiproxy.v1.Signature
-	10, // 13: aiproxy.v1.StreamCompleteResponse.result:type_name -> aiproxy.v1.Result
-	12, // 14: aiproxy.v1.StreamCompleteResponse.chunk:type_name -> aiproxy.v1.CompletionChunk
-	8,  // 15: aiproxy.v1.HealthCheckResponse.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 16: aiproxy.v1.HealthCheckResponse.signature:type_name -> aiproxy.v1.Signature
-	10, // 17: aiproxy.v1.HealthCheckResponse.result:type_name -> aiproxy.v1.Result
-	8,  // 18: aiproxy.v1.GetProviderStatusResponse.metadata:type_name -> aiproxy.v1.Metadata
-	9,  // 19: aiproxy.v1.GetProviderStatusResponse.signature:type_name -> aiproxy.v1.Signature
-	10, // 20: aiproxy.v1.GetProviderStatusResponse.result:type_name -> aiproxy.v1.Result
-	13, // 21: aiproxy.v1.GetProviderStatusResponse.providers:type_name -> aiproxy.v1.ProviderHealth
-	1,  // 22: aiproxy.v1.AIProxyService.Complete:input_type -> aiproxy.v1.CompleteRequest
-	1,  // 23: aiproxy.v1.AIProxyService.StreamComplete:input_type -> aiproxy.v1.CompleteRequest
-	2,  // 24: aiproxy.v1.AIProxyService.HealthCheck:input_type -> aiproxy.v1.HealthCheckRequest
-	3,  // 25: aiproxy.v1.AIProxyService.GetProviderStatus:input_type -> aiproxy.v1.GetProviderStatusRequest
-	4,  // 26: aiproxy.v1.AIProxyService.Complete:output_type -> aiproxy.v1.CompleteResponse
-	5,  // 27: aiproxy.v1.AIProxyService.StreamComplete:output_type -> aiproxy.v1.StreamCompleteResponse
-	6,  // 28: aiproxy.v1.AIProxyService.HealthCheck:output_type -> aiproxy.v1.HealthCheckResponse
-	7,  // 29: aiproxy.v1.AIProxyService.GetProviderStatus:output_type -> aiproxy.v1.GetProviderStatusResponse
-	26, // [26:30] is the sub-list for method output_type
-	22, // [22:26] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	8,  // 0: aiproxy.v1.CompletePayload.messages:type_name -> aiproxy.v1.ChatMessage
+	9,  // 1: aiproxy.v1.CompleteRequest.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 2: aiproxy.v1.CompleteRequest.signature:type_name -> aiproxy.v1.Signature
+	0,  // 3: aiproxy.v1.CompleteRequest.payload:type_name -> aiproxy.v1.CompletePayload
+	9,  // 4: aiproxy.v1.HealthCheckRequest.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 5: aiproxy.v1.HealthCheckRequest.signature:type_name -> aiproxy.v1.Signature
+	9,  // 6: aiproxy.v1.GetProviderStatusRequest.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 7: aiproxy.v1.GetProviderStatusRequest.signature:type_name -> aiproxy.v1.Signature
+	9,  // 8: aiproxy.v1.CompleteResponse.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 9: aiproxy.v1.CompleteResponse.signature:type_name -> aiproxy.v1.Signature
+	11, // 10: aiproxy.v1.CompleteResponse.result:type_name -> aiproxy.v1.Result
+	12, // 11: aiproxy.v1.CompleteResponse.completion:type_name -> aiproxy.v1.CompletionResponse
+	9,  // 12: aiproxy.v1.StreamCompleteResponse.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 13: aiproxy.v1.StreamCompleteResponse.signature:type_name -> aiproxy.v1.Signature
+	11, // 14: aiproxy.v1.StreamCompleteResponse.result:type_name -> aiproxy.v1.Result
+	13, // 15: aiproxy.v1.StreamCompleteResponse.chunk:type_name -> aiproxy.v1.CompletionChunk
+	9,  // 16: aiproxy.v1.HealthCheckResponse.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 17: aiproxy.v1.HealthCheckResponse.signature:type_name -> aiproxy.v1.Signature
+	11, // 18: aiproxy.v1.HealthCheckResponse.result:type_name -> aiproxy.v1.Result
+	9,  // 19: aiproxy.v1.GetProviderStatusResponse.metadata:type_name -> aiproxy.v1.Metadata
+	10, // 20: aiproxy.v1.GetProviderStatusResponse.signature:type_name -> aiproxy.v1.Signature
+	11, // 21: aiproxy.v1.GetProviderStatusResponse.result:type_name -> aiproxy.v1.Result
+	14, // 22: aiproxy.v1.GetProviderStatusResponse.providers:type_name -> aiproxy.v1.ProviderHealth
+	1,  // 23: aiproxy.v1.AIProxyService.Complete:input_type -> aiproxy.v1.CompleteRequest
+	1,  // 24: aiproxy.v1.AIProxyService.StreamComplete:input_type -> aiproxy.v1.CompleteRequest
+	2,  // 25: aiproxy.v1.AIProxyService.HealthCheck:input_type -> aiproxy.v1.HealthCheckRequest
+	3,  // 26: aiproxy.v1.AIProxyService.GetProviderStatus:input_type -> aiproxy.v1.GetProviderStatusRequest
+	4,  // 27: aiproxy.v1.AIProxyService.Complete:output_type -> aiproxy.v1.CompleteResponse
+	5,  // 28: aiproxy.v1.AIProxyService.StreamComplete:output_type -> aiproxy.v1.StreamCompleteResponse
+	6,  // 29: aiproxy.v1.AIProxyService.HealthCheck:output_type -> aiproxy.v1.HealthCheckResponse
+	7,  // 30: aiproxy.v1.AIProxyService.GetProviderStatus:output_type -> aiproxy.v1.GetProviderStatusResponse
+	27, // [27:31] is the sub-list for method output_type
+	23, // [23:27] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_ai_proxy_ai_proxy_proto_init() }
