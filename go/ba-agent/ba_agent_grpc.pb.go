@@ -19,13 +19,22 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BAAgentService_ExecuteTask_FullMethodName       = "/baagent.v1.BAAgentService/ExecuteTask"
-	BAAgentService_SubmitInput_FullMethodName       = "/baagent.v1.BAAgentService/SubmitInput"
-	BAAgentService_StreamExecuteTask_FullMethodName = "/baagent.v1.BAAgentService/StreamExecuteTask"
-	BAAgentService_GetTask_FullMethodName           = "/baagent.v1.BAAgentService/GetTask"
-	BAAgentService_ListTools_FullMethodName         = "/baagent.v1.BAAgentService/ListTools"
-	BAAgentService_GetMemory_FullMethodName         = "/baagent.v1.BAAgentService/GetMemory"
-	BAAgentService_ClearMemory_FullMethodName       = "/baagent.v1.BAAgentService/ClearMemory"
+	BAAgentService_ExecuteTask_FullMethodName           = "/baagent.v1.BAAgentService/ExecuteTask"
+	BAAgentService_SubmitInput_FullMethodName           = "/baagent.v1.BAAgentService/SubmitInput"
+	BAAgentService_StreamExecuteTask_FullMethodName     = "/baagent.v1.BAAgentService/StreamExecuteTask"
+	BAAgentService_GetTask_FullMethodName               = "/baagent.v1.BAAgentService/GetTask"
+	BAAgentService_ListTools_FullMethodName             = "/baagent.v1.BAAgentService/ListTools"
+	BAAgentService_GetMemory_FullMethodName             = "/baagent.v1.BAAgentService/GetMemory"
+	BAAgentService_ClearMemory_FullMethodName           = "/baagent.v1.BAAgentService/ClearMemory"
+	BAAgentService_GenerateRequirement_FullMethodName   = "/baagent.v1.BAAgentService/GenerateRequirement"
+	BAAgentService_GetDocument_FullMethodName           = "/baagent.v1.BAAgentService/GetDocument"
+	BAAgentService_GetTierIndex_FullMethodName          = "/baagent.v1.BAAgentService/GetTierIndex"
+	BAAgentService_GetTierOutline_FullMethodName        = "/baagent.v1.BAAgentService/GetTierOutline"
+	BAAgentService_GetTierFull_FullMethodName           = "/baagent.v1.BAAgentService/GetTierFull"
+	BAAgentService_ApproveRequirement_FullMethodName    = "/baagent.v1.BAAgentService/ApproveRequirement"
+	BAAgentService_ReviewRequirement_FullMethodName     = "/baagent.v1.BAAgentService/ReviewRequirement"
+	BAAgentService_RegenerateRequirement_FullMethodName = "/baagent.v1.BAAgentService/RegenerateRequirement"
+	BAAgentService_GetLineage_FullMethodName            = "/baagent.v1.BAAgentService/GetLineage"
 )
 
 // BAAgentServiceClient is the client API for BAAgentService service.
@@ -46,6 +55,16 @@ type BAAgentServiceClient interface {
 	// Memory
 	GetMemory(ctx context.Context, in *GetMemoryRequest, opts ...grpc.CallOption) (*GetMemoryResponse, error)
 	ClearMemory(ctx context.Context, in *ClearMemoryRequest, opts ...grpc.CallOption) (*ClearMemoryResponse, error)
+	// 3-Tier Workflow Orchestration
+	GenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error)
+	GetDocument(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	GetTierIndex(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	GetTierOutline(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	GetTierFull(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
+	ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
+	RegenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error)
+	GetLineage(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
 }
 
 type bAAgentServiceClient struct {
@@ -144,6 +163,96 @@ func (c *bAAgentServiceClient) ClearMemory(ctx context.Context, in *ClearMemoryR
 	return out, nil
 }
 
+func (c *bAAgentServiceClient) GenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateRequirementResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GenerateRequirement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) GetDocument(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTaskResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GetDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) GetTierIndex(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTaskResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GetTierIndex_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) GetTierOutline(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTaskResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GetTierOutline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) GetTierFull(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTaskResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GetTierFull_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EmptyResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_ApproveRequirement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EmptyResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_ReviewRequirement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) RegenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateRequirementResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_RegenerateRequirement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) GetLineage(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EmptyResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_GetLineage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BAAgentServiceServer is the server API for BAAgentService service.
 // All implementations must embed UnimplementedBAAgentServiceServer
 // for forward compatibility.
@@ -162,6 +271,16 @@ type BAAgentServiceServer interface {
 	// Memory
 	GetMemory(context.Context, *GetMemoryRequest) (*GetMemoryResponse, error)
 	ClearMemory(context.Context, *ClearMemoryRequest) (*ClearMemoryResponse, error)
+	// 3-Tier Workflow Orchestration
+	GenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error)
+	GetDocument(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
+	GetTierIndex(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
+	GetTierOutline(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
+	GetTierFull(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
+	ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error)
+	ReviewRequirement(context.Context, *ReviewRequirementRequest) (*EmptyResponse, error)
+	RegenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error)
+	GetLineage(context.Context, *GetDocumentRequest) (*EmptyResponse, error)
 	mustEmbedUnimplementedBAAgentServiceServer()
 }
 
@@ -192,6 +311,33 @@ func (UnimplementedBAAgentServiceServer) GetMemory(context.Context, *GetMemoryRe
 }
 func (UnimplementedBAAgentServiceServer) ClearMemory(context.Context, *ClearMemoryRequest) (*ClearMemoryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ClearMemory not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateRequirement not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GetDocument(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDocument not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GetTierIndex(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTierIndex not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GetTierOutline(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTierOutline not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GetTierFull(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTierFull not implemented")
+}
+func (UnimplementedBAAgentServiceServer) ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveRequirement not implemented")
+}
+func (UnimplementedBAAgentServiceServer) ReviewRequirement(context.Context, *ReviewRequirementRequest) (*EmptyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReviewRequirement not implemented")
+}
+func (UnimplementedBAAgentServiceServer) RegenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegenerateRequirement not implemented")
+}
+func (UnimplementedBAAgentServiceServer) GetLineage(context.Context, *GetDocumentRequest) (*EmptyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLineage not implemented")
 }
 func (UnimplementedBAAgentServiceServer) mustEmbedUnimplementedBAAgentServiceServer() {}
 func (UnimplementedBAAgentServiceServer) testEmbeddedByValue()                        {}
@@ -326,6 +472,168 @@ func _BAAgentService_ClearMemory_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BAAgentService_GenerateRequirement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRequirementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GenerateRequirement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GenerateRequirement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GenerateRequirement(ctx, req.(*GenerateRequirementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_GetDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GetDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GetDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GetDocument(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_GetTierIndex_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GetTierIndex(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GetTierIndex_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GetTierIndex(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_GetTierOutline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GetTierOutline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GetTierOutline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GetTierOutline(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_GetTierFull_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GetTierFull(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GetTierFull_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GetTierFull(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_ApproveRequirement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveRequirementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).ApproveRequirement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_ApproveRequirement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).ApproveRequirement(ctx, req.(*ApproveRequirementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_ReviewRequirement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReviewRequirementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).ReviewRequirement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_ReviewRequirement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).ReviewRequirement(ctx, req.(*ReviewRequirementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_RegenerateRequirement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRequirementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).RegenerateRequirement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_RegenerateRequirement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).RegenerateRequirement(ctx, req.(*GenerateRequirementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BAAgentService_GetLineage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).GetLineage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_GetLineage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).GetLineage(ctx, req.(*GetDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BAAgentService_ServiceDesc is the grpc.ServiceDesc for BAAgentService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -352,6 +660,42 @@ var BAAgentService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ClearMemory",
 			Handler:    _BAAgentService_ClearMemory_Handler,
+		},
+		{
+			MethodName: "GenerateRequirement",
+			Handler:    _BAAgentService_GenerateRequirement_Handler,
+		},
+		{
+			MethodName: "GetDocument",
+			Handler:    _BAAgentService_GetDocument_Handler,
+		},
+		{
+			MethodName: "GetTierIndex",
+			Handler:    _BAAgentService_GetTierIndex_Handler,
+		},
+		{
+			MethodName: "GetTierOutline",
+			Handler:    _BAAgentService_GetTierOutline_Handler,
+		},
+		{
+			MethodName: "GetTierFull",
+			Handler:    _BAAgentService_GetTierFull_Handler,
+		},
+		{
+			MethodName: "ApproveRequirement",
+			Handler:    _BAAgentService_ApproveRequirement_Handler,
+		},
+		{
+			MethodName: "ReviewRequirement",
+			Handler:    _BAAgentService_ReviewRequirement_Handler,
+		},
+		{
+			MethodName: "RegenerateRequirement",
+			Handler:    _BAAgentService_RegenerateRequirement_Handler,
+		},
+		{
+			MethodName: "GetLineage",
+			Handler:    _BAAgentService_GetLineage_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

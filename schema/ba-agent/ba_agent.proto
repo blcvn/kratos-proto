@@ -12,22 +12,105 @@ import "ba-agent/base.proto";
 // =======================
 service BAAgentService {
   // Task Execution
-  rpc ExecuteTask(ExecuteTaskRequest) returns (ExecuteTaskResponse);
-  rpc SubmitInput(SubmitInputRequest) returns (stream StreamExecuteTaskResponse);
-  rpc StreamExecuteTask(ExecuteTaskRequest) returns (stream StreamExecuteTaskResponse);
-  rpc GetTask(GetTaskRequest) returns (GetTaskResponse);
+  rpc ExecuteTask(ExecuteTaskRequest) returns (ExecuteTaskResponse) {
+  }
+  
+  rpc SubmitInput(SubmitInputRequest) returns (stream StreamExecuteTaskResponse) {
+  }
+  
+  rpc StreamExecuteTask(ExecuteTaskRequest) returns (stream StreamExecuteTaskResponse) {
+  }
+  
+  rpc GetTask(GetTaskRequest) returns (GetTaskResponse) {
+  }
   
   // Tools
-  rpc ListTools(ListToolsRequest) returns (ListToolsResponse);
+  rpc ListTools(ListToolsRequest) returns (ListToolsResponse) {
+  }
   
   // Memory
-  rpc GetMemory(GetMemoryRequest) returns (GetMemoryResponse);
-  rpc ClearMemory(ClearMemoryRequest) returns (ClearMemoryResponse);
+  rpc GetMemory(GetMemoryRequest) returns (GetMemoryResponse) {
+  }
+  
+  rpc ClearMemory(ClearMemoryRequest) returns (ClearMemoryResponse) {
+  }
+
+  // 3-Tier Workflow Orchestration
+  rpc GenerateRequirement(GenerateRequirementRequest) returns (GenerateRequirementResponse) {
+  }
+
+  rpc GetDocument(GetDocumentRequest) returns (ExecuteTaskResponse) {
+  }
+
+  rpc GetTierIndex(GetDocumentRequest) returns (ExecuteTaskResponse) {
+  }
+
+  rpc GetTierOutline(GetDocumentRequest) returns (ExecuteTaskResponse) {
+  } 
+
+  rpc GetTierFull(GetDocumentRequest) returns (ExecuteTaskResponse) {
+  }
+
+  rpc ApproveRequirement(ApproveRequirementRequest) returns (EmptyResponse) {
+  }
+
+  rpc ReviewRequirement(ReviewRequirementRequest) returns (EmptyResponse) {
+  }
+
+  rpc RegenerateRequirement(GenerateRequirementRequest) returns (GenerateRequirementResponse) {
+  }
+
+  rpc GetLineage(GetDocumentRequest) returns (EmptyResponse) {
+  }
+}
+
+// =======================
+// Domain Enums
+// =======================
+
+enum RequirementTier {
+  TIER_UNSPECIFIED = 0;
+  TIER_PRD = 1;
+  TIER_URD_INDEX = 2;
+  TIER_URD_OUTLINE = 3;
+  TIER_URD_FULL = 4;
 }
 
 // =======================
 // Request Messages
 // =======================
+
+message GenerateRequirementRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  string parent_document_id = 4; // PRD ID or Parent Tier ID
+  RequirementTier tier = 5;
+  string module_name = 6;
+  string content = 7; // For initial PRD upload
+}
+
+message GetDocumentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+}
+
+message ApproveRequirementRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  string comment = 4;
+}
+
+message ReviewRequirementRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  string comment = 4;
+  string action_type = 5;
+  string affected_sections = 6; // JSON string
+}
 
 message ExecuteTaskPayload {
   string user_id = 1;
@@ -77,6 +160,19 @@ message SubmitInputRequest {
 // =======================
 // Response Messages
 // =======================
+
+message EmptyResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+}
+
+message GenerateRequirementResponse {
+  Metadata metadata = 1;
+  Result result = 2;
+  string job_id = 3;
+  string document_id = 4;
+}
 
 message ExecuteTaskResponse {
   Metadata metadata = 1;

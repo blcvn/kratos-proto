@@ -1,14 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ai-proxy/ai_proxy.proto",
+    "title": "google/api/annotations.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "AIProxyService"
-    }
-  ],
   "consumes": [
     "application/json"
   ],

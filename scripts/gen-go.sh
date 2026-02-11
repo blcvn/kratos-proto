@@ -55,7 +55,7 @@ mkdir -p "$OUT_DIR"
 echo "Generating Go code from .proto files in $PROTO_DIR -> $OUT_DIR"
 
 # collect proto files (relative paths) to avoid proto_path shadowing
-if ! mapfile -t PROTO_FILES < <(cd "$PROTO_DIR" && find . -name '*.proto' -print | sed 's|^\./||' | sort); then
+if ! mapfile -t PROTO_FILES < <(cd "$PROTO_DIR" && find . -name '*.proto' -not -path './google/*' -print | sed 's|^\./||' | sort); then
   echo "Failed to enumerate proto files under $PROTO_DIR" >&2
   exit 1
 fi

@@ -14,6 +14,5302 @@ public final class BaAgent {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code baagent.v1.RequirementTier}
+   */
+  public enum RequirementTier
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TIER_UNSPECIFIED = 0;</code>
+     */
+    TIER_UNSPECIFIED(0),
+    /**
+     * <code>TIER_PRD = 1;</code>
+     */
+    TIER_PRD(1),
+    /**
+     * <code>TIER_URD_INDEX = 2;</code>
+     */
+    TIER_URD_INDEX(2),
+    /**
+     * <code>TIER_URD_OUTLINE = 3;</code>
+     */
+    TIER_URD_OUTLINE(3),
+    /**
+     * <code>TIER_URD_FULL = 4;</code>
+     */
+    TIER_URD_FULL(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>TIER_UNSPECIFIED = 0;</code>
+     */
+    public static final int TIER_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>TIER_PRD = 1;</code>
+     */
+    public static final int TIER_PRD_VALUE = 1;
+    /**
+     * <code>TIER_URD_INDEX = 2;</code>
+     */
+    public static final int TIER_URD_INDEX_VALUE = 2;
+    /**
+     * <code>TIER_URD_OUTLINE = 3;</code>
+     */
+    public static final int TIER_URD_OUTLINE_VALUE = 3;
+    /**
+     * <code>TIER_URD_FULL = 4;</code>
+     */
+    public static final int TIER_URD_FULL_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RequirementTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RequirementTier forNumber(int value) {
+      switch (value) {
+        case 0: return TIER_UNSPECIFIED;
+        case 1: return TIER_PRD;
+        case 2: return TIER_URD_INDEX;
+        case 3: return TIER_URD_OUTLINE;
+        case 4: return TIER_URD_FULL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RequirementTier>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RequirementTier> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RequirementTier>() {
+            public RequirementTier findValueByNumber(int number) {
+              return RequirementTier.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RequirementTier[] VALUES = values();
+
+    public static RequirementTier valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RequirementTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:baagent.v1.RequirementTier)
+  }
+
+  public interface GenerateRequirementRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.GenerateRequirementRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string project_id = 3;</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 3;</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+
+    /**
+     * <pre>
+     * PRD ID or Parent Tier ID
+     * </pre>
+     *
+     * <code>string parent_document_id = 4;</code>
+     * @return The parentDocumentId.
+     */
+    java.lang.String getParentDocumentId();
+    /**
+     * <pre>
+     * PRD ID or Parent Tier ID
+     * </pre>
+     *
+     * <code>string parent_document_id = 4;</code>
+     * @return The bytes for parentDocumentId.
+     */
+    com.google.protobuf.ByteString
+        getParentDocumentIdBytes();
+
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The enum numeric value on the wire for tier.
+     */
+    int getTierValue();
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The tier.
+     */
+    com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier();
+
+    /**
+     * <code>string module_name = 6;</code>
+     * @return The moduleName.
+     */
+    java.lang.String getModuleName();
+    /**
+     * <code>string module_name = 6;</code>
+     * @return The bytes for moduleName.
+     */
+    com.google.protobuf.ByteString
+        getModuleNameBytes();
+
+    /**
+     * <pre>
+     * For initial PRD upload
+     * </pre>
+     *
+     * <code>string content = 7;</code>
+     * @return The content.
+     */
+    java.lang.String getContent();
+    /**
+     * <pre>
+     * For initial PRD upload
+     * </pre>
+     *
+     * <code>string content = 7;</code>
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.GenerateRequirementRequest}
+   */
+  public static final class GenerateRequirementRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.GenerateRequirementRequest)
+      GenerateRequirementRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GenerateRequirementRequest.newBuilder() to construct.
+    private GenerateRequirementRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GenerateRequirementRequest() {
+      projectId_ = "";
+      parentDocumentId_ = "";
+      tier_ = 0;
+      moduleName_ = "";
+      content_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenerateRequirementRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GenerateRequirementRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parentDocumentId_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              tier_ = rawValue;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              moduleName_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 3;</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 3;</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARENT_DOCUMENT_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object parentDocumentId_;
+    /**
+     * <pre>
+     * PRD ID or Parent Tier ID
+     * </pre>
+     *
+     * <code>string parent_document_id = 4;</code>
+     * @return The parentDocumentId.
+     */
+    @java.lang.Override
+    public java.lang.String getParentDocumentId() {
+      java.lang.Object ref = parentDocumentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentDocumentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * PRD ID or Parent Tier ID
+     * </pre>
+     *
+     * <code>string parent_document_id = 4;</code>
+     * @return The bytes for parentDocumentId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getParentDocumentIdBytes() {
+      java.lang.Object ref = parentDocumentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parentDocumentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIER_FIELD_NUMBER = 5;
+    private int tier_;
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The enum numeric value on the wire for tier.
+     */
+    @java.lang.Override public int getTierValue() {
+      return tier_;
+    }
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The tier.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier result = com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.valueOf(tier_);
+      return result == null ? com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.UNRECOGNIZED : result;
+    }
+
+    public static final int MODULE_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object moduleName_;
+    /**
+     * <code>string module_name = 6;</code>
+     * @return The moduleName.
+     */
+    @java.lang.Override
+    public java.lang.String getModuleName() {
+      java.lang.Object ref = moduleName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string module_name = 6;</code>
+     * @return The bytes for moduleName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModuleNameBytes() {
+      java.lang.Object ref = moduleName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object content_;
+    /**
+     * <pre>
+     * For initial PRD upload
+     * </pre>
+     *
+     * <code>string content = 7;</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * For initial PRD upload
+     * </pre>
+     *
+     * <code>string content = 7;</code>
+     * @return The bytes for content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
+      }
+      if (!getParentDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parentDocumentId_);
+      }
+      if (tier_ != com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.TIER_UNSPECIFIED.getNumber()) {
+        output.writeEnum(5, tier_);
+      }
+      if (!getModuleNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, moduleName_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, content_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
+      }
+      if (!getParentDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parentDocumentId_);
+      }
+      if (tier_ != com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.TIER_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, tier_);
+      }
+      if (!getModuleNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, moduleName_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, content_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest other = (com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getParentDocumentId()
+          .equals(other.getParentDocumentId())) return false;
+      if (tier_ != other.tier_) return false;
+      if (!getModuleName()
+          .equals(other.getModuleName())) return false;
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + PARENT_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentDocumentId().hashCode();
+      hash = (37 * hash) + TIER_FIELD_NUMBER;
+      hash = (53 * hash) + tier_;
+      hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleName().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.GenerateRequirementRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.GenerateRequirementRequest)
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        projectId_ = "";
+
+        parentDocumentId_ = "";
+
+        tier_ = 0;
+
+        moduleName_ = "";
+
+        content_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest result = new com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.projectId_ = projectId_;
+        result.parentDocumentId_ = parentDocumentId_;
+        result.tier_ = tier_;
+        result.moduleName_ = moduleName_;
+        result.content_ = content_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        if (!other.getParentDocumentId().isEmpty()) {
+          parentDocumentId_ = other.parentDocumentId_;
+          onChanged();
+        }
+        if (other.tier_ != 0) {
+          setTierValue(other.getTierValue());
+        }
+        if (!other.getModuleName().isEmpty()) {
+          moduleName_ = other.moduleName_;
+          onChanged();
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 3;</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 3;</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 3;</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 3;</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object parentDocumentId_ = "";
+      /**
+       * <pre>
+       * PRD ID or Parent Tier ID
+       * </pre>
+       *
+       * <code>string parent_document_id = 4;</code>
+       * @return The parentDocumentId.
+       */
+      public java.lang.String getParentDocumentId() {
+        java.lang.Object ref = parentDocumentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          parentDocumentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PRD ID or Parent Tier ID
+       * </pre>
+       *
+       * <code>string parent_document_id = 4;</code>
+       * @return The bytes for parentDocumentId.
+       */
+      public com.google.protobuf.ByteString
+          getParentDocumentIdBytes() {
+        java.lang.Object ref = parentDocumentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          parentDocumentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PRD ID or Parent Tier ID
+       * </pre>
+       *
+       * <code>string parent_document_id = 4;</code>
+       * @param value The parentDocumentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        parentDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PRD ID or Parent Tier ID
+       * </pre>
+       *
+       * <code>string parent_document_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParentDocumentId() {
+        
+        parentDocumentId_ = getDefaultInstance().getParentDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PRD ID or Parent Tier ID
+       * </pre>
+       *
+       * <code>string parent_document_id = 4;</code>
+       * @param value The bytes for parentDocumentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        parentDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int tier_ = 0;
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return The enum numeric value on the wire for tier.
+       */
+      @java.lang.Override public int getTierValue() {
+        return tier_;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @param value The enum numeric value on the wire for tier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTierValue(int value) {
+        
+        tier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return The tier.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier result = com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.valueOf(tier_);
+        return result == null ? com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @param value The tier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTier(com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        tier_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTier() {
+        
+        tier_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object moduleName_ = "";
+      /**
+       * <code>string module_name = 6;</code>
+       * @return The moduleName.
+       */
+      public java.lang.String getModuleName() {
+        java.lang.Object ref = moduleName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          moduleName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string module_name = 6;</code>
+       * @return The bytes for moduleName.
+       */
+      public com.google.protobuf.ByteString
+          getModuleNameBytes() {
+        java.lang.Object ref = moduleName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          moduleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string module_name = 6;</code>
+       * @param value The moduleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        moduleName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string module_name = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModuleName() {
+        
+        moduleName_ = getDefaultInstance().getModuleName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string module_name = 6;</code>
+       * @param value The bytes for moduleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        moduleName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       * <pre>
+       * For initial PRD upload
+       * </pre>
+       *
+       * <code>string content = 7;</code>
+       * @return The content.
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * For initial PRD upload
+       * </pre>
+       *
+       * <code>string content = 7;</code>
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * For initial PRD upload
+       * </pre>
+       *
+       * <code>string content = 7;</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * For initial PRD upload
+       * </pre>
+       *
+       * <code>string content = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * For initial PRD upload
+       * </pre>
+       *
+       * <code>string content = 7;</code>
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.GenerateRequirementRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.GenerateRequirementRequest)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GenerateRequirementRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GenerateRequirementRequest>() {
+      @java.lang.Override
+      public GenerateRequirementRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GenerateRequirementRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GenerateRequirementRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GenerateRequirementRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetDocumentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.GetDocumentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    java.lang.String getDocumentId();
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    com.google.protobuf.ByteString
+        getDocumentIdBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.GetDocumentRequest}
+   */
+  public static final class GetDocumentRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.GetDocumentRequest)
+      GetDocumentRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetDocumentRequest.newBuilder() to construct.
+    private GetDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetDocumentRequest() {
+      documentId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetDocumentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetDocumentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              documentId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GetDocumentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GetDocumentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object documentId_;
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentId() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocumentIdBytes() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        documentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest other = (com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getDocumentId()
+          .equals(other.getDocumentId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.GetDocumentRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.GetDocumentRequest)
+        com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GetDocumentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GetDocumentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        documentId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GetDocumentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest result = new com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.documentId_ = documentId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getDocumentId().isEmpty()) {
+          documentId_ = other.documentId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object documentId_ = "";
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The documentId.
+       */
+      public java.lang.String getDocumentId() {
+        java.lang.Object ref = documentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The bytes for documentId.
+       */
+      public com.google.protobuf.ByteString
+          getDocumentIdBytes() {
+        java.lang.Object ref = documentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          documentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = getDefaultInstance().getDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The bytes for documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.GetDocumentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.GetDocumentRequest)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetDocumentRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetDocumentRequest>() {
+      @java.lang.Override
+      public GetDocumentRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetDocumentRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetDocumentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetDocumentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.GetDocumentRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ApproveRequirementRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.ApproveRequirementRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    java.lang.String getDocumentId();
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    com.google.protobuf.ByteString
+        getDocumentIdBytes();
+
+    /**
+     * <code>string comment = 4;</code>
+     * @return The comment.
+     */
+    java.lang.String getComment();
+    /**
+     * <code>string comment = 4;</code>
+     * @return The bytes for comment.
+     */
+    com.google.protobuf.ByteString
+        getCommentBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.ApproveRequirementRequest}
+   */
+  public static final class ApproveRequirementRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.ApproveRequirementRequest)
+      ApproveRequirementRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ApproveRequirementRequest.newBuilder() to construct.
+    private ApproveRequirementRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ApproveRequirementRequest() {
+      documentId_ = "";
+      comment_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ApproveRequirementRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ApproveRequirementRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              documentId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              comment_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ApproveRequirementRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ApproveRequirementRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object documentId_;
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentId() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocumentIdBytes() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        documentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMENT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object comment_;
+    /**
+     * <code>string comment = 4;</code>
+     * @return The comment.
+     */
+    @java.lang.Override
+    public java.lang.String getComment() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        comment_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string comment = 4;</code>
+     * @return The bytes for comment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommentBytes() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        comment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentId_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, comment_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentId_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, comment_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest other = (com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getDocumentId()
+          .equals(other.getDocumentId())) return false;
+      if (!getComment()
+          .equals(other.getComment())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentId().hashCode();
+      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComment().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.ApproveRequirementRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.ApproveRequirementRequest)
+        com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ApproveRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ApproveRequirementRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        documentId_ = "";
+
+        comment_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ApproveRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest result = new com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.documentId_ = documentId_;
+        result.comment_ = comment_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getDocumentId().isEmpty()) {
+          documentId_ = other.documentId_;
+          onChanged();
+        }
+        if (!other.getComment().isEmpty()) {
+          comment_ = other.comment_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object documentId_ = "";
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The documentId.
+       */
+      public java.lang.String getDocumentId() {
+        java.lang.Object ref = documentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The bytes for documentId.
+       */
+      public com.google.protobuf.ByteString
+          getDocumentIdBytes() {
+        java.lang.Object ref = documentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          documentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = getDefaultInstance().getDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The bytes for documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object comment_ = "";
+      /**
+       * <code>string comment = 4;</code>
+       * @return The comment.
+       */
+      public java.lang.String getComment() {
+        java.lang.Object ref = comment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          comment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @return The bytes for comment.
+       */
+      public com.google.protobuf.ByteString
+          getCommentBytes() {
+        java.lang.Object ref = comment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          comment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @param value The comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComment(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearComment() {
+        
+        comment_ = getDefaultInstance().getComment();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @param value The bytes for comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.ApproveRequirementRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.ApproveRequirementRequest)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApproveRequirementRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ApproveRequirementRequest>() {
+      @java.lang.Override
+      public ApproveRequirementRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ApproveRequirementRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApproveRequirementRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApproveRequirementRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.ApproveRequirementRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReviewRequirementRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.ReviewRequirementRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    java.lang.String getDocumentId();
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    com.google.protobuf.ByteString
+        getDocumentIdBytes();
+
+    /**
+     * <code>string comment = 4;</code>
+     * @return The comment.
+     */
+    java.lang.String getComment();
+    /**
+     * <code>string comment = 4;</code>
+     * @return The bytes for comment.
+     */
+    com.google.protobuf.ByteString
+        getCommentBytes();
+
+    /**
+     * <code>string action_type = 5;</code>
+     * @return The actionType.
+     */
+    java.lang.String getActionType();
+    /**
+     * <code>string action_type = 5;</code>
+     * @return The bytes for actionType.
+     */
+    com.google.protobuf.ByteString
+        getActionTypeBytes();
+
+    /**
+     * <pre>
+     * JSON string
+     * </pre>
+     *
+     * <code>string affected_sections = 6;</code>
+     * @return The affectedSections.
+     */
+    java.lang.String getAffectedSections();
+    /**
+     * <pre>
+     * JSON string
+     * </pre>
+     *
+     * <code>string affected_sections = 6;</code>
+     * @return The bytes for affectedSections.
+     */
+    com.google.protobuf.ByteString
+        getAffectedSectionsBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.ReviewRequirementRequest}
+   */
+  public static final class ReviewRequirementRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.ReviewRequirementRequest)
+      ReviewRequirementRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReviewRequirementRequest.newBuilder() to construct.
+    private ReviewRequirementRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReviewRequirementRequest() {
+      documentId_ = "";
+      comment_ = "";
+      actionType_ = "";
+      affectedSections_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReviewRequirementRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReviewRequirementRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              documentId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              comment_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              actionType_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              affectedSections_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ReviewRequirementRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ReviewRequirementRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object documentId_;
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The documentId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentId() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string document_id = 3;</code>
+     * @return The bytes for documentId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocumentIdBytes() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        documentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMENT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object comment_;
+    /**
+     * <code>string comment = 4;</code>
+     * @return The comment.
+     */
+    @java.lang.Override
+    public java.lang.String getComment() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        comment_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string comment = 4;</code>
+     * @return The bytes for comment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommentBytes() {
+      java.lang.Object ref = comment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        comment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTION_TYPE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object actionType_;
+    /**
+     * <code>string action_type = 5;</code>
+     * @return The actionType.
+     */
+    @java.lang.Override
+    public java.lang.String getActionType() {
+      java.lang.Object ref = actionType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        actionType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string action_type = 5;</code>
+     * @return The bytes for actionType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getActionTypeBytes() {
+      java.lang.Object ref = actionType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        actionType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AFFECTED_SECTIONS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object affectedSections_;
+    /**
+     * <pre>
+     * JSON string
+     * </pre>
+     *
+     * <code>string affected_sections = 6;</code>
+     * @return The affectedSections.
+     */
+    @java.lang.Override
+    public java.lang.String getAffectedSections() {
+      java.lang.Object ref = affectedSections_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        affectedSections_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * JSON string
+     * </pre>
+     *
+     * <code>string affected_sections = 6;</code>
+     * @return The bytes for affectedSections.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAffectedSectionsBytes() {
+      java.lang.Object ref = affectedSections_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        affectedSections_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentId_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, comment_);
+      }
+      if (!getActionTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, actionType_);
+      }
+      if (!getAffectedSectionsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, affectedSections_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentId_);
+      }
+      if (!getCommentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, comment_);
+      }
+      if (!getActionTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, actionType_);
+      }
+      if (!getAffectedSectionsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, affectedSections_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest other = (com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getDocumentId()
+          .equals(other.getDocumentId())) return false;
+      if (!getComment()
+          .equals(other.getComment())) return false;
+      if (!getActionType()
+          .equals(other.getActionType())) return false;
+      if (!getAffectedSections()
+          .equals(other.getAffectedSections())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentId().hashCode();
+      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComment().hashCode();
+      hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getActionType().hashCode();
+      hash = (37 * hash) + AFFECTED_SECTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAffectedSections().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.ReviewRequirementRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.ReviewRequirementRequest)
+        com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ReviewRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ReviewRequirementRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.class, com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        documentId_ = "";
+
+        comment_ = "";
+
+        actionType_ = "";
+
+        affectedSections_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_ReviewRequirementRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest result = new com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.documentId_ = documentId_;
+        result.comment_ = comment_;
+        result.actionType_ = actionType_;
+        result.affectedSections_ = affectedSections_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getDocumentId().isEmpty()) {
+          documentId_ = other.documentId_;
+          onChanged();
+        }
+        if (!other.getComment().isEmpty()) {
+          comment_ = other.comment_;
+          onChanged();
+        }
+        if (!other.getActionType().isEmpty()) {
+          actionType_ = other.actionType_;
+          onChanged();
+        }
+        if (!other.getAffectedSections().isEmpty()) {
+          affectedSections_ = other.affectedSections_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object documentId_ = "";
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The documentId.
+       */
+      public java.lang.String getDocumentId() {
+        java.lang.Object ref = documentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return The bytes for documentId.
+       */
+      public com.google.protobuf.ByteString
+          getDocumentIdBytes() {
+        java.lang.Object ref = documentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          documentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = getDefaultInstance().getDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 3;</code>
+       * @param value The bytes for documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object comment_ = "";
+      /**
+       * <code>string comment = 4;</code>
+       * @return The comment.
+       */
+      public java.lang.String getComment() {
+        java.lang.Object ref = comment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          comment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @return The bytes for comment.
+       */
+      public com.google.protobuf.ByteString
+          getCommentBytes() {
+        java.lang.Object ref = comment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          comment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @param value The comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComment(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearComment() {
+        
+        comment_ = getDefaultInstance().getComment();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string comment = 4;</code>
+       * @param value The bytes for comment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        comment_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object actionType_ = "";
+      /**
+       * <code>string action_type = 5;</code>
+       * @return The actionType.
+       */
+      public java.lang.String getActionType() {
+        java.lang.Object ref = actionType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          actionType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string action_type = 5;</code>
+       * @return The bytes for actionType.
+       */
+      public com.google.protobuf.ByteString
+          getActionTypeBytes() {
+        java.lang.Object ref = actionType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          actionType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string action_type = 5;</code>
+       * @param value The actionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActionType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        actionType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string action_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearActionType() {
+        
+        actionType_ = getDefaultInstance().getActionType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string action_type = 5;</code>
+       * @param value The bytes for actionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActionTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        actionType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object affectedSections_ = "";
+      /**
+       * <pre>
+       * JSON string
+       * </pre>
+       *
+       * <code>string affected_sections = 6;</code>
+       * @return The affectedSections.
+       */
+      public java.lang.String getAffectedSections() {
+        java.lang.Object ref = affectedSections_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          affectedSections_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON string
+       * </pre>
+       *
+       * <code>string affected_sections = 6;</code>
+       * @return The bytes for affectedSections.
+       */
+      public com.google.protobuf.ByteString
+          getAffectedSectionsBytes() {
+        java.lang.Object ref = affectedSections_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          affectedSections_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON string
+       * </pre>
+       *
+       * <code>string affected_sections = 6;</code>
+       * @param value The affectedSections to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAffectedSections(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        affectedSections_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON string
+       * </pre>
+       *
+       * <code>string affected_sections = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAffectedSections() {
+        
+        affectedSections_ = getDefaultInstance().getAffectedSections();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON string
+       * </pre>
+       *
+       * <code>string affected_sections = 6;</code>
+       * @param value The bytes for affectedSections to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAffectedSectionsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        affectedSections_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.ReviewRequirementRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.ReviewRequirementRequest)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReviewRequirementRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ReviewRequirementRequest>() {
+      @java.lang.Override
+      public ReviewRequirementRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReviewRequirementRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReviewRequirementRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReviewRequirementRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.ReviewRequirementRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ExecuteTaskPayloadOrBuilder extends
       // @@protoc_insertion_point(interface_extends:baagent.v1.ExecuteTaskPayload)
       com.google.protobuf.MessageOrBuilder {
@@ -7405,6 +12701,2157 @@ public final class BaAgent {
 
     @java.lang.Override
     public com.blcvn.kratos.protos.baagent.BaAgent.SubmitInputRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EmptyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.EmptyResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Signature getSignature();
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Result getResult();
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.EmptyResponse}
+   */
+  public static final class EmptyResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.EmptyResponse)
+      EmptyResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EmptyResponse.newBuilder() to construct.
+    private EmptyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EmptyResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EmptyResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EmptyResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.baagent.Base.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_EmptyResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_EmptyResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.class, com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.baagent.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.baagent.Base.Result result_;
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Result getResult() {
+      return result_ == null ? com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.baagent.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse other = (com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.EmptyResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.EmptyResponse)
+        com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_EmptyResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_EmptyResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.class, com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_EmptyResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse result = new com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.baagent.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.baagent.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.baagent.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Signature, com.blcvn.kratos.protos.baagent.Base.Signature.Builder, com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.kratos.protos.baagent.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.kratos.protos.baagent.Base.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.kratos.protos.baagent.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.kratos.protos.baagent.Base.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.EmptyResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.EmptyResponse)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EmptyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<EmptyResponse>() {
+      @java.lang.Override
+      public EmptyResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EmptyResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EmptyResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmptyResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.EmptyResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GenerateRequirementResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.GenerateRequirementResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata();
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     * @return The result.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Result getResult();
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>string job_id = 3;</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <code>string job_id = 3;</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <code>string document_id = 4;</code>
+     * @return The documentId.
+     */
+    java.lang.String getDocumentId();
+    /**
+     * <code>string document_id = 4;</code>
+     * @return The bytes for documentId.
+     */
+    com.google.protobuf.ByteString
+        getDocumentIdBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.GenerateRequirementResponse}
+   */
+  public static final class GenerateRequirementResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.GenerateRequirementResponse)
+      GenerateRequirementResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GenerateRequirementResponse.newBuilder() to construct.
+    private GenerateRequirementResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GenerateRequirementResponse() {
+      jobId_ = "";
+      documentId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenerateRequirementResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GenerateRequirementResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.baagent.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.baagent.Base.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.kratos.protos.baagent.Base.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              documentId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.class, com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.baagent.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.baagent.Base.Result result_;
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Result getResult() {
+      return result_ == null ? com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.baagent.v1.Result result = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <code>string job_id = 3;</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string job_id = 3;</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object documentId_;
+    /**
+     * <code>string document_id = 4;</code>
+     * @return The documentId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentId() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string document_id = 4;</code>
+     * @return The bytes for documentId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocumentIdBytes() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        documentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (result_ != null) {
+        output.writeMessage(2, getResult());
+      }
+      if (!getJobIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, documentId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResult());
+      }
+      if (!getJobIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, documentId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse other = (com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
+      if (!getDocumentId()
+          .equals(other.getDocumentId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.GenerateRequirementResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.GenerateRequirementResponse)
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.class, com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        jobId_ = "";
+
+        documentId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.internal_static_baagent_v1_GenerateRequirementResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse build() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse buildPartial() {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse result = new com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        result.jobId_ = jobId_;
+        result.documentId_ = documentId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse other) {
+        if (other == com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
+        if (!other.getDocumentId().isEmpty()) {
+          documentId_ = other.documentId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.baagent.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.baagent.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.baagent.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Metadata, com.blcvn.kratos.protos.baagent.Base.Metadata.Builder, com.blcvn.kratos.protos.baagent.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.baagent.Base.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       * @return The result.
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public Builder setResult(com.blcvn.kratos.protos.baagent.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public Builder setResult(
+          com.blcvn.kratos.protos.baagent.Base.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public Builder mergeResult(com.blcvn.kratos.protos.baagent.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.kratos.protos.baagent.Base.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.kratos.protos.baagent.Base.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.baagent.v1.Result result = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Result, com.blcvn.kratos.protos.baagent.Base.Result.Builder, com.blcvn.kratos.protos.baagent.Base.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <code>string job_id = 3;</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string job_id = 3;</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string job_id = 3;</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string job_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string job_id = 3;</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object documentId_ = "";
+      /**
+       * <code>string document_id = 4;</code>
+       * @return The documentId.
+       */
+      public java.lang.String getDocumentId() {
+        java.lang.Object ref = documentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 4;</code>
+       * @return The bytes for documentId.
+       */
+      public com.google.protobuf.ByteString
+          getDocumentIdBytes() {
+        java.lang.Object ref = documentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          documentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string document_id = 4;</code>
+       * @param value The documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = getDefaultInstance().getDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string document_id = 4;</code>
+       * @param value The bytes for documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.GenerateRequirementResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.GenerateRequirementResponse)
+    private static final com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GenerateRequirementResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GenerateRequirementResponse>() {
+      @java.lang.Override
+      public GenerateRequirementResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GenerateRequirementResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GenerateRequirementResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GenerateRequirementResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.BaAgent.GenerateRequirementResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14831,6 +22278,26 @@ public final class BaAgent {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_GenerateRequirementRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_GenerateRequirementRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_GetDocumentRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_GetDocumentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_ApproveRequirementRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_ApproveRequirementRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_ReviewRequirementRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_ReviewRequirementRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_baagent_v1_ExecuteTaskPayload_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14865,6 +22332,16 @@ public final class BaAgent {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_EmptyResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_EmptyResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_GenerateRequirementResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_GenerateRequirementResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_baagent_v1_ExecuteTaskResponse_descriptor;
   private static final 
@@ -14905,153 +22382,237 @@ public final class BaAgent {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ba-agent/ba_agent.proto\022\nbaagent.v1\032\023b" +
-      "a-agent/base.proto\"\252\001\n\022ExecuteTaskPayloa" +
-      "d\022\017\n\007user_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030" +
-      "\n\020task_description\030\003 \001(\t\022\026\n\016max_iteratio" +
-      "ns\030\004 \001(\005\022\025\n\rworkflow_mode\030\005 \001(\t\022&\n\007histo" +
-      "ry\030\006 \003(\0132\025.baagent.v1.ReActStep\"\227\001\n\022Exec" +
-      "uteTaskRequest\022&\n\010metadata\030\001 \001(\0132\024.baage" +
-      "nt.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baag" +
-      "ent.v1.Signature\022/\n\007payload\030\003 \001(\0132\036.baag" +
-      "ent.v1.ExecuteTaskPayload\"s\n\016GetTaskRequ" +
-      "est\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metad" +
-      "ata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sign" +
-      "ature\022\017\n\007task_id\030\003 \001(\t\"d\n\020ListToolsReque" +
+      "a-agent/base.proto\"\357\001\n\032GenerateRequireme" +
+      "ntRequest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1" +
+      ".Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v" +
+      "1.Signature\022\022\n\nproject_id\030\003 \001(\t\022\032\n\022paren" +
+      "t_document_id\030\004 \001(\t\022)\n\004tier\030\005 \001(\0162\033.baag" +
+      "ent.v1.RequirementTier\022\023\n\013module_name\030\006 " +
+      "\001(\t\022\017\n\007content\030\007 \001(\t\"{\n\022GetDocumentReque" +
       "st\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metada" +
       "ta\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signa" +
-      "ture\"x\n\020GetMemoryRequest\022&\n\010metadata\030\001 \001" +
-      "(\0132\024.baagent.v1.Metadata\022(\n\tsignature\030\002 " +
-      "\001(\0132\025.baagent.v1.Signature\022\022\n\nsession_id" +
-      "\030\003 \001(\t\"z\n\022ClearMemoryRequest\022&\n\010metadata" +
-      "\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignatur" +
-      "e\030\002 \001(\0132\025.baagent.v1.Signature\022\022\n\nsessio" +
-      "n_id\030\003 \001(\t\"\213\001\n\022SubmitInputRequest\022&\n\010met" +
-      "adata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsig" +
-      "nature\030\002 \001(\0132\025.baagent.v1.Signature\022\017\n\007t" +
-      "ask_id\030\003 \001(\t\022\022\n\ninput_data\030\004 \001(\t\"\260\001\n\023Exe" +
-      "cuteTaskResponse\022&\n\010metadata\030\001 \001(\0132\024.baa" +
-      "gent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.ba" +
-      "agent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baa" +
-      "gent.v1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v" +
-      "1.AgentTask\"\310\001\n\031StreamExecuteTaskRespons" +
-      "e\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metadat" +
-      "a\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signat" +
-      "ure\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result\022" +
-      "#\n\004step\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010" +
-      "is_final\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010me" +
-      "tadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsi" +
-      "gnature\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006" +
-      "result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task" +
-      "\030\004 \001(\0132\025.baagent.v1.AgentTask\"\252\001\n\021ListTo" +
-      "olsResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent." +
+      "ture\022\023\n\013document_id\030\003 \001(\t\"\223\001\n\031ApproveReq" +
+      "uirementRequest\022&\n\010metadata\030\001 \001(\0132\024.baag" +
+      "ent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baa" +
+      "gent.v1.Signature\022\023\n\013document_id\030\003 \001(\t\022\017" +
+      "\n\007comment\030\004 \001(\t\"\302\001\n\030ReviewRequirementReq" +
+      "uest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Meta" +
+      "data\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sig" +
+      "nature\022\023\n\013document_id\030\003 \001(\t\022\017\n\007comment\030\004" +
+      " \001(\t\022\023\n\013action_type\030\005 \001(\t\022\031\n\021affected_se" +
+      "ctions\030\006 \001(\t\"\252\001\n\022ExecuteTaskPayload\022\017\n\007u" +
+      "ser_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030\n\020task" +
+      "_description\030\003 \001(\t\022\026\n\016max_iterations\030\004 \001" +
+      "(\005\022\025\n\rworkflow_mode\030\005 \001(\t\022&\n\007history\030\006 \003" +
+      "(\0132\025.baagent.v1.ReActStep\"\227\001\n\022ExecuteTas" +
+      "kRequest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1." +
+      "Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1" +
+      ".Signature\022/\n\007payload\030\003 \001(\0132\036.baagent.v1" +
+      ".ExecuteTaskPayload\"s\n\016GetTaskRequest\022&\n" +
+      "\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n" +
+      "\tsignature\030\002 \001(\0132\025.baagent.v1.Signature\022" +
+      "\017\n\007task_id\030\003 \001(\t\"d\n\020ListToolsRequest\022&\n\010" +
+      "metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\t" +
+      "signature\030\002 \001(\0132\025.baagent.v1.Signature\"x" +
+      "\n\020GetMemoryRequest\022&\n\010metadata\030\001 \001(\0132\024.b" +
+      "aagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
+      "baagent.v1.Signature\022\022\n\nsession_id\030\003 \001(\t" +
+      "\"z\n\022ClearMemoryRequest\022&\n\010metadata\030\001 \001(\013" +
+      "2\024.baagent.v1.Metadata\022(\n\tsignature\030\002 \001(" +
+      "\0132\025.baagent.v1.Signature\022\022\n\nsession_id\030\003" +
+      " \001(\t\"\213\001\n\022SubmitInputRequest\022&\n\010metadata\030" +
+      "\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignature" +
+      "\030\002 \001(\0132\025.baagent.v1.Signature\022\017\n\007task_id" +
+      "\030\003 \001(\t\022\022\n\ninput_data\030\004 \001(\t\"\205\001\n\rEmptyResp" +
+      "onse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Meta" +
+      "data\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sig" +
+      "nature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Resu" +
+      "lt\"\216\001\n\033GenerateRequirementResponse\022&\n\010me" +
+      "tadata\030\001 \001(\0132\024.baagent.v1.Metadata\022\"\n\006re" +
+      "sult\030\002 \001(\0132\022.baagent.v1.Result\022\016\n\006job_id" +
+      "\030\003 \001(\t\022\023\n\013document_id\030\004 \001(\t\"\260\001\n\023ExecuteT" +
+      "askResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent." +
       "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent" +
       ".v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baagent." +
-      "v1.Result\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.To" +
-      "ol\"\255\001\n\021GetMemoryResponse\022&\n\010metadata\030\001 \001" +
-      "(\0132\024.baagent.v1.Metadata\022(\n\tsignature\030\002 " +
-      "\001(\0132\025.baagent.v1.Signature\022\"\n\006result\030\003 \001" +
-      "(\0132\022.baagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022" +
-      ".baagent.v1.Memory\"\213\001\n\023ClearMemoryRespon" +
-      "se\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metada" +
-      "ta\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signa" +
-      "ture\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result" +
-      "2\276\004\n\016BAAgentService\022N\n\013ExecuteTask\022\036.baa" +
-      "gent.v1.ExecuteTaskRequest\032\037.baagent.v1." +
-      "ExecuteTaskResponse\022V\n\013SubmitInput\022\036.baa" +
-      "gent.v1.SubmitInputRequest\032%.baagent.v1." +
-      "StreamExecuteTaskResponse0\001\022\\\n\021StreamExe" +
-      "cuteTask\022\036.baagent.v1.ExecuteTaskRequest" +
-      "\032%.baagent.v1.StreamExecuteTaskResponse0" +
-      "\001\022B\n\007GetTask\022\032.baagent.v1.GetTaskRequest" +
-      "\032\033.baagent.v1.GetTaskResponse\022H\n\tListToo" +
-      "ls\022\034.baagent.v1.ListToolsRequest\032\035.baage" +
-      "nt.v1.ListToolsResponse\022H\n\tGetMemory\022\034.b" +
-      "aagent.v1.GetMemoryRequest\032\035.baagent.v1." +
-      "GetMemoryResponse\022N\n\013ClearMemory\022\036.baage" +
-      "nt.v1.ClearMemoryRequest\032\037.baagent.v1.Cl" +
-      "earMemoryResponseBT\n\037com.blcvn.kratos.pr" +
-      "otos.baagentZ1github.com/blcvn/kratos-pr" +
-      "oto/go/ba-agent;baagentb\006proto3"
+      "v1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v1.Age" +
+      "ntTask\"\310\001\n\031StreamExecuteTaskResponse\022&\n\010" +
+      "metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\t" +
+      "signature\030\002 \001(\0132\025.baagent.v1.Signature\022\"" +
+      "\n\006result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004st" +
+      "ep\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010is_fi" +
+      "nal\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010metadat" +
+      "a\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignatu" +
+      "re\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006resul" +
+      "t\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task\030\004 \001(" +
+      "\0132\025.baagent.v1.AgentTask\"\252\001\n\021ListToolsRe" +
+      "sponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Me" +
+      "tadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.S" +
+      "ignature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Re" +
+      "sult\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.Tool\"\255\001" +
+      "\n\021GetMemoryResponse\022&\n\010metadata\030\001 \001(\0132\024." +
+      "baagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025" +
+      ".baagent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022." +
+      "baagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022.baag" +
+      "ent.v1.Memory\"\213\001\n\023ClearMemoryResponse\022&\n" +
+      "\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n" +
+      "\tsignature\030\002 \001(\0132\025.baagent.v1.Signature\022" +
+      "\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result*r\n\017R" +
+      "equirementTier\022\024\n\020TIER_UNSPECIFIED\020\000\022\014\n\010" +
+      "TIER_PRD\020\001\022\022\n\016TIER_URD_INDEX\020\002\022\024\n\020TIER_U" +
+      "RD_OUTLINE\020\003\022\021\n\rTIER_URD_FULL\020\0042\353\n\n\016BAAg" +
+      "entService\022P\n\013ExecuteTask\022\036.baagent.v1.E" +
+      "xecuteTaskRequest\032\037.baagent.v1.ExecuteTa" +
+      "skResponse\"\000\022X\n\013SubmitInput\022\036.baagent.v1" +
+      ".SubmitInputRequest\032%.baagent.v1.StreamE" +
+      "xecuteTaskResponse\"\0000\001\022^\n\021StreamExecuteT" +
+      "ask\022\036.baagent.v1.ExecuteTaskRequest\032%.ba" +
+      "agent.v1.StreamExecuteTaskResponse\"\0000\001\022D" +
+      "\n\007GetTask\022\032.baagent.v1.GetTaskRequest\032\033." +
+      "baagent.v1.GetTaskResponse\"\000\022J\n\tListTool" +
+      "s\022\034.baagent.v1.ListToolsRequest\032\035.baagen" +
+      "t.v1.ListToolsResponse\"\000\022J\n\tGetMemory\022\034." +
+      "baagent.v1.GetMemoryRequest\032\035.baagent.v1" +
+      ".GetMemoryResponse\"\000\022P\n\013ClearMemory\022\036.ba" +
+      "agent.v1.ClearMemoryRequest\032\037.baagent.v1" +
+      ".ClearMemoryResponse\"\000\022h\n\023GenerateRequir" +
+      "ement\022&.baagent.v1.GenerateRequirementRe" +
+      "quest\032\'.baagent.v1.GenerateRequirementRe" +
+      "sponse\"\000\022P\n\013GetDocument\022\036.baagent.v1.Get" +
+      "DocumentRequest\032\037.baagent.v1.ExecuteTask" +
+      "Response\"\000\022Q\n\014GetTierIndex\022\036.baagent.v1." +
+      "GetDocumentRequest\032\037.baagent.v1.ExecuteT" +
+      "askResponse\"\000\022S\n\016GetTierOutline\022\036.baagen" +
+      "t.v1.GetDocumentRequest\032\037.baagent.v1.Exe" +
+      "cuteTaskResponse\"\000\022P\n\013GetTierFull\022\036.baag" +
+      "ent.v1.GetDocumentRequest\032\037.baagent.v1.E" +
+      "xecuteTaskResponse\"\000\022X\n\022ApproveRequireme" +
+      "nt\022%.baagent.v1.ApproveRequirementReques" +
+      "t\032\031.baagent.v1.EmptyResponse\"\000\022V\n\021Review" +
+      "Requirement\022$.baagent.v1.ReviewRequireme" +
+      "ntRequest\032\031.baagent.v1.EmptyResponse\"\000\022j" +
+      "\n\025RegenerateRequirement\022&.baagent.v1.Gen" +
+      "erateRequirementRequest\032\'.baagent.v1.Gen" +
+      "erateRequirementResponse\"\000\022I\n\nGetLineage" +
+      "\022\036.baagent.v1.GetDocumentRequest\032\031.baage" +
+      "nt.v1.EmptyResponse\"\000BT\n\037com.blcvn.krato" +
+      "s.protos.baagentZ1github.com/blcvn/krato" +
+      "s-proto/go/ba-agent;baagentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.kratos.protos.baagent.Base.getDescriptor(),
         });
-    internal_static_baagent_v1_ExecuteTaskPayload_descriptor =
+    internal_static_baagent_v1_GenerateRequirementRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_baagent_v1_GenerateRequirementRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_GenerateRequirementRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "ProjectId", "ParentDocumentId", "Tier", "ModuleName", "Content", });
+    internal_static_baagent_v1_GetDocumentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_baagent_v1_GetDocumentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_GetDocumentRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "DocumentId", });
+    internal_static_baagent_v1_ApproveRequirementRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_baagent_v1_ApproveRequirementRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_ApproveRequirementRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Comment", });
+    internal_static_baagent_v1_ReviewRequirementRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_baagent_v1_ReviewRequirementRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_ReviewRequirementRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Comment", "ActionType", "AffectedSections", });
+    internal_static_baagent_v1_ExecuteTaskPayload_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_baagent_v1_ExecuteTaskPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ExecuteTaskPayload_descriptor,
         new java.lang.String[] { "UserId", "SessionId", "TaskDescription", "MaxIterations", "WorkflowMode", "History", });
     internal_static_baagent_v1_ExecuteTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_baagent_v1_ExecuteTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ExecuteTaskRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_baagent_v1_GetTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_baagent_v1_GetTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetTaskRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "TaskId", });
     internal_static_baagent_v1_ListToolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_baagent_v1_ListToolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ListToolsRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", });
     internal_static_baagent_v1_GetMemoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_baagent_v1_GetMemoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetMemoryRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "SessionId", });
     internal_static_baagent_v1_ClearMemoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_baagent_v1_ClearMemoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ClearMemoryRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "SessionId", });
     internal_static_baagent_v1_SubmitInputRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_baagent_v1_SubmitInputRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_SubmitInputRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "TaskId", "InputData", });
+    internal_static_baagent_v1_EmptyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_baagent_v1_EmptyResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_EmptyResponse_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Result", });
+    internal_static_baagent_v1_GenerateRequirementResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_baagent_v1_GenerateRequirementResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_GenerateRequirementResponse_descriptor,
+        new java.lang.String[] { "Metadata", "Result", "JobId", "DocumentId", });
     internal_static_baagent_v1_ExecuteTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_baagent_v1_ExecuteTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ExecuteTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Task", });
     internal_static_baagent_v1_StreamExecuteTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_baagent_v1_StreamExecuteTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_StreamExecuteTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Step", "IsFinal", });
     internal_static_baagent_v1_GetTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_baagent_v1_GetTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetTaskResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Task", });
     internal_static_baagent_v1_ListToolsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_baagent_v1_ListToolsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ListToolsResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Tools", });
     internal_static_baagent_v1_GetMemoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_baagent_v1_GetMemoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_GetMemoryResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Memory", });
     internal_static_baagent_v1_ClearMemoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_baagent_v1_ClearMemoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ClearMemoryResponse_descriptor,
