@@ -99,8 +99,9 @@ message GetDocumentRequest {
 message ApproveRequirementRequest {
   Metadata metadata = 1;
   Signature signature = 2;
-  string document_id = 3;
-  string comment = 4;
+  string tier_id = 3;
+  string parent_id = 4;
+  RequirementTier tier = 5;
 }
 
 message ReviewRequirementRequest {

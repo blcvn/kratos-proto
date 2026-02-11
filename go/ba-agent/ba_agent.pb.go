@@ -232,8 +232,9 @@ type ApproveRequirementRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	DocumentId    string                 `protobuf:"bytes,3,opt,name=document_id,json=documentId,proto3" json:"document_id,omitempty"`
-	Comment       string                 `protobuf:"bytes,4,opt,name=comment,proto3" json:"comment,omitempty"`
+	TierId        string                 `protobuf:"bytes,3,opt,name=tier_id,json=tierId,proto3" json:"tier_id,omitempty"`
+	ParentId      string                 `protobuf:"bytes,4,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	Tier          RequirementTier        `protobuf:"varint,5,opt,name=tier,proto3,enum=baagent.v1.RequirementTier" json:"tier,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -282,18 +283,25 @@ func (x *ApproveRequirementRequest) GetSignature() *Signature {
 	return nil
 }
 
-func (x *ApproveRequirementRequest) GetDocumentId() string {
+func (x *ApproveRequirementRequest) GetTierId() string {
 	if x != nil {
-		return x.DocumentId
+		return x.TierId
 	}
 	return ""
 }
 
-func (x *ApproveRequirementRequest) GetComment() string {
+func (x *ApproveRequirementRequest) GetParentId() string {
 	if x != nil {
-		return x.Comment
+		return x.ParentId
 	}
 	return ""
+}
+
+func (x *ApproveRequirementRequest) GetTier() RequirementTier {
+	if x != nil {
+		return x.Tier
+	}
+	return RequirementTier_TIER_UNSPECIFIED
 }
 
 type ReviewRequirementRequest struct {
@@ -1380,13 +1388,13 @@ const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x1f\n" +
 	"\vdocument_id\x18\x03 \x01(\tR\n" +
-	"documentId\"\xbd\x01\n" +
+	"documentId\"\xe9\x01\n" +
 	"\x19ApproveRequirementRequest\x120\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
-	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x1f\n" +
-	"\vdocument_id\x18\x03 \x01(\tR\n" +
-	"documentId\x12\x18\n" +
-	"\acomment\x18\x04 \x01(\tR\acomment\"\x8a\x02\n" +
+	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x17\n" +
+	"\atier_id\x18\x03 \x01(\tR\x06tierId\x12\x1b\n" +
+	"\tparent_id\x18\x04 \x01(\tR\bparentId\x12/\n" +
+	"\x04tier\x18\x05 \x01(\x0e2\x1b.baagent.v1.RequirementTierR\x04tier\"\x8a\x02\n" +
 	"\x18ReviewRequirementRequest\x120\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.baagent.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.baagent.v1.SignatureR\tsignature\x12\x1f\n" +
@@ -1549,87 +1557,88 @@ var file_ba_agent_ba_agent_proto_depIdxs = []int32{
 	21, // 4: baagent.v1.GetDocumentRequest.signature:type_name -> baagent.v1.Signature
 	20, // 5: baagent.v1.ApproveRequirementRequest.metadata:type_name -> baagent.v1.Metadata
 	21, // 6: baagent.v1.ApproveRequirementRequest.signature:type_name -> baagent.v1.Signature
-	20, // 7: baagent.v1.ReviewRequirementRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 8: baagent.v1.ReviewRequirementRequest.signature:type_name -> baagent.v1.Signature
-	22, // 9: baagent.v1.ExecuteTaskPayload.history:type_name -> baagent.v1.ReActStep
-	20, // 10: baagent.v1.ExecuteTaskRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 11: baagent.v1.ExecuteTaskRequest.signature:type_name -> baagent.v1.Signature
-	5,  // 12: baagent.v1.ExecuteTaskRequest.payload:type_name -> baagent.v1.ExecuteTaskPayload
-	20, // 13: baagent.v1.GetTaskRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 14: baagent.v1.GetTaskRequest.signature:type_name -> baagent.v1.Signature
-	20, // 15: baagent.v1.ListToolsRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 16: baagent.v1.ListToolsRequest.signature:type_name -> baagent.v1.Signature
-	20, // 17: baagent.v1.GetMemoryRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 18: baagent.v1.GetMemoryRequest.signature:type_name -> baagent.v1.Signature
-	20, // 19: baagent.v1.ClearMemoryRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 20: baagent.v1.ClearMemoryRequest.signature:type_name -> baagent.v1.Signature
-	20, // 21: baagent.v1.SubmitInputRequest.metadata:type_name -> baagent.v1.Metadata
-	21, // 22: baagent.v1.SubmitInputRequest.signature:type_name -> baagent.v1.Signature
-	20, // 23: baagent.v1.EmptyResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 24: baagent.v1.EmptyResponse.signature:type_name -> baagent.v1.Signature
-	23, // 25: baagent.v1.EmptyResponse.result:type_name -> baagent.v1.Result
-	20, // 26: baagent.v1.GenerateRequirementResponse.metadata:type_name -> baagent.v1.Metadata
-	23, // 27: baagent.v1.GenerateRequirementResponse.result:type_name -> baagent.v1.Result
-	20, // 28: baagent.v1.ExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 29: baagent.v1.ExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
-	23, // 30: baagent.v1.ExecuteTaskResponse.result:type_name -> baagent.v1.Result
-	24, // 31: baagent.v1.ExecuteTaskResponse.task:type_name -> baagent.v1.AgentTask
-	20, // 32: baagent.v1.StreamExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 33: baagent.v1.StreamExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
-	23, // 34: baagent.v1.StreamExecuteTaskResponse.result:type_name -> baagent.v1.Result
-	22, // 35: baagent.v1.StreamExecuteTaskResponse.step:type_name -> baagent.v1.ReActStep
-	20, // 36: baagent.v1.GetTaskResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 37: baagent.v1.GetTaskResponse.signature:type_name -> baagent.v1.Signature
-	23, // 38: baagent.v1.GetTaskResponse.result:type_name -> baagent.v1.Result
-	24, // 39: baagent.v1.GetTaskResponse.task:type_name -> baagent.v1.AgentTask
-	20, // 40: baagent.v1.ListToolsResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 41: baagent.v1.ListToolsResponse.signature:type_name -> baagent.v1.Signature
-	23, // 42: baagent.v1.ListToolsResponse.result:type_name -> baagent.v1.Result
-	25, // 43: baagent.v1.ListToolsResponse.tools:type_name -> baagent.v1.Tool
-	20, // 44: baagent.v1.GetMemoryResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 45: baagent.v1.GetMemoryResponse.signature:type_name -> baagent.v1.Signature
-	23, // 46: baagent.v1.GetMemoryResponse.result:type_name -> baagent.v1.Result
-	26, // 47: baagent.v1.GetMemoryResponse.memory:type_name -> baagent.v1.Memory
-	20, // 48: baagent.v1.ClearMemoryResponse.metadata:type_name -> baagent.v1.Metadata
-	21, // 49: baagent.v1.ClearMemoryResponse.signature:type_name -> baagent.v1.Signature
-	23, // 50: baagent.v1.ClearMemoryResponse.result:type_name -> baagent.v1.Result
-	6,  // 51: baagent.v1.BAAgentService.ExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
-	11, // 52: baagent.v1.BAAgentService.SubmitInput:input_type -> baagent.v1.SubmitInputRequest
-	6,  // 53: baagent.v1.BAAgentService.StreamExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
-	7,  // 54: baagent.v1.BAAgentService.GetTask:input_type -> baagent.v1.GetTaskRequest
-	8,  // 55: baagent.v1.BAAgentService.ListTools:input_type -> baagent.v1.ListToolsRequest
-	9,  // 56: baagent.v1.BAAgentService.GetMemory:input_type -> baagent.v1.GetMemoryRequest
-	10, // 57: baagent.v1.BAAgentService.ClearMemory:input_type -> baagent.v1.ClearMemoryRequest
-	1,  // 58: baagent.v1.BAAgentService.GenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
-	2,  // 59: baagent.v1.BAAgentService.GetDocument:input_type -> baagent.v1.GetDocumentRequest
-	2,  // 60: baagent.v1.BAAgentService.GetTierIndex:input_type -> baagent.v1.GetDocumentRequest
-	2,  // 61: baagent.v1.BAAgentService.GetTierOutline:input_type -> baagent.v1.GetDocumentRequest
-	2,  // 62: baagent.v1.BAAgentService.GetTierFull:input_type -> baagent.v1.GetDocumentRequest
-	3,  // 63: baagent.v1.BAAgentService.ApproveRequirement:input_type -> baagent.v1.ApproveRequirementRequest
-	4,  // 64: baagent.v1.BAAgentService.ReviewRequirement:input_type -> baagent.v1.ReviewRequirementRequest
-	1,  // 65: baagent.v1.BAAgentService.RegenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
-	2,  // 66: baagent.v1.BAAgentService.GetLineage:input_type -> baagent.v1.GetDocumentRequest
-	14, // 67: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
-	15, // 68: baagent.v1.BAAgentService.SubmitInput:output_type -> baagent.v1.StreamExecuteTaskResponse
-	15, // 69: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
-	16, // 70: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
-	17, // 71: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
-	18, // 72: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
-	19, // 73: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
-	13, // 74: baagent.v1.BAAgentService.GenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
-	14, // 75: baagent.v1.BAAgentService.GetDocument:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 76: baagent.v1.BAAgentService.GetTierIndex:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 77: baagent.v1.BAAgentService.GetTierOutline:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 78: baagent.v1.BAAgentService.GetTierFull:output_type -> baagent.v1.ExecuteTaskResponse
-	12, // 79: baagent.v1.BAAgentService.ApproveRequirement:output_type -> baagent.v1.EmptyResponse
-	12, // 80: baagent.v1.BAAgentService.ReviewRequirement:output_type -> baagent.v1.EmptyResponse
-	13, // 81: baagent.v1.BAAgentService.RegenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
-	12, // 82: baagent.v1.BAAgentService.GetLineage:output_type -> baagent.v1.EmptyResponse
-	67, // [67:83] is the sub-list for method output_type
-	51, // [51:67] is the sub-list for method input_type
-	51, // [51:51] is the sub-list for extension type_name
-	51, // [51:51] is the sub-list for extension extendee
-	0,  // [0:51] is the sub-list for field type_name
+	0,  // 7: baagent.v1.ApproveRequirementRequest.tier:type_name -> baagent.v1.RequirementTier
+	20, // 8: baagent.v1.ReviewRequirementRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 9: baagent.v1.ReviewRequirementRequest.signature:type_name -> baagent.v1.Signature
+	22, // 10: baagent.v1.ExecuteTaskPayload.history:type_name -> baagent.v1.ReActStep
+	20, // 11: baagent.v1.ExecuteTaskRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 12: baagent.v1.ExecuteTaskRequest.signature:type_name -> baagent.v1.Signature
+	5,  // 13: baagent.v1.ExecuteTaskRequest.payload:type_name -> baagent.v1.ExecuteTaskPayload
+	20, // 14: baagent.v1.GetTaskRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 15: baagent.v1.GetTaskRequest.signature:type_name -> baagent.v1.Signature
+	20, // 16: baagent.v1.ListToolsRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 17: baagent.v1.ListToolsRequest.signature:type_name -> baagent.v1.Signature
+	20, // 18: baagent.v1.GetMemoryRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 19: baagent.v1.GetMemoryRequest.signature:type_name -> baagent.v1.Signature
+	20, // 20: baagent.v1.ClearMemoryRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 21: baagent.v1.ClearMemoryRequest.signature:type_name -> baagent.v1.Signature
+	20, // 22: baagent.v1.SubmitInputRequest.metadata:type_name -> baagent.v1.Metadata
+	21, // 23: baagent.v1.SubmitInputRequest.signature:type_name -> baagent.v1.Signature
+	20, // 24: baagent.v1.EmptyResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 25: baagent.v1.EmptyResponse.signature:type_name -> baagent.v1.Signature
+	23, // 26: baagent.v1.EmptyResponse.result:type_name -> baagent.v1.Result
+	20, // 27: baagent.v1.GenerateRequirementResponse.metadata:type_name -> baagent.v1.Metadata
+	23, // 28: baagent.v1.GenerateRequirementResponse.result:type_name -> baagent.v1.Result
+	20, // 29: baagent.v1.ExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 30: baagent.v1.ExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
+	23, // 31: baagent.v1.ExecuteTaskResponse.result:type_name -> baagent.v1.Result
+	24, // 32: baagent.v1.ExecuteTaskResponse.task:type_name -> baagent.v1.AgentTask
+	20, // 33: baagent.v1.StreamExecuteTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 34: baagent.v1.StreamExecuteTaskResponse.signature:type_name -> baagent.v1.Signature
+	23, // 35: baagent.v1.StreamExecuteTaskResponse.result:type_name -> baagent.v1.Result
+	22, // 36: baagent.v1.StreamExecuteTaskResponse.step:type_name -> baagent.v1.ReActStep
+	20, // 37: baagent.v1.GetTaskResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 38: baagent.v1.GetTaskResponse.signature:type_name -> baagent.v1.Signature
+	23, // 39: baagent.v1.GetTaskResponse.result:type_name -> baagent.v1.Result
+	24, // 40: baagent.v1.GetTaskResponse.task:type_name -> baagent.v1.AgentTask
+	20, // 41: baagent.v1.ListToolsResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 42: baagent.v1.ListToolsResponse.signature:type_name -> baagent.v1.Signature
+	23, // 43: baagent.v1.ListToolsResponse.result:type_name -> baagent.v1.Result
+	25, // 44: baagent.v1.ListToolsResponse.tools:type_name -> baagent.v1.Tool
+	20, // 45: baagent.v1.GetMemoryResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 46: baagent.v1.GetMemoryResponse.signature:type_name -> baagent.v1.Signature
+	23, // 47: baagent.v1.GetMemoryResponse.result:type_name -> baagent.v1.Result
+	26, // 48: baagent.v1.GetMemoryResponse.memory:type_name -> baagent.v1.Memory
+	20, // 49: baagent.v1.ClearMemoryResponse.metadata:type_name -> baagent.v1.Metadata
+	21, // 50: baagent.v1.ClearMemoryResponse.signature:type_name -> baagent.v1.Signature
+	23, // 51: baagent.v1.ClearMemoryResponse.result:type_name -> baagent.v1.Result
+	6,  // 52: baagent.v1.BAAgentService.ExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
+	11, // 53: baagent.v1.BAAgentService.SubmitInput:input_type -> baagent.v1.SubmitInputRequest
+	6,  // 54: baagent.v1.BAAgentService.StreamExecuteTask:input_type -> baagent.v1.ExecuteTaskRequest
+	7,  // 55: baagent.v1.BAAgentService.GetTask:input_type -> baagent.v1.GetTaskRequest
+	8,  // 56: baagent.v1.BAAgentService.ListTools:input_type -> baagent.v1.ListToolsRequest
+	9,  // 57: baagent.v1.BAAgentService.GetMemory:input_type -> baagent.v1.GetMemoryRequest
+	10, // 58: baagent.v1.BAAgentService.ClearMemory:input_type -> baagent.v1.ClearMemoryRequest
+	1,  // 59: baagent.v1.BAAgentService.GenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
+	2,  // 60: baagent.v1.BAAgentService.GetDocument:input_type -> baagent.v1.GetDocumentRequest
+	2,  // 61: baagent.v1.BAAgentService.GetTierIndex:input_type -> baagent.v1.GetDocumentRequest
+	2,  // 62: baagent.v1.BAAgentService.GetTierOutline:input_type -> baagent.v1.GetDocumentRequest
+	2,  // 63: baagent.v1.BAAgentService.GetTierFull:input_type -> baagent.v1.GetDocumentRequest
+	3,  // 64: baagent.v1.BAAgentService.ApproveRequirement:input_type -> baagent.v1.ApproveRequirementRequest
+	4,  // 65: baagent.v1.BAAgentService.ReviewRequirement:input_type -> baagent.v1.ReviewRequirementRequest
+	1,  // 66: baagent.v1.BAAgentService.RegenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
+	2,  // 67: baagent.v1.BAAgentService.GetLineage:input_type -> baagent.v1.GetDocumentRequest
+	14, // 68: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
+	15, // 69: baagent.v1.BAAgentService.SubmitInput:output_type -> baagent.v1.StreamExecuteTaskResponse
+	15, // 70: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
+	16, // 71: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
+	17, // 72: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
+	18, // 73: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
+	19, // 74: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
+	13, // 75: baagent.v1.BAAgentService.GenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
+	14, // 76: baagent.v1.BAAgentService.GetDocument:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 77: baagent.v1.BAAgentService.GetTierIndex:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 78: baagent.v1.BAAgentService.GetTierOutline:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 79: baagent.v1.BAAgentService.GetTierFull:output_type -> baagent.v1.ExecuteTaskResponse
+	12, // 80: baagent.v1.BAAgentService.ApproveRequirement:output_type -> baagent.v1.EmptyResponse
+	12, // 81: baagent.v1.BAAgentService.ReviewRequirement:output_type -> baagent.v1.EmptyResponse
+	13, // 82: baagent.v1.BAAgentService.RegenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
+	12, // 83: baagent.v1.BAAgentService.GetLineage:output_type -> baagent.v1.EmptyResponse
+	68, // [68:84] is the sub-list for method output_type
+	52, // [52:68] is the sub-list for method input_type
+	52, // [52:52] is the sub-list for extension type_name
+	52, // [52:52] is the sub-list for extension extendee
+	0,  // [0:52] is the sub-list for field type_name
 }
 
 func init() { file_ba_agent_ba_agent_proto_init() }
