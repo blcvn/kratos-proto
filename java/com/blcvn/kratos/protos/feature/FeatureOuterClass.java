@@ -4960,6 +4960,3854 @@ public final class FeatureOuterClass {
 
   }
 
+  public interface FeatureDocOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.FeatureDoc)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+
+    /**
+     * <pre>
+     * PRD, BRD, etc.
+     * </pre>
+     *
+     * <code>string doc_type = 3;</code>
+     * @return The docType.
+     */
+    java.lang.String getDocType();
+    /**
+     * <pre>
+     * PRD, BRD, etc.
+     * </pre>
+     *
+     * <code>string doc_type = 3;</code>
+     * @return The bytes for docType.
+     */
+    com.google.protobuf.ByteString
+        getDocTypeBytes();
+
+    /**
+     * <code>int32 version = 4;</code>
+     * @return The version.
+     */
+    int getVersion();
+
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.FeatureDoc}
+   */
+  public static final class FeatureDoc extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.FeatureDoc)
+      FeatureDocOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FeatureDoc.newBuilder() to construct.
+    private FeatureDoc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FeatureDoc() {
+      id_ = "";
+      featureId_ = "";
+      docType_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FeatureDoc();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FeatureDoc(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              docType_ = s;
+              break;
+            }
+            case 32: {
+
+              version_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_FeatureDoc_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_FeatureDoc_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOC_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object docType_;
+    /**
+     * <pre>
+     * PRD, BRD, etc.
+     * </pre>
+     *
+     * <code>string doc_type = 3;</code>
+     * @return The docType.
+     */
+    @java.lang.Override
+    public java.lang.String getDocType() {
+      java.lang.Object ref = docType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * PRD, BRD, etc.
+     * </pre>
+     *
+     * <code>string doc_type = 3;</code>
+     * @return The bytes for docType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocTypeBytes() {
+      java.lang.Object ref = docType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        docType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 4;
+    private int version_;
+    /**
+     * <code>int32 version = 4;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public int getVersion() {
+      return version_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 5;</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, featureId_);
+      }
+      if (!getDocTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, docType_);
+      }
+      if (version_ != 0) {
+        output.writeInt32(4, version_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, featureId_);
+      }
+      if (!getDocTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, docType_);
+      }
+      if (version_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, version_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (!getDocType()
+          .equals(other.getDocType())) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      hash = (37 * hash) + DOC_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDocType().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.FeatureDoc}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.FeatureDoc)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_FeatureDoc_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_FeatureDoc_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        featureId_ = "";
+
+        docType_ = "";
+
+        version_ = 0;
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_FeatureDoc_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc(this);
+        result.id_ = id_;
+        result.featureId_ = featureId_;
+        result.docType_ = docType_;
+        result.version_ = version_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        if (!other.getDocType().isEmpty()) {
+          docType_ = other.docType_;
+          onChanged();
+        }
+        if (other.getVersion() != 0) {
+          setVersion(other.getVersion());
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object docType_ = "";
+      /**
+       * <pre>
+       * PRD, BRD, etc.
+       * </pre>
+       *
+       * <code>string doc_type = 3;</code>
+       * @return The docType.
+       */
+      public java.lang.String getDocType() {
+        java.lang.Object ref = docType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          docType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PRD, BRD, etc.
+       * </pre>
+       *
+       * <code>string doc_type = 3;</code>
+       * @return The bytes for docType.
+       */
+      public com.google.protobuf.ByteString
+          getDocTypeBytes() {
+        java.lang.Object ref = docType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          docType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PRD, BRD, etc.
+       * </pre>
+       *
+       * <code>string doc_type = 3;</code>
+       * @param value The docType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        docType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PRD, BRD, etc.
+       * </pre>
+       *
+       * <code>string doc_type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocType() {
+        
+        docType_ = getDefaultInstance().getDocType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PRD, BRD, etc.
+       * </pre>
+       *
+       * <code>string doc_type = 3;</code>
+       * @param value The bytes for docType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        docType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int version_ ;
+      /**
+       * <code>int32 version = 4;</code>
+       * @return The version.
+       */
+      @java.lang.Override
+      public int getVersion() {
+        return version_;
+      }
+      /**
+       * <code>int32 version = 4;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(int value) {
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 version = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5;</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.FeatureDoc)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.FeatureDoc)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FeatureDoc>
+        PARSER = new com.google.protobuf.AbstractParser<FeatureDoc>() {
+      @java.lang.Override
+      public FeatureDoc parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FeatureDoc(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FeatureDoc> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FeatureDoc> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DocContentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.DocContent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string doc_id = 2;</code>
+     * @return The docId.
+     */
+    java.lang.String getDocId();
+    /**
+     * <code>string doc_id = 2;</code>
+     * @return The bytes for docId.
+     */
+    com.google.protobuf.ByteString
+        getDocIdBytes();
+
+    /**
+     * <pre>
+     * index, outline, detail
+     * </pre>
+     *
+     * <code>string content_type = 3;</code>
+     * @return The contentType.
+     */
+    java.lang.String getContentType();
+    /**
+     * <pre>
+     * index, outline, detail
+     * </pre>
+     *
+     * <code>string content_type = 3;</code>
+     * @return The bytes for contentType.
+     */
+    com.google.protobuf.ByteString
+        getContentTypeBytes();
+
+    /**
+     * <pre>
+     * NOT_DONE, PROCESSING, CREATED, APPROVED
+     * </pre>
+     *
+     * <code>string status = 4;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * NOT_DONE, PROCESSING, CREATED, APPROVED
+     * </pre>
+     *
+     * <code>string status = 4;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     * @return Whether the content field is set.
+     */
+    boolean hasContent();
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     * @return The content.
+     */
+    com.google.protobuf.Struct getContent();
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     */
+    com.google.protobuf.StructOrBuilder getContentOrBuilder();
+
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.DocContent}
+   */
+  public static final class DocContent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.DocContent)
+      DocContentOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DocContent.newBuilder() to construct.
+    private DocContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DocContent() {
+      id_ = "";
+      docId_ = "";
+      contentType_ = "";
+      status_ = "";
+      updatedAt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DocContent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DocContent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              docId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentType_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (content_ != null) {
+                subBuilder = content_.toBuilder();
+              }
+              content_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(content_);
+                content_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOC_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object docId_;
+    /**
+     * <code>string doc_id = 2;</code>
+     * @return The docId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocId() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string doc_id = 2;</code>
+     * @return The bytes for docId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocIdBytes() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        docId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object contentType_;
+    /**
+     * <pre>
+     * index, outline, detail
+     * </pre>
+     *
+     * <code>string content_type = 3;</code>
+     * @return The contentType.
+     */
+    @java.lang.Override
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * index, outline, detail
+     * </pre>
+     *
+     * <code>string content_type = 3;</code>
+     * @return The bytes for contentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentTypeBytes() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object status_;
+    /**
+     * <pre>
+     * NOT_DONE, PROCESSING, CREATED, APPROVED
+     * </pre>
+     *
+     * <code>string status = 4;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * NOT_DONE, PROCESSING, CREATED, APPROVED
+     * </pre>
+     *
+     * <code>string status = 4;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Struct content_;
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     * @return Whether the content field is set.
+     */
+    @java.lang.Override
+    public boolean hasContent() {
+      return content_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getContent() {
+      return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
+    }
+    /**
+     * <code>.google.protobuf.Struct content = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
+      return getContent();
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 6;</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getDocIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contentType_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+      }
+      if (content_ != null) {
+        output.writeMessage(5, getContent());
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getDocIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contentType_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+      }
+      if (content_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getContent());
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getDocId()
+          .equals(other.getDocId())) return false;
+      if (!getContentType()
+          .equals(other.getContentType())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (hasContent() != other.hasContent()) return false;
+      if (hasContent()) {
+        if (!getContent()
+            .equals(other.getContent())) return false;
+      }
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DOC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocId().hashCode();
+      hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getContentType().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      if (hasContent()) {
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+      }
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.DocContent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.DocContent)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        docId_ = "";
+
+        contentType_ = "";
+
+        status_ = "";
+
+        if (contentBuilder_ == null) {
+          content_ = null;
+        } else {
+          content_ = null;
+          contentBuilder_ = null;
+        }
+        updatedAt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContent_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent(this);
+        result.id_ = id_;
+        result.docId_ = docId_;
+        result.contentType_ = contentType_;
+        result.status_ = status_;
+        if (contentBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = contentBuilder_.build();
+        }
+        result.updatedAt_ = updatedAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getDocId().isEmpty()) {
+          docId_ = other.docId_;
+          onChanged();
+        }
+        if (!other.getContentType().isEmpty()) {
+          contentType_ = other.contentType_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (other.hasContent()) {
+          mergeContent(other.getContent());
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object docId_ = "";
+      /**
+       * <code>string doc_id = 2;</code>
+       * @return The docId.
+       */
+      public java.lang.String getDocId() {
+        java.lang.Object ref = docId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          docId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 2;</code>
+       * @return The bytes for docId.
+       */
+      public com.google.protobuf.ByteString
+          getDocIdBytes() {
+        java.lang.Object ref = docId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          docId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 2;</code>
+       * @param value The docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocId() {
+        
+        docId_ = getDefaultInstance().getDocId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 2;</code>
+       * @param value The bytes for docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentType_ = "";
+      /**
+       * <pre>
+       * index, outline, detail
+       * </pre>
+       *
+       * <code>string content_type = 3;</code>
+       * @return The contentType.
+       */
+      public java.lang.String getContentType() {
+        java.lang.Object ref = contentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * index, outline, detail
+       * </pre>
+       *
+       * <code>string content_type = 3;</code>
+       * @return The bytes for contentType.
+       */
+      public com.google.protobuf.ByteString
+          getContentTypeBytes() {
+        java.lang.Object ref = contentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * index, outline, detail
+       * </pre>
+       *
+       * <code>string content_type = 3;</code>
+       * @param value The contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * index, outline, detail
+       * </pre>
+       *
+       * <code>string content_type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentType() {
+        
+        contentType_ = getDefaultInstance().getContentType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * index, outline, detail
+       * </pre>
+       *
+       * <code>string content_type = 3;</code>
+       * @param value The bytes for contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * NOT_DONE, PROCESSING, CREATED, APPROVED
+       * </pre>
+       *
+       * <code>string status = 4;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * NOT_DONE, PROCESSING, CREATED, APPROVED
+       * </pre>
+       *
+       * <code>string status = 4;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * NOT_DONE, PROCESSING, CREATED, APPROVED
+       * </pre>
+       *
+       * <code>string status = 4;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * NOT_DONE, PROCESSING, CREATED, APPROVED
+       * </pre>
+       *
+       * <code>string status = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * NOT_DONE, PROCESSING, CREATED, APPROVED
+       * </pre>
+       *
+       * <code>string status = 4;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct content_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> contentBuilder_;
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       * @return Whether the content field is set.
+       */
+      public boolean hasContent() {
+        return contentBuilder_ != null || content_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       * @return The content.
+       */
+      public com.google.protobuf.Struct getContent() {
+        if (contentBuilder_ == null) {
+          return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
+        } else {
+          return contentBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public Builder setContent(com.google.protobuf.Struct value) {
+        if (contentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          onChanged();
+        } else {
+          contentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public Builder setContent(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (contentBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          contentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public Builder mergeContent(com.google.protobuf.Struct value) {
+        if (contentBuilder_ == null) {
+          if (content_ != null) {
+            content_ =
+              com.google.protobuf.Struct.newBuilder(content_).mergeFrom(value).buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          contentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public Builder clearContent() {
+        if (contentBuilder_ == null) {
+          content_ = null;
+          onChanged();
+        } else {
+          content_ = null;
+          contentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public com.google.protobuf.Struct.Builder getContentBuilder() {
+        
+        onChanged();
+        return getContentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
+        if (contentBuilder_ != null) {
+          return contentBuilder_.getMessageOrBuilder();
+        } else {
+          return content_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : content_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getContentFieldBuilder() {
+        if (contentBuilder_ == null) {
+          contentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getContent(),
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        return contentBuilder_;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6;</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.DocContent)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.DocContent)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocContent>
+        PARSER = new com.google.protobuf.AbstractParser<DocContent>() {
+      @java.lang.Override
+      public DocContent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DocContent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DocContent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocContent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChatMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.ChatMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     * @return Whether the message field is set.
+     */
+    boolean hasMessage();
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     * @return The message.
+     */
+    com.google.protobuf.Struct getMessage();
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     */
+    com.google.protobuf.StructOrBuilder getMessageOrBuilder();
+
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.ChatMessage}
+   */
+  public static final class ChatMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.ChatMessage)
+      ChatMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChatMessage.newBuilder() to construct.
+    private ChatMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChatMessage() {
+      id_ = "";
+      featureId_ = "";
+      createdAt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChatMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChatMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (message_ != null) {
+                subBuilder = message_.toBuilder();
+              }
+              message_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(message_);
+                message_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 2;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    private com.google.protobuf.Struct message_;
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     * @return Whether the message field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessage() {
+      return message_ != null;
+    }
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getMessage() {
+      return message_ == null ? com.google.protobuf.Struct.getDefaultInstance() : message_;
+    }
+    /**
+     * <pre>
+     * {"role": "user", "content": "..."}
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct message = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getMessageOrBuilder() {
+      return getMessage();
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 4;</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, featureId_);
+      }
+      if (message_ != null) {
+        output.writeMessage(3, getMessage());
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, featureId_);
+      }
+      if (message_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getMessage());
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (hasMessage() != other.hasMessage()) return false;
+      if (hasMessage()) {
+        if (!getMessage()
+            .equals(other.getMessage())) return false;
+      }
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      if (hasMessage()) {
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+      }
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.ChatMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.ChatMessage)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        featureId_ = "";
+
+        if (messageBuilder_ == null) {
+          message_ = null;
+        } else {
+          message_ = null;
+          messageBuilder_ = null;
+        }
+        createdAt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage(this);
+        result.id_ = id_;
+        result.featureId_ = featureId_;
+        if (messageBuilder_ == null) {
+          result.message_ = message_;
+        } else {
+          result.message_ = messageBuilder_.build();
+        }
+        result.createdAt_ = createdAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        if (other.hasMessage()) {
+          mergeMessage(other.getMessage());
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 2;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct message_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> messageBuilder_;
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       * @return Whether the message field is set.
+       */
+      public boolean hasMessage() {
+        return messageBuilder_ != null || message_ != null;
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       * @return The message.
+       */
+      public com.google.protobuf.Struct getMessage() {
+        if (messageBuilder_ == null) {
+          return message_ == null ? com.google.protobuf.Struct.getDefaultInstance() : message_;
+        } else {
+          return messageBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public Builder setMessage(com.google.protobuf.Struct value) {
+        if (messageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          messageBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public Builder setMessage(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (messageBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public Builder mergeMessage(com.google.protobuf.Struct value) {
+        if (messageBuilder_ == null) {
+          if (message_ != null) {
+            message_ =
+              com.google.protobuf.Struct.newBuilder(message_).mergeFrom(value).buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          messageBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public Builder clearMessage() {
+        if (messageBuilder_ == null) {
+          message_ = null;
+          onChanged();
+        } else {
+          message_ = null;
+          messageBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public com.google.protobuf.Struct.Builder getMessageBuilder() {
+        
+        onChanged();
+        return getMessageFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getMessageOrBuilder() {
+        if (messageBuilder_ != null) {
+          return messageBuilder_.getMessageOrBuilder();
+        } else {
+          return message_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : message_;
+        }
+      }
+      /**
+       * <pre>
+       * {"role": "user", "content": "..."}
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct message = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getMessageFieldBuilder() {
+        if (messageBuilder_ == null) {
+          messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getMessage(),
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        return messageBuilder_;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 4;</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 4;</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 4;</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 4;</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.ChatMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.ChatMessage)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChatMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ChatMessage>() {
+      @java.lang.Override
+      public ChatMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChatMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChatMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChatMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface FeatureOrBuilder extends
       // @@protoc_insertion_point(interface_extends:feature.v1.Feature)
       com.google.protobuf.MessageOrBuilder {
@@ -16865,6 +20713,10838 @@ public final class FeatureOuterClass {
 
   }
 
+  public interface CreateDocPayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.CreateDocPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+
+    /**
+     * <code>string doc_type = 2;</code>
+     * @return The docType.
+     */
+    java.lang.String getDocType();
+    /**
+     * <code>string doc_type = 2;</code>
+     * @return The bytes for docType.
+     */
+    com.google.protobuf.ByteString
+        getDocTypeBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.CreateDocPayload}
+   */
+  public static final class CreateDocPayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.CreateDocPayload)
+      CreateDocPayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateDocPayload.newBuilder() to construct.
+    private CreateDocPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateDocPayload() {
+      featureId_ = "";
+      docType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateDocPayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateDocPayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              docType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder.class);
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOC_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object docType_;
+    /**
+     * <code>string doc_type = 2;</code>
+     * @return The docType.
+     */
+    @java.lang.Override
+    public java.lang.String getDocType() {
+      java.lang.Object ref = docType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string doc_type = 2;</code>
+     * @return The bytes for docType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocTypeBytes() {
+      java.lang.Object ref = docType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        docType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featureId_);
+      }
+      if (!getDocTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, docType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featureId_);
+      }
+      if (!getDocTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, docType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload) obj;
+
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (!getDocType()
+          .equals(other.getDocType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      hash = (37 * hash) + DOC_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDocType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.CreateDocPayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.CreateDocPayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        featureId_ = "";
+
+        docType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload(this);
+        result.featureId_ = featureId_;
+        result.docType_ = docType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.getDefaultInstance()) return this;
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        if (!other.getDocType().isEmpty()) {
+          docType_ = other.docType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object docType_ = "";
+      /**
+       * <code>string doc_type = 2;</code>
+       * @return The docType.
+       */
+      public java.lang.String getDocType() {
+        java.lang.Object ref = docType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          docType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string doc_type = 2;</code>
+       * @return The bytes for docType.
+       */
+      public com.google.protobuf.ByteString
+          getDocTypeBytes() {
+        java.lang.Object ref = docType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          docType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string doc_type = 2;</code>
+       * @param value The docType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        docType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocType() {
+        
+        docType_ = getDefaultInstance().getDocType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_type = 2;</code>
+       * @param value The bytes for docType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        docType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.CreateDocPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.CreateDocPayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateDocPayload>
+        PARSER = new com.google.protobuf.AbstractParser<CreateDocPayload>() {
+      @java.lang.Override
+      public CreateDocPayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateDocPayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateDocPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateDocPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateDocRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.CreateDocRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getPayload();
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.CreateDocRequest}
+   */
+  public static final class CreateDocRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.CreateDocRequest)
+      CreateDocRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateDocRequest.newBuilder() to construct.
+    private CreateDocRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateDocRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateDocRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateDocRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload payload_;
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.CreateDocRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.CreateDocRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_CreateDocRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.CreateDocPayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocPayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.CreateDocRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.CreateDocRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateDocRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateDocRequest>() {
+      @java.lang.Override
+      public CreateDocRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateDocRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateDocRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateDocRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.CreateDocRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListDocsPayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.ListDocsPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.ListDocsPayload}
+   */
+  public static final class ListDocsPayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.ListDocsPayload)
+      ListDocsPayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListDocsPayload.newBuilder() to construct.
+    private ListDocsPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListDocsPayload() {
+      featureId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListDocsPayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListDocsPayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder.class);
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featureId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featureId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload) obj;
+
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.ListDocsPayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.ListDocsPayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        featureId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload(this);
+        result.featureId_ = featureId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.getDefaultInstance()) return this;
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.ListDocsPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.ListDocsPayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListDocsPayload>
+        PARSER = new com.google.protobuf.AbstractParser<ListDocsPayload>() {
+      @java.lang.Override
+      public ListDocsPayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListDocsPayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListDocsPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListDocsPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListDocsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.ListDocsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getPayload();
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.ListDocsRequest}
+   */
+  public static final class ListDocsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.ListDocsRequest)
+      ListDocsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListDocsRequest.newBuilder() to construct.
+    private ListDocsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListDocsRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListDocsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListDocsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload payload_;
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.ListDocsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.ListDocsRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.ListDocsPayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsPayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.ListDocsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.ListDocsRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListDocsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListDocsRequest>() {
+      @java.lang.Override
+      public ListDocsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListDocsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListDocsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListDocsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetDocContentPayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.GetDocContentPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The docId.
+     */
+    java.lang.String getDocId();
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The bytes for docId.
+     */
+    com.google.protobuf.ByteString
+        getDocIdBytes();
+
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The contentType.
+     */
+    java.lang.String getContentType();
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The bytes for contentType.
+     */
+    com.google.protobuf.ByteString
+        getContentTypeBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.GetDocContentPayload}
+   */
+  public static final class GetDocContentPayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.GetDocContentPayload)
+      GetDocContentPayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetDocContentPayload.newBuilder() to construct.
+    private GetDocContentPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetDocContentPayload() {
+      docId_ = "";
+      contentType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetDocContentPayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetDocContentPayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              docId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder.class);
+    }
+
+    public static final int DOC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object docId_;
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The docId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocId() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The bytes for docId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocIdBytes() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        docId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object contentType_;
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The contentType.
+     */
+    @java.lang.Override
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The bytes for contentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentTypeBytes() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDocIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, contentType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDocIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, contentType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload) obj;
+
+      if (!getDocId()
+          .equals(other.getDocId())) return false;
+      if (!getContentType()
+          .equals(other.getContentType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DOC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocId().hashCode();
+      hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getContentType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.GetDocContentPayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.GetDocContentPayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        docId_ = "";
+
+        contentType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload(this);
+        result.docId_ = docId_;
+        result.contentType_ = contentType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.getDefaultInstance()) return this;
+        if (!other.getDocId().isEmpty()) {
+          docId_ = other.docId_;
+          onChanged();
+        }
+        if (!other.getContentType().isEmpty()) {
+          contentType_ = other.contentType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object docId_ = "";
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return The docId.
+       */
+      public java.lang.String getDocId() {
+        java.lang.Object ref = docId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          docId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return The bytes for docId.
+       */
+      public com.google.protobuf.ByteString
+          getDocIdBytes() {
+        java.lang.Object ref = docId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          docId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @param value The docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocId() {
+        
+        docId_ = getDefaultInstance().getDocId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @param value The bytes for docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentType_ = "";
+      /**
+       * <code>string content_type = 2;</code>
+       * @return The contentType.
+       */
+      public java.lang.String getContentType() {
+        java.lang.Object ref = contentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @return The bytes for contentType.
+       */
+      public com.google.protobuf.ByteString
+          getContentTypeBytes() {
+        java.lang.Object ref = contentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @param value The contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentType() {
+        
+        contentType_ = getDefaultInstance().getContentType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @param value The bytes for contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.GetDocContentPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.GetDocContentPayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetDocContentPayload>
+        PARSER = new com.google.protobuf.AbstractParser<GetDocContentPayload>() {
+      @java.lang.Override
+      public GetDocContentPayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetDocContentPayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetDocContentPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetDocContentPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetDocContentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.GetDocContentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getPayload();
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.GetDocContentRequest}
+   */
+  public static final class GetDocContentRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.GetDocContentRequest)
+      GetDocContentRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetDocContentRequest.newBuilder() to construct.
+    private GetDocContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetDocContentRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetDocContentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetDocContentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload payload_;
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.GetDocContentRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.GetDocContentRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetDocContentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.GetDocContentPayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentPayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.GetDocContentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.GetDocContentRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetDocContentRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetDocContentRequest>() {
+      @java.lang.Override
+      public GetDocContentRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetDocContentRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetDocContentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetDocContentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetDocContentRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateDocContentPayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.UpdateDocContentPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The docId.
+     */
+    java.lang.String getDocId();
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The bytes for docId.
+     */
+    com.google.protobuf.ByteString
+        getDocIdBytes();
+
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The contentType.
+     */
+    java.lang.String getContentType();
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The bytes for contentType.
+     */
+    com.google.protobuf.ByteString
+        getContentTypeBytes();
+
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     * @return Whether the content field is set.
+     */
+    boolean hasContent();
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     * @return The content.
+     */
+    com.google.protobuf.Struct getContent();
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     */
+    com.google.protobuf.StructOrBuilder getContentOrBuilder();
+
+    /**
+     * <code>string status = 4;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 4;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code feature.v1.UpdateDocContentPayload}
+   */
+  public static final class UpdateDocContentPayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.UpdateDocContentPayload)
+      UpdateDocContentPayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateDocContentPayload.newBuilder() to construct.
+    private UpdateDocContentPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateDocContentPayload() {
+      docId_ = "";
+      contentType_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateDocContentPayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateDocContentPayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              docId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentType_ = s;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (content_ != null) {
+                subBuilder = content_.toBuilder();
+              }
+              content_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(content_);
+                content_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder.class);
+    }
+
+    public static final int DOC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object docId_;
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The docId.
+     */
+    @java.lang.Override
+    public java.lang.String getDocId() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string doc_id = 1;</code>
+     * @return The bytes for docId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDocIdBytes() {
+      java.lang.Object ref = docId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        docId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object contentType_;
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The contentType.
+     */
+    @java.lang.Override
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string content_type = 2;</code>
+     * @return The bytes for contentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentTypeBytes() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Struct content_;
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     * @return Whether the content field is set.
+     */
+    @java.lang.Override
+    public boolean hasContent() {
+      return content_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getContent() {
+      return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
+    }
+    /**
+     * <code>.google.protobuf.Struct content = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
+      return getContent();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 4;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 4;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDocIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, contentType_);
+      }
+      if (content_ != null) {
+        output.writeMessage(3, getContent());
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDocIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, docId_);
+      }
+      if (!getContentTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, contentType_);
+      }
+      if (content_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getContent());
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload) obj;
+
+      if (!getDocId()
+          .equals(other.getDocId())) return false;
+      if (!getContentType()
+          .equals(other.getContentType())) return false;
+      if (hasContent() != other.hasContent()) return false;
+      if (hasContent()) {
+        if (!getContent()
+            .equals(other.getContent())) return false;
+      }
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DOC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocId().hashCode();
+      hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getContentType().hashCode();
+      if (hasContent()) {
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.UpdateDocContentPayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.UpdateDocContentPayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        docId_ = "";
+
+        contentType_ = "";
+
+        if (contentBuilder_ == null) {
+          content_ = null;
+        } else {
+          content_ = null;
+          contentBuilder_ = null;
+        }
+        status_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload(this);
+        result.docId_ = docId_;
+        result.contentType_ = contentType_;
+        if (contentBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = contentBuilder_.build();
+        }
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.getDefaultInstance()) return this;
+        if (!other.getDocId().isEmpty()) {
+          docId_ = other.docId_;
+          onChanged();
+        }
+        if (!other.getContentType().isEmpty()) {
+          contentType_ = other.contentType_;
+          onChanged();
+        }
+        if (other.hasContent()) {
+          mergeContent(other.getContent());
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object docId_ = "";
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return The docId.
+       */
+      public java.lang.String getDocId() {
+        java.lang.Object ref = docId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          docId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return The bytes for docId.
+       */
+      public com.google.protobuf.ByteString
+          getDocIdBytes() {
+        java.lang.Object ref = docId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          docId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @param value The docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocId() {
+        
+        docId_ = getDefaultInstance().getDocId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doc_id = 1;</code>
+       * @param value The bytes for docId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        docId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentType_ = "";
+      /**
+       * <code>string content_type = 2;</code>
+       * @return The contentType.
+       */
+      public java.lang.String getContentType() {
+        java.lang.Object ref = contentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @return The bytes for contentType.
+       */
+      public com.google.protobuf.ByteString
+          getContentTypeBytes() {
+        java.lang.Object ref = contentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @param value The contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentType() {
+        
+        contentType_ = getDefaultInstance().getContentType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content_type = 2;</code>
+       * @param value The bytes for contentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct content_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> contentBuilder_;
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       * @return Whether the content field is set.
+       */
+      public boolean hasContent() {
+        return contentBuilder_ != null || content_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       * @return The content.
+       */
+      public com.google.protobuf.Struct getContent() {
+        if (contentBuilder_ == null) {
+          return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
+        } else {
+          return contentBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public Builder setContent(com.google.protobuf.Struct value) {
+        if (contentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          onChanged();
+        } else {
+          contentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public Builder setContent(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (contentBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          contentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public Builder mergeContent(com.google.protobuf.Struct value) {
+        if (contentBuilder_ == null) {
+          if (content_ != null) {
+            content_ =
+              com.google.protobuf.Struct.newBuilder(content_).mergeFrom(value).buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          contentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public Builder clearContent() {
+        if (contentBuilder_ == null) {
+          content_ = null;
+          onChanged();
+        } else {
+          content_ = null;
+          contentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public com.google.protobuf.Struct.Builder getContentBuilder() {
+        
+        onChanged();
+        return getContentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
+        if (contentBuilder_ != null) {
+          return contentBuilder_.getMessageOrBuilder();
+        } else {
+          return content_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : content_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct content = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getContentFieldBuilder() {
+        if (contentBuilder_ == null) {
+          contentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getContent(),
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        return contentBuilder_;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 4;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 4;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 4;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.UpdateDocContentPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.UpdateDocContentPayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateDocContentPayload>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateDocContentPayload>() {
+      @java.lang.Override
+      public UpdateDocContentPayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateDocContentPayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateDocContentPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateDocContentPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateDocContentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.UpdateDocContentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getPayload();
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.UpdateDocContentRequest}
+   */
+  public static final class UpdateDocContentRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.UpdateDocContentRequest)
+      UpdateDocContentRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateDocContentRequest.newBuilder() to construct.
+    private UpdateDocContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateDocContentRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateDocContentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateDocContentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload payload_;
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.UpdateDocContentRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.UpdateDocContentRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_UpdateDocContentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.UpdateDocContentPayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentPayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.UpdateDocContentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.UpdateDocContentRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateDocContentRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateDocContentRequest>() {
+      @java.lang.Override
+      public UpdateDocContentRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateDocContentRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateDocContentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateDocContentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.UpdateDocContentRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetChatHistoryPayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.GetChatHistoryPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+
+    /**
+     * <pre>
+     * Timestamp for pagination
+     * </pre>
+     *
+     * <code>string before = 2;</code>
+     * @return The before.
+     */
+    java.lang.String getBefore();
+    /**
+     * <pre>
+     * Timestamp for pagination
+     * </pre>
+     *
+     * <code>string before = 2;</code>
+     * @return The bytes for before.
+     */
+    com.google.protobuf.ByteString
+        getBeforeBytes();
+
+    /**
+     * <code>int32 limit = 3;</code>
+     * @return The limit.
+     */
+    int getLimit();
+  }
+  /**
+   * Protobuf type {@code feature.v1.GetChatHistoryPayload}
+   */
+  public static final class GetChatHistoryPayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.GetChatHistoryPayload)
+      GetChatHistoryPayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetChatHistoryPayload.newBuilder() to construct.
+    private GetChatHistoryPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetChatHistoryPayload() {
+      featureId_ = "";
+      before_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetChatHistoryPayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetChatHistoryPayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              before_ = s;
+              break;
+            }
+            case 24: {
+
+              limit_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder.class);
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BEFORE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object before_;
+    /**
+     * <pre>
+     * Timestamp for pagination
+     * </pre>
+     *
+     * <code>string before = 2;</code>
+     * @return The before.
+     */
+    @java.lang.Override
+    public java.lang.String getBefore() {
+      java.lang.Object ref = before_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        before_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Timestamp for pagination
+     * </pre>
+     *
+     * <code>string before = 2;</code>
+     * @return The bytes for before.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBeforeBytes() {
+      java.lang.Object ref = before_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        before_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private int limit_;
+    /**
+     * <code>int32 limit = 3;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public int getLimit() {
+      return limit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featureId_);
+      }
+      if (!getBeforeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, before_);
+      }
+      if (limit_ != 0) {
+        output.writeInt32(3, limit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featureId_);
+      }
+      if (!getBeforeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, before_);
+      }
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, limit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload) obj;
+
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (!getBefore()
+          .equals(other.getBefore())) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      hash = (37 * hash) + BEFORE_FIELD_NUMBER;
+      hash = (53 * hash) + getBefore().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.GetChatHistoryPayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.GetChatHistoryPayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        featureId_ = "";
+
+        before_ = "";
+
+        limit_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload(this);
+        result.featureId_ = featureId_;
+        result.before_ = before_;
+        result.limit_ = limit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.getDefaultInstance()) return this;
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        if (!other.getBefore().isEmpty()) {
+          before_ = other.before_;
+          onChanged();
+        }
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object before_ = "";
+      /**
+       * <pre>
+       * Timestamp for pagination
+       * </pre>
+       *
+       * <code>string before = 2;</code>
+       * @return The before.
+       */
+      public java.lang.String getBefore() {
+        java.lang.Object ref = before_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          before_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Timestamp for pagination
+       * </pre>
+       *
+       * <code>string before = 2;</code>
+       * @return The bytes for before.
+       */
+      public com.google.protobuf.ByteString
+          getBeforeBytes() {
+        java.lang.Object ref = before_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          before_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Timestamp for pagination
+       * </pre>
+       *
+       * <code>string before = 2;</code>
+       * @param value The before to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBefore(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        before_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp for pagination
+       * </pre>
+       *
+       * <code>string before = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBefore() {
+        
+        before_ = getDefaultInstance().getBefore();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp for pagination
+       * </pre>
+       *
+       * <code>string before = 2;</code>
+       * @param value The bytes for before to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeforeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        before_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int limit_ ;
+      /**
+       * <code>int32 limit = 3;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>int32 limit = 3;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(int value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 limit = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.GetChatHistoryPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.GetChatHistoryPayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetChatHistoryPayload>
+        PARSER = new com.google.protobuf.AbstractParser<GetChatHistoryPayload>() {
+      @java.lang.Override
+      public GetChatHistoryPayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetChatHistoryPayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetChatHistoryPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetChatHistoryPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetChatHistoryRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.GetChatHistoryRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getPayload();
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.GetChatHistoryRequest}
+   */
+  public static final class GetChatHistoryRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.GetChatHistoryRequest)
+      GetChatHistoryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetChatHistoryRequest.newBuilder() to construct.
+    private GetChatHistoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetChatHistoryRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetChatHistoryRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetChatHistoryRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload payload_;
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.GetChatHistoryRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.GetChatHistoryRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_GetChatHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.GetChatHistoryPayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryPayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.GetChatHistoryRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.GetChatHistoryRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetChatHistoryRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetChatHistoryRequest>() {
+      @java.lang.Override
+      public GetChatHistoryRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetChatHistoryRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetChatHistoryRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetChatHistoryRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.GetChatHistoryRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SendMessagePayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.SendMessagePayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    java.lang.String getFeatureId();
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    com.google.protobuf.ByteString
+        getFeatureIdBytes();
+
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     * @return Whether the message field is set.
+     */
+    boolean hasMessage();
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     * @return The message.
+     */
+    com.google.protobuf.Struct getMessage();
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     */
+    com.google.protobuf.StructOrBuilder getMessageOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.SendMessagePayload}
+   */
+  public static final class SendMessagePayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.SendMessagePayload)
+      SendMessagePayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SendMessagePayload.newBuilder() to construct.
+    private SendMessagePayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SendMessagePayload() {
+      featureId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SendMessagePayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SendMessagePayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              featureId_ = s;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (message_ != null) {
+                subBuilder = message_.toBuilder();
+              }
+              message_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(message_);
+                message_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessagePayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessagePayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder.class);
+    }
+
+    public static final int FEATURE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object featureId_;
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The featureId.
+     */
+    @java.lang.Override
+    public java.lang.String getFeatureId() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feature_id = 1;</code>
+     * @return The bytes for featureId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFeatureIdBytes() {
+      java.lang.Object ref = featureId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private com.google.protobuf.Struct message_;
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     * @return Whether the message field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessage() {
+      return message_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getMessage() {
+      return message_ == null ? com.google.protobuf.Struct.getDefaultInstance() : message_;
+    }
+    /**
+     * <code>.google.protobuf.Struct message = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getMessageOrBuilder() {
+      return getMessage();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFeatureIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featureId_);
+      }
+      if (message_ != null) {
+        output.writeMessage(2, getMessage());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFeatureIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featureId_);
+      }
+      if (message_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getMessage());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload) obj;
+
+      if (!getFeatureId()
+          .equals(other.getFeatureId())) return false;
+      if (hasMessage() != other.hasMessage()) return false;
+      if (hasMessage()) {
+        if (!getMessage()
+            .equals(other.getMessage())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEATURE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureId().hashCode();
+      if (hasMessage()) {
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.SendMessagePayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.SendMessagePayload)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessagePayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessagePayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        featureId_ = "";
+
+        if (messageBuilder_ == null) {
+          message_ = null;
+        } else {
+          message_ = null;
+          messageBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessagePayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload(this);
+        result.featureId_ = featureId_;
+        if (messageBuilder_ == null) {
+          result.message_ = message_;
+        } else {
+          result.message_ = messageBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.getDefaultInstance()) return this;
+        if (!other.getFeatureId().isEmpty()) {
+          featureId_ = other.featureId_;
+          onChanged();
+        }
+        if (other.hasMessage()) {
+          mergeMessage(other.getMessage());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object featureId_ = "";
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The featureId.
+       */
+      public java.lang.String getFeatureId() {
+        java.lang.Object ref = featureId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          featureId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return The bytes for featureId.
+       */
+      public com.google.protobuf.ByteString
+          getFeatureIdBytes() {
+        java.lang.Object ref = featureId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          featureId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureId() {
+        
+        featureId_ = getDefaultInstance().getFeatureId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feature_id = 1;</code>
+       * @param value The bytes for featureId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        featureId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct message_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> messageBuilder_;
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       * @return Whether the message field is set.
+       */
+      public boolean hasMessage() {
+        return messageBuilder_ != null || message_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       * @return The message.
+       */
+      public com.google.protobuf.Struct getMessage() {
+        if (messageBuilder_ == null) {
+          return message_ == null ? com.google.protobuf.Struct.getDefaultInstance() : message_;
+        } else {
+          return messageBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public Builder setMessage(com.google.protobuf.Struct value) {
+        if (messageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          messageBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public Builder setMessage(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (messageBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public Builder mergeMessage(com.google.protobuf.Struct value) {
+        if (messageBuilder_ == null) {
+          if (message_ != null) {
+            message_ =
+              com.google.protobuf.Struct.newBuilder(message_).mergeFrom(value).buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          messageBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public Builder clearMessage() {
+        if (messageBuilder_ == null) {
+          message_ = null;
+          onChanged();
+        } else {
+          message_ = null;
+          messageBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public com.google.protobuf.Struct.Builder getMessageBuilder() {
+        
+        onChanged();
+        return getMessageFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getMessageOrBuilder() {
+        if (messageBuilder_ != null) {
+          return messageBuilder_.getMessageOrBuilder();
+        } else {
+          return message_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : message_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Struct message = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getMessageFieldBuilder() {
+        if (messageBuilder_ == null) {
+          messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getMessage(),
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        return messageBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.SendMessagePayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.SendMessagePayload)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SendMessagePayload>
+        PARSER = new com.google.protobuf.AbstractParser<SendMessagePayload>() {
+      @java.lang.Override
+      public SendMessagePayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SendMessagePayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SendMessagePayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SendMessagePayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SendMessageRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.SendMessageRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.feature.Base.Metadata getMetadata();
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.feature.Base.Signature getSignature();
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getPayload();
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.SendMessageRequest}
+   */
+  public static final class SendMessageRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.SendMessageRequest)
+      SendMessageRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SendMessageRequest.newBuilder() to construct.
+    private SendMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SendMessageRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SendMessageRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SendMessageRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessageRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessageRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.feature.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.feature.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload payload_;
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.SendMessageRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.SendMessageRequest)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessageRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_SendMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.feature.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.feature.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.feature.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Metadata, com.blcvn.kratos.protos.feature.Base.Metadata.Builder, com.blcvn.kratos.protos.feature.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.feature.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.feature.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.feature.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Signature, com.blcvn.kratos.protos.feature.Base.Signature.Builder, com.blcvn.kratos.protos.feature.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.SendMessagePayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayload.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessagePayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.SendMessageRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.SendMessageRequest)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SendMessageRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SendMessageRequest>() {
+      @java.lang.Override
+      public SendMessageRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SendMessageRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SendMessageRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SendMessageRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.SendMessageRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface FeatureReplyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:feature.v1.FeatureReply)
       com.google.protobuf.MessageOrBuilder {
@@ -18888,6 +33568,2972 @@ public final class FeatureOuterClass {
 
   }
 
+  public interface ListDocsReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.ListDocsReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    com.blcvn.kratos.protos.feature.Base.Result getResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> 
+        getPayloadList();
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getPayload(int index);
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    int getPayloadCount();
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder> 
+        getPayloadOrBuilderList();
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder getPayloadOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code feature.v1.ListDocsReply}
+   */
+  public static final class ListDocsReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.ListDocsReply)
+      ListDocsReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListDocsReply.newBuilder() to construct.
+    private ListDocsReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListDocsReply() {
+      payload_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListDocsReply();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListDocsReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                payload_ = new java.util.ArrayList<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              payload_.add(
+                  input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          payload_ = java.util.Collections.unmodifiableList(payload_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsReply_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Result result_;
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+      return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 2;
+    private java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> payload_;
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> getPayloadList() {
+      return payload_;
+    }
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder> 
+        getPayloadOrBuilderList() {
+      return payload_;
+    }
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    @java.lang.Override
+    public int getPayloadCount() {
+      return payload_.size();
+    }
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getPayload(int index) {
+      return payload_.get(index);
+    }
+    /**
+     * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder getPayloadOrBuilder(
+        int index) {
+      return payload_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (result_ != null) {
+        output.writeMessage(1, getResult());
+      }
+      for (int i = 0; i < payload_.size(); i++) {
+        output.writeMessage(2, payload_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResult());
+      }
+      for (int i = 0; i < payload_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, payload_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply) obj;
+
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!getPayloadList()
+          .equals(other.getPayloadList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (getPayloadCount() > 0) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayloadList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.ListDocsReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.ListDocsReply)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPayloadFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          payloadBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ListDocsReply_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply(this);
+        int from_bitField0_ = bitField0_;
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            payload_ = java.util.Collections.unmodifiableList(payload_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (payloadBuilder_ == null) {
+          if (!other.payload_.isEmpty()) {
+            if (payload_.isEmpty()) {
+              payload_ = other.payload_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePayloadIsMutable();
+              payload_.addAll(other.payload_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.payload_.isEmpty()) {
+            if (payloadBuilder_.isEmpty()) {
+              payloadBuilder_.dispose();
+              payloadBuilder_ = null;
+              payload_ = other.payload_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              payloadBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPayloadFieldBuilder() : null;
+            } else {
+              payloadBuilder_.addAllMessages(other.payload_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.blcvn.kratos.protos.feature.Base.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return The result.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(
+          com.blcvn.kratos.protos.feature.Base.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder mergeResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.kratos.protos.feature.Base.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> payload_ =
+        java.util.Collections.emptyList();
+      private void ensurePayloadIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          payload_ = new java.util.ArrayList<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc>(payload_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder> payloadBuilder_;
+
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> getPayloadList() {
+        if (payloadBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(payload_);
+        } else {
+          return payloadBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public int getPayloadCount() {
+        if (payloadBuilder_ == null) {
+          return payload_.size();
+        } else {
+          return payloadBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc getPayload(int index) {
+        if (payloadBuilder_ == null) {
+          return payload_.get(index);
+        } else {
+          return payloadBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder setPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.set(index, value);
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder setPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder addPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.add(value);
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder addPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.add(index, value);
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder addPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.add(builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder addPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder addAllPayload(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc> values) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, payload_);
+          onChanged();
+        } else {
+          payloadBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          payloadBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public Builder removePayload(int index) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.remove(index);
+          onChanged();
+        } else {
+          payloadBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder getPayloadBuilder(
+          int index) {
+        return getPayloadFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder getPayloadOrBuilder(
+          int index) {
+        if (payloadBuilder_ == null) {
+          return payload_.get(index);  } else {
+          return payloadBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder> 
+           getPayloadOrBuilderList() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(payload_);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder addPayloadBuilder() {
+        return getPayloadFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder addPayloadBuilder(
+          int index) {
+        return getPayloadFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .feature.v1.FeatureDoc payload = 2;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder> 
+           getPayloadBuilderList() {
+        return getPayloadFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDoc.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.FeatureDocOrBuilder>(
+                  payload_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.ListDocsReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.ListDocsReply)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListDocsReply>
+        PARSER = new com.google.protobuf.AbstractParser<ListDocsReply>() {
+      @java.lang.Override
+      public ListDocsReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListDocsReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListDocsReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListDocsReply> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ListDocsReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DocContentReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.DocContentReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    com.blcvn.kratos.protos.feature.Base.Result getResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     * @return The payload.
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getPayload();
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code feature.v1.DocContentReply}
+   */
+  public static final class DocContentReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.DocContentReply)
+      DocContentReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DocContentReply.newBuilder() to construct.
+    private DocContentReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DocContentReply() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DocContentReply();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DocContentReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContentReply_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContentReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Result result_;
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+      return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent payload_;
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getPayload() {
+      return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.feature.v1.DocContent payload = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (result_ != null) {
+        output.writeMessage(1, getResult());
+      }
+      if (payload_ != null) {
+        output.writeMessage(2, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResult());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply) obj;
+
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.DocContentReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.DocContentReply)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContentReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContentReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_DocContentReply_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply(this);
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.feature.Base.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return The result.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(
+          com.blcvn.kratos.protos.feature.Base.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder mergeResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.kratos.protos.feature.Base.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder> payloadBuilder_;
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       * @return The payload.
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public Builder setPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public Builder setPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public Builder mergePayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.feature.v1.DocContent payload = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContent.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.DocContentReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.DocContentReply)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocContentReply>
+        PARSER = new com.google.protobuf.AbstractParser<DocContentReply>() {
+      @java.lang.Override
+      public DocContentReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DocContentReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DocContentReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocContentReply> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.DocContentReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChatHistoryReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feature.v1.ChatHistoryReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    com.blcvn.kratos.protos.feature.Base.Result getResult();
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>string next_cursor = 2;</code>
+     * @return The nextCursor.
+     */
+    java.lang.String getNextCursor();
+    /**
+     * <code>string next_cursor = 2;</code>
+     * @return The bytes for nextCursor.
+     */
+    com.google.protobuf.ByteString
+        getNextCursorBytes();
+
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> 
+        getPayloadList();
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getPayload(int index);
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    int getPayloadCount();
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder> 
+        getPayloadOrBuilderList();
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder getPayloadOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code feature.v1.ChatHistoryReply}
+   */
+  public static final class ChatHistoryReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feature.v1.ChatHistoryReply)
+      ChatHistoryReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChatHistoryReply.newBuilder() to construct.
+    private ChatHistoryReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChatHistoryReply() {
+      nextCursor_ = "";
+      payload_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChatHistoryReply();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChatHistoryReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.feature.Base.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.kratos.protos.feature.Base.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextCursor_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                payload_ = new java.util.ArrayList<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              payload_.add(
+                  input.readMessage(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          payload_ = java.util.Collections.unmodifiableList(payload_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatHistoryReply_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatHistoryReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.feature.Base.Result result_;
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+      return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.feature.v1.Result result = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int NEXT_CURSOR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nextCursor_;
+    /**
+     * <code>string next_cursor = 2;</code>
+     * @return The nextCursor.
+     */
+    @java.lang.Override
+    public java.lang.String getNextCursor() {
+      java.lang.Object ref = nextCursor_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextCursor_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string next_cursor = 2;</code>
+     * @return The bytes for nextCursor.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNextCursorBytes() {
+      java.lang.Object ref = nextCursor_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextCursor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> payload_;
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> getPayloadList() {
+      return payload_;
+    }
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder> 
+        getPayloadOrBuilderList() {
+      return payload_;
+    }
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    @java.lang.Override
+    public int getPayloadCount() {
+      return payload_.size();
+    }
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getPayload(int index) {
+      return payload_.get(index);
+    }
+    /**
+     * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder getPayloadOrBuilder(
+        int index) {
+      return payload_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (result_ != null) {
+        output.writeMessage(1, getResult());
+      }
+      if (!getNextCursorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextCursor_);
+      }
+      for (int i = 0; i < payload_.size(); i++) {
+        output.writeMessage(3, payload_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResult());
+      }
+      if (!getNextCursorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextCursor_);
+      }
+      for (int i = 0; i < payload_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, payload_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply other = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply) obj;
+
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!getNextCursor()
+          .equals(other.getNextCursor())) return false;
+      if (!getPayloadList()
+          .equals(other.getPayloadList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      hash = (37 * hash) + NEXT_CURSOR_FIELD_NUMBER;
+      hash = (53 * hash) + getNextCursor().hashCode();
+      if (getPayloadCount() > 0) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayloadList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feature.v1.ChatHistoryReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feature.v1.ChatHistoryReply)
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatHistoryReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatHistoryReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.class, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPayloadFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        nextCursor_ = "";
+
+        if (payloadBuilder_ == null) {
+          payload_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          payloadBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.internal_static_feature_v1_ChatHistoryReply_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply build() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply buildPartial() {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply result = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply(this);
+        int from_bitField0_ = bitField0_;
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        result.nextCursor_ = nextCursor_;
+        if (payloadBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            payload_ = java.util.Collections.unmodifiableList(payload_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply) {
+          return mergeFrom((com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply other) {
+        if (other == com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (!other.getNextCursor().isEmpty()) {
+          nextCursor_ = other.nextCursor_;
+          onChanged();
+        }
+        if (payloadBuilder_ == null) {
+          if (!other.payload_.isEmpty()) {
+            if (payload_.isEmpty()) {
+              payload_ = other.payload_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePayloadIsMutable();
+              payload_.addAll(other.payload_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.payload_.isEmpty()) {
+            if (payloadBuilder_.isEmpty()) {
+              payloadBuilder_.dispose();
+              payloadBuilder_ = null;
+              payload_ = other.payload_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              payloadBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPayloadFieldBuilder() : null;
+            } else {
+              payloadBuilder_.addAllMessages(other.payload_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.blcvn.kratos.protos.feature.Base.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       * @return The result.
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder setResult(
+          com.blcvn.kratos.protos.feature.Base.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder mergeResult(com.blcvn.kratos.protos.feature.Base.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.kratos.protos.feature.Base.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      public com.blcvn.kratos.protos.feature.Base.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.kratos.protos.feature.Base.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.feature.v1.Result result = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.Base.Result, com.blcvn.kratos.protos.feature.Base.Result.Builder, com.blcvn.kratos.protos.feature.Base.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private java.lang.Object nextCursor_ = "";
+      /**
+       * <code>string next_cursor = 2;</code>
+       * @return The nextCursor.
+       */
+      public java.lang.String getNextCursor() {
+        java.lang.Object ref = nextCursor_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nextCursor_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string next_cursor = 2;</code>
+       * @return The bytes for nextCursor.
+       */
+      public com.google.protobuf.ByteString
+          getNextCursorBytes() {
+        java.lang.Object ref = nextCursor_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nextCursor_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string next_cursor = 2;</code>
+       * @param value The nextCursor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextCursor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nextCursor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_cursor = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNextCursor() {
+        
+        nextCursor_ = getDefaultInstance().getNextCursor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_cursor = 2;</code>
+       * @param value The bytes for nextCursor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextCursorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nextCursor_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> payload_ =
+        java.util.Collections.emptyList();
+      private void ensurePayloadIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          payload_ = new java.util.ArrayList<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage>(payload_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder> payloadBuilder_;
+
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> getPayloadList() {
+        if (payloadBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(payload_);
+        } else {
+          return payloadBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public int getPayloadCount() {
+        if (payloadBuilder_ == null) {
+          return payload_.size();
+        } else {
+          return payloadBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage getPayload(int index) {
+        if (payloadBuilder_ == null) {
+          return payload_.get(index);
+        } else {
+          return payloadBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder setPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.set(index, value);
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder setPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder addPayload(com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.add(value);
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder addPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePayloadIsMutable();
+          payload_.add(index, value);
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder addPayload(
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.add(builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder addPayload(
+          int index, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          payloadBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder addAllPayload(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage> values) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, payload_);
+          onChanged();
+        } else {
+          payloadBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          payloadBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public Builder removePayload(int index) {
+        if (payloadBuilder_ == null) {
+          ensurePayloadIsMutable();
+          payload_.remove(index);
+          onChanged();
+        } else {
+          payloadBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder getPayloadBuilder(
+          int index) {
+        return getPayloadFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder getPayloadOrBuilder(
+          int index) {
+        if (payloadBuilder_ == null) {
+          return payload_.get(index);  } else {
+          return payloadBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder> 
+           getPayloadOrBuilderList() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(payload_);
+        }
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder addPayloadBuilder() {
+        return getPayloadFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder addPayloadBuilder(
+          int index) {
+        return getPayloadFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .feature.v1.ChatMessage payload = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder> 
+           getPayloadBuilderList() {
+        return getPayloadFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessage.Builder, com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatMessageOrBuilder>(
+                  payload_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feature.v1.ChatHistoryReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:feature.v1.ChatHistoryReply)
+    private static final com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply();
+    }
+
+    public static com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChatHistoryReply>
+        PARSER = new com.google.protobuf.AbstractParser<ChatHistoryReply>() {
+      @java.lang.Override
+      public ChatHistoryReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChatHistoryReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChatHistoryReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChatHistoryReply> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.feature.FeatureOuterClass.ChatHistoryReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_feature_v1_FeatureProgress_descriptor;
   private static final 
@@ -18903,6 +36549,21 @@ public final class FeatureOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_feature_v1_FeatureData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_FeatureDoc_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_FeatureDoc_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_DocContent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_DocContent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_ChatMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_ChatMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_feature_v1_Feature_descriptor;
   private static final 
@@ -18949,6 +36610,66 @@ public final class FeatureOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_feature_v1_DeleteFeatureRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_CreateDocPayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_CreateDocPayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_CreateDocRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_CreateDocRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_ListDocsPayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_ListDocsPayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_ListDocsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_ListDocsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_GetDocContentPayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_GetDocContentPayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_GetDocContentRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_GetDocContentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_UpdateDocContentPayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_UpdateDocContentPayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_UpdateDocContentRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_UpdateDocContentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_GetChatHistoryPayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_GetChatHistoryPayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_GetChatHistoryRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_GetChatHistoryRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_SendMessagePayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_SendMessagePayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_SendMessageRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_SendMessageRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_feature_v1_FeatureReply_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18958,6 +36679,21 @@ public final class FeatureOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_feature_v1_ListFeaturesReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_ListDocsReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_ListDocsReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_DocContentReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_DocContentReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feature_v1_ChatHistoryReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feature_v1_ChatHistoryReply_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18987,62 +36723,125 @@ public final class FeatureOuterClass {
       "nswers\030\003 \003(\0132\027.google.protobuf.Struct\0225\n" +
       "\024conversation_history\030\004 \003(\0132\027.google.pro" +
       "tobuf.Struct\022\031\n\021skipped_questions\030\005 \003(\t\"" +
-      "\370\002\n\007Feature\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id\030\002 " +
-      "\001(\t\022\021\n\tparent_id\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013" +
-      "description\030\005 \001(\t\022\r\n\005order\030\006 \001(\005\022\016\n\006stat" +
-      "us\030\007 \001(\t\022\025\n\rcurrent_phase\030\010 \001(\t\022\024\n\014curre" +
-      "nt_step\030\t \001(\t\022)\n\010progress\030\n \001(\0132\027.google" +
-      ".protobuf.Struct\022*\n\tartifacts\030\013 \001(\0132\027.go" +
-      "ogle.protobuf.Struct\022%\n\004data\030\014 \001(\0132\027.goo" +
-      "gle.protobuf.Struct\022\022\n\ncreated_at\030\r \001(\t\022" +
-      "\022\n\nupdated_at\030\016 \001(\t\022%\n\010children\030\017 \003(\0132\023." +
-      "feature.v1.Feature\"`\n\024CreateFeaturePaylo" +
-      "ad\022\022\n\nproject_id\030\001 \001(\t\022\021\n\tparent_id\030\002 \001(" +
-      "\t\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\"\233\001\n" +
-      "\024CreateFeatureRequest\022&\n\010metadata\030\001 \001(\0132" +
-      "\024.feature.v1.Metadata\022(\n\tsignature\030\002 \001(\013" +
-      "2\025.feature.v1.Signature\0221\n\007payload\030\003 \001(\013" +
-      "2 .feature.v1.CreateFeaturePayload\"\200\002\n\024U" +
-      "pdateFeaturePayload\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\016\n\006status\030\004 \001" +
-      "(\t\022\025\n\rcurrent_phase\030\005 \001(\t\022\024\n\014current_ste" +
-      "p\030\006 \001(\t\022)\n\010progress\030\007 \001(\0132\027.google.proto" +
-      "buf.Struct\022*\n\tartifacts\030\010 \001(\0132\027.google.p" +
-      "rotobuf.Struct\022%\n\004data\030\t \001(\0132\027.google.pr" +
-      "otobuf.Struct\"\233\001\n\024UpdateFeatureRequest\022&" +
-      "\n\010metadata\030\001 \001(\0132\024.feature.v1.Metadata\022(" +
-      "\n\tsignature\030\002 \001(\0132\025.feature.v1.Signature" +
-      "\0221\n\007payload\030\003 \001(\0132 .feature.v1.UpdateFea" +
-      "turePayload\"\037\n\021GetFeatureRequest\022\n\n\002id\030\001" +
-      " \001(\t\"\\\n\023ListFeaturesPayload\022\022\n\nproject_i" +
-      "d\030\001 \001(\t\022\021\n\tparent_id\030\002 \001(\t\022\016\n\006status\030\003 \001" +
-      "(\t\022\016\n\006search\030\004 \001(\t\"\305\001\n\023ListFeaturesReque" +
-      "st\022&\n\010metadata\030\001 \001(\0132\024.feature.v1.Metada" +
-      "ta\022(\n\tsignature\030\002 \001(\0132\025.feature.v1.Signa" +
-      "ture\022*\n\npagination\030\003 \001(\0132\026.feature.v1.Pa" +
-      "gination\0220\n\007payload\030\004 \001(\0132\037.feature.v1.L" +
-      "istFeaturesPayload\"t\n\024DeleteFeatureReque" +
-      "st\022\n\n\002id\030\001 \001(\t\022&\n\010metadata\030\002 \001(\0132\024.featu" +
-      "re.v1.Metadata\022(\n\tsignature\030\003 \001(\0132\025.feat" +
-      "ure.v1.Signature\"X\n\014FeatureReply\022\"\n\006resu" +
-      "lt\030\001 \001(\0132\022.feature.v1.Result\022$\n\007payload\030" +
-      "\002 \001(\0132\023.feature.v1.Feature\"\211\001\n\021ListFeatu" +
-      "resReply\022\"\n\006result\030\001 \001(\0132\022.feature.v1.Re" +
-      "sult\022*\n\npagination\030\002 \001(\0132\026.feature.v1.Pa" +
-      "gination\022$\n\007payload\030\003 \003(\0132\023.feature.v1.F" +
-      "eature2\216\003\n\016FeatureService\022K\n\rCreateFeatu" +
-      "re\022 .feature.v1.CreateFeatureRequest\032\030.f" +
-      "eature.v1.FeatureReply\022K\n\rUpdateFeature\022" +
-      " .feature.v1.UpdateFeatureRequest\032\030.feat" +
-      "ure.v1.FeatureReply\022E\n\nGetFeature\022\035.feat" +
-      "ure.v1.GetFeatureRequest\032\030.feature.v1.Fe" +
-      "atureReply\022N\n\014ListFeatures\022\037.feature.v1." +
-      "ListFeaturesRequest\032\035.feature.v1.ListFea" +
-      "turesReply\022K\n\rDeleteFeature\022 .feature.v1" +
-      ".DeleteFeatureRequest\032\030.feature.v1.Featu" +
-      "reReplyBS\n\037com.blcvn.kratos.protos.featu" +
-      "reZ0github.com/blcvn/kratos-proto/go/fea" +
-      "ture;featureb\006proto3"
+      "w\n\nFeatureDoc\022\n\n\002id\030\001 \001(\t\022\022\n\nfeature_id\030" +
+      "\002 \001(\t\022\020\n\010doc_type\030\003 \001(\t\022\017\n\007version\030\004 \001(\005" +
+      "\022\022\n\ncreated_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t" +
+      "\"\214\001\n\nDocContent\022\n\n\002id\030\001 \001(\t\022\016\n\006doc_id\030\002 " +
+      "\001(\t\022\024\n\014content_type\030\003 \001(\t\022\016\n\006status\030\004 \001(" +
+      "\t\022(\n\007content\030\005 \001(\0132\027.google.protobuf.Str" +
+      "uct\022\022\n\nupdated_at\030\006 \001(\t\"k\n\013ChatMessage\022\n" +
+      "\n\002id\030\001 \001(\t\022\022\n\nfeature_id\030\002 \001(\t\022(\n\007messag" +
+      "e\030\003 \001(\0132\027.google.protobuf.Struct\022\022\n\ncrea" +
+      "ted_at\030\004 \001(\t\"\370\002\n\007Feature\022\n\n\002id\030\001 \001(\t\022\022\n\n" +
+      "project_id\030\002 \001(\t\022\021\n\tparent_id\030\003 \001(\t\022\014\n\004n" +
+      "ame\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\r\n\005order\030" +
+      "\006 \001(\005\022\016\n\006status\030\007 \001(\t\022\025\n\rcurrent_phase\030\010" +
+      " \001(\t\022\024\n\014current_step\030\t \001(\t\022)\n\010progress\030\n" +
+      " \001(\0132\027.google.protobuf.Struct\022*\n\tartifac" +
+      "ts\030\013 \001(\0132\027.google.protobuf.Struct\022%\n\004dat" +
+      "a\030\014 \001(\0132\027.google.protobuf.Struct\022\022\n\ncrea" +
+      "ted_at\030\r \001(\t\022\022\n\nupdated_at\030\016 \001(\t\022%\n\010chil" +
+      "dren\030\017 \003(\0132\023.feature.v1.Feature\"`\n\024Creat" +
+      "eFeaturePayload\022\022\n\nproject_id\030\001 \001(\t\022\021\n\tp" +
+      "arent_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
+      "ion\030\004 \001(\t\"\233\001\n\024CreateFeatureRequest\022&\n\010me" +
+      "tadata\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\tsi" +
+      "gnature\030\002 \001(\0132\025.feature.v1.Signature\0221\n\007" +
+      "payload\030\003 \001(\0132 .feature.v1.CreateFeature" +
+      "Payload\"\200\002\n\024UpdateFeaturePayload\022\n\n\002id\030\001" +
+      " \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022" +
+      "\016\n\006status\030\004 \001(\t\022\025\n\rcurrent_phase\030\005 \001(\t\022\024" +
+      "\n\014current_step\030\006 \001(\t\022)\n\010progress\030\007 \001(\0132\027" +
+      ".google.protobuf.Struct\022*\n\tartifacts\030\010 \001" +
+      "(\0132\027.google.protobuf.Struct\022%\n\004data\030\t \001(" +
+      "\0132\027.google.protobuf.Struct\"\233\001\n\024UpdateFea" +
+      "tureRequest\022&\n\010metadata\030\001 \001(\0132\024.feature." +
+      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.feature" +
+      ".v1.Signature\0221\n\007payload\030\003 \001(\0132 .feature" +
+      ".v1.UpdateFeaturePayload\"\037\n\021GetFeatureRe" +
+      "quest\022\n\n\002id\030\001 \001(\t\"\\\n\023ListFeaturesPayload" +
+      "\022\022\n\nproject_id\030\001 \001(\t\022\021\n\tparent_id\030\002 \001(\t\022" +
+      "\016\n\006status\030\003 \001(\t\022\016\n\006search\030\004 \001(\t\"\305\001\n\023List" +
+      "FeaturesRequest\022&\n\010metadata\030\001 \001(\0132\024.feat" +
+      "ure.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.fea" +
+      "ture.v1.Signature\022*\n\npagination\030\003 \001(\0132\026." +
+      "feature.v1.Pagination\0220\n\007payload\030\004 \001(\0132\037" +
+      ".feature.v1.ListFeaturesPayload\"t\n\024Delet" +
+      "eFeatureRequest\022\n\n\002id\030\001 \001(\t\022&\n\010metadata\030" +
+      "\002 \001(\0132\024.feature.v1.Metadata\022(\n\tsignature" +
+      "\030\003 \001(\0132\025.feature.v1.Signature\"8\n\020CreateD" +
+      "ocPayload\022\022\n\nfeature_id\030\001 \001(\t\022\020\n\010doc_typ" +
+      "e\030\002 \001(\t\"\223\001\n\020CreateDocRequest\022&\n\010metadata" +
+      "\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\tsignatur" +
+      "e\030\002 \001(\0132\025.feature.v1.Signature\022-\n\007payloa" +
+      "d\030\003 \001(\0132\034.feature.v1.CreateDocPayload\"%\n" +
+      "\017ListDocsPayload\022\022\n\nfeature_id\030\001 \001(\t\"\221\001\n" +
+      "\017ListDocsRequest\022&\n\010metadata\030\001 \001(\0132\024.fea" +
+      "ture.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.fe" +
+      "ature.v1.Signature\022,\n\007payload\030\003 \001(\0132\033.fe" +
+      "ature.v1.ListDocsPayload\"<\n\024GetDocConten" +
+      "tPayload\022\016\n\006doc_id\030\001 \001(\t\022\024\n\014content_type" +
+      "\030\002 \001(\t\"\233\001\n\024GetDocContentRequest\022&\n\010metad" +
+      "ata\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\tsigna" +
+      "ture\030\002 \001(\0132\025.feature.v1.Signature\0221\n\007pay" +
+      "load\030\003 \001(\0132 .feature.v1.GetDocContentPay" +
+      "load\"y\n\027UpdateDocContentPayload\022\016\n\006doc_i" +
+      "d\030\001 \001(\t\022\024\n\014content_type\030\002 \001(\t\022(\n\007content" +
+      "\030\003 \001(\0132\027.google.protobuf.Struct\022\016\n\006statu" +
+      "s\030\004 \001(\t\"\241\001\n\027UpdateDocContentRequest\022&\n\010m" +
+      "etadata\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\ts" +
+      "ignature\030\002 \001(\0132\025.feature.v1.Signature\0224\n" +
+      "\007payload\030\003 \001(\0132#.feature.v1.UpdateDocCon" +
+      "tentPayload\"J\n\025GetChatHistoryPayload\022\022\n\n" +
+      "feature_id\030\001 \001(\t\022\016\n\006before\030\002 \001(\t\022\r\n\005limi" +
+      "t\030\003 \001(\005\"\235\001\n\025GetChatHistoryRequest\022&\n\010met" +
+      "adata\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\tsig" +
+      "nature\030\002 \001(\0132\025.feature.v1.Signature\0222\n\007p" +
+      "ayload\030\003 \001(\0132!.feature.v1.GetChatHistory" +
+      "Payload\"R\n\022SendMessagePayload\022\022\n\nfeature" +
+      "_id\030\001 \001(\t\022(\n\007message\030\002 \001(\0132\027.google.prot" +
+      "obuf.Struct\"\227\001\n\022SendMessageRequest\022&\n\010me" +
+      "tadata\030\001 \001(\0132\024.feature.v1.Metadata\022(\n\tsi" +
+      "gnature\030\002 \001(\0132\025.feature.v1.Signature\022/\n\007" +
+      "payload\030\003 \001(\0132\036.feature.v1.SendMessagePa" +
+      "yload\"X\n\014FeatureReply\022\"\n\006result\030\001 \001(\0132\022." +
+      "feature.v1.Result\022$\n\007payload\030\002 \001(\0132\023.fea" +
+      "ture.v1.Feature\"\211\001\n\021ListFeaturesReply\022\"\n" +
+      "\006result\030\001 \001(\0132\022.feature.v1.Result\022*\n\npag" +
+      "ination\030\002 \001(\0132\026.feature.v1.Pagination\022$\n" +
+      "\007payload\030\003 \003(\0132\023.feature.v1.Feature\"\\\n\rL" +
+      "istDocsReply\022\"\n\006result\030\001 \001(\0132\022.feature.v" +
+      "1.Result\022\'\n\007payload\030\002 \003(\0132\026.feature.v1.F" +
+      "eatureDoc\"^\n\017DocContentReply\022\"\n\006result\030\001" +
+      " \001(\0132\022.feature.v1.Result\022\'\n\007payload\030\002 \001(" +
+      "\0132\026.feature.v1.DocContent\"u\n\020ChatHistory" +
+      "Reply\022\"\n\006result\030\001 \001(\0132\022.feature.v1.Resul" +
+      "t\022\023\n\013next_cursor\030\002 \001(\t\022(\n\007payload\030\003 \003(\0132" +
+      "\027.feature.v1.ChatMessage2\326\006\n\016FeatureServ" +
+      "ice\022K\n\rCreateFeature\022 .feature.v1.Create" +
+      "FeatureRequest\032\030.feature.v1.FeatureReply" +
+      "\022K\n\rUpdateFeature\022 .feature.v1.UpdateFea" +
+      "tureRequest\032\030.feature.v1.FeatureReply\022E\n" +
+      "\nGetFeature\022\035.feature.v1.GetFeatureReque" +
+      "st\032\030.feature.v1.FeatureReply\022N\n\014ListFeat" +
+      "ures\022\037.feature.v1.ListFeaturesRequest\032\035." +
+      "feature.v1.ListFeaturesReply\022K\n\rDeleteFe" +
+      "ature\022 .feature.v1.DeleteFeatureRequest\032" +
+      "\030.feature.v1.FeatureReply\022A\n\tCreateDoc\022\034" +
+      ".feature.v1.CreateDocRequest\032\026.feature.v" +
+      "1.FeatureDoc\022B\n\010ListDocs\022\033.feature.v1.Li" +
+      "stDocsRequest\032\031.feature.v1.ListDocsReply" +
+      "\022N\n\rGetDocContent\022 .feature.v1.GetDocCon" +
+      "tentRequest\032\033.feature.v1.DocContentReply" +
+      "\022T\n\020UpdateDocContent\022#.feature.v1.Update" +
+      "DocContentRequest\032\033.feature.v1.DocConten" +
+      "tReply\022Q\n\016GetChatHistory\022!.feature.v1.Ge" +
+      "tChatHistoryRequest\032\034.feature.v1.ChatHis" +
+      "toryReply\022F\n\013SendMessage\022\036.feature.v1.Se" +
+      "ndMessageRequest\032\027.feature.v1.ChatMessag" +
+      "eBS\n\037com.blcvn.kratos.protos.featureZ0gi" +
+      "thub.com/blcvn/kratos-proto/go/feature;f" +
+      "eatureb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19068,72 +36867,180 @@ public final class FeatureOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_FeatureData_descriptor,
         new java.lang.String[] { "Requirements", "UseCases", "Answers", "ConversationHistory", "SkippedQuestions", });
-    internal_static_feature_v1_Feature_descriptor =
+    internal_static_feature_v1_FeatureDoc_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_feature_v1_FeatureDoc_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_FeatureDoc_descriptor,
+        new java.lang.String[] { "Id", "FeatureId", "DocType", "Version", "CreatedAt", "UpdatedAt", });
+    internal_static_feature_v1_DocContent_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_feature_v1_DocContent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_DocContent_descriptor,
+        new java.lang.String[] { "Id", "DocId", "ContentType", "Status", "Content", "UpdatedAt", });
+    internal_static_feature_v1_ChatMessage_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_feature_v1_ChatMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_ChatMessage_descriptor,
+        new java.lang.String[] { "Id", "FeatureId", "Message", "CreatedAt", });
+    internal_static_feature_v1_Feature_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_feature_v1_Feature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_Feature_descriptor,
         new java.lang.String[] { "Id", "ProjectId", "ParentId", "Name", "Description", "Order", "Status", "CurrentPhase", "CurrentStep", "Progress", "Artifacts", "Data", "CreatedAt", "UpdatedAt", "Children", });
     internal_static_feature_v1_CreateFeaturePayload_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_feature_v1_CreateFeaturePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_CreateFeaturePayload_descriptor,
         new java.lang.String[] { "ProjectId", "ParentId", "Name", "Description", });
     internal_static_feature_v1_CreateFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_feature_v1_CreateFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_CreateFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_feature_v1_UpdateFeaturePayload_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_feature_v1_UpdateFeaturePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_UpdateFeaturePayload_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "Status", "CurrentPhase", "CurrentStep", "Progress", "Artifacts", "Data", });
     internal_static_feature_v1_UpdateFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_feature_v1_UpdateFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_UpdateFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_feature_v1_GetFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_feature_v1_GetFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_GetFeatureRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_feature_v1_ListFeaturesPayload_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_feature_v1_ListFeaturesPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_ListFeaturesPayload_descriptor,
         new java.lang.String[] { "ProjectId", "ParentId", "Status", "Search", });
     internal_static_feature_v1_ListFeaturesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_feature_v1_ListFeaturesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_ListFeaturesRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Pagination", "Payload", });
     internal_static_feature_v1_DeleteFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_feature_v1_DeleteFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_DeleteFeatureRequest_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Signature", });
+    internal_static_feature_v1_CreateDocPayload_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_feature_v1_CreateDocPayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_CreateDocPayload_descriptor,
+        new java.lang.String[] { "FeatureId", "DocType", });
+    internal_static_feature_v1_CreateDocRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_feature_v1_CreateDocRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_CreateDocRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_feature_v1_ListDocsPayload_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_feature_v1_ListDocsPayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_ListDocsPayload_descriptor,
+        new java.lang.String[] { "FeatureId", });
+    internal_static_feature_v1_ListDocsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_feature_v1_ListDocsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_ListDocsRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_feature_v1_GetDocContentPayload_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_feature_v1_GetDocContentPayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_GetDocContentPayload_descriptor,
+        new java.lang.String[] { "DocId", "ContentType", });
+    internal_static_feature_v1_GetDocContentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_feature_v1_GetDocContentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_GetDocContentRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_feature_v1_UpdateDocContentPayload_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_feature_v1_UpdateDocContentPayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_UpdateDocContentPayload_descriptor,
+        new java.lang.String[] { "DocId", "ContentType", "Content", "Status", });
+    internal_static_feature_v1_UpdateDocContentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_feature_v1_UpdateDocContentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_UpdateDocContentRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_feature_v1_GetChatHistoryPayload_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_feature_v1_GetChatHistoryPayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_GetChatHistoryPayload_descriptor,
+        new java.lang.String[] { "FeatureId", "Before", "Limit", });
+    internal_static_feature_v1_GetChatHistoryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_feature_v1_GetChatHistoryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_GetChatHistoryRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_feature_v1_SendMessagePayload_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_feature_v1_SendMessagePayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_SendMessagePayload_descriptor,
+        new java.lang.String[] { "FeatureId", "Message", });
+    internal_static_feature_v1_SendMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_feature_v1_SendMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_SendMessageRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_feature_v1_FeatureReply_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_feature_v1_FeatureReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_FeatureReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_feature_v1_ListFeaturesReply_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_feature_v1_ListFeaturesReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_feature_v1_ListFeaturesReply_descriptor,
         new java.lang.String[] { "Result", "Pagination", "Payload", });
+    internal_static_feature_v1_ListDocsReply_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_feature_v1_ListDocsReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_ListDocsReply_descriptor,
+        new java.lang.String[] { "Result", "Payload", });
+    internal_static_feature_v1_DocContentReply_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_feature_v1_DocContentReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_DocContentReply_descriptor,
+        new java.lang.String[] { "Result", "Payload", });
+    internal_static_feature_v1_ChatHistoryReply_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_feature_v1_ChatHistoryReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feature_v1_ChatHistoryReply_descriptor,
+        new java.lang.String[] { "Result", "NextCursor", "Payload", });
     com.blcvn.kratos.protos.feature.Base.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

@@ -26,6 +26,16 @@ service FeatureService {
   
   // Delete Feature
   rpc DeleteFeature (DeleteFeatureRequest) returns (FeatureReply);
+
+  // Document Management
+  rpc CreateDoc (CreateDocRequest) returns (FeatureDoc);
+  rpc ListDocs (ListDocsRequest) returns (ListDocsReply);
+  rpc GetDocContent (GetDocContentRequest) returns (DocContentReply);
+  rpc UpdateDocContent (UpdateDocContentRequest) returns (DocContentReply);
+
+  // Chat Management
+  rpc GetChatHistory (GetChatHistoryRequest) returns (ChatHistoryReply);
+  rpc SendMessage (SendMessageRequest) returns (ChatMessage);
 }
 
 // =======================
@@ -59,6 +69,31 @@ message FeatureData {
   repeated google.protobuf.Struct answers = 3;
   repeated google.protobuf.Struct conversation_history = 4;
   repeated string skipped_questions = 5;
+}
+
+message FeatureDoc {
+  string id = 1;
+  string feature_id = 2;
+  string doc_type = 3; // PRD, BRD, etc.
+  int32 version = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+message DocContent {
+  string id = 1;
+  string doc_id = 2;
+  string content_type = 3; // index, outline, detail
+  string status = 4; // NOT_DONE, PROCESSING, CREATED, APPROVED
+  google.protobuf.Struct content = 5;
+  string updated_at = 6;
+}
+
+message ChatMessage {
+  string id = 1;
+  string feature_id = 2;
+  google.protobuf.Struct message = 3; // {"role": "user", "content": "..."}
+  string created_at = 4;
 }
 
 message Feature {
@@ -139,6 +174,82 @@ message DeleteFeatureRequest {
 }
 
 // =======================
+// Document Requests
+// =======================
+
+message CreateDocPayload {
+  string feature_id = 1;
+  string doc_type = 2;
+}
+
+message CreateDocRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateDocPayload payload = 3;
+}
+
+message ListDocsPayload {
+  string feature_id = 1;
+}
+
+message ListDocsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  ListDocsPayload payload = 3;
+}
+
+message GetDocContentPayload {
+  string doc_id = 1;
+  string content_type = 2;
+}
+
+message GetDocContentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  GetDocContentPayload payload = 3;
+}
+
+message UpdateDocContentPayload {
+  string doc_id = 1;
+  string content_type = 2;
+  google.protobuf.Struct content = 3;
+  string status = 4;
+}
+
+message UpdateDocContentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateDocContentPayload payload = 3;
+}
+
+// =======================
+// Chat Requests
+// =======================
+
+message GetChatHistoryPayload {
+  string feature_id = 1;
+  string before = 2; // Timestamp for pagination
+  int32 limit = 3;
+}
+
+message GetChatHistoryRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  GetChatHistoryPayload payload = 3;
+}
+
+message SendMessagePayload {
+  string feature_id = 1;
+  google.protobuf.Struct message = 2;
+}
+
+message SendMessageRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  SendMessagePayload payload = 3;
+}
+
+// =======================
 // Responses
 // =======================
 
@@ -151,4 +262,20 @@ message ListFeaturesReply {
   Result result = 1;
   Pagination pagination = 2;
   repeated Feature payload = 3;
+}
+
+message ListDocsReply {
+  Result result = 1;
+  repeated FeatureDoc payload = 2;
+}
+
+message DocContentReply {
+  Result result = 1;
+  DocContent payload = 2;
+}
+
+message ChatHistoryReply {
+  Result result = 1;
+  string next_cursor = 2;
+  repeated ChatMessage payload = 3;
 }

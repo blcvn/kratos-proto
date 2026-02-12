@@ -2,22 +2,48 @@ type: google.api.http
 config_version: 3
 
 http:
-    rules:
-        # Feature Service
-        - selector: feature.v1.FeatureService.CreateFeature
-          post: /feature/create
-          body: "*"
+  rules:
+    # Feature Service
+    - selector: feature.v1.FeatureService.CreateFeature
+      post: /feature/create
+      body: '*'
 
-        - selector: feature.v1.FeatureService.UpdateFeature
-          put: /feature/update
-          body: "*"
+    - selector: feature.v1.FeatureService.UpdateFeature
+      put: /feature/update
+      body: '*'
 
-        - selector: feature.v1.FeatureService.GetFeature
-          get: /feature/{id}
+    - selector: feature.v1.FeatureService.GetFeature
+      get: /feature/{id}
 
-        - selector: feature.v1.FeatureService.ListFeatures
-          post: /feature/list
-          body: "*"
+    - selector: feature.v1.FeatureService.ListFeatures
+      post: /feature/list
+      body: '*'
 
-        - selector: feature.v1.FeatureService.DeleteFeature
-          delete: /feature/{id}
+    - selector: feature.v1.FeatureService.DeleteFeature
+      delete: /feature/{id}
+
+    # Document Management
+    - selector: feature.v1.FeatureService.CreateDoc
+      post: /feature/doc/create
+      body: '*'
+
+    - selector: feature.v1.FeatureService.ListDocs
+      post: /feature/doc/list
+      body: '*'
+
+    - selector: feature.v1.FeatureService.GetDocContent
+      post: /feature/doc/content/get
+      body: '*'
+
+    - selector: feature.v1.FeatureService.UpdateDocContent
+      post: /feature/doc/content/update
+      body: '*'
+
+    # Chat Management
+    - selector: feature.v1.FeatureService.GetChatHistory
+      post: /feature/chat/history
+      body: '*'
+
+    - selector: feature.v1.FeatureService.SendMessage
+      post: /feature/chat/send
+      body: '*'
