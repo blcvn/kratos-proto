@@ -86,7 +86,8 @@ message DocContent {
   string content_type = 3; // index, outline, detail
   string status = 4; // NOT_DONE, PROCESSING, CREATED, APPROVED
   google.protobuf.Struct content = 5;
-  string updated_at = 6;
+  string agent_task_id = 6;
+  string updated_at = 7;
 }
 
 message ChatMessage {
@@ -214,6 +215,7 @@ message UpdateDocContentPayload {
   string content_type = 2;
   google.protobuf.Struct content = 3;
   string status = 4;
+  string agent_task_id = 5;
 }
 
 message UpdateDocContentRequest {
