@@ -61,6 +61,10 @@ http:
       post: /agent/v1/documents/review
       body: "*"
     
+    - selector: baagent.v1.BAAgentService.GetReviewResult
+      post: /agent/v1/documents/review/result
+      body: "*"
+    
     - selector: baagent.v1.BAAgentService.SaveEditedDocument
       post: /agent/v1/documents/editted
       body: "*"
