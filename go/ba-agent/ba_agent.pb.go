@@ -1484,8 +1484,7 @@ const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\bTIER_PRD\x10\x01\x12\x12\n" +
 	"\x0eTIER_URD_INDEX\x10\x02\x12\x14\n" +
 	"\x10TIER_URD_OUTLINE\x10\x03\x12\x11\n" +
-	"\rTIER_URD_FULL\x10\x042\xeb\n" +
-	"\n" +
+	"\rTIER_URD_FULL\x10\x042\xcc\v\n" +
 	"\x0eBAAgentService\x12P\n" +
 	"\vExecuteTask\x12\x1e.baagent.v1.ExecuteTaskRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\"\x00\x12X\n" +
 	"\vSubmitInput\x12\x1e.baagent.v1.SubmitInputRequest\x1a%.baagent.v1.StreamExecuteTaskResponse\"\x000\x01\x12^\n" +
@@ -1499,8 +1498,9 @@ const file_ba_agent_ba_agent_proto_rawDesc = "" +
 	"\fGetTierIndex\x12\x1e.baagent.v1.GetDocumentRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\"\x00\x12S\n" +
 	"\x0eGetTierOutline\x12\x1e.baagent.v1.GetDocumentRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\"\x00\x12P\n" +
 	"\vGetTierFull\x12\x1e.baagent.v1.GetDocumentRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\"\x00\x12X\n" +
-	"\x12ApproveRequirement\x12%.baagent.v1.ApproveRequirementRequest\x1a\x19.baagent.v1.EmptyResponse\"\x00\x12V\n" +
-	"\x11ReviewRequirement\x12$.baagent.v1.ReviewRequirementRequest\x1a\x19.baagent.v1.EmptyResponse\"\x00\x12j\n" +
+	"\x12ApproveRequirement\x12%.baagent.v1.ApproveRequirementRequest\x1a\x19.baagent.v1.EmptyResponse\"\x00\x12\\\n" +
+	"\x11ReviewRequirement\x12$.baagent.v1.ReviewRequirementRequest\x1a\x1f.baagent.v1.ExecuteTaskResponse\"\x00\x12Y\n" +
+	"\x12SaveEditedDocument\x12&.baagent.v1.GenerateRequirementRequest\x1a\x19.baagent.v1.EmptyResponse\"\x00\x12j\n" +
 	"\x15RegenerateRequirement\x12&.baagent.v1.GenerateRequirementRequest\x1a'.baagent.v1.GenerateRequirementResponse\"\x00\x12I\n" +
 	"\n" +
 	"GetLineage\x12\x1e.baagent.v1.GetDocumentRequest\x1a\x19.baagent.v1.EmptyResponse\"\x00BT\n" +
@@ -1616,26 +1616,28 @@ var file_ba_agent_ba_agent_proto_depIdxs = []int32{
 	2,  // 63: baagent.v1.BAAgentService.GetTierFull:input_type -> baagent.v1.GetDocumentRequest
 	3,  // 64: baagent.v1.BAAgentService.ApproveRequirement:input_type -> baagent.v1.ApproveRequirementRequest
 	4,  // 65: baagent.v1.BAAgentService.ReviewRequirement:input_type -> baagent.v1.ReviewRequirementRequest
-	1,  // 66: baagent.v1.BAAgentService.RegenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
-	2,  // 67: baagent.v1.BAAgentService.GetLineage:input_type -> baagent.v1.GetDocumentRequest
-	14, // 68: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
-	15, // 69: baagent.v1.BAAgentService.SubmitInput:output_type -> baagent.v1.StreamExecuteTaskResponse
-	15, // 70: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
-	16, // 71: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
-	17, // 72: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
-	18, // 73: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
-	19, // 74: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
-	13, // 75: baagent.v1.BAAgentService.GenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
-	14, // 76: baagent.v1.BAAgentService.GetDocument:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 77: baagent.v1.BAAgentService.GetTierIndex:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 78: baagent.v1.BAAgentService.GetTierOutline:output_type -> baagent.v1.ExecuteTaskResponse
-	14, // 79: baagent.v1.BAAgentService.GetTierFull:output_type -> baagent.v1.ExecuteTaskResponse
-	12, // 80: baagent.v1.BAAgentService.ApproveRequirement:output_type -> baagent.v1.EmptyResponse
-	12, // 81: baagent.v1.BAAgentService.ReviewRequirement:output_type -> baagent.v1.EmptyResponse
-	13, // 82: baagent.v1.BAAgentService.RegenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
-	12, // 83: baagent.v1.BAAgentService.GetLineage:output_type -> baagent.v1.EmptyResponse
-	68, // [68:84] is the sub-list for method output_type
-	52, // [52:68] is the sub-list for method input_type
+	1,  // 66: baagent.v1.BAAgentService.SaveEditedDocument:input_type -> baagent.v1.GenerateRequirementRequest
+	1,  // 67: baagent.v1.BAAgentService.RegenerateRequirement:input_type -> baagent.v1.GenerateRequirementRequest
+	2,  // 68: baagent.v1.BAAgentService.GetLineage:input_type -> baagent.v1.GetDocumentRequest
+	14, // 69: baagent.v1.BAAgentService.ExecuteTask:output_type -> baagent.v1.ExecuteTaskResponse
+	15, // 70: baagent.v1.BAAgentService.SubmitInput:output_type -> baagent.v1.StreamExecuteTaskResponse
+	15, // 71: baagent.v1.BAAgentService.StreamExecuteTask:output_type -> baagent.v1.StreamExecuteTaskResponse
+	16, // 72: baagent.v1.BAAgentService.GetTask:output_type -> baagent.v1.GetTaskResponse
+	17, // 73: baagent.v1.BAAgentService.ListTools:output_type -> baagent.v1.ListToolsResponse
+	18, // 74: baagent.v1.BAAgentService.GetMemory:output_type -> baagent.v1.GetMemoryResponse
+	19, // 75: baagent.v1.BAAgentService.ClearMemory:output_type -> baagent.v1.ClearMemoryResponse
+	13, // 76: baagent.v1.BAAgentService.GenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
+	14, // 77: baagent.v1.BAAgentService.GetDocument:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 78: baagent.v1.BAAgentService.GetTierIndex:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 79: baagent.v1.BAAgentService.GetTierOutline:output_type -> baagent.v1.ExecuteTaskResponse
+	14, // 80: baagent.v1.BAAgentService.GetTierFull:output_type -> baagent.v1.ExecuteTaskResponse
+	12, // 81: baagent.v1.BAAgentService.ApproveRequirement:output_type -> baagent.v1.EmptyResponse
+	14, // 82: baagent.v1.BAAgentService.ReviewRequirement:output_type -> baagent.v1.ExecuteTaskResponse
+	12, // 83: baagent.v1.BAAgentService.SaveEditedDocument:output_type -> baagent.v1.EmptyResponse
+	13, // 84: baagent.v1.BAAgentService.RegenerateRequirement:output_type -> baagent.v1.GenerateRequirementResponse
+	12, // 85: baagent.v1.BAAgentService.GetLineage:output_type -> baagent.v1.EmptyResponse
+	69, // [69:86] is the sub-list for method output_type
+	52, // [52:69] is the sub-list for method input_type
 	52, // [52:52] is the sub-list for extension type_name
 	52, // [52:52] is the sub-list for extension extendee
 	0,  // [0:52] is the sub-list for field type_name

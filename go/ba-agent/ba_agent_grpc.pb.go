@@ -33,6 +33,7 @@ const (
 	BAAgentService_GetTierFull_FullMethodName           = "/baagent.v1.BAAgentService/GetTierFull"
 	BAAgentService_ApproveRequirement_FullMethodName    = "/baagent.v1.BAAgentService/ApproveRequirement"
 	BAAgentService_ReviewRequirement_FullMethodName     = "/baagent.v1.BAAgentService/ReviewRequirement"
+	BAAgentService_SaveEditedDocument_FullMethodName    = "/baagent.v1.BAAgentService/SaveEditedDocument"
 	BAAgentService_RegenerateRequirement_FullMethodName = "/baagent.v1.BAAgentService/RegenerateRequirement"
 	BAAgentService_GetLineage_FullMethodName            = "/baagent.v1.BAAgentService/GetLineage"
 )
@@ -62,7 +63,8 @@ type BAAgentServiceClient interface {
 	GetTierOutline(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
 	GetTierFull(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
 	ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
-	ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
+	ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
+	SaveEditedDocument(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
 	RegenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error)
 	GetLineage(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
 }
@@ -223,10 +225,20 @@ func (c *bAAgentServiceClient) ApproveRequirement(ctx context.Context, in *Appro
 	return out, nil
 }
 
-func (c *bAAgentServiceClient) ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
+func (c *bAAgentServiceClient) ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTaskResponse)
+	err := c.cc.Invoke(ctx, BAAgentService_ReviewRequirement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bAAgentServiceClient) SaveEditedDocument(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(EmptyResponse)
-	err := c.cc.Invoke(ctx, BAAgentService_ReviewRequirement_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BAAgentService_SaveEditedDocument_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -278,7 +290,8 @@ type BAAgentServiceServer interface {
 	GetTierOutline(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
 	GetTierFull(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
 	ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error)
-	ReviewRequirement(context.Context, *ReviewRequirementRequest) (*EmptyResponse, error)
+	ReviewRequirement(context.Context, *ReviewRequirementRequest) (*ExecuteTaskResponse, error)
+	SaveEditedDocument(context.Context, *GenerateRequirementRequest) (*EmptyResponse, error)
 	RegenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error)
 	GetLineage(context.Context, *GetDocumentRequest) (*EmptyResponse, error)
 	mustEmbedUnimplementedBAAgentServiceServer()
@@ -330,8 +343,11 @@ func (UnimplementedBAAgentServiceServer) GetTierFull(context.Context, *GetDocume
 func (UnimplementedBAAgentServiceServer) ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ApproveRequirement not implemented")
 }
-func (UnimplementedBAAgentServiceServer) ReviewRequirement(context.Context, *ReviewRequirementRequest) (*EmptyResponse, error) {
+func (UnimplementedBAAgentServiceServer) ReviewRequirement(context.Context, *ReviewRequirementRequest) (*ExecuteTaskResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ReviewRequirement not implemented")
+}
+func (UnimplementedBAAgentServiceServer) SaveEditedDocument(context.Context, *GenerateRequirementRequest) (*EmptyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveEditedDocument not implemented")
 }
 func (UnimplementedBAAgentServiceServer) RegenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RegenerateRequirement not implemented")
@@ -598,6 +614,24 @@ func _BAAgentService_ReviewRequirement_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BAAgentService_SaveEditedDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRequirementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).SaveEditedDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BAAgentService_SaveEditedDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).SaveEditedDocument(ctx, req.(*GenerateRequirementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _BAAgentService_RegenerateRequirement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GenerateRequirementRequest)
 	if err := dec(in); err != nil {
@@ -688,6 +722,10 @@ var BAAgentService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ReviewRequirement",
 			Handler:    _BAAgentService_ReviewRequirement_Handler,
+		},
+		{
+			MethodName: "SaveEditedDocument",
+			Handler:    _BAAgentService_SaveEditedDocument_Handler,
 		},
 		{
 			MethodName: "RegenerateRequirement",

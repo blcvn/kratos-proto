@@ -54,7 +54,10 @@ service BAAgentService {
   rpc ApproveRequirement(ApproveRequirementRequest) returns (EmptyResponse) {
   }
 
-  rpc ReviewRequirement(ReviewRequirementRequest) returns (EmptyResponse) {
+  rpc ReviewRequirement(ReviewRequirementRequest) returns (ExecuteTaskResponse) {
+  }
+
+  rpc SaveEditedDocument(GenerateRequirementRequest) returns (EmptyResponse) {
   }
 
   rpc RegenerateRequirement(GenerateRequirementRequest) returns (GenerateRequirementResponse) {

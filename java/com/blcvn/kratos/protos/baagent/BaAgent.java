@@ -2761,28 +2761,39 @@ public final class BaAgent {
     com.blcvn.kratos.protos.baagent.Base.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
-     * <code>string document_id = 3;</code>
-     * @return The documentId.
+     * <code>string tier_id = 3;</code>
+     * @return The tierId.
      */
-    java.lang.String getDocumentId();
+    java.lang.String getTierId();
     /**
-     * <code>string document_id = 3;</code>
-     * @return The bytes for documentId.
+     * <code>string tier_id = 3;</code>
+     * @return The bytes for tierId.
      */
     com.google.protobuf.ByteString
-        getDocumentIdBytes();
+        getTierIdBytes();
 
     /**
-     * <code>string comment = 4;</code>
-     * @return The comment.
+     * <code>string parent_id = 4;</code>
+     * @return The parentId.
      */
-    java.lang.String getComment();
+    java.lang.String getParentId();
     /**
-     * <code>string comment = 4;</code>
-     * @return The bytes for comment.
+     * <code>string parent_id = 4;</code>
+     * @return The bytes for parentId.
      */
     com.google.protobuf.ByteString
-        getCommentBytes();
+        getParentIdBytes();
+
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The enum numeric value on the wire for tier.
+     */
+    int getTierValue();
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The tier.
+     */
+    com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier();
   }
   /**
    * Protobuf type {@code baagent.v1.ApproveRequirementRequest}
@@ -2797,8 +2808,9 @@ public final class BaAgent {
       super(builder);
     }
     private ApproveRequirementRequest() {
-      documentId_ = "";
-      comment_ = "";
+      tierId_ = "";
+      parentId_ = "";
+      tier_ = 0;
     }
 
     @java.lang.Override
@@ -2860,13 +2872,19 @@ public final class BaAgent {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              documentId_ = s;
+              tierId_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              comment_ = s;
+              parentId_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              tier_ = rawValue;
               break;
             }
             default: {
@@ -2953,80 +2971,99 @@ public final class BaAgent {
       return getSignature();
     }
 
-    public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object documentId_;
+    public static final int TIER_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object tierId_;
     /**
-     * <code>string document_id = 3;</code>
-     * @return The documentId.
+     * <code>string tier_id = 3;</code>
+     * @return The tierId.
      */
     @java.lang.Override
-    public java.lang.String getDocumentId() {
-      java.lang.Object ref = documentId_;
+    public java.lang.String getTierId() {
+      java.lang.Object ref = tierId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        documentId_ = s;
+        tierId_ = s;
         return s;
       }
     }
     /**
-     * <code>string document_id = 3;</code>
-     * @return The bytes for documentId.
+     * <code>string tier_id = 3;</code>
+     * @return The bytes for tierId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDocumentIdBytes() {
-      java.lang.Object ref = documentId_;
+        getTierIdBytes() {
+      java.lang.Object ref = tierId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        documentId_ = b;
+        tierId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int COMMENT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object comment_;
+    public static final int PARENT_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object parentId_;
     /**
-     * <code>string comment = 4;</code>
-     * @return The comment.
+     * <code>string parent_id = 4;</code>
+     * @return The parentId.
      */
     @java.lang.Override
-    public java.lang.String getComment() {
-      java.lang.Object ref = comment_;
+    public java.lang.String getParentId() {
+      java.lang.Object ref = parentId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        comment_ = s;
+        parentId_ = s;
         return s;
       }
     }
     /**
-     * <code>string comment = 4;</code>
-     * @return The bytes for comment.
+     * <code>string parent_id = 4;</code>
+     * @return The bytes for parentId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCommentBytes() {
-      java.lang.Object ref = comment_;
+        getParentIdBytes() {
+      java.lang.Object ref = parentId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        comment_ = b;
+        parentId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int TIER_FIELD_NUMBER = 5;
+    private int tier_;
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The enum numeric value on the wire for tier.
+     */
+    @java.lang.Override public int getTierValue() {
+      return tier_;
+    }
+    /**
+     * <code>.baagent.v1.RequirementTier tier = 5;</code>
+     * @return The tier.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier result = com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.valueOf(tier_);
+      return result == null ? com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3049,11 +3086,14 @@ public final class BaAgent {
       if (signature_ != null) {
         output.writeMessage(2, getSignature());
       }
-      if (!getDocumentIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentId_);
+      if (!getTierIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tierId_);
       }
-      if (!getCommentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, comment_);
+      if (!getParentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parentId_);
+      }
+      if (tier_ != com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.TIER_UNSPECIFIED.getNumber()) {
+        output.writeEnum(5, tier_);
       }
       unknownFields.writeTo(output);
     }
@@ -3072,11 +3112,15 @@ public final class BaAgent {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getSignature());
       }
-      if (!getDocumentIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentId_);
+      if (!getTierIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tierId_);
       }
-      if (!getCommentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, comment_);
+      if (!getParentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parentId_);
+      }
+      if (tier_ != com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.TIER_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, tier_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3103,10 +3147,11 @@ public final class BaAgent {
         if (!getSignature()
             .equals(other.getSignature())) return false;
       }
-      if (!getDocumentId()
-          .equals(other.getDocumentId())) return false;
-      if (!getComment()
-          .equals(other.getComment())) return false;
+      if (!getTierId()
+          .equals(other.getTierId())) return false;
+      if (!getParentId()
+          .equals(other.getParentId())) return false;
+      if (tier_ != other.tier_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3126,10 +3171,12 @@ public final class BaAgent {
         hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
         hash = (53 * hash) + getSignature().hashCode();
       }
-      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDocumentId().hashCode();
-      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getComment().hashCode();
+      hash = (37 * hash) + TIER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTierId().hashCode();
+      hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentId().hashCode();
+      hash = (37 * hash) + TIER_FIELD_NUMBER;
+      hash = (53 * hash) + tier_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3275,9 +3322,11 @@ public final class BaAgent {
           signature_ = null;
           signatureBuilder_ = null;
         }
-        documentId_ = "";
+        tierId_ = "";
 
-        comment_ = "";
+        parentId_ = "";
+
+        tier_ = 0;
 
         return this;
       }
@@ -3315,8 +3364,9 @@ public final class BaAgent {
         } else {
           result.signature_ = signatureBuilder_.build();
         }
-        result.documentId_ = documentId_;
-        result.comment_ = comment_;
+        result.tierId_ = tierId_;
+        result.parentId_ = parentId_;
+        result.tier_ = tier_;
         onBuilt();
         return result;
       }
@@ -3371,13 +3421,16 @@ public final class BaAgent {
         if (other.hasSignature()) {
           mergeSignature(other.getSignature());
         }
-        if (!other.getDocumentId().isEmpty()) {
-          documentId_ = other.documentId_;
+        if (!other.getTierId().isEmpty()) {
+          tierId_ = other.tierId_;
           onChanged();
         }
-        if (!other.getComment().isEmpty()) {
-          comment_ = other.comment_;
+        if (!other.getParentId().isEmpty()) {
+          parentId_ = other.parentId_;
           onChanged();
+        }
+        if (other.tier_ != 0) {
+          setTierValue(other.getTierValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3646,154 +3699,208 @@ public final class BaAgent {
         return signatureBuilder_;
       }
 
-      private java.lang.Object documentId_ = "";
+      private java.lang.Object tierId_ = "";
       /**
-       * <code>string document_id = 3;</code>
-       * @return The documentId.
+       * <code>string tier_id = 3;</code>
+       * @return The tierId.
        */
-      public java.lang.String getDocumentId() {
-        java.lang.Object ref = documentId_;
+      public java.lang.String getTierId() {
+        java.lang.Object ref = tierId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          documentId_ = s;
+          tierId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string document_id = 3;</code>
-       * @return The bytes for documentId.
+       * <code>string tier_id = 3;</code>
+       * @return The bytes for tierId.
        */
       public com.google.protobuf.ByteString
-          getDocumentIdBytes() {
-        java.lang.Object ref = documentId_;
+          getTierIdBytes() {
+        java.lang.Object ref = tierId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          documentId_ = b;
+          tierId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string document_id = 3;</code>
-       * @param value The documentId to set.
+       * <code>string tier_id = 3;</code>
+       * @param value The tierId to set.
        * @return This builder for chaining.
        */
-      public Builder setDocumentId(
+      public Builder setTierId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        documentId_ = value;
+        tierId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string document_id = 3;</code>
+       * <code>string tier_id = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDocumentId() {
+      public Builder clearTierId() {
         
-        documentId_ = getDefaultInstance().getDocumentId();
+        tierId_ = getDefaultInstance().getTierId();
         onChanged();
         return this;
       }
       /**
-       * <code>string document_id = 3;</code>
-       * @param value The bytes for documentId to set.
+       * <code>string tier_id = 3;</code>
+       * @param value The bytes for tierId to set.
        * @return This builder for chaining.
        */
-      public Builder setDocumentIdBytes(
+      public Builder setTierIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        documentId_ = value;
+        tierId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object comment_ = "";
+      private java.lang.Object parentId_ = "";
       /**
-       * <code>string comment = 4;</code>
-       * @return The comment.
+       * <code>string parent_id = 4;</code>
+       * @return The parentId.
        */
-      public java.lang.String getComment() {
-        java.lang.Object ref = comment_;
+      public java.lang.String getParentId() {
+        java.lang.Object ref = parentId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          comment_ = s;
+          parentId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string comment = 4;</code>
-       * @return The bytes for comment.
+       * <code>string parent_id = 4;</code>
+       * @return The bytes for parentId.
        */
       public com.google.protobuf.ByteString
-          getCommentBytes() {
-        java.lang.Object ref = comment_;
+          getParentIdBytes() {
+        java.lang.Object ref = parentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          comment_ = b;
+          parentId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string comment = 4;</code>
-       * @param value The comment to set.
+       * <code>string parent_id = 4;</code>
+       * @param value The parentId to set.
        * @return This builder for chaining.
        */
-      public Builder setComment(
+      public Builder setParentId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        comment_ = value;
+        parentId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string comment = 4;</code>
+       * <code>string parent_id = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearComment() {
+      public Builder clearParentId() {
         
-        comment_ = getDefaultInstance().getComment();
+        parentId_ = getDefaultInstance().getParentId();
         onChanged();
         return this;
       }
       /**
-       * <code>string comment = 4;</code>
-       * @param value The bytes for comment to set.
+       * <code>string parent_id = 4;</code>
+       * @param value The bytes for parentId to set.
        * @return This builder for chaining.
        */
-      public Builder setCommentBytes(
+      public Builder setParentIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        comment_ = value;
+        parentId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int tier_ = 0;
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return The enum numeric value on the wire for tier.
+       */
+      @java.lang.Override public int getTierValue() {
+        return tier_;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @param value The enum numeric value on the wire for tier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTierValue(int value) {
+        
+        tier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return The tier.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier getTier() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier result = com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.valueOf(tier_);
+        return result == null ? com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @param value The tier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTier(com.blcvn.kratos.protos.baagent.BaAgent.RequirementTier value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        tier_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.RequirementTier tier = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTier() {
+        
+        tier_ = 0;
         onChanged();
         return this;
       }
@@ -22391,112 +22498,116 @@ public final class BaAgent {
       "\001(\t\022\017\n\007content\030\007 \001(\t\"{\n\022GetDocumentReque" +
       "st\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metada" +
       "ta\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signa" +
-      "ture\022\023\n\013document_id\030\003 \001(\t\"\223\001\n\031ApproveReq" +
+      "ture\022\023\n\013document_id\030\003 \001(\t\"\274\001\n\031ApproveReq" +
       "uirementRequest\022&\n\010metadata\030\001 \001(\0132\024.baag" +
       "ent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baa" +
-      "gent.v1.Signature\022\023\n\013document_id\030\003 \001(\t\022\017" +
-      "\n\007comment\030\004 \001(\t\"\302\001\n\030ReviewRequirementReq" +
-      "uest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Meta" +
-      "data\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sig" +
-      "nature\022\023\n\013document_id\030\003 \001(\t\022\017\n\007comment\030\004" +
-      " \001(\t\022\023\n\013action_type\030\005 \001(\t\022\031\n\021affected_se" +
-      "ctions\030\006 \001(\t\"\252\001\n\022ExecuteTaskPayload\022\017\n\007u" +
-      "ser_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030\n\020task" +
-      "_description\030\003 \001(\t\022\026\n\016max_iterations\030\004 \001" +
-      "(\005\022\025\n\rworkflow_mode\030\005 \001(\t\022&\n\007history\030\006 \003" +
-      "(\0132\025.baagent.v1.ReActStep\"\227\001\n\022ExecuteTas" +
-      "kRequest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1." +
-      "Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1" +
-      ".Signature\022/\n\007payload\030\003 \001(\0132\036.baagent.v1" +
-      ".ExecuteTaskPayload\"s\n\016GetTaskRequest\022&\n" +
+      "gent.v1.Signature\022\017\n\007tier_id\030\003 \001(\t\022\021\n\tpa" +
+      "rent_id\030\004 \001(\t\022)\n\004tier\030\005 \001(\0162\033.baagent.v1" +
+      ".RequirementTier\"\302\001\n\030ReviewRequirementRe" +
+      "quest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Met" +
+      "adata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Si" +
+      "gnature\022\023\n\013document_id\030\003 \001(\t\022\017\n\007comment\030" +
+      "\004 \001(\t\022\023\n\013action_type\030\005 \001(\t\022\031\n\021affected_s" +
+      "ections\030\006 \001(\t\"\252\001\n\022ExecuteTaskPayload\022\017\n\007" +
+      "user_id\030\001 \001(\t\022\022\n\nsession_id\030\002 \001(\t\022\030\n\020tas" +
+      "k_description\030\003 \001(\t\022\026\n\016max_iterations\030\004 " +
+      "\001(\005\022\025\n\rworkflow_mode\030\005 \001(\t\022&\n\007history\030\006 " +
+      "\003(\0132\025.baagent.v1.ReActStep\"\227\001\n\022ExecuteTa" +
+      "skRequest\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1" +
+      ".Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v" +
+      "1.Signature\022/\n\007payload\030\003 \001(\0132\036.baagent.v" +
+      "1.ExecuteTaskPayload\"s\n\016GetTaskRequest\022&" +
+      "\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(" +
+      "\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signature" +
+      "\022\017\n\007task_id\030\003 \001(\t\"d\n\020ListToolsRequest\022&\n" +
       "\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n" +
-      "\tsignature\030\002 \001(\0132\025.baagent.v1.Signature\022" +
-      "\017\n\007task_id\030\003 \001(\t\"d\n\020ListToolsRequest\022&\n\010" +
-      "metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\t" +
-      "signature\030\002 \001(\0132\025.baagent.v1.Signature\"x" +
-      "\n\020GetMemoryRequest\022&\n\010metadata\030\001 \001(\0132\024.b" +
-      "aagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025." +
-      "baagent.v1.Signature\022\022\n\nsession_id\030\003 \001(\t" +
-      "\"z\n\022ClearMemoryRequest\022&\n\010metadata\030\001 \001(\013" +
-      "2\024.baagent.v1.Metadata\022(\n\tsignature\030\002 \001(" +
-      "\0132\025.baagent.v1.Signature\022\022\n\nsession_id\030\003" +
-      " \001(\t\"\213\001\n\022SubmitInputRequest\022&\n\010metadata\030" +
-      "\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignature" +
-      "\030\002 \001(\0132\025.baagent.v1.Signature\022\017\n\007task_id" +
-      "\030\003 \001(\t\022\022\n\ninput_data\030\004 \001(\t\"\205\001\n\rEmptyResp" +
-      "onse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Meta" +
-      "data\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Sig" +
-      "nature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Resu" +
-      "lt\"\216\001\n\033GenerateRequirementResponse\022&\n\010me" +
-      "tadata\030\001 \001(\0132\024.baagent.v1.Metadata\022\"\n\006re" +
-      "sult\030\002 \001(\0132\022.baagent.v1.Result\022\016\n\006job_id" +
-      "\030\003 \001(\t\022\023\n\013document_id\030\004 \001(\t\"\260\001\n\023ExecuteT" +
-      "askResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent." +
-      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagent" +
-      ".v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baagent." +
-      "v1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v1.Age" +
-      "ntTask\"\310\001\n\031StreamExecuteTaskResponse\022&\n\010" +
-      "metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\t" +
-      "signature\030\002 \001(\0132\025.baagent.v1.Signature\022\"" +
-      "\n\006result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004st" +
-      "ep\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010is_fi" +
-      "nal\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010metadat" +
-      "a\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignatu" +
-      "re\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006resul" +
-      "t\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task\030\004 \001(" +
-      "\0132\025.baagent.v1.AgentTask\"\252\001\n\021ListToolsRe" +
-      "sponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Me" +
-      "tadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.S" +
-      "ignature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Re" +
-      "sult\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.Tool\"\255\001" +
-      "\n\021GetMemoryResponse\022&\n\010metadata\030\001 \001(\0132\024." +
+      "\tsignature\030\002 \001(\0132\025.baagent.v1.Signature\"" +
+      "x\n\020GetMemoryRequest\022&\n\010metadata\030\001 \001(\0132\024." +
       "baagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025" +
-      ".baagent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022." +
-      "baagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022.baag" +
-      "ent.v1.Memory\"\213\001\n\023ClearMemoryResponse\022&\n" +
+      ".baagent.v1.Signature\022\022\n\nsession_id\030\003 \001(" +
+      "\t\"z\n\022ClearMemoryRequest\022&\n\010metadata\030\001 \001(" +
+      "\0132\024.baagent.v1.Metadata\022(\n\tsignature\030\002 \001" +
+      "(\0132\025.baagent.v1.Signature\022\022\n\nsession_id\030" +
+      "\003 \001(\t\"\213\001\n\022SubmitInputRequest\022&\n\010metadata" +
+      "\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignatur" +
+      "e\030\002 \001(\0132\025.baagent.v1.Signature\022\017\n\007task_i" +
+      "d\030\003 \001(\t\022\022\n\ninput_data\030\004 \001(\t\"\205\001\n\rEmptyRes" +
+      "ponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.Met" +
+      "adata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1.Si" +
+      "gnature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Res" +
+      "ult\"\216\001\n\033GenerateRequirementResponse\022&\n\010m" +
+      "etadata\030\001 \001(\0132\024.baagent.v1.Metadata\022\"\n\006r" +
+      "esult\030\002 \001(\0132\022.baagent.v1.Result\022\016\n\006job_i" +
+      "d\030\003 \001(\t\022\023\n\013document_id\030\004 \001(\t\"\260\001\n\023Execute" +
+      "TaskResponse\022&\n\010metadata\030\001 \001(\0132\024.baagent" +
+      ".v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.baagen" +
+      "t.v1.Signature\022\"\n\006result\030\003 \001(\0132\022.baagent" +
+      ".v1.Result\022#\n\004task\030\004 \001(\0132\025.baagent.v1.Ag" +
+      "entTask\"\310\001\n\031StreamExecuteTaskResponse\022&\n" +
       "\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n" +
       "\tsignature\030\002 \001(\0132\025.baagent.v1.Signature\022" +
-      "\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result*r\n\017R" +
-      "equirementTier\022\024\n\020TIER_UNSPECIFIED\020\000\022\014\n\010" +
-      "TIER_PRD\020\001\022\022\n\016TIER_URD_INDEX\020\002\022\024\n\020TIER_U" +
-      "RD_OUTLINE\020\003\022\021\n\rTIER_URD_FULL\020\0042\353\n\n\016BAAg" +
-      "entService\022P\n\013ExecuteTask\022\036.baagent.v1.E" +
-      "xecuteTaskRequest\032\037.baagent.v1.ExecuteTa" +
-      "skResponse\"\000\022X\n\013SubmitInput\022\036.baagent.v1" +
-      ".SubmitInputRequest\032%.baagent.v1.StreamE" +
-      "xecuteTaskResponse\"\0000\001\022^\n\021StreamExecuteT" +
-      "ask\022\036.baagent.v1.ExecuteTaskRequest\032%.ba" +
-      "agent.v1.StreamExecuteTaskResponse\"\0000\001\022D" +
-      "\n\007GetTask\022\032.baagent.v1.GetTaskRequest\032\033." +
-      "baagent.v1.GetTaskResponse\"\000\022J\n\tListTool" +
-      "s\022\034.baagent.v1.ListToolsRequest\032\035.baagen" +
-      "t.v1.ListToolsResponse\"\000\022J\n\tGetMemory\022\034." +
-      "baagent.v1.GetMemoryRequest\032\035.baagent.v1" +
-      ".GetMemoryResponse\"\000\022P\n\013ClearMemory\022\036.ba" +
-      "agent.v1.ClearMemoryRequest\032\037.baagent.v1" +
-      ".ClearMemoryResponse\"\000\022h\n\023GenerateRequir" +
-      "ement\022&.baagent.v1.GenerateRequirementRe" +
-      "quest\032\'.baagent.v1.GenerateRequirementRe" +
-      "sponse\"\000\022P\n\013GetDocument\022\036.baagent.v1.Get" +
-      "DocumentRequest\032\037.baagent.v1.ExecuteTask" +
-      "Response\"\000\022Q\n\014GetTierIndex\022\036.baagent.v1." +
-      "GetDocumentRequest\032\037.baagent.v1.ExecuteT" +
-      "askResponse\"\000\022S\n\016GetTierOutline\022\036.baagen" +
-      "t.v1.GetDocumentRequest\032\037.baagent.v1.Exe" +
-      "cuteTaskResponse\"\000\022P\n\013GetTierFull\022\036.baag" +
-      "ent.v1.GetDocumentRequest\032\037.baagent.v1.E" +
-      "xecuteTaskResponse\"\000\022X\n\022ApproveRequireme" +
-      "nt\022%.baagent.v1.ApproveRequirementReques" +
-      "t\032\031.baagent.v1.EmptyResponse\"\000\022V\n\021Review" +
-      "Requirement\022$.baagent.v1.ReviewRequireme" +
-      "ntRequest\032\031.baagent.v1.EmptyResponse\"\000\022j" +
-      "\n\025RegenerateRequirement\022&.baagent.v1.Gen" +
-      "erateRequirementRequest\032\'.baagent.v1.Gen" +
-      "erateRequirementResponse\"\000\022I\n\nGetLineage" +
-      "\022\036.baagent.v1.GetDocumentRequest\032\031.baage" +
-      "nt.v1.EmptyResponse\"\000BT\n\037com.blcvn.krato" +
-      "s.protos.baagentZ1github.com/blcvn/krato" +
-      "s-proto/go/ba-agent;baagentb\006proto3"
+      "\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004s" +
+      "tep\030\004 \001(\0132\025.baagent.v1.ReActStep\022\020\n\010is_f" +
+      "inal\030\005 \001(\010\"\254\001\n\017GetTaskResponse\022&\n\010metada" +
+      "ta\030\001 \001(\0132\024.baagent.v1.Metadata\022(\n\tsignat" +
+      "ure\030\002 \001(\0132\025.baagent.v1.Signature\022\"\n\006resu" +
+      "lt\030\003 \001(\0132\022.baagent.v1.Result\022#\n\004task\030\004 \001" +
+      "(\0132\025.baagent.v1.AgentTask\"\252\001\n\021ListToolsR" +
+      "esponse\022&\n\010metadata\030\001 \001(\0132\024.baagent.v1.M" +
+      "etadata\022(\n\tsignature\030\002 \001(\0132\025.baagent.v1." +
+      "Signature\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.R" +
+      "esult\022\037\n\005tools\030\004 \003(\0132\020.baagent.v1.Tool\"\255" +
+      "\001\n\021GetMemoryResponse\022&\n\010metadata\030\001 \001(\0132\024" +
+      ".baagent.v1.Metadata\022(\n\tsignature\030\002 \001(\0132" +
+      "\025.baagent.v1.Signature\022\"\n\006result\030\003 \001(\0132\022" +
+      ".baagent.v1.Result\022\"\n\006memory\030\004 \001(\0132\022.baa" +
+      "gent.v1.Memory\"\213\001\n\023ClearMemoryResponse\022&" +
+      "\n\010metadata\030\001 \001(\0132\024.baagent.v1.Metadata\022(" +
+      "\n\tsignature\030\002 \001(\0132\025.baagent.v1.Signature" +
+      "\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result*r\n\017" +
+      "RequirementTier\022\024\n\020TIER_UNSPECIFIED\020\000\022\014\n" +
+      "\010TIER_PRD\020\001\022\022\n\016TIER_URD_INDEX\020\002\022\024\n\020TIER_" +
+      "URD_OUTLINE\020\003\022\021\n\rTIER_URD_FULL\020\0042\314\013\n\016BAA" +
+      "gentService\022P\n\013ExecuteTask\022\036.baagent.v1." +
+      "ExecuteTaskRequest\032\037.baagent.v1.ExecuteT" +
+      "askResponse\"\000\022X\n\013SubmitInput\022\036.baagent.v" +
+      "1.SubmitInputRequest\032%.baagent.v1.Stream" +
+      "ExecuteTaskResponse\"\0000\001\022^\n\021StreamExecute" +
+      "Task\022\036.baagent.v1.ExecuteTaskRequest\032%.b" +
+      "aagent.v1.StreamExecuteTaskResponse\"\0000\001\022" +
+      "D\n\007GetTask\022\032.baagent.v1.GetTaskRequest\032\033" +
+      ".baagent.v1.GetTaskResponse\"\000\022J\n\tListToo" +
+      "ls\022\034.baagent.v1.ListToolsRequest\032\035.baage" +
+      "nt.v1.ListToolsResponse\"\000\022J\n\tGetMemory\022\034" +
+      ".baagent.v1.GetMemoryRequest\032\035.baagent.v" +
+      "1.GetMemoryResponse\"\000\022P\n\013ClearMemory\022\036.b" +
+      "aagent.v1.ClearMemoryRequest\032\037.baagent.v" +
+      "1.ClearMemoryResponse\"\000\022h\n\023GenerateRequi" +
+      "rement\022&.baagent.v1.GenerateRequirementR" +
+      "equest\032\'.baagent.v1.GenerateRequirementR" +
+      "esponse\"\000\022P\n\013GetDocument\022\036.baagent.v1.Ge" +
+      "tDocumentRequest\032\037.baagent.v1.ExecuteTas" +
+      "kResponse\"\000\022Q\n\014GetTierIndex\022\036.baagent.v1" +
+      ".GetDocumentRequest\032\037.baagent.v1.Execute" +
+      "TaskResponse\"\000\022S\n\016GetTierOutline\022\036.baage" +
+      "nt.v1.GetDocumentRequest\032\037.baagent.v1.Ex" +
+      "ecuteTaskResponse\"\000\022P\n\013GetTierFull\022\036.baa" +
+      "gent.v1.GetDocumentRequest\032\037.baagent.v1." +
+      "ExecuteTaskResponse\"\000\022X\n\022ApproveRequirem" +
+      "ent\022%.baagent.v1.ApproveRequirementReque" +
+      "st\032\031.baagent.v1.EmptyResponse\"\000\022\\\n\021Revie" +
+      "wRequirement\022$.baagent.v1.ReviewRequirem" +
+      "entRequest\032\037.baagent.v1.ExecuteTaskRespo" +
+      "nse\"\000\022Y\n\022SaveEditedDocument\022&.baagent.v1" +
+      ".GenerateRequirementRequest\032\031.baagent.v1" +
+      ".EmptyResponse\"\000\022j\n\025RegenerateRequiremen" +
+      "t\022&.baagent.v1.GenerateRequirementReques" +
+      "t\032\'.baagent.v1.GenerateRequirementRespon" +
+      "se\"\000\022I\n\nGetLineage\022\036.baagent.v1.GetDocum" +
+      "entRequest\032\031.baagent.v1.EmptyResponse\"\000B" +
+      "T\n\037com.blcvn.kratos.protos.baagentZ1gith" +
+      "ub.com/blcvn/kratos-proto/go/ba-agent;ba" +
+      "agentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -22520,7 +22631,7 @@ public final class BaAgent {
     internal_static_baagent_v1_ApproveRequirementRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_ApproveRequirementRequest_descriptor,
-        new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Comment", });
+        new java.lang.String[] { "Metadata", "Signature", "TierId", "ParentId", "Tier", });
     internal_static_baagent_v1_ReviewRequirementRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_baagent_v1_ReviewRequirementRequest_fieldAccessorTable = new

@@ -60,6 +60,10 @@ http:
     - selector: baagent.v1.BAAgentService.ReviewRequirement
       post: /agent/v1/documents/review
       body: "*"
+    
+    - selector: baagent.v1.BAAgentService.SaveEditedDocument
+      post: /agent/v1/documents/editted
+      body: "*"
 
     - selector: baagent.v1.BAAgentService.RegenerateRequirement
       post: /agent/v1/documents/regenerate
