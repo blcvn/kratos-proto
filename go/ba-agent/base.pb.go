@@ -547,6 +547,7 @@ type AgentTask struct {
 	IterationsUsed  int32                  `protobuf:"varint,8,opt,name=iterations_used,json=iterationsUsed,proto3" json:"iterations_used,omitempty"`
 	CreatedAt       *timestamp.Timestamp   `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	CompletedAt     *timestamp.Timestamp   `protobuf:"bytes,10,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
+	RefId           string                 `protobuf:"bytes,11,opt,name=ref_id,json=refId,proto3" json:"ref_id,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -651,6 +652,13 @@ func (x *AgentTask) GetCompletedAt() *timestamp.Timestamp {
 	return nil
 }
 
+func (x *AgentTask) GetRefId() string {
+	if x != nil {
+		return x.RefId
+	}
+	return ""
+}
+
 type Memory struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SessionId     string                 `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
@@ -750,7 +758,7 @@ const file_ba_agent_base_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x1a?\n" +
 	"\x11ActionParamsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xa5\x03\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xbc\x03\n" +
 	"\tAgentTask\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
@@ -764,7 +772,8 @@ const file_ba_agent_base_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12=\n" +
 	"\fcompleted_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\"j\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x15\n" +
+	"\x06ref_id\x18\v \x01(\tR\x05refId\"j\n" +
 	"\x06Memory\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tR\tsessionId\x12\x1d\n" +
