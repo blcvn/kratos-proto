@@ -84,6 +84,19 @@ message AgentTask {
   google.protobuf.Timestamp created_at = 9;
   google.protobuf.Timestamp completed_at = 10;
   string ref_id = 11;
+  repeated Modification modifications = 12;
+}
+
+message Modification {
+  enum ModifyType {
+    ADD = 0;
+    REMOVE = 1;
+    REPLACE = 2;
+  }
+  ModifyType modify_type = 1;
+  int32 start_index = 2;
+  int32 end_index = 3;
+  string content = 4;
 }
 
 message Memory {

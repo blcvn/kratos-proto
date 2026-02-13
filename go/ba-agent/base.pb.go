@@ -182,6 +182,55 @@ func (Signature_SignatureType) EnumDescriptor() ([]byte, []int) {
 	return file_ba_agent_base_proto_rawDescGZIP(), []int{3, 0}
 }
 
+type Modification_ModifyType int32
+
+const (
+	Modification_ADD     Modification_ModifyType = 0
+	Modification_REMOVE  Modification_ModifyType = 1
+	Modification_REPLACE Modification_ModifyType = 2
+)
+
+// Enum value maps for Modification_ModifyType.
+var (
+	Modification_ModifyType_name = map[int32]string{
+		0: "ADD",
+		1: "REMOVE",
+		2: "REPLACE",
+	}
+	Modification_ModifyType_value = map[string]int32{
+		"ADD":     0,
+		"REMOVE":  1,
+		"REPLACE": 2,
+	}
+)
+
+func (x Modification_ModifyType) Enum() *Modification_ModifyType {
+	p := new(Modification_ModifyType)
+	*p = x
+	return p
+}
+
+func (x Modification_ModifyType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Modification_ModifyType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ba_agent_base_proto_enumTypes[3].Descriptor()
+}
+
+func (Modification_ModifyType) Type() protoreflect.EnumType {
+	return &file_ba_agent_base_proto_enumTypes[3]
+}
+
+func (x Modification_ModifyType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Modification_ModifyType.Descriptor instead.
+func (Modification_ModifyType) EnumDescriptor() ([]byte, []int) {
+	return file_ba_agent_base_proto_rawDescGZIP(), []int{7, 0}
+}
+
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -548,6 +597,7 @@ type AgentTask struct {
 	CreatedAt       *timestamp.Timestamp   `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	CompletedAt     *timestamp.Timestamp   `protobuf:"bytes,10,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
 	RefId           string                 `protobuf:"bytes,11,opt,name=ref_id,json=refId,proto3" json:"ref_id,omitempty"`
+	Modifications   []*Modification        `protobuf:"bytes,12,rep,name=modifications,proto3" json:"modifications,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -659,6 +709,81 @@ func (x *AgentTask) GetRefId() string {
 	return ""
 }
 
+func (x *AgentTask) GetModifications() []*Modification {
+	if x != nil {
+		return x.Modifications
+	}
+	return nil
+}
+
+type Modification struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	ModifyType    Modification_ModifyType `protobuf:"varint,1,opt,name=modify_type,json=modifyType,proto3,enum=baagent.v1.Modification_ModifyType" json:"modify_type,omitempty"`
+	StartIndex    int32                   `protobuf:"varint,2,opt,name=start_index,json=startIndex,proto3" json:"start_index,omitempty"`
+	EndIndex      int32                   `protobuf:"varint,3,opt,name=end_index,json=endIndex,proto3" json:"end_index,omitempty"`
+	Content       string                  `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Modification) Reset() {
+	*x = Modification{}
+	mi := &file_ba_agent_base_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Modification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Modification) ProtoMessage() {}
+
+func (x *Modification) ProtoReflect() protoreflect.Message {
+	mi := &file_ba_agent_base_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Modification.ProtoReflect.Descriptor instead.
+func (*Modification) Descriptor() ([]byte, []int) {
+	return file_ba_agent_base_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *Modification) GetModifyType() Modification_ModifyType {
+	if x != nil {
+		return x.ModifyType
+	}
+	return Modification_ADD
+}
+
+func (x *Modification) GetStartIndex() int32 {
+	if x != nil {
+		return x.StartIndex
+	}
+	return 0
+}
+
+func (x *Modification) GetEndIndex() int32 {
+	if x != nil {
+		return x.EndIndex
+	}
+	return 0
+}
+
+func (x *Modification) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
 type Memory struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SessionId     string                 `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
@@ -670,7 +795,7 @@ type Memory struct {
 
 func (x *Memory) Reset() {
 	*x = Memory{}
-	mi := &file_ba_agent_base_proto_msgTypes[7]
+	mi := &file_ba_agent_base_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -682,7 +807,7 @@ func (x *Memory) String() string {
 func (*Memory) ProtoMessage() {}
 
 func (x *Memory) ProtoReflect() protoreflect.Message {
-	mi := &file_ba_agent_base_proto_msgTypes[7]
+	mi := &file_ba_agent_base_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -695,7 +820,7 @@ func (x *Memory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Memory.ProtoReflect.Descriptor instead.
 func (*Memory) Descriptor() ([]byte, []int) {
-	return file_ba_agent_base_proto_rawDescGZIP(), []int{7}
+	return file_ba_agent_base_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *Memory) GetSessionId() string {
@@ -758,7 +883,7 @@ const file_ba_agent_base_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x1a?\n" +
 	"\x11ActionParamsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xbc\x03\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xfc\x03\n" +
 	"\tAgentTask\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
@@ -773,7 +898,21 @@ const file_ba_agent_base_proto_rawDesc = "" +
 	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12=\n" +
 	"\fcompleted_at\x18\n" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x15\n" +
-	"\x06ref_id\x18\v \x01(\tR\x05refId\"j\n" +
+	"\x06ref_id\x18\v \x01(\tR\x05refId\x12>\n" +
+	"\rmodifications\x18\f \x03(\v2\x18.baagent.v1.ModificationR\rmodifications\"\xdc\x01\n" +
+	"\fModification\x12D\n" +
+	"\vmodify_type\x18\x01 \x01(\x0e2#.baagent.v1.Modification.ModifyTypeR\n" +
+	"modifyType\x12\x1f\n" +
+	"\vstart_index\x18\x02 \x01(\x05R\n" +
+	"startIndex\x12\x1b\n" +
+	"\tend_index\x18\x03 \x01(\x05R\bendIndex\x12\x18\n" +
+	"\acontent\x18\x04 \x01(\tR\acontent\".\n" +
+	"\n" +
+	"ModifyType\x12\a\n" +
+	"\x03ADD\x10\x00\x12\n" +
+	"\n" +
+	"\x06REMOVE\x10\x01\x12\v\n" +
+	"\aREPLACE\x10\x02\"j\n" +
 	"\x06Memory\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tR\tsessionId\x12\x1d\n" +
@@ -807,37 +946,41 @@ func file_ba_agent_base_proto_rawDescGZIP() []byte {
 	return file_ba_agent_base_proto_rawDescData
 }
 
-var file_ba_agent_base_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_ba_agent_base_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_ba_agent_base_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_ba_agent_base_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_ba_agent_base_proto_goTypes = []any{
 	(ResultCode)(0),              // 0: baagent.v1.ResultCode
 	(TaskStatus)(0),              // 1: baagent.v1.TaskStatus
 	(Signature_SignatureType)(0), // 2: baagent.v1.Signature.SignatureType
-	(*Empty)(nil),                // 3: baagent.v1.Empty
-	(*Metadata)(nil),             // 4: baagent.v1.Metadata
-	(*Result)(nil),               // 5: baagent.v1.Result
-	(*Signature)(nil),            // 6: baagent.v1.Signature
-	(*Tool)(nil),                 // 7: baagent.v1.Tool
-	(*ReActStep)(nil),            // 8: baagent.v1.ReActStep
-	(*AgentTask)(nil),            // 9: baagent.v1.AgentTask
-	(*Memory)(nil),               // 10: baagent.v1.Memory
-	nil,                          // 11: baagent.v1.ReActStep.ActionParamsEntry
-	(*timestamp.Timestamp)(nil),  // 12: google.protobuf.Timestamp
+	(Modification_ModifyType)(0), // 3: baagent.v1.Modification.ModifyType
+	(*Empty)(nil),                // 4: baagent.v1.Empty
+	(*Metadata)(nil),             // 5: baagent.v1.Metadata
+	(*Result)(nil),               // 6: baagent.v1.Result
+	(*Signature)(nil),            // 7: baagent.v1.Signature
+	(*Tool)(nil),                 // 8: baagent.v1.Tool
+	(*ReActStep)(nil),            // 9: baagent.v1.ReActStep
+	(*AgentTask)(nil),            // 10: baagent.v1.AgentTask
+	(*Modification)(nil),         // 11: baagent.v1.Modification
+	(*Memory)(nil),               // 12: baagent.v1.Memory
+	nil,                          // 13: baagent.v1.ReActStep.ActionParamsEntry
+	(*timestamp.Timestamp)(nil),  // 14: google.protobuf.Timestamp
 }
 var file_ba_agent_base_proto_depIdxs = []int32{
 	0,  // 0: baagent.v1.Result.code:type_name -> baagent.v1.ResultCode
 	2,  // 1: baagent.v1.Signature.s_type:type_name -> baagent.v1.Signature.SignatureType
-	11, // 2: baagent.v1.ReActStep.action_params:type_name -> baagent.v1.ReActStep.ActionParamsEntry
-	12, // 3: baagent.v1.ReActStep.created_at:type_name -> google.protobuf.Timestamp
+	13, // 2: baagent.v1.ReActStep.action_params:type_name -> baagent.v1.ReActStep.ActionParamsEntry
+	14, // 3: baagent.v1.ReActStep.created_at:type_name -> google.protobuf.Timestamp
 	1,  // 4: baagent.v1.AgentTask.status:type_name -> baagent.v1.TaskStatus
-	8,  // 5: baagent.v1.AgentTask.steps:type_name -> baagent.v1.ReActStep
-	12, // 6: baagent.v1.AgentTask.created_at:type_name -> google.protobuf.Timestamp
-	12, // 7: baagent.v1.AgentTask.completed_at:type_name -> google.protobuf.Timestamp
-	8,  // [8:8] is the sub-list for method output_type
-	8,  // [8:8] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	9,  // 5: baagent.v1.AgentTask.steps:type_name -> baagent.v1.ReActStep
+	14, // 6: baagent.v1.AgentTask.created_at:type_name -> google.protobuf.Timestamp
+	14, // 7: baagent.v1.AgentTask.completed_at:type_name -> google.protobuf.Timestamp
+	11, // 8: baagent.v1.AgentTask.modifications:type_name -> baagent.v1.Modification
+	3,  // 9: baagent.v1.Modification.modify_type:type_name -> baagent.v1.Modification.ModifyType
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_ba_agent_base_proto_init() }
@@ -850,8 +993,8 @@ func file_ba_agent_base_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ba_agent_base_proto_rawDesc), len(file_ba_agent_base_proto_rawDesc)),
-			NumEnums:      3,
-			NumMessages:   9,
+			NumEnums:      4,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

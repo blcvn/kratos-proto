@@ -22567,7 +22567,7 @@ public final class BaAgent {
       "\022\"\n\006result\030\003 \001(\0132\022.baagent.v1.Result*r\n\017" +
       "RequirementTier\022\024\n\020TIER_UNSPECIFIED\020\000\022\014\n" +
       "\010TIER_PRD\020\001\022\022\n\016TIER_URD_INDEX\020\002\022\024\n\020TIER_" +
-      "URD_OUTLINE\020\003\022\021\n\rTIER_URD_FULL\020\0042\314\013\n\016BAA" +
+      "URD_OUTLINE\020\003\022\021\n\rTIER_URD_FULL\020\0042\232\014\n\016BAA" +
       "gentService\022P\n\013ExecuteTask\022\036.baagent.v1." +
       "ExecuteTaskRequest\032\037.baagent.v1.ExecuteT" +
       "askResponse\"\000\022X\n\013SubmitInput\022\036.baagent.v" +
@@ -22598,16 +22598,18 @@ public final class BaAgent {
       "st\032\031.baagent.v1.EmptyResponse\"\000\022\\\n\021Revie" +
       "wRequirement\022$.baagent.v1.ReviewRequirem" +
       "entRequest\032\037.baagent.v1.ExecuteTaskRespo" +
-      "nse\"\000\022Y\n\022SaveEditedDocument\022&.baagent.v1" +
-      ".GenerateRequirementRequest\032\031.baagent.v1" +
-      ".EmptyResponse\"\000\022j\n\025RegenerateRequiremen" +
-      "t\022&.baagent.v1.GenerateRequirementReques" +
-      "t\032\'.baagent.v1.GenerateRequirementRespon" +
-      "se\"\000\022I\n\nGetLineage\022\036.baagent.v1.GetDocum" +
-      "entRequest\032\031.baagent.v1.EmptyResponse\"\000B" +
-      "T\n\037com.blcvn.kratos.protos.baagentZ1gith" +
-      "ub.com/blcvn/kratos-proto/go/ba-agent;ba" +
-      "agentb\006proto3"
+      "nse\"\000\022L\n\017GetReviewResult\022\032.baagent.v1.Ge" +
+      "tTaskRequest\032\033.baagent.v1.GetTaskRespons" +
+      "e\"\000\022Y\n\022SaveEditedDocument\022&.baagent.v1.G" +
+      "enerateRequirementRequest\032\031.baagent.v1.E" +
+      "mptyResponse\"\000\022j\n\025RegenerateRequirement\022" +
+      "&.baagent.v1.GenerateRequirementRequest\032" +
+      "\'.baagent.v1.GenerateRequirementResponse" +
+      "\"\000\022I\n\nGetLineage\022\036.baagent.v1.GetDocumen" +
+      "tRequest\032\031.baagent.v1.EmptyResponse\"\000BT\n" +
+      "\037com.blcvn.kratos.protos.baagentZ1github" +
+      ".com/blcvn/kratos-proto/go/ba-agent;baag" +
+      "entb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

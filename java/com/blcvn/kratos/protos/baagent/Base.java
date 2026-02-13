@@ -5631,6 +5631,42 @@ public final class Base {
      * <code>.google.protobuf.Timestamp completed_at = 10;</code>
      */
     com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder();
+
+    /**
+     * <code>string ref_id = 11;</code>
+     * @return The refId.
+     */
+    java.lang.String getRefId();
+    /**
+     * <code>string ref_id = 11;</code>
+     * @return The bytes for refId.
+     */
+    com.google.protobuf.ByteString
+        getRefIdBytes();
+
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification> 
+        getModificationsList();
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.Modification getModifications(int index);
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    int getModificationsCount();
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder> 
+        getModificationsOrBuilderList();
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder getModificationsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code baagent.v1.AgentTask}
@@ -5652,6 +5688,8 @@ public final class Base {
       status_ = 0;
       steps_ = java.util.Collections.emptyList();
       finalResponse_ = "";
+      refId_ = "";
+      modifications_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5761,6 +5799,21 @@ public final class Base {
 
               break;
             }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              refId_ = s;
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                modifications_ = new java.util.ArrayList<com.blcvn.kratos.protos.baagent.Base.Modification>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              modifications_.add(
+                  input.readMessage(com.blcvn.kratos.protos.baagent.Base.Modification.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5778,6 +5831,9 @@ public final class Base {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          modifications_ = java.util.Collections.unmodifiableList(modifications_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6108,6 +6164,84 @@ public final class Base {
       return getCompletedAt();
     }
 
+    public static final int REF_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object refId_;
+    /**
+     * <code>string ref_id = 11;</code>
+     * @return The refId.
+     */
+    @java.lang.Override
+    public java.lang.String getRefId() {
+      java.lang.Object ref = refId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ref_id = 11;</code>
+     * @return The bytes for refId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRefIdBytes() {
+      java.lang.Object ref = refId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODIFICATIONS_FIELD_NUMBER = 12;
+    private java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification> modifications_;
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification> getModificationsList() {
+      return modifications_;
+    }
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder> 
+        getModificationsOrBuilderList() {
+      return modifications_;
+    }
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    @java.lang.Override
+    public int getModificationsCount() {
+      return modifications_.size();
+    }
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Modification getModifications(int index) {
+      return modifications_.get(index);
+    }
+    /**
+     * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder getModificationsOrBuilder(
+        int index) {
+      return modifications_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6151,6 +6285,12 @@ public final class Base {
       }
       if (completedAt_ != null) {
         output.writeMessage(10, getCompletedAt());
+      }
+      if (!getRefIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, refId_);
+      }
+      for (int i = 0; i < modifications_.size(); i++) {
+        output.writeMessage(12, modifications_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -6196,6 +6336,13 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getCompletedAt());
       }
+      if (!getRefIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, refId_);
+      }
+      for (int i = 0; i < modifications_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, modifications_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6236,6 +6383,10 @@ public final class Base {
         if (!getCompletedAt()
             .equals(other.getCompletedAt())) return false;
       }
+      if (!getRefId()
+          .equals(other.getRefId())) return false;
+      if (!getModificationsList()
+          .equals(other.getModificationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6272,6 +6423,12 @@ public final class Base {
       if (hasCompletedAt()) {
         hash = (37 * hash) + COMPLETED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getCompletedAt().hashCode();
+      }
+      hash = (37 * hash) + REF_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRefId().hashCode();
+      if (getModificationsCount() > 0) {
+        hash = (37 * hash) + MODIFICATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getModificationsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6402,6 +6559,7 @@ public final class Base {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getStepsFieldBuilder();
+          getModificationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -6438,6 +6596,14 @@ public final class Base {
         } else {
           completedAt_ = null;
           completedAtBuilder_ = null;
+        }
+        refId_ = "";
+
+        if (modificationsBuilder_ == null) {
+          modifications_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          modificationsBuilder_.clear();
         }
         return this;
       }
@@ -6491,6 +6657,16 @@ public final class Base {
           result.completedAt_ = completedAt_;
         } else {
           result.completedAt_ = completedAtBuilder_.build();
+        }
+        result.refId_ = refId_;
+        if (modificationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            modifications_ = java.util.Collections.unmodifiableList(modifications_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.modifications_ = modifications_;
+        } else {
+          result.modifications_ = modificationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6597,6 +6773,36 @@ public final class Base {
         }
         if (other.hasCompletedAt()) {
           mergeCompletedAt(other.getCompletedAt());
+        }
+        if (!other.getRefId().isEmpty()) {
+          refId_ = other.refId_;
+          onChanged();
+        }
+        if (modificationsBuilder_ == null) {
+          if (!other.modifications_.isEmpty()) {
+            if (modifications_.isEmpty()) {
+              modifications_ = other.modifications_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureModificationsIsMutable();
+              modifications_.addAll(other.modifications_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.modifications_.isEmpty()) {
+            if (modificationsBuilder_.isEmpty()) {
+              modificationsBuilder_.dispose();
+              modificationsBuilder_ = null;
+              modifications_ = other.modifications_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              modificationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getModificationsFieldBuilder() : null;
+            } else {
+              modificationsBuilder_.addAllMessages(other.modifications_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7570,6 +7776,322 @@ public final class Base {
         }
         return completedAtBuilder_;
       }
+
+      private java.lang.Object refId_ = "";
+      /**
+       * <code>string ref_id = 11;</code>
+       * @return The refId.
+       */
+      public java.lang.String getRefId() {
+        java.lang.Object ref = refId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          refId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ref_id = 11;</code>
+       * @return The bytes for refId.
+       */
+      public com.google.protobuf.ByteString
+          getRefIdBytes() {
+        java.lang.Object ref = refId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ref_id = 11;</code>
+       * @param value The refId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRefId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        refId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ref_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRefId() {
+        
+        refId_ = getDefaultInstance().getRefId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ref_id = 11;</code>
+       * @param value The bytes for refId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRefIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        refId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification> modifications_ =
+        java.util.Collections.emptyList();
+      private void ensureModificationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          modifications_ = new java.util.ArrayList<com.blcvn.kratos.protos.baagent.Base.Modification>(modifications_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Modification, com.blcvn.kratos.protos.baagent.Base.Modification.Builder, com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder> modificationsBuilder_;
+
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification> getModificationsList() {
+        if (modificationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(modifications_);
+        } else {
+          return modificationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public int getModificationsCount() {
+        if (modificationsBuilder_ == null) {
+          return modifications_.size();
+        } else {
+          return modificationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Modification getModifications(int index) {
+        if (modificationsBuilder_ == null) {
+          return modifications_.get(index);
+        } else {
+          return modificationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder setModifications(
+          int index, com.blcvn.kratos.protos.baagent.Base.Modification value) {
+        if (modificationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureModificationsIsMutable();
+          modifications_.set(index, value);
+          onChanged();
+        } else {
+          modificationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder setModifications(
+          int index, com.blcvn.kratos.protos.baagent.Base.Modification.Builder builderForValue) {
+        if (modificationsBuilder_ == null) {
+          ensureModificationsIsMutable();
+          modifications_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          modificationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder addModifications(com.blcvn.kratos.protos.baagent.Base.Modification value) {
+        if (modificationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureModificationsIsMutable();
+          modifications_.add(value);
+          onChanged();
+        } else {
+          modificationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder addModifications(
+          int index, com.blcvn.kratos.protos.baagent.Base.Modification value) {
+        if (modificationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureModificationsIsMutable();
+          modifications_.add(index, value);
+          onChanged();
+        } else {
+          modificationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder addModifications(
+          com.blcvn.kratos.protos.baagent.Base.Modification.Builder builderForValue) {
+        if (modificationsBuilder_ == null) {
+          ensureModificationsIsMutable();
+          modifications_.add(builderForValue.build());
+          onChanged();
+        } else {
+          modificationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder addModifications(
+          int index, com.blcvn.kratos.protos.baagent.Base.Modification.Builder builderForValue) {
+        if (modificationsBuilder_ == null) {
+          ensureModificationsIsMutable();
+          modifications_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          modificationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder addAllModifications(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.baagent.Base.Modification> values) {
+        if (modificationsBuilder_ == null) {
+          ensureModificationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, modifications_);
+          onChanged();
+        } else {
+          modificationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder clearModifications() {
+        if (modificationsBuilder_ == null) {
+          modifications_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          modificationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public Builder removeModifications(int index) {
+        if (modificationsBuilder_ == null) {
+          ensureModificationsIsMutable();
+          modifications_.remove(index);
+          onChanged();
+        } else {
+          modificationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Modification.Builder getModificationsBuilder(
+          int index) {
+        return getModificationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder getModificationsOrBuilder(
+          int index) {
+        if (modificationsBuilder_ == null) {
+          return modifications_.get(index);  } else {
+          return modificationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder> 
+           getModificationsOrBuilderList() {
+        if (modificationsBuilder_ != null) {
+          return modificationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(modifications_);
+        }
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Modification.Builder addModificationsBuilder() {
+        return getModificationsFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.baagent.Base.Modification.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public com.blcvn.kratos.protos.baagent.Base.Modification.Builder addModificationsBuilder(
+          int index) {
+        return getModificationsFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.baagent.Base.Modification.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .baagent.v1.Modification modifications = 12;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.baagent.Base.Modification.Builder> 
+           getModificationsBuilderList() {
+        return getModificationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.baagent.Base.Modification, com.blcvn.kratos.protos.baagent.Base.Modification.Builder, com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder> 
+          getModificationsFieldBuilder() {
+        if (modificationsBuilder_ == null) {
+          modificationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.baagent.Base.Modification, com.blcvn.kratos.protos.baagent.Base.Modification.Builder, com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder>(
+                  modifications_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          modifications_ = null;
+        }
+        return modificationsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7618,6 +8140,938 @@ public final class Base {
 
     @java.lang.Override
     public com.blcvn.kratos.protos.baagent.Base.AgentTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ModificationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:baagent.v1.Modification)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+     * @return The enum numeric value on the wire for modifyType.
+     */
+    int getModifyTypeValue();
+    /**
+     * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+     * @return The modifyType.
+     */
+    com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType getModifyType();
+
+    /**
+     * <code>int32 start_index = 2;</code>
+     * @return The startIndex.
+     */
+    int getStartIndex();
+
+    /**
+     * <code>int32 end_index = 3;</code>
+     * @return The endIndex.
+     */
+    int getEndIndex();
+
+    /**
+     * <code>string content = 4;</code>
+     * @return The content.
+     */
+    java.lang.String getContent();
+    /**
+     * <code>string content = 4;</code>
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+  }
+  /**
+   * Protobuf type {@code baagent.v1.Modification}
+   */
+  public static final class Modification extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:baagent.v1.Modification)
+      ModificationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Modification.newBuilder() to construct.
+    private Modification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Modification() {
+      modifyType_ = 0;
+      content_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Modification();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Modification(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              modifyType_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              startIndex_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              endIndex_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.baagent.Base.internal_static_baagent_v1_Modification_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.baagent.Base.internal_static_baagent_v1_Modification_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.baagent.Base.Modification.class, com.blcvn.kratos.protos.baagent.Base.Modification.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code baagent.v1.Modification.ModifyType}
+     */
+    public enum ModifyType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ADD = 0;</code>
+       */
+      ADD(0),
+      /**
+       * <code>REMOVE = 1;</code>
+       */
+      REMOVE(1),
+      /**
+       * <code>REPLACE = 2;</code>
+       */
+      REPLACE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ADD = 0;</code>
+       */
+      public static final int ADD_VALUE = 0;
+      /**
+       * <code>REMOVE = 1;</code>
+       */
+      public static final int REMOVE_VALUE = 1;
+      /**
+       * <code>REPLACE = 2;</code>
+       */
+      public static final int REPLACE_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModifyType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ModifyType forNumber(int value) {
+        switch (value) {
+          case 0: return ADD;
+          case 1: return REMOVE;
+          case 2: return REPLACE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ModifyType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ModifyType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ModifyType>() {
+              public ModifyType findValueByNumber(int number) {
+                return ModifyType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.Base.Modification.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ModifyType[] VALUES = values();
+
+      public static ModifyType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ModifyType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:baagent.v1.Modification.ModifyType)
+    }
+
+    public static final int MODIFY_TYPE_FIELD_NUMBER = 1;
+    private int modifyType_;
+    /**
+     * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+     * @return The enum numeric value on the wire for modifyType.
+     */
+    @java.lang.Override public int getModifyTypeValue() {
+      return modifyType_;
+    }
+    /**
+     * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+     * @return The modifyType.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType getModifyType() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType result = com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.valueOf(modifyType_);
+      return result == null ? com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.UNRECOGNIZED : result;
+    }
+
+    public static final int START_INDEX_FIELD_NUMBER = 2;
+    private int startIndex_;
+    /**
+     * <code>int32 start_index = 2;</code>
+     * @return The startIndex.
+     */
+    @java.lang.Override
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    public static final int END_INDEX_FIELD_NUMBER = 3;
+    private int endIndex_;
+    /**
+     * <code>int32 end_index = 3;</code>
+     * @return The endIndex.
+     */
+    @java.lang.Override
+    public int getEndIndex() {
+      return endIndex_;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object content_;
+    /**
+     * <code>string content = 4;</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string content = 4;</code>
+     * @return The bytes for content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (modifyType_ != com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.ADD.getNumber()) {
+        output.writeEnum(1, modifyType_);
+      }
+      if (startIndex_ != 0) {
+        output.writeInt32(2, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        output.writeInt32(3, endIndex_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modifyType_ != com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.ADD.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, modifyType_);
+      }
+      if (startIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, endIndex_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.baagent.Base.Modification)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.baagent.Base.Modification other = (com.blcvn.kratos.protos.baagent.Base.Modification) obj;
+
+      if (modifyType_ != other.modifyType_) return false;
+      if (getStartIndex()
+          != other.getStartIndex()) return false;
+      if (getEndIndex()
+          != other.getEndIndex()) return false;
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODIFY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + modifyType_;
+      hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStartIndex();
+      hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getEndIndex();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.baagent.Base.Modification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.baagent.Base.Modification prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code baagent.v1.Modification}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:baagent.v1.Modification)
+        com.blcvn.kratos.protos.baagent.Base.ModificationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.baagent.Base.internal_static_baagent_v1_Modification_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.baagent.Base.internal_static_baagent_v1_Modification_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.baagent.Base.Modification.class, com.blcvn.kratos.protos.baagent.Base.Modification.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.baagent.Base.Modification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        modifyType_ = 0;
+
+        startIndex_ = 0;
+
+        endIndex_ = 0;
+
+        content_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.baagent.Base.internal_static_baagent_v1_Modification_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.Base.Modification getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.baagent.Base.Modification.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.Base.Modification build() {
+        com.blcvn.kratos.protos.baagent.Base.Modification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.Base.Modification buildPartial() {
+        com.blcvn.kratos.protos.baagent.Base.Modification result = new com.blcvn.kratos.protos.baagent.Base.Modification(this);
+        result.modifyType_ = modifyType_;
+        result.startIndex_ = startIndex_;
+        result.endIndex_ = endIndex_;
+        result.content_ = content_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.baagent.Base.Modification) {
+          return mergeFrom((com.blcvn.kratos.protos.baagent.Base.Modification)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.baagent.Base.Modification other) {
+        if (other == com.blcvn.kratos.protos.baagent.Base.Modification.getDefaultInstance()) return this;
+        if (other.modifyType_ != 0) {
+          setModifyTypeValue(other.getModifyTypeValue());
+        }
+        if (other.getStartIndex() != 0) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (other.getEndIndex() != 0) {
+          setEndIndex(other.getEndIndex());
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.baagent.Base.Modification parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.baagent.Base.Modification) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int modifyType_ = 0;
+      /**
+       * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+       * @return The enum numeric value on the wire for modifyType.
+       */
+      @java.lang.Override public int getModifyTypeValue() {
+        return modifyType_;
+      }
+      /**
+       * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+       * @param value The enum numeric value on the wire for modifyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModifyTypeValue(int value) {
+        
+        modifyType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+       * @return The modifyType.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType getModifyType() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType result = com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.valueOf(modifyType_);
+        return result == null ? com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+       * @param value The modifyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModifyType(com.blcvn.kratos.protos.baagent.Base.Modification.ModifyType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        modifyType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.baagent.v1.Modification.ModifyType modify_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModifyType() {
+        
+        modifyType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startIndex_ ;
+      /**
+       * <code>int32 start_index = 2;</code>
+       * @return The startIndex.
+       */
+      @java.lang.Override
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>int32 start_index = 2;</code>
+       * @param value The startIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartIndex(int value) {
+        
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 start_index = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartIndex() {
+        
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endIndex_ ;
+      /**
+       * <code>int32 end_index = 3;</code>
+       * @return The endIndex.
+       */
+      @java.lang.Override
+      public int getEndIndex() {
+        return endIndex_;
+      }
+      /**
+       * <code>int32 end_index = 3;</code>
+       * @param value The endIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndIndex(int value) {
+        
+        endIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 end_index = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndIndex() {
+        
+        endIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       * <code>string content = 4;</code>
+       * @return The content.
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string content = 4;</code>
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string content = 4;</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string content = 4;</code>
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:baagent.v1.Modification)
+    }
+
+    // @@protoc_insertion_point(class_scope:baagent.v1.Modification)
+    private static final com.blcvn.kratos.protos.baagent.Base.Modification DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.baagent.Base.Modification();
+    }
+
+    public static com.blcvn.kratos.protos.baagent.Base.Modification getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Modification>
+        PARSER = new com.google.protobuf.AbstractParser<Modification>() {
+      @java.lang.Override
+      public Modification parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Modification(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Modification> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Modification> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.baagent.Base.Modification getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8669,6 +10123,11 @@ public final class Base {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_baagent_v1_AgentTask_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_baagent_v1_Modification_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_baagent_v1_Modification_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_baagent_v1_Memory_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8698,7 +10157,7 @@ public final class Base {
       "t.v1.ReActStep.ActionParamsEntry\022\023\n\013obse" +
       "rvation\030\005 \001(\t\022.\n\ncreated_at\030\006 \001(\0132\032.goog" +
       "le.protobuf.Timestamp\0323\n\021ActionParamsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\267\002\n\tA" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\370\002\n\tA" +
       "gentTask\022\n\n\002id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\022\n" +
       "\nsession_id\030\003 \001(\t\022\030\n\020task_description\030\004 " +
       "\001(\t\022&\n\006status\030\005 \001(\0162\026.baagent.v1.TaskSta" +
@@ -8706,16 +10165,22 @@ public final class Base {
       "p\022\026\n\016final_response\030\007 \001(\t\022\027\n\017iterations_" +
       "used\030\010 \001(\005\022.\n\ncreated_at\030\t \001(\0132\032.google." +
       "protobuf.Timestamp\0220\n\014completed_at\030\n \001(\013" +
-      "2\032.google.protobuf.Timestamp\"G\n\006Memory\022\022" +
-      "\n\nsession_id\030\001 \001(\t\022\022\n\nshort_term\030\002 \003(\t\022\025" +
-      "\n\rlong_term_ids\030\003 \003(\t*L\n\nResultCode\022\017\n\013U" +
-      "NSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_REQUES" +
-      "T\020\220\003\022\r\n\010INTERNAL\020\364\003*q\n\nTaskStatus\022\020\n\014TAS" +
-      "K_PENDING\020\000\022\020\n\014TASK_RUNNING\020\001\022\022\n\016TASK_CO" +
-      "MPLETED\020\002\022\017\n\013TASK_FAILED\020\003\022\032\n\026TASK_WAITI" +
-      "NG_FOR_INPUT\020\004BT\n\037com.blcvn.kratos.proto" +
-      "s.baagentZ1github.com/blcvn/kratos-proto" +
-      "/go/ba-agent;baagentb\006proto3"
+      "2\032.google.protobuf.Timestamp\022\016\n\006ref_id\030\013" +
+      " \001(\t\022/\n\rmodifications\030\014 \003(\0132\030.baagent.v1" +
+      ".Modification\"\261\001\n\014Modification\0228\n\013modify" +
+      "_type\030\001 \001(\0162#.baagent.v1.Modification.Mo" +
+      "difyType\022\023\n\013start_index\030\002 \001(\005\022\021\n\tend_ind" +
+      "ex\030\003 \001(\005\022\017\n\007content\030\004 \001(\t\".\n\nModifyType\022" +
+      "\007\n\003ADD\020\000\022\n\n\006REMOVE\020\001\022\013\n\007REPLACE\020\002\"G\n\006Mem" +
+      "ory\022\022\n\nsession_id\030\001 \001(\t\022\022\n\nshort_term\030\002 " +
+      "\003(\t\022\025\n\rlong_term_ids\030\003 \003(\t*L\n\nResultCode" +
+      "\022\017\n\013UNSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_R" +
+      "EQUEST\020\220\003\022\r\n\010INTERNAL\020\364\003*q\n\nTaskStatus\022\020" +
+      "\n\014TASK_PENDING\020\000\022\020\n\014TASK_RUNNING\020\001\022\022\n\016TA" +
+      "SK_COMPLETED\020\002\022\017\n\013TASK_FAILED\020\003\022\032\n\026TASK_" +
+      "WAITING_FOR_INPUT\020\004BT\n\037com.blcvn.kratos." +
+      "protos.baagentZ1github.com/blcvn/kratos-" +
+      "proto/go/ba-agent;baagentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8769,9 +10234,15 @@ public final class Base {
     internal_static_baagent_v1_AgentTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_AgentTask_descriptor,
-        new java.lang.String[] { "Id", "UserId", "SessionId", "TaskDescription", "Status", "Steps", "FinalResponse", "IterationsUsed", "CreatedAt", "CompletedAt", });
-    internal_static_baagent_v1_Memory_descriptor =
+        new java.lang.String[] { "Id", "UserId", "SessionId", "TaskDescription", "Status", "Steps", "FinalResponse", "IterationsUsed", "CreatedAt", "CompletedAt", "RefId", "Modifications", });
+    internal_static_baagent_v1_Modification_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_baagent_v1_Modification_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_baagent_v1_Modification_descriptor,
+        new java.lang.String[] { "ModifyType", "StartIndex", "EndIndex", "Content", });
+    internal_static_baagent_v1_Memory_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_baagent_v1_Memory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_baagent_v1_Memory_descriptor,
