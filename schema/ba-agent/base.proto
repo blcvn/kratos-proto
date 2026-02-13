@@ -83,6 +83,7 @@ message AgentTask {
   int32 iterations_used = 8;
   google.protobuf.Timestamp created_at = 9;
   google.protobuf.Timestamp completed_at = 10;
+  string ref_id = 11;
 }
 
 message Memory {
