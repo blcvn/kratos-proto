@@ -105,6 +105,18 @@ service WorkspaceService {
       get: "/v1/workspace/document-sections/{id}"
     };
   }
+  rpc CreateDocumentSection (CreateDocumentSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/documents/{document_id}/sections"
+      body: "payload"
+    };
+  }
+  rpc UpdateDocumentSection (UpdateDocumentSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/document-sections/{id}"
+      body: "payload"
+    };
+  }
   rpc UpdateDocumentSectionContent (UpdateDocumentSectionContentRequest) returns (DocumentSectionReply) {
     option (google.api.http) = {
       put: "/v1/workspace/document-sections/{id}/content"
@@ -215,6 +227,8 @@ message DocumentSection {
   string content = 9; // JSON string
   string created_at = 10;
   string updated_at = 11;
+  string confluence_page_id = 12;
+  string confluence_url = 13;
 }
 
 message ChatMessage {
@@ -431,6 +445,35 @@ message GetDocumentSectionRequest {
 message DocumentSectionReply {
   Result result = 1;
   DocumentSection payload = 2;
+}
+
+message CreateDocumentSectionPayload {
+  string type = 1;
+  string description = 2;
+  string storage_type = 3;
+  string confluence_page_id = 4;
+  string confluence_url = 5;
+}
+
+message CreateDocumentSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  CreateDocumentSectionPayload payload = 4;
+}
+
+message UpdateDocumentSectionPayload {
+  string status = 1;
+  string description = 2;
+  string confluence_page_id = 3;
+  string confluence_url = 4;
+}
+
+message UpdateDocumentSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateDocumentSectionPayload payload = 4;
 }
 
 message UpdateDocumentSectionContentPayload {

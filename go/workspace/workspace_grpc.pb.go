@@ -42,6 +42,8 @@ type WorkspaceServiceClient interface {
 	ListDocuments(ctx context.Context, in *ListDocumentsRequest, opts ...grpc.CallOption) (*ListDocumentsReply, error)
 	ListDocumentSections(ctx context.Context, in *ListDocumentSectionsRequest, opts ...grpc.CallOption) (*ListDocumentSectionsReply, error)
 	GetDocumentSection(ctx context.Context, in *GetDocumentSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
+	CreateDocumentSection(ctx context.Context, in *CreateDocumentSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
+	UpdateDocumentSection(ctx context.Context, in *UpdateDocumentSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
 	UpdateDocumentSectionContent(ctx context.Context, in *UpdateDocumentSectionContentRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
 	// 4. Chat History
 	ListChatMessages(ctx context.Context, in *ListChatMessagesRequest, opts ...grpc.CallOption) (*ListChatMessagesReply, error)
@@ -205,6 +207,24 @@ func (c *workspaceServiceClient) GetDocumentSection(ctx context.Context, in *Get
 	return out, nil
 }
 
+func (c *workspaceServiceClient) CreateDocumentSection(ctx context.Context, in *CreateDocumentSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, "/workspace.v1.WorkspaceService/CreateDocumentSection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) UpdateDocumentSection(ctx context.Context, in *UpdateDocumentSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, "/workspace.v1.WorkspaceService/UpdateDocumentSection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workspaceServiceClient) UpdateDocumentSectionContent(ctx context.Context, in *UpdateDocumentSectionContentRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
 	out := new(DocumentSectionReply)
 	err := c.cc.Invoke(ctx, "/workspace.v1.WorkspaceService/UpdateDocumentSectionContent", in, out, opts...)
@@ -292,6 +312,8 @@ type WorkspaceServiceServer interface {
 	ListDocuments(context.Context, *ListDocumentsRequest) (*ListDocumentsReply, error)
 	ListDocumentSections(context.Context, *ListDocumentSectionsRequest) (*ListDocumentSectionsReply, error)
 	GetDocumentSection(context.Context, *GetDocumentSectionRequest) (*DocumentSectionReply, error)
+	CreateDocumentSection(context.Context, *CreateDocumentSectionRequest) (*DocumentSectionReply, error)
+	UpdateDocumentSection(context.Context, *UpdateDocumentSectionRequest) (*DocumentSectionReply, error)
 	UpdateDocumentSectionContent(context.Context, *UpdateDocumentSectionContentRequest) (*DocumentSectionReply, error)
 	// 4. Chat History
 	ListChatMessages(context.Context, *ListChatMessagesRequest) (*ListChatMessagesReply, error)
@@ -355,6 +377,12 @@ func (UnimplementedWorkspaceServiceServer) ListDocumentSections(context.Context,
 }
 func (UnimplementedWorkspaceServiceServer) GetDocumentSection(context.Context, *GetDocumentSectionRequest) (*DocumentSectionReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDocumentSection not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) CreateDocumentSection(context.Context, *CreateDocumentSectionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDocumentSection not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) UpdateDocumentSection(context.Context, *UpdateDocumentSectionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDocumentSection not implemented")
 }
 func (UnimplementedWorkspaceServiceServer) UpdateDocumentSectionContent(context.Context, *UpdateDocumentSectionContentRequest) (*DocumentSectionReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDocumentSectionContent not implemented")
@@ -678,6 +706,42 @@ func _WorkspaceService_GetDocumentSection_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkspaceService_CreateDocumentSection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDocumentSectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServiceServer).CreateDocumentSection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/workspace.v1.WorkspaceService/CreateDocumentSection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServiceServer).CreateDocumentSection(ctx, req.(*CreateDocumentSectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkspaceService_UpdateDocumentSection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDocumentSectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServiceServer).UpdateDocumentSection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/workspace.v1.WorkspaceService/UpdateDocumentSection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServiceServer).UpdateDocumentSection(ctx, req.(*UpdateDocumentSectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WorkspaceService_UpdateDocumentSectionContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateDocumentSectionContentRequest)
 	if err := dec(in); err != nil {
@@ -874,6 +938,14 @@ var WorkspaceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDocumentSection",
 			Handler:    _WorkspaceService_GetDocumentSection_Handler,
+		},
+		{
+			MethodName: "CreateDocumentSection",
+			Handler:    _WorkspaceService_CreateDocumentSection_Handler,
+		},
+		{
+			MethodName: "UpdateDocumentSection",
+			Handler:    _WorkspaceService_UpdateDocumentSection_Handler,
 		},
 		{
 			MethodName: "UpdateDocumentSectionContent",
