@@ -229,6 +229,8 @@ message DocumentSection {
   string updated_at = 11;
   string confluence_page_id = 12;
   string confluence_url = 13;
+  string parent_id = 14;
+  string approved_at = 15;
 }
 
 message ChatMessage {
@@ -453,6 +455,7 @@ message CreateDocumentSectionPayload {
   string storage_type = 3;
   string confluence_page_id = 4;
   string confluence_url = 5;
+  string parent_id = 6;
 }
 
 message CreateDocumentSectionRequest {
