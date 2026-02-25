@@ -6,6 +6,7 @@ option go_package = "github.com/blcvn/kratos-proto/go/ba-agent;baagent";
 option java_package = "com.blcvn.kratos.protos.baagent";
 
 import "ba-agent/base.proto";
+import "google/protobuf/struct.proto";
 
 // =======================
 // BA Agent Service
@@ -68,6 +69,13 @@ service BAAgentService {
 
   rpc GetLineage(GetDocumentRequest) returns (EmptyResponse) {
   }
+
+  // V3 Streaming — Delivery V3
+  rpc StreamEvents(StreamRequest) returns (stream StreamEvent) {
+  }
+
+  rpc CancelStream(CancelStreamRequest) returns (CancelStreamResponse) {
+  }
 }
 
 // =======================
@@ -80,6 +88,36 @@ enum RequirementTier {
   TIER_URD_INDEX = 2;
   TIER_URD_OUTLINE = 3;
   TIER_URD_FULL = 4;
+}
+
+// V3: Streaming enums
+enum StreamType {
+  STREAM_TYPE_UNSPECIFIED = 0;
+  STREAM_TYPE_TASK = 1;
+  STREAM_TYPE_WORKFLOW = 2;
+  STREAM_TYPE_REVIEW = 3;
+}
+
+enum StreamEventType {
+  STREAM_EVENT_TYPE_UNSPECIFIED = 0;
+  STREAM_EVENT_TYPE_STREAM_START = 1;
+  STREAM_EVENT_TYPE_STATE_CHANGE = 2;
+  STREAM_EVENT_TYPE_TIER_READY = 3;
+  STREAM_EVENT_TYPE_FINAL_RESULT = 4;
+  STREAM_EVENT_TYPE_ERROR = 5;
+  STREAM_EVENT_TYPE_KEEPALIVE = 6;
+  STREAM_EVENT_TYPE_WORKFLOW_TRANSITION = 7;
+}
+
+enum StreamStatus {
+  STREAM_STATUS_UNSPECIFIED = 0;
+  STREAM_STATUS_QUEUED = 1;
+  STREAM_STATUS_RUNNING = 2;
+  STREAM_STATUS_COMPLETED = 3;
+  STREAM_STATUS_FAILED = 4;
+  STREAM_STATUS_CANCELED = 5;
+  STREAM_STATUS_TIMEOUT = 6;
+  STREAM_STATUS_WAITING_FOR_INPUT = 7;
 }
 
 // =======================
@@ -164,6 +202,26 @@ message SubmitInputRequest {
   string input_data = 4;
 }
 
+// V3: Streaming request
+message StreamRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  StreamType stream_type = 3;
+  string correlation_id = 4;   // task_id, workflow_run_id, or review_id
+  int64 last_seq = 5;          // For reconnect — replay events after this seq
+  string project_id = 6;       // For auth / IDOR check
+  bool safe_mode = 7;          // Future: enable safe-mode backpressure
+}
+
+// V3: Cancel stream request
+message CancelStreamRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  StreamType stream_type = 3;
+  string correlation_id = 4;
+  string reason = 5;
+}
+
 // =======================
 // Response Messages
 // =======================
@@ -179,6 +237,7 @@ message GenerateRequirementResponse {
   Result result = 2;
   string job_id = 3;
   string document_id = 4;
+  string workflow_run_id = 5; // V3: for streaming subscription
 }
 
 message ExecuteTaskResponse {
@@ -222,3 +281,30 @@ message ClearMemoryResponse {
   Signature signature = 2;
   Result result = 3;
 }
+
+// V3: Streaming response event
+message StreamEvent {
+  string id = 1;                      // Unique event ID (UUID)
+  int64 seq = 2;                      // Monotonic sequence number per correlation_id
+  StreamEventType event_type = 3;
+  StreamStatus status = 4;
+  StreamType stream_type = 5;
+  string correlation_id = 6;
+  string task_id = 7;
+  string workflow_run_id = 8;
+  string review_id = 9;
+  string document_id = 10;
+  string project_id = 11;
+  string timestamp = 12;              // ISO 8601
+  google.protobuf.Struct data = 13;   // Flexible data payload (tier content, error details, etc.)
+  string error_code = 14;
+  string error_message = 15;
+  bool retryable = 16;
+}
+
+// V3: Cancel stream response
+message CancelStreamResponse {
+  Metadata metadata = 1;
+  Result result = 2;
+}
+
