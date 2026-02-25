@@ -49,7 +49,7 @@ ensure_go_plugin() {
 
 ensure_go_plugin protoc-gen-go "google.golang.org/protobuf/cmd/protoc-gen-go" || exit 1
 ensure_go_plugin protoc-gen-go-grpc "google.golang.org/grpc/cmd/protoc-gen-go-grpc" || exit 1
-ensure_go_plugin protoc-gen-grpc-gateway "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway" true || exit 1
+ensure_go_plugin protoc-gen-grpc-gateway "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway" false || exit 1
 
 mkdir -p "$OUT_DIR"
 echo "Generating Go code from .proto files in $PROTO_DIR -> $OUT_DIR"

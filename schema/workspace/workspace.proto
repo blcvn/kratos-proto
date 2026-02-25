@@ -1,0 +1,568 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+import "google/api/annotations.proto";
+import "workspace/base.proto";
+
+option go_package = "github.com/blcvn/kratos-proto/go/workspace;workspace";
+option java_package = "com.blcvn.kratos.protos.workspace";
+
+// =======================
+// Workspace Service Definition
+// =======================
+service WorkspaceService {
+  // 1. Projects
+  rpc CreateProject (CreateProjectRequest) returns (ProjectReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/projects"
+      body: "payload"
+    };
+  }
+  rpc ListProjects (ListProjectsRequest) returns (ListProjectsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects"
+    };
+  }
+  rpc GetProject (GetProjectRequest) returns (ProjectReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects/{id}"
+    };
+  }
+  rpc UpdateProject (UpdateProjectRequest) returns (ProjectReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/projects/{id}"
+      body: "payload"
+    };
+  }
+  rpc DeleteProject (DeleteProjectRequest) returns (EmptyReply) {
+    option (google.api.http) = {
+      delete: "/v1/workspace/projects/{id}"
+    };
+  }
+
+  // 1.6 & 1.7 Project Members
+  rpc AddProjectMember (AddProjectMemberRequest) returns (ProjectMemberReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/projects/{project_id}/members"
+      body: "payload"
+    };
+  }
+  rpc RemoveProjectMember (RemoveProjectMemberRequest) returns (EmptyReply) {
+    option (google.api.http) = {
+      delete: "/v1/workspace/projects/{project_id}/members/{user_id}"
+    };
+  }
+
+  // 2. Features
+  rpc GetFeatureTree (GetFeatureTreeRequest) returns (GetFeatureTreeReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects/{project_id}/features"
+    };
+  }
+  rpc CreateFeature (CreateFeatureRequest) returns (FeatureReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/projects/{project_id}/features"
+      body: "payload"
+    };
+  }
+  rpc GetFeature (GetFeatureRequest) returns (FeatureReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{id}"
+    };
+  }
+  rpc UpdateFeature (UpdateFeatureRequest) returns (FeatureReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/features/{id}"
+      body: "payload"
+    };
+  }
+  rpc DeleteFeature (DeleteFeatureRequest) returns (EmptyReply) {
+    option (google.api.http) = {
+      delete: "/v1/workspace/features/{id}"
+    };
+  }
+
+  // 3. Documents
+  rpc CreateDocument (CreateDocumentRequest) returns (DocumentReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/features/{feature_id}/documents"
+      body: "payload"
+    };
+  }
+  rpc ListDocuments (ListDocumentsRequest) returns (ListDocumentsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{feature_id}/documents"
+    };
+  }
+  rpc ListDocumentSections (ListDocumentSectionsRequest) returns (ListDocumentSectionsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{document_id}/sections"
+    };
+  }
+  rpc GetDocumentSection (GetDocumentSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/document-sections/{id}"
+    };
+  }
+  rpc CreateDocumentSection (CreateDocumentSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/documents/{document_id}/sections"
+      body: "payload"
+    };
+  }
+  rpc UpdateDocumentSection (UpdateDocumentSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/document-sections/{id}"
+      body: "payload"
+    };
+  }
+  rpc UpdateDocumentSectionContent (UpdateDocumentSectionContentRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/document-sections/{id}/content"
+      body: "payload"
+    };
+  }
+
+  // 4. Chat History
+  rpc ListChatMessages (ListChatMessagesRequest) returns (ListChatMessagesReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{feature_id}/chat"
+    };
+  }
+  rpc AppendChatMessage (AppendChatMessageRequest) returns (ChatMessageReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/features/{feature_id}/chat"
+      body: "payload"
+    };
+  }
+
+  // 5. Sessions
+  rpc CreateSession (CreateSessionRequest) returns (SessionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/projects/{project_id}/sessions"
+      body: "payload"
+    };
+  }
+  rpc UpdateSessionContext (UpdateSessionContextRequest) returns (EmptyReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/sessions/{id}/context"
+      body: "payload"
+    };
+  }
+  rpc GetSession (GetSessionRequest) returns (SessionReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/sessions/{id}"
+    };
+  }
+  rpc ListProjectSessions (ListProjectSessionsRequest) returns (ListSessionsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects/{project_id}/sessions"
+    };
+  }
+}
+
+// =======================
+// Domain Models
+// =======================
+
+message ConfluenceConfig {
+  bool enabled = 1;
+  string space_key = 2;
+  string parent_page_id = 3;
+}
+
+message Project {
+  string id = 1;
+  string user_id = 2;
+  string name = 3;
+  string description = 4;
+  string status = 5;
+  ConfluenceConfig confluence_config = 6;
+  string created_at = 7;
+  string updated_at = 8;
+  string user_role = 9; // For list response
+}
+
+message ProjectMember {
+  string project_id = 1;
+  string user_id = 2;
+  string role = 3;
+}
+
+message Feature {
+  string id = 1;
+  string project_id = 2;
+  string parent_id = 3;
+  string name = 4;
+  string description = 5;
+  string status = 6;
+  string current_step = 7;
+  string progress = 8; // JSON string
+  int32 order = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
+
+message Document {
+  string id = 1;
+  string feature_id = 2;
+  string name = 3;
+  string type = 4;
+  string description = 5;
+  string status = 6;
+  string created_at = 7;
+  string updated_at = 8;
+}
+
+message DocumentSection {
+  string id = 1;
+  string document_id = 2;
+  string type = 3;
+  string status = 4;
+  string description = 5;
+  int32 version = 6;
+  string storage_type = 7;
+  string storage_ref = 8;
+  string content = 9; // JSON string
+  string created_at = 10;
+  string updated_at = 11;
+  string confluence_page_id = 12;
+  string confluence_url = 13;
+  string parent_id = 14;
+  string approved_at = 15;
+}
+
+message ChatMessage {
+  string id = 1;
+  string feature_id = 2;
+  string session_id = 3;
+  string role = 4;
+  string content = 5;
+  string metadata = 6; // JSON string
+  string created_at = 7;
+}
+
+message Session {
+  string id = 1;
+  string project_id = 2;
+  string current_feature_id = 3;
+  string status = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+// =======================
+// Request & Payload
+// =======================
+
+message EmptyReply {
+  Result result = 1;
+}
+
+// --- Project ---
+
+message CreateProjectPayload {
+  string name = 1;
+  string description = 2;
+  ConfluenceConfig confluence_config = 3;
+}
+
+message CreateProjectRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  CreateProjectPayload payload = 3;
+}
+
+message ListProjectsRequest {
+  Metadata metadata = 1;
+  string page_token = 2;
+  int32 page_size = 3;
+}
+
+message GetProjectRequest {
+  Metadata metadata = 1;
+  string id = 2;
+}
+
+message UpdateProjectPayload {
+  string name = 1;
+  string description = 2;
+  string status = 3;
+  ConfluenceConfig confluence_config = 4;
+}
+
+message UpdateProjectRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateProjectPayload payload = 4;
+}
+
+message DeleteProjectRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+message ProjectReply {
+  Result result = 1;
+  Project payload = 2;
+}
+
+message ListProjectsReply {
+  Result result = 1;
+  repeated Project payload = 2;
+  string next_page_token = 3;
+}
+
+// --- Project Member ---
+
+message AddProjectMemberPayload {
+  string user_id = 1;
+  string role = 2;
+}
+
+message AddProjectMemberRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  AddProjectMemberPayload payload = 4;
+}
+
+message ProjectMemberReply {
+  Result result = 1;
+  ProjectMember payload = 2;
+}
+
+message RemoveProjectMemberRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  string user_id = 4;
+}
+
+// --- Feature ---
+message GetFeatureTreeRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+}
+
+message GetFeatureTreeReply {
+  Result result = 1;
+  repeated Feature payload = 2;
+}
+
+message CreateFeaturePayload {
+  string parent_id = 1;
+  string name = 2;
+  string description = 3;
+  int32 order = 4;
+}
+
+message CreateFeatureRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  CreateFeaturePayload payload = 4;
+}
+
+message FeatureReply {
+  Result result = 1;
+  Feature payload = 2;
+}
+
+message GetFeatureRequest {
+  Metadata metadata = 1;
+  string id = 2;
+}
+
+message UpdateFeaturePayload {
+  string parent_id = 1;
+  string name = 2;
+  string description = 3;
+  string status = 4;
+  string progress = 5;
+  int32 order = 6;
+}
+
+message UpdateFeatureRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateFeaturePayload payload = 4;
+}
+
+message DeleteFeatureRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+// --- Document ---
+message CreateDocumentPayload {
+  string name = 1;
+  string type = 2;
+  string description = 3;
+}
+
+message CreateDocumentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  CreateDocumentPayload payload = 4;
+}
+
+message ListDocumentsRequest {
+  Metadata metadata = 1;
+  string feature_id = 2;
+}
+
+message DocumentReply {
+  Result result = 1;
+  Document payload = 2;
+}
+
+message ListDocumentsReply {
+  Result result = 1;
+  repeated Document payload = 2;
+}
+
+message ListDocumentSectionsRequest {
+  Metadata metadata = 1;
+  string document_id = 2;
+  bool include_content = 3;
+}
+
+message ListDocumentSectionsReply {
+  Result result = 1;
+  repeated DocumentSection payload = 2;
+}
+
+message GetDocumentSectionRequest {
+  Metadata metadata = 1;
+  string id = 2;
+}
+
+message DocumentSectionReply {
+  Result result = 1;
+  DocumentSection payload = 2;
+}
+
+message CreateDocumentSectionPayload {
+  string type = 1;
+  string description = 2;
+  string storage_type = 3;
+  string confluence_page_id = 4;
+  string confluence_url = 5;
+  string parent_id = 6;
+}
+
+message CreateDocumentSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  CreateDocumentSectionPayload payload = 4;
+}
+
+message UpdateDocumentSectionPayload {
+  string status = 1;
+  string description = 2;
+  string confluence_page_id = 3;
+  string confluence_url = 4;
+}
+
+message UpdateDocumentSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateDocumentSectionPayload payload = 4;
+}
+
+message UpdateDocumentSectionContentPayload {
+  string content = 1;
+  string status = 2;
+  int32 expected_version = 3;
+}
+
+message UpdateDocumentSectionContentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateDocumentSectionContentPayload payload = 4;
+}
+
+// --- Chat Message ---
+message ListChatMessagesRequest {
+  Metadata metadata = 1;
+  string feature_id = 2;
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message ListChatMessagesReply {
+  Result result = 1;
+  repeated ChatMessage payload = 2;
+}
+
+message AppendChatMessagePayload {
+  string session_id = 1;
+  string role = 2;
+  string content = 3;
+  string metadata = 4;
+}
+
+message AppendChatMessageRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  AppendChatMessagePayload payload = 4;
+}
+
+message ChatMessageReply {
+  Result result = 1;
+  ChatMessage payload = 2;
+}
+
+// --- Session ---
+message CreateSessionPayload {}
+
+message CreateSessionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  CreateSessionPayload payload = 4; // Or empty if none needed
+}
+
+message SessionReply {
+  Result result = 1;
+  Session payload = 2;
+}
+
+message UpdateSessionContextPayload {
+  string current_feature_id = 1;
+}
+
+message UpdateSessionContextRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  UpdateSessionContextPayload payload = 4;
+}
+
+message GetSessionRequest {
+  Metadata metadata = 1;
+  string id = 2;
+}
+
+message ListProjectSessionsRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message ListSessionsReply {
+  Result result = 1;
+  repeated Session payload = 2;
+}
