@@ -7,11 +7,12 @@
 package baagent
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	_struct "github.com/golang/protobuf/ptypes/struct"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -24,11 +25,12 @@ const (
 type RequirementTier int32
 
 const (
-	RequirementTier_TIER_UNSPECIFIED RequirementTier = 0
-	RequirementTier_TIER_PRD         RequirementTier = 1
-	RequirementTier_TIER_URD_INDEX   RequirementTier = 2
-	RequirementTier_TIER_URD_OUTLINE RequirementTier = 3
-	RequirementTier_TIER_URD_FULL    RequirementTier = 4
+	RequirementTier_TIER_UNSPECIFIED  RequirementTier = 0
+	RequirementTier_TIER_PRD          RequirementTier = 1
+	RequirementTier_TIER_URD_INDEX    RequirementTier = 2
+	RequirementTier_TIER_URD_OUTLINE  RequirementTier = 3
+	RequirementTier_TIER_URD_FULL     RequirementTier = 4
+	RequirementTier_TIER_PRD_UPLOADED RequirementTier = 5
 )
 
 // Enum value maps for RequirementTier.
@@ -39,13 +41,15 @@ var (
 		2: "TIER_URD_INDEX",
 		3: "TIER_URD_OUTLINE",
 		4: "TIER_URD_FULL",
+		5: "TIER_PRD_UPLOADED",
 	}
 	RequirementTier_value = map[string]int32{
-		"TIER_UNSPECIFIED": 0,
-		"TIER_PRD":         1,
-		"TIER_URD_INDEX":   2,
-		"TIER_URD_OUTLINE": 3,
-		"TIER_URD_FULL":    4,
+		"TIER_UNSPECIFIED":  0,
+		"TIER_PRD":          1,
+		"TIER_URD_INDEX":    2,
+		"TIER_URD_OUTLINE":  3,
+		"TIER_URD_FULL":     4,
+		"TIER_PRD_UPLOADED": 5,
 	}
 )
 

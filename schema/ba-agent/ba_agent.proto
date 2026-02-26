@@ -88,6 +88,7 @@ enum RequirementTier {
   TIER_URD_INDEX = 2;
   TIER_URD_OUTLINE = 3;
   TIER_URD_FULL = 4;
+  TIER_PRD_UPLOADED = 5;  // Trigger extraction from uploaded file on S3
 }
 
 // V3: Streaming enums
