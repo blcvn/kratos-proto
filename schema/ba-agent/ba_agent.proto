@@ -206,10 +206,10 @@ message SubmitInputRequest {
 message StreamRequest {
   Metadata metadata = 1;
   Signature signature = 2;
-  StreamType stream_type = 3;
-  string correlation_id = 4;   // task_id, workflow_run_id, or review_id
-  int64 last_seq = 5;          // For reconnect — replay events after this seq
-  string project_id = 6;       // For auth / IDOR check
+  string stream_id = 3;        // V3: Session stream ID
+  int64 last_seq = 4;          // For reconnect — replay events after this seq
+  string project_id = 5;       // For auth / IDOR check
+  StreamType stream_type = 6;  // Legacy/optional stream type filtering
   bool safe_mode = 7;          // Future: enable safe-mode backpressure
 }
 
@@ -220,6 +220,7 @@ message CancelStreamRequest {
   StreamType stream_type = 3;
   string correlation_id = 4;
   string reason = 5;
+  string stream_id = 6;        // V3: Support cancel by stream_id
 }
 
 // =======================
@@ -285,21 +286,22 @@ message ClearMemoryResponse {
 // V3: Streaming response event
 message StreamEvent {
   string id = 1;                      // Unique event ID (UUID)
-  int64 seq = 2;                      // Monotonic sequence number per correlation_id
+  int64 seq = 2;                      // Monotonic sequence number per stream_id
   StreamEventType event_type = 3;
   StreamStatus status = 4;
   StreamType stream_type = 5;
-  string correlation_id = 6;
-  string task_id = 7;
-  string workflow_run_id = 8;
-  string review_id = 9;
-  string document_id = 10;
-  string project_id = 11;
-  string timestamp = 12;              // ISO 8601
-  google.protobuf.Struct data = 13;   // Flexible data payload (tier content, error details, etc.)
-  string error_code = 14;
-  string error_message = 15;
-  bool retryable = 16;
+  string stream_id = 6;               // V3: Session stream ID
+  string correlation_id = 7;          // Specific job ID
+  string task_id = 8;
+  string workflow_run_id = 9;
+  string review_id = 10;
+  string document_id = 11;
+  string project_id = 12;
+  string timestamp = 13;              // ISO 8601
+  google.protobuf.Struct data = 14;   // Flexible data payload
+  string error_code = 15;
+  string error_message = 16;
+  bool retryable = 17;
 }
 
 // V3: Cancel stream response
