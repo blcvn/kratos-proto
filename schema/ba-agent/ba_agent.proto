@@ -52,7 +52,7 @@ service BAAgentService {
   rpc GetTierFull(GetDocumentRequest) returns (ExecuteTaskResponse) {
   }
 
-  rpc ApproveRequirement(ApproveRequirementRequest) returns (EmptyResponse) {
+  rpc ApproveRequirement(ApproveRequirementRequest) returns (ApproveRequirementResponse) {
   }
 
   rpc ReviewRequirement(ReviewRequirementRequest) returns (ExecuteTaskResponse) {
@@ -231,6 +231,13 @@ message EmptyResponse {
   Metadata metadata = 1;
   Signature signature = 2;
   Result result = 3;
+}
+
+message ApproveRequirementResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  string approval_id = 4;
 }
 
 message GenerateRequirementResponse {
