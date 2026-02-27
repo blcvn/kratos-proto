@@ -82,45 +82,50 @@ service WorkspaceService {
       delete: "/v1/workspace/features/{id}"
     };
   }
+  rpc GetFeatureDocumentTree (GetFeatureDocumentTreeRequest) returns (GetFeatureDocumentTreeReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{feature_id}/documents/tree"
+    };
+  }
 
   // 3. Documents
-  rpc CreateDocument (CreateDocumentRequest) returns (DocumentReply) {
+  // 3. Feature Documents
+  rpc ListRootDocuments (ListRootDocumentsRequest) returns (ListFeatureDocumentsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{feature_id}/documents"
+    };
+  }
+  rpc ListDocumentTree (ListDocumentTreeRequest) returns (ListFeatureDocumentsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{root_document_id}/tree"
+    };
+  }
+  rpc GetDocument (GetDocumentRequest) returns (FeatureDocumentReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{id}"
+    };
+  }
+  rpc CreateDocument (CreateDocumentRequest) returns (FeatureDocumentReply) {
     option (google.api.http) = {
       post: "/v1/workspace/features/{feature_id}/documents"
       body: "payload"
     };
   }
-  rpc ListDocuments (ListDocumentsRequest) returns (ListDocumentsReply) {
+  rpc UpdateDocumentMetadata (UpdateDocumentMetadataRequest) returns (FeatureDocumentReply) {
     option (google.api.http) = {
-      get: "/v1/workspace/features/{feature_id}/documents"
-    };
-  }
-  rpc ListDocumentSections (ListDocumentSectionsRequest) returns (ListDocumentSectionsReply) {
-    option (google.api.http) = {
-      get: "/v1/workspace/documents/{document_id}/sections"
-    };
-  }
-  rpc GetDocumentSection (GetDocumentSectionRequest) returns (DocumentSectionReply) {
-    option (google.api.http) = {
-      get: "/v1/workspace/document-sections/{id}"
-    };
-  }
-  rpc CreateDocumentSection (CreateDocumentSectionRequest) returns (DocumentSectionReply) {
-    option (google.api.http) = {
-      post: "/v1/workspace/documents/{document_id}/sections"
+      put: "/v1/workspace/documents/{id}/metadata"
       body: "payload"
     };
   }
-  rpc UpdateDocumentSection (UpdateDocumentSectionRequest) returns (DocumentSectionReply) {
+  rpc UpdateDocumentContent (UpdateDocumentContentRequest) returns (FeatureDocumentReply) {
     option (google.api.http) = {
-      put: "/v1/workspace/document-sections/{id}"
+      put: "/v1/workspace/documents/{id}/content"
       body: "payload"
     };
   }
-  rpc UpdateDocumentSectionContent (UpdateDocumentSectionContentRequest) returns (DocumentSectionReply) {
+  rpc DeleteDocument (DeleteDocumentRequest) returns (EmptyReply) {
     option (google.api.http) = {
-      put: "/v1/workspace/document-sections/{id}/content"
-      body: "payload"
+      delete: "/v1/workspace/documents/{id}"
     };
   }
 
@@ -204,33 +209,26 @@ message Feature {
   string updated_at = 11;
 }
 
-message Document {
+message FeatureDocument {
   string id = 1;
   string feature_id = 2;
-  string name = 3;
-  string type = 4;
-  string description = 5;
-  string status = 6;
-  string created_at = 7;
-  string updated_at = 8;
-}
-
-message DocumentSection {
-  string id = 1;
-  string document_id = 2;
-  string type = 3;
-  string status = 4;
-  string description = 5;
-  int32 version = 6;
-  string storage_type = 7;
-  string storage_ref = 8;
-  string content = 9; // JSON string
-  string created_at = 10;
-  string updated_at = 11;
-  string confluence_page_id = 12;
-  string confluence_url = 13;
-  string parent_id = 14;
-  string approved_at = 15;
+  string document_id = 3;
+  string root_document_id = 4;
+  string parent_id = 5;
+  string type = 6;
+  string status = 7;
+  string description = 8;
+  int32 version = 9;
+  string storage_type = 10;
+  string storage_ref = 11;
+  string content = 12;
+  string confluence_page_id = 13;
+  string confluence_url = 14;
+  string generated_at = 15;
+  string imported_at = 16;
+  string approved_at = 17;
+  string created_at = 18;
+  string updated_at = 19;
 }
 
 message ChatMessage {
@@ -400,10 +398,62 @@ message DeleteFeatureRequest {
 }
 
 // --- Document ---
+message ListRootDocumentsRequest {
+  Metadata metadata = 1;
+  string feature_id = 2;
+}
+
+message ListFeatureDocumentsReply {
+  Result result = 1;
+  repeated FeatureDocument payload = 2;
+}
+
+message ListDocumentTreeRequest {
+  Metadata metadata = 1;
+  string root_document_id = 2;
+  bool include_content = 3;
+}
+
+message GetDocumentRequest {
+  Metadata metadata = 1;
+  string id = 2;
+}
+
+message FeatureDocumentReply {
+  Result result = 1;
+  FeatureDocument payload = 2;
+}
+
+message FeatureDocumentNode {
+  FeatureDocument document = 1;
+  repeated FeatureDocumentNode children = 2;
+}
+
+message GetFeatureDocumentTreeRequest {
+  Metadata metadata = 1;
+  string feature_id = 2;
+  bool include_content = 3;
+}
+
+message GetFeatureDocumentTreeReply {
+  Result result = 1;
+  repeated FeatureDocumentNode documents = 2;
+}
+
 message CreateDocumentPayload {
-  string name = 1;
-  string type = 2;
-  string description = 3;
+  string type = 1;
+  string description = 2;
+  string storage_type = 3;
+  string confluence_page_id = 4;
+  string confluence_url = 5;
+  string parent_id = 6;
+  string content = 7;
+  string storage_ref = 8;
+  string document_id = 9;
+  string root_document_id = 10;
+  string generated_at = 11;
+  string imported_at = 12;
+  string approved_at = 13;
 }
 
 message CreateDocumentRequest {
@@ -413,84 +463,42 @@ message CreateDocumentRequest {
   CreateDocumentPayload payload = 4;
 }
 
-message ListDocumentsRequest {
-  Metadata metadata = 1;
-  string feature_id = 2;
-}
-
-message DocumentReply {
-  Result result = 1;
-  Document payload = 2;
-}
-
-message ListDocumentsReply {
-  Result result = 1;
-  repeated Document payload = 2;
-}
-
-message ListDocumentSectionsRequest {
-  Metadata metadata = 1;
-  string document_id = 2;
-  bool include_content = 3;
-}
-
-message ListDocumentSectionsReply {
-  Result result = 1;
-  repeated DocumentSection payload = 2;
-}
-
-message GetDocumentSectionRequest {
-  Metadata metadata = 1;
-  string id = 2;
-}
-
-message DocumentSectionReply {
-  Result result = 1;
-  DocumentSection payload = 2;
-}
-
-message CreateDocumentSectionPayload {
-  string type = 1;
-  string description = 2;
-  string storage_type = 3;
-  string confluence_page_id = 4;
-  string confluence_url = 5;
-  string parent_id = 6;
-  string content = 7;
-}
-
-message CreateDocumentSectionRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string document_id = 3;
-  CreateDocumentSectionPayload payload = 4;
-}
-
-message UpdateDocumentSectionPayload {
+message UpdateDocumentMetadataPayload {
   string status = 1;
   string description = 2;
   string confluence_page_id = 3;
   string confluence_url = 4;
+  string storage_type = 5;
+  string storage_ref = 6;
+  string generated_at = 7;
+  string imported_at = 8;
+  string approved_at = 9;
 }
 
-message UpdateDocumentSectionRequest {
+message UpdateDocumentMetadataRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   string id = 3;
-  UpdateDocumentSectionPayload payload = 4;
+  UpdateDocumentMetadataPayload payload = 4;
 }
 
-message UpdateDocumentSectionContentPayload {
+message UpdateDocumentContentPayload {
   string content = 1;
   string status = 2;
   int32 expected_version = 3;
 }
 
-message UpdateDocumentSectionContentRequest {
+message UpdateDocumentContentRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   string id = 3;
-  UpdateDocumentSectionContentPayload payload = 4;
+  UpdateDocumentContentPayload payload = 4;
+}
+
+message DeleteDocumentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
 }
 
 // --- Chat Message ---
