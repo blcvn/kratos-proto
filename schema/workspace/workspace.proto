@@ -456,6 +456,7 @@ message CreateDocumentSectionPayload {
   string confluence_page_id = 4;
   string confluence_url = 5;
   string parent_id = 6;
+  string content = 7;
 }
 
 message CreateDocumentSectionRequest {
