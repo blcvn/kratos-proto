@@ -66,6 +66,12 @@ service WorkspaceService {
       body: "payload"
     };
   }
+  rpc CreateFeatureGroup (CreateFeatureGroupRequest) returns (FeatureReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/projects/{project_id}/feature-groups"
+      body: "payload"
+    };
+  }
   rpc GetFeature (GetFeatureRequest) returns (FeatureReply) {
     option (google.api.http) = {
       get: "/v1/workspace/features/{id}"
@@ -202,6 +208,8 @@ message Feature {
   int32 order = 9;
   string created_at = 10;
   string updated_at = 11;
+  bool is_feature_group = 12;
+  string current_phase = 13;
 }
 
 message Document {
@@ -231,6 +239,8 @@ message DocumentSection {
   string confluence_url = 13;
   string parent_id = 14;
   string approved_at = 15;
+  string task_ref_id = 17;
+  string ref_document_id = 18;
 }
 
 message ChatMessage {
@@ -358,6 +368,7 @@ message CreateFeaturePayload {
   string name = 2;
   string description = 3;
   int32 order = 4;
+  bool is_feature_group = 5;
 }
 
 message CreateFeatureRequest {
@@ -365,6 +376,20 @@ message CreateFeatureRequest {
   Signature signature = 2;
   string project_id = 3;
   CreateFeaturePayload payload = 4;
+}
+
+message CreateFeatureGroupPayload {
+  string parent_id = 1;
+  string name = 2;
+  string description = 3;
+  int32 order = 4;
+}
+
+message CreateFeatureGroupRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  CreateFeatureGroupPayload payload = 4;
 }
 
 message FeatureReply {
@@ -384,6 +409,8 @@ message UpdateFeaturePayload {
   string status = 4;
   string progress = 5;
   int32 order = 6;
+  string current_phase = 7;
+  string current_step = 8;
 }
 
 message UpdateFeatureRequest {
@@ -456,6 +483,8 @@ message CreateDocumentSectionPayload {
   string confluence_page_id = 4;
   string confluence_url = 5;
   string parent_id = 6;
+  string ref_document_id = 7;
+  string task_ref_id = 8;
 }
 
 message CreateDocumentSectionRequest {
@@ -470,6 +499,8 @@ message UpdateDocumentSectionPayload {
   string description = 2;
   string confluence_page_id = 3;
   string confluence_url = 4;
+  string ref_document_id = 5;
+  string task_ref_id = 6;
 }
 
 message UpdateDocumentSectionRequest {
