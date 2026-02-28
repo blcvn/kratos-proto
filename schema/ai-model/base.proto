@@ -82,6 +82,21 @@ message AIModel {
   ModelStatus status = 11;
   google.protobuf.Timestamp created_at = 12;
   google.protobuf.Timestamp updated_at = 13;
+  string fallback_model_id = 14;
+}
+
+message AIModelKey {
+  string id = 1;
+  string model_id = 2;
+  string api_key = 3;
+  string label = 4;
+  int32 priority = 5;
+  bool is_active = 6;
+}
+
+message ModelWithKeys {
+  AIModel model = 1;
+  repeated AIModelKey keys = 2;
 }
 
 message UsageLog {

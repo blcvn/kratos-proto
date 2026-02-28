@@ -17,11 +17,15 @@ service AIModelService {
   rpc ListModels(ListModelsRequest) returns (ListModelsResponse);
   rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse);
   rpc DeleteModel(DeleteModelRequest) returns (ResponseEmpty);
+  rpc AddModelKey(AddModelKeyRequest) returns (AddModelKeyResponse);
+  rpc RemoveModelKey(RemoveModelKeyRequest) returns (ResponseEmpty);
+  rpc ListModelKeys(ListModelKeysRequest) returns (ListModelKeysResponse);
   
   // Internal APIs (gRPC only - no HTTP mapping)
   rpc GetCredentials(GetCredentialsRequest) returns (GetCredentialsResponse);
   rpc LogUsage(LogUsageRequest) returns (ResponseEmpty);
   rpc CheckQuota(CheckQuotaRequest) returns (CheckQuotaResponse);
+  rpc ListModelsWithKeys(ListModelsWithKeysRequest) returns (ListModelsWithKeysResponse);
   
   // Analytics
   rpc GetUsageStats(GetUsageStatsRequest) returns (GetUsageStatsResponse);
@@ -56,6 +60,7 @@ message UpdateModelPayload {
   int64 quota_daily = 4;
   int64 quota_monthly = 5;
   ModelStatus status = 6;
+  optional string fallback_model_id = 7;
 }
 
 message ModelFilter {
@@ -112,6 +117,27 @@ message DeleteModelRequest {
   string id = 3;
 }
 
+message AddModelKeyRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string model_id = 3;
+  string api_key = 4;
+  string label = 5;
+  int32 priority = 6;
+}
+
+message RemoveModelKeyRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string key_id = 3;
+}
+
+message ListModelKeysRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string model_id = 3;
+}
+
 message GetCredentialsRequest {
   Metadata metadata = 1;
   Signature signature = 2;
@@ -128,6 +154,11 @@ message CheckQuotaRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   string model_id = 3;
+}
+
+message ListModelsWithKeysRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
 }
 
 message GetUsageStatsRequest {
@@ -169,6 +200,20 @@ message UpdateModelResponse {
   AIModel model = 4;
 }
 
+message AddModelKeyResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  AIModelKey key = 4;
+}
+
+message ListModelKeysResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated AIModelKey keys = 4;
+}
+
 message GetCredentialsResponse {
   Metadata metadata = 1;
   Signature signature = 2;
@@ -181,6 +226,13 @@ message CheckQuotaResponse {
   Signature signature = 2;
   Result result = 3;
   QuotaStatus quota = 4;
+}
+
+message ListModelsWithKeysResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated ModelWithKeys models = 4;
 }
 
 message GetUsageStatsResponse {
