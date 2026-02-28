@@ -20,10 +20,20 @@ http:
     
     - selector: ai.model.v1.AIModelService.DeleteModel
       delete: /ai/models/{id}
+
+    - selector: ai.model.v1.AIModelService.AddModelKey
+      post: /ai/models/{model_id}/keys
+      body: "*"
+
+    - selector: ai.model.v1.AIModelService.RemoveModelKey
+      delete: /ai/models/keys/{key_id}
+
+    - selector: ai.model.v1.AIModelService.ListModelKeys
+      get: /ai/models/{model_id}/keys
     
     # Analytics API
     - selector: ai.model.v1.AIModelService.GetUsageStats
       get: /ai/models/stats
     
-    # Internal APIs (GetCredentials, LogUsage, CheckQuota) have NO HTTP mapping
+    # Internal APIs (GetCredentials, LogUsage, CheckQuota, ListModelsWithKeys) have NO HTTP mapping
     # They are gRPC-only for internal service-to-service communication
