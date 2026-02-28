@@ -38,12 +38,15 @@ type BAAgentServiceClient interface {
 	GetTierIndex(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
 	GetTierOutline(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
 	GetTierFull(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
-	ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
+	ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*ApproveRequirementResponse, error)
 	ReviewRequirement(ctx context.Context, in *ReviewRequirementRequest, opts ...grpc.CallOption) (*ExecuteTaskResponse, error)
 	GetReviewResult(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*GetTaskResponse, error)
 	SaveEditedDocument(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
 	RegenerateRequirement(ctx context.Context, in *GenerateRequirementRequest, opts ...grpc.CallOption) (*GenerateRequirementResponse, error)
 	GetLineage(ctx context.Context, in *GetDocumentRequest, opts ...grpc.CallOption) (*EmptyResponse, error)
+	// V3 Streaming — Delivery V3
+	StreamEvents(ctx context.Context, in *StreamRequest, opts ...grpc.CallOption) (BAAgentService_StreamEventsClient, error)
+	CancelStream(ctx context.Context, in *CancelStreamRequest, opts ...grpc.CallOption) (*CancelStreamResponse, error)
 }
 
 type bAAgentServiceClient struct {
@@ -208,8 +211,8 @@ func (c *bAAgentServiceClient) GetTierFull(ctx context.Context, in *GetDocumentR
 	return out, nil
 }
 
-func (c *bAAgentServiceClient) ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*EmptyResponse, error) {
-	out := new(EmptyResponse)
+func (c *bAAgentServiceClient) ApproveRequirement(ctx context.Context, in *ApproveRequirementRequest, opts ...grpc.CallOption) (*ApproveRequirementResponse, error) {
+	out := new(ApproveRequirementResponse)
 	err := c.cc.Invoke(ctx, "/baagent.v1.BAAgentService/ApproveRequirement", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -262,6 +265,47 @@ func (c *bAAgentServiceClient) GetLineage(ctx context.Context, in *GetDocumentRe
 	return out, nil
 }
 
+func (c *bAAgentServiceClient) StreamEvents(ctx context.Context, in *StreamRequest, opts ...grpc.CallOption) (BAAgentService_StreamEventsClient, error) {
+	stream, err := c.cc.NewStream(ctx, &BAAgentService_ServiceDesc.Streams[2], "/baagent.v1.BAAgentService/StreamEvents", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &bAAgentServiceStreamEventsClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type BAAgentService_StreamEventsClient interface {
+	Recv() (*StreamEvent, error)
+	grpc.ClientStream
+}
+
+type bAAgentServiceStreamEventsClient struct {
+	grpc.ClientStream
+}
+
+func (x *bAAgentServiceStreamEventsClient) Recv() (*StreamEvent, error) {
+	m := new(StreamEvent)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *bAAgentServiceClient) CancelStream(ctx context.Context, in *CancelStreamRequest, opts ...grpc.CallOption) (*CancelStreamResponse, error) {
+	out := new(CancelStreamResponse)
+	err := c.cc.Invoke(ctx, "/baagent.v1.BAAgentService/CancelStream", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BAAgentServiceServer is the server API for BAAgentService service.
 // All implementations must embed UnimplementedBAAgentServiceServer
 // for forward compatibility
@@ -282,12 +326,15 @@ type BAAgentServiceServer interface {
 	GetTierIndex(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
 	GetTierOutline(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
 	GetTierFull(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error)
-	ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error)
+	ApproveRequirement(context.Context, *ApproveRequirementRequest) (*ApproveRequirementResponse, error)
 	ReviewRequirement(context.Context, *ReviewRequirementRequest) (*ExecuteTaskResponse, error)
 	GetReviewResult(context.Context, *GetTaskRequest) (*GetTaskResponse, error)
 	SaveEditedDocument(context.Context, *GenerateRequirementRequest) (*EmptyResponse, error)
 	RegenerateRequirement(context.Context, *GenerateRequirementRequest) (*GenerateRequirementResponse, error)
 	GetLineage(context.Context, *GetDocumentRequest) (*EmptyResponse, error)
+	// V3 Streaming — Delivery V3
+	StreamEvents(*StreamRequest, BAAgentService_StreamEventsServer) error
+	CancelStream(context.Context, *CancelStreamRequest) (*CancelStreamResponse, error)
 	mustEmbedUnimplementedBAAgentServiceServer()
 }
 
@@ -331,7 +378,7 @@ func (UnimplementedBAAgentServiceServer) GetTierOutline(context.Context, *GetDoc
 func (UnimplementedBAAgentServiceServer) GetTierFull(context.Context, *GetDocumentRequest) (*ExecuteTaskResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTierFull not implemented")
 }
-func (UnimplementedBAAgentServiceServer) ApproveRequirement(context.Context, *ApproveRequirementRequest) (*EmptyResponse, error) {
+func (UnimplementedBAAgentServiceServer) ApproveRequirement(context.Context, *ApproveRequirementRequest) (*ApproveRequirementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ApproveRequirement not implemented")
 }
 func (UnimplementedBAAgentServiceServer) ReviewRequirement(context.Context, *ReviewRequirementRequest) (*ExecuteTaskResponse, error) {
@@ -348,6 +395,12 @@ func (UnimplementedBAAgentServiceServer) RegenerateRequirement(context.Context, 
 }
 func (UnimplementedBAAgentServiceServer) GetLineage(context.Context, *GetDocumentRequest) (*EmptyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLineage not implemented")
+}
+func (UnimplementedBAAgentServiceServer) StreamEvents(*StreamRequest, BAAgentService_StreamEventsServer) error {
+	return status.Errorf(codes.Unimplemented, "method StreamEvents not implemented")
+}
+func (UnimplementedBAAgentServiceServer) CancelStream(context.Context, *CancelStreamRequest) (*CancelStreamResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelStream not implemented")
 }
 func (UnimplementedBAAgentServiceServer) mustEmbedUnimplementedBAAgentServiceServer() {}
 
@@ -692,6 +745,45 @@ func _BAAgentService_GetLineage_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BAAgentService_StreamEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(BAAgentServiceServer).StreamEvents(m, &bAAgentServiceStreamEventsServer{stream})
+}
+
+type BAAgentService_StreamEventsServer interface {
+	Send(*StreamEvent) error
+	grpc.ServerStream
+}
+
+type bAAgentServiceStreamEventsServer struct {
+	grpc.ServerStream
+}
+
+func (x *bAAgentServiceStreamEventsServer) Send(m *StreamEvent) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _BAAgentService_CancelStream_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelStreamRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BAAgentServiceServer).CancelStream(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/baagent.v1.BAAgentService/CancelStream",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BAAgentServiceServer).CancelStream(ctx, req.(*CancelStreamRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BAAgentService_ServiceDesc is the grpc.ServiceDesc for BAAgentService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -763,6 +855,10 @@ var BAAgentService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetLineage",
 			Handler:    _BAAgentService_GetLineage_Handler,
 		},
+		{
+			MethodName: "CancelStream",
+			Handler:    _BAAgentService_CancelStream_Handler,
+		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
@@ -773,6 +869,11 @@ var BAAgentService_ServiceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "StreamExecuteTask",
 			Handler:       _BAAgentService_StreamExecuteTask_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamEvents",
+			Handler:       _BAAgentService_StreamEvents_Handler,
 			ServerStreams: true,
 		},
 	},
