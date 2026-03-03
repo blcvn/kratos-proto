@@ -40,6 +40,7 @@ const (
 	WorkspaceService_UpdateDocumentSection_FullMethodName            = "/workspace.v1.WorkspaceService/UpdateDocumentSection"
 	WorkspaceService_UpdateDocumentSectionContent_FullMethodName     = "/workspace.v1.WorkspaceService/UpdateDocumentSectionContent"
 	WorkspaceService_CreateDocumentSectionVersion_FullMethodName     = "/workspace.v1.WorkspaceService/CreateDocumentSectionVersion"
+	WorkspaceService_UpsertDocumentAndSection_FullMethodName         = "/workspace.v1.WorkspaceService/UpsertDocumentAndSection"
 	WorkspaceService_ListDocumentSectionVersions_FullMethodName      = "/workspace.v1.WorkspaceService/ListDocumentSectionVersions"
 	WorkspaceService_GetCurrentDocumentSectionVersion_FullMethodName = "/workspace.v1.WorkspaceService/GetCurrentDocumentSectionVersion"
 	WorkspaceService_SetCurrentDocumentSectionVersion_FullMethodName = "/workspace.v1.WorkspaceService/SetCurrentDocumentSectionVersion"
@@ -85,6 +86,7 @@ type WorkspaceServiceClient interface {
 	UpdateDocumentSectionContent(ctx context.Context, in *UpdateDocumentSectionContentRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
 	// Section Versioning APIs
 	CreateDocumentSectionVersion(ctx context.Context, in *CreateDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
+	UpsertDocumentAndSection(ctx context.Context, in *UpsertDocumentAndSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
 	ListDocumentSectionVersions(ctx context.Context, in *ListDocumentSectionVersionsRequest, opts ...grpc.CallOption) (*ListDocumentSectionsReply, error)
 	GetCurrentDocumentSectionVersion(ctx context.Context, in *GetCurrentDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
 	SetCurrentDocumentSectionVersion(ctx context.Context, in *SetCurrentDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error)
@@ -316,6 +318,16 @@ func (c *workspaceServiceClient) CreateDocumentSectionVersion(ctx context.Contex
 	return out, nil
 }
 
+func (c *workspaceServiceClient) UpsertDocumentAndSection(ctx context.Context, in *UpsertDocumentAndSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_UpsertDocumentAndSection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workspaceServiceClient) ListDocumentSectionVersions(ctx context.Context, in *ListDocumentSectionVersionsRequest, opts ...grpc.CallOption) (*ListDocumentSectionsReply, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListDocumentSectionsReply)
@@ -440,6 +452,7 @@ type WorkspaceServiceServer interface {
 	UpdateDocumentSectionContent(context.Context, *UpdateDocumentSectionContentRequest) (*DocumentSectionReply, error)
 	// Section Versioning APIs
 	CreateDocumentSectionVersion(context.Context, *CreateDocumentSectionVersionRequest) (*DocumentSectionReply, error)
+	UpsertDocumentAndSection(context.Context, *UpsertDocumentAndSectionRequest) (*DocumentSectionReply, error)
 	ListDocumentSectionVersions(context.Context, *ListDocumentSectionVersionsRequest) (*ListDocumentSectionsReply, error)
 	GetCurrentDocumentSectionVersion(context.Context, *GetCurrentDocumentSectionVersionRequest) (*DocumentSectionReply, error)
 	SetCurrentDocumentSectionVersion(context.Context, *SetCurrentDocumentSectionVersionRequest) (*DocumentSectionReply, error)
@@ -523,6 +536,9 @@ func (UnimplementedWorkspaceServiceServer) UpdateDocumentSectionContent(context.
 }
 func (UnimplementedWorkspaceServiceServer) CreateDocumentSectionVersion(context.Context, *CreateDocumentSectionVersionRequest) (*DocumentSectionReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDocumentSectionVersion not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) UpsertDocumentAndSection(context.Context, *UpsertDocumentAndSectionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertDocumentAndSection not implemented")
 }
 func (UnimplementedWorkspaceServiceServer) ListDocumentSectionVersions(context.Context, *ListDocumentSectionVersionsRequest) (*ListDocumentSectionsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDocumentSectionVersions not implemented")
@@ -950,6 +966,24 @@ func _WorkspaceService_CreateDocumentSectionVersion_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkspaceService_UpsertDocumentAndSection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertDocumentAndSectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServiceServer).UpsertDocumentAndSection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkspaceService_UpsertDocumentAndSection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServiceServer).UpsertDocumentAndSection(ctx, req.(*UpsertDocumentAndSectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WorkspaceService_ListDocumentSectionVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListDocumentSectionVersionsRequest)
 	if err := dec(in); err != nil {
@@ -1202,6 +1236,10 @@ var WorkspaceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateDocumentSectionVersion",
 			Handler:    _WorkspaceService_CreateDocumentSectionVersion_Handler,
+		},
+		{
+			MethodName: "UpsertDocumentAndSection",
+			Handler:    _WorkspaceService_UpsertDocumentAndSection_Handler,
 		},
 		{
 			MethodName: "ListDocumentSectionVersions",

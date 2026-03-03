@@ -3472,6 +3472,158 @@ func (x *CreateDocumentSectionVersionRequest) GetPayload() *CreateDocumentSectio
 	return nil
 }
 
+type UpsertDocumentAndSectionPayload struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DocType       string                 `protobuf:"bytes,1,opt,name=doc_type,json=docType,proto3" json:"doc_type,omitempty"`
+	SectionType   string                 `protobuf:"bytes,2,opt,name=section_type,json=sectionType,proto3" json:"section_type,omitempty"`
+	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	DocumentId    string                 `protobuf:"bytes,4,opt,name=document_id,json=documentId,proto3" json:"document_id,omitempty"` // Optional: client-assigned document ID
+	SectionId     string                 `protobuf:"bytes,5,opt,name=section_id,json=sectionId,proto3" json:"section_id,omitempty"`    // Optional: client-assigned section ID
+	MetadataJson  string                 `protobuf:"bytes,6,opt,name=metadata_json,json=metadataJson,proto3" json:"metadata_json,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertDocumentAndSectionPayload) Reset() {
+	*x = UpsertDocumentAndSectionPayload{}
+	mi := &file_workspace_workspace_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertDocumentAndSectionPayload) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertDocumentAndSectionPayload) ProtoMessage() {}
+
+func (x *UpsertDocumentAndSectionPayload) ProtoReflect() protoreflect.Message {
+	mi := &file_workspace_workspace_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertDocumentAndSectionPayload.ProtoReflect.Descriptor instead.
+func (*UpsertDocumentAndSectionPayload) Descriptor() ([]byte, []int) {
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetDocType() string {
+	if x != nil {
+		return x.DocType
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetSectionType() string {
+	if x != nil {
+		return x.SectionType
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetDocumentId() string {
+	if x != nil {
+		return x.DocumentId
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetSectionId() string {
+	if x != nil {
+		return x.SectionId
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionPayload) GetMetadataJson() string {
+	if x != nil {
+		return x.MetadataJson
+	}
+	return ""
+}
+
+type UpsertDocumentAndSectionRequest struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Metadata      *Metadata                        `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature                       `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	FeatureId     string                           `protobuf:"bytes,3,opt,name=feature_id,json=featureId,proto3" json:"feature_id,omitempty"`
+	Payload       *UpsertDocumentAndSectionPayload `protobuf:"bytes,4,opt,name=payload,proto3" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertDocumentAndSectionRequest) Reset() {
+	*x = UpsertDocumentAndSectionRequest{}
+	mi := &file_workspace_workspace_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertDocumentAndSectionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertDocumentAndSectionRequest) ProtoMessage() {}
+
+func (x *UpsertDocumentAndSectionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_workspace_workspace_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertDocumentAndSectionRequest.ProtoReflect.Descriptor instead.
+func (*UpsertDocumentAndSectionRequest) Descriptor() ([]byte, []int) {
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *UpsertDocumentAndSectionRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *UpsertDocumentAndSectionRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *UpsertDocumentAndSectionRequest) GetFeatureId() string {
+	if x != nil {
+		return x.FeatureId
+	}
+	return ""
+}
+
+func (x *UpsertDocumentAndSectionRequest) GetPayload() *UpsertDocumentAndSectionPayload {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
 type ListDocumentSectionVersionsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -3483,7 +3635,7 @@ type ListDocumentSectionVersionsRequest struct {
 
 func (x *ListDocumentSectionVersionsRequest) Reset() {
 	*x = ListDocumentSectionVersionsRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[50]
+	mi := &file_workspace_workspace_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3495,7 +3647,7 @@ func (x *ListDocumentSectionVersionsRequest) String() string {
 func (*ListDocumentSectionVersionsRequest) ProtoMessage() {}
 
 func (x *ListDocumentSectionVersionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[50]
+	mi := &file_workspace_workspace_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3508,7 +3660,7 @@ func (x *ListDocumentSectionVersionsRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ListDocumentSectionVersionsRequest.ProtoReflect.Descriptor instead.
 func (*ListDocumentSectionVersionsRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{50}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *ListDocumentSectionVersionsRequest) GetMetadata() *Metadata {
@@ -3543,7 +3695,7 @@ type GetCurrentDocumentSectionVersionRequest struct {
 
 func (x *GetCurrentDocumentSectionVersionRequest) Reset() {
 	*x = GetCurrentDocumentSectionVersionRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[51]
+	mi := &file_workspace_workspace_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3555,7 +3707,7 @@ func (x *GetCurrentDocumentSectionVersionRequest) String() string {
 func (*GetCurrentDocumentSectionVersionRequest) ProtoMessage() {}
 
 func (x *GetCurrentDocumentSectionVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[51]
+	mi := &file_workspace_workspace_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3568,7 +3720,7 @@ func (x *GetCurrentDocumentSectionVersionRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use GetCurrentDocumentSectionVersionRequest.ProtoReflect.Descriptor instead.
 func (*GetCurrentDocumentSectionVersionRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{51}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *GetCurrentDocumentSectionVersionRequest) GetMetadata() *Metadata {
@@ -3601,7 +3753,7 @@ type SetCurrentDocumentSectionVersionPayload struct {
 
 func (x *SetCurrentDocumentSectionVersionPayload) Reset() {
 	*x = SetCurrentDocumentSectionVersionPayload{}
-	mi := &file_workspace_workspace_proto_msgTypes[52]
+	mi := &file_workspace_workspace_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3613,7 +3765,7 @@ func (x *SetCurrentDocumentSectionVersionPayload) String() string {
 func (*SetCurrentDocumentSectionVersionPayload) ProtoMessage() {}
 
 func (x *SetCurrentDocumentSectionVersionPayload) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[52]
+	mi := &file_workspace_workspace_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3626,7 +3778,7 @@ func (x *SetCurrentDocumentSectionVersionPayload) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use SetCurrentDocumentSectionVersionPayload.ProtoReflect.Descriptor instead.
 func (*SetCurrentDocumentSectionVersionPayload) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{52}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *SetCurrentDocumentSectionVersionPayload) GetSectionId() string {
@@ -3648,7 +3800,7 @@ type SetCurrentDocumentSectionVersionRequest struct {
 
 func (x *SetCurrentDocumentSectionVersionRequest) Reset() {
 	*x = SetCurrentDocumentSectionVersionRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[53]
+	mi := &file_workspace_workspace_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3660,7 +3812,7 @@ func (x *SetCurrentDocumentSectionVersionRequest) String() string {
 func (*SetCurrentDocumentSectionVersionRequest) ProtoMessage() {}
 
 func (x *SetCurrentDocumentSectionVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[53]
+	mi := &file_workspace_workspace_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3673,7 +3825,7 @@ func (x *SetCurrentDocumentSectionVersionRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use SetCurrentDocumentSectionVersionRequest.ProtoReflect.Descriptor instead.
 func (*SetCurrentDocumentSectionVersionRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{53}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *SetCurrentDocumentSectionVersionRequest) GetMetadata() *Metadata {
@@ -3717,7 +3869,7 @@ type ListChatMessagesRequest struct {
 
 func (x *ListChatMessagesRequest) Reset() {
 	*x = ListChatMessagesRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[54]
+	mi := &file_workspace_workspace_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3729,7 +3881,7 @@ func (x *ListChatMessagesRequest) String() string {
 func (*ListChatMessagesRequest) ProtoMessage() {}
 
 func (x *ListChatMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[54]
+	mi := &file_workspace_workspace_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3742,7 +3894,7 @@ func (x *ListChatMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListChatMessagesRequest.ProtoReflect.Descriptor instead.
 func (*ListChatMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{54}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *ListChatMessagesRequest) GetMetadata() *Metadata {
@@ -3783,7 +3935,7 @@ type ListChatMessagesReply struct {
 
 func (x *ListChatMessagesReply) Reset() {
 	*x = ListChatMessagesReply{}
-	mi := &file_workspace_workspace_proto_msgTypes[55]
+	mi := &file_workspace_workspace_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3795,7 +3947,7 @@ func (x *ListChatMessagesReply) String() string {
 func (*ListChatMessagesReply) ProtoMessage() {}
 
 func (x *ListChatMessagesReply) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[55]
+	mi := &file_workspace_workspace_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3808,7 +3960,7 @@ func (x *ListChatMessagesReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListChatMessagesReply.ProtoReflect.Descriptor instead.
 func (*ListChatMessagesReply) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{55}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ListChatMessagesReply) GetResult() *Result {
@@ -3837,7 +3989,7 @@ type AppendChatMessagePayload struct {
 
 func (x *AppendChatMessagePayload) Reset() {
 	*x = AppendChatMessagePayload{}
-	mi := &file_workspace_workspace_proto_msgTypes[56]
+	mi := &file_workspace_workspace_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3849,7 +4001,7 @@ func (x *AppendChatMessagePayload) String() string {
 func (*AppendChatMessagePayload) ProtoMessage() {}
 
 func (x *AppendChatMessagePayload) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[56]
+	mi := &file_workspace_workspace_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3862,7 +4014,7 @@ func (x *AppendChatMessagePayload) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppendChatMessagePayload.ProtoReflect.Descriptor instead.
 func (*AppendChatMessagePayload) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{56}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *AppendChatMessagePayload) GetSessionId() string {
@@ -3905,7 +4057,7 @@ type AppendChatMessageRequest struct {
 
 func (x *AppendChatMessageRequest) Reset() {
 	*x = AppendChatMessageRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[57]
+	mi := &file_workspace_workspace_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3917,7 +4069,7 @@ func (x *AppendChatMessageRequest) String() string {
 func (*AppendChatMessageRequest) ProtoMessage() {}
 
 func (x *AppendChatMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[57]
+	mi := &file_workspace_workspace_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3930,7 +4082,7 @@ func (x *AppendChatMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppendChatMessageRequest.ProtoReflect.Descriptor instead.
 func (*AppendChatMessageRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{57}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *AppendChatMessageRequest) GetMetadata() *Metadata {
@@ -3971,7 +4123,7 @@ type ChatMessageReply struct {
 
 func (x *ChatMessageReply) Reset() {
 	*x = ChatMessageReply{}
-	mi := &file_workspace_workspace_proto_msgTypes[58]
+	mi := &file_workspace_workspace_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3983,7 +4135,7 @@ func (x *ChatMessageReply) String() string {
 func (*ChatMessageReply) ProtoMessage() {}
 
 func (x *ChatMessageReply) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[58]
+	mi := &file_workspace_workspace_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3996,7 +4148,7 @@ func (x *ChatMessageReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatMessageReply.ProtoReflect.Descriptor instead.
 func (*ChatMessageReply) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{58}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *ChatMessageReply) GetResult() *Result {
@@ -4022,7 +4174,7 @@ type CreateSessionPayload struct {
 
 func (x *CreateSessionPayload) Reset() {
 	*x = CreateSessionPayload{}
-	mi := &file_workspace_workspace_proto_msgTypes[59]
+	mi := &file_workspace_workspace_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4034,7 +4186,7 @@ func (x *CreateSessionPayload) String() string {
 func (*CreateSessionPayload) ProtoMessage() {}
 
 func (x *CreateSessionPayload) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[59]
+	mi := &file_workspace_workspace_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4047,7 +4199,7 @@ func (x *CreateSessionPayload) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSessionPayload.ProtoReflect.Descriptor instead.
 func (*CreateSessionPayload) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{59}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{61}
 }
 
 type CreateSessionRequest struct {
@@ -4062,7 +4214,7 @@ type CreateSessionRequest struct {
 
 func (x *CreateSessionRequest) Reset() {
 	*x = CreateSessionRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[60]
+	mi := &file_workspace_workspace_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4074,7 +4226,7 @@ func (x *CreateSessionRequest) String() string {
 func (*CreateSessionRequest) ProtoMessage() {}
 
 func (x *CreateSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[60]
+	mi := &file_workspace_workspace_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4087,7 +4239,7 @@ func (x *CreateSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSessionRequest.ProtoReflect.Descriptor instead.
 func (*CreateSessionRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{60}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *CreateSessionRequest) GetMetadata() *Metadata {
@@ -4128,7 +4280,7 @@ type SessionReply struct {
 
 func (x *SessionReply) Reset() {
 	*x = SessionReply{}
-	mi := &file_workspace_workspace_proto_msgTypes[61]
+	mi := &file_workspace_workspace_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4140,7 +4292,7 @@ func (x *SessionReply) String() string {
 func (*SessionReply) ProtoMessage() {}
 
 func (x *SessionReply) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[61]
+	mi := &file_workspace_workspace_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4153,7 +4305,7 @@ func (x *SessionReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SessionReply.ProtoReflect.Descriptor instead.
 func (*SessionReply) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{61}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *SessionReply) GetResult() *Result {
@@ -4179,7 +4331,7 @@ type UpdateSessionContextPayload struct {
 
 func (x *UpdateSessionContextPayload) Reset() {
 	*x = UpdateSessionContextPayload{}
-	mi := &file_workspace_workspace_proto_msgTypes[62]
+	mi := &file_workspace_workspace_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4191,7 +4343,7 @@ func (x *UpdateSessionContextPayload) String() string {
 func (*UpdateSessionContextPayload) ProtoMessage() {}
 
 func (x *UpdateSessionContextPayload) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[62]
+	mi := &file_workspace_workspace_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4204,7 +4356,7 @@ func (x *UpdateSessionContextPayload) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSessionContextPayload.ProtoReflect.Descriptor instead.
 func (*UpdateSessionContextPayload) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{62}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *UpdateSessionContextPayload) GetCurrentFeatureId() string {
@@ -4226,7 +4378,7 @@ type UpdateSessionContextRequest struct {
 
 func (x *UpdateSessionContextRequest) Reset() {
 	*x = UpdateSessionContextRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[63]
+	mi := &file_workspace_workspace_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4238,7 +4390,7 @@ func (x *UpdateSessionContextRequest) String() string {
 func (*UpdateSessionContextRequest) ProtoMessage() {}
 
 func (x *UpdateSessionContextRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[63]
+	mi := &file_workspace_workspace_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4251,7 +4403,7 @@ func (x *UpdateSessionContextRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSessionContextRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSessionContextRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{63}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *UpdateSessionContextRequest) GetMetadata() *Metadata {
@@ -4292,7 +4444,7 @@ type GetSessionRequest struct {
 
 func (x *GetSessionRequest) Reset() {
 	*x = GetSessionRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[64]
+	mi := &file_workspace_workspace_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4304,7 +4456,7 @@ func (x *GetSessionRequest) String() string {
 func (*GetSessionRequest) ProtoMessage() {}
 
 func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[64]
+	mi := &file_workspace_workspace_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4317,7 +4469,7 @@ func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSessionRequest.ProtoReflect.Descriptor instead.
 func (*GetSessionRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{64}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *GetSessionRequest) GetMetadata() *Metadata {
@@ -4346,7 +4498,7 @@ type ListProjectSessionsRequest struct {
 
 func (x *ListProjectSessionsRequest) Reset() {
 	*x = ListProjectSessionsRequest{}
-	mi := &file_workspace_workspace_proto_msgTypes[65]
+	mi := &file_workspace_workspace_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4358,7 +4510,7 @@ func (x *ListProjectSessionsRequest) String() string {
 func (*ListProjectSessionsRequest) ProtoMessage() {}
 
 func (x *ListProjectSessionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[65]
+	mi := &file_workspace_workspace_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4371,7 +4523,7 @@ func (x *ListProjectSessionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListProjectSessionsRequest.ProtoReflect.Descriptor instead.
 func (*ListProjectSessionsRequest) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{65}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *ListProjectSessionsRequest) GetMetadata() *Metadata {
@@ -4412,7 +4564,7 @@ type ListSessionsReply struct {
 
 func (x *ListSessionsReply) Reset() {
 	*x = ListSessionsReply{}
-	mi := &file_workspace_workspace_proto_msgTypes[66]
+	mi := &file_workspace_workspace_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4424,7 +4576,7 @@ func (x *ListSessionsReply) String() string {
 func (*ListSessionsReply) ProtoMessage() {}
 
 func (x *ListSessionsReply) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_workspace_proto_msgTypes[66]
+	mi := &file_workspace_workspace_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4437,7 +4589,7 @@ func (x *ListSessionsReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSessionsReply.ProtoReflect.Descriptor instead.
 func (*ListSessionsReply) Descriptor() ([]byte, []int) {
-	return file_workspace_workspace_proto_rawDescGZIP(), []int{66}
+	return file_workspace_workspace_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *ListSessionsReply) GetResult() *Result {
@@ -4749,7 +4901,22 @@ const file_workspace_workspace_proto_rawDesc = "" +
 	"\tsignature\x18\x02 \x01(\v2\x17.workspace.v1.SignatureR\tsignature\x12\x1f\n" +
 	"\vdocument_id\x18\x03 \x01(\tR\n" +
 	"documentId\x12K\n" +
-	"\apayload\x18\x04 \x01(\v21.workspace.v1.CreateDocumentSectionVersionPayloadR\apayload\"\x8d\x01\n" +
+	"\apayload\x18\x04 \x01(\v21.workspace.v1.CreateDocumentSectionVersionPayloadR\apayload\"\xde\x01\n" +
+	"\x1fUpsertDocumentAndSectionPayload\x12\x19\n" +
+	"\bdoc_type\x18\x01 \x01(\tR\adocType\x12!\n" +
+	"\fsection_type\x18\x02 \x01(\tR\vsectionType\x12\x18\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\x12\x1f\n" +
+	"\vdocument_id\x18\x04 \x01(\tR\n" +
+	"documentId\x12\x1d\n" +
+	"\n" +
+	"section_id\x18\x05 \x01(\tR\tsectionId\x12#\n" +
+	"\rmetadata_json\x18\x06 \x01(\tR\fmetadataJson\"\xf4\x01\n" +
+	"\x1fUpsertDocumentAndSectionRequest\x122\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x16.workspace.v1.MetadataR\bmetadata\x125\n" +
+	"\tsignature\x18\x02 \x01(\v2\x17.workspace.v1.SignatureR\tsignature\x12\x1d\n" +
+	"\n" +
+	"feature_id\x18\x03 \x01(\tR\tfeatureId\x12G\n" +
+	"\apayload\x18\x04 \x01(\v2-.workspace.v1.UpsertDocumentAndSectionPayloadR\apayload\"\x8d\x01\n" +
 	"\"ListDocumentSectionVersionsRequest\x122\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x16.workspace.v1.MetadataR\bmetadata\x12\x1f\n" +
 	"\vdocument_id\x18\x02 \x01(\tR\n" +
@@ -4821,7 +4988,7 @@ const file_workspace_workspace_proto_rawDesc = "" +
 	"\x06offset\x18\x04 \x01(\x05R\x06offset\"r\n" +
 	"\x11ListSessionsReply\x12,\n" +
 	"\x06result\x18\x01 \x01(\v2\x14.workspace.v1.ResultR\x06result\x12/\n" +
-	"\apayload\x18\x02 \x03(\v2\x15.workspace.v1.SessionR\apayload2\xff\"\n" +
+	"\apayload\x18\x02 \x03(\v2\x15.workspace.v1.SessionR\apayload2\xb5$\n" +
 	"\x10WorkspaceService\x12x\n" +
 	"\rCreateProject\x12\".workspace.v1.CreateProjectRequest\x1a\x1a.workspace.v1.ProjectReply\"'\x82\xd3\xe4\x93\x02!:\apayload\"\x16/v1/workspace/projects\x12r\n" +
 	"\fListProjects\x12!.workspace.v1.ListProjectsRequest\x1a\x1f.workspace.v1.ListProjectsReply\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/workspace/projects\x12n\n" +
@@ -4845,7 +5012,8 @@ const file_workspace_workspace_proto_rawDesc = "" +
 	"\x15CreateDocumentSection\x12*.workspace.v1.CreateDocumentSectionRequest\x1a\".workspace.v1.DocumentSectionReply\"?\x82\xd3\xe4\x93\x029:\apayload\"./v1/workspace/documents/{document_id}/sections\x12\x9e\x01\n" +
 	"\x15UpdateDocumentSection\x12*.workspace.v1.UpdateDocumentSectionRequest\x1a\".workspace.v1.DocumentSectionReply\"5\x82\xd3\xe4\x93\x02/:\apayload\x1a$/v1/workspace/document-sections/{id}\x12\xb4\x01\n" +
 	"\x1cUpdateDocumentSectionContent\x121.workspace.v1.UpdateDocumentSectionContentRequest\x1a\".workspace.v1.DocumentSectionReply\"=\x82\xd3\xe4\x93\x027:\apayload\x1a,/v1/workspace/document-sections/{id}/content\x12\xbf\x01\n" +
-	"\x1cCreateDocumentSectionVersion\x121.workspace.v1.CreateDocumentSectionVersionRequest\x1a\".workspace.v1.DocumentSectionReply\"H\x82\xd3\xe4\x93\x02B:\apayload\"7/v1/workspace/documents/{document_id}/sections/versions\x12\xb9\x01\n" +
+	"\x1cCreateDocumentSectionVersion\x121.workspace.v1.CreateDocumentSectionVersionRequest\x1a\".workspace.v1.DocumentSectionReply\"H\x82\xd3\xe4\x93\x02B:\apayload\"7/v1/workspace/documents/{document_id}/sections/versions\x12\xb3\x01\n" +
+	"\x18UpsertDocumentAndSection\x12-.workspace.v1.UpsertDocumentAndSectionRequest\x1a\".workspace.v1.DocumentSectionReply\"D\x82\xd3\xe4\x93\x02>:\apayload\"3/v1/workspace/features/{feature_id}/upsert-document\x12\xb9\x01\n" +
 	"\x1bListDocumentSectionVersions\x120.workspace.v1.ListDocumentSectionVersionsRequest\x1a'.workspace.v1.ListDocumentSectionsReply\"?\x82\xd3\xe4\x93\x029\x127/v1/workspace/documents/{document_id}/sections/versions\x12\xbd\x01\n" +
 	" GetCurrentDocumentSectionVersion\x125.workspace.v1.GetCurrentDocumentSectionVersionRequest\x1a\".workspace.v1.DocumentSectionReply\">\x82\xd3\xe4\x93\x028\x126/v1/workspace/documents/{document_id}/sections/current\x12\xc6\x01\n" +
 	" SetCurrentDocumentSectionVersion\x125.workspace.v1.SetCurrentDocumentSectionVersionRequest\x1a\".workspace.v1.DocumentSectionReply\"G\x82\xd3\xe4\x93\x02A:\apayload\x1a6/v1/workspace/documents/{document_id}/sections/current\x12\x90\x01\n" +
@@ -4870,7 +5038,7 @@ func file_workspace_workspace_proto_rawDescGZIP() []byte {
 	return file_workspace_workspace_proto_rawDescData
 }
 
-var file_workspace_workspace_proto_msgTypes = make([]protoimpl.MessageInfo, 67)
+var file_workspace_workspace_proto_msgTypes = make([]protoimpl.MessageInfo, 69)
 var file_workspace_workspace_proto_goTypes = []any{
 	(*ConfluenceConfig)(nil),                        // 0: workspace.v1.ConfluenceConfig
 	(*Project)(nil),                                 // 1: workspace.v1.Project
@@ -4922,186 +5090,193 @@ var file_workspace_workspace_proto_goTypes = []any{
 	(*UpdateDocumentSectionContentRequest)(nil),     // 47: workspace.v1.UpdateDocumentSectionContentRequest
 	(*CreateDocumentSectionVersionPayload)(nil),     // 48: workspace.v1.CreateDocumentSectionVersionPayload
 	(*CreateDocumentSectionVersionRequest)(nil),     // 49: workspace.v1.CreateDocumentSectionVersionRequest
-	(*ListDocumentSectionVersionsRequest)(nil),      // 50: workspace.v1.ListDocumentSectionVersionsRequest
-	(*GetCurrentDocumentSectionVersionRequest)(nil), // 51: workspace.v1.GetCurrentDocumentSectionVersionRequest
-	(*SetCurrentDocumentSectionVersionPayload)(nil), // 52: workspace.v1.SetCurrentDocumentSectionVersionPayload
-	(*SetCurrentDocumentSectionVersionRequest)(nil), // 53: workspace.v1.SetCurrentDocumentSectionVersionRequest
-	(*ListChatMessagesRequest)(nil),                 // 54: workspace.v1.ListChatMessagesRequest
-	(*ListChatMessagesReply)(nil),                   // 55: workspace.v1.ListChatMessagesReply
-	(*AppendChatMessagePayload)(nil),                // 56: workspace.v1.AppendChatMessagePayload
-	(*AppendChatMessageRequest)(nil),                // 57: workspace.v1.AppendChatMessageRequest
-	(*ChatMessageReply)(nil),                        // 58: workspace.v1.ChatMessageReply
-	(*CreateSessionPayload)(nil),                    // 59: workspace.v1.CreateSessionPayload
-	(*CreateSessionRequest)(nil),                    // 60: workspace.v1.CreateSessionRequest
-	(*SessionReply)(nil),                            // 61: workspace.v1.SessionReply
-	(*UpdateSessionContextPayload)(nil),             // 62: workspace.v1.UpdateSessionContextPayload
-	(*UpdateSessionContextRequest)(nil),             // 63: workspace.v1.UpdateSessionContextRequest
-	(*GetSessionRequest)(nil),                       // 64: workspace.v1.GetSessionRequest
-	(*ListProjectSessionsRequest)(nil),              // 65: workspace.v1.ListProjectSessionsRequest
-	(*ListSessionsReply)(nil),                       // 66: workspace.v1.ListSessionsReply
-	(*Result)(nil),                                  // 67: workspace.v1.Result
-	(*Metadata)(nil),                                // 68: workspace.v1.Metadata
-	(*Signature)(nil),                               // 69: workspace.v1.Signature
+	(*UpsertDocumentAndSectionPayload)(nil),         // 50: workspace.v1.UpsertDocumentAndSectionPayload
+	(*UpsertDocumentAndSectionRequest)(nil),         // 51: workspace.v1.UpsertDocumentAndSectionRequest
+	(*ListDocumentSectionVersionsRequest)(nil),      // 52: workspace.v1.ListDocumentSectionVersionsRequest
+	(*GetCurrentDocumentSectionVersionRequest)(nil), // 53: workspace.v1.GetCurrentDocumentSectionVersionRequest
+	(*SetCurrentDocumentSectionVersionPayload)(nil), // 54: workspace.v1.SetCurrentDocumentSectionVersionPayload
+	(*SetCurrentDocumentSectionVersionRequest)(nil), // 55: workspace.v1.SetCurrentDocumentSectionVersionRequest
+	(*ListChatMessagesRequest)(nil),                 // 56: workspace.v1.ListChatMessagesRequest
+	(*ListChatMessagesReply)(nil),                   // 57: workspace.v1.ListChatMessagesReply
+	(*AppendChatMessagePayload)(nil),                // 58: workspace.v1.AppendChatMessagePayload
+	(*AppendChatMessageRequest)(nil),                // 59: workspace.v1.AppendChatMessageRequest
+	(*ChatMessageReply)(nil),                        // 60: workspace.v1.ChatMessageReply
+	(*CreateSessionPayload)(nil),                    // 61: workspace.v1.CreateSessionPayload
+	(*CreateSessionRequest)(nil),                    // 62: workspace.v1.CreateSessionRequest
+	(*SessionReply)(nil),                            // 63: workspace.v1.SessionReply
+	(*UpdateSessionContextPayload)(nil),             // 64: workspace.v1.UpdateSessionContextPayload
+	(*UpdateSessionContextRequest)(nil),             // 65: workspace.v1.UpdateSessionContextRequest
+	(*GetSessionRequest)(nil),                       // 66: workspace.v1.GetSessionRequest
+	(*ListProjectSessionsRequest)(nil),              // 67: workspace.v1.ListProjectSessionsRequest
+	(*ListSessionsReply)(nil),                       // 68: workspace.v1.ListSessionsReply
+	(*Result)(nil),                                  // 69: workspace.v1.Result
+	(*Metadata)(nil),                                // 70: workspace.v1.Metadata
+	(*Signature)(nil),                               // 71: workspace.v1.Signature
 }
 var file_workspace_workspace_proto_depIdxs = []int32{
 	0,   // 0: workspace.v1.Project.confluence_config:type_name -> workspace.v1.ConfluenceConfig
-	67,  // 1: workspace.v1.EmptyReply.result:type_name -> workspace.v1.Result
+	69,  // 1: workspace.v1.EmptyReply.result:type_name -> workspace.v1.Result
 	0,   // 2: workspace.v1.CreateProjectPayload.confluence_config:type_name -> workspace.v1.ConfluenceConfig
-	68,  // 3: workspace.v1.CreateProjectRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 4: workspace.v1.CreateProjectRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 3: workspace.v1.CreateProjectRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 4: workspace.v1.CreateProjectRequest.signature:type_name -> workspace.v1.Signature
 	9,   // 5: workspace.v1.CreateProjectRequest.payload:type_name -> workspace.v1.CreateProjectPayload
-	68,  // 6: workspace.v1.ListProjectsRequest.metadata:type_name -> workspace.v1.Metadata
-	68,  // 7: workspace.v1.GetProjectRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 6: workspace.v1.ListProjectsRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 7: workspace.v1.GetProjectRequest.metadata:type_name -> workspace.v1.Metadata
 	0,   // 8: workspace.v1.UpdateProjectPayload.confluence_config:type_name -> workspace.v1.ConfluenceConfig
-	68,  // 9: workspace.v1.UpdateProjectRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 10: workspace.v1.UpdateProjectRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 9: workspace.v1.UpdateProjectRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 10: workspace.v1.UpdateProjectRequest.signature:type_name -> workspace.v1.Signature
 	13,  // 11: workspace.v1.UpdateProjectRequest.payload:type_name -> workspace.v1.UpdateProjectPayload
-	68,  // 12: workspace.v1.DeleteProjectRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 13: workspace.v1.DeleteProjectRequest.signature:type_name -> workspace.v1.Signature
-	67,  // 14: workspace.v1.ProjectReply.result:type_name -> workspace.v1.Result
+	70,  // 12: workspace.v1.DeleteProjectRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 13: workspace.v1.DeleteProjectRequest.signature:type_name -> workspace.v1.Signature
+	69,  // 14: workspace.v1.ProjectReply.result:type_name -> workspace.v1.Result
 	1,   // 15: workspace.v1.ProjectReply.payload:type_name -> workspace.v1.Project
-	67,  // 16: workspace.v1.ListProjectsReply.result:type_name -> workspace.v1.Result
+	69,  // 16: workspace.v1.ListProjectsReply.result:type_name -> workspace.v1.Result
 	1,   // 17: workspace.v1.ListProjectsReply.payload:type_name -> workspace.v1.Project
-	68,  // 18: workspace.v1.AddProjectMemberRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 19: workspace.v1.AddProjectMemberRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 18: workspace.v1.AddProjectMemberRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 19: workspace.v1.AddProjectMemberRequest.signature:type_name -> workspace.v1.Signature
 	18,  // 20: workspace.v1.AddProjectMemberRequest.payload:type_name -> workspace.v1.AddProjectMemberPayload
-	67,  // 21: workspace.v1.ProjectMemberReply.result:type_name -> workspace.v1.Result
+	69,  // 21: workspace.v1.ProjectMemberReply.result:type_name -> workspace.v1.Result
 	2,   // 22: workspace.v1.ProjectMemberReply.payload:type_name -> workspace.v1.ProjectMember
-	68,  // 23: workspace.v1.RemoveProjectMemberRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 24: workspace.v1.RemoveProjectMemberRequest.signature:type_name -> workspace.v1.Signature
-	68,  // 25: workspace.v1.GetFeatureTreeRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 26: workspace.v1.GetFeatureTreeReply.result:type_name -> workspace.v1.Result
+	70,  // 23: workspace.v1.RemoveProjectMemberRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 24: workspace.v1.RemoveProjectMemberRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 25: workspace.v1.GetFeatureTreeRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 26: workspace.v1.GetFeatureTreeReply.result:type_name -> workspace.v1.Result
 	3,   // 27: workspace.v1.GetFeatureTreeReply.payload:type_name -> workspace.v1.Feature
-	68,  // 28: workspace.v1.CreateFeatureRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 29: workspace.v1.CreateFeatureRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 28: workspace.v1.CreateFeatureRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 29: workspace.v1.CreateFeatureRequest.signature:type_name -> workspace.v1.Signature
 	24,  // 30: workspace.v1.CreateFeatureRequest.payload:type_name -> workspace.v1.CreateFeaturePayload
-	68,  // 31: workspace.v1.CreateFeatureGroupRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 32: workspace.v1.CreateFeatureGroupRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 31: workspace.v1.CreateFeatureGroupRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 32: workspace.v1.CreateFeatureGroupRequest.signature:type_name -> workspace.v1.Signature
 	26,  // 33: workspace.v1.CreateFeatureGroupRequest.payload:type_name -> workspace.v1.CreateFeatureGroupPayload
-	67,  // 34: workspace.v1.FeatureReply.result:type_name -> workspace.v1.Result
+	69,  // 34: workspace.v1.FeatureReply.result:type_name -> workspace.v1.Result
 	3,   // 35: workspace.v1.FeatureReply.payload:type_name -> workspace.v1.Feature
-	68,  // 36: workspace.v1.GetFeatureRequest.metadata:type_name -> workspace.v1.Metadata
-	68,  // 37: workspace.v1.UpdateFeatureRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 38: workspace.v1.UpdateFeatureRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 36: workspace.v1.GetFeatureRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 37: workspace.v1.UpdateFeatureRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 38: workspace.v1.UpdateFeatureRequest.signature:type_name -> workspace.v1.Signature
 	30,  // 39: workspace.v1.UpdateFeatureRequest.payload:type_name -> workspace.v1.UpdateFeaturePayload
-	68,  // 40: workspace.v1.DeleteFeatureRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 41: workspace.v1.DeleteFeatureRequest.signature:type_name -> workspace.v1.Signature
-	68,  // 42: workspace.v1.CreateDocumentRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 43: workspace.v1.CreateDocumentRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 40: workspace.v1.DeleteFeatureRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 41: workspace.v1.DeleteFeatureRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 42: workspace.v1.CreateDocumentRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 43: workspace.v1.CreateDocumentRequest.signature:type_name -> workspace.v1.Signature
 	33,  // 44: workspace.v1.CreateDocumentRequest.payload:type_name -> workspace.v1.CreateDocumentPayload
-	68,  // 45: workspace.v1.ListDocumentsRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 46: workspace.v1.DocumentReply.result:type_name -> workspace.v1.Result
+	70,  // 45: workspace.v1.ListDocumentsRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 46: workspace.v1.DocumentReply.result:type_name -> workspace.v1.Result
 	4,   // 47: workspace.v1.DocumentReply.payload:type_name -> workspace.v1.Document
-	67,  // 48: workspace.v1.ListDocumentsReply.result:type_name -> workspace.v1.Result
+	69,  // 48: workspace.v1.ListDocumentsReply.result:type_name -> workspace.v1.Result
 	4,   // 49: workspace.v1.ListDocumentsReply.payload:type_name -> workspace.v1.Document
-	68,  // 50: workspace.v1.ListDocumentSectionsRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 51: workspace.v1.ListDocumentSectionsReply.result:type_name -> workspace.v1.Result
+	70,  // 50: workspace.v1.ListDocumentSectionsRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 51: workspace.v1.ListDocumentSectionsReply.result:type_name -> workspace.v1.Result
 	5,   // 52: workspace.v1.ListDocumentSectionsReply.payload:type_name -> workspace.v1.DocumentSection
-	68,  // 53: workspace.v1.GetDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 54: workspace.v1.DocumentSectionReply.result:type_name -> workspace.v1.Result
+	70,  // 53: workspace.v1.GetDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 54: workspace.v1.DocumentSectionReply.result:type_name -> workspace.v1.Result
 	5,   // 55: workspace.v1.DocumentSectionReply.payload:type_name -> workspace.v1.DocumentSection
-	68,  // 56: workspace.v1.CreateDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 57: workspace.v1.CreateDocumentSectionRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 56: workspace.v1.CreateDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 57: workspace.v1.CreateDocumentSectionRequest.signature:type_name -> workspace.v1.Signature
 	42,  // 58: workspace.v1.CreateDocumentSectionRequest.payload:type_name -> workspace.v1.CreateDocumentSectionPayload
-	68,  // 59: workspace.v1.UpdateDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 60: workspace.v1.UpdateDocumentSectionRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 59: workspace.v1.UpdateDocumentSectionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 60: workspace.v1.UpdateDocumentSectionRequest.signature:type_name -> workspace.v1.Signature
 	44,  // 61: workspace.v1.UpdateDocumentSectionRequest.payload:type_name -> workspace.v1.UpdateDocumentSectionPayload
-	68,  // 62: workspace.v1.UpdateDocumentSectionContentRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 63: workspace.v1.UpdateDocumentSectionContentRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 62: workspace.v1.UpdateDocumentSectionContentRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 63: workspace.v1.UpdateDocumentSectionContentRequest.signature:type_name -> workspace.v1.Signature
 	46,  // 64: workspace.v1.UpdateDocumentSectionContentRequest.payload:type_name -> workspace.v1.UpdateDocumentSectionContentPayload
-	68,  // 65: workspace.v1.CreateDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 66: workspace.v1.CreateDocumentSectionVersionRequest.signature:type_name -> workspace.v1.Signature
+	70,  // 65: workspace.v1.CreateDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 66: workspace.v1.CreateDocumentSectionVersionRequest.signature:type_name -> workspace.v1.Signature
 	48,  // 67: workspace.v1.CreateDocumentSectionVersionRequest.payload:type_name -> workspace.v1.CreateDocumentSectionVersionPayload
-	68,  // 68: workspace.v1.ListDocumentSectionVersionsRequest.metadata:type_name -> workspace.v1.Metadata
-	68,  // 69: workspace.v1.GetCurrentDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
-	68,  // 70: workspace.v1.SetCurrentDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 71: workspace.v1.SetCurrentDocumentSectionVersionRequest.signature:type_name -> workspace.v1.Signature
-	52,  // 72: workspace.v1.SetCurrentDocumentSectionVersionRequest.payload:type_name -> workspace.v1.SetCurrentDocumentSectionVersionPayload
-	68,  // 73: workspace.v1.ListChatMessagesRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 74: workspace.v1.ListChatMessagesReply.result:type_name -> workspace.v1.Result
-	6,   // 75: workspace.v1.ListChatMessagesReply.payload:type_name -> workspace.v1.ChatMessage
-	68,  // 76: workspace.v1.AppendChatMessageRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 77: workspace.v1.AppendChatMessageRequest.signature:type_name -> workspace.v1.Signature
-	56,  // 78: workspace.v1.AppendChatMessageRequest.payload:type_name -> workspace.v1.AppendChatMessagePayload
-	67,  // 79: workspace.v1.ChatMessageReply.result:type_name -> workspace.v1.Result
-	6,   // 80: workspace.v1.ChatMessageReply.payload:type_name -> workspace.v1.ChatMessage
-	68,  // 81: workspace.v1.CreateSessionRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 82: workspace.v1.CreateSessionRequest.signature:type_name -> workspace.v1.Signature
-	59,  // 83: workspace.v1.CreateSessionRequest.payload:type_name -> workspace.v1.CreateSessionPayload
-	67,  // 84: workspace.v1.SessionReply.result:type_name -> workspace.v1.Result
-	7,   // 85: workspace.v1.SessionReply.payload:type_name -> workspace.v1.Session
-	68,  // 86: workspace.v1.UpdateSessionContextRequest.metadata:type_name -> workspace.v1.Metadata
-	69,  // 87: workspace.v1.UpdateSessionContextRequest.signature:type_name -> workspace.v1.Signature
-	62,  // 88: workspace.v1.UpdateSessionContextRequest.payload:type_name -> workspace.v1.UpdateSessionContextPayload
-	68,  // 89: workspace.v1.GetSessionRequest.metadata:type_name -> workspace.v1.Metadata
-	68,  // 90: workspace.v1.ListProjectSessionsRequest.metadata:type_name -> workspace.v1.Metadata
-	67,  // 91: workspace.v1.ListSessionsReply.result:type_name -> workspace.v1.Result
-	7,   // 92: workspace.v1.ListSessionsReply.payload:type_name -> workspace.v1.Session
-	10,  // 93: workspace.v1.WorkspaceService.CreateProject:input_type -> workspace.v1.CreateProjectRequest
-	11,  // 94: workspace.v1.WorkspaceService.ListProjects:input_type -> workspace.v1.ListProjectsRequest
-	12,  // 95: workspace.v1.WorkspaceService.GetProject:input_type -> workspace.v1.GetProjectRequest
-	14,  // 96: workspace.v1.WorkspaceService.UpdateProject:input_type -> workspace.v1.UpdateProjectRequest
-	15,  // 97: workspace.v1.WorkspaceService.DeleteProject:input_type -> workspace.v1.DeleteProjectRequest
-	19,  // 98: workspace.v1.WorkspaceService.AddProjectMember:input_type -> workspace.v1.AddProjectMemberRequest
-	21,  // 99: workspace.v1.WorkspaceService.RemoveProjectMember:input_type -> workspace.v1.RemoveProjectMemberRequest
-	22,  // 100: workspace.v1.WorkspaceService.GetFeatureTree:input_type -> workspace.v1.GetFeatureTreeRequest
-	25,  // 101: workspace.v1.WorkspaceService.CreateFeature:input_type -> workspace.v1.CreateFeatureRequest
-	27,  // 102: workspace.v1.WorkspaceService.CreateFeatureGroup:input_type -> workspace.v1.CreateFeatureGroupRequest
-	29,  // 103: workspace.v1.WorkspaceService.GetFeature:input_type -> workspace.v1.GetFeatureRequest
-	31,  // 104: workspace.v1.WorkspaceService.UpdateFeature:input_type -> workspace.v1.UpdateFeatureRequest
-	32,  // 105: workspace.v1.WorkspaceService.DeleteFeature:input_type -> workspace.v1.DeleteFeatureRequest
-	34,  // 106: workspace.v1.WorkspaceService.CreateDocument:input_type -> workspace.v1.CreateDocumentRequest
-	35,  // 107: workspace.v1.WorkspaceService.ListDocuments:input_type -> workspace.v1.ListDocumentsRequest
-	38,  // 108: workspace.v1.WorkspaceService.ListDocumentSections:input_type -> workspace.v1.ListDocumentSectionsRequest
-	40,  // 109: workspace.v1.WorkspaceService.GetDocumentSection:input_type -> workspace.v1.GetDocumentSectionRequest
-	43,  // 110: workspace.v1.WorkspaceService.CreateDocumentSection:input_type -> workspace.v1.CreateDocumentSectionRequest
-	45,  // 111: workspace.v1.WorkspaceService.UpdateDocumentSection:input_type -> workspace.v1.UpdateDocumentSectionRequest
-	47,  // 112: workspace.v1.WorkspaceService.UpdateDocumentSectionContent:input_type -> workspace.v1.UpdateDocumentSectionContentRequest
-	49,  // 113: workspace.v1.WorkspaceService.CreateDocumentSectionVersion:input_type -> workspace.v1.CreateDocumentSectionVersionRequest
-	50,  // 114: workspace.v1.WorkspaceService.ListDocumentSectionVersions:input_type -> workspace.v1.ListDocumentSectionVersionsRequest
-	51,  // 115: workspace.v1.WorkspaceService.GetCurrentDocumentSectionVersion:input_type -> workspace.v1.GetCurrentDocumentSectionVersionRequest
-	53,  // 116: workspace.v1.WorkspaceService.SetCurrentDocumentSectionVersion:input_type -> workspace.v1.SetCurrentDocumentSectionVersionRequest
-	54,  // 117: workspace.v1.WorkspaceService.ListChatMessages:input_type -> workspace.v1.ListChatMessagesRequest
-	57,  // 118: workspace.v1.WorkspaceService.AppendChatMessage:input_type -> workspace.v1.AppendChatMessageRequest
-	60,  // 119: workspace.v1.WorkspaceService.CreateSession:input_type -> workspace.v1.CreateSessionRequest
-	63,  // 120: workspace.v1.WorkspaceService.UpdateSessionContext:input_type -> workspace.v1.UpdateSessionContextRequest
-	64,  // 121: workspace.v1.WorkspaceService.GetSession:input_type -> workspace.v1.GetSessionRequest
-	65,  // 122: workspace.v1.WorkspaceService.ListProjectSessions:input_type -> workspace.v1.ListProjectSessionsRequest
-	16,  // 123: workspace.v1.WorkspaceService.CreateProject:output_type -> workspace.v1.ProjectReply
-	17,  // 124: workspace.v1.WorkspaceService.ListProjects:output_type -> workspace.v1.ListProjectsReply
-	16,  // 125: workspace.v1.WorkspaceService.GetProject:output_type -> workspace.v1.ProjectReply
-	16,  // 126: workspace.v1.WorkspaceService.UpdateProject:output_type -> workspace.v1.ProjectReply
-	8,   // 127: workspace.v1.WorkspaceService.DeleteProject:output_type -> workspace.v1.EmptyReply
-	20,  // 128: workspace.v1.WorkspaceService.AddProjectMember:output_type -> workspace.v1.ProjectMemberReply
-	8,   // 129: workspace.v1.WorkspaceService.RemoveProjectMember:output_type -> workspace.v1.EmptyReply
-	23,  // 130: workspace.v1.WorkspaceService.GetFeatureTree:output_type -> workspace.v1.GetFeatureTreeReply
-	28,  // 131: workspace.v1.WorkspaceService.CreateFeature:output_type -> workspace.v1.FeatureReply
-	28,  // 132: workspace.v1.WorkspaceService.CreateFeatureGroup:output_type -> workspace.v1.FeatureReply
-	28,  // 133: workspace.v1.WorkspaceService.GetFeature:output_type -> workspace.v1.FeatureReply
-	28,  // 134: workspace.v1.WorkspaceService.UpdateFeature:output_type -> workspace.v1.FeatureReply
-	8,   // 135: workspace.v1.WorkspaceService.DeleteFeature:output_type -> workspace.v1.EmptyReply
-	36,  // 136: workspace.v1.WorkspaceService.CreateDocument:output_type -> workspace.v1.DocumentReply
-	37,  // 137: workspace.v1.WorkspaceService.ListDocuments:output_type -> workspace.v1.ListDocumentsReply
-	39,  // 138: workspace.v1.WorkspaceService.ListDocumentSections:output_type -> workspace.v1.ListDocumentSectionsReply
-	41,  // 139: workspace.v1.WorkspaceService.GetDocumentSection:output_type -> workspace.v1.DocumentSectionReply
-	41,  // 140: workspace.v1.WorkspaceService.CreateDocumentSection:output_type -> workspace.v1.DocumentSectionReply
-	41,  // 141: workspace.v1.WorkspaceService.UpdateDocumentSection:output_type -> workspace.v1.DocumentSectionReply
-	41,  // 142: workspace.v1.WorkspaceService.UpdateDocumentSectionContent:output_type -> workspace.v1.DocumentSectionReply
-	41,  // 143: workspace.v1.WorkspaceService.CreateDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
-	39,  // 144: workspace.v1.WorkspaceService.ListDocumentSectionVersions:output_type -> workspace.v1.ListDocumentSectionsReply
-	41,  // 145: workspace.v1.WorkspaceService.GetCurrentDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
-	41,  // 146: workspace.v1.WorkspaceService.SetCurrentDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
-	55,  // 147: workspace.v1.WorkspaceService.ListChatMessages:output_type -> workspace.v1.ListChatMessagesReply
-	58,  // 148: workspace.v1.WorkspaceService.AppendChatMessage:output_type -> workspace.v1.ChatMessageReply
-	61,  // 149: workspace.v1.WorkspaceService.CreateSession:output_type -> workspace.v1.SessionReply
-	8,   // 150: workspace.v1.WorkspaceService.UpdateSessionContext:output_type -> workspace.v1.EmptyReply
-	61,  // 151: workspace.v1.WorkspaceService.GetSession:output_type -> workspace.v1.SessionReply
-	66,  // 152: workspace.v1.WorkspaceService.ListProjectSessions:output_type -> workspace.v1.ListSessionsReply
-	123, // [123:153] is the sub-list for method output_type
-	93,  // [93:123] is the sub-list for method input_type
-	93,  // [93:93] is the sub-list for extension type_name
-	93,  // [93:93] is the sub-list for extension extendee
-	0,   // [0:93] is the sub-list for field type_name
+	70,  // 68: workspace.v1.UpsertDocumentAndSectionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 69: workspace.v1.UpsertDocumentAndSectionRequest.signature:type_name -> workspace.v1.Signature
+	50,  // 70: workspace.v1.UpsertDocumentAndSectionRequest.payload:type_name -> workspace.v1.UpsertDocumentAndSectionPayload
+	70,  // 71: workspace.v1.ListDocumentSectionVersionsRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 72: workspace.v1.GetCurrentDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 73: workspace.v1.SetCurrentDocumentSectionVersionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 74: workspace.v1.SetCurrentDocumentSectionVersionRequest.signature:type_name -> workspace.v1.Signature
+	54,  // 75: workspace.v1.SetCurrentDocumentSectionVersionRequest.payload:type_name -> workspace.v1.SetCurrentDocumentSectionVersionPayload
+	70,  // 76: workspace.v1.ListChatMessagesRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 77: workspace.v1.ListChatMessagesReply.result:type_name -> workspace.v1.Result
+	6,   // 78: workspace.v1.ListChatMessagesReply.payload:type_name -> workspace.v1.ChatMessage
+	70,  // 79: workspace.v1.AppendChatMessageRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 80: workspace.v1.AppendChatMessageRequest.signature:type_name -> workspace.v1.Signature
+	58,  // 81: workspace.v1.AppendChatMessageRequest.payload:type_name -> workspace.v1.AppendChatMessagePayload
+	69,  // 82: workspace.v1.ChatMessageReply.result:type_name -> workspace.v1.Result
+	6,   // 83: workspace.v1.ChatMessageReply.payload:type_name -> workspace.v1.ChatMessage
+	70,  // 84: workspace.v1.CreateSessionRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 85: workspace.v1.CreateSessionRequest.signature:type_name -> workspace.v1.Signature
+	61,  // 86: workspace.v1.CreateSessionRequest.payload:type_name -> workspace.v1.CreateSessionPayload
+	69,  // 87: workspace.v1.SessionReply.result:type_name -> workspace.v1.Result
+	7,   // 88: workspace.v1.SessionReply.payload:type_name -> workspace.v1.Session
+	70,  // 89: workspace.v1.UpdateSessionContextRequest.metadata:type_name -> workspace.v1.Metadata
+	71,  // 90: workspace.v1.UpdateSessionContextRequest.signature:type_name -> workspace.v1.Signature
+	64,  // 91: workspace.v1.UpdateSessionContextRequest.payload:type_name -> workspace.v1.UpdateSessionContextPayload
+	70,  // 92: workspace.v1.GetSessionRequest.metadata:type_name -> workspace.v1.Metadata
+	70,  // 93: workspace.v1.ListProjectSessionsRequest.metadata:type_name -> workspace.v1.Metadata
+	69,  // 94: workspace.v1.ListSessionsReply.result:type_name -> workspace.v1.Result
+	7,   // 95: workspace.v1.ListSessionsReply.payload:type_name -> workspace.v1.Session
+	10,  // 96: workspace.v1.WorkspaceService.CreateProject:input_type -> workspace.v1.CreateProjectRequest
+	11,  // 97: workspace.v1.WorkspaceService.ListProjects:input_type -> workspace.v1.ListProjectsRequest
+	12,  // 98: workspace.v1.WorkspaceService.GetProject:input_type -> workspace.v1.GetProjectRequest
+	14,  // 99: workspace.v1.WorkspaceService.UpdateProject:input_type -> workspace.v1.UpdateProjectRequest
+	15,  // 100: workspace.v1.WorkspaceService.DeleteProject:input_type -> workspace.v1.DeleteProjectRequest
+	19,  // 101: workspace.v1.WorkspaceService.AddProjectMember:input_type -> workspace.v1.AddProjectMemberRequest
+	21,  // 102: workspace.v1.WorkspaceService.RemoveProjectMember:input_type -> workspace.v1.RemoveProjectMemberRequest
+	22,  // 103: workspace.v1.WorkspaceService.GetFeatureTree:input_type -> workspace.v1.GetFeatureTreeRequest
+	25,  // 104: workspace.v1.WorkspaceService.CreateFeature:input_type -> workspace.v1.CreateFeatureRequest
+	27,  // 105: workspace.v1.WorkspaceService.CreateFeatureGroup:input_type -> workspace.v1.CreateFeatureGroupRequest
+	29,  // 106: workspace.v1.WorkspaceService.GetFeature:input_type -> workspace.v1.GetFeatureRequest
+	31,  // 107: workspace.v1.WorkspaceService.UpdateFeature:input_type -> workspace.v1.UpdateFeatureRequest
+	32,  // 108: workspace.v1.WorkspaceService.DeleteFeature:input_type -> workspace.v1.DeleteFeatureRequest
+	34,  // 109: workspace.v1.WorkspaceService.CreateDocument:input_type -> workspace.v1.CreateDocumentRequest
+	35,  // 110: workspace.v1.WorkspaceService.ListDocuments:input_type -> workspace.v1.ListDocumentsRequest
+	38,  // 111: workspace.v1.WorkspaceService.ListDocumentSections:input_type -> workspace.v1.ListDocumentSectionsRequest
+	40,  // 112: workspace.v1.WorkspaceService.GetDocumentSection:input_type -> workspace.v1.GetDocumentSectionRequest
+	43,  // 113: workspace.v1.WorkspaceService.CreateDocumentSection:input_type -> workspace.v1.CreateDocumentSectionRequest
+	45,  // 114: workspace.v1.WorkspaceService.UpdateDocumentSection:input_type -> workspace.v1.UpdateDocumentSectionRequest
+	47,  // 115: workspace.v1.WorkspaceService.UpdateDocumentSectionContent:input_type -> workspace.v1.UpdateDocumentSectionContentRequest
+	49,  // 116: workspace.v1.WorkspaceService.CreateDocumentSectionVersion:input_type -> workspace.v1.CreateDocumentSectionVersionRequest
+	51,  // 117: workspace.v1.WorkspaceService.UpsertDocumentAndSection:input_type -> workspace.v1.UpsertDocumentAndSectionRequest
+	52,  // 118: workspace.v1.WorkspaceService.ListDocumentSectionVersions:input_type -> workspace.v1.ListDocumentSectionVersionsRequest
+	53,  // 119: workspace.v1.WorkspaceService.GetCurrentDocumentSectionVersion:input_type -> workspace.v1.GetCurrentDocumentSectionVersionRequest
+	55,  // 120: workspace.v1.WorkspaceService.SetCurrentDocumentSectionVersion:input_type -> workspace.v1.SetCurrentDocumentSectionVersionRequest
+	56,  // 121: workspace.v1.WorkspaceService.ListChatMessages:input_type -> workspace.v1.ListChatMessagesRequest
+	59,  // 122: workspace.v1.WorkspaceService.AppendChatMessage:input_type -> workspace.v1.AppendChatMessageRequest
+	62,  // 123: workspace.v1.WorkspaceService.CreateSession:input_type -> workspace.v1.CreateSessionRequest
+	65,  // 124: workspace.v1.WorkspaceService.UpdateSessionContext:input_type -> workspace.v1.UpdateSessionContextRequest
+	66,  // 125: workspace.v1.WorkspaceService.GetSession:input_type -> workspace.v1.GetSessionRequest
+	67,  // 126: workspace.v1.WorkspaceService.ListProjectSessions:input_type -> workspace.v1.ListProjectSessionsRequest
+	16,  // 127: workspace.v1.WorkspaceService.CreateProject:output_type -> workspace.v1.ProjectReply
+	17,  // 128: workspace.v1.WorkspaceService.ListProjects:output_type -> workspace.v1.ListProjectsReply
+	16,  // 129: workspace.v1.WorkspaceService.GetProject:output_type -> workspace.v1.ProjectReply
+	16,  // 130: workspace.v1.WorkspaceService.UpdateProject:output_type -> workspace.v1.ProjectReply
+	8,   // 131: workspace.v1.WorkspaceService.DeleteProject:output_type -> workspace.v1.EmptyReply
+	20,  // 132: workspace.v1.WorkspaceService.AddProjectMember:output_type -> workspace.v1.ProjectMemberReply
+	8,   // 133: workspace.v1.WorkspaceService.RemoveProjectMember:output_type -> workspace.v1.EmptyReply
+	23,  // 134: workspace.v1.WorkspaceService.GetFeatureTree:output_type -> workspace.v1.GetFeatureTreeReply
+	28,  // 135: workspace.v1.WorkspaceService.CreateFeature:output_type -> workspace.v1.FeatureReply
+	28,  // 136: workspace.v1.WorkspaceService.CreateFeatureGroup:output_type -> workspace.v1.FeatureReply
+	28,  // 137: workspace.v1.WorkspaceService.GetFeature:output_type -> workspace.v1.FeatureReply
+	28,  // 138: workspace.v1.WorkspaceService.UpdateFeature:output_type -> workspace.v1.FeatureReply
+	8,   // 139: workspace.v1.WorkspaceService.DeleteFeature:output_type -> workspace.v1.EmptyReply
+	36,  // 140: workspace.v1.WorkspaceService.CreateDocument:output_type -> workspace.v1.DocumentReply
+	37,  // 141: workspace.v1.WorkspaceService.ListDocuments:output_type -> workspace.v1.ListDocumentsReply
+	39,  // 142: workspace.v1.WorkspaceService.ListDocumentSections:output_type -> workspace.v1.ListDocumentSectionsReply
+	41,  // 143: workspace.v1.WorkspaceService.GetDocumentSection:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 144: workspace.v1.WorkspaceService.CreateDocumentSection:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 145: workspace.v1.WorkspaceService.UpdateDocumentSection:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 146: workspace.v1.WorkspaceService.UpdateDocumentSectionContent:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 147: workspace.v1.WorkspaceService.CreateDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 148: workspace.v1.WorkspaceService.UpsertDocumentAndSection:output_type -> workspace.v1.DocumentSectionReply
+	39,  // 149: workspace.v1.WorkspaceService.ListDocumentSectionVersions:output_type -> workspace.v1.ListDocumentSectionsReply
+	41,  // 150: workspace.v1.WorkspaceService.GetCurrentDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
+	41,  // 151: workspace.v1.WorkspaceService.SetCurrentDocumentSectionVersion:output_type -> workspace.v1.DocumentSectionReply
+	57,  // 152: workspace.v1.WorkspaceService.ListChatMessages:output_type -> workspace.v1.ListChatMessagesReply
+	60,  // 153: workspace.v1.WorkspaceService.AppendChatMessage:output_type -> workspace.v1.ChatMessageReply
+	63,  // 154: workspace.v1.WorkspaceService.CreateSession:output_type -> workspace.v1.SessionReply
+	8,   // 155: workspace.v1.WorkspaceService.UpdateSessionContext:output_type -> workspace.v1.EmptyReply
+	63,  // 156: workspace.v1.WorkspaceService.GetSession:output_type -> workspace.v1.SessionReply
+	68,  // 157: workspace.v1.WorkspaceService.ListProjectSessions:output_type -> workspace.v1.ListSessionsReply
+	127, // [127:158] is the sub-list for method output_type
+	96,  // [96:127] is the sub-list for method input_type
+	96,  // [96:96] is the sub-list for extension type_name
+	96,  // [96:96] is the sub-list for extension extendee
+	0,   // [0:96] is the sub-list for field type_name
 }
 
 func init() { file_workspace_workspace_proto_init() }
@@ -5116,7 +5291,7 @@ func file_workspace_workspace_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_workspace_workspace_proto_rawDesc), len(file_workspace_workspace_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   67,
+			NumMessages:   69,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

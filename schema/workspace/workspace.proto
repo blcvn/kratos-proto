@@ -137,6 +137,12 @@ service WorkspaceService {
       body: "payload"
     };
   }
+  rpc UpsertDocumentAndSection (UpsertDocumentAndSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/features/{feature_id}/upsert-document"
+      body: "payload"
+    };
+  }
   rpc ListDocumentSectionVersions (ListDocumentSectionVersionsRequest) returns (ListDocumentSectionsReply) {
     option (google.api.http) = {
       get: "/v1/workspace/documents/{document_id}/sections/versions"
@@ -562,6 +568,22 @@ message CreateDocumentSectionVersionRequest {
   Signature signature = 2;
   string document_id = 3;
   CreateDocumentSectionVersionPayload payload = 4;
+}
+
+message UpsertDocumentAndSectionPayload {
+  string doc_type = 1;
+  string section_type = 2;
+  string content = 3;
+  string document_id = 4; // Optional: client-assigned document ID
+  string section_id = 5;  // Optional: client-assigned section ID
+  string metadata_json = 6;
+}
+
+message UpsertDocumentAndSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  UpsertDocumentAndSectionPayload payload = 4;
 }
 
 message ListDocumentSectionVersionsRequest {
