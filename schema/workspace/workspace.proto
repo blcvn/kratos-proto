@@ -130,6 +130,30 @@ service WorkspaceService {
     };
   }
 
+  // Section Versioning APIs
+  rpc CreateDocumentSectionVersion (CreateDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/documents/{document_id}/sections/versions"
+      body: "payload"
+    };
+  }
+  rpc ListDocumentSectionVersions (ListDocumentSectionVersionsRequest) returns (ListDocumentSectionsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{document_id}/sections/versions"
+    };
+  }
+  rpc GetCurrentDocumentSectionVersion (GetCurrentDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{document_id}/sections/current"
+    };
+  }
+  rpc SetCurrentDocumentSectionVersion (SetCurrentDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/documents/{document_id}/sections/current"
+      body: "payload"
+    };
+  }
+
   // 4. Chat History
   rpc ListChatMessages (ListChatMessagesRequest) returns (ListChatMessagesReply) {
     option (google.api.http) = {
@@ -431,6 +455,8 @@ message CreateDocumentPayload {
   string name = 1;
   string type = 2;
   string description = 3;
+  string content = 4;
+  string section_type = 5;
 }
 
 message CreateDocumentRequest {
@@ -521,6 +547,44 @@ message UpdateDocumentSectionContentRequest {
   Signature signature = 2;
   string id = 3;
   UpdateDocumentSectionContentPayload payload = 4;
+}
+
+// --- Section Versioning Request/Payload ---
+
+message CreateDocumentSectionVersionPayload {
+  string type = 1;
+  string content = 2;
+  string section_id = 3;
+}
+
+message CreateDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  CreateDocumentSectionVersionPayload payload = 4;
+}
+
+message ListDocumentSectionVersionsRequest {
+  Metadata metadata = 1;
+  string document_id = 2;
+  string type = 3;
+}
+
+message GetCurrentDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  string document_id = 2;
+  string type = 3;
+}
+
+message SetCurrentDocumentSectionVersionPayload {
+  string section_id = 1;
+}
+
+message SetCurrentDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  SetCurrentDocumentSectionVersionPayload payload = 4;
 }
 
 // --- Chat Message ---
