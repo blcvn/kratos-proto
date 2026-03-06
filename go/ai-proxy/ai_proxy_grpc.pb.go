@@ -25,6 +25,8 @@ type AIProxyServiceClient interface {
 	// Completion APIs
 	Complete(ctx context.Context, in *CompleteRequest, opts ...grpc.CallOption) (*CompleteResponse, error)
 	StreamComplete(ctx context.Context, in *CompleteRequest, opts ...grpc.CallOption) (AIProxyService_StreamCompleteClient, error)
+	// Embedding APIs
+	Embed(ctx context.Context, in *EmbedGrpcRequest, opts ...grpc.CallOption) (*EmbedGrpcResponse, error)
 	// Health & Monitoring
 	HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error)
 	GetProviderStatus(ctx context.Context, in *GetProviderStatusRequest, opts ...grpc.CallOption) (*GetProviderStatusResponse, error)
@@ -79,6 +81,15 @@ func (x *aIProxyServiceStreamCompleteClient) Recv() (*StreamCompleteResponse, er
 	return m, nil
 }
 
+func (c *aIProxyServiceClient) Embed(ctx context.Context, in *EmbedGrpcRequest, opts ...grpc.CallOption) (*EmbedGrpcResponse, error) {
+	out := new(EmbedGrpcResponse)
+	err := c.cc.Invoke(ctx, "/aiproxy.v1.AIProxyService/Embed", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *aIProxyServiceClient) HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {
 	out := new(HealthCheckResponse)
 	err := c.cc.Invoke(ctx, "/aiproxy.v1.AIProxyService/HealthCheck", in, out, opts...)
@@ -104,6 +115,8 @@ type AIProxyServiceServer interface {
 	// Completion APIs
 	Complete(context.Context, *CompleteRequest) (*CompleteResponse, error)
 	StreamComplete(*CompleteRequest, AIProxyService_StreamCompleteServer) error
+	// Embedding APIs
+	Embed(context.Context, *EmbedGrpcRequest) (*EmbedGrpcResponse, error)
 	// Health & Monitoring
 	HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error)
 	GetProviderStatus(context.Context, *GetProviderStatusRequest) (*GetProviderStatusResponse, error)
@@ -119,6 +132,9 @@ func (UnimplementedAIProxyServiceServer) Complete(context.Context, *CompleteRequ
 }
 func (UnimplementedAIProxyServiceServer) StreamComplete(*CompleteRequest, AIProxyService_StreamCompleteServer) error {
 	return status.Errorf(codes.Unimplemented, "method StreamComplete not implemented")
+}
+func (UnimplementedAIProxyServiceServer) Embed(context.Context, *EmbedGrpcRequest) (*EmbedGrpcResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Embed not implemented")
 }
 func (UnimplementedAIProxyServiceServer) HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HealthCheck not implemented")
@@ -178,6 +194,24 @@ func (x *aIProxyServiceStreamCompleteServer) Send(m *StreamCompleteResponse) err
 	return x.ServerStream.SendMsg(m)
 }
 
+func _AIProxyService_Embed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmbedGrpcRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AIProxyServiceServer).Embed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/aiproxy.v1.AIProxyService/Embed",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AIProxyServiceServer).Embed(ctx, req.(*EmbedGrpcRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AIProxyService_HealthCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HealthCheckRequest)
 	if err := dec(in); err != nil {
@@ -224,6 +258,10 @@ var AIProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Complete",
 			Handler:    _AIProxyService_Complete_Handler,
+		},
+		{
+			MethodName: "Embed",
+			Handler:    _AIProxyService_Embed_Handler,
 		},
 		{
 			MethodName: "HealthCheck",

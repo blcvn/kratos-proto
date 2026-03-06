@@ -101,6 +101,27 @@ message CompletionChunk {
   bool is_final = 3;
 }
 
+message EmbeddingVector {
+  repeated float values = 1;
+}
+
+message EmbedRequest {
+  string model_id = 1;
+  repeated string texts = 2;
+  int32 dimensions = 3;
+  map<string, string> metadata = 4;
+}
+
+message EmbedResponse {
+  string id = 1;
+  string model_id = 2;
+  repeated EmbeddingVector embeddings = 3;
+  int32 prompt_tokens = 4;
+  int32 total_tokens = 5;
+  int32 latency_ms = 6;
+  string provider = 7;
+}
+
 message ProviderHealth {
   string provider = 1;
   ProviderStatus status = 2;

@@ -15,6 +15,9 @@ service AIProxyService {
   rpc Complete(CompleteRequest) returns (CompleteResponse);
   rpc StreamComplete(CompleteRequest) returns (stream StreamCompleteResponse);
   
+  // Embedding APIs
+  rpc Embed(EmbedGrpcRequest) returns (EmbedGrpcResponse);
+  
   // Health & Monitoring
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse);
   rpc GetProviderStatus(GetProviderStatusRequest) returns (GetProviderStatusResponse);
@@ -23,6 +26,17 @@ service AIProxyService {
 // =======================
 // Request Messages
 // =======================
+
+message EmbedPayload {
+  string model_id = 1;
+  repeated string texts = 2;
+}
+
+message EmbedGrpcRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  EmbedPayload payload = 3;
+}
 
 message CompletePayload {
   string model_id = 1;
@@ -54,6 +68,13 @@ message GetProviderStatusRequest {
 // =======================
 // Response Messages
 // =======================
+
+message EmbedGrpcResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  EmbedResponse embed_result = 4;
+}
 
 message CompleteResponse {
   Metadata metadata = 1;
