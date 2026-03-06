@@ -53,6 +53,17 @@ service WorkspaceService {
       delete: "/v1/workspace/projects/{project_id}/members/{user_id}"
     };
   }
+  rpc ListProjectMembers (ListProjectMembersRequest) returns (ListProjectMembersReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects/{project_id}/members"
+    };
+  }
+  rpc UpdateProjectMemberRole (UpdateProjectMemberRoleRequest) returns (ProjectMemberReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/projects/{project_id}/members/{user_id}"
+      body: "payload"
+    };
+  }
 
   // 2. Features
   rpc GetFeatureTree (GetFeatureTreeRequest) returns (GetFeatureTreeReply) {
@@ -86,6 +97,28 @@ service WorkspaceService {
   rpc DeleteFeature (DeleteFeatureRequest) returns (EmptyReply) {
     option (google.api.http) = {
       delete: "/v1/workspace/features/{id}"
+    };
+  }
+  rpc AddFeatureMember (AddFeatureMemberRequest) returns (FeatureMemberReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/features/{feature_id}/members"
+      body: "payload"
+    };
+  }
+  rpc ListFeatureMembers (ListFeatureMembersRequest) returns (ListFeatureMembersReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/features/{feature_id}/members"
+    };
+  }
+  rpc UpdateFeatureMemberRole (UpdateFeatureMemberRoleRequest) returns (FeatureMemberReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/features/{feature_id}/members/{user_id}"
+      body: "payload"
+    };
+  }
+  rpc RemoveFeatureMember (RemoveFeatureMemberRequest) returns (EmptyReply) {
+    option (google.api.http) = {
+      delete: "/v1/workspace/features/{feature_id}/members/{user_id}"
     };
   }
 
@@ -126,6 +159,34 @@ service WorkspaceService {
   rpc UpdateDocumentSectionContent (UpdateDocumentSectionContentRequest) returns (DocumentSectionReply) {
     option (google.api.http) = {
       put: "/v1/workspace/document-sections/{id}/content"
+      body: "payload"
+    };
+  }
+  rpc CreateDocumentSectionVersion (CreateDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/documents/{document_id}/sections/versions"
+      body: "payload"
+    };
+  }
+  rpc UpsertDocumentAndSection (UpsertDocumentAndSectionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      post: "/v1/workspace/features/{feature_id}/upsert-document"
+      body: "payload"
+    };
+  }
+  rpc ListDocumentSectionVersions (ListDocumentSectionVersionsRequest) returns (ListDocumentSectionsReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{document_id}/sections/versions"
+    };
+  }
+  rpc GetCurrentDocumentSectionVersion (GetCurrentDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/documents/{document_id}/sections/current"
+    };
+  }
+  rpc SetCurrentDocumentSectionVersion (SetCurrentDocumentSectionVersionRequest) returns (DocumentSectionReply) {
+    option (google.api.http) = {
+      put: "/v1/workspace/documents/{document_id}/sections/current"
       body: "payload"
     };
   }
@@ -194,6 +255,16 @@ message ProjectMember {
   string project_id = 1;
   string user_id = 2;
   string role = 3;
+  string created_at = 4;
+}
+
+message FeatureMember {
+  string feature_id = 1;
+  string user_id = 2;
+  string role = 3;
+  string granted_by = 4;
+  string created_at = 5;
+  string updated_at = 6;
 }
 
 message Feature {
@@ -352,6 +423,28 @@ message RemoveProjectMemberRequest {
   string user_id = 4;
 }
 
+message ListProjectMembersRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+}
+
+message ListProjectMembersReply {
+  Result result = 1;
+  repeated ProjectMember payload = 2;
+}
+
+message UpdateProjectMemberRolePayload {
+  string role = 1;
+}
+
+message UpdateProjectMemberRoleRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string project_id = 3;
+  string user_id = 4;
+  UpdateProjectMemberRolePayload payload = 5;
+}
+
 // --- Feature ---
 message GetFeatureTreeRequest {
   Metadata metadata = 1;
@@ -426,11 +519,59 @@ message DeleteFeatureRequest {
   string id = 3;
 }
 
+message AddFeatureMemberPayload {
+  string user_id = 1;
+  string role = 2;
+}
+
+message AddFeatureMemberRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  AddFeatureMemberPayload payload = 4;
+}
+
+message FeatureMemberReply {
+  Result result = 1;
+  FeatureMember payload = 2;
+}
+
+message ListFeatureMembersRequest {
+  Metadata metadata = 1;
+  string feature_id = 2;
+}
+
+message ListFeatureMembersReply {
+  Result result = 1;
+  repeated FeatureMember payload = 2;
+}
+
+message UpdateFeatureMemberRolePayload {
+  string role = 1;
+}
+
+message UpdateFeatureMemberRoleRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  string user_id = 4;
+  UpdateFeatureMemberRolePayload payload = 5;
+}
+
+message RemoveFeatureMemberRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  string user_id = 4;
+}
+
 // --- Document ---
 message CreateDocumentPayload {
   string name = 1;
   string type = 2;
   string description = 3;
+  string content = 4;
+  string section_type = 5;
 }
 
 message CreateDocumentRequest {
@@ -521,6 +662,58 @@ message UpdateDocumentSectionContentRequest {
   Signature signature = 2;
   string id = 3;
   UpdateDocumentSectionContentPayload payload = 4;
+}
+
+message CreateDocumentSectionVersionPayload {
+  string type = 1;
+  string content = 2;
+  string section_id = 3;
+}
+
+message CreateDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  CreateDocumentSectionVersionPayload payload = 4;
+}
+
+message UpsertDocumentAndSectionPayload {
+  string doc_type = 1;
+  string section_type = 2;
+  string content = 3;
+  string document_id = 4;
+  string section_id = 5;
+  string metadata_json = 6;
+}
+
+message UpsertDocumentAndSectionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string feature_id = 3;
+  UpsertDocumentAndSectionPayload payload = 4;
+}
+
+message ListDocumentSectionVersionsRequest {
+  Metadata metadata = 1;
+  string document_id = 2;
+  string type = 3;
+}
+
+message GetCurrentDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  string document_id = 2;
+  string type = 3;
+}
+
+message SetCurrentDocumentSectionVersionPayload {
+  string section_id = 1;
+}
+
+message SetCurrentDocumentSectionVersionRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  SetCurrentDocumentSectionVersionPayload payload = 4;
 }
 
 // --- Chat Message ---
