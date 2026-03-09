@@ -19,33 +19,44 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	WorkspaceService_CreateProject_FullMethodName                = "/workspace.v1.WorkspaceService/CreateProject"
-	WorkspaceService_ListProjects_FullMethodName                 = "/workspace.v1.WorkspaceService/ListProjects"
-	WorkspaceService_GetProject_FullMethodName                   = "/workspace.v1.WorkspaceService/GetProject"
-	WorkspaceService_UpdateProject_FullMethodName                = "/workspace.v1.WorkspaceService/UpdateProject"
-	WorkspaceService_DeleteProject_FullMethodName                = "/workspace.v1.WorkspaceService/DeleteProject"
-	WorkspaceService_AddProjectMember_FullMethodName             = "/workspace.v1.WorkspaceService/AddProjectMember"
-	WorkspaceService_RemoveProjectMember_FullMethodName          = "/workspace.v1.WorkspaceService/RemoveProjectMember"
-	WorkspaceService_GetFeatureTree_FullMethodName               = "/workspace.v1.WorkspaceService/GetFeatureTree"
-	WorkspaceService_CreateFeature_FullMethodName                = "/workspace.v1.WorkspaceService/CreateFeature"
-	WorkspaceService_CreateFeatureGroup_FullMethodName           = "/workspace.v1.WorkspaceService/CreateFeatureGroup"
-	WorkspaceService_GetFeature_FullMethodName                   = "/workspace.v1.WorkspaceService/GetFeature"
-	WorkspaceService_UpdateFeature_FullMethodName                = "/workspace.v1.WorkspaceService/UpdateFeature"
-	WorkspaceService_DeleteFeature_FullMethodName                = "/workspace.v1.WorkspaceService/DeleteFeature"
-	WorkspaceService_CreateDocument_FullMethodName               = "/workspace.v1.WorkspaceService/CreateDocument"
-	WorkspaceService_ListDocuments_FullMethodName                = "/workspace.v1.WorkspaceService/ListDocuments"
-	WorkspaceService_ListDocumentSections_FullMethodName         = "/workspace.v1.WorkspaceService/ListDocumentSections"
-	WorkspaceService_GetDocumentSection_FullMethodName           = "/workspace.v1.WorkspaceService/GetDocumentSection"
-	WorkspaceService_CreateDocumentSection_FullMethodName        = "/workspace.v1.WorkspaceService/CreateDocumentSection"
-	WorkspaceService_UpdateDocumentSection_FullMethodName        = "/workspace.v1.WorkspaceService/UpdateDocumentSection"
-	WorkspaceService_UpdateDocumentSectionContent_FullMethodName = "/workspace.v1.WorkspaceService/UpdateDocumentSectionContent"
-	WorkspaceService_ListChatMessages_FullMethodName             = "/workspace.v1.WorkspaceService/ListChatMessages"
-	WorkspaceService_AppendChatMessage_FullMethodName            = "/workspace.v1.WorkspaceService/AppendChatMessage"
-	WorkspaceService_CreateSession_FullMethodName                = "/workspace.v1.WorkspaceService/CreateSession"
-	WorkspaceService_UpdateSessionContext_FullMethodName         = "/workspace.v1.WorkspaceService/UpdateSessionContext"
-	WorkspaceService_GetSession_FullMethodName                   = "/workspace.v1.WorkspaceService/GetSession"
-	WorkspaceService_ListProjectSessions_FullMethodName          = "/workspace.v1.WorkspaceService/ListProjectSessions"
-	WorkspaceService_PushUrdConfluence_FullMethodName            = "/workspace.v1.WorkspaceService/PushUrdConfluence"
+	WorkspaceService_CreateProject_FullMethodName                    = "/workspace.v1.WorkspaceService/CreateProject"
+	WorkspaceService_ListProjects_FullMethodName                     = "/workspace.v1.WorkspaceService/ListProjects"
+	WorkspaceService_GetProject_FullMethodName                       = "/workspace.v1.WorkspaceService/GetProject"
+	WorkspaceService_UpdateProject_FullMethodName                    = "/workspace.v1.WorkspaceService/UpdateProject"
+	WorkspaceService_DeleteProject_FullMethodName                    = "/workspace.v1.WorkspaceService/DeleteProject"
+	WorkspaceService_AddProjectMember_FullMethodName                 = "/workspace.v1.WorkspaceService/AddProjectMember"
+	WorkspaceService_RemoveProjectMember_FullMethodName              = "/workspace.v1.WorkspaceService/RemoveProjectMember"
+	WorkspaceService_ListProjectMembers_FullMethodName               = "/workspace.v1.WorkspaceService/ListProjectMembers"
+	WorkspaceService_UpdateProjectMemberRole_FullMethodName          = "/workspace.v1.WorkspaceService/UpdateProjectMemberRole"
+	WorkspaceService_GetFeatureTree_FullMethodName                   = "/workspace.v1.WorkspaceService/GetFeatureTree"
+	WorkspaceService_CreateFeature_FullMethodName                    = "/workspace.v1.WorkspaceService/CreateFeature"
+	WorkspaceService_CreateFeatureGroup_FullMethodName               = "/workspace.v1.WorkspaceService/CreateFeatureGroup"
+	WorkspaceService_GetFeature_FullMethodName                       = "/workspace.v1.WorkspaceService/GetFeature"
+	WorkspaceService_UpdateFeature_FullMethodName                    = "/workspace.v1.WorkspaceService/UpdateFeature"
+	WorkspaceService_DeleteFeature_FullMethodName                    = "/workspace.v1.WorkspaceService/DeleteFeature"
+	WorkspaceService_AddFeatureMember_FullMethodName                 = "/workspace.v1.WorkspaceService/AddFeatureMember"
+	WorkspaceService_ListFeatureMembers_FullMethodName               = "/workspace.v1.WorkspaceService/ListFeatureMembers"
+	WorkspaceService_UpdateFeatureMemberRole_FullMethodName          = "/workspace.v1.WorkspaceService/UpdateFeatureMemberRole"
+	WorkspaceService_RemoveFeatureMember_FullMethodName              = "/workspace.v1.WorkspaceService/RemoveFeatureMember"
+	WorkspaceService_CreateDocument_FullMethodName                   = "/workspace.v1.WorkspaceService/CreateDocument"
+	WorkspaceService_ListDocuments_FullMethodName                    = "/workspace.v1.WorkspaceService/ListDocuments"
+	WorkspaceService_ListDocumentSections_FullMethodName             = "/workspace.v1.WorkspaceService/ListDocumentSections"
+	WorkspaceService_GetDocumentSection_FullMethodName               = "/workspace.v1.WorkspaceService/GetDocumentSection"
+	WorkspaceService_CreateDocumentSection_FullMethodName            = "/workspace.v1.WorkspaceService/CreateDocumentSection"
+	WorkspaceService_UpdateDocumentSection_FullMethodName            = "/workspace.v1.WorkspaceService/UpdateDocumentSection"
+	WorkspaceService_UpdateDocumentSectionContent_FullMethodName     = "/workspace.v1.WorkspaceService/UpdateDocumentSectionContent"
+	WorkspaceService_CreateDocumentSectionVersion_FullMethodName     = "/workspace.v1.WorkspaceService/CreateDocumentSectionVersion"
+	WorkspaceService_UpsertDocumentAndSection_FullMethodName         = "/workspace.v1.WorkspaceService/UpsertDocumentAndSection"
+	WorkspaceService_ListDocumentSectionVersions_FullMethodName      = "/workspace.v1.WorkspaceService/ListDocumentSectionVersions"
+	WorkspaceService_GetCurrentDocumentSectionVersion_FullMethodName = "/workspace.v1.WorkspaceService/GetCurrentDocumentSectionVersion"
+	WorkspaceService_SetCurrentDocumentSectionVersion_FullMethodName = "/workspace.v1.WorkspaceService/SetCurrentDocumentSectionVersion"
+	WorkspaceService_ListChatMessages_FullMethodName                 = "/workspace.v1.WorkspaceService/ListChatMessages"
+	WorkspaceService_AppendChatMessage_FullMethodName                = "/workspace.v1.WorkspaceService/AppendChatMessage"
+	WorkspaceService_CreateSession_FullMethodName                    = "/workspace.v1.WorkspaceService/CreateSession"
+	WorkspaceService_UpdateSessionContext_FullMethodName             = "/workspace.v1.WorkspaceService/UpdateSessionContext"
+	WorkspaceService_GetSession_FullMethodName                       = "/workspace.v1.WorkspaceService/GetSession"
+	WorkspaceService_ListProjectSessions_FullMethodName              = "/workspace.v1.WorkspaceService/ListProjectSessions"
+	WorkspaceService_PushUrdConfluence_FullMethodName                = "/workspace.v1.WorkspaceService/PushUrdConfluence"
 )
 
 // WorkspaceServiceClient is the client API for WorkspaceService service.
@@ -170,6 +181,24 @@ func (c *workspaceServiceClient) RemoveProjectMember(ctx context.Context, in *Re
 	return out, nil
 }
 
+func (c *workspaceServiceClient) ListProjectMembers(ctx context.Context, in *ListProjectMembersRequest, opts ...grpc.CallOption) (*ListProjectMembersReply, error) {
+	out := new(ListProjectMembersReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_ListProjectMembers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) UpdateProjectMemberRole(ctx context.Context, in *UpdateProjectMemberRoleRequest, opts ...grpc.CallOption) (*ProjectMemberReply, error) {
+	out := new(ProjectMemberReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_UpdateProjectMemberRole_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workspaceServiceClient) GetFeatureTree(ctx context.Context, in *GetFeatureTreeRequest, opts ...grpc.CallOption) (*GetFeatureTreeReply, error) {
 	out := new(GetFeatureTreeReply)
 	err := c.cc.Invoke(ctx, WorkspaceService_GetFeatureTree_FullMethodName, in, out, opts...)
@@ -218,6 +247,42 @@ func (c *workspaceServiceClient) UpdateFeature(ctx context.Context, in *UpdateFe
 func (c *workspaceServiceClient) DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
 	out := new(EmptyReply)
 	err := c.cc.Invoke(ctx, WorkspaceService_DeleteFeature_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) AddFeatureMember(ctx context.Context, in *AddFeatureMemberRequest, opts ...grpc.CallOption) (*FeatureMemberReply, error) {
+	out := new(FeatureMemberReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_AddFeatureMember_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) ListFeatureMembers(ctx context.Context, in *ListFeatureMembersRequest, opts ...grpc.CallOption) (*ListFeatureMembersReply, error) {
+	out := new(ListFeatureMembersReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_ListFeatureMembers_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) UpdateFeatureMemberRole(ctx context.Context, in *UpdateFeatureMemberRoleRequest, opts ...grpc.CallOption) (*FeatureMemberReply, error) {
+	out := new(FeatureMemberReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_UpdateFeatureMemberRole_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) RemoveFeatureMember(ctx context.Context, in *RemoveFeatureMemberRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
+	out := new(EmptyReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_RemoveFeatureMember_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -281,6 +346,51 @@ func (c *workspaceServiceClient) UpdateDocumentSection(ctx context.Context, in *
 func (c *workspaceServiceClient) UpdateDocumentSectionContent(ctx context.Context, in *UpdateDocumentSectionContentRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
 	out := new(DocumentSectionReply)
 	err := c.cc.Invoke(ctx, WorkspaceService_UpdateDocumentSectionContent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) CreateDocumentSectionVersion(ctx context.Context, in *CreateDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_CreateDocumentSectionVersion_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) UpsertDocumentAndSection(ctx context.Context, in *UpsertDocumentAndSectionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_UpsertDocumentAndSection_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) ListDocumentSectionVersions(ctx context.Context, in *ListDocumentSectionVersionsRequest, opts ...grpc.CallOption) (*ListDocumentSectionsReply, error) {
+	out := new(ListDocumentSectionsReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_ListDocumentSectionVersions_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) GetCurrentDocumentSectionVersion(ctx context.Context, in *GetCurrentDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_GetCurrentDocumentSectionVersion_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) SetCurrentDocumentSectionVersion(ctx context.Context, in *SetCurrentDocumentSectionVersionRequest, opts ...grpc.CallOption) (*DocumentSectionReply, error) {
+	out := new(DocumentSectionReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_SetCurrentDocumentSectionVersion_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -427,6 +537,12 @@ func (UnimplementedWorkspaceServiceServer) AddProjectMember(context.Context, *Ad
 func (UnimplementedWorkspaceServiceServer) RemoveProjectMember(context.Context, *RemoveProjectMemberRequest) (*EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveProjectMember not implemented")
 }
+func (UnimplementedWorkspaceServiceServer) ListProjectMembers(context.Context, *ListProjectMembersRequest) (*ListProjectMembersReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListProjectMembers not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) UpdateProjectMemberRole(context.Context, *UpdateProjectMemberRoleRequest) (*ProjectMemberReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProjectMemberRole not implemented")
+}
 func (UnimplementedWorkspaceServiceServer) GetFeatureTree(context.Context, *GetFeatureTreeRequest) (*GetFeatureTreeReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeatureTree not implemented")
 }
@@ -444,6 +560,18 @@ func (UnimplementedWorkspaceServiceServer) UpdateFeature(context.Context, *Updat
 }
 func (UnimplementedWorkspaceServiceServer) DeleteFeature(context.Context, *DeleteFeatureRequest) (*EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeature not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) AddFeatureMember(context.Context, *AddFeatureMemberRequest) (*FeatureMemberReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddFeatureMember not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) ListFeatureMembers(context.Context, *ListFeatureMembersRequest) (*ListFeatureMembersReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeatureMembers not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) UpdateFeatureMemberRole(context.Context, *UpdateFeatureMemberRoleRequest) (*FeatureMemberReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeatureMemberRole not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) RemoveFeatureMember(context.Context, *RemoveFeatureMemberRequest) (*EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveFeatureMember not implemented")
 }
 func (UnimplementedWorkspaceServiceServer) CreateDocument(context.Context, *CreateDocumentRequest) (*DocumentReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDocument not implemented")
@@ -465,6 +593,21 @@ func (UnimplementedWorkspaceServiceServer) UpdateDocumentSection(context.Context
 }
 func (UnimplementedWorkspaceServiceServer) UpdateDocumentSectionContent(context.Context, *UpdateDocumentSectionContentRequest) (*DocumentSectionReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDocumentSectionContent not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) CreateDocumentSectionVersion(context.Context, *CreateDocumentSectionVersionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDocumentSectionVersion not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) UpsertDocumentAndSection(context.Context, *UpsertDocumentAndSectionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertDocumentAndSection not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) ListDocumentSectionVersions(context.Context, *ListDocumentSectionVersionsRequest) (*ListDocumentSectionsReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDocumentSectionVersions not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) GetCurrentDocumentSectionVersion(context.Context, *GetCurrentDocumentSectionVersionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCurrentDocumentSectionVersion not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) SetCurrentDocumentSectionVersion(context.Context, *SetCurrentDocumentSectionVersionRequest) (*DocumentSectionReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetCurrentDocumentSectionVersion not implemented")
 }
 func (UnimplementedWorkspaceServiceServer) ListChatMessages(context.Context, *ListChatMessagesRequest) (*ListChatMessagesReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListChatMessages not implemented")
@@ -510,7 +653,7 @@ func _WorkspaceService_CreateProject_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateProject",
+		FullMethod: WorkspaceService_CreateProject_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateProject(ctx, req.(*CreateProjectRequest))
@@ -528,7 +671,7 @@ func _WorkspaceService_ListProjects_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListProjects",
+		FullMethod: WorkspaceService_ListProjects_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListProjects(ctx, req.(*ListProjectsRequest))
@@ -546,7 +689,7 @@ func _WorkspaceService_GetProject_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetProject",
+		FullMethod: WorkspaceService_GetProject_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetProject(ctx, req.(*GetProjectRequest))
@@ -564,7 +707,7 @@ func _WorkspaceService_UpdateProject_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateProject",
+		FullMethod: WorkspaceService_UpdateProject_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateProject(ctx, req.(*UpdateProjectRequest))
@@ -582,7 +725,7 @@ func _WorkspaceService_DeleteProject_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/DeleteProject",
+		FullMethod: WorkspaceService_DeleteProject_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).DeleteProject(ctx, req.(*DeleteProjectRequest))
@@ -600,7 +743,7 @@ func _WorkspaceService_AddProjectMember_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/AddProjectMember",
+		FullMethod: WorkspaceService_AddProjectMember_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).AddProjectMember(ctx, req.(*AddProjectMemberRequest))
@@ -618,7 +761,7 @@ func _WorkspaceService_RemoveProjectMember_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/RemoveProjectMember",
+		FullMethod: WorkspaceService_RemoveProjectMember_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).RemoveProjectMember(ctx, req.(*RemoveProjectMemberRequest))
@@ -636,7 +779,7 @@ func _WorkspaceService_ListProjectMembers_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListProjectMembers",
+		FullMethod: WorkspaceService_ListProjectMembers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListProjectMembers(ctx, req.(*ListProjectMembersRequest))
@@ -654,7 +797,7 @@ func _WorkspaceService_UpdateProjectMemberRole_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateProjectMemberRole",
+		FullMethod: WorkspaceService_UpdateProjectMemberRole_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateProjectMemberRole(ctx, req.(*UpdateProjectMemberRoleRequest))
@@ -672,7 +815,7 @@ func _WorkspaceService_GetFeatureTree_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetFeatureTree",
+		FullMethod: WorkspaceService_GetFeatureTree_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetFeatureTree(ctx, req.(*GetFeatureTreeRequest))
@@ -690,7 +833,7 @@ func _WorkspaceService_CreateFeature_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateFeature",
+		FullMethod: WorkspaceService_CreateFeature_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateFeature(ctx, req.(*CreateFeatureRequest))
@@ -708,7 +851,7 @@ func _WorkspaceService_CreateFeatureGroup_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateFeatureGroup",
+		FullMethod: WorkspaceService_CreateFeatureGroup_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateFeatureGroup(ctx, req.(*CreateFeatureGroupRequest))
@@ -726,7 +869,7 @@ func _WorkspaceService_GetFeature_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetFeature",
+		FullMethod: WorkspaceService_GetFeature_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetFeature(ctx, req.(*GetFeatureRequest))
@@ -744,7 +887,7 @@ func _WorkspaceService_UpdateFeature_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateFeature",
+		FullMethod: WorkspaceService_UpdateFeature_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateFeature(ctx, req.(*UpdateFeatureRequest))
@@ -762,7 +905,7 @@ func _WorkspaceService_DeleteFeature_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/DeleteFeature",
+		FullMethod: WorkspaceService_DeleteFeature_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).DeleteFeature(ctx, req.(*DeleteFeatureRequest))
@@ -780,7 +923,7 @@ func _WorkspaceService_AddFeatureMember_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/AddFeatureMember",
+		FullMethod: WorkspaceService_AddFeatureMember_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).AddFeatureMember(ctx, req.(*AddFeatureMemberRequest))
@@ -798,7 +941,7 @@ func _WorkspaceService_ListFeatureMembers_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListFeatureMembers",
+		FullMethod: WorkspaceService_ListFeatureMembers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListFeatureMembers(ctx, req.(*ListFeatureMembersRequest))
@@ -816,7 +959,7 @@ func _WorkspaceService_UpdateFeatureMemberRole_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateFeatureMemberRole",
+		FullMethod: WorkspaceService_UpdateFeatureMemberRole_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateFeatureMemberRole(ctx, req.(*UpdateFeatureMemberRoleRequest))
@@ -834,7 +977,7 @@ func _WorkspaceService_RemoveFeatureMember_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/RemoveFeatureMember",
+		FullMethod: WorkspaceService_RemoveFeatureMember_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).RemoveFeatureMember(ctx, req.(*RemoveFeatureMemberRequest))
@@ -852,7 +995,7 @@ func _WorkspaceService_CreateDocument_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateDocument",
+		FullMethod: WorkspaceService_CreateDocument_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateDocument(ctx, req.(*CreateDocumentRequest))
@@ -870,7 +1013,7 @@ func _WorkspaceService_ListDocuments_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListDocuments",
+		FullMethod: WorkspaceService_ListDocuments_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListDocuments(ctx, req.(*ListDocumentsRequest))
@@ -888,7 +1031,7 @@ func _WorkspaceService_ListDocumentSections_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListDocumentSections",
+		FullMethod: WorkspaceService_ListDocumentSections_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListDocumentSections(ctx, req.(*ListDocumentSectionsRequest))
@@ -906,7 +1049,7 @@ func _WorkspaceService_GetDocumentSection_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetDocumentSection",
+		FullMethod: WorkspaceService_GetDocumentSection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetDocumentSection(ctx, req.(*GetDocumentSectionRequest))
@@ -924,7 +1067,7 @@ func _WorkspaceService_CreateDocumentSection_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateDocumentSection",
+		FullMethod: WorkspaceService_CreateDocumentSection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateDocumentSection(ctx, req.(*CreateDocumentSectionRequest))
@@ -942,7 +1085,7 @@ func _WorkspaceService_UpdateDocumentSection_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateDocumentSection",
+		FullMethod: WorkspaceService_UpdateDocumentSection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateDocumentSection(ctx, req.(*UpdateDocumentSectionRequest))
@@ -960,7 +1103,7 @@ func _WorkspaceService_UpdateDocumentSectionContent_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateDocumentSectionContent",
+		FullMethod: WorkspaceService_UpdateDocumentSectionContent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateDocumentSectionContent(ctx, req.(*UpdateDocumentSectionContentRequest))
@@ -978,7 +1121,7 @@ func _WorkspaceService_CreateDocumentSectionVersion_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateDocumentSectionVersion",
+		FullMethod: WorkspaceService_CreateDocumentSectionVersion_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateDocumentSectionVersion(ctx, req.(*CreateDocumentSectionVersionRequest))
@@ -996,7 +1139,7 @@ func _WorkspaceService_UpsertDocumentAndSection_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpsertDocumentAndSection",
+		FullMethod: WorkspaceService_UpsertDocumentAndSection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpsertDocumentAndSection(ctx, req.(*UpsertDocumentAndSectionRequest))
@@ -1014,7 +1157,7 @@ func _WorkspaceService_ListDocumentSectionVersions_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListDocumentSectionVersions",
+		FullMethod: WorkspaceService_ListDocumentSectionVersions_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListDocumentSectionVersions(ctx, req.(*ListDocumentSectionVersionsRequest))
@@ -1032,7 +1175,7 @@ func _WorkspaceService_GetCurrentDocumentSectionVersion_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetCurrentDocumentSectionVersion",
+		FullMethod: WorkspaceService_GetCurrentDocumentSectionVersion_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetCurrentDocumentSectionVersion(ctx, req.(*GetCurrentDocumentSectionVersionRequest))
@@ -1050,7 +1193,7 @@ func _WorkspaceService_SetCurrentDocumentSectionVersion_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/SetCurrentDocumentSectionVersion",
+		FullMethod: WorkspaceService_SetCurrentDocumentSectionVersion_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).SetCurrentDocumentSectionVersion(ctx, req.(*SetCurrentDocumentSectionVersionRequest))
@@ -1068,7 +1211,7 @@ func _WorkspaceService_ListChatMessages_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListChatMessages",
+		FullMethod: WorkspaceService_ListChatMessages_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListChatMessages(ctx, req.(*ListChatMessagesRequest))
@@ -1086,7 +1229,7 @@ func _WorkspaceService_AppendChatMessage_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/AppendChatMessage",
+		FullMethod: WorkspaceService_AppendChatMessage_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).AppendChatMessage(ctx, req.(*AppendChatMessageRequest))
@@ -1104,7 +1247,7 @@ func _WorkspaceService_CreateSession_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/CreateSession",
+		FullMethod: WorkspaceService_CreateSession_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).CreateSession(ctx, req.(*CreateSessionRequest))
@@ -1122,7 +1265,7 @@ func _WorkspaceService_UpdateSessionContext_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/UpdateSessionContext",
+		FullMethod: WorkspaceService_UpdateSessionContext_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).UpdateSessionContext(ctx, req.(*UpdateSessionContextRequest))
@@ -1140,7 +1283,7 @@ func _WorkspaceService_GetSession_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/GetSession",
+		FullMethod: WorkspaceService_GetSession_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetSession(ctx, req.(*GetSessionRequest))
@@ -1158,7 +1301,7 @@ func _WorkspaceService_ListProjectSessions_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/workspace.v1.WorkspaceService/ListProjectSessions",
+		FullMethod: WorkspaceService_ListProjectSessions_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).ListProjectSessions(ctx, req.(*ListProjectSessionsRequest))
