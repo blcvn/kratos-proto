@@ -318,6 +318,7 @@ message DocumentSection {
   string confluence_url = 13;
   string parent_id = 14;
   string approved_at = 15;
+  string name = 16;
   string task_ref_id = 17;
   string ref_document_id = 18;
 }
