@@ -227,6 +227,14 @@ service WorkspaceService {
       get: "/v1/workspace/projects/{project_id}/sessions"
     };
   }
+
+  // 6. URD Confluence
+  rpc PushUrdConfluence (PushUrdConfluenceRequest) returns (PushUrdConfluenceReply) {
+    option (google.api.http) = {
+      post: "/v1/urd/{id}/push-confluence"
+      body: "payload"
+    };
+  }
 }
 
 // =======================
@@ -310,6 +318,7 @@ message DocumentSection {
   string confluence_url = 13;
   string parent_id = 14;
   string approved_at = 15;
+  string name = 16;
   string task_ref_id = 17;
   string ref_document_id = 18;
 }
@@ -789,4 +798,22 @@ message ListProjectSessionsRequest {
 message ListSessionsReply {
   Result result = 1;
   repeated Session payload = 2;
+}
+
+// --- URD Confluence ---
+message PushUrdConfluencePayload {
+  string confluence_url = 1;
+  string version = 2;
+  string title = 3;
+}
+
+message PushUrdConfluenceRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+  PushUrdConfluencePayload payload = 4;
+}
+
+message PushUrdConfluenceReply {
+  Result result = 1;
 }
