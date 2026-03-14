@@ -357,6 +357,7 @@ type Feature struct {
 	UpdatedAt      string                 `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	IsFeatureGroup bool                   `protobuf:"varint,12,opt,name=is_feature_group,json=isFeatureGroup,proto3" json:"is_feature_group,omitempty"`
 	CurrentPhase   string                 `protobuf:"bytes,13,opt,name=current_phase,json=currentPhase,proto3" json:"current_phase,omitempty"`
+	HasPrdDetail   bool                   `protobuf:"varint,14,opt,name=has_prd_detail,json=hasPrdDetail,proto3" json:"has_prd_detail,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -480,6 +481,13 @@ func (x *Feature) GetCurrentPhase() string {
 		return x.CurrentPhase
 	}
 	return ""
+}
+
+func (x *Feature) GetHasPrdDetail() bool {
+	if x != nil {
+		return x.HasPrdDetail
+	}
+	return false
 }
 
 type Document struct {
@@ -2033,6 +2041,25 @@ func (x *GetFeatureTreeRequest) GetMetadata() *Metadata {
 }
 
 func (x *GetFeatureTreeRequest) GetProjectId() string {
+	if x != nil {
+		return x.ProjectId
+	}
+	return ""
+}
+
+// GetRootFeatureRequest is the request message for GetRootFeature RPC.
+type GetRootFeatureRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProjectId     string                 `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRootFeatureRequest) Reset()         {}
+func (x *GetRootFeatureRequest) String() string  { return x.ProjectId }
+func (*GetRootFeatureRequest) ProtoMessage()     {}
+
+func (x *GetRootFeatureRequest) GetProjectId() string {
 	if x != nil {
 		return x.ProjectId
 	}

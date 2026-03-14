@@ -71,6 +71,11 @@ service WorkspaceService {
       get: "/v1/workspace/projects/{project_id}/features"
     };
   }
+  rpc GetRootFeature (GetRootFeatureRequest) returns (FeatureReply) {
+    option (google.api.http) = {
+      get: "/v1/workspace/projects/{project_id}/root-feature"
+    };
+  }
   rpc CreateFeature (CreateFeatureRequest) returns (FeatureReply) {
     option (google.api.http) = {
       post: "/v1/workspace/projects/{project_id}/features"
@@ -289,6 +294,11 @@ message Feature {
   string updated_at = 11;
   bool is_feature_group = 12;
   string current_phase = 13;
+  bool has_prd_detail = 14;
+}
+
+message GetRootFeatureRequest {
+  string project_id = 1;
 }
 
 message Document {

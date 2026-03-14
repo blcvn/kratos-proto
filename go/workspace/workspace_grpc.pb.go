@@ -29,6 +29,7 @@ const (
 	WorkspaceService_ListProjectMembers_FullMethodName               = "/workspace.v1.WorkspaceService/ListProjectMembers"
 	WorkspaceService_UpdateProjectMemberRole_FullMethodName          = "/workspace.v1.WorkspaceService/UpdateProjectMemberRole"
 	WorkspaceService_GetFeatureTree_FullMethodName                   = "/workspace.v1.WorkspaceService/GetFeatureTree"
+	WorkspaceService_GetRootFeature_FullMethodName                   = "/workspace.v1.WorkspaceService/GetRootFeature"
 	WorkspaceService_CreateFeature_FullMethodName                    = "/workspace.v1.WorkspaceService/CreateFeature"
 	WorkspaceService_CreateFeatureGroup_FullMethodName               = "/workspace.v1.WorkspaceService/CreateFeatureGroup"
 	WorkspaceService_GetFeature_FullMethodName                       = "/workspace.v1.WorkspaceService/GetFeature"
@@ -80,6 +81,7 @@ type WorkspaceServiceClient interface {
 	UpdateProjectMemberRole(ctx context.Context, in *UpdateProjectMemberRoleRequest, opts ...grpc.CallOption) (*ProjectMemberReply, error)
 	// 2. Features
 	GetFeatureTree(ctx context.Context, in *GetFeatureTreeRequest, opts ...grpc.CallOption) (*GetFeatureTreeReply, error)
+	GetRootFeature(ctx context.Context, in *GetRootFeatureRequest, opts ...grpc.CallOption) (*FeatureReply, error)
 	CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*FeatureReply, error)
 	CreateFeatureGroup(ctx context.Context, in *CreateFeatureGroupRequest, opts ...grpc.CallOption) (*FeatureReply, error)
 	GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*FeatureReply, error)
@@ -216,6 +218,16 @@ func (c *workspaceServiceClient) GetFeatureTree(ctx context.Context, in *GetFeat
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetFeatureTreeReply)
 	err := c.cc.Invoke(ctx, WorkspaceService_GetFeatureTree_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceServiceClient) GetRootFeature(ctx context.Context, in *GetRootFeatureRequest, opts ...grpc.CallOption) (*FeatureReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FeatureReply)
+	err := c.cc.Invoke(ctx, WorkspaceService_GetRootFeature_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -523,6 +535,7 @@ type WorkspaceServiceServer interface {
 	UpdateProjectMemberRole(context.Context, *UpdateProjectMemberRoleRequest) (*ProjectMemberReply, error)
 	// 2. Features
 	GetFeatureTree(context.Context, *GetFeatureTreeRequest) (*GetFeatureTreeReply, error)
+	GetRootFeature(context.Context, *GetRootFeatureRequest) (*FeatureReply, error)
 	CreateFeature(context.Context, *CreateFeatureRequest) (*FeatureReply, error)
 	CreateFeatureGroup(context.Context, *CreateFeatureGroupRequest) (*FeatureReply, error)
 	GetFeature(context.Context, *GetFeatureRequest) (*FeatureReply, error)
@@ -594,6 +607,9 @@ func (UnimplementedWorkspaceServiceServer) UpdateProjectMemberRole(context.Conte
 }
 func (UnimplementedWorkspaceServiceServer) GetFeatureTree(context.Context, *GetFeatureTreeRequest) (*GetFeatureTreeReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeatureTree not implemented")
+}
+func (UnimplementedWorkspaceServiceServer) GetRootFeature(context.Context, *GetRootFeatureRequest) (*FeatureReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRootFeature not implemented")
 }
 func (UnimplementedWorkspaceServiceServer) CreateFeature(context.Context, *CreateFeatureRequest) (*FeatureReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFeature not implemented")
@@ -876,6 +892,24 @@ func _WorkspaceService_GetFeatureTree_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServiceServer).GetFeatureTree(ctx, req.(*GetFeatureTreeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkspaceService_GetRootFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRootFeatureRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServiceServer).GetRootFeature(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkspaceService_GetRootFeature_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServiceServer).GetRootFeature(ctx, req.(*GetRootFeatureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1430,6 +1464,10 @@ var WorkspaceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFeatureTree",
 			Handler:    _WorkspaceService_GetFeatureTree_Handler,
+		},
+		{
+			MethodName: "GetRootFeature",
+			Handler:    _WorkspaceService_GetRootFeature_Handler,
 		},
 		{
 			MethodName: "CreateFeature",
