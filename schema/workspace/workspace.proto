@@ -269,6 +269,8 @@ message ProjectMember {
   string user_id = 2;
   string role = 3;
   string created_at = 4;
+  string name = 5;
+  string email = 6;
 }
 
 message FeatureMember {

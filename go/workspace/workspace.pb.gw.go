@@ -585,8 +585,6 @@ func local_request_WorkspaceService_GetFeatureTree_0(ctx context.Context, marsha
 	return msg, metadata, err
 }
 
-var filter_WorkspaceService_GetRootFeature_0 = &utilities.DoubleArray{Encoding: map[string]int{"project_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-
 func request_WorkspaceService_GetRootFeature_0(ctx context.Context, marshaler runtime.Marshaler, client WorkspaceServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetRootFeatureRequest
