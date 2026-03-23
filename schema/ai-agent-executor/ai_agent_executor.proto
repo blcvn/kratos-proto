@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package executor.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-agent-executor;executor";
+option java_package = "com.blcvn.kratos.protos.executor";
+
+import "ai-agent-executor/base.proto";
+
+service ExecutorService {
+  rpc ExecuteStep(ExecuteStepRequest) returns (StepResult);
+  rpc ExecutePhase(ExecutePhaseRequest) returns (PhaseResult);
+  rpc ListSkills(ListSkillsRequest) returns (ListSkillsResponse);
+}
+
+enum ExecutionMode {
+  SEQUENTIAL = 0;
+  PARALLEL = 1;
+}
+
+message ExecuteStepRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string step_id = 3;
+  string skill_ref = 4;
+  string prompt_key = 5;
+  string document_id = 6;
+  string feature_id = 7;
+  string uc_id = 8;
+  string prd_text = 9;
+  map<string, string> meta = 10;
+}
+
+message StepResult {
+  Metadata metadata = 1;
+  Result result = 2;
+  string step_id = 3;
+  double score = 4;
+  bool has_blocker = 5;
+  repeated string blockers = 6;
+  repeated string warnings = 7;
+  map<string, string> meta = 8;
+}
+
+message ExecutePhaseRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string phase_id = 3;
+  ExecutionMode mode = 4;
+  repeated ExecuteStepRequest steps = 5;
+}
+
+message PhaseResult {
+  Metadata metadata = 1;
+  Result result = 2;
+  string phase_id = 3;
+  repeated StepResult step_results = 4;
+  bool has_blocker = 5;
+}
+
+message ListSkillsRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message SkillInfo {
+  string id = 1;
+  string name = 2;
+  string phase = 3;
+  string prompt_key = 4;
+  string version = 5;
+  bool enabled = 6;
+}
+
+message ListSkillsResponse {
+  Metadata metadata = 1;
+  Result result = 2;
+  repeated SkillInfo skills = 3;
+}

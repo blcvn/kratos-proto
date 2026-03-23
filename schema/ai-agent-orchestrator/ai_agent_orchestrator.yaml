@@ -1,0 +1,16 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: orchestrator.v1.OrchestratorService.RunTask
+      post: /api/tasks/run
+      body: "*"
+
+    - selector: orchestrator.v1.OrchestratorService.CreatePlan
+      post: /api/tasks/plan
+      body: "*"
+
+    - selector: orchestrator.v1.OrchestratorService.ExecutePlan
+      post: /api/tasks/execute
+      body: "*"

@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package orchestrator.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-agent-orchestrator;orchestrator";
+option java_package = "com.blcvn.kratos.protos.orchestrator";
+
+import "ai-agent-orchestrator/base.proto";
+
+service OrchestratorService {
+  rpc RunTask(RunTaskRequest) returns (RunTaskResponse);
+  rpc CreatePlan(CreatePlanRequest) returns (ExecutionPlan);
+  rpc ExecutePlan(ExecutionPlan) returns (RunTaskResponse);
+}
+
+message PlanStep {
+  string id = 1;
+  string skill_ref = 2;
+  string document_id = 3;
+  string feature_id = 4;
+  string uc_id = 5;
+  map<string, string> meta = 6;
+  bool per_feature = 7;
+  bool per_uc = 8;
+}
+
+message PlanPhase {
+  string id = 1;
+  string mode = 2;
+  repeated PlanStep steps = 3;
+}
+
+message ExecutionPlan {
+  Metadata metadata = 1;
+  Result result = 2;
+  string id = 3;
+  string document_id = 4;
+  repeated PlanPhase phases = 5;
+  repeated string feature_ids = 6;
+  repeated string uc_ids = 7;
+  map<string, string> meta = 8;
+}
+
+message CreatePlanRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  string goal = 4;
+  repeated string feature_ids = 5;
+  repeated string uc_ids = 6;
+}
+
+message RunTaskRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  string goal = 4;
+  repeated string feature_ids = 5;
+  repeated string uc_ids = 6;
+  map<string, string> meta = 7;
+}
+
+message StepStatus {
+  string step_id = 1;
+  string skill_id = 2;
+  double score = 3;
+  bool blocked = 4;
+  string error = 5;
+  string document = 6;
+}
+
+message RunTaskResponse {
+  Metadata metadata = 1;
+  Result result = 2;
+  string plan_id = 3;
+  repeated StepStatus statuses = 4;
+  bool blocked = 5;
+  string error = 6;
+  string document = 7;
+}
