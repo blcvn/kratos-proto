@@ -1,0 +1,15 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: executor.v1.ExecutorService.ExecuteStep
+      post: /api/execute/step
+      body: "*"
+
+    - selector: executor.v1.ExecutorService.ExecutePhase
+      post: /api/execute/phase
+      body: "*"
+
+    - selector: executor.v1.ExecutorService.ListSkills
+      get: /api/skills

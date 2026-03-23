@@ -1,0 +1,16 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: registry.v1.RegistryService.GetPrompt
+      get: /api/prompts/{key}
+
+    - selector: registry.v1.RegistryService.GetAgentConfig
+      get: /api/config/agent
+
+    - selector: registry.v1.RegistryService.GetTemplateConfig
+      get: /api/config/template
+
+    - selector: registry.v1.RegistryService.GetLLMTemperatureConfig
+      get: /api/config/llm-temperature

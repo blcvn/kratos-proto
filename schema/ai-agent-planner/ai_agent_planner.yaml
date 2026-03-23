@@ -1,0 +1,12 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: planner.v1.PlannerService.CreatePlan
+      post: /api/plans
+      body: "*"
+
+    - selector: planner.v1.PlannerService.ValidatePlan
+      post: /api/plans/validate
+      body: "*"

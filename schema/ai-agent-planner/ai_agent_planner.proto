@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package planner.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-agent-planner;planner";
+option java_package = "com.blcvn.kratos.protos.planner";
+
+import "ai-agent-planner/base.proto";
+
+service PlannerService {
+  rpc CreatePlan(CreatePlanRequest) returns (ExecutionPlan);
+  rpc ValidatePlan(ExecutionPlan) returns (ValidationResult);
+}
+
+message QualityGate {
+  string gate_id = 1;
+  double threshold = 2;
+  bool hard_block = 3;
+}
+
+message PlanStep {
+  string id = 1;
+  string type = 2;
+  string skill_ref = 3;
+  string prompt_key = 4;
+  repeated string input_node_types = 5;
+  repeated string output_node_types = 6;
+  double score_threshold = 7;
+  int32 max_attempts = 8;
+  repeated string depends_on = 9;
+  bool per_feature = 10;
+  bool per_uc = 11;
+  QualityGate gate = 12;
+  map<string, string> meta = 13;
+}
+
+message PlanPhase {
+  string id = 1;
+  string name = 2;
+  string mode = 3;
+  repeated PlanStep steps = 4;
+  string source_version = 5;
+  string target_version = 6;
+}
+
+message CreatePlanRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string document_id = 3;
+  string goal = 4;
+  repeated string feature_ids = 5;
+  repeated string uc_ids = 6;
+}
+
+message ExecutionPlan {
+  Metadata metadata = 1;
+  Result result = 2;
+  string id = 3;
+  string document_id = 4;
+  string goal = 5;
+  repeated string feature_ids = 6;
+  repeated string uc_ids = 7;
+  repeated PlanPhase phases = 8;
+}
+
+message ValidationResult {
+  Metadata metadata = 1;
+  Result result = 2;
+  bool valid = 3;
+  repeated string errors = 4;
+  repeated string warnings = 5;
+}

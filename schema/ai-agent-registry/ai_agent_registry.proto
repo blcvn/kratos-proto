@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package registry.v1;
+
+option go_package = "github.com/blcvn/kratos-proto/go/ai-agent-registry;registry";
+option java_package = "com.blcvn.kratos.protos.registry";
+
+import "ai-agent-registry/base.proto";
+
+service RegistryService {
+  rpc GetPrompt(GetPromptRequest) returns (PromptTemplate);
+  rpc GetAgentConfig(GetAgentConfigRequest) returns (AgentConfig);
+  rpc GetTemplateConfig(GetTemplateConfigRequest) returns (TemplateConfig);
+  rpc GetLLMTemperatureConfig(GetLLMTemperatureConfigRequest) returns (LLMTemperatureConfig);
+}
+
+message GetPromptRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string key = 3;
+  string version = 4;
+  string tier = 5;
+  bool is_rl = 6;
+}
+
+message PromptTemplate {
+  Metadata metadata = 1;
+  Result result = 2;
+  string key = 3;
+  string tier = 4;
+  string version = 5;
+  bool is_rl = 6;
+  string content = 7;
+}
+
+message GetAgentConfigRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message AgentConfig {
+  Metadata metadata = 1;
+  Result result = 2;
+  string version = 3;
+  string prd_parse_mode = 4;
+  bool scoring_enabled = 5;
+  bool qna_enabled = 6;
+  bool enable_review_v5 = 7;
+  bool enable_reasoning_logic = 8;
+  int32 max_retries = 9;
+  double scoring_threshold = 10;
+}
+
+message GetTemplateConfigRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message TemplateConfig {
+  Metadata metadata = 1;
+  Result result = 2;
+  string version = 3;
+  map<string, string> tiers = 4;
+  bool append_detail_to_overview = 5;
+}
+
+message GetLLMTemperatureConfigRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+}
+
+message LLMTemperatureConfig {
+  Metadata metadata = 1;
+  Result result = 2;
+  double default = 3;
+  double kg_enrich = 4;
+  double kg_scoring = 5;
+  double kg_patching = 6;
+  double doc_generation = 7;
+  double doc_scoring = 8;
+  double targeted_regen = 9;
+  double intent_classification = 10;
+  double section_extraction = 11;
+  double constrained_generation = 12;
+  double review_scoring = 13;
+  double qna_generation = 14;
+  double qna_answering = 15;
+  double prd_parsing = 16;
+  double normalization = 17;
+  double reasoning = 18;
+}
