@@ -10,8 +10,10 @@ service PromptService {
   // Template Management
   rpc CreateTemplate (CreateTemplateRequest) returns (CreateTemplateResponse);
   rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse);
+  rpc GetTemplateByName (GetTemplateByNameRequest) returns (GetTemplateResponse);
   rpc ListTemplates (ListTemplatesRequest) returns (ListTemplatesResponse);
   rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse);
+  rpc UpdateTemplateByName (UpdateTemplateByNameRequest) returns (UpdateTemplateResponse);
   rpc DeleteTemplate (DeleteTemplateRequest) returns (ResponseEmpty);
 
   // Template Rendering
@@ -60,6 +62,14 @@ message GetTemplateRequest {
   string id = 3;
 }
 
+message GetTemplateByNameRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string name = 3;
+  string version = 4;
+  Environment environment = 5;
+}
+
 message GetTemplateResponse {
   Metadata metadata = 1;
   Signature signature = 2;
@@ -97,6 +107,20 @@ message UpdateTemplateRequest {
   Metadata metadata = 1;
   Signature signature = 2;
   UpdateTemplatePayload payload = 3;
+}
+
+message UpdateTemplateByNamePayload {
+  string name = 1;
+  string template = 2;
+  repeated Variable variables = 3;
+  TemplateStatus status = 4;
+  repeated string tags = 5;
+}
+
+message UpdateTemplateByNameRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  UpdateTemplateByNamePayload payload = 3;
 }
 
 message UpdateTemplateResponse {
