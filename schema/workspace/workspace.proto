@@ -317,6 +317,7 @@ message Document {
   string status = 6;
   string created_at = 7;
   string updated_at = 8;
+  bool generated_by_cr_process = 9;
 }
 
 message DocumentSection {
@@ -599,6 +600,7 @@ message CreateDocumentPayload {
   string description = 3;
   string content = 4;
   string section_type = 5;
+  bool generated_by_cr_process = 6;
 }
 
 message CreateDocumentRequest {
@@ -685,6 +687,7 @@ message UpdateDocumentSectionContentPayload {
   string content = 1;
   string status = 2;
   int32 expected_version = 3;
+  bool generated_by_cr_process = 4;
 }
 
 message UpdateDocumentSectionContentRequest {
@@ -698,6 +701,7 @@ message CreateDocumentSectionVersionPayload {
   string type = 1;
   string content = 2;
   string section_id = 3;
+  bool generated_by_cr_process = 4;
 }
 
 message CreateDocumentSectionVersionRequest {
@@ -714,6 +718,7 @@ message UpsertDocumentAndSectionPayload {
   string document_id = 4;
   string section_id = 5;
   string metadata_json = 6;
+  bool generated_by_cr_process = 7;
 }
 
 message UpsertDocumentAndSectionRequest {
