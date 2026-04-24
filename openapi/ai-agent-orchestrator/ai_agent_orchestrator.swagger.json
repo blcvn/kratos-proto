@@ -15,8 +15,115 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/tasks/execute": {
+      "post": {
+        "operationId": "OrchestratorService_ExecutePlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RunTaskResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExecutionPlan"
+            }
+          }
+        ],
+        "tags": [
+          "OrchestratorService"
+        ]
+      }
+    },
+    "/api/tasks/plan": {
+      "post": {
+        "operationId": "OrchestratorService_CreatePlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExecutionPlan"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreatePlanRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OrchestratorService"
+        ]
+      }
+    },
+    "/api/tasks/run": {
+      "post": {
+        "operationId": "OrchestratorService_RunTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RunTaskResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RunTaskRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OrchestratorService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -42,6 +149,258 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1CreatePlanRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ExecutionPlan": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "id": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PlanPhase"
+          }
+        },
+        "feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PlanPhase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PlanStep"
+          }
+        }
+      }
+    },
+    "v1PlanStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "skill_ref": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "feature_id": {
+          "type": "string"
+        },
+        "uc_id": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "per_feature": {
+          "type": "boolean"
+        },
+        "per_uc": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RunTaskRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1RunTaskResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "plan_id": {
+          "type": "string"
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1StepStatus"
+          }
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "document": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType"
+        },
+        "s": {
+          "type": "string"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1StepStatus": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "type": "string"
+        },
+        "skill_id": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "document": {
+          "type": "string"
         }
       }
     }

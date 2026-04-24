@@ -5963,6 +5963,1237 @@ public final class Prompt {
 
   }
 
+  public interface GetTemplateByNameRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:prompt.v1.GetTemplateByNameRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata();
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.prompt.Base.Signature getSignature();
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string version = 4;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <code>string version = 4;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <code>.prompt.v1.Environment environment = 5;</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    int getEnvironmentValue();
+    /**
+     * <code>.prompt.v1.Environment environment = 5;</code>
+     * @return The environment.
+     */
+    com.blcvn.kratos.protos.prompt.Base.Environment getEnvironment();
+  }
+  /**
+   * Protobuf type {@code prompt.v1.GetTemplateByNameRequest}
+   */
+  public static final class GetTemplateByNameRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:prompt.v1.GetTemplateByNameRequest)
+      GetTemplateByNameRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetTemplateByNameRequest.newBuilder() to construct.
+    private GetTemplateByNameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetTemplateByNameRequest() {
+      name_ = "";
+      version_ = "";
+      environment_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetTemplateByNameRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTemplateByNameRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.prompt.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.prompt.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.prompt.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.prompt.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              environment_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_GetTemplateByNameRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_GetTemplateByNameRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              prompt.v1.Prompt.GetTemplateByNameRequest.class, prompt.v1.Prompt.GetTemplateByNameRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.prompt.Base.Metadata metadata_;
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.prompt.Base.Signature signature_;
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 3;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object version_;
+    /**
+     * <code>string version = 4;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string version = 4;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENVIRONMENT_FIELD_NUMBER = 5;
+    private int environment_;
+    /**
+     * <code>.prompt.v1.Environment environment = 5;</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    @java.lang.Override public int getEnvironmentValue() {
+      return environment_;
+    }
+    /**
+     * <code>.prompt.v1.Environment environment = 5;</code>
+     * @return The environment.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.prompt.Base.Environment getEnvironment() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.prompt.Base.Environment result = com.blcvn.kratos.protos.prompt.Base.Environment.valueOf(environment_);
+      return result == null ? com.blcvn.kratos.protos.prompt.Base.Environment.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
+      }
+      if (environment_ != com.blcvn.kratos.protos.prompt.Base.Environment.ENV_UNSPECIFIED.getNumber()) {
+        output.writeEnum(5, environment_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
+      }
+      if (environment_ != com.blcvn.kratos.protos.prompt.Base.Environment.ENV_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, environment_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof prompt.v1.Prompt.GetTemplateByNameRequest)) {
+        return super.equals(obj);
+      }
+      prompt.v1.Prompt.GetTemplateByNameRequest other = (prompt.v1.Prompt.GetTemplateByNameRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (environment_ != other.environment_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + environment_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.GetTemplateByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(prompt.v1.Prompt.GetTemplateByNameRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code prompt.v1.GetTemplateByNameRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:prompt.v1.GetTemplateByNameRequest)
+        prompt.v1.Prompt.GetTemplateByNameRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_GetTemplateByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_GetTemplateByNameRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                prompt.v1.Prompt.GetTemplateByNameRequest.class, prompt.v1.Prompt.GetTemplateByNameRequest.Builder.class);
+      }
+
+      // Construct using prompt.v1.Prompt.GetTemplateByNameRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        name_ = "";
+
+        version_ = "";
+
+        environment_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_GetTemplateByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.GetTemplateByNameRequest getDefaultInstanceForType() {
+        return prompt.v1.Prompt.GetTemplateByNameRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.GetTemplateByNameRequest build() {
+        prompt.v1.Prompt.GetTemplateByNameRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.GetTemplateByNameRequest buildPartial() {
+        prompt.v1.Prompt.GetTemplateByNameRequest result = new prompt.v1.Prompt.GetTemplateByNameRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.name_ = name_;
+        result.version_ = version_;
+        result.environment_ = environment_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof prompt.v1.Prompt.GetTemplateByNameRequest) {
+          return mergeFrom((prompt.v1.Prompt.GetTemplateByNameRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(prompt.v1.Prompt.GetTemplateByNameRequest other) {
+        if (other == prompt.v1.Prompt.GetTemplateByNameRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (other.environment_ != 0) {
+          setEnvironmentValue(other.getEnvironmentValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        prompt.v1.Prompt.GetTemplateByNameRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (prompt.v1.Prompt.GetTemplateByNameRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.prompt.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.prompt.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.prompt.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.prompt.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.prompt.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.prompt.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.prompt.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.prompt.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.prompt.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.prompt.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 3;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <code>string version = 4;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string version = 4;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string version = 4;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 4;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int environment_ = 0;
+      /**
+       * <code>.prompt.v1.Environment environment = 5;</code>
+       * @return The enum numeric value on the wire for environment.
+       */
+      @java.lang.Override public int getEnvironmentValue() {
+        return environment_;
+      }
+      /**
+       * <code>.prompt.v1.Environment environment = 5;</code>
+       * @param value The enum numeric value on the wire for environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironmentValue(int value) {
+        
+        environment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Environment environment = 5;</code>
+       * @return The environment.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.prompt.Base.Environment getEnvironment() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.prompt.Base.Environment result = com.blcvn.kratos.protos.prompt.Base.Environment.valueOf(environment_);
+        return result == null ? com.blcvn.kratos.protos.prompt.Base.Environment.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.prompt.v1.Environment environment = 5;</code>
+       * @param value The environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironment(com.blcvn.kratos.protos.prompt.Base.Environment value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        environment_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Environment environment = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnvironment() {
+        
+        environment_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:prompt.v1.GetTemplateByNameRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:prompt.v1.GetTemplateByNameRequest)
+    private static final prompt.v1.Prompt.GetTemplateByNameRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new prompt.v1.Prompt.GetTemplateByNameRequest();
+    }
+
+    public static prompt.v1.Prompt.GetTemplateByNameRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetTemplateByNameRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetTemplateByNameRequest>() {
+      @java.lang.Override
+      public GetTemplateByNameRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTemplateByNameRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetTemplateByNameRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTemplateByNameRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public prompt.v1.Prompt.GetTemplateByNameRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetTemplateResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:prompt.v1.GetTemplateResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -12081,6 +13312,2450 @@ public final class Prompt {
 
     @java.lang.Override
     public prompt.v1.Prompt.UpdateTemplateRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateTemplateByNamePayloadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:prompt.v1.UpdateTemplateByNamePayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string template = 2;</code>
+     * @return The template.
+     */
+    java.lang.String getTemplate();
+    /**
+     * <code>string template = 2;</code>
+     * @return The bytes for template.
+     */
+    com.google.protobuf.ByteString
+        getTemplateBytes();
+
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable> 
+        getVariablesList();
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.Variable getVariables(int index);
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    int getVariablesCount();
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder> 
+        getVariablesOrBuilderList();
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder getVariablesOrBuilder(
+        int index);
+
+    /**
+     * <code>.prompt.v1.TemplateStatus status = 4;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.prompt.v1.TemplateStatus status = 4;</code>
+     * @return The status.
+     */
+    com.blcvn.kratos.protos.prompt.Base.TemplateStatus getStatus();
+
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code prompt.v1.UpdateTemplateByNamePayload}
+   */
+  public static final class UpdateTemplateByNamePayload extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:prompt.v1.UpdateTemplateByNamePayload)
+      UpdateTemplateByNamePayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateTemplateByNamePayload.newBuilder() to construct.
+    private UpdateTemplateByNamePayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateTemplateByNamePayload() {
+      name_ = "";
+      template_ = "";
+      variables_ = java.util.Collections.emptyList();
+      status_ = 0;
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateTemplateByNamePayload();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateTemplateByNamePayload(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              template_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                variables_ = new java.util.ArrayList<com.blcvn.kratos.protos.prompt.Base.Variable>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              variables_.add(
+                  input.readMessage(com.blcvn.kratos.protos.prompt.Base.Variable.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              tags_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          variables_ = java.util.Collections.unmodifiableList(variables_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNamePayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              prompt.v1.Prompt.UpdateTemplateByNamePayload.class, prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEMPLATE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object template_;
+    /**
+     * <code>string template = 2;</code>
+     * @return The template.
+     */
+    @java.lang.Override
+    public java.lang.String getTemplate() {
+      java.lang.Object ref = template_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        template_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string template = 2;</code>
+     * @return The bytes for template.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTemplateBytes() {
+      java.lang.Object ref = template_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        template_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VARIABLES_FIELD_NUMBER = 3;
+    private java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable> variables_;
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable> getVariablesList() {
+      return variables_;
+    }
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder> 
+        getVariablesOrBuilderList() {
+      return variables_;
+    }
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    @java.lang.Override
+    public int getVariablesCount() {
+      return variables_.size();
+    }
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.Variable getVariables(int index) {
+      return variables_.get(index);
+    }
+    /**
+     * <code>repeated .prompt.v1.Variable variables = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder getVariablesOrBuilder(
+        int index) {
+      return variables_.get(index);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private int status_;
+    /**
+     * <code>.prompt.v1.TemplateStatus status = 4;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.prompt.v1.TemplateStatus status = 4;</code>
+     * @return The status.
+     */
+    @java.lang.Override public com.blcvn.kratos.protos.prompt.Base.TemplateStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.kratos.protos.prompt.Base.TemplateStatus result = com.blcvn.kratos.protos.prompt.Base.TemplateStatus.valueOf(status_);
+      return result == null ? com.blcvn.kratos.protos.prompt.Base.TemplateStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getTemplateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, template_);
+      }
+      for (int i = 0; i < variables_.size(); i++) {
+        output.writeMessage(3, variables_.get(i));
+      }
+      if (status_ != com.blcvn.kratos.protos.prompt.Base.TemplateStatus.TEMPLATE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, status_);
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getTemplateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, template_);
+      }
+      for (int i = 0; i < variables_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, variables_.get(i));
+      }
+      if (status_ != com.blcvn.kratos.protos.prompt.Base.TemplateStatus.TEMPLATE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, status_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof prompt.v1.Prompt.UpdateTemplateByNamePayload)) {
+        return super.equals(obj);
+      }
+      prompt.v1.Prompt.UpdateTemplateByNamePayload other = (prompt.v1.Prompt.UpdateTemplateByNamePayload) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getTemplate()
+          .equals(other.getTemplate())) return false;
+      if (!getVariablesList()
+          .equals(other.getVariablesList())) return false;
+      if (status_ != other.status_) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getTemplate().hashCode();
+      if (getVariablesCount() > 0) {
+        hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
+        hash = (53 * hash) + getVariablesList().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(prompt.v1.Prompt.UpdateTemplateByNamePayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code prompt.v1.UpdateTemplateByNamePayload}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:prompt.v1.UpdateTemplateByNamePayload)
+        prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNamePayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                prompt.v1.Prompt.UpdateTemplateByNamePayload.class, prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder.class);
+      }
+
+      // Construct using prompt.v1.Prompt.UpdateTemplateByNamePayload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getVariablesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        template_ = "";
+
+        if (variablesBuilder_ == null) {
+          variables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          variablesBuilder_.clear();
+        }
+        status_ = 0;
+
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNamePayload getDefaultInstanceForType() {
+        return prompt.v1.Prompt.UpdateTemplateByNamePayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNamePayload build() {
+        prompt.v1.Prompt.UpdateTemplateByNamePayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNamePayload buildPartial() {
+        prompt.v1.Prompt.UpdateTemplateByNamePayload result = new prompt.v1.Prompt.UpdateTemplateByNamePayload(this);
+        int from_bitField0_ = bitField0_;
+        result.name_ = name_;
+        result.template_ = template_;
+        if (variablesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            variables_ = java.util.Collections.unmodifiableList(variables_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.variables_ = variables_;
+        } else {
+          result.variables_ = variablesBuilder_.build();
+        }
+        result.status_ = status_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.tags_ = tags_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof prompt.v1.Prompt.UpdateTemplateByNamePayload) {
+          return mergeFrom((prompt.v1.Prompt.UpdateTemplateByNamePayload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(prompt.v1.Prompt.UpdateTemplateByNamePayload other) {
+        if (other == prompt.v1.Prompt.UpdateTemplateByNamePayload.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getTemplate().isEmpty()) {
+          template_ = other.template_;
+          onChanged();
+        }
+        if (variablesBuilder_ == null) {
+          if (!other.variables_.isEmpty()) {
+            if (variables_.isEmpty()) {
+              variables_ = other.variables_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureVariablesIsMutable();
+              variables_.addAll(other.variables_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.variables_.isEmpty()) {
+            if (variablesBuilder_.isEmpty()) {
+              variablesBuilder_.dispose();
+              variablesBuilder_ = null;
+              variables_ = other.variables_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              variablesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getVariablesFieldBuilder() : null;
+            } else {
+              variablesBuilder_.addAllMessages(other.variables_);
+            }
+          }
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        prompt.v1.Prompt.UpdateTemplateByNamePayload parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (prompt.v1.Prompt.UpdateTemplateByNamePayload) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object template_ = "";
+      /**
+       * <code>string template = 2;</code>
+       * @return The template.
+       */
+      public java.lang.String getTemplate() {
+        java.lang.Object ref = template_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          template_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string template = 2;</code>
+       * @return The bytes for template.
+       */
+      public com.google.protobuf.ByteString
+          getTemplateBytes() {
+        java.lang.Object ref = template_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          template_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string template = 2;</code>
+       * @param value The template to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemplate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        template_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string template = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTemplate() {
+        
+        template_ = getDefaultInstance().getTemplate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string template = 2;</code>
+       * @param value The bytes for template to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemplateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        template_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable> variables_ =
+        java.util.Collections.emptyList();
+      private void ensureVariablesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          variables_ = new java.util.ArrayList<com.blcvn.kratos.protos.prompt.Base.Variable>(variables_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Variable, com.blcvn.kratos.protos.prompt.Base.Variable.Builder, com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder> variablesBuilder_;
+
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable> getVariablesList() {
+        if (variablesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(variables_);
+        } else {
+          return variablesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public int getVariablesCount() {
+        if (variablesBuilder_ == null) {
+          return variables_.size();
+        } else {
+          return variablesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Variable getVariables(int index) {
+        if (variablesBuilder_ == null) {
+          return variables_.get(index);
+        } else {
+          return variablesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder setVariables(
+          int index, com.blcvn.kratos.protos.prompt.Base.Variable value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.set(index, value);
+          onChanged();
+        } else {
+          variablesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder setVariables(
+          int index, com.blcvn.kratos.protos.prompt.Base.Variable.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder addVariables(com.blcvn.kratos.protos.prompt.Base.Variable value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.add(value);
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder addVariables(
+          int index, com.blcvn.kratos.protos.prompt.Base.Variable value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.add(index, value);
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder addVariables(
+          com.blcvn.kratos.protos.prompt.Base.Variable.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.add(builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder addVariables(
+          int index, com.blcvn.kratos.protos.prompt.Base.Variable.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder addAllVariables(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.prompt.Base.Variable> values) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, variables_);
+          onChanged();
+        } else {
+          variablesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder clearVariables() {
+        if (variablesBuilder_ == null) {
+          variables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          variablesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public Builder removeVariables(int index) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.remove(index);
+          onChanged();
+        } else {
+          variablesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Variable.Builder getVariablesBuilder(
+          int index) {
+        return getVariablesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder getVariablesOrBuilder(
+          int index) {
+        if (variablesBuilder_ == null) {
+          return variables_.get(index);  } else {
+          return variablesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder> 
+           getVariablesOrBuilderList() {
+        if (variablesBuilder_ != null) {
+          return variablesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(variables_);
+        }
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Variable.Builder addVariablesBuilder() {
+        return getVariablesFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.prompt.Base.Variable.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Variable.Builder addVariablesBuilder(
+          int index) {
+        return getVariablesFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.prompt.Base.Variable.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .prompt.v1.Variable variables = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.prompt.Base.Variable.Builder> 
+           getVariablesBuilderList() {
+        return getVariablesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Variable, com.blcvn.kratos.protos.prompt.Base.Variable.Builder, com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder> 
+          getVariablesFieldBuilder() {
+        if (variablesBuilder_ == null) {
+          variablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.prompt.Base.Variable, com.blcvn.kratos.protos.prompt.Base.Variable.Builder, com.blcvn.kratos.protos.prompt.Base.VariableOrBuilder>(
+                  variables_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          variables_ = null;
+        }
+        return variablesBuilder_;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.prompt.v1.TemplateStatus status = 4;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.prompt.v1.TemplateStatus status = 4;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.TemplateStatus status = 4;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.prompt.Base.TemplateStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.kratos.protos.prompt.Base.TemplateStatus result = com.blcvn.kratos.protos.prompt.Base.TemplateStatus.valueOf(status_);
+        return result == null ? com.blcvn.kratos.protos.prompt.Base.TemplateStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.prompt.v1.TemplateStatus status = 4;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.blcvn.kratos.protos.prompt.Base.TemplateStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.TemplateStatus status = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:prompt.v1.UpdateTemplateByNamePayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:prompt.v1.UpdateTemplateByNamePayload)
+    private static final prompt.v1.Prompt.UpdateTemplateByNamePayload DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new prompt.v1.Prompt.UpdateTemplateByNamePayload();
+    }
+
+    public static prompt.v1.Prompt.UpdateTemplateByNamePayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateTemplateByNamePayload>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateTemplateByNamePayload>() {
+      @java.lang.Override
+      public UpdateTemplateByNamePayload parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateTemplateByNamePayload(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateTemplateByNamePayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateTemplateByNamePayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public prompt.v1.Prompt.UpdateTemplateByNamePayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateTemplateByNameRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:prompt.v1.UpdateTemplateByNameRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata();
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.kratos.protos.prompt.Base.Signature getSignature();
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    boolean hasPayload();
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     * @return The payload.
+     */
+    prompt.v1.Prompt.UpdateTemplateByNamePayload getPayload();
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     */
+    prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder getPayloadOrBuilder();
+  }
+  /**
+   * Protobuf type {@code prompt.v1.UpdateTemplateByNameRequest}
+   */
+  public static final class UpdateTemplateByNameRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:prompt.v1.UpdateTemplateByNameRequest)
+      UpdateTemplateByNameRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateTemplateByNameRequest.newBuilder() to construct.
+    private UpdateTemplateByNameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateTemplateByNameRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateTemplateByNameRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateTemplateByNameRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.prompt.Base.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.kratos.protos.prompt.Base.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.prompt.Base.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.kratos.protos.prompt.Base.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(prompt.v1.Prompt.UpdateTemplateByNamePayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNameRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              prompt.v1.Prompt.UpdateTemplateByNameRequest.class, prompt.v1.Prompt.UpdateTemplateByNameRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.kratos.protos.prompt.Base.Metadata metadata_;
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.prompt.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.kratos.protos.prompt.Base.Signature signature_;
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.Signature getSignature() {
+      return signature_ == null ? com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.prompt.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private prompt.v1.Prompt.UpdateTemplateByNamePayload payload_;
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     * @return Whether the payload field is set.
+     */
+    @java.lang.Override
+    public boolean hasPayload() {
+      return payload_ != null;
+    }
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     * @return The payload.
+     */
+    @java.lang.Override
+    public prompt.v1.Prompt.UpdateTemplateByNamePayload getPayload() {
+      return payload_ == null ? prompt.v1.Prompt.UpdateTemplateByNamePayload.getDefaultInstance() : payload_;
+    }
+    /**
+     * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+     */
+    @java.lang.Override
+    public prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder getPayloadOrBuilder() {
+      return getPayload();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (payload_ != null) {
+        output.writeMessage(3, getPayload());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (payload_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPayload());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof prompt.v1.Prompt.UpdateTemplateByNameRequest)) {
+        return super.equals(obj);
+      }
+      prompt.v1.Prompt.UpdateTemplateByNameRequest other = (prompt.v1.Prompt.UpdateTemplateByNameRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasPayload() != other.hasPayload()) return false;
+      if (hasPayload()) {
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasPayload()) {
+        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getPayload().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(prompt.v1.Prompt.UpdateTemplateByNameRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code prompt.v1.UpdateTemplateByNameRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:prompt.v1.UpdateTemplateByNameRequest)
+        prompt.v1.Prompt.UpdateTemplateByNameRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNameRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                prompt.v1.Prompt.UpdateTemplateByNameRequest.class, prompt.v1.Prompt.UpdateTemplateByNameRequest.Builder.class);
+      }
+
+      // Construct using prompt.v1.Prompt.UpdateTemplateByNameRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return prompt.v1.Prompt.internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNameRequest getDefaultInstanceForType() {
+        return prompt.v1.Prompt.UpdateTemplateByNameRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNameRequest build() {
+        prompt.v1.Prompt.UpdateTemplateByNameRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public prompt.v1.Prompt.UpdateTemplateByNameRequest buildPartial() {
+        prompt.v1.Prompt.UpdateTemplateByNameRequest result = new prompt.v1.Prompt.UpdateTemplateByNameRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof prompt.v1.Prompt.UpdateTemplateByNameRequest) {
+          return mergeFrom((prompt.v1.Prompt.UpdateTemplateByNameRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(prompt.v1.Prompt.UpdateTemplateByNameRequest other) {
+        if (other == prompt.v1.Prompt.UpdateTemplateByNameRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasPayload()) {
+          mergePayload(other.getPayload());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        prompt.v1.Prompt.UpdateTemplateByNameRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (prompt.v1.Prompt.UpdateTemplateByNameRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.kratos.protos.prompt.Base.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.kratos.protos.prompt.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.kratos.protos.prompt.Base.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.kratos.protos.prompt.Base.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.kratos.protos.prompt.Base.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.kratos.protos.prompt.Base.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.prompt.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.prompt.Base.Metadata, com.blcvn.kratos.protos.prompt.Base.Metadata.Builder, com.blcvn.kratos.protos.prompt.Base.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.prompt.Base.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.kratos.protos.prompt.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.kratos.protos.prompt.Base.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.kratos.protos.prompt.Base.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.kratos.protos.prompt.Base.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.kratos.protos.prompt.Base.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.prompt.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.prompt.Base.Signature, com.blcvn.kratos.protos.prompt.Base.Signature.Builder, com.blcvn.kratos.protos.prompt.Base.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private prompt.v1.Prompt.UpdateTemplateByNamePayload payload_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          prompt.v1.Prompt.UpdateTemplateByNamePayload, prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder, prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder> payloadBuilder_;
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       * @return Whether the payload field is set.
+       */
+      public boolean hasPayload() {
+        return payloadBuilder_ != null || payload_ != null;
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       * @return The payload.
+       */
+      public prompt.v1.Prompt.UpdateTemplateByNamePayload getPayload() {
+        if (payloadBuilder_ == null) {
+          return payload_ == null ? prompt.v1.Prompt.UpdateTemplateByNamePayload.getDefaultInstance() : payload_;
+        } else {
+          return payloadBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public Builder setPayload(prompt.v1.Prompt.UpdateTemplateByNamePayload value) {
+        if (payloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public Builder setPayload(
+          prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder builderForValue) {
+        if (payloadBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          payloadBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public Builder mergePayload(prompt.v1.Prompt.UpdateTemplateByNamePayload value) {
+        if (payloadBuilder_ == null) {
+          if (payload_ != null) {
+            payload_ =
+              prompt.v1.Prompt.UpdateTemplateByNamePayload.newBuilder(payload_).mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          payloadBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public Builder clearPayload() {
+        if (payloadBuilder_ == null) {
+          payload_ = null;
+          onChanged();
+        } else {
+          payload_ = null;
+          payloadBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder getPayloadBuilder() {
+        
+        onChanged();
+        return getPayloadFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      public prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder getPayloadOrBuilder() {
+        if (payloadBuilder_ != null) {
+          return payloadBuilder_.getMessageOrBuilder();
+        } else {
+          return payload_ == null ?
+              prompt.v1.Prompt.UpdateTemplateByNamePayload.getDefaultInstance() : payload_;
+        }
+      }
+      /**
+       * <code>.prompt.v1.UpdateTemplateByNamePayload payload = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          prompt.v1.Prompt.UpdateTemplateByNamePayload, prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder, prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder> 
+          getPayloadFieldBuilder() {
+        if (payloadBuilder_ == null) {
+          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              prompt.v1.Prompt.UpdateTemplateByNamePayload, prompt.v1.Prompt.UpdateTemplateByNamePayload.Builder, prompt.v1.Prompt.UpdateTemplateByNamePayloadOrBuilder>(
+                  getPayload(),
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        return payloadBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:prompt.v1.UpdateTemplateByNameRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:prompt.v1.UpdateTemplateByNameRequest)
+    private static final prompt.v1.Prompt.UpdateTemplateByNameRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new prompt.v1.Prompt.UpdateTemplateByNameRequest();
+    }
+
+    public static prompt.v1.Prompt.UpdateTemplateByNameRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateTemplateByNameRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateTemplateByNameRequest>() {
+      @java.lang.Override
+      public UpdateTemplateByNameRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateTemplateByNameRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateTemplateByNameRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateTemplateByNameRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public prompt.v1.Prompt.UpdateTemplateByNameRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -25880,6 +29555,11 @@ public final class Prompt {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_prompt_v1_GetTemplateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_prompt_v1_GetTemplateByNameRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_prompt_v1_GetTemplateByNameRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_prompt_v1_GetTemplateResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -25904,6 +29584,16 @@ public final class Prompt {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_prompt_v1_UpdateTemplateRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_prompt_v1_UpdateTemplateByNamePayload_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_prompt_v1_UpdateTemplateByNameRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_prompt_v1_UpdateTemplateResponse_descriptor;
   private static final 
@@ -26005,101 +29695,119 @@ public final class Prompt {
       "\n\010template\030\004 \001(\0132\031.prompt.v1.PromptTempl" +
       "ate\"p\n\022GetTemplateRequest\022%\n\010metadata\030\001 " +
       "\001(\0132\023.prompt.v1.Metadata\022\'\n\tsignature\030\002 " +
-      "\001(\0132\024.prompt.v1.Signature\022\n\n\002id\030\003 \001(\t\"\265\001" +
-      "\n\023GetTemplateResponse\022%\n\010metadata\030\001 \001(\0132" +
-      "\023.prompt.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132" +
-      "\024.prompt.v1.Signature\022!\n\006result\030\003 \001(\0132\021." +
-      "prompt.v1.Result\022+\n\010template\030\004 \001(\0132\031.pro" +
-      "mpt.v1.PromptTemplate\"\337\001\n\024ListTemplatesR" +
-      "equest\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Met" +
+      "\001(\0132\024.prompt.v1.Signature\022\n\n\002id\030\003 \001(\t\"\266\001" +
+      "\n\030GetTemplateByNameRequest\022%\n\010metadata\030\001" +
+      " \001(\0132\023.prompt.v1.Metadata\022\'\n\tsignature\030\002" +
+      " \001(\0132\024.prompt.v1.Signature\022\014\n\004name\030\003 \001(\t" +
+      "\022\017\n\007version\030\004 \001(\t\022+\n\013environment\030\005 \001(\0162\026" +
+      ".prompt.v1.Environment\"\265\001\n\023GetTemplateRe" +
+      "sponse\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Met" +
       "adata\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.Sig" +
-      "nature\022+\n\013environment\030\003 \001(\0162\026.prompt.v1." +
-      "Environment\022)\n\006status\030\004 \001(\0162\031.prompt.v1." +
-      "TemplateStatus\022\014\n\004page\030\005 \001(\005\022\021\n\tpage_siz" +
-      "e\030\006 \001(\005\"\307\001\n\025ListTemplatesResponse\022%\n\010met" +
-      "adata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsign" +
-      "ature\030\002 \001(\0132\024.prompt.v1.Signature\022!\n\006res" +
-      "ult\030\003 \001(\0132\021.prompt.v1.Result\022,\n\ttemplate" +
-      "s\030\004 \003(\0132\031.prompt.v1.PromptTemplate\022\r\n\005to" +
-      "tal\030\005 \001(\005\"\210\001\n\025UpdateTemplatePayload\022\n\n\002i" +
-      "d\030\001 \001(\t\022\020\n\010template\030\002 \001(\t\022&\n\tvariables\030\003" +
-      " \003(\0132\023.prompt.v1.Variable\022)\n\006status\030\004 \001(" +
-      "\0162\031.prompt.v1.TemplateStatus\"\232\001\n\025UpdateT" +
-      "emplateRequest\022%\n\010metadata\030\001 \001(\0132\023.promp" +
-      "t.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.promp" +
-      "t.v1.Signature\0221\n\007payload\030\003 \001(\0132 .prompt" +
-      ".v1.UpdateTemplatePayload\"\265\001\n\026UpdateTemp" +
-      "lateResponse\022%\n\010metadata\030\001 \001(\0132\023.prompt." +
-      "v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.prompt." +
-      "v1.Signature\022!\n\006result\030\003 \001(\0132\021.prompt.v1" +
-      ".Result\022(\n\005model\030\004 \001(\0132\031.prompt.v1.Promp" +
-      "tTemplate\"s\n\025DeleteTemplateRequest\022%\n\010me" +
-      "tadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsig" +
-      "nature\030\002 \001(\0132\024.prompt.v1.Signature\022\n\n\002id" +
-      "\030\003 \001(\t\"\242\001\n\025RenderTemplatePayload\022\023\n\013temp" +
-      "late_id\030\001 \001(\t\022B\n\tvariables\030\002 \003(\0132/.promp" +
-      "t.v1.RenderTemplatePayload.VariablesEntr" +
-      "y\0320\n\016VariablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"\232\001\n\025RenderTemplateRequest\022%\n" +
-      "\010metadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\t" +
-      "signature\030\002 \001(\0132\024.prompt.v1.Signature\0221\n" +
-      "\007payload\030\003 \001(\0132 .prompt.v1.RenderTemplat" +
-      "ePayload\"\270\001\n\026RenderTemplateResponse\022%\n\010m" +
-      "etadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsi" +
-      "gnature\030\002 \001(\0132\024.prompt.v1.Signature\022!\n\006r" +
-      "esult\030\003 \001(\0132\021.prompt.v1.Result\022+\n\010render" +
-      "ed\030\004 \001(\0132\031.prompt.v1.RenderedPrompt\"l\n\027C" +
-      "reateExperimentPayload\022\014\n\004name\030\001 \001(\t\022\025\n\r" +
-      "template_a_id\030\002 \001(\t\022\025\n\rtemplate_b_id\030\003 \001" +
-      "(\t\022\025\n\rtraffic_split\030\004 \001(\005\"\236\001\n\027CreateExpe" +
-      "rimentRequest\022%\n\010metadata\030\001 \001(\0132\023.prompt" +
-      ".v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.prompt" +
-      ".v1.Signature\0223\n\007payload\030\003 \001(\0132\".prompt." +
-      "v1.CreateExperimentPayload\"\276\001\n\030CreateExp" +
-      "erimentResponse\022%\n\010metadata\030\001 \001(\0132\023.prom" +
-      "pt.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.prom" +
-      "pt.v1.Signature\022!\n\006result\030\003 \001(\0132\021.prompt" +
-      ".v1.Result\022/\n\nexperiment\030\004 \001(\0132\033.prompt." +
-      "v1.PromptExperiment\"r\n\024GetExperimentRequ" +
+      "nature\022!\n\006result\030\003 \001(\0132\021.prompt.v1.Resul" +
+      "t\022+\n\010template\030\004 \001(\0132\031.prompt.v1.PromptTe" +
+      "mplate\"\337\001\n\024ListTemplatesRequest\022%\n\010metad" +
+      "ata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsignat" +
+      "ure\030\002 \001(\0132\024.prompt.v1.Signature\022+\n\013envir" +
+      "onment\030\003 \001(\0162\026.prompt.v1.Environment\022)\n\006" +
+      "status\030\004 \001(\0162\031.prompt.v1.TemplateStatus\022" +
+      "\014\n\004page\030\005 \001(\005\022\021\n\tpage_size\030\006 \001(\005\"\307\001\n\025Lis" +
+      "tTemplatesResponse\022%\n\010metadata\030\001 \001(\0132\023.p" +
+      "rompt.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.p" +
+      "rompt.v1.Signature\022!\n\006result\030\003 \001(\0132\021.pro" +
+      "mpt.v1.Result\022,\n\ttemplates\030\004 \003(\0132\031.promp" +
+      "t.v1.PromptTemplate\022\r\n\005total\030\005 \001(\005\"\210\001\n\025U" +
+      "pdateTemplatePayload\022\n\n\002id\030\001 \001(\t\022\020\n\010temp" +
+      "late\030\002 \001(\t\022&\n\tvariables\030\003 \003(\0132\023.prompt.v" +
+      "1.Variable\022)\n\006status\030\004 \001(\0162\031.prompt.v1.T" +
+      "emplateStatus\"\232\001\n\025UpdateTemplateRequest\022" +
+      "%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'" +
+      "\n\tsignature\030\002 \001(\0132\024.prompt.v1.Signature\022" +
+      "1\n\007payload\030\003 \001(\0132 .prompt.v1.UpdateTempl" +
+      "atePayload\"\236\001\n\033UpdateTemplateByNamePaylo" +
+      "ad\022\014\n\004name\030\001 \001(\t\022\020\n\010template\030\002 \001(\t\022&\n\tva" +
+      "riables\030\003 \003(\0132\023.prompt.v1.Variable\022)\n\006st" +
+      "atus\030\004 \001(\0162\031.prompt.v1.TemplateStatus\022\014\n" +
+      "\004tags\030\005 \003(\t\"\246\001\n\033UpdateTemplateByNameRequ" +
       "est\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metada" +
       "ta\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.Signat" +
-      "ure\022\n\n\002id\030\003 \001(\t\"\273\001\n\025GetExperimentRespons" +
-      "e\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metadata" +
-      "\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.Signatur" +
-      "e\022!\n\006result\030\003 \001(\0132\021.prompt.v1.Result\022/\n\n" +
-      "experiment\030\004 \001(\0132\033.prompt.v1.PromptExper" +
-      "iment\".\n\031CompleteExperimentPayload\022\021\n\twi" +
-      "nner_id\030\001 \001(\t\"\256\001\n\031CompleteExperimentRequ" +
-      "est\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metada" +
-      "ta\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.Signat" +
-      "ure\022\n\n\002id\030\003 \001(\t\0225\n\007payload\030\004 \001(\0132$.promp" +
-      "t.v1.CompleteExperimentPayload\"\300\001\n\032Compl" +
-      "eteExperimentResponse\022%\n\010metadata\030\001 \001(\0132" +
-      "\023.prompt.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132" +
-      "\024.prompt.v1.Signature\022!\n\006result\030\003 \001(\0132\021." +
-      "prompt.v1.Result\022/\n\nexperiment\030\004 \001(\0132\033.p" +
-      "rompt.v1.PromptExperiment2\230\006\n\rPromptServ" +
-      "ice\022U\n\016CreateTemplate\022 .prompt.v1.Create" +
-      "TemplateRequest\032!.prompt.v1.CreateTempla" +
-      "teResponse\022L\n\013GetTemplate\022\035.prompt.v1.Ge" +
-      "tTemplateRequest\032\036.prompt.v1.GetTemplate" +
-      "Response\022R\n\rListTemplates\022\037.prompt.v1.Li" +
-      "stTemplatesRequest\032 .prompt.v1.ListTempl" +
-      "atesResponse\022U\n\016UpdateTemplate\022 .prompt." +
-      "v1.UpdateTemplateRequest\032!.prompt.v1.Upd" +
-      "ateTemplateResponse\022L\n\016DeleteTemplate\022 ." +
-      "prompt.v1.DeleteTemplateRequest\032\030.prompt" +
-      ".v1.ResponseEmpty\022U\n\016RenderTemplate\022 .pr" +
-      "ompt.v1.RenderTemplateRequest\032!.prompt.v" +
-      "1.RenderTemplateResponse\022[\n\020CreateExperi" +
-      "ment\022\".prompt.v1.CreateExperimentRequest" +
-      "\032#.prompt.v1.CreateExperimentResponse\022R\n" +
-      "\rGetExperiment\022\037.prompt.v1.GetExperiment" +
-      "Request\032 .prompt.v1.GetExperimentRespons" +
-      "e\022a\n\022CompleteExperiment\022$.prompt.v1.Comp" +
-      "leteExperimentRequest\032%.prompt.v1.Comple" +
-      "teExperimentResponseB0Z.github.com/blcvn" +
-      "/kratos-proto/go/prompt;promptb\006proto3"
+      "ure\0227\n\007payload\030\003 \001(\0132&.prompt.v1.UpdateT" +
+      "emplateByNamePayload\"\265\001\n\026UpdateTemplateR" +
+      "esponse\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.Me" +
+      "tadata\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.Si" +
+      "gnature\022!\n\006result\030\003 \001(\0132\021.prompt.v1.Resu" +
+      "lt\022(\n\005model\030\004 \001(\0132\031.prompt.v1.PromptTemp" +
+      "late\"s\n\025DeleteTemplateRequest\022%\n\010metadat" +
+      "a\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsignatur" +
+      "e\030\002 \001(\0132\024.prompt.v1.Signature\022\n\n\002id\030\003 \001(" +
+      "\t\"\242\001\n\025RenderTemplatePayload\022\023\n\013template_" +
+      "id\030\001 \001(\t\022B\n\tvariables\030\002 \003(\0132/.prompt.v1." +
+      "RenderTemplatePayload.VariablesEntry\0320\n\016" +
+      "VariablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001\"\232\001\n\025RenderTemplateRequest\022%\n\010meta" +
+      "data\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsigna" +
+      "ture\030\002 \001(\0132\024.prompt.v1.Signature\0221\n\007payl" +
+      "oad\030\003 \001(\0132 .prompt.v1.RenderTemplatePayl" +
+      "oad\"\270\001\n\026RenderTemplateResponse\022%\n\010metada" +
+      "ta\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\tsignatu" +
+      "re\030\002 \001(\0132\024.prompt.v1.Signature\022!\n\006result" +
+      "\030\003 \001(\0132\021.prompt.v1.Result\022+\n\010rendered\030\004 " +
+      "\001(\0132\031.prompt.v1.RenderedPrompt\"l\n\027Create" +
+      "ExperimentPayload\022\014\n\004name\030\001 \001(\t\022\025\n\rtempl" +
+      "ate_a_id\030\002 \001(\t\022\025\n\rtemplate_b_id\030\003 \001(\t\022\025\n" +
+      "\rtraffic_split\030\004 \001(\005\"\236\001\n\027CreateExperimen" +
+      "tRequest\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1.M" +
+      "etadata\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1.S" +
+      "ignature\0223\n\007payload\030\003 \001(\0132\".prompt.v1.Cr" +
+      "eateExperimentPayload\"\276\001\n\030CreateExperime" +
+      "ntResponse\022%\n\010metadata\030\001 \001(\0132\023.prompt.v1" +
+      ".Metadata\022\'\n\tsignature\030\002 \001(\0132\024.prompt.v1" +
+      ".Signature\022!\n\006result\030\003 \001(\0132\021.prompt.v1.R" +
+      "esult\022/\n\nexperiment\030\004 \001(\0132\033.prompt.v1.Pr" +
+      "omptExperiment\"r\n\024GetExperimentRequest\022%" +
+      "\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n" +
+      "\tsignature\030\002 \001(\0132\024.prompt.v1.Signature\022\n" +
+      "\n\002id\030\003 \001(\t\"\273\001\n\025GetExperimentResponse\022%\n\010" +
+      "metadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n\ts" +
+      "ignature\030\002 \001(\0132\024.prompt.v1.Signature\022!\n\006" +
+      "result\030\003 \001(\0132\021.prompt.v1.Result\022/\n\nexper" +
+      "iment\030\004 \001(\0132\033.prompt.v1.PromptExperiment" +
+      "\".\n\031CompleteExperimentPayload\022\021\n\twinner_" +
+      "id\030\001 \001(\t\"\256\001\n\031CompleteExperimentRequest\022%" +
+      "\n\010metadata\030\001 \001(\0132\023.prompt.v1.Metadata\022\'\n" +
+      "\tsignature\030\002 \001(\0132\024.prompt.v1.Signature\022\n" +
+      "\n\002id\030\003 \001(\t\0225\n\007payload\030\004 \001(\0132$.prompt.v1." +
+      "CompleteExperimentPayload\"\300\001\n\032CompleteEx" +
+      "perimentResponse\022%\n\010metadata\030\001 \001(\0132\023.pro" +
+      "mpt.v1.Metadata\022\'\n\tsignature\030\002 \001(\0132\024.pro" +
+      "mpt.v1.Signature\022!\n\006result\030\003 \001(\0132\021.promp" +
+      "t.v1.Result\022/\n\nexperiment\030\004 \001(\0132\033.prompt" +
+      ".v1.PromptExperiment2\325\007\n\rPromptService\022U" +
+      "\n\016CreateTemplate\022 .prompt.v1.CreateTempl" +
+      "ateRequest\032!.prompt.v1.CreateTemplateRes" +
+      "ponse\022L\n\013GetTemplate\022\035.prompt.v1.GetTemp" +
+      "lateRequest\032\036.prompt.v1.GetTemplateRespo" +
+      "nse\022X\n\021GetTemplateByName\022#.prompt.v1.Get" +
+      "TemplateByNameRequest\032\036.prompt.v1.GetTem" +
+      "plateResponse\022R\n\rListTemplates\022\037.prompt." +
+      "v1.ListTemplatesRequest\032 .prompt.v1.List" +
+      "TemplatesResponse\022U\n\016UpdateTemplate\022 .pr" +
+      "ompt.v1.UpdateTemplateRequest\032!.prompt.v" +
+      "1.UpdateTemplateResponse\022a\n\024UpdateTempla" +
+      "teByName\022&.prompt.v1.UpdateTemplateByNam" +
+      "eRequest\032!.prompt.v1.UpdateTemplateRespo" +
+      "nse\022L\n\016DeleteTemplate\022 .prompt.v1.Delete" +
+      "TemplateRequest\032\030.prompt.v1.ResponseEmpt" +
+      "y\022U\n\016RenderTemplate\022 .prompt.v1.RenderTe" +
+      "mplateRequest\032!.prompt.v1.RenderTemplate" +
+      "Response\022[\n\020CreateExperiment\022\".prompt.v1" +
+      ".CreateExperimentRequest\032#.prompt.v1.Cre" +
+      "ateExperimentResponse\022R\n\rGetExperiment\022\037" +
+      ".prompt.v1.GetExperimentRequest\032 .prompt" +
+      ".v1.GetExperimentResponse\022a\n\022CompleteExp" +
+      "eriment\022$.prompt.v1.CompleteExperimentRe" +
+      "quest\032%.prompt.v1.CompleteExperimentResp" +
+      "onseB0Z.github.com/blcvn/kratos-proto/go" +
+      "/prompt;promptb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -26142,50 +29850,68 @@ public final class Prompt {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_GetTemplateRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", });
-    internal_static_prompt_v1_GetTemplateResponse_descriptor =
+    internal_static_prompt_v1_GetTemplateByNameRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_prompt_v1_GetTemplateByNameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_prompt_v1_GetTemplateByNameRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Name", "Version", "Environment", });
+    internal_static_prompt_v1_GetTemplateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_prompt_v1_GetTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_GetTemplateResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Template", });
     internal_static_prompt_v1_ListTemplatesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_prompt_v1_ListTemplatesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_ListTemplatesRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Environment", "Status", "Page", "PageSize", });
     internal_static_prompt_v1_ListTemplatesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_prompt_v1_ListTemplatesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_ListTemplatesResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Templates", "Total", });
     internal_static_prompt_v1_UpdateTemplatePayload_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_prompt_v1_UpdateTemplatePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_UpdateTemplatePayload_descriptor,
         new java.lang.String[] { "Id", "Template", "Variables", "Status", });
     internal_static_prompt_v1_UpdateTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_prompt_v1_UpdateTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_UpdateTemplateRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
+    internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_prompt_v1_UpdateTemplateByNamePayload_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_prompt_v1_UpdateTemplateByNamePayload_descriptor,
+        new java.lang.String[] { "Name", "Template", "Variables", "Status", "Tags", });
+    internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_prompt_v1_UpdateTemplateByNameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_prompt_v1_UpdateTemplateByNameRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_prompt_v1_UpdateTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_prompt_v1_UpdateTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_UpdateTemplateResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Model", });
     internal_static_prompt_v1_DeleteTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_prompt_v1_DeleteTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_DeleteTemplateRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", });
     internal_static_prompt_v1_RenderTemplatePayload_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_prompt_v1_RenderTemplatePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_RenderTemplatePayload_descriptor,
@@ -26197,61 +29923,61 @@ public final class Prompt {
         internal_static_prompt_v1_RenderTemplatePayload_VariablesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_prompt_v1_RenderTemplateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_prompt_v1_RenderTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_RenderTemplateRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_prompt_v1_RenderTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_prompt_v1_RenderTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_RenderTemplateResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Rendered", });
     internal_static_prompt_v1_CreateExperimentPayload_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_prompt_v1_CreateExperimentPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CreateExperimentPayload_descriptor,
         new java.lang.String[] { "Name", "TemplateAId", "TemplateBId", "TrafficSplit", });
     internal_static_prompt_v1_CreateExperimentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_prompt_v1_CreateExperimentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CreateExperimentRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_prompt_v1_CreateExperimentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_prompt_v1_CreateExperimentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CreateExperimentResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Experiment", });
     internal_static_prompt_v1_GetExperimentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_prompt_v1_GetExperimentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_GetExperimentRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", });
     internal_static_prompt_v1_GetExperimentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_prompt_v1_GetExperimentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_GetExperimentResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Experiment", });
     internal_static_prompt_v1_CompleteExperimentPayload_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_prompt_v1_CompleteExperimentPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CompleteExperimentPayload_descriptor,
         new java.lang.String[] { "WinnerId", });
     internal_static_prompt_v1_CompleteExperimentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_prompt_v1_CompleteExperimentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CompleteExperimentRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_prompt_v1_CompleteExperimentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_prompt_v1_CompleteExperimentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_prompt_v1_CompleteExperimentResponse_descriptor,

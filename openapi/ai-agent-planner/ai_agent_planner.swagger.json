@@ -15,8 +15,83 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/plans": {
+      "post": {
+        "operationId": "PlannerService_CreatePlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExecutionPlan"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreatePlanRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PlannerService"
+        ]
+      }
+    },
+    "/api/plans/validate": {
+      "post": {
+        "operationId": "PlannerService_ValidatePlan",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ValidationResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExecutionPlan"
+            }
+          }
+        ],
+        "tags": [
+          "PlannerService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,6 +116,242 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreatePlanRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ExecutionPlan": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "id": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "feature_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PlanPhase"
+          }
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PlanPhase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PlanStep"
+          }
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "target_version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PlanStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "skill_ref": {
+          "type": "string"
+        },
+        "prompt_key": {
+          "type": "string"
+        },
+        "input_node_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_node_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "score_threshold": {
+          "type": "number",
+          "format": "double"
+        },
+        "max_attempts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "per_feature": {
+          "type": "boolean"
+        },
+        "per_uc": {
+          "type": "boolean"
+        },
+        "gate": {
+          "$ref": "#/definitions/v1QualityGate"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1QualityGate": {
+      "type": "object",
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "threshold": {
+          "type": "number",
+          "format": "double"
+        },
+        "hard_block": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType"
+        },
+        "s": {
+          "type": "string"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1ValidationResult": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
       }

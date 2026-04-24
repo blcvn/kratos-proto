@@ -1,0 +1,3876 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "workspace/workspace.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "WorkspaceService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/urd/{id}/push-confluence": {
+      "post": {
+        "summary": "6. URD Confluence",
+        "operationId": "WorkspaceService_PushUrdConfluence",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PushUrdConfluenceReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PushUrdConfluencePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/document-sections/{id}": {
+      "get": {
+        "operationId": "WorkspaceService_GetDocumentSection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_UpdateDocumentSection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateDocumentSectionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/document-sections/{id}/content": {
+      "put": {
+        "operationId": "WorkspaceService_UpdateDocumentSectionContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateDocumentSectionContentPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/documents/{document_id}/sections": {
+      "get": {
+        "operationId": "WorkspaceService_ListDocumentSections",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListDocumentSectionsReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "include_content",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "operationId": "WorkspaceService_CreateDocumentSection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDocumentSectionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/documents/{document_id}/sections/current": {
+      "get": {
+        "operationId": "WorkspaceService_GetCurrentDocumentSectionVersion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_SetCurrentDocumentSectionVersion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetCurrentDocumentSectionVersionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/documents/{document_id}/sections/versions": {
+      "get": {
+        "operationId": "WorkspaceService_ListDocumentSectionVersions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListDocumentSectionsReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "operationId": "WorkspaceService_CreateDocumentSectionVersion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDocumentSectionVersionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{feature_id}/chat": {
+      "get": {
+        "summary": "4. Chat History",
+        "operationId": "WorkspaceService_ListChatMessages",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListChatMessagesReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "operationId": "WorkspaceService_AppendChatMessage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ChatMessageReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AppendChatMessagePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{feature_id}/documents": {
+      "get": {
+        "operationId": "WorkspaceService_ListDocuments",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListDocumentsReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "summary": "3. Documents",
+        "operationId": "WorkspaceService_CreateDocument",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDocumentPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{feature_id}/members": {
+      "get": {
+        "operationId": "WorkspaceService_ListFeatureMembers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListFeatureMembersReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "operationId": "WorkspaceService_AddFeatureMember",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureMemberReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddFeatureMemberPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{feature_id}/members/{user_id}": {
+      "delete": {
+        "operationId": "WorkspaceService_RemoveFeatureMember",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EmptyReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_UpdateFeatureMemberRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureMemberReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateFeatureMemberRolePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{feature_id}/upsert-document": {
+      "post": {
+        "operationId": "WorkspaceService_UpsertDocumentAndSection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DocumentSectionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "feature_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpsertDocumentAndSectionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/features/{id}": {
+      "get": {
+        "operationId": "WorkspaceService_GetFeature",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "delete": {
+        "operationId": "WorkspaceService_DeleteFeature",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EmptyReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_UpdateFeature",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateFeaturePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects": {
+      "get": {
+        "operationId": "WorkspaceService_ListProjects",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListProjectsReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "summary": "1. Projects",
+        "operationId": "WorkspaceService_CreateProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProjectReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateProjectPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{id}": {
+      "get": {
+        "operationId": "WorkspaceService_GetProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProjectReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "delete": {
+        "operationId": "WorkspaceService_DeleteProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EmptyReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_UpdateProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProjectReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateProjectPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/feature-groups": {
+      "post": {
+        "operationId": "WorkspaceService_CreateFeatureGroup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateFeatureGroupPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/features": {
+      "get": {
+        "summary": "2. Features",
+        "operationId": "WorkspaceService_GetFeatureTree",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFeatureTreeReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "operationId": "WorkspaceService_CreateFeature",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateFeaturePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/members": {
+      "get": {
+        "operationId": "WorkspaceService_ListProjectMembers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListProjectMembersReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "summary": "1.6 \u0026 1.7 Project Members",
+        "operationId": "WorkspaceService_AddProjectMember",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProjectMemberReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AddProjectMemberPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/members/{user_id}": {
+      "delete": {
+        "operationId": "WorkspaceService_RemoveProjectMember",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EmptyReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "put": {
+        "operationId": "WorkspaceService_UpdateProjectMemberRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProjectMemberReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateProjectMemberRolePayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/root-feature": {
+      "get": {
+        "operationId": "WorkspaceService_GetRootFeature",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1FeatureReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/projects/{project_id}/sessions": {
+      "get": {
+        "operationId": "WorkspaceService_ListProjectSessions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListSessionsReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      },
+      "post": {
+        "summary": "5. Sessions",
+        "operationId": "WorkspaceService_CreateSession",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SessionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "description": "Or empty if none needed",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSessionPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/sessions/{id}": {
+      "get": {
+        "operationId": "WorkspaceService_GetSession",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SessionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    },
+    "/v1/workspace/sessions/{id}/context": {
+      "put": {
+        "operationId": "WorkspaceService_UpdateSessionContext",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EmptyReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateSessionContextPayload"
+            }
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "WorkspaceService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AddFeatureMemberPayload": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AddProjectMemberPayload": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AppendChatMessagePayload": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ChatMessage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "feature_id": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "string",
+          "title": "JSON string"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ChatMessageReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1ChatMessage"
+        }
+      }
+    },
+    "v1ConfluenceConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "space_key": {
+          "type": "string"
+        },
+        "parent_page_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateDocumentPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "section_type": {
+          "type": "string"
+        }
+      },
+      "title": "--- Document ---"
+    },
+    "v1CreateDocumentSectionPayload": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "storage_type": {
+          "type": "string"
+        },
+        "confluence_page_id": {
+          "type": "string"
+        },
+        "confluence_url": {
+          "type": "string"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "ref_document_id": {
+          "type": "string"
+        },
+        "task_ref_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateDocumentSectionVersionPayload": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "section_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateFeatureGroupPayload": {
+      "type": "object",
+      "properties": {
+        "parent_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1CreateFeaturePayload": {
+      "type": "object",
+      "properties": {
+        "parent_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "is_feature_group": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateProjectPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "confluence_config": {
+          "$ref": "#/definitions/v1ConfluenceConfig"
+        }
+      }
+    },
+    "v1CreateSessionPayload": {
+      "type": "object",
+      "title": "--- Session ---"
+    },
+    "v1Document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "feature_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DocumentReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1Document"
+        }
+      }
+    },
+    "v1DocumentSection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "storage_type": {
+          "type": "string"
+        },
+        "storage_ref": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "title": "JSON string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "confluence_page_id": {
+          "type": "string"
+        },
+        "confluence_url": {
+          "type": "string"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "approved_at": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "task_ref_id": {
+          "type": "string"
+        },
+        "ref_document_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DocumentSectionReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1DocumentSection"
+        }
+      }
+    },
+    "v1EmptyReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        }
+      }
+    },
+    "v1Feature": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "current_step": {
+          "type": "string"
+        },
+        "progress": {
+          "type": "string",
+          "title": "JSON string"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "is_feature_group": {
+          "type": "boolean"
+        },
+        "current_phase": {
+          "type": "string"
+        },
+        "has_prd_detail": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FeatureMember": {
+      "type": "object",
+      "properties": {
+        "feature_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "granted_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "v1FeatureMemberReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1FeatureMember"
+        }
+      }
+    },
+    "v1FeatureReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1Feature"
+        }
+      }
+    },
+    "v1GetFeatureTreeReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Feature"
+          }
+        }
+      }
+    },
+    "v1ListChatMessagesReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChatMessage"
+          }
+        }
+      }
+    },
+    "v1ListDocumentSectionsReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1DocumentSection"
+          }
+        }
+      }
+    },
+    "v1ListDocumentsReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Document"
+          }
+        }
+      }
+    },
+    "v1ListFeatureMembersReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FeatureMember"
+          }
+        }
+      }
+    },
+    "v1ListProjectMembersReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ProjectMember"
+          }
+        }
+      }
+    },
+    "v1ListProjectsReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Project"
+          }
+        },
+        "next_page_token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListSessionsReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Session"
+          }
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      },
+      "title": "Metadata chứa thông tin về request/response"
+    },
+    "v1Project": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "confluence_config": {
+          "$ref": "#/definitions/v1ConfluenceConfig"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "user_role": {
+          "type": "string",
+          "title": "For list response"
+        },
+        "overview": {
+          "$ref": "#/definitions/v1ProjectOverview"
+        }
+      }
+    },
+    "v1ProjectMember": {
+      "type": "object",
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ProjectMemberReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1ProjectMember"
+        }
+      }
+    },
+    "v1ProjectOverview": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ProjectReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1Project"
+        }
+      }
+    },
+    "v1PushUrdConfluencePayload": {
+      "type": "object",
+      "properties": {
+        "confluence_url": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "title": "--- URD Confluence ---"
+    },
+    "v1PushUrdConfluenceReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "title": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout"
+    },
+    "v1Session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "current_feature_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SessionReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1Session"
+        }
+      }
+    },
+    "v1SetCurrentDocumentSectionVersionPayload": {
+      "type": "object",
+      "properties": {
+        "section_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    },
+    "v1UpdateDocumentSectionContentPayload": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "expected_version": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1UpdateDocumentSectionPayload": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "confluence_page_id": {
+          "type": "string"
+        },
+        "confluence_url": {
+          "type": "string"
+        },
+        "ref_document_id": {
+          "type": "string"
+        },
+        "task_ref_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateFeatureMemberRolePayload": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateFeaturePayload": {
+      "type": "object",
+      "properties": {
+        "parent_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "progress": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "current_phase": {
+          "type": "string"
+        },
+        "current_step": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateProjectMemberRolePayload": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpdateProjectPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "confluence_config": {
+          "$ref": "#/definitions/v1ConfluenceConfig"
+        }
+      }
+    },
+    "v1UpdateSessionContextPayload": {
+      "type": "object",
+      "properties": {
+        "current_feature_id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UpsertDocumentAndSectionPayload": {
+      "type": "object",
+      "properties": {
+        "doc_type": {
+          "type": "string"
+        },
+        "section_type": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "section_id": {
+          "type": "string"
+        },
+        "metadata_json": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -15,8 +15,152 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/execute/phase": {
+      "post": {
+        "operationId": "ExecutorService_ExecutePhase",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PhaseResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExecutePhaseRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExecutorService"
+        ]
+      }
+    },
+    "/api/execute/step": {
+      "post": {
+        "operationId": "ExecutorService_ExecuteStep",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1StepResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExecuteStepRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExecutorService"
+        ]
+      }
+    },
+    "/api/skills": {
+      "get": {
+        "operationId": "ExecutorService_ListSkills",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListSkillsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "ExecutorService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -41,6 +185,222 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ExecutePhaseRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "phase_id": {
+          "type": "string"
+        },
+        "mode": {
+          "$ref": "#/definitions/v1ExecutionMode"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ExecuteStepRequest"
+          }
+        }
+      }
+    },
+    "v1ExecuteStepRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature"
+        },
+        "step_id": {
+          "type": "string"
+        },
+        "skill_ref": {
+          "type": "string"
+        },
+        "prompt_key": {
+          "type": "string"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "feature_id": {
+          "type": "string"
+        },
+        "uc_id": {
+          "type": "string"
+        },
+        "prd_text": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ExecutionMode": {
+      "type": "string",
+      "enum": [
+        "SEQUENTIAL",
+        "PARALLEL"
+      ],
+      "default": "SEQUENTIAL"
+    },
+    "v1ListSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SkillInfo"
+          }
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PhaseResult": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "phase_id": {
+          "type": "string"
+        },
+        "step_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1StepResult"
+          }
+        },
+        "has_blocker": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType"
+        },
+        "s": {
+          "type": "string"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1SkillInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "prompt_key": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1StepResult": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "step_id": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        },
+        "has_blocker": {
+          "type": "boolean"
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
           }
         }
       }

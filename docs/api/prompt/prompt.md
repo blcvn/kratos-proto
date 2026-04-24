@@ -418,6 +418,158 @@
 }
 ```
 
+### GET /prompts/templates/name/{name}
+- Mô tả: Lấy thông tin theo `name`
+- Auth: không
+
+- Response 200 (object `v1GetTemplateResponse`):
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "template": {
+    "id": "...",
+    "name": "...",
+    "version": "...",
+    "environment": "...",
+    "template": "...",
+    "variables": [
+      {
+        "name": "...",
+        "type": "...",
+        "description": "...",
+        "default_value": "...",
+        "required": true
+      }
+    ],
+    "metadata": {},
+    "status": "...",
+    "created_by": "...",
+    "created_at": "2025-...",
+    "updated_at": "2025-..."
+  }
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### PUT /prompts/templates/name/{payload.name}
+- Mô tả: Cập nhật theo `payload.name`
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "payload": {
+    "template": "...",
+    "variables": [
+      {
+        "name": "...",
+        "type": "...",
+        "description": "...",
+        "default_value": "...",
+        "required": true
+      }
+    ],
+    "status": "...",
+    "tags": [
+      "..."
+    ]
+  }
+}
+```
+
+- Response 200 (object `v1UpdateTemplateResponse`):
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "model": {
+    "id": "...",
+    "name": "...",
+    "version": "...",
+    "environment": "...",
+    "template": "...",
+    "variables": [
+      {
+        "name": "...",
+        "type": "...",
+        "description": "...",
+        "default_value": "...",
+        "required": true
+      }
+    ],
+    "metadata": {},
+    "status": "...",
+    "created_by": "...",
+    "created_at": "2025-...",
+    "updated_at": "2025-..."
+  }
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
 ### DELETE /prompts/templates/{id}
 - Mô tả: Xóa theo `id`
 - Auth: không

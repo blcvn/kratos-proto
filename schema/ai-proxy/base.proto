@@ -69,6 +69,43 @@ message ChatMessage {
   }
   Role role = 1;
   string content = 2;
+  repeated ChatMessagePart parts = 3;
+}
+
+message TextPart {
+  string text = 1;
+}
+
+message ImageURLPart {
+  string url = 1;
+  string detail = 2;
+}
+
+message BinaryPart {
+  string mime_type = 1;
+  bytes data = 2;
+}
+
+message ChatMessagePart {
+  oneof kind {
+    TextPart text = 1;
+    ImageURLPart image_url = 2;
+    BinaryPart binary = 3;
+  }
+}
+
+message PromptCacheConfig {
+  bool enabled = 1;
+  string ttl = 2;
+  string scope = 3;
+}
+
+message ThinkingConfig {
+  string mode = 1;
+  int32 budget_tokens = 2;
+  bool return_thinking = 3;
+  bool stream_thinking = 4;
+  bool interleave_thinking = 5;
 }
 
 message CompletionRequest {
@@ -80,6 +117,8 @@ message CompletionRequest {
   double top_p = 5;
   repeated string stop = 6;
   map<string, string> metadata = 7;
+  PromptCacheConfig prompt_cache = 9;
+  ThinkingConfig thinking = 10;
 }
 
 message CompletionResponse {

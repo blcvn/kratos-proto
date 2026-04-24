@@ -3212,6 +3212,30 @@ public final class Base {
      */
     com.google.protobuf.ByteString
         getContentBytes();
+
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> 
+        getPartsList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getParts(int index);
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    int getPartsCount();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder> 
+        getPartsOrBuilderList();
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder getPartsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code aiproxy.v1.ChatMessage}
@@ -3228,6 +3252,7 @@ public final class Base {
     private ChatMessage() {
       role_ = 0;
       content_ = "";
+      parts_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3250,6 +3275,7 @@ public final class Base {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3272,6 +3298,15 @@ public final class Base {
               content_ = s;
               break;
             }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                parts_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              parts_.add(
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3287,6 +3322,9 @@ public final class Base {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          parts_ = java.util.Collections.unmodifiableList(parts_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3496,6 +3534,46 @@ public final class Base {
       }
     }
 
+    public static final int PARTS_FIELD_NUMBER = 3;
+    private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> parts_;
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> getPartsList() {
+      return parts_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder> 
+        getPartsOrBuilderList() {
+      return parts_;
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    @java.lang.Override
+    public int getPartsCount() {
+      return parts_.size();
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getParts(int index) {
+      return parts_.get(index);
+    }
+    /**
+     * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder getPartsOrBuilder(
+        int index) {
+      return parts_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3516,6 +3594,9 @@ public final class Base {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
       }
+      for (int i = 0; i < parts_.size(); i++) {
+        output.writeMessage(3, parts_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3531,6 +3612,10 @@ public final class Base {
       }
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
+      }
+      for (int i = 0; i < parts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, parts_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3550,6 +3635,8 @@ public final class Base {
       if (role_ != other.role_) return false;
       if (!getContent()
           .equals(other.getContent())) return false;
+      if (!getPartsList()
+          .equals(other.getPartsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3565,6 +3652,10 @@ public final class Base {
       hash = (53 * hash) + role_;
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
+      if (getPartsCount() > 0) {
+        hash = (37 * hash) + PARTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPartsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3693,6 +3784,7 @@ public final class Base {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPartsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3702,6 +3794,12 @@ public final class Base {
 
         content_ = "";
 
+        if (partsBuilder_ == null) {
+          parts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          partsBuilder_.clear();
+        }
         return this;
       }
 
@@ -3728,8 +3826,18 @@ public final class Base {
       @java.lang.Override
       public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage buildPartial() {
         com.blcvn.kratos.protos.aiproxy.Base.ChatMessage result = new com.blcvn.kratos.protos.aiproxy.Base.ChatMessage(this);
+        int from_bitField0_ = bitField0_;
         result.role_ = role_;
         result.content_ = content_;
+        if (partsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            parts_ = java.util.Collections.unmodifiableList(parts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parts_ = parts_;
+        } else {
+          result.parts_ = partsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -3785,6 +3893,32 @@ public final class Base {
           content_ = other.content_;
           onChanged();
         }
+        if (partsBuilder_ == null) {
+          if (!other.parts_.isEmpty()) {
+            if (parts_.isEmpty()) {
+              parts_ = other.parts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePartsIsMutable();
+              parts_.addAll(other.parts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parts_.isEmpty()) {
+            if (partsBuilder_.isEmpty()) {
+              partsBuilder_.dispose();
+              partsBuilder_ = null;
+              parts_ = other.parts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              partsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPartsFieldBuilder() : null;
+            } else {
+              partsBuilder_.addAllMessages(other.parts_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3813,6 +3947,7 @@ public final class Base {
         }
         return this;
       }
+      private int bitField0_;
 
       private int role_ = 0;
       /**
@@ -3943,6 +4078,246 @@ public final class Base {
         onChanged();
         return this;
       }
+
+      private java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> parts_ =
+        java.util.Collections.emptyList();
+      private void ensurePartsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          parts_ = new java.util.ArrayList<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart>(parts_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder> partsBuilder_;
+
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> getPartsList() {
+        if (partsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parts_);
+        } else {
+          return partsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public int getPartsCount() {
+        if (partsBuilder_ == null) {
+          return parts_.size();
+        } else {
+          return partsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getParts(int index) {
+        if (partsBuilder_ == null) {
+          return parts_.get(index);
+        } else {
+          return partsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder setParts(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart value) {
+        if (partsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartsIsMutable();
+          parts_.set(index, value);
+          onChanged();
+        } else {
+          partsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder setParts(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder builderForValue) {
+        if (partsBuilder_ == null) {
+          ensurePartsIsMutable();
+          parts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          partsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder addParts(com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart value) {
+        if (partsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartsIsMutable();
+          parts_.add(value);
+          onChanged();
+        } else {
+          partsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder addParts(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart value) {
+        if (partsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartsIsMutable();
+          parts_.add(index, value);
+          onChanged();
+        } else {
+          partsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder addParts(
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder builderForValue) {
+        if (partsBuilder_ == null) {
+          ensurePartsIsMutable();
+          parts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          partsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder addParts(
+          int index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder builderForValue) {
+        if (partsBuilder_ == null) {
+          ensurePartsIsMutable();
+          parts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          partsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder addAllParts(
+          java.lang.Iterable<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart> values) {
+        if (partsBuilder_ == null) {
+          ensurePartsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parts_);
+          onChanged();
+        } else {
+          partsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder clearParts() {
+        if (partsBuilder_ == null) {
+          parts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          partsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public Builder removeParts(int index) {
+        if (partsBuilder_ == null) {
+          ensurePartsIsMutable();
+          parts_.remove(index);
+          onChanged();
+        } else {
+          partsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder getPartsBuilder(
+          int index) {
+        return getPartsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder getPartsOrBuilder(
+          int index) {
+        if (partsBuilder_ == null) {
+          return parts_.get(index);  } else {
+          return partsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public java.util.List<? extends com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder> 
+           getPartsOrBuilderList() {
+        if (partsBuilder_ != null) {
+          return partsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parts_);
+        }
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder addPartsBuilder() {
+        return getPartsFieldBuilder().addBuilder(
+            com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder addPartsBuilder(
+          int index) {
+        return getPartsFieldBuilder().addBuilder(
+            index, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiproxy.v1.ChatMessagePart parts = 3;</code>
+       */
+      public java.util.List<com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder> 
+           getPartsBuilderList() {
+        return getPartsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder> 
+          getPartsFieldBuilder() {
+        if (partsBuilder_ == null) {
+          partsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder>(
+                  parts_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parts_ = null;
+        }
+        return partsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3991,6 +4366,4750 @@ public final class Base {
 
     @java.lang.Override
     public com.blcvn.kratos.protos.aiproxy.Base.ChatMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TextPartOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.TextPart)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string text = 1;</code>
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     * <code>string text = 1;</code>
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString
+        getTextBytes();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.TextPart}
+   */
+  public static final class TextPart extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.TextPart)
+      TextPartOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TextPart.newBuilder() to construct.
+    private TextPart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TextPart() {
+      text_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TextPart();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TextPart(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              text_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_TextPart_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_TextPart_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.TextPart.class, com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder.class);
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object text_;
+    /**
+     * <code>string text = 1;</code>
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string text = 1;</code>
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.TextPart)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.TextPart other = (com.blcvn.kratos.protos.aiproxy.Base.TextPart) obj;
+
+      if (!getText()
+          .equals(other.getText())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.TextPart prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.TextPart}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.TextPart)
+        com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_TextPart_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_TextPart_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.TextPart.class, com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.TextPart.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        text_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_TextPart_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPart getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPart build() {
+        com.blcvn.kratos.protos.aiproxy.Base.TextPart result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPart buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.TextPart result = new com.blcvn.kratos.protos.aiproxy.Base.TextPart(this);
+        result.text_ = text_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.TextPart) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.TextPart)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.TextPart other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance()) return this;
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.TextPart parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.TextPart) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>string text = 1;</code>
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string text = 1;</code>
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string text = 1;</code>
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        
+        text_ = getDefaultInstance().getText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 1;</code>
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.TextPart)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.TextPart)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.TextPart DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.TextPart();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.TextPart getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TextPart>
+        PARSER = new com.google.protobuf.AbstractParser<TextPart>() {
+      @java.lang.Override
+      public TextPart parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TextPart(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TextPart> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TextPart> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.TextPart getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ImageURLPartOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.ImageURLPart)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string url = 1;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 1;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <code>string detail = 2;</code>
+     * @return The detail.
+     */
+    java.lang.String getDetail();
+    /**
+     * <code>string detail = 2;</code>
+     * @return The bytes for detail.
+     */
+    com.google.protobuf.ByteString
+        getDetailBytes();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.ImageURLPart}
+   */
+  public static final class ImageURLPart extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.ImageURLPart)
+      ImageURLPartOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ImageURLPart.newBuilder() to construct.
+    private ImageURLPart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ImageURLPart() {
+      url_ = "";
+      detail_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ImageURLPart();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ImageURLPart(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              detail_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ImageURLPart_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ImageURLPart_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.class, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder.class);
+    }
+
+    public static final int URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object url_;
+    /**
+     * <code>string url = 1;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 1;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAIL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object detail_;
+    /**
+     * <code>string detail = 2;</code>
+     * @return The detail.
+     */
+    @java.lang.Override
+    public java.lang.String getDetail() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        detail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string detail = 2;</code>
+     * @return The bytes for detail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDetailBytes() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        detail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
+      }
+      if (!getDetailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, detail_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
+      }
+      if (!getDetailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, detail_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart other = (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) obj;
+
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getDetail()
+          .equals(other.getDetail())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getDetail().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.ImageURLPart}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.ImageURLPart)
+        com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ImageURLPart_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ImageURLPart_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.class, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        url_ = "";
+
+        detail_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ImageURLPart_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart build() {
+        com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart result = new com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart(this);
+        result.url_ = url_;
+        result.detail_ = detail_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance()) return this;
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          onChanged();
+        }
+        if (!other.getDetail().isEmpty()) {
+          detail_ = other.detail_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 1;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 1;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 1;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 1;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object detail_ = "";
+      /**
+       * <code>string detail = 2;</code>
+       * @return The detail.
+       */
+      public java.lang.String getDetail() {
+        java.lang.Object ref = detail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          detail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string detail = 2;</code>
+       * @return The bytes for detail.
+       */
+      public com.google.protobuf.ByteString
+          getDetailBytes() {
+        java.lang.Object ref = detail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          detail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string detail = 2;</code>
+       * @param value The detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string detail = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDetail() {
+        
+        detail_ = getDefaultInstance().getDetail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string detail = 2;</code>
+       * @param value The bytes for detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.ImageURLPart)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.ImageURLPart)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ImageURLPart>
+        PARSER = new com.google.protobuf.AbstractParser<ImageURLPart>() {
+      @java.lang.Override
+      public ImageURLPart parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ImageURLPart(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ImageURLPart> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ImageURLPart> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BinaryPartOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.BinaryPart)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mime_type = 1;</code>
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+    /**
+     * <code>string mime_type = 1;</code>
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString
+        getMimeTypeBytes();
+
+    /**
+     * <code>bytes data = 2;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.BinaryPart}
+   */
+  public static final class BinaryPart extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.BinaryPart)
+      BinaryPartOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BinaryPart.newBuilder() to construct.
+    private BinaryPart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BinaryPart() {
+      mimeType_ = "";
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BinaryPart();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BinaryPart(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mimeType_ = s;
+              break;
+            }
+            case 18: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_BinaryPart_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_BinaryPart_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.class, com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder.class);
+    }
+
+    public static final int MIME_TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mimeType_;
+    /**
+     * <code>string mime_type = 1;</code>
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mime_type = 1;</code>
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString data_;
+    /**
+     * <code>bytes data = 2;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMimeTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mimeType_);
+      }
+      if (!data_.isEmpty()) {
+        output.writeBytes(2, data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMimeTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mimeType_);
+      }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.BinaryPart)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.BinaryPart other = (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) obj;
+
+      if (!getMimeType()
+          .equals(other.getMimeType())) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMimeType().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.BinaryPart prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.BinaryPart}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.BinaryPart)
+        com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_BinaryPart_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_BinaryPart_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.class, com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mimeType_ = "";
+
+        data_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_BinaryPart_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart build() {
+        com.blcvn.kratos.protos.aiproxy.Base.BinaryPart result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.BinaryPart result = new com.blcvn.kratos.protos.aiproxy.Base.BinaryPart(this);
+        result.mimeType_ = mimeType_;
+        result.data_ = data_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.BinaryPart)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.BinaryPart other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance()) return this;
+        if (!other.getMimeType().isEmpty()) {
+          mimeType_ = other.mimeType_;
+          onChanged();
+        }
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.BinaryPart parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mimeType_ = "";
+      /**
+       * <code>string mime_type = 1;</code>
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mime_type = 1;</code>
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString
+          getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mime_type = 1;</code>
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mimeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        
+        mimeType_ = getDefaultInstance().getMimeType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime_type = 1;</code>
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mimeType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 2;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 2;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.BinaryPart)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.BinaryPart)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.BinaryPart DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.BinaryPart();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BinaryPart>
+        PARSER = new com.google.protobuf.AbstractParser<BinaryPart>() {
+      @java.lang.Override
+      public BinaryPart parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BinaryPart(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BinaryPart> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BinaryPart> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChatMessagePartOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.ChatMessagePart)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     * @return Whether the text field is set.
+     */
+    boolean hasText();
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     * @return The text.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.TextPart getText();
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder getTextOrBuilder();
+
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     * @return Whether the imageUrl field is set.
+     */
+    boolean hasImageUrl();
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     * @return The imageUrl.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getImageUrl();
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder getImageUrlOrBuilder();
+
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     * @return Whether the binary field is set.
+     */
+    boolean hasBinary();
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     * @return The binary.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getBinary();
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder getBinaryOrBuilder();
+
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.KindCase getKindCase();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.ChatMessagePart}
+   */
+  public static final class ChatMessagePart extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.ChatMessagePart)
+      ChatMessagePartOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChatMessagePart.newBuilder() to construct.
+    private ChatMessagePart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChatMessagePart() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChatMessagePart();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChatMessagePart(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder subBuilder = null;
+              if (kindCase_ == 1) {
+                subBuilder = ((com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_).toBuilder();
+              }
+              kind_ =
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.TextPart.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_);
+                kind_ = subBuilder.buildPartial();
+              }
+              kindCase_ = 1;
+              break;
+            }
+            case 18: {
+              com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder subBuilder = null;
+              if (kindCase_ == 2) {
+                subBuilder = ((com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_).toBuilder();
+              }
+              kind_ =
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_);
+                kind_ = subBuilder.buildPartial();
+              }
+              kindCase_ = 2;
+              break;
+            }
+            case 26: {
+              com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder subBuilder = null;
+              if (kindCase_ == 3) {
+                subBuilder = ((com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_).toBuilder();
+              }
+              kind_ =
+                  input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_);
+                kind_ = subBuilder.buildPartial();
+              }
+              kindCase_ = 3;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessagePart_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessagePart_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.class, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder.class);
+    }
+
+    private int kindCase_ = 0;
+    private java.lang.Object kind_;
+    public enum KindCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      TEXT(1),
+      IMAGE_URL(2),
+      BINARY(3),
+      KIND_NOT_SET(0);
+      private final int value;
+      private KindCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static KindCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static KindCase forNumber(int value) {
+        switch (value) {
+          case 1: return TEXT;
+          case 2: return IMAGE_URL;
+          case 3: return BINARY;
+          case 0: return KIND_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public KindCase
+    getKindCase() {
+      return KindCase.forNumber(
+          kindCase_);
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 1;
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return kindCase_ == 1;
+    }
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     * @return The text.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.TextPart getText() {
+      if (kindCase_ == 1) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+    }
+    /**
+     * <code>.aiproxy.v1.TextPart text = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder getTextOrBuilder() {
+      if (kindCase_ == 1) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+    }
+
+    public static final int IMAGE_URL_FIELD_NUMBER = 2;
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     * @return Whether the imageUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageUrl() {
+      return kindCase_ == 2;
+    }
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     * @return The imageUrl.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getImageUrl() {
+      if (kindCase_ == 2) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+    }
+    /**
+     * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder getImageUrlOrBuilder() {
+      if (kindCase_ == 2) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+    }
+
+    public static final int BINARY_FIELD_NUMBER = 3;
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     * @return Whether the binary field is set.
+     */
+    @java.lang.Override
+    public boolean hasBinary() {
+      return kindCase_ == 3;
+    }
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     * @return The binary.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getBinary() {
+      if (kindCase_ == 3) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+    }
+    /**
+     * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder getBinaryOrBuilder() {
+      if (kindCase_ == 3) {
+         return (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_;
+      }
+      return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (kindCase_ == 1) {
+        output.writeMessage(1, (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_);
+      }
+      if (kindCase_ == 2) {
+        output.writeMessage(2, (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_);
+      }
+      if (kindCase_ == 3) {
+        output.writeMessage(3, (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (kindCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_);
+      }
+      if (kindCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_);
+      }
+      if (kindCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart other = (com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart) obj;
+
+      if (!getKindCase().equals(other.getKindCase())) return false;
+      switch (kindCase_) {
+        case 1:
+          if (!getText()
+              .equals(other.getText())) return false;
+          break;
+        case 2:
+          if (!getImageUrl()
+              .equals(other.getImageUrl())) return false;
+          break;
+        case 3:
+          if (!getBinary()
+              .equals(other.getBinary())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (kindCase_) {
+        case 1:
+          hash = (37 * hash) + TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getText().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
+          hash = (53 * hash) + getImageUrl().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + BINARY_FIELD_NUMBER;
+          hash = (53 * hash) + getBinary().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.ChatMessagePart}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.ChatMessagePart)
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePartOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessagePart_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessagePart_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.class, com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kindCase_ = 0;
+        kind_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ChatMessagePart_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart build() {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart result = new com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart(this);
+        if (kindCase_ == 1) {
+          if (textBuilder_ == null) {
+            result.kind_ = kind_;
+          } else {
+            result.kind_ = textBuilder_.build();
+          }
+        }
+        if (kindCase_ == 2) {
+          if (imageUrlBuilder_ == null) {
+            result.kind_ = kind_;
+          } else {
+            result.kind_ = imageUrlBuilder_.build();
+          }
+        }
+        if (kindCase_ == 3) {
+          if (binaryBuilder_ == null) {
+            result.kind_ = kind_;
+          } else {
+            result.kind_ = binaryBuilder_.build();
+          }
+        }
+        result.kindCase_ = kindCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart.getDefaultInstance()) return this;
+        switch (other.getKindCase()) {
+          case TEXT: {
+            mergeText(other.getText());
+            break;
+          }
+          case IMAGE_URL: {
+            mergeImageUrl(other.getImageUrl());
+            break;
+          }
+          case BINARY: {
+            mergeBinary(other.getBinary());
+            break;
+          }
+          case KIND_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int kindCase_ = 0;
+      private java.lang.Object kind_;
+      public KindCase
+          getKindCase() {
+        return KindCase.forNumber(
+            kindCase_);
+      }
+
+      public Builder clearKind() {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.TextPart, com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder> textBuilder_;
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       * @return Whether the text field is set.
+       */
+      @java.lang.Override
+      public boolean hasText() {
+        return kindCase_ == 1;
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       * @return The text.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPart getText() {
+        if (textBuilder_ == null) {
+          if (kindCase_ == 1) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+        } else {
+          if (kindCase_ == 1) {
+            return textBuilder_.getMessage();
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      public Builder setText(com.blcvn.kratos.protos.aiproxy.Base.TextPart value) {
+        if (textBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kind_ = value;
+          onChanged();
+        } else {
+          textBuilder_.setMessage(value);
+        }
+        kindCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      public Builder setText(
+          com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder builderForValue) {
+        if (textBuilder_ == null) {
+          kind_ = builderForValue.build();
+          onChanged();
+        } else {
+          textBuilder_.setMessage(builderForValue.build());
+        }
+        kindCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      public Builder mergeText(com.blcvn.kratos.protos.aiproxy.Base.TextPart value) {
+        if (textBuilder_ == null) {
+          if (kindCase_ == 1 &&
+              kind_ != com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance()) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.TextPart.newBuilder((com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            kind_ = value;
+          }
+          onChanged();
+        } else {
+          if (kindCase_ == 1) {
+            textBuilder_.mergeFrom(value);
+          }
+          textBuilder_.setMessage(value);
+        }
+        kindCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      public Builder clearText() {
+        if (textBuilder_ == null) {
+          if (kindCase_ == 1) {
+            kindCase_ = 0;
+            kind_ = null;
+            onChanged();
+          }
+        } else {
+          if (kindCase_ == 1) {
+            kindCase_ = 0;
+            kind_ = null;
+          }
+          textBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder getTextBuilder() {
+        return getTextFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder getTextOrBuilder() {
+        if ((kindCase_ == 1) && (textBuilder_ != null)) {
+          return textBuilder_.getMessageOrBuilder();
+        } else {
+          if (kindCase_ == 1) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.TextPart text = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.TextPart, com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder> 
+          getTextFieldBuilder() {
+        if (textBuilder_ == null) {
+          if (!(kindCase_ == 1)) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.TextPart.getDefaultInstance();
+          }
+          textBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.TextPart, com.blcvn.kratos.protos.aiproxy.Base.TextPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.TextPartOrBuilder>(
+                  (com.blcvn.kratos.protos.aiproxy.Base.TextPart) kind_,
+                  getParentForChildren(),
+                  isClean());
+          kind_ = null;
+        }
+        kindCase_ = 1;
+        onChanged();;
+        return textBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder> imageUrlBuilder_;
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       * @return Whether the imageUrl field is set.
+       */
+      @java.lang.Override
+      public boolean hasImageUrl() {
+        return kindCase_ == 2;
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       * @return The imageUrl.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart getImageUrl() {
+        if (imageUrlBuilder_ == null) {
+          if (kindCase_ == 2) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+        } else {
+          if (kindCase_ == 2) {
+            return imageUrlBuilder_.getMessage();
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      public Builder setImageUrl(com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart value) {
+        if (imageUrlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kind_ = value;
+          onChanged();
+        } else {
+          imageUrlBuilder_.setMessage(value);
+        }
+        kindCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      public Builder setImageUrl(
+          com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder builderForValue) {
+        if (imageUrlBuilder_ == null) {
+          kind_ = builderForValue.build();
+          onChanged();
+        } else {
+          imageUrlBuilder_.setMessage(builderForValue.build());
+        }
+        kindCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      public Builder mergeImageUrl(com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart value) {
+        if (imageUrlBuilder_ == null) {
+          if (kindCase_ == 2 &&
+              kind_ != com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance()) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.newBuilder((com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            kind_ = value;
+          }
+          onChanged();
+        } else {
+          if (kindCase_ == 2) {
+            imageUrlBuilder_.mergeFrom(value);
+          }
+          imageUrlBuilder_.setMessage(value);
+        }
+        kindCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      public Builder clearImageUrl() {
+        if (imageUrlBuilder_ == null) {
+          if (kindCase_ == 2) {
+            kindCase_ = 0;
+            kind_ = null;
+            onChanged();
+          }
+        } else {
+          if (kindCase_ == 2) {
+            kindCase_ = 0;
+            kind_ = null;
+          }
+          imageUrlBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder getImageUrlBuilder() {
+        return getImageUrlFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder getImageUrlOrBuilder() {
+        if ((kindCase_ == 2) && (imageUrlBuilder_ != null)) {
+          return imageUrlBuilder_.getMessageOrBuilder();
+        } else {
+          if (kindCase_ == 2) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ImageURLPart image_url = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder> 
+          getImageUrlFieldBuilder() {
+        if (imageUrlBuilder_ == null) {
+          if (!(kindCase_ == 2)) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.getDefaultInstance();
+          }
+          imageUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.ImageURLPartOrBuilder>(
+                  (com.blcvn.kratos.protos.aiproxy.Base.ImageURLPart) kind_,
+                  getParentForChildren(),
+                  isClean());
+          kind_ = null;
+        }
+        kindCase_ = 2;
+        onChanged();;
+        return imageUrlBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.BinaryPart, com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder> binaryBuilder_;
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       * @return Whether the binary field is set.
+       */
+      @java.lang.Override
+      public boolean hasBinary() {
+        return kindCase_ == 3;
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       * @return The binary.
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart getBinary() {
+        if (binaryBuilder_ == null) {
+          if (kindCase_ == 3) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+        } else {
+          if (kindCase_ == 3) {
+            return binaryBuilder_.getMessage();
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      public Builder setBinary(com.blcvn.kratos.protos.aiproxy.Base.BinaryPart value) {
+        if (binaryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kind_ = value;
+          onChanged();
+        } else {
+          binaryBuilder_.setMessage(value);
+        }
+        kindCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      public Builder setBinary(
+          com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder builderForValue) {
+        if (binaryBuilder_ == null) {
+          kind_ = builderForValue.build();
+          onChanged();
+        } else {
+          binaryBuilder_.setMessage(builderForValue.build());
+        }
+        kindCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      public Builder mergeBinary(com.blcvn.kratos.protos.aiproxy.Base.BinaryPart value) {
+        if (binaryBuilder_ == null) {
+          if (kindCase_ == 3 &&
+              kind_ != com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance()) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.newBuilder((com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            kind_ = value;
+          }
+          onChanged();
+        } else {
+          if (kindCase_ == 3) {
+            binaryBuilder_.mergeFrom(value);
+          }
+          binaryBuilder_.setMessage(value);
+        }
+        kindCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      public Builder clearBinary() {
+        if (binaryBuilder_ == null) {
+          if (kindCase_ == 3) {
+            kindCase_ = 0;
+            kind_ = null;
+            onChanged();
+          }
+        } else {
+          if (kindCase_ == 3) {
+            kindCase_ = 0;
+            kind_ = null;
+          }
+          binaryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder getBinaryBuilder() {
+        return getBinaryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder getBinaryOrBuilder() {
+        if ((kindCase_ == 3) && (binaryBuilder_ != null)) {
+          return binaryBuilder_.getMessageOrBuilder();
+        } else {
+          if (kindCase_ == 3) {
+            return (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_;
+          }
+          return com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.BinaryPart binary = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.BinaryPart, com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder> 
+          getBinaryFieldBuilder() {
+        if (binaryBuilder_ == null) {
+          if (!(kindCase_ == 3)) {
+            kind_ = com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.getDefaultInstance();
+          }
+          binaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.BinaryPart, com.blcvn.kratos.protos.aiproxy.Base.BinaryPart.Builder, com.blcvn.kratos.protos.aiproxy.Base.BinaryPartOrBuilder>(
+                  (com.blcvn.kratos.protos.aiproxy.Base.BinaryPart) kind_,
+                  getParentForChildren(),
+                  isClean());
+          kind_ = null;
+        }
+        kindCase_ = 3;
+        onChanged();;
+        return binaryBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.ChatMessagePart)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.ChatMessagePart)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChatMessagePart>
+        PARSER = new com.google.protobuf.AbstractParser<ChatMessagePart>() {
+      @java.lang.Override
+      public ChatMessagePart parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChatMessagePart(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChatMessagePart> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChatMessagePart> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ChatMessagePart getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PromptCacheConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.PromptCacheConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool enabled = 1;</code>
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     * <code>string ttl = 2;</code>
+     * @return The ttl.
+     */
+    java.lang.String getTtl();
+    /**
+     * <code>string ttl = 2;</code>
+     * @return The bytes for ttl.
+     */
+    com.google.protobuf.ByteString
+        getTtlBytes();
+
+    /**
+     * <code>string scope = 3;</code>
+     * @return The scope.
+     */
+    java.lang.String getScope();
+    /**
+     * <code>string scope = 3;</code>
+     * @return The bytes for scope.
+     */
+    com.google.protobuf.ByteString
+        getScopeBytes();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.PromptCacheConfig}
+   */
+  public static final class PromptCacheConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.PromptCacheConfig)
+      PromptCacheConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PromptCacheConfig.newBuilder() to construct.
+    private PromptCacheConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PromptCacheConfig() {
+      ttl_ = "";
+      scope_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PromptCacheConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PromptCacheConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              enabled_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ttl_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              scope_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_PromptCacheConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_PromptCacheConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.class, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_;
+    /**
+     * <code>bool enabled = 1;</code>
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int TTL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ttl_;
+    /**
+     * <code>string ttl = 2;</code>
+     * @return The ttl.
+     */
+    @java.lang.Override
+    public java.lang.String getTtl() {
+      java.lang.Object ref = ttl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ttl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ttl = 2;</code>
+     * @return The bytes for ttl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTtlBytes() {
+      java.lang.Object ref = ttl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ttl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCOPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object scope_;
+    /**
+     * <code>string scope = 3;</code>
+     * @return The scope.
+     */
+    @java.lang.Override
+    public java.lang.String getScope() {
+      java.lang.Object ref = scope_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scope_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string scope = 3;</code>
+     * @return The bytes for scope.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getScopeBytes() {
+      java.lang.Object ref = scope_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scope_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      if (!getTtlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ttl_);
+      }
+      if (!getScopeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, scope_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, enabled_);
+      }
+      if (!getTtlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ttl_);
+      }
+      if (!getScopeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, scope_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig other = (com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig) obj;
+
+      if (getEnabled()
+          != other.getEnabled()) return false;
+      if (!getTtl()
+          .equals(other.getTtl())) return false;
+      if (!getScope()
+          .equals(other.getScope())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnabled());
+      hash = (37 * hash) + TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getTtl().hashCode();
+      hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+      hash = (53 * hash) + getScope().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.PromptCacheConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.PromptCacheConfig)
+        com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_PromptCacheConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_PromptCacheConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.class, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        enabled_ = false;
+
+        ttl_ = "";
+
+        scope_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_PromptCacheConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig build() {
+        com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig result = new com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig(this);
+        result.enabled_ = enabled_;
+        result.ttl_ = ttl_;
+        result.scope_ = scope_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (!other.getTtl().isEmpty()) {
+          ttl_ = other.ttl_;
+          onChanged();
+        }
+        if (!other.getScope().isEmpty()) {
+          scope_ = other.scope_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean enabled_ ;
+      /**
+       * <code>bool enabled = 1;</code>
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       * <code>bool enabled = 1;</code>
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+        
+        enabled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool enabled = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ttl_ = "";
+      /**
+       * <code>string ttl = 2;</code>
+       * @return The ttl.
+       */
+      public java.lang.String getTtl() {
+        java.lang.Object ref = ttl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ttl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ttl = 2;</code>
+       * @return The bytes for ttl.
+       */
+      public com.google.protobuf.ByteString
+          getTtlBytes() {
+        java.lang.Object ref = ttl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ttl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ttl = 2;</code>
+       * @param value The ttl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTtl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ttl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ttl = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTtl() {
+        
+        ttl_ = getDefaultInstance().getTtl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ttl = 2;</code>
+       * @param value The bytes for ttl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTtlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ttl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scope_ = "";
+      /**
+       * <code>string scope = 3;</code>
+       * @return The scope.
+       */
+      public java.lang.String getScope() {
+        java.lang.Object ref = scope_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          scope_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string scope = 3;</code>
+       * @return The bytes for scope.
+       */
+      public com.google.protobuf.ByteString
+          getScopeBytes() {
+        java.lang.Object ref = scope_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          scope_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string scope = 3;</code>
+       * @param value The scope to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScope(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        scope_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scope = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScope() {
+        
+        scope_ = getDefaultInstance().getScope();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scope = 3;</code>
+       * @param value The bytes for scope to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScopeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        scope_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.PromptCacheConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.PromptCacheConfig)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PromptCacheConfig>
+        PARSER = new com.google.protobuf.AbstractParser<PromptCacheConfig>() {
+      @java.lang.Override
+      public PromptCacheConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PromptCacheConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PromptCacheConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PromptCacheConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ThinkingConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiproxy.v1.ThinkingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mode = 1;</code>
+     * @return The mode.
+     */
+    java.lang.String getMode();
+    /**
+     * <code>string mode = 1;</code>
+     * @return The bytes for mode.
+     */
+    com.google.protobuf.ByteString
+        getModeBytes();
+
+    /**
+     * <code>int32 budget_tokens = 2;</code>
+     * @return The budgetTokens.
+     */
+    int getBudgetTokens();
+
+    /**
+     * <code>bool return_thinking = 3;</code>
+     * @return The returnThinking.
+     */
+    boolean getReturnThinking();
+
+    /**
+     * <code>bool stream_thinking = 4;</code>
+     * @return The streamThinking.
+     */
+    boolean getStreamThinking();
+
+    /**
+     * <code>bool interleave_thinking = 5;</code>
+     * @return The interleaveThinking.
+     */
+    boolean getInterleaveThinking();
+  }
+  /**
+   * Protobuf type {@code aiproxy.v1.ThinkingConfig}
+   */
+  public static final class ThinkingConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiproxy.v1.ThinkingConfig)
+      ThinkingConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ThinkingConfig.newBuilder() to construct.
+    private ThinkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ThinkingConfig() {
+      mode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ThinkingConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ThinkingConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mode_ = s;
+              break;
+            }
+            case 16: {
+
+              budgetTokens_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              returnThinking_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              streamThinking_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              interleaveThinking_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ThinkingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ThinkingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.class, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder.class);
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mode_;
+    /**
+     * <code>string mode = 1;</code>
+     * @return The mode.
+     */
+    @java.lang.Override
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mode = 1;</code>
+     * @return The bytes for mode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUDGET_TOKENS_FIELD_NUMBER = 2;
+    private int budgetTokens_;
+    /**
+     * <code>int32 budget_tokens = 2;</code>
+     * @return The budgetTokens.
+     */
+    @java.lang.Override
+    public int getBudgetTokens() {
+      return budgetTokens_;
+    }
+
+    public static final int RETURN_THINKING_FIELD_NUMBER = 3;
+    private boolean returnThinking_;
+    /**
+     * <code>bool return_thinking = 3;</code>
+     * @return The returnThinking.
+     */
+    @java.lang.Override
+    public boolean getReturnThinking() {
+      return returnThinking_;
+    }
+
+    public static final int STREAM_THINKING_FIELD_NUMBER = 4;
+    private boolean streamThinking_;
+    /**
+     * <code>bool stream_thinking = 4;</code>
+     * @return The streamThinking.
+     */
+    @java.lang.Override
+    public boolean getStreamThinking() {
+      return streamThinking_;
+    }
+
+    public static final int INTERLEAVE_THINKING_FIELD_NUMBER = 5;
+    private boolean interleaveThinking_;
+    /**
+     * <code>bool interleave_thinking = 5;</code>
+     * @return The interleaveThinking.
+     */
+    @java.lang.Override
+    public boolean getInterleaveThinking() {
+      return interleaveThinking_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getModeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mode_);
+      }
+      if (budgetTokens_ != 0) {
+        output.writeInt32(2, budgetTokens_);
+      }
+      if (returnThinking_ != false) {
+        output.writeBool(3, returnThinking_);
+      }
+      if (streamThinking_ != false) {
+        output.writeBool(4, streamThinking_);
+      }
+      if (interleaveThinking_ != false) {
+        output.writeBool(5, interleaveThinking_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getModeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mode_);
+      }
+      if (budgetTokens_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, budgetTokens_);
+      }
+      if (returnThinking_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, returnThinking_);
+      }
+      if (streamThinking_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, streamThinking_);
+      }
+      if (interleaveThinking_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, interleaveThinking_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig other = (com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig) obj;
+
+      if (!getMode()
+          .equals(other.getMode())) return false;
+      if (getBudgetTokens()
+          != other.getBudgetTokens()) return false;
+      if (getReturnThinking()
+          != other.getReturnThinking()) return false;
+      if (getStreamThinking()
+          != other.getStreamThinking()) return false;
+      if (getInterleaveThinking()
+          != other.getInterleaveThinking()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getMode().hashCode();
+      hash = (37 * hash) + BUDGET_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getBudgetTokens();
+      hash = (37 * hash) + RETURN_THINKING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getReturnThinking());
+      hash = (37 * hash) + STREAM_THINKING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStreamThinking());
+      hash = (37 * hash) + INTERLEAVE_THINKING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterleaveThinking());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiproxy.v1.ThinkingConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiproxy.v1.ThinkingConfig)
+        com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ThinkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ThinkingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.class, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mode_ = "";
+
+        budgetTokens_ = 0;
+
+        returnThinking_ = false;
+
+        streamThinking_ = false;
+
+        interleaveThinking_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.internal_static_aiproxy_v1_ThinkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig build() {
+        com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig buildPartial() {
+        com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig result = new com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig(this);
+        result.mode_ = mode_;
+        result.budgetTokens_ = budgetTokens_;
+        result.returnThinking_ = returnThinking_;
+        result.streamThinking_ = streamThinking_;
+        result.interleaveThinking_ = interleaveThinking_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig) {
+          return mergeFrom((com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig other) {
+        if (other == com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance()) return this;
+        if (!other.getMode().isEmpty()) {
+          mode_ = other.mode_;
+          onChanged();
+        }
+        if (other.getBudgetTokens() != 0) {
+          setBudgetTokens(other.getBudgetTokens());
+        }
+        if (other.getReturnThinking() != false) {
+          setReturnThinking(other.getReturnThinking());
+        }
+        if (other.getStreamThinking() != false) {
+          setStreamThinking(other.getStreamThinking());
+        }
+        if (other.getInterleaveThinking() != false) {
+          setInterleaveThinking(other.getInterleaveThinking());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mode_ = "";
+      /**
+       * <code>string mode = 1;</code>
+       * @return The mode.
+       */
+      public java.lang.String getMode() {
+        java.lang.Object ref = mode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mode = 1;</code>
+       * @return The bytes for mode.
+       */
+      public com.google.protobuf.ByteString
+          getModeBytes() {
+        java.lang.Object ref = mode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mode = 1;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        
+        mode_ = getDefaultInstance().getMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mode = 1;</code>
+       * @param value The bytes for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int budgetTokens_ ;
+      /**
+       * <code>int32 budget_tokens = 2;</code>
+       * @return The budgetTokens.
+       */
+      @java.lang.Override
+      public int getBudgetTokens() {
+        return budgetTokens_;
+      }
+      /**
+       * <code>int32 budget_tokens = 2;</code>
+       * @param value The budgetTokens to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBudgetTokens(int value) {
+        
+        budgetTokens_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 budget_tokens = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBudgetTokens() {
+        
+        budgetTokens_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean returnThinking_ ;
+      /**
+       * <code>bool return_thinking = 3;</code>
+       * @return The returnThinking.
+       */
+      @java.lang.Override
+      public boolean getReturnThinking() {
+        return returnThinking_;
+      }
+      /**
+       * <code>bool return_thinking = 3;</code>
+       * @param value The returnThinking to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnThinking(boolean value) {
+        
+        returnThinking_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool return_thinking = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnThinking() {
+        
+        returnThinking_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean streamThinking_ ;
+      /**
+       * <code>bool stream_thinking = 4;</code>
+       * @return The streamThinking.
+       */
+      @java.lang.Override
+      public boolean getStreamThinking() {
+        return streamThinking_;
+      }
+      /**
+       * <code>bool stream_thinking = 4;</code>
+       * @param value The streamThinking to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreamThinking(boolean value) {
+        
+        streamThinking_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool stream_thinking = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStreamThinking() {
+        
+        streamThinking_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean interleaveThinking_ ;
+      /**
+       * <code>bool interleave_thinking = 5;</code>
+       * @return The interleaveThinking.
+       */
+      @java.lang.Override
+      public boolean getInterleaveThinking() {
+        return interleaveThinking_;
+      }
+      /**
+       * <code>bool interleave_thinking = 5;</code>
+       * @param value The interleaveThinking to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInterleaveThinking(boolean value) {
+        
+        interleaveThinking_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool interleave_thinking = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInterleaveThinking() {
+        
+        interleaveThinking_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiproxy.v1.ThinkingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiproxy.v1.ThinkingConfig)
+    private static final com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig();
+    }
+
+    public static com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ThinkingConfig>
+        PARSER = new com.google.protobuf.AbstractParser<ThinkingConfig>() {
+      @java.lang.Override
+      public ThinkingConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ThinkingConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ThinkingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ThinkingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4124,6 +9243,36 @@ public final class Base {
 
     java.lang.String getMetadataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return Whether the promptCache field is set.
+     */
+    boolean hasPromptCache();
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return The promptCache.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache();
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder();
+
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return Whether the thinking field is set.
+     */
+    boolean hasThinking();
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return The thinking.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking();
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder();
   }
   /**
    * Protobuf type {@code aiproxy.v1.CompletionRequest}
@@ -4231,6 +9380,32 @@ public final class Base {
               }
               messages_.add(
                   input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder subBuilder = null;
+              if (promptCache_ != null) {
+                subBuilder = promptCache_.toBuilder();
+              }
+              promptCache_ = input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(promptCache_);
+                promptCache_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder subBuilder = null;
+              if (thinking_ != null) {
+                subBuilder = thinking_.toBuilder();
+              }
+              thinking_ = input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(thinking_);
+                thinking_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -4548,6 +9723,58 @@ public final class Base {
       return map.get(key);
     }
 
+    public static final int PROMPT_CACHE_FIELD_NUMBER = 9;
+    private com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig promptCache_;
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return Whether the promptCache field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromptCache() {
+      return promptCache_ != null;
+    }
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return The promptCache.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache() {
+      return promptCache_ == null ? com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+    }
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder() {
+      return getPromptCache();
+    }
+
+    public static final int THINKING_FIELD_NUMBER = 10;
+    private com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig thinking_;
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return Whether the thinking field is set.
+     */
+    @java.lang.Override
+    public boolean hasThinking() {
+      return thinking_ != null;
+    }
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return The thinking.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking() {
+      return thinking_ == null ? com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+    }
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder() {
+      return getThinking();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4588,6 +9815,12 @@ public final class Base {
           7);
       for (int i = 0; i < messages_.size(); i++) {
         output.writeMessage(8, messages_.get(i));
+      }
+      if (promptCache_ != null) {
+        output.writeMessage(9, getPromptCache());
+      }
+      if (thinking_ != null) {
+        output.writeMessage(10, getThinking());
       }
       unknownFields.writeTo(output);
     }
@@ -4638,6 +9871,14 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, messages_.get(i));
       }
+      if (promptCache_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getPromptCache());
+      }
+      if (thinking_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getThinking());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4671,6 +9912,16 @@ public final class Base {
           .equals(other.getStopList())) return false;
       if (!internalGetMetadata().equals(
           other.internalGetMetadata())) return false;
+      if (hasPromptCache() != other.hasPromptCache()) return false;
+      if (hasPromptCache()) {
+        if (!getPromptCache()
+            .equals(other.getPromptCache())) return false;
+      }
+      if (hasThinking() != other.hasThinking()) return false;
+      if (hasThinking()) {
+        if (!getThinking()
+            .equals(other.getThinking())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4705,6 +9956,14 @@ public final class Base {
       if (!internalGetMetadata().getMap().isEmpty()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
+      if (hasPromptCache()) {
+        hash = (37 * hash) + PROMPT_CACHE_FIELD_NUMBER;
+        hash = (53 * hash) + getPromptCache().hashCode();
+      }
+      if (hasThinking()) {
+        hash = (37 * hash) + THINKING_FIELD_NUMBER;
+        hash = (53 * hash) + getThinking().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4881,6 +10140,18 @@ public final class Base {
         stop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableMetadata().clear();
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = null;
+        } else {
+          promptCache_ = null;
+          promptCacheBuilder_ = null;
+        }
+        if (thinkingBuilder_ == null) {
+          thinking_ = null;
+        } else {
+          thinking_ = null;
+          thinkingBuilder_ = null;
+        }
         return this;
       }
 
@@ -4929,6 +10200,16 @@ public final class Base {
         result.stop_ = stop_;
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+        if (promptCacheBuilder_ == null) {
+          result.promptCache_ = promptCache_;
+        } else {
+          result.promptCache_ = promptCacheBuilder_.build();
+        }
+        if (thinkingBuilder_ == null) {
+          result.thinking_ = thinking_;
+        } else {
+          result.thinking_ = thinkingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5032,6 +10313,12 @@ public final class Base {
         }
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        if (other.hasPromptCache()) {
+          mergePromptCache(other.getPromptCache());
+        }
+        if (other.hasThinking()) {
+          mergeThinking(other.getThinking());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5783,6 +11070,244 @@ public final class Base {
         internalGetMutableMetadata().getMutableMap()
             .putAll(values);
         return this;
+      }
+
+      private com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig promptCache_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder> promptCacheBuilder_;
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       * @return Whether the promptCache field is set.
+       */
+      public boolean hasPromptCache() {
+        return promptCacheBuilder_ != null || promptCache_ != null;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       * @return The promptCache.
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache() {
+        if (promptCacheBuilder_ == null) {
+          return promptCache_ == null ? com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+        } else {
+          return promptCacheBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder setPromptCache(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig value) {
+        if (promptCacheBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          promptCache_ = value;
+          onChanged();
+        } else {
+          promptCacheBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder setPromptCache(
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder builderForValue) {
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = builderForValue.build();
+          onChanged();
+        } else {
+          promptCacheBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder mergePromptCache(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig value) {
+        if (promptCacheBuilder_ == null) {
+          if (promptCache_ != null) {
+            promptCache_ =
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.newBuilder(promptCache_).mergeFrom(value).buildPartial();
+          } else {
+            promptCache_ = value;
+          }
+          onChanged();
+        } else {
+          promptCacheBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder clearPromptCache() {
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = null;
+          onChanged();
+        } else {
+          promptCache_ = null;
+          promptCacheBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder getPromptCacheBuilder() {
+        
+        onChanged();
+        return getPromptCacheFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder() {
+        if (promptCacheBuilder_ != null) {
+          return promptCacheBuilder_.getMessageOrBuilder();
+        } else {
+          return promptCache_ == null ?
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder> 
+          getPromptCacheFieldBuilder() {
+        if (promptCacheBuilder_ == null) {
+          promptCacheBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder>(
+                  getPromptCache(),
+                  getParentForChildren(),
+                  isClean());
+          promptCache_ = null;
+        }
+        return promptCacheBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig thinking_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder> thinkingBuilder_;
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       * @return Whether the thinking field is set.
+       */
+      public boolean hasThinking() {
+        return thinkingBuilder_ != null || thinking_ != null;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       * @return The thinking.
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking() {
+        if (thinkingBuilder_ == null) {
+          return thinking_ == null ? com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+        } else {
+          return thinkingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder setThinking(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig value) {
+        if (thinkingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          thinking_ = value;
+          onChanged();
+        } else {
+          thinkingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder setThinking(
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder builderForValue) {
+        if (thinkingBuilder_ == null) {
+          thinking_ = builderForValue.build();
+          onChanged();
+        } else {
+          thinkingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder mergeThinking(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig value) {
+        if (thinkingBuilder_ == null) {
+          if (thinking_ != null) {
+            thinking_ =
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.newBuilder(thinking_).mergeFrom(value).buildPartial();
+          } else {
+            thinking_ = value;
+          }
+          onChanged();
+        } else {
+          thinkingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder clearThinking() {
+        if (thinkingBuilder_ == null) {
+          thinking_ = null;
+          onChanged();
+        } else {
+          thinking_ = null;
+          thinkingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder getThinkingBuilder() {
+        
+        onChanged();
+        return getThinkingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder() {
+        if (thinkingBuilder_ != null) {
+          return thinkingBuilder_.getMessageOrBuilder();
+        } else {
+          return thinking_ == null ?
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder> 
+          getThinkingFieldBuilder() {
+        if (thinkingBuilder_ == null) {
+          thinkingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder>(
+                  getThinking(),
+                  getParentForChildren(),
+                  isClean());
+          thinking_ = null;
+        }
+        return thinkingBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9392,6 +14917,36 @@ public final class Base {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_TextPart_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_TextPart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_ImageURLPart_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_ImageURLPart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_BinaryPart_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_BinaryPart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_ChatMessagePart_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_ChatMessagePart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_PromptCacheConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_PromptCacheConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiproxy_v1_ThinkingConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiproxy_v1_ThinkingConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_aiproxy_v1_CompletionRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9433,39 +14988,55 @@ public final class Base {
       "ssage\030\002 \001(\t\"\215\001\n\tSignature\0223\n\006s_type\030\001 \001(" +
       "\0162#.aiproxy.v1.Signature.SignatureType\022\t" +
       "\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureType\022\017\n" +
-      "\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\227\001\n\013" +
+      "\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\303\001\n\013" +
       "ChatMessage\022*\n\004role\030\001 \001(\0162\034.aiproxy.v1.C" +
-      "hatMessage.Role\022\017\n\007content\030\002 \001(\t\"K\n\004Role" +
-      "\022\024\n\020ROLE_UNSPECIFIED\020\000\022\n\n\006SYSTEM\020\001\022\010\n\004US" +
-      "ER\020\002\022\r\n\tASSISTANT\020\003\022\010\n\004TOOL\020\004\"\226\002\n\021Comple" +
-      "tionRequest\022\020\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030" +
-      "\002 \001(\t\022)\n\010messages\030\010 \003(\0132\027.aiproxy.v1.Cha" +
-      "tMessage\022\022\n\nmax_tokens\030\003 \001(\005\022\023\n\013temperat" +
-      "ure\030\004 \001(\001\022\r\n\005top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022=" +
-      "\n\010metadata\030\007 \003(\0132+.aiproxy.v1.Completion" +
-      "Request.MetadataEntry\032/\n\rMetadataEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\362\001\n\022Compl" +
-      "etionResponse\022\n\n\002id\030\001 \001(\t\022\020\n\010model_id\030\002 " +
-      "\001(\t\022\014\n\004text\030\003 \001(\t\022\025\n\rprompt_tokens\030\t \001(\005" +
-      "\022\031\n\021completion_tokens\030\n \001(\005\022\024\n\014total_tok" +
-      "ens\030\013 \001(\005\022\022\n\nlatency_ms\030\005 \001(\005\022\022\n\nfrom_ca" +
-      "che\030\006 \001(\010\022\020\n\010provider\030\007 \001(\t\022.\n\ncreated_a" +
-      "t\030\010 \001(\0132\032.google.protobuf.Timestamp\"=\n\017C" +
-      "ompletionChunk\022\n\n\002id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t" +
-      "\022\020\n\010is_final\030\003 \001(\010\"\313\001\n\016ProviderHealth\022\020\n" +
-      "\010provider\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.aiprox" +
-      "y.v1.ProviderStatus\022\024\n\014success_rate\030\003 \001(" +
-      "\005\022\026\n\016avg_latency_ms\030\004 \001(\005\022\035\n\025circuit_bre" +
-      "aker_state\030\005 \001(\t\022.\n\nlast_check\030\006 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp*\221\001\n\nResultCode\022" +
-      "\017\n\013UNSPECIFIED\020\000\022\014\n\007SUCCESS\020\310\001\022\020\n\013BAD_RE" +
-      "QUEST\020\220\003\022\021\n\014UNAUTHORIZED\020\221\003\022\026\n\021TOO_MANY_" +
-      "REQUESTS\020\255\003\022\r\n\010INTERNAL\020\364\003\022\030\n\023SERVICE_UN" +
-      "AVAILABLE\020\367\003*T\n\016ProviderStatus\022\024\n\020PROVID" +
-      "ER_UNKNOWN\020\000\022\r\n\tAVAILABLE\020\001\022\014\n\010DEGRADED\020" +
-      "\002\022\017\n\013UNAVAILABLE\020\003BT\n\037com.blcvn.kratos.p" +
-      "rotos.aiproxyZ1github.com/blcvn/kratos-p" +
-      "roto/go/ai-proxy;aiproxyb\006proto3"
+      "hatMessage.Role\022\017\n\007content\030\002 \001(\t\022*\n\005part" +
+      "s\030\003 \003(\0132\033.aiproxy.v1.ChatMessagePart\"K\n\004" +
+      "Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022\n\n\006SYSTEM\020\001\022\010" +
+      "\n\004USER\020\002\022\r\n\tASSISTANT\020\003\022\010\n\004TOOL\020\004\"\030\n\010Tex" +
+      "tPart\022\014\n\004text\030\001 \001(\t\"+\n\014ImageURLPart\022\013\n\003u" +
+      "rl\030\001 \001(\t\022\016\n\006detail\030\002 \001(\t\"-\n\nBinaryPart\022\021" +
+      "\n\tmime_type\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\"\230\001\n\017Chat" +
+      "MessagePart\022$\n\004text\030\001 \001(\0132\024.aiproxy.v1.T" +
+      "extPartH\000\022-\n\timage_url\030\002 \001(\0132\030.aiproxy.v" +
+      "1.ImageURLPartH\000\022(\n\006binary\030\003 \001(\0132\026.aipro" +
+      "xy.v1.BinaryPartH\000B\006\n\004kind\"@\n\021PromptCach" +
+      "eConfig\022\017\n\007enabled\030\001 \001(\010\022\013\n\003ttl\030\002 \001(\t\022\r\n" +
+      "\005scope\030\003 \001(\t\"\204\001\n\016ThinkingConfig\022\014\n\004mode\030" +
+      "\001 \001(\t\022\025\n\rbudget_tokens\030\002 \001(\005\022\027\n\017return_t" +
+      "hinking\030\003 \001(\010\022\027\n\017stream_thinking\030\004 \001(\010\022\033" +
+      "\n\023interleave_thinking\030\005 \001(\010\"\371\002\n\021Completi" +
+      "onRequest\022\020\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030\002 " +
+      "\001(\t\022)\n\010messages\030\010 \003(\0132\027.aiproxy.v1.ChatM" +
+      "essage\022\022\n\nmax_tokens\030\003 \001(\005\022\023\n\013temperatur" +
+      "e\030\004 \001(\001\022\r\n\005top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022=\n\010" +
+      "metadata\030\007 \003(\0132+.aiproxy.v1.CompletionRe" +
+      "quest.MetadataEntry\0223\n\014prompt_cache\030\t \001(" +
+      "\0132\035.aiproxy.v1.PromptCacheConfig\022,\n\010thin" +
+      "king\030\n \001(\0132\032.aiproxy.v1.ThinkingConfig\032/" +
+      "\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\t:\0028\001\"\362\001\n\022CompletionResponse\022\n\n\002id\030\001 \001" +
+      "(\t\022\020\n\010model_id\030\002 \001(\t\022\014\n\004text\030\003 \001(\t\022\025\n\rpr" +
+      "ompt_tokens\030\t \001(\005\022\031\n\021completion_tokens\030\n" +
+      " \001(\005\022\024\n\014total_tokens\030\013 \001(\005\022\022\n\nlatency_ms" +
+      "\030\005 \001(\005\022\022\n\nfrom_cache\030\006 \001(\010\022\020\n\010provider\030\007" +
+      " \001(\t\022.\n\ncreated_at\030\010 \001(\0132\032.google.protob" +
+      "uf.Timestamp\"=\n\017CompletionChunk\022\n\n\002id\030\001 " +
+      "\001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010is_final\030\003 \001(\010\"\313\001\n\016" +
+      "ProviderHealth\022\020\n\010provider\030\001 \001(\t\022*\n\006stat" +
+      "us\030\002 \001(\0162\032.aiproxy.v1.ProviderStatus\022\024\n\014" +
+      "success_rate\030\003 \001(\005\022\026\n\016avg_latency_ms\030\004 \001" +
+      "(\005\022\035\n\025circuit_breaker_state\030\005 \001(\t\022.\n\nlas" +
+      "t_check\030\006 \001(\0132\032.google.protobuf.Timestam" +
+      "p*\221\001\n\nResultCode\022\017\n\013UNSPECIFIED\020\000\022\014\n\007SUC" +
+      "CESS\020\310\001\022\020\n\013BAD_REQUEST\020\220\003\022\021\n\014UNAUTHORIZE" +
+      "D\020\221\003\022\026\n\021TOO_MANY_REQUESTS\020\255\003\022\r\n\010INTERNAL" +
+      "\020\364\003\022\030\n\023SERVICE_UNAVAILABLE\020\367\003*T\n\016Provide" +
+      "rStatus\022\024\n\020PROVIDER_UNKNOWN\020\000\022\r\n\tAVAILAB" +
+      "LE\020\001\022\014\n\010DEGRADED\020\002\022\017\n\013UNAVAILABLE\020\003BT\n\037c" +
+      "om.blcvn.kratos.protos.aiproxyZ1github.c" +
+      "om/blcvn/kratos-proto/go/ai-proxy;aiprox" +
+      "yb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9501,13 +15072,49 @@ public final class Base {
     internal_static_aiproxy_v1_ChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_ChatMessage_descriptor,
-        new java.lang.String[] { "Role", "Content", });
-    internal_static_aiproxy_v1_CompletionRequest_descriptor =
+        new java.lang.String[] { "Role", "Content", "Parts", });
+    internal_static_aiproxy_v1_TextPart_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_aiproxy_v1_TextPart_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_TextPart_descriptor,
+        new java.lang.String[] { "Text", });
+    internal_static_aiproxy_v1_ImageURLPart_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_aiproxy_v1_ImageURLPart_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_ImageURLPart_descriptor,
+        new java.lang.String[] { "Url", "Detail", });
+    internal_static_aiproxy_v1_BinaryPart_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_aiproxy_v1_BinaryPart_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_BinaryPart_descriptor,
+        new java.lang.String[] { "MimeType", "Data", });
+    internal_static_aiproxy_v1_ChatMessagePart_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_aiproxy_v1_ChatMessagePart_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_ChatMessagePart_descriptor,
+        new java.lang.String[] { "Text", "ImageUrl", "Binary", "Kind", });
+    internal_static_aiproxy_v1_PromptCacheConfig_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_aiproxy_v1_PromptCacheConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_PromptCacheConfig_descriptor,
+        new java.lang.String[] { "Enabled", "Ttl", "Scope", });
+    internal_static_aiproxy_v1_ThinkingConfig_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_aiproxy_v1_ThinkingConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiproxy_v1_ThinkingConfig_descriptor,
+        new java.lang.String[] { "Mode", "BudgetTokens", "ReturnThinking", "StreamThinking", "InterleaveThinking", });
+    internal_static_aiproxy_v1_CompletionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_aiproxy_v1_CompletionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionRequest_descriptor,
-        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Metadata", });
+        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Metadata", "PromptCache", "Thinking", });
     internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_descriptor =
       internal_static_aiproxy_v1_CompletionRequest_descriptor.getNestedTypes().get(0);
     internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_fieldAccessorTable = new
@@ -9515,19 +15122,19 @@ public final class Base {
         internal_static_aiproxy_v1_CompletionRequest_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_aiproxy_v1_CompletionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_aiproxy_v1_CompletionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionResponse_descriptor,
         new java.lang.String[] { "Id", "ModelId", "Text", "PromptTokens", "CompletionTokens", "TotalTokens", "LatencyMs", "FromCache", "Provider", "CreatedAt", });
     internal_static_aiproxy_v1_CompletionChunk_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_aiproxy_v1_CompletionChunk_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletionChunk_descriptor,
         new java.lang.String[] { "Id", "Text", "IsFinal", });
     internal_static_aiproxy_v1_ProviderHealth_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_aiproxy_v1_ProviderHealth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_ProviderHealth_descriptor,

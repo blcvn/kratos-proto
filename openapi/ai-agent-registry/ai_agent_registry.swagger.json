@@ -15,8 +15,319 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/config/agent": {
+      "get": {
+        "operationId": "RegistryService_GetAgentConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AgentConfig"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "RegistryService"
+        ]
+      }
+    },
+    "/api/config/llm-temperature": {
+      "get": {
+        "operationId": "RegistryService_GetLLMTemperatureConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LLMTemperatureConfig"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "RegistryService"
+        ]
+      }
+    },
+    "/api/config/template": {
+      "get": {
+        "operationId": "RegistryService_GetTemplateConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TemplateConfig"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "RegistryService"
+        ]
+      }
+    },
+    "/api/prompts/{key}": {
+      "get": {
+        "operationId": "RegistryService_GetPrompt",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PromptTemplate"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tier",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "is_rl",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "RegistryService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -42,6 +353,209 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AgentConfig": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "version": {
+          "type": "string"
+        },
+        "prd_parse_mode": {
+          "type": "string"
+        },
+        "scoring_enabled": {
+          "type": "boolean"
+        },
+        "qna_enabled": {
+          "type": "boolean"
+        },
+        "enable_review_v5": {
+          "type": "boolean"
+        },
+        "enable_reasoning_logic": {
+          "type": "boolean"
+        },
+        "max_retries": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "scoring_threshold": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1LLMTemperatureConfig": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "default": {
+          "type": "number",
+          "format": "double"
+        },
+        "kg_enrich": {
+          "type": "number",
+          "format": "double"
+        },
+        "kg_scoring": {
+          "type": "number",
+          "format": "double"
+        },
+        "kg_patching": {
+          "type": "number",
+          "format": "double"
+        },
+        "doc_generation": {
+          "type": "number",
+          "format": "double"
+        },
+        "doc_scoring": {
+          "type": "number",
+          "format": "double"
+        },
+        "targeted_regen": {
+          "type": "number",
+          "format": "double"
+        },
+        "intent_classification": {
+          "type": "number",
+          "format": "double"
+        },
+        "section_extraction": {
+          "type": "number",
+          "format": "double"
+        },
+        "constrained_generation": {
+          "type": "number",
+          "format": "double"
+        },
+        "review_scoring": {
+          "type": "number",
+          "format": "double"
+        },
+        "qna_generation": {
+          "type": "number",
+          "format": "double"
+        },
+        "qna_answering": {
+          "type": "number",
+          "format": "double"
+        },
+        "prd_parsing": {
+          "type": "number",
+          "format": "double"
+        },
+        "normalization": {
+          "type": "number",
+          "format": "double"
+        },
+        "reasoning": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PromptTemplate": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "key": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "is_rl": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType"
+        },
+        "s": {
+          "type": "string"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1TemplateConfig": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result"
+        },
+        "version": {
+          "type": "string"
+        },
+        "tiers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "append_detail_to_overview": {
+          "type": "boolean"
         }
       }
     }

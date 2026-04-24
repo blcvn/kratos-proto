@@ -42,6 +42,11 @@ public object PromptServiceGrpcKt {
     @JvmStatic
     get() = PromptServiceGrpc.getGetTemplateMethod()
 
+  public val getTemplateByNameMethod:
+      MethodDescriptor<Prompt.GetTemplateByNameRequest, Prompt.GetTemplateResponse>
+    @JvmStatic
+    get() = PromptServiceGrpc.getGetTemplateByNameMethod()
+
   public val listTemplatesMethod:
       MethodDescriptor<Prompt.ListTemplatesRequest, Prompt.ListTemplatesResponse>
     @JvmStatic
@@ -51,6 +56,11 @@ public object PromptServiceGrpcKt {
       MethodDescriptor<Prompt.UpdateTemplateRequest, Prompt.UpdateTemplateResponse>
     @JvmStatic
     get() = PromptServiceGrpc.getUpdateTemplateMethod()
+
+  public val updateTemplateByNameMethod:
+      MethodDescriptor<Prompt.UpdateTemplateByNameRequest, Prompt.UpdateTemplateResponse>
+    @JvmStatic
+    get() = PromptServiceGrpc.getUpdateTemplateByNameMethod()
 
   public val deleteTemplateMethod:
       MethodDescriptor<Prompt.DeleteTemplateRequest, Prompt.ResponseEmpty>
@@ -145,6 +155,28 @@ public object PromptServiceGrpcKt {
      *
      * @return The single response from the server.
      */
+    public suspend fun getTemplateByName(request: Prompt.GetTemplateByNameRequest, headers: Metadata
+        = Metadata()): Prompt.GetTemplateResponse = unaryRpc(
+      channel,
+      PromptServiceGrpc.getGetTemplateByNameMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
     public suspend fun listTemplates(request: Prompt.ListTemplatesRequest, headers: Metadata =
         Metadata()): Prompt.ListTemplatesResponse = unaryRpc(
       channel,
@@ -171,6 +203,28 @@ public object PromptServiceGrpcKt {
         Metadata()): Prompt.UpdateTemplateResponse = unaryRpc(
       channel,
       PromptServiceGrpc.getUpdateTemplateMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun updateTemplateByName(request: Prompt.UpdateTemplateByNameRequest,
+        headers: Metadata = Metadata()): Prompt.UpdateTemplateResponse = unaryRpc(
+      channel,
+      PromptServiceGrpc.getUpdateTemplateByNameMethod(),
       request,
       callOptions,
       headers
@@ -324,6 +378,21 @@ public object PromptServiceGrpcKt {
         StatusException(UNIMPLEMENTED.withDescription("Method prompt.v1.PromptService.GetTemplate is unimplemented"))
 
     /**
+     * Returns the response to an RPC for prompt.v1.PromptService.GetTemplateByName.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun getTemplateByName(request: Prompt.GetTemplateByNameRequest):
+        Prompt.GetTemplateResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method prompt.v1.PromptService.GetTemplateByName is unimplemented"))
+
+    /**
      * Returns the response to an RPC for prompt.v1.PromptService.ListTemplates.
      *
      * If this method fails with a [StatusException], the RPC will fail with the corresponding
@@ -352,6 +421,21 @@ public object PromptServiceGrpcKt {
     public open suspend fun updateTemplate(request: Prompt.UpdateTemplateRequest):
         Prompt.UpdateTemplateResponse = throw
         StatusException(UNIMPLEMENTED.withDescription("Method prompt.v1.PromptService.UpdateTemplate is unimplemented"))
+
+    /**
+     * Returns the response to an RPC for prompt.v1.PromptService.UpdateTemplateByName.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun updateTemplateByName(request: Prompt.UpdateTemplateByNameRequest):
+        Prompt.UpdateTemplateResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method prompt.v1.PromptService.UpdateTemplateByName is unimplemented"))
 
     /**
      * Returns the response to an RPC for prompt.v1.PromptService.DeleteTemplate.
@@ -441,6 +525,11 @@ public object PromptServiceGrpcKt {
     ))
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
+      descriptor = PromptServiceGrpc.getGetTemplateByNameMethod(),
+      implementation = ::getTemplateByName
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
       descriptor = PromptServiceGrpc.getListTemplatesMethod(),
       implementation = ::listTemplates
     ))
@@ -448,6 +537,11 @@ public object PromptServiceGrpcKt {
       context = this.context,
       descriptor = PromptServiceGrpc.getUpdateTemplateMethod(),
       implementation = ::updateTemplate
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = PromptServiceGrpc.getUpdateTemplateByNameMethod(),
+      implementation = ::updateTemplateByName
     ))
       .addMethod(unaryServerMethodDefinition(
       context = this.context,

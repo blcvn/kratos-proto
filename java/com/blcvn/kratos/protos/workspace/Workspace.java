@@ -803,6 +803,495 @@ public final class Workspace {
 
   }
 
+  public interface ProjectOverviewOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:workspace.v1.ProjectOverview)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool status = 1;</code>
+     * @return The status.
+     */
+    boolean getStatus();
+  }
+  /**
+   * Protobuf type {@code workspace.v1.ProjectOverview}
+   */
+  public static final class ProjectOverview extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:workspace.v1.ProjectOverview)
+      ProjectOverviewOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProjectOverview.newBuilder() to construct.
+    private ProjectOverview(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProjectOverview() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProjectOverview();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProjectOverview(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              status_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_ProjectOverview_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_ProjectOverview_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.class, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private boolean status_;
+    /**
+     * <code>bool status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != false) {
+        output.writeBool(1, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview other = (com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code workspace.v1.ProjectOverview}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:workspace.v1.ProjectOverview)
+        com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_ProjectOverview_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_ProjectOverview_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.class, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        status_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_ProjectOverview_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview build() {
+        com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview buildPartial() {
+        com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview result = new com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview(this);
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview) {
+          return mergeFrom((com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview other) {
+        if (other == com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.getDefaultInstance()) return this;
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:workspace.v1.ProjectOverview)
+    }
+
+    // @@protoc_insertion_point(class_scope:workspace.v1.ProjectOverview)
+    private static final com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview();
+    }
+
+    public static com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProjectOverview>
+        PARSER = new com.google.protobuf.AbstractParser<ProjectOverview>() {
+      @java.lang.Override
+      public ProjectOverview parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProjectOverview(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProjectOverview> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProjectOverview> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ProjectOrBuilder extends
       // @@protoc_insertion_point(interface_extends:workspace.v1.Project)
       com.google.protobuf.MessageOrBuilder {
@@ -925,6 +1414,21 @@ public final class Workspace {
      */
     com.google.protobuf.ByteString
         getUserRoleBytes();
+
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     * @return Whether the overview field is set.
+     */
+    boolean hasOverview();
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     * @return The overview.
+     */
+    com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getOverview();
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     */
+    com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder getOverviewOrBuilder();
   }
   /**
    * Protobuf type {@code workspace.v1.Project}
@@ -1038,6 +1542,19 @@ public final class Workspace {
               java.lang.String s = input.readStringRequireUtf8();
 
               userRole_ = s;
+              break;
+            }
+            case 82: {
+              com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder subBuilder = null;
+              if (overview_ != null) {
+                subBuilder = overview_.toBuilder();
+              }
+              overview_ = input.readMessage(com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(overview_);
+                overview_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1410,6 +1927,32 @@ public final class Workspace {
       }
     }
 
+    public static final int OVERVIEW_FIELD_NUMBER = 10;
+    private com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview overview_;
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     * @return Whether the overview field is set.
+     */
+    @java.lang.Override
+    public boolean hasOverview() {
+      return overview_ != null;
+    }
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     * @return The overview.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getOverview() {
+      return overview_ == null ? com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.getDefaultInstance() : overview_;
+    }
+    /**
+     * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder getOverviewOrBuilder() {
+      return getOverview();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1451,6 +1994,9 @@ public final class Workspace {
       if (!getUserRoleBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userRole_);
       }
+      if (overview_ != null) {
+        output.writeMessage(10, getOverview());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1488,6 +2034,10 @@ public final class Workspace {
       if (!getUserRoleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userRole_);
       }
+      if (overview_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getOverview());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1524,6 +2074,11 @@ public final class Workspace {
           .equals(other.getUpdatedAt())) return false;
       if (!getUserRole()
           .equals(other.getUserRole())) return false;
+      if (hasOverview() != other.hasOverview()) return false;
+      if (hasOverview()) {
+        if (!getOverview()
+            .equals(other.getOverview())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1555,6 +2110,10 @@ public final class Workspace {
       hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (37 * hash) + USER_ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getUserRole().hashCode();
+      if (hasOverview()) {
+        hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getOverview().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1710,6 +2269,12 @@ public final class Workspace {
 
         userRole_ = "";
 
+        if (overviewBuilder_ == null) {
+          overview_ = null;
+        } else {
+          overview_ = null;
+          overviewBuilder_ = null;
+        }
         return this;
       }
 
@@ -1749,6 +2314,11 @@ public final class Workspace {
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
         result.userRole_ = userRole_;
+        if (overviewBuilder_ == null) {
+          result.overview_ = overview_;
+        } else {
+          result.overview_ = overviewBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1831,6 +2401,9 @@ public final class Workspace {
         if (!other.getUserRole().isEmpty()) {
           userRole_ = other.userRole_;
           onChanged();
+        }
+        if (other.hasOverview()) {
+          mergeOverview(other.getOverview());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2607,6 +3180,125 @@ public final class Workspace {
         onChanged();
         return this;
       }
+
+      private com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview overview_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder> overviewBuilder_;
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       * @return Whether the overview field is set.
+       */
+      public boolean hasOverview() {
+        return overviewBuilder_ != null || overview_ != null;
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       * @return The overview.
+       */
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview getOverview() {
+        if (overviewBuilder_ == null) {
+          return overview_ == null ? com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.getDefaultInstance() : overview_;
+        } else {
+          return overviewBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public Builder setOverview(com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview value) {
+        if (overviewBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          overview_ = value;
+          onChanged();
+        } else {
+          overviewBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public Builder setOverview(
+          com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder builderForValue) {
+        if (overviewBuilder_ == null) {
+          overview_ = builderForValue.build();
+          onChanged();
+        } else {
+          overviewBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public Builder mergeOverview(com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview value) {
+        if (overviewBuilder_ == null) {
+          if (overview_ != null) {
+            overview_ =
+              com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.newBuilder(overview_).mergeFrom(value).buildPartial();
+          } else {
+            overview_ = value;
+          }
+          onChanged();
+        } else {
+          overviewBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public Builder clearOverview() {
+        if (overviewBuilder_ == null) {
+          overview_ = null;
+          onChanged();
+        } else {
+          overview_ = null;
+          overviewBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder getOverviewBuilder() {
+        
+        onChanged();
+        return getOverviewFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      public com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder getOverviewOrBuilder() {
+        if (overviewBuilder_ != null) {
+          return overviewBuilder_.getMessageOrBuilder();
+        } else {
+          return overview_ == null ?
+              com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.getDefaultInstance() : overview_;
+        }
+      }
+      /**
+       * <code>.workspace.v1.ProjectOverview overview = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder> 
+          getOverviewFieldBuilder() {
+        if (overviewBuilder_ == null) {
+          overviewBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverview.Builder, com.blcvn.kratos.protos.workspace.Workspace.ProjectOverviewOrBuilder>(
+                  getOverview(),
+                  getParentForChildren(),
+                  isClean());
+          overview_ = null;
+        }
+        return overviewBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2711,6 +3403,30 @@ public final class Workspace {
      */
     com.google.protobuf.ByteString
         getCreatedAtBytes();
+
+    /**
+     * <code>string name = 5;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 5;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string email = 6;</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 6;</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
   }
   /**
    * Protobuf type {@code workspace.v1.ProjectMember}
@@ -2729,6 +3445,8 @@ public final class Workspace {
       userId_ = "";
       role_ = "";
       createdAt_ = "";
+      name_ = "";
+      email_ = "";
     }
 
     @java.lang.Override
@@ -2783,6 +3501,18 @@ public final class Workspace {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdAt_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
               break;
             }
             default: {
@@ -2969,6 +3699,82 @@ public final class Workspace {
       }
     }
 
+    public static final int NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 5;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 5;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string email = 6;</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 6;</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2995,6 +3801,12 @@ public final class Workspace {
       if (!getCreatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt_);
       }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, email_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3015,6 +3827,12 @@ public final class Workspace {
       }
       if (!getCreatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, email_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3039,6 +3857,10 @@ public final class Workspace {
           .equals(other.getRole())) return false;
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3058,6 +3880,10 @@ public final class Workspace {
       hash = (53 * hash) + getRole().hashCode();
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3199,6 +4025,10 @@ public final class Workspace {
 
         createdAt_ = "";
 
+        name_ = "";
+
+        email_ = "";
+
         return this;
       }
 
@@ -3229,6 +4059,8 @@ public final class Workspace {
         result.userId_ = userId_;
         result.role_ = role_;
         result.createdAt_ = createdAt_;
+        result.name_ = name_;
+        result.email_ = email_;
         onBuilt();
         return result;
       }
@@ -3291,6 +4123,14 @@ public final class Workspace {
         }
         if (!other.getCreatedAt().isEmpty()) {
           createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3622,6 +4462,158 @@ public final class Workspace {
   checkByteStringIsUtf8(value);
         
         createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 5;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 5;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 5;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 5;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 6;</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 6;</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 6;</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 6;</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
         onChanged();
         return this;
       }
@@ -5151,6 +6143,12 @@ public final class Workspace {
      */
     com.google.protobuf.ByteString
         getCurrentPhaseBytes();
+
+    /**
+     * <code>bool has_prd_detail = 14;</code>
+     * @return The hasPrdDetail.
+     */
+    boolean getHasPrdDetail();
   }
   /**
    * Protobuf type {@code workspace.v1.Feature}
@@ -5282,6 +6280,11 @@ public final class Workspace {
               java.lang.String s = input.readStringRequireUtf8();
 
               currentPhase_ = s;
+              break;
+            }
+            case 112: {
+
+              hasPrdDetail_ = input.readBool();
               break;
             }
             default: {
@@ -5764,6 +6767,17 @@ public final class Workspace {
       }
     }
 
+    public static final int HAS_PRD_DETAIL_FIELD_NUMBER = 14;
+    private boolean hasPrdDetail_;
+    /**
+     * <code>bool has_prd_detail = 14;</code>
+     * @return The hasPrdDetail.
+     */
+    @java.lang.Override
+    public boolean getHasPrdDetail() {
+      return hasPrdDetail_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5817,6 +6831,9 @@ public final class Workspace {
       if (!getCurrentPhaseBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, currentPhase_);
       }
+      if (hasPrdDetail_ != false) {
+        output.writeBool(14, hasPrdDetail_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5867,6 +6884,10 @@ public final class Workspace {
       if (!getCurrentPhaseBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, currentPhase_);
       }
+      if (hasPrdDetail_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, hasPrdDetail_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5908,6 +6929,8 @@ public final class Workspace {
           != other.getIsFeatureGroup()) return false;
       if (!getCurrentPhase()
           .equals(other.getCurrentPhase())) return false;
+      if (getHasPrdDetail()
+          != other.getHasPrdDetail()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5946,6 +6969,9 @@ public final class Workspace {
           getIsFeatureGroup());
       hash = (37 * hash) + CURRENT_PHASE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentPhase().hashCode();
+      hash = (37 * hash) + HAS_PRD_DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasPrdDetail());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6105,6 +7131,8 @@ public final class Workspace {
 
         currentPhase_ = "";
 
+        hasPrdDetail_ = false;
+
         return this;
       }
 
@@ -6144,6 +7172,7 @@ public final class Workspace {
         result.updatedAt_ = updatedAt_;
         result.isFeatureGroup_ = isFeatureGroup_;
         result.currentPhase_ = currentPhase_;
+        result.hasPrdDetail_ = hasPrdDetail_;
         onBuilt();
         return result;
       }
@@ -6241,6 +7270,9 @@ public final class Workspace {
         if (!other.getCurrentPhase().isEmpty()) {
           currentPhase_ = other.currentPhase_;
           onChanged();
+        }
+        if (other.getHasPrdDetail() != false) {
+          setHasPrdDetail(other.getHasPrdDetail());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7188,6 +8220,37 @@ public final class Workspace {
         onChanged();
         return this;
       }
+
+      private boolean hasPrdDetail_ ;
+      /**
+       * <code>bool has_prd_detail = 14;</code>
+       * @return The hasPrdDetail.
+       */
+      @java.lang.Override
+      public boolean getHasPrdDetail() {
+        return hasPrdDetail_;
+      }
+      /**
+       * <code>bool has_prd_detail = 14;</code>
+       * @param value The hasPrdDetail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasPrdDetail(boolean value) {
+        
+        hasPrdDetail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_prd_detail = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasPrdDetail() {
+        
+        hasPrdDetail_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7236,6 +8299,574 @@ public final class Workspace {
 
     @java.lang.Override
     public com.blcvn.kratos.protos.workspace.Workspace.Feature getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetRootFeatureRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:workspace.v1.GetRootFeatureRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string project_id = 1;</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 1;</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+  }
+  /**
+   * Protobuf type {@code workspace.v1.GetRootFeatureRequest}
+   */
+  public static final class GetRootFeatureRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:workspace.v1.GetRootFeatureRequest)
+      GetRootFeatureRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetRootFeatureRequest.newBuilder() to construct.
+    private GetRootFeatureRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRootFeatureRequest() {
+      projectId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetRootFeatureRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetRootFeatureRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_GetRootFeatureRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_GetRootFeatureRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.class, com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 1;</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 1;</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest other = (com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest) obj;
+
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code workspace.v1.GetRootFeatureRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:workspace.v1.GetRootFeatureRequest)
+        com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_GetRootFeatureRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_GetRootFeatureRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.class, com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        projectId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.kratos.protos.workspace.Workspace.internal_static_workspace_v1_GetRootFeatureRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest getDefaultInstanceForType() {
+        return com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest build() {
+        com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest buildPartial() {
+        com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest result = new com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest(this);
+        result.projectId_ = projectId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest) {
+          return mergeFrom((com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest other) {
+        if (other == com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest.getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 1;</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 1;</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 1;</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 1;</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:workspace.v1.GetRootFeatureRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:workspace.v1.GetRootFeatureRequest)
+    private static final com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest();
+    }
+
+    public static com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRootFeatureRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetRootFeatureRequest>() {
+      @java.lang.Override
+      public GetRootFeatureRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRootFeatureRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRootFeatureRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRootFeatureRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.kratos.protos.workspace.Workspace.GetRootFeatureRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9046,6 +10677,18 @@ public final class Workspace {
         getApprovedAtBytes();
 
     /**
+     * <code>string name = 16;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 16;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
      * <code>string task_ref_id = 17;</code>
      * @return The taskRefId.
      */
@@ -9096,6 +10739,7 @@ public final class Workspace {
       confluenceUrl_ = "";
       parentId_ = "";
       approvedAt_ = "";
+      name_ = "";
       taskRefId_ = "";
       refDocumentId_ = "";
     }
@@ -9217,6 +10861,12 @@ public final class Workspace {
               java.lang.String s = input.readStringRequireUtf8();
 
               approvedAt_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             case 138: {
@@ -9814,6 +11464,44 @@ public final class Workspace {
       }
     }
 
+    public static final int NAME_FIELD_NUMBER = 16;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 16;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 16;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int TASK_REF_ID_FIELD_NUMBER = 17;
     private volatile java.lang.Object taskRefId_;
     /**
@@ -9949,6 +11637,9 @@ public final class Workspace {
       if (!getApprovedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, approvedAt_);
       }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, name_);
+      }
       if (!getTaskRefIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 17, taskRefId_);
       }
@@ -10010,6 +11701,9 @@ public final class Workspace {
       if (!getApprovedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, approvedAt_);
       }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, name_);
+      }
       if (!getTaskRefIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, taskRefId_);
       }
@@ -10061,6 +11755,8 @@ public final class Workspace {
           .equals(other.getParentId())) return false;
       if (!getApprovedAt()
           .equals(other.getApprovedAt())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!getTaskRefId()
           .equals(other.getTaskRefId())) return false;
       if (!getRefDocumentId()
@@ -10106,6 +11802,8 @@ public final class Workspace {
       hash = (53 * hash) + getParentId().hashCode();
       hash = (37 * hash) + APPROVED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getApprovedAt().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TASK_REF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTaskRefId().hashCode();
       hash = (37 * hash) + REF_DOCUMENT_ID_FIELD_NUMBER;
@@ -10273,6 +11971,8 @@ public final class Workspace {
 
         approvedAt_ = "";
 
+        name_ = "";
+
         taskRefId_ = "";
 
         refDocumentId_ = "";
@@ -10318,6 +12018,7 @@ public final class Workspace {
         result.confluenceUrl_ = confluenceUrl_;
         result.parentId_ = parentId_;
         result.approvedAt_ = approvedAt_;
+        result.name_ = name_;
         result.taskRefId_ = taskRefId_;
         result.refDocumentId_ = refDocumentId_;
         onBuilt();
@@ -10425,6 +12126,10 @@ public final class Workspace {
         }
         if (!other.getApprovedAt().isEmpty()) {
           approvedAt_ = other.approvedAt_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         if (!other.getTaskRefId().isEmpty()) {
@@ -11575,6 +13280,82 @@ public final class Workspace {
   checkByteStringIsUtf8(value);
         
         approvedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 16;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 16;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 16;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 16;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
         onChanged();
         return this;
       }
@@ -88631,6 +90412,11 @@ public final class Workspace {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_workspace_v1_ConfluenceConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_workspace_v1_ProjectOverview_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_workspace_v1_ProjectOverview_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_workspace_v1_Project_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -88650,6 +90436,11 @@ public final class Workspace {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_workspace_v1_Feature_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_workspace_v1_GetRootFeatureRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_workspace_v1_GetRootFeatureRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_workspace_v1_Document_descriptor;
   private static final 
@@ -89063,431 +90854,439 @@ public final class Workspace {
       "1\032\034google/api/annotations.proto\032\024workspa" +
       "ce/base.proto\"N\n\020ConfluenceConfig\022\017\n\007ena" +
       "bled\030\001 \001(\010\022\021\n\tspace_key\030\002 \001(\t\022\026\n\016parent_" +
-      "page_id\030\003 \001(\t\"\317\001\n\007Project\022\n\n\002id\030\001 \001(\t\022\017\n" +
-      "\007user_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\023\n\013descript" +
-      "ion\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\0229\n\021confluence_" +
-      "config\030\006 \001(\0132\036.workspace.v1.ConfluenceCo" +
-      "nfig\022\022\n\ncreated_at\030\007 \001(\t\022\022\n\nupdated_at\030\010" +
-      " \001(\t\022\021\n\tuser_role\030\t \001(\t\"V\n\rProjectMember" +
-      "\022\022\n\nproject_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\014\n" +
-      "\004role\030\003 \001(\t\022\022\n\ncreated_at\030\004 \001(\t\"~\n\rFeatu" +
-      "reMember\022\022\n\nfeature_id\030\001 \001(\t\022\017\n\007user_id\030" +
-      "\002 \001(\t\022\014\n\004role\030\003 \001(\t\022\022\n\ngranted_by\030\004 \001(\t\022" +
-      "\022\n\ncreated_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t\"" +
-      "\377\001\n\007Feature\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id\030\002 " +
-      "\001(\t\022\021\n\tparent_id\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013" +
-      "description\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\024\n\014cur" +
-      "rent_step\030\007 \001(\t\022\020\n\010progress\030\010 \001(\t\022\r\n\005ord" +
-      "er\030\t \001(\005\022\022\n\ncreated_at\030\n \001(\t\022\022\n\nupdated_" +
-      "at\030\013 \001(\t\022\030\n\020is_feature_group\030\014 \001(\010\022\025\n\rcu" +
-      "rrent_phase\030\r \001(\t\"\223\001\n\010Document\022\n\n\002id\030\001 \001" +
-      "(\t\022\022\n\nfeature_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004" +
-      "type\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\016\n\006statu" +
-      "s\030\006 \001(\t\022\022\n\ncreated_at\030\007 \001(\t\022\022\n\nupdated_a" +
-      "t\030\010 \001(\t\"\344\002\n\017DocumentSection\022\n\n\002id\030\001 \001(\t\022" +
-      "\023\n\013document_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\016\n\006st" +
-      "atus\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007versi" +
-      "on\030\006 \001(\005\022\024\n\014storage_type\030\007 \001(\t\022\023\n\013storag" +
-      "e_ref\030\010 \001(\t\022\017\n\007content\030\t \001(\t\022\022\n\ncreated_" +
-      "at\030\n \001(\t\022\022\n\nupdated_at\030\013 \001(\t\022\032\n\022confluen" +
-      "ce_page_id\030\014 \001(\t\022\026\n\016confluence_url\030\r \001(\t" +
-      "\022\021\n\tparent_id\030\016 \001(\t\022\023\n\013approved_at\030\017 \001(\t" +
-      "\022\023\n\013task_ref_id\030\021 \001(\t\022\027\n\017ref_document_id" +
-      "\030\022 \001(\t\"\206\001\n\013ChatMessage\022\n\n\002id\030\001 \001(\t\022\022\n\nfe" +
-      "ature_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(\t\022\014\n\004ro" +
-      "le\030\004 \001(\t\022\017\n\007content\030\005 \001(\t\022\020\n\010metadata\030\006 " +
-      "\001(\t\022\022\n\ncreated_at\030\007 \001(\t\"}\n\007Session\022\n\n\002id" +
-      "\030\001 \001(\t\022\022\n\nproject_id\030\002 \001(\t\022\032\n\022current_fe" +
-      "ature_id\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\022\n\ncreate" +
-      "d_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t\"2\n\nEmptyR" +
-      "eply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Resu" +
-      "lt\"t\n\024CreateProjectPayload\022\014\n\004name\030\001 \001(\t" +
-      "\022\023\n\013description\030\002 \001(\t\0229\n\021confluence_conf" +
-      "ig\030\003 \001(\0132\036.workspace.v1.ConfluenceConfig" +
-      "\"\241\001\n\024CreateProjectRequest\022(\n\010metadata\030\001 " +
-      "\001(\0132\026.workspace.v1.Metadata\022*\n\tsignature" +
-      "\030\002 \001(\0132\027.workspace.v1.Signature\0223\n\007paylo" +
-      "ad\030\003 \001(\0132\".workspace.v1.CreateProjectPay" +
-      "load\"f\n\023ListProjectsRequest\022(\n\010metadata\030" +
-      "\001 \001(\0132\026.workspace.v1.Metadata\022\022\n\npage_to" +
-      "ken\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"I\n\021GetProje" +
-      "ctRequest\022(\n\010metadata\030\001 \001(\0132\026.workspace." +
-      "v1.Metadata\022\n\n\002id\030\002 \001(\t\"\204\001\n\024UpdateProjec" +
-      "tPayload\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 " +
-      "\001(\t\022\016\n\006status\030\003 \001(\t\0229\n\021confluence_config" +
-      "\030\004 \001(\0132\036.workspace.v1.ConfluenceConfig\"\255" +
-      "\001\n\024UpdateProjectRequest\022(\n\010metadata\030\001 \001(" +
-      "\0132\026.workspace.v1.Metadata\022*\n\tsignature\030\002" +
-      " \001(\0132\027.workspace.v1.Signature\022\n\n\002id\030\003 \001(" +
-      "\t\0223\n\007payload\030\004 \001(\0132\".workspace.v1.Update" +
-      "ProjectPayload\"x\n\024DeleteProjectRequest\022(" +
-      "\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadata" +
-      "\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1.Signa" +
-      "ture\022\n\n\002id\030\003 \001(\t\"\\\n\014ProjectReply\022$\n\006resu" +
-      "lt\030\001 \001(\0132\024.workspace.v1.Result\022&\n\007payloa" +
-      "d\030\002 \001(\0132\025.workspace.v1.Project\"z\n\021ListPr" +
-      "ojectsReply\022$\n\006result\030\001 \001(\0132\024.workspace." +
-      "v1.Result\022&\n\007payload\030\002 \003(\0132\025.workspace.v" +
-      "1.Project\022\027\n\017next_page_token\030\003 \001(\t\"8\n\027Ad" +
-      "dProjectMemberPayload\022\017\n\007user_id\030\001 \001(\t\022\014" +
-      "\n\004role\030\002 \001(\t\"\273\001\n\027AddProjectMemberRequest" +
-      "\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metada" +
-      "ta\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1.Sig" +
-      "nature\022\022\n\nproject_id\030\003 \001(\t\0226\n\007payload\030\004 " +
-      "\001(\0132%.workspace.v1.AddProjectMemberPaylo" +
-      "ad\"h\n\022ProjectMemberReply\022$\n\006result\030\001 \001(\013" +
-      "2\024.workspace.v1.Result\022,\n\007payload\030\002 \001(\0132" +
-      "\033.workspace.v1.ProjectMember\"\227\001\n\032RemoveP" +
-      "rojectMemberRequest\022(\n\010metadata\030\001 \001(\0132\026." +
+      "page_id\030\003 \001(\t\"!\n\017ProjectOverview\022\016\n\006stat" +
+      "us\030\001 \001(\010\"\200\002\n\007Project\022\n\n\002id\030\001 \001(\t\022\017\n\007user" +
+      "_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
+      " \001(\t\022\016\n\006status\030\005 \001(\t\0229\n\021confluence_confi" +
+      "g\030\006 \001(\0132\036.workspace.v1.ConfluenceConfig\022" +
+      "\022\n\ncreated_at\030\007 \001(\t\022\022\n\nupdated_at\030\010 \001(\t\022" +
+      "\021\n\tuser_role\030\t \001(\t\022/\n\010overview\030\n \001(\0132\035.w" +
+      "orkspace.v1.ProjectOverview\"s\n\rProjectMe" +
+      "mber\022\022\n\nproject_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(" +
+      "\t\022\014\n\004role\030\003 \001(\t\022\022\n\ncreated_at\030\004 \001(\t\022\014\n\004n" +
+      "ame\030\005 \001(\t\022\r\n\005email\030\006 \001(\t\"~\n\rFeatureMembe" +
+      "r\022\022\n\nfeature_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\014" +
+      "\n\004role\030\003 \001(\t\022\022\n\ngranted_by\030\004 \001(\t\022\022\n\ncrea" +
+      "ted_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t\"\227\002\n\007Fea" +
+      "ture\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id\030\002 \001(\t\022\021\n\t" +
+      "parent_id\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013descrip" +
+      "tion\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\024\n\014current_st" +
+      "ep\030\007 \001(\t\022\020\n\010progress\030\010 \001(\t\022\r\n\005order\030\t \001(" +
+      "\005\022\022\n\ncreated_at\030\n \001(\t\022\022\n\nupdated_at\030\013 \001(" +
+      "\t\022\030\n\020is_feature_group\030\014 \001(\010\022\025\n\rcurrent_p" +
+      "hase\030\r \001(\t\022\026\n\016has_prd_detail\030\016 \001(\010\"+\n\025Ge" +
+      "tRootFeatureRequest\022\022\n\nproject_id\030\001 \001(\t\"" +
+      "\223\001\n\010Document\022\n\n\002id\030\001 \001(\t\022\022\n\nfeature_id\030\002" +
+      " \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\023\n\013desc" +
+      "ription\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\022\n\ncreated" +
+      "_at\030\007 \001(\t\022\022\n\nupdated_at\030\010 \001(\t\"\362\002\n\017Docume" +
+      "ntSection\022\n\n\002id\030\001 \001(\t\022\023\n\013document_id\030\002 \001" +
+      "(\t\022\014\n\004type\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\023\n\013desc" +
+      "ription\030\005 \001(\t\022\017\n\007version\030\006 \001(\005\022\024\n\014storag" +
+      "e_type\030\007 \001(\t\022\023\n\013storage_ref\030\010 \001(\t\022\017\n\007con" +
+      "tent\030\t \001(\t\022\022\n\ncreated_at\030\n \001(\t\022\022\n\nupdate" +
+      "d_at\030\013 \001(\t\022\032\n\022confluence_page_id\030\014 \001(\t\022\026" +
+      "\n\016confluence_url\030\r \001(\t\022\021\n\tparent_id\030\016 \001(" +
+      "\t\022\023\n\013approved_at\030\017 \001(\t\022\014\n\004name\030\020 \001(\t\022\023\n\013" +
+      "task_ref_id\030\021 \001(\t\022\027\n\017ref_document_id\030\022 \001" +
+      "(\t\"\206\001\n\013ChatMessage\022\n\n\002id\030\001 \001(\t\022\022\n\nfeatur" +
+      "e_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(\t\022\014\n\004role\030\004" +
+      " \001(\t\022\017\n\007content\030\005 \001(\t\022\020\n\010metadata\030\006 \001(\t\022" +
+      "\022\n\ncreated_at\030\007 \001(\t\"}\n\007Session\022\n\n\002id\030\001 \001" +
+      "(\t\022\022\n\nproject_id\030\002 \001(\t\022\032\n\022current_featur" +
+      "e_id\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\022\n\ncreated_at" +
+      "\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t\"2\n\nEmptyReply" +
+      "\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Result\"t" +
+      "\n\024CreateProjectPayload\022\014\n\004name\030\001 \001(\t\022\023\n\013" +
+      "description\030\002 \001(\t\0229\n\021confluence_config\030\003" +
+      " \001(\0132\036.workspace.v1.ConfluenceConfig\"\241\001\n" +
+      "\024CreateProjectRequest\022(\n\010metadata\030\001 \001(\0132" +
+      "\026.workspace.v1.Metadata\022*\n\tsignature\030\002 \001" +
+      "(\0132\027.workspace.v1.Signature\0223\n\007payload\030\003" +
+      " \001(\0132\".workspace.v1.CreateProjectPayload" +
+      "\"f\n\023ListProjectsRequest\022(\n\010metadata\030\001 \001(" +
+      "\0132\026.workspace.v1.Metadata\022\022\n\npage_token\030" +
+      "\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"I\n\021GetProjectRe" +
+      "quest\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.M" +
+      "etadata\022\n\n\002id\030\002 \001(\t\"\204\001\n\024UpdateProjectPay" +
+      "load\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022" +
+      "\016\n\006status\030\003 \001(\t\0229\n\021confluence_config\030\004 \001" +
+      "(\0132\036.workspace.v1.ConfluenceConfig\"\255\001\n\024U" +
+      "pdateProjectRequest\022(\n\010metadata\030\001 \001(\0132\026." +
       "workspace.v1.Metadata\022*\n\tsignature\030\002 \001(\013" +
-      "2\027.workspace.v1.Signature\022\022\n\nproject_id\030" +
-      "\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\"Y\n\031ListProjectMem" +
-      "bersRequest\022(\n\010metadata\030\001 \001(\0132\026.workspac" +
-      "e.v1.Metadata\022\022\n\nproject_id\030\002 \001(\t\"m\n\027Lis" +
-      "tProjectMembersReply\022$\n\006result\030\001 \001(\0132\024.w" +
-      "orkspace.v1.Result\022,\n\007payload\030\002 \003(\0132\033.wo" +
-      "rkspace.v1.ProjectMember\".\n\036UpdateProjec" +
-      "tMemberRolePayload\022\014\n\004role\030\001 \001(\t\"\332\001\n\036Upd" +
-      "ateProjectMemberRoleRequest\022(\n\010metadata\030" +
-      "\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsignatu" +
-      "re\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\npro" +
-      "ject_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022=\n\007payloa" +
-      "d\030\005 \001(\0132,.workspace.v1.UpdateProjectMemb" +
-      "erRolePayload\"U\n\025GetFeatureTreeRequest\022(" +
-      "\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadata" +
-      "\022\022\n\nproject_id\030\002 \001(\t\"c\n\023GetFeatureTreeRe" +
-      "ply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Resul" +
-      "t\022&\n\007payload\030\002 \003(\0132\025.workspace.v1.Featur" +
-      "e\"u\n\024CreateFeaturePayload\022\021\n\tparent_id\030\001" +
-      " \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022" +
-      "\r\n\005order\030\004 \001(\005\022\030\n\020is_feature_group\030\005 \001(\010" +
-      "\"\265\001\n\024CreateFeatureRequest\022(\n\010metadata\030\001 " +
-      "\001(\0132\026.workspace.v1.Metadata\022*\n\tsignature" +
-      "\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\nproje" +
-      "ct_id\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\".workspace" +
-      ".v1.CreateFeaturePayload\"`\n\031CreateFeatur" +
-      "eGroupPayload\022\021\n\tparent_id\030\001 \001(\t\022\014\n\004name" +
-      "\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005order\030\004 \001" +
-      "(\005\"\277\001\n\031CreateFeatureGroupRequest\022(\n\010meta" +
-      "data\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsi" +
-      "gnature\030\002 \001(\0132\027.workspace.v1.Signature\022\022" +
-      "\n\nproject_id\030\003 \001(\t\0228\n\007payload\030\004 \001(\0132\'.wo" +
-      "rkspace.v1.CreateFeatureGroupPayload\"\\\n\014" +
-      "FeatureReply\022$\n\006result\030\001 \001(\0132\024.workspace" +
-      ".v1.Result\022&\n\007payload\030\002 \001(\0132\025.workspace." +
-      "v1.Feature\"I\n\021GetFeatureRequest\022(\n\010metad" +
-      "ata\030\001 \001(\0132\026.workspace.v1.Metadata\022\n\n\002id\030" +
-      "\002 \001(\t\"\252\001\n\024UpdateFeaturePayload\022\021\n\tparent" +
-      "_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003" +
-      " \001(\t\022\016\n\006status\030\004 \001(\t\022\020\n\010progress\030\005 \001(\t\022\r" +
-      "\n\005order\030\006 \001(\005\022\025\n\rcurrent_phase\030\007 \001(\t\022\024\n\014" +
-      "current_step\030\010 \001(\t\"\255\001\n\024UpdateFeatureRequ" +
-      "est\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Met" +
-      "adata\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1." +
-      "Signature\022\n\n\002id\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\"" +
-      ".workspace.v1.UpdateFeaturePayload\"x\n\024De" +
-      "leteFeatureRequest\022(\n\010metadata\030\001 \001(\0132\026.w" +
-      "orkspace.v1.Metadata\022*\n\tsignature\030\002 \001(\0132" +
-      "\027.workspace.v1.Signature\022\n\n\002id\030\003 \001(\t\"8\n\027" +
-      "AddFeatureMemberPayload\022\017\n\007user_id\030\001 \001(\t" +
-      "\022\014\n\004role\030\002 \001(\t\"\273\001\n\027AddFeatureMemberReque" +
-      "st\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Meta" +
-      "data\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1.S" +
-      "ignature\022\022\n\nfeature_id\030\003 \001(\t\0226\n\007payload\030" +
-      "\004 \001(\0132%.workspace.v1.AddFeatureMemberPay" +
-      "load\"h\n\022FeatureMemberReply\022$\n\006result\030\001 \001" +
-      "(\0132\024.workspace.v1.Result\022,\n\007payload\030\002 \001(" +
-      "\0132\033.workspace.v1.FeatureMember\"Y\n\031ListFe" +
-      "atureMembersRequest\022(\n\010metadata\030\001 \001(\0132\026." +
-      "workspace.v1.Metadata\022\022\n\nfeature_id\030\002 \001(" +
-      "\t\"m\n\027ListFeatureMembersReply\022$\n\006result\030\001" +
-      " \001(\0132\024.workspace.v1.Result\022,\n\007payload\030\002 " +
-      "\003(\0132\033.workspace.v1.FeatureMember\".\n\036Upda" +
-      "teFeatureMemberRolePayload\022\014\n\004role\030\001 \001(\t" +
-      "\"\332\001\n\036UpdateFeatureMemberRoleRequest\022(\n\010m" +
-      "etadata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n" +
-      "\tsignature\030\002 \001(\0132\027.workspace.v1.Signatur" +
-      "e\022\022\n\nfeature_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022=" +
-      "\n\007payload\030\005 \001(\0132,.workspace.v1.UpdateFea" +
-      "tureMemberRolePayload\"\227\001\n\032RemoveFeatureM" +
-      "emberRequest\022(\n\010metadata\030\001 \001(\0132\026.workspa" +
-      "ce.v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.work" +
-      "space.v1.Signature\022\022\n\nfeature_id\030\003 \001(\t\022\017" +
-      "\n\007user_id\030\004 \001(\t\"o\n\025CreateDocumentPayload" +
-      "\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\023\n\013descript" +
-      "ion\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\024\n\014section_ty" +
-      "pe\030\005 \001(\t\"\267\001\n\025CreateDocumentRequest\022(\n\010me" +
+      "2\027.workspace.v1.Signature\022\n\n\002id\030\003 \001(\t\0223\n" +
+      "\007payload\030\004 \001(\0132\".workspace.v1.UpdateProj" +
+      "ectPayload\"x\n\024DeleteProjectRequest\022(\n\010me" +
       "tadata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\t" +
       "signature\030\002 \001(\0132\027.workspace.v1.Signature" +
-      "\022\022\n\nfeature_id\030\003 \001(\t\0224\n\007payload\030\004 \001(\0132#." +
-      "workspace.v1.CreateDocumentPayload\"T\n\024Li" +
-      "stDocumentsRequest\022(\n\010metadata\030\001 \001(\0132\026.w" +
-      "orkspace.v1.Metadata\022\022\n\nfeature_id\030\002 \001(\t" +
-      "\"^\n\rDocumentReply\022$\n\006result\030\001 \001(\0132\024.work" +
-      "space.v1.Result\022\'\n\007payload\030\002 \001(\0132\026.works" +
-      "pace.v1.Document\"c\n\022ListDocumentsReply\022$" +
-      "\n\006result\030\001 \001(\0132\024.workspace.v1.Result\022\'\n\007" +
-      "payload\030\002 \003(\0132\026.workspace.v1.Document\"u\n" +
-      "\033ListDocumentSectionsRequest\022(\n\010metadata" +
-      "\030\001 \001(\0132\026.workspace.v1.Metadata\022\023\n\013docume" +
-      "nt_id\030\002 \001(\t\022\027\n\017include_content\030\003 \001(\010\"q\n\031" +
-      "ListDocumentSectionsReply\022$\n\006result\030\001 \001(" +
-      "\0132\024.workspace.v1.Result\022.\n\007payload\030\002 \003(\013" +
-      "2\035.workspace.v1.DocumentSection\"Q\n\031GetDo" +
-      "cumentSectionRequest\022(\n\010metadata\030\001 \001(\0132\026" +
-      ".workspace.v1.Metadata\022\n\n\002id\030\002 \001(\t\"l\n\024Do" +
-      "cumentSectionReply\022$\n\006result\030\001 \001(\0132\024.wor" +
-      "kspace.v1.Result\022.\n\007payload\030\002 \001(\0132\035.work" +
-      "space.v1.DocumentSection\"\314\001\n\034CreateDocum" +
-      "entSectionPayload\022\014\n\004type\030\001 \001(\t\022\023\n\013descr" +
-      "iption\030\002 \001(\t\022\024\n\014storage_type\030\003 \001(\t\022\032\n\022co" +
-      "nfluence_page_id\030\004 \001(\t\022\026\n\016confluence_url" +
-      "\030\005 \001(\t\022\021\n\tparent_id\030\006 \001(\t\022\027\n\017ref_documen" +
-      "t_id\030\007 \001(\t\022\023\n\013task_ref_id\030\010 \001(\t\"\306\001\n\034Crea" +
-      "teDocumentSectionRequest\022(\n\010metadata\030\001 \001" +
-      "(\0132\026.workspace.v1.Metadata\022*\n\tsignature\030" +
-      "\002 \001(\0132\027.workspace.v1.Signature\022\023\n\013docume" +
-      "nt_id\030\003 \001(\t\022;\n\007payload\030\004 \001(\0132*.workspace" +
-      ".v1.CreateDocumentSectionPayload\"\245\001\n\034Upd" +
-      "ateDocumentSectionPayload\022\016\n\006status\030\001 \001(" +
-      "\t\022\023\n\013description\030\002 \001(\t\022\032\n\022confluence_pag" +
-      "e_id\030\003 \001(\t\022\026\n\016confluence_url\030\004 \001(\t\022\027\n\017re" +
-      "f_document_id\030\005 \001(\t\022\023\n\013task_ref_id\030\006 \001(\t" +
-      "\"\275\001\n\034UpdateDocumentSectionRequest\022(\n\010met" +
-      "adata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\ts" +
-      "ignature\030\002 \001(\0132\027.workspace.v1.Signature\022" +
-      "\n\n\002id\030\003 \001(\t\022;\n\007payload\030\004 \001(\0132*.workspace" +
-      ".v1.UpdateDocumentSectionPayload\"`\n#Upda" +
-      "teDocumentSectionContentPayload\022\017\n\007conte" +
-      "nt\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\030\n\020expected_ver" +
-      "sion\030\003 \001(\005\"\313\001\n#UpdateDocumentSectionCont" +
-      "entRequest\022(\n\010metadata\030\001 \001(\0132\026.workspace" +
-      ".v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.worksp" +
-      "ace.v1.Signature\022\n\n\002id\030\003 \001(\t\022B\n\007payload\030" +
-      "\004 \001(\01321.workspace.v1.UpdateDocumentSecti" +
-      "onContentPayload\"X\n#CreateDocumentSectio" +
-      "nVersionPayload\022\014\n\004type\030\001 \001(\t\022\017\n\007content" +
-      "\030\002 \001(\t\022\022\n\nsection_id\030\003 \001(\t\"\324\001\n#CreateDoc" +
-      "umentSectionVersionRequest\022(\n\010metadata\030\001" +
-      " \001(\0132\026.workspace.v1.Metadata\022*\n\tsignatur" +
-      "e\030\002 \001(\0132\027.workspace.v1.Signature\022\023\n\013docu" +
-      "ment_id\030\003 \001(\t\022B\n\007payload\030\004 \001(\01321.workspa" +
-      "ce.v1.CreateDocumentSectionVersionPayloa" +
-      "d\"\232\001\n\037UpsertDocumentAndSectionPayload\022\020\n" +
-      "\010doc_type\030\001 \001(\t\022\024\n\014section_type\030\002 \001(\t\022\017\n" +
-      "\007content\030\003 \001(\t\022\023\n\013document_id\030\004 \001(\t\022\022\n\ns" +
-      "ection_id\030\005 \001(\t\022\025\n\rmetadata_json\030\006 \001(\t\"\313" +
-      "\001\n\037UpsertDocumentAndSectionRequest\022(\n\010me" +
-      "tadata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\t" +
-      "signature\030\002 \001(\0132\027.workspace.v1.Signature" +
-      "\022\022\n\nfeature_id\030\003 \001(\t\022>\n\007payload\030\004 \001(\0132-." +
-      "workspace.v1.UpsertDocumentAndSectionPay" +
-      "load\"q\n\"ListDocumentSectionVersionsReque" +
-      "st\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Meta" +
-      "data\022\023\n\013document_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"" +
-      "v\n\'GetCurrentDocumentSectionVersionReque" +
-      "st\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Meta" +
-      "data\022\023\n\013document_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"" +
-      "=\n\'SetCurrentDocumentSectionVersionPaylo" +
-      "ad\022\022\n\nsection_id\030\001 \001(\t\"\334\001\n\'SetCurrentDoc" +
-      "umentSectionVersionRequest\022(\n\010metadata\030\001" +
-      " \001(\0132\026.workspace.v1.Metadata\022*\n\tsignatur" +
-      "e\030\002 \001(\0132\027.workspace.v1.Signature\022\023\n\013docu" +
-      "ment_id\030\003 \001(\t\022F\n\007payload\030\004 \001(\01325.workspa" +
-      "ce.v1.SetCurrentDocumentSectionVersionPa" +
-      "yload\"v\n\027ListChatMessagesRequest\022(\n\010meta" +
-      "data\030\001 \001(\0132\026.workspace.v1.Metadata\022\022\n\nfe" +
-      "ature_id\030\002 \001(\t\022\r\n\005limit\030\003 \001(\005\022\016\n\006offset\030" +
-      "\004 \001(\005\"i\n\025ListChatMessagesReply\022$\n\006result" +
-      "\030\001 \001(\0132\024.workspace.v1.Result\022*\n\007payload\030" +
-      "\002 \003(\0132\031.workspace.v1.ChatMessage\"_\n\030Appe" +
-      "ndChatMessagePayload\022\022\n\nsession_id\030\001 \001(\t" +
-      "\022\014\n\004role\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010metad" +
-      "ata\030\004 \001(\t\"\275\001\n\030AppendChatMessageRequest\022(" +
+      "\022\n\n\002id\030\003 \001(\t\"\\\n\014ProjectReply\022$\n\006result\030\001" +
+      " \001(\0132\024.workspace.v1.Result\022&\n\007payload\030\002 " +
+      "\001(\0132\025.workspace.v1.Project\"z\n\021ListProjec" +
+      "tsReply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.R" +
+      "esult\022&\n\007payload\030\002 \003(\0132\025.workspace.v1.Pr" +
+      "oject\022\027\n\017next_page_token\030\003 \001(\t\"8\n\027AddPro" +
+      "jectMemberPayload\022\017\n\007user_id\030\001 \001(\t\022\014\n\004ro" +
+      "le\030\002 \001(\t\"\273\001\n\027AddProjectMemberRequest\022(\n\010" +
+      "metadata\030\001 \001(\0132\026.workspace.v1.Metadata\022*" +
+      "\n\tsignature\030\002 \001(\0132\027.workspace.v1.Signatu" +
+      "re\022\022\n\nproject_id\030\003 \001(\t\0226\n\007payload\030\004 \001(\0132" +
+      "%.workspace.v1.AddProjectMemberPayload\"h" +
+      "\n\022ProjectMemberReply\022$\n\006result\030\001 \001(\0132\024.w" +
+      "orkspace.v1.Result\022,\n\007payload\030\002 \001(\0132\033.wo" +
+      "rkspace.v1.ProjectMember\"\227\001\n\032RemoveProje" +
+      "ctMemberRequest\022(\n\010metadata\030\001 \001(\0132\026.work" +
+      "space.v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.w" +
+      "orkspace.v1.Signature\022\022\n\nproject_id\030\003 \001(" +
+      "\t\022\017\n\007user_id\030\004 \001(\t\"Y\n\031ListProjectMembers" +
+      "Request\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1" +
+      ".Metadata\022\022\n\nproject_id\030\002 \001(\t\"m\n\027ListPro" +
+      "jectMembersReply\022$\n\006result\030\001 \001(\0132\024.works" +
+      "pace.v1.Result\022,\n\007payload\030\002 \003(\0132\033.worksp" +
+      "ace.v1.ProjectMember\".\n\036UpdateProjectMem" +
+      "berRolePayload\022\014\n\004role\030\001 \001(\t\"\332\001\n\036UpdateP" +
+      "rojectMemberRoleRequest\022(\n\010metadata\030\001 \001(" +
+      "\0132\026.workspace.v1.Metadata\022*\n\tsignature\030\002" +
+      " \001(\0132\027.workspace.v1.Signature\022\022\n\nproject" +
+      "_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022=\n\007payload\030\005 " +
+      "\001(\0132,.workspace.v1.UpdateProjectMemberRo" +
+      "lePayload\"U\n\025GetFeatureTreeRequest\022(\n\010me" +
+      "tadata\030\001 \001(\0132\026.workspace.v1.Metadata\022\022\n\n" +
+      "project_id\030\002 \001(\t\"c\n\023GetFeatureTreeReply\022" +
+      "$\n\006result\030\001 \001(\0132\024.workspace.v1.Result\022&\n" +
+      "\007payload\030\002 \003(\0132\025.workspace.v1.Feature\"u\n" +
+      "\024CreateFeaturePayload\022\021\n\tparent_id\030\001 \001(\t" +
+      "\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005o" +
+      "rder\030\004 \001(\005\022\030\n\020is_feature_group\030\005 \001(\010\"\265\001\n" +
+      "\024CreateFeatureRequest\022(\n\010metadata\030\001 \001(\0132" +
+      "\026.workspace.v1.Metadata\022*\n\tsignature\030\002 \001" +
+      "(\0132\027.workspace.v1.Signature\022\022\n\nproject_i" +
+      "d\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\".workspace.v1." +
+      "CreateFeaturePayload\"`\n\031CreateFeatureGro" +
+      "upPayload\022\021\n\tparent_id\030\001 \001(\t\022\014\n\004name\030\002 \001" +
+      "(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\"\277" +
+      "\001\n\031CreateFeatureGroupRequest\022(\n\010metadata" +
+      "\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsignat" +
+      "ure\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\npr" +
+      "oject_id\030\003 \001(\t\0228\n\007payload\030\004 \001(\0132\'.worksp" +
+      "ace.v1.CreateFeatureGroupPayload\"\\\n\014Feat" +
+      "ureReply\022$\n\006result\030\001 \001(\0132\024.workspace.v1." +
+      "Result\022&\n\007payload\030\002 \001(\0132\025.workspace.v1.F" +
+      "eature\"I\n\021GetFeatureRequest\022(\n\010metadata\030" +
+      "\001 \001(\0132\026.workspace.v1.Metadata\022\n\n\002id\030\002 \001(" +
+      "\t\"\252\001\n\024UpdateFeaturePayload\022\021\n\tparent_id\030" +
+      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t" +
+      "\022\016\n\006status\030\004 \001(\t\022\020\n\010progress\030\005 \001(\t\022\r\n\005or" +
+      "der\030\006 \001(\005\022\025\n\rcurrent_phase\030\007 \001(\t\022\024\n\014curr" +
+      "ent_step\030\010 \001(\t\"\255\001\n\024UpdateFeatureRequest\022" +
+      "(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadat" +
+      "a\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1.Sign" +
+      "ature\022\n\n\002id\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\".wor" +
+      "kspace.v1.UpdateFeaturePayload\"x\n\024Delete" +
+      "FeatureRequest\022(\n\010metadata\030\001 \001(\0132\026.works" +
+      "pace.v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.wo" +
+      "rkspace.v1.Signature\022\n\n\002id\030\003 \001(\t\"8\n\027AddF" +
+      "eatureMemberPayload\022\017\n\007user_id\030\001 \001(\t\022\014\n\004" +
+      "role\030\002 \001(\t\"\273\001\n\027AddFeatureMemberRequest\022(" +
       "\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadata" +
       "\022*\n\tsignature\030\002 \001(\0132\027.workspace.v1.Signa" +
-      "ture\022\022\n\nfeature_id\030\003 \001(\t\0227\n\007payload\030\004 \001(" +
-      "\0132&.workspace.v1.AppendChatMessagePayloa" +
-      "d\"d\n\020ChatMessageReply\022$\n\006result\030\001 \001(\0132\024." +
-      "workspace.v1.Result\022*\n\007payload\030\002 \001(\0132\031.w" +
-      "orkspace.v1.ChatMessage\"\026\n\024CreateSession" +
-      "Payload\"\265\001\n\024CreateSessionRequest\022(\n\010meta" +
-      "data\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsi" +
-      "gnature\030\002 \001(\0132\027.workspace.v1.Signature\022\022" +
-      "\n\nproject_id\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\".wo" +
-      "rkspace.v1.CreateSessionPayload\"\\\n\014Sessi" +
-      "onReply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.R" +
-      "esult\022&\n\007payload\030\002 \001(\0132\025.workspace.v1.Se" +
-      "ssion\"9\n\033UpdateSessionContextPayload\022\032\n\022" +
-      "current_feature_id\030\001 \001(\t\"\273\001\n\033UpdateSessi" +
-      "onContextRequest\022(\n\010metadata\030\001 \001(\0132\026.wor" +
-      "kspace.v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027." +
-      "workspace.v1.Signature\022\n\n\002id\030\003 \001(\t\022:\n\007pa" +
-      "yload\030\004 \001(\0132).workspace.v1.UpdateSession" +
-      "ContextPayload\"I\n\021GetSessionRequest\022(\n\010m" +
-      "etadata\030\001 \001(\0132\026.workspace.v1.Metadata\022\n\n" +
-      "\002id\030\002 \001(\t\"y\n\032ListProjectSessionsRequest\022" +
-      "(\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadat" +
-      "a\022\022\n\nproject_id\030\002 \001(\t\022\r\n\005limit\030\003 \001(\005\022\016\n\006" +
-      "offset\030\004 \001(\005\"a\n\021ListSessionsReply\022$\n\006res" +
-      "ult\030\001 \001(\0132\024.workspace.v1.Result\022&\n\007paylo" +
-      "ad\030\002 \003(\0132\025.workspace.v1.Session\"R\n\030PushU" +
-      "rdConfluencePayload\022\026\n\016confluence_url\030\001 " +
-      "\001(\t\022\017\n\007version\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\265\001\n\030" +
-      "PushUrdConfluenceRequest\022(\n\010metadata\030\001 \001" +
-      "(\0132\026.workspace.v1.Metadata\022*\n\tsignature\030" +
-      "\002 \001(\0132\027.workspace.v1.Signature\022\n\n\002id\030\003 \001" +
-      "(\t\0227\n\007payload\030\004 \001(\0132&.workspace.v1.PushU" +
-      "rdConfluencePayload\">\n\026PushUrdConfluence" +
-      "Reply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Res" +
-      "ult2\237-\n\020WorkspaceService\022x\n\rCreateProjec" +
-      "t\022\".workspace.v1.CreateProjectRequest\032\032." +
-      "workspace.v1.ProjectReply\"\'\202\323\344\223\002!\"\026/v1/w" +
-      "orkspace/projects:\007payload\022r\n\014ListProjec" +
-      "ts\022!.workspace.v1.ListProjectsRequest\032\037." +
-      "workspace.v1.ListProjectsReply\"\036\202\323\344\223\002\030\022\026" +
-      "/v1/workspace/projects\022n\n\nGetProject\022\037.w" +
-      "orkspace.v1.GetProjectRequest\032\032.workspac" +
-      "e.v1.ProjectReply\"#\202\323\344\223\002\035\022\033/v1/workspace" +
-      "/projects/{id}\022}\n\rUpdateProject\022\".worksp" +
-      "ace.v1.UpdateProjectRequest\032\032.workspace." +
-      "v1.ProjectReply\",\202\323\344\223\002&\032\033/v1/workspace/p" +
-      "rojects/{id}:\007payload\022r\n\rDeleteProject\022\"" +
-      ".workspace.v1.DeleteProjectRequest\032\030.wor" +
-      "kspace.v1.EmptyReply\"#\202\323\344\223\002\035*\033/v1/worksp" +
-      "ace/projects/{id}\022\231\001\n\020AddProjectMember\022%" +
-      ".workspace.v1.AddProjectMemberRequest\032 ." +
-      "workspace.v1.ProjectMemberReply\"<\202\323\344\223\0026\"" +
-      "+/v1/workspace/projects/{project_id}/mem" +
-      "bers:\007payload\022\230\001\n\023RemoveProjectMember\022(." +
-      "workspace.v1.RemoveProjectMemberRequest\032" +
-      "\030.workspace.v1.EmptyReply\"=\202\323\344\223\0027*5/v1/w" +
-      "orkspace/projects/{project_id}/members/{" +
-      "user_id}\022\231\001\n\022ListProjectMembers\022\'.worksp" +
-      "ace.v1.ListProjectMembersRequest\032%.works" +
-      "pace.v1.ListProjectMembersReply\"3\202\323\344\223\002-\022" +
-      "+/v1/workspace/projects/{project_id}/mem" +
-      "bers\022\261\001\n\027UpdateProjectMemberRole\022,.works" +
-      "pace.v1.UpdateProjectMemberRoleRequest\032 " +
-      ".workspace.v1.ProjectMemberReply\"F\202\323\344\223\002@" +
-      "\0325/v1/workspace/projects/{project_id}/me" +
-      "mbers/{user_id}:\007payload\022\216\001\n\016GetFeatureT" +
-      "ree\022#.workspace.v1.GetFeatureTreeRequest" +
-      "\032!.workspace.v1.GetFeatureTreeReply\"4\202\323\344" +
-      "\223\002.\022,/v1/workspace/projects/{project_id}" +
-      "/features\022\216\001\n\rCreateFeature\022\".workspace." +
-      "v1.CreateFeatureRequest\032\032.workspace.v1.F" +
-      "eatureReply\"=\202\323\344\223\0027\",/v1/workspace/proje" +
-      "cts/{project_id}/features:\007payload\022\236\001\n\022C" +
-      "reateFeatureGroup\022\'.workspace.v1.CreateF" +
-      "eatureGroupRequest\032\032.workspace.v1.Featur" +
-      "eReply\"C\202\323\344\223\002=\"2/v1/workspace/projects/{" +
-      "project_id}/feature-groups:\007payload\022n\n\nG" +
-      "etFeature\022\037.workspace.v1.GetFeatureReque" +
-      "st\032\032.workspace.v1.FeatureReply\"#\202\323\344\223\002\035\022\033" +
-      "/v1/workspace/features/{id}\022}\n\rUpdateFea" +
-      "ture\022\".workspace.v1.UpdateFeatureRequest" +
-      "\032\032.workspace.v1.FeatureReply\",\202\323\344\223\002&\032\033/v" +
-      "1/workspace/features/{id}:\007payload\022r\n\rDe" +
-      "leteFeature\022\".workspace.v1.DeleteFeature" +
-      "Request\032\030.workspace.v1.EmptyReply\"#\202\323\344\223\002" +
-      "\035*\033/v1/workspace/features/{id}\022\231\001\n\020AddFe" +
-      "atureMember\022%.workspace.v1.AddFeatureMem" +
-      "berRequest\032 .workspace.v1.FeatureMemberR" +
-      "eply\"<\202\323\344\223\0026\"+/v1/workspace/features/{fe" +
-      "ature_id}/members:\007payload\022\231\001\n\022ListFeatu" +
-      "reMembers\022\'.workspace.v1.ListFeatureMemb" +
-      "ersRequest\032%.workspace.v1.ListFeatureMem" +
-      "bersReply\"3\202\323\344\223\002-\022+/v1/workspace/feature" +
-      "s/{feature_id}/members\022\261\001\n\027UpdateFeature" +
-      "MemberRole\022,.workspace.v1.UpdateFeatureM" +
-      "emberRoleRequest\032 .workspace.v1.FeatureM" +
-      "emberReply\"F\202\323\344\223\002@\0325/v1/workspace/featur" +
-      "es/{feature_id}/members/{user_id}:\007paylo" +
-      "ad\022\230\001\n\023RemoveFeatureMember\022(.workspace.v" +
-      "1.RemoveFeatureMemberRequest\032\030.workspace" +
-      ".v1.EmptyReply\"=\202\323\344\223\0027*5/v1/workspace/fe" +
-      "atures/{feature_id}/members/{user_id}\022\222\001" +
-      "\n\016CreateDocument\022#.workspace.v1.CreateDo" +
-      "cumentRequest\032\033.workspace.v1.DocumentRep" +
-      "ly\">\202\323\344\223\0028\"-/v1/workspace/features/{feat" +
-      "ure_id}/documents:\007payload\022\214\001\n\rListDocum" +
-      "ents\022\".workspace.v1.ListDocumentsRequest" +
-      "\032 .workspace.v1.ListDocumentsReply\"5\202\323\344\223" +
-      "\002/\022-/v1/workspace/features/{feature_id}/" +
-      "documents\022\242\001\n\024ListDocumentSections\022).wor" +
-      "kspace.v1.ListDocumentSectionsRequest\032\'." +
-      "workspace.v1.ListDocumentSectionsReply\"6" +
-      "\202\323\344\223\0020\022./v1/workspace/documents/{documen" +
-      "t_id}/sections\022\217\001\n\022GetDocumentSection\022\'." +
-      "workspace.v1.GetDocumentSectionRequest\032\"" +
-      ".workspace.v1.DocumentSectionReply\",\202\323\344\223" +
-      "\002&\022$/v1/workspace/document-sections/{id}" +
-      "\022\250\001\n\025CreateDocumentSection\022*.workspace.v" +
-      "1.CreateDocumentSectionRequest\032\".workspa" +
-      "ce.v1.DocumentSectionReply\"?\202\323\344\223\0029\"./v1/" +
-      "workspace/documents/{document_id}/sectio" +
-      "ns:\007payload\022\236\001\n\025UpdateDocumentSection\022*." +
-      "workspace.v1.UpdateDocumentSectionReques" +
-      "t\032\".workspace.v1.DocumentSectionReply\"5\202" +
-      "\323\344\223\002/\032$/v1/workspace/document-sections/{" +
-      "id}:\007payload\022\264\001\n\034UpdateDocumentSectionCo" +
-      "ntent\0221.workspace.v1.UpdateDocumentSecti" +
-      "onContentRequest\032\".workspace.v1.Document" +
-      "SectionReply\"=\202\323\344\223\0027\032,/v1/workspace/docu" +
-      "ment-sections/{id}/content:\007payload\022\277\001\n\034" +
-      "CreateDocumentSectionVersion\0221.workspace" +
-      ".v1.CreateDocumentSectionVersionRequest\032" +
-      "\".workspace.v1.DocumentSectionReply\"H\202\323\344" +
-      "\223\002B\"7/v1/workspace/documents/{document_i" +
-      "d}/sections/versions:\007payload\022\263\001\n\030Upsert" +
-      "DocumentAndSection\022-.workspace.v1.Upsert" +
-      "DocumentAndSectionRequest\032\".workspace.v1" +
-      ".DocumentSectionReply\"D\202\323\344\223\002>\"3/v1/works" +
-      "pace/features/{feature_id}/upsert-docume" +
-      "nt:\007payload\022\271\001\n\033ListDocumentSectionVersi" +
-      "ons\0220.workspace.v1.ListDocumentSectionVe" +
-      "rsionsRequest\032\'.workspace.v1.ListDocumen" +
-      "tSectionsReply\"?\202\323\344\223\0029\0227/v1/workspace/do" +
-      "cuments/{document_id}/sections/versions\022" +
-      "\275\001\n GetCurrentDocumentSectionVersion\0225.w" +
-      "orkspace.v1.GetCurrentDocumentSectionVer" +
-      "sionRequest\032\".workspace.v1.DocumentSecti" +
-      "onReply\">\202\323\344\223\0028\0226/v1/workspace/documents" +
-      "/{document_id}/sections/current\022\306\001\n SetC" +
-      "urrentDocumentSectionVersion\0225.workspace" +
-      ".v1.SetCurrentDocumentSectionVersionRequ" +
+      "ture\022\022\n\nfeature_id\030\003 \001(\t\0226\n\007payload\030\004 \001(" +
+      "\0132%.workspace.v1.AddFeatureMemberPayload" +
+      "\"h\n\022FeatureMemberReply\022$\n\006result\030\001 \001(\0132\024" +
+      ".workspace.v1.Result\022,\n\007payload\030\002 \001(\0132\033." +
+      "workspace.v1.FeatureMember\"Y\n\031ListFeatur" +
+      "eMembersRequest\022(\n\010metadata\030\001 \001(\0132\026.work" +
+      "space.v1.Metadata\022\022\n\nfeature_id\030\002 \001(\t\"m\n" +
+      "\027ListFeatureMembersReply\022$\n\006result\030\001 \001(\013" +
+      "2\024.workspace.v1.Result\022,\n\007payload\030\002 \003(\0132" +
+      "\033.workspace.v1.FeatureMember\".\n\036UpdateFe" +
+      "atureMemberRolePayload\022\014\n\004role\030\001 \001(\t\"\332\001\n" +
+      "\036UpdateFeatureMemberRoleRequest\022(\n\010metad" +
+      "ata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsig" +
+      "nature\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n" +
+      "\nfeature_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022=\n\007pa" +
+      "yload\030\005 \001(\0132,.workspace.v1.UpdateFeature" +
+      "MemberRolePayload\"\227\001\n\032RemoveFeatureMembe" +
+      "rRequest\022(\n\010metadata\030\001 \001(\0132\026.workspace.v" +
+      "1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.workspac" +
+      "e.v1.Signature\022\022\n\nfeature_id\030\003 \001(\t\022\017\n\007us" +
+      "er_id\030\004 \001(\t\"o\n\025CreateDocumentPayload\022\014\n\004" +
+      "name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\023\n\013description\030" +
+      "\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\024\n\014section_type\030\005" +
+      " \001(\t\"\267\001\n\025CreateDocumentRequest\022(\n\010metada" +
+      "ta\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsign" +
+      "ature\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\n" +
+      "feature_id\030\003 \001(\t\0224\n\007payload\030\004 \001(\0132#.work" +
+      "space.v1.CreateDocumentPayload\"T\n\024ListDo" +
+      "cumentsRequest\022(\n\010metadata\030\001 \001(\0132\026.works" +
+      "pace.v1.Metadata\022\022\n\nfeature_id\030\002 \001(\t\"^\n\r" +
+      "DocumentReply\022$\n\006result\030\001 \001(\0132\024.workspac" +
+      "e.v1.Result\022\'\n\007payload\030\002 \001(\0132\026.workspace" +
+      ".v1.Document\"c\n\022ListDocumentsReply\022$\n\006re" +
+      "sult\030\001 \001(\0132\024.workspace.v1.Result\022\'\n\007payl" +
+      "oad\030\002 \003(\0132\026.workspace.v1.Document\"u\n\033Lis" +
+      "tDocumentSectionsRequest\022(\n\010metadata\030\001 \001" +
+      "(\0132\026.workspace.v1.Metadata\022\023\n\013document_i" +
+      "d\030\002 \001(\t\022\027\n\017include_content\030\003 \001(\010\"q\n\031List" +
+      "DocumentSectionsReply\022$\n\006result\030\001 \001(\0132\024." +
+      "workspace.v1.Result\022.\n\007payload\030\002 \003(\0132\035.w" +
+      "orkspace.v1.DocumentSection\"Q\n\031GetDocume" +
+      "ntSectionRequest\022(\n\010metadata\030\001 \001(\0132\026.wor" +
+      "kspace.v1.Metadata\022\n\n\002id\030\002 \001(\t\"l\n\024Docume" +
+      "ntSectionReply\022$\n\006result\030\001 \001(\0132\024.workspa" +
+      "ce.v1.Result\022.\n\007payload\030\002 \001(\0132\035.workspac" +
+      "e.v1.DocumentSection\"\314\001\n\034CreateDocumentS" +
+      "ectionPayload\022\014\n\004type\030\001 \001(\t\022\023\n\013descripti" +
+      "on\030\002 \001(\t\022\024\n\014storage_type\030\003 \001(\t\022\032\n\022conflu" +
+      "ence_page_id\030\004 \001(\t\022\026\n\016confluence_url\030\005 \001" +
+      "(\t\022\021\n\tparent_id\030\006 \001(\t\022\027\n\017ref_document_id" +
+      "\030\007 \001(\t\022\023\n\013task_ref_id\030\010 \001(\t\"\306\001\n\034CreateDo" +
+      "cumentSectionRequest\022(\n\010metadata\030\001 \001(\0132\026" +
+      ".workspace.v1.Metadata\022*\n\tsignature\030\002 \001(" +
+      "\0132\027.workspace.v1.Signature\022\023\n\013document_i" +
+      "d\030\003 \001(\t\022;\n\007payload\030\004 \001(\0132*.workspace.v1." +
+      "CreateDocumentSectionPayload\"\245\001\n\034UpdateD" +
+      "ocumentSectionPayload\022\016\n\006status\030\001 \001(\t\022\023\n" +
+      "\013description\030\002 \001(\t\022\032\n\022confluence_page_id" +
+      "\030\003 \001(\t\022\026\n\016confluence_url\030\004 \001(\t\022\027\n\017ref_do" +
+      "cument_id\030\005 \001(\t\022\023\n\013task_ref_id\030\006 \001(\t\"\275\001\n" +
+      "\034UpdateDocumentSectionRequest\022(\n\010metadat" +
+      "a\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsigna" +
+      "ture\030\002 \001(\0132\027.workspace.v1.Signature\022\n\n\002i" +
+      "d\030\003 \001(\t\022;\n\007payload\030\004 \001(\0132*.workspace.v1." +
+      "UpdateDocumentSectionPayload\"`\n#UpdateDo" +
+      "cumentSectionContentPayload\022\017\n\007content\030\001" +
+      " \001(\t\022\016\n\006status\030\002 \001(\t\022\030\n\020expected_version" +
+      "\030\003 \001(\005\"\313\001\n#UpdateDocumentSectionContentR" +
+      "equest\022(\n\010metadata\030\001 \001(\0132\026.workspace.v1." +
+      "Metadata\022*\n\tsignature\030\002 \001(\0132\027.workspace." +
+      "v1.Signature\022\n\n\002id\030\003 \001(\t\022B\n\007payload\030\004 \001(" +
+      "\01321.workspace.v1.UpdateDocumentSectionCo" +
+      "ntentPayload\"X\n#CreateDocumentSectionVer" +
+      "sionPayload\022\014\n\004type\030\001 \001(\t\022\017\n\007content\030\002 \001" +
+      "(\t\022\022\n\nsection_id\030\003 \001(\t\"\324\001\n#CreateDocumen" +
+      "tSectionVersionRequest\022(\n\010metadata\030\001 \001(\013" +
+      "2\026.workspace.v1.Metadata\022*\n\tsignature\030\002 " +
+      "\001(\0132\027.workspace.v1.Signature\022\023\n\013document" +
+      "_id\030\003 \001(\t\022B\n\007payload\030\004 \001(\01321.workspace.v" +
+      "1.CreateDocumentSectionVersionPayload\"\232\001" +
+      "\n\037UpsertDocumentAndSectionPayload\022\020\n\010doc" +
+      "_type\030\001 \001(\t\022\024\n\014section_type\030\002 \001(\t\022\017\n\007con" +
+      "tent\030\003 \001(\t\022\023\n\013document_id\030\004 \001(\t\022\022\n\nsecti" +
+      "on_id\030\005 \001(\t\022\025\n\rmetadata_json\030\006 \001(\t\"\313\001\n\037U" +
+      "psertDocumentAndSectionRequest\022(\n\010metada" +
+      "ta\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsign" +
+      "ature\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\n" +
+      "feature_id\030\003 \001(\t\022>\n\007payload\030\004 \001(\0132-.work" +
+      "space.v1.UpsertDocumentAndSectionPayload" +
+      "\"q\n\"ListDocumentSectionVersionsRequest\022(" +
+      "\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadata" +
+      "\022\023\n\013document_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"v\n\'G" +
+      "etCurrentDocumentSectionVersionRequest\022(" +
+      "\n\010metadata\030\001 \001(\0132\026.workspace.v1.Metadata" +
+      "\022\023\n\013document_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"=\n\'S" +
+      "etCurrentDocumentSectionVersionPayload\022\022" +
+      "\n\nsection_id\030\001 \001(\t\"\334\001\n\'SetCurrentDocumen" +
+      "tSectionVersionRequest\022(\n\010metadata\030\001 \001(\013" +
+      "2\026.workspace.v1.Metadata\022*\n\tsignature\030\002 " +
+      "\001(\0132\027.workspace.v1.Signature\022\023\n\013document" +
+      "_id\030\003 \001(\t\022F\n\007payload\030\004 \001(\01325.workspace.v" +
+      "1.SetCurrentDocumentSectionVersionPayloa" +
+      "d\"v\n\027ListChatMessagesRequest\022(\n\010metadata" +
+      "\030\001 \001(\0132\026.workspace.v1.Metadata\022\022\n\nfeatur" +
+      "e_id\030\002 \001(\t\022\r\n\005limit\030\003 \001(\005\022\016\n\006offset\030\004 \001(" +
+      "\005\"i\n\025ListChatMessagesReply\022$\n\006result\030\001 \001" +
+      "(\0132\024.workspace.v1.Result\022*\n\007payload\030\002 \003(" +
+      "\0132\031.workspace.v1.ChatMessage\"_\n\030AppendCh" +
+      "atMessagePayload\022\022\n\nsession_id\030\001 \001(\t\022\014\n\004" +
+      "role\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010metadata\030" +
+      "\004 \001(\t\"\275\001\n\030AppendChatMessageRequest\022(\n\010me" +
+      "tadata\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\t" +
+      "signature\030\002 \001(\0132\027.workspace.v1.Signature" +
+      "\022\022\n\nfeature_id\030\003 \001(\t\0227\n\007payload\030\004 \001(\0132&." +
+      "workspace.v1.AppendChatMessagePayload\"d\n" +
+      "\020ChatMessageReply\022$\n\006result\030\001 \001(\0132\024.work" +
+      "space.v1.Result\022*\n\007payload\030\002 \001(\0132\031.works" +
+      "pace.v1.ChatMessage\"\026\n\024CreateSessionPayl" +
+      "oad\"\265\001\n\024CreateSessionRequest\022(\n\010metadata" +
+      "\030\001 \001(\0132\026.workspace.v1.Metadata\022*\n\tsignat" +
+      "ure\030\002 \001(\0132\027.workspace.v1.Signature\022\022\n\npr" +
+      "oject_id\030\003 \001(\t\0223\n\007payload\030\004 \001(\0132\".worksp" +
+      "ace.v1.CreateSessionPayload\"\\\n\014SessionRe" +
+      "ply\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Resul" +
+      "t\022&\n\007payload\030\002 \001(\0132\025.workspace.v1.Sessio" +
+      "n\"9\n\033UpdateSessionContextPayload\022\032\n\022curr" +
+      "ent_feature_id\030\001 \001(\t\"\273\001\n\033UpdateSessionCo" +
+      "ntextRequest\022(\n\010metadata\030\001 \001(\0132\026.workspa" +
+      "ce.v1.Metadata\022*\n\tsignature\030\002 \001(\0132\027.work" +
+      "space.v1.Signature\022\n\n\002id\030\003 \001(\t\022:\n\007payloa" +
+      "d\030\004 \001(\0132).workspace.v1.UpdateSessionCont" +
+      "extPayload\"I\n\021GetSessionRequest\022(\n\010metad" +
+      "ata\030\001 \001(\0132\026.workspace.v1.Metadata\022\n\n\002id\030" +
+      "\002 \001(\t\"y\n\032ListProjectSessionsRequest\022(\n\010m" +
+      "etadata\030\001 \001(\0132\026.workspace.v1.Metadata\022\022\n" +
+      "\nproject_id\030\002 \001(\t\022\r\n\005limit\030\003 \001(\005\022\016\n\006offs" +
+      "et\030\004 \001(\005\"a\n\021ListSessionsReply\022$\n\006result\030" +
+      "\001 \001(\0132\024.workspace.v1.Result\022&\n\007payload\030\002" +
+      " \003(\0132\025.workspace.v1.Session\"R\n\030PushUrdCo" +
+      "nfluencePayload\022\026\n\016confluence_url\030\001 \001(\t\022" +
+      "\017\n\007version\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\265\001\n\030Push" +
+      "UrdConfluenceRequest\022(\n\010metadata\030\001 \001(\0132\026" +
+      ".workspace.v1.Metadata\022*\n\tsignature\030\002 \001(" +
+      "\0132\027.workspace.v1.Signature\022\n\n\002id\030\003 \001(\t\0227" +
+      "\n\007payload\030\004 \001(\0132&.workspace.v1.PushUrdCo" +
+      "nfluencePayload\">\n\026PushUrdConfluenceRepl" +
+      "y\022$\n\006result\030\001 \001(\0132\024.workspace.v1.Result2" +
+      "\255.\n\020WorkspaceService\022x\n\rCreateProject\022\"." +
+      "workspace.v1.CreateProjectRequest\032\032.work" +
+      "space.v1.ProjectReply\"\'\202\323\344\223\002!\"\026/v1/works" +
+      "pace/projects:\007payload\022r\n\014ListProjects\022!" +
+      ".workspace.v1.ListProjectsRequest\032\037.work" +
+      "space.v1.ListProjectsReply\"\036\202\323\344\223\002\030\022\026/v1/" +
+      "workspace/projects\022n\n\nGetProject\022\037.works" +
+      "pace.v1.GetProjectRequest\032\032.workspace.v1" +
+      ".ProjectReply\"#\202\323\344\223\002\035\022\033/v1/workspace/pro" +
+      "jects/{id}\022}\n\rUpdateProject\022\".workspace." +
+      "v1.UpdateProjectRequest\032\032.workspace.v1.P" +
+      "rojectReply\",\202\323\344\223\002&\032\033/v1/workspace/proje" +
+      "cts/{id}:\007payload\022r\n\rDeleteProject\022\".wor" +
+      "kspace.v1.DeleteProjectRequest\032\030.workspa" +
+      "ce.v1.EmptyReply\"#\202\323\344\223\002\035*\033/v1/workspace/" +
+      "projects/{id}\022\231\001\n\020AddProjectMember\022%.wor" +
+      "kspace.v1.AddProjectMemberRequest\032 .work" +
+      "space.v1.ProjectMemberReply\"<\202\323\344\223\0026\"+/v1" +
+      "/workspace/projects/{project_id}/members" +
+      ":\007payload\022\230\001\n\023RemoveProjectMember\022(.work" +
+      "space.v1.RemoveProjectMemberRequest\032\030.wo" +
+      "rkspace.v1.EmptyReply\"=\202\323\344\223\0027*5/v1/works" +
+      "pace/projects/{project_id}/members/{user" +
+      "_id}\022\231\001\n\022ListProjectMembers\022\'.workspace." +
+      "v1.ListProjectMembersRequest\032%.workspace" +
+      ".v1.ListProjectMembersReply\"3\202\323\344\223\002-\022+/v1" +
+      "/workspace/projects/{project_id}/members" +
+      "\022\261\001\n\027UpdateProjectMemberRole\022,.workspace" +
+      ".v1.UpdateProjectMemberRoleRequest\032 .wor" +
+      "kspace.v1.ProjectMemberReply\"F\202\323\344\223\002@\0325/v" +
+      "1/workspace/projects/{project_id}/member" +
+      "s/{user_id}:\007payload\022\216\001\n\016GetFeatureTree\022" +
+      "#.workspace.v1.GetFeatureTreeRequest\032!.w" +
+      "orkspace.v1.GetFeatureTreeReply\"4\202\323\344\223\002.\022" +
+      ",/v1/workspace/projects/{project_id}/fea" +
+      "tures\022\213\001\n\016GetRootFeature\022#.workspace.v1." +
+      "GetRootFeatureRequest\032\032.workspace.v1.Fea" +
+      "tureReply\"8\202\323\344\223\0022\0220/v1/workspace/project" +
+      "s/{project_id}/root-feature\022\216\001\n\rCreateFe" +
+      "ature\022\".workspace.v1.CreateFeatureReques" +
+      "t\032\032.workspace.v1.FeatureReply\"=\202\323\344\223\0027\",/" +
+      "v1/workspace/projects/{project_id}/featu" +
+      "res:\007payload\022\236\001\n\022CreateFeatureGroup\022\'.wo" +
+      "rkspace.v1.CreateFeatureGroupRequest\032\032.w" +
+      "orkspace.v1.FeatureReply\"C\202\323\344\223\002=\"2/v1/wo" +
+      "rkspace/projects/{project_id}/feature-gr" +
+      "oups:\007payload\022n\n\nGetFeature\022\037.workspace." +
+      "v1.GetFeatureRequest\032\032.workspace.v1.Feat" +
+      "ureReply\"#\202\323\344\223\002\035\022\033/v1/workspace/features" +
+      "/{id}\022}\n\rUpdateFeature\022\".workspace.v1.Up" +
+      "dateFeatureRequest\032\032.workspace.v1.Featur" +
+      "eReply\",\202\323\344\223\002&\032\033/v1/workspace/features/{" +
+      "id}:\007payload\022r\n\rDeleteFeature\022\".workspac" +
+      "e.v1.DeleteFeatureRequest\032\030.workspace.v1" +
+      ".EmptyReply\"#\202\323\344\223\002\035*\033/v1/workspace/featu" +
+      "res/{id}\022\231\001\n\020AddFeatureMember\022%.workspac" +
+      "e.v1.AddFeatureMemberRequest\032 .workspace" +
+      ".v1.FeatureMemberReply\"<\202\323\344\223\0026\"+/v1/work" +
+      "space/features/{feature_id}/members:\007pay" +
+      "load\022\231\001\n\022ListFeatureMembers\022\'.workspace." +
+      "v1.ListFeatureMembersRequest\032%.workspace" +
+      ".v1.ListFeatureMembersReply\"3\202\323\344\223\002-\022+/v1" +
+      "/workspace/features/{feature_id}/members" +
+      "\022\261\001\n\027UpdateFeatureMemberRole\022,.workspace" +
+      ".v1.UpdateFeatureMemberRoleRequest\032 .wor" +
+      "kspace.v1.FeatureMemberReply\"F\202\323\344\223\002@\0325/v" +
+      "1/workspace/features/{feature_id}/member" +
+      "s/{user_id}:\007payload\022\230\001\n\023RemoveFeatureMe" +
+      "mber\022(.workspace.v1.RemoveFeatureMemberR" +
+      "equest\032\030.workspace.v1.EmptyReply\"=\202\323\344\223\0027" +
+      "*5/v1/workspace/features/{feature_id}/me" +
+      "mbers/{user_id}\022\222\001\n\016CreateDocument\022#.wor" +
+      "kspace.v1.CreateDocumentRequest\032\033.worksp" +
+      "ace.v1.DocumentReply\">\202\323\344\223\0028\"-/v1/worksp" +
+      "ace/features/{feature_id}/documents:\007pay" +
+      "load\022\214\001\n\rListDocuments\022\".workspace.v1.Li" +
+      "stDocumentsRequest\032 .workspace.v1.ListDo" +
+      "cumentsReply\"5\202\323\344\223\002/\022-/v1/workspace/feat" +
+      "ures/{feature_id}/documents\022\242\001\n\024ListDocu" +
+      "mentSections\022).workspace.v1.ListDocument" +
+      "SectionsRequest\032\'.workspace.v1.ListDocum" +
+      "entSectionsReply\"6\202\323\344\223\0020\022./v1/workspace/" +
+      "documents/{document_id}/sections\022\217\001\n\022Get" +
+      "DocumentSection\022\'.workspace.v1.GetDocume" +
+      "ntSectionRequest\032\".workspace.v1.Document" +
+      "SectionReply\",\202\323\344\223\002&\022$/v1/workspace/docu" +
+      "ment-sections/{id}\022\250\001\n\025CreateDocumentSec" +
+      "tion\022*.workspace.v1.CreateDocumentSectio" +
+      "nRequest\032\".workspace.v1.DocumentSectionR" +
+      "eply\"?\202\323\344\223\0029\"./v1/workspace/documents/{d" +
+      "ocument_id}/sections:\007payload\022\236\001\n\025Update" +
+      "DocumentSection\022*.workspace.v1.UpdateDoc" +
+      "umentSectionRequest\032\".workspace.v1.Docum" +
+      "entSectionReply\"5\202\323\344\223\002/\032$/v1/workspace/d" +
+      "ocument-sections/{id}:\007payload\022\264\001\n\034Updat" +
+      "eDocumentSectionContent\0221.workspace.v1.U" +
+      "pdateDocumentSectionContentRequest\032\".wor" +
+      "kspace.v1.DocumentSectionReply\"=\202\323\344\223\0027\032," +
+      "/v1/workspace/document-sections/{id}/con" +
+      "tent:\007payload\022\277\001\n\034CreateDocumentSectionV" +
+      "ersion\0221.workspace.v1.CreateDocumentSect" +
+      "ionVersionRequest\032\".workspace.v1.Documen" +
+      "tSectionReply\"H\202\323\344\223\002B\"7/v1/workspace/doc" +
+      "uments/{document_id}/sections/versions:\007" +
+      "payload\022\263\001\n\030UpsertDocumentAndSection\022-.w" +
+      "orkspace.v1.UpsertDocumentAndSectionRequ" +
       "est\032\".workspace.v1.DocumentSectionReply\"" +
-      "G\202\323\344\223\002A\0326/v1/workspace/documents/{docume",
-      "nt_id}/sections/current:\007payload\022\220\001\n\020Lis" +
-      "tChatMessages\022%.workspace.v1.ListChatMes" +
-      "sagesRequest\032#.workspace.v1.ListChatMess" +
-      "agesReply\"0\202\323\344\223\002*\022(/v1/workspace/feature" +
-      "s/{feature_id}/chat\022\226\001\n\021AppendChatMessag" +
-      "e\022&.workspace.v1.AppendChatMessageReques" +
-      "t\032\036.workspace.v1.ChatMessageReply\"9\202\323\344\223\002" +
-      "3\"(/v1/workspace/features/{feature_id}/c" +
-      "hat:\007payload\022\216\001\n\rCreateSession\022\".workspa" +
-      "ce.v1.CreateSessionRequest\032\032.workspace.v" +
-      "1.SessionReply\"=\202\323\344\223\0027\",/v1/workspace/pr" +
-      "ojects/{project_id}/sessions:\007payload\022\221\001" +
-      "\n\024UpdateSessionContext\022).workspace.v1.Up" +
-      "dateSessionContextRequest\032\030.workspace.v1" +
-      ".EmptyReply\"4\202\323\344\223\002.\032#/v1/workspace/sessi" +
-      "ons/{id}/context:\007payload\022n\n\nGetSession\022" +
-      "\037.workspace.v1.GetSessionRequest\032\032.works" +
-      "pace.v1.SessionReply\"#\202\323\344\223\002\035\022\033/v1/worksp" +
-      "ace/sessions/{id}\022\226\001\n\023ListProjectSession" +
-      "s\022(.workspace.v1.ListProjectSessionsRequ" +
-      "est\032\037.workspace.v1.ListSessionsReply\"4\202\323" +
-      "\344\223\002.\022,/v1/workspace/projects/{project_id" +
-      "}/sessions\022\220\001\n\021PushUrdConfluence\022&.works" +
-      "pace.v1.PushUrdConfluenceRequest\032$.works" +
-      "pace.v1.PushUrdConfluenceReply\"-\202\323\344\223\002\'\"\034" +
-      "/v1/urd/{id}/push-confluence:\007payloadBY\n" +
-      "!com.blcvn.kratos.protos.workspaceZ4gith" +
-      "ub.com/blcvn/kratos-proto/go/workspace;w" +
-      "orkspaceb\006proto3"
+      "D\202\323\344\223\002>\"3/v1/workspace/features/{feature" +
+      "_id}/upsert-document:\007payload\022\271\001\n\033ListDo" +
+      "cumentSectionVersions\0220.workspace.v1.Lis" +
+      "tDocumentSectionVersionsRequest\032\'.worksp" +
+      "ace.v1.ListDocumentSectionsReply\"?\202\323\344\223\0029" +
+      "\0227/v1/workspace/documents/{document_id}/" +
+      "sections/versions\022\275\001\n GetCurrentDocument",
+      "SectionVersion\0225.workspace.v1.GetCurrent" +
+      "DocumentSectionVersionRequest\032\".workspac" +
+      "e.v1.DocumentSectionReply\">\202\323\344\223\0028\0226/v1/w" +
+      "orkspace/documents/{document_id}/section" +
+      "s/current\022\306\001\n SetCurrentDocumentSectionV" +
+      "ersion\0225.workspace.v1.SetCurrentDocument" +
+      "SectionVersionRequest\032\".workspace.v1.Doc" +
+      "umentSectionReply\"G\202\323\344\223\002A\0326/v1/workspace" +
+      "/documents/{document_id}/sections/curren" +
+      "t:\007payload\022\220\001\n\020ListChatMessages\022%.worksp" +
+      "ace.v1.ListChatMessagesRequest\032#.workspa" +
+      "ce.v1.ListChatMessagesReply\"0\202\323\344\223\002*\022(/v1" +
+      "/workspace/features/{feature_id}/chat\022\226\001" +
+      "\n\021AppendChatMessage\022&.workspace.v1.Appen" +
+      "dChatMessageRequest\032\036.workspace.v1.ChatM" +
+      "essageReply\"9\202\323\344\223\0023\"(/v1/workspace/featu" +
+      "res/{feature_id}/chat:\007payload\022\216\001\n\rCreat" +
+      "eSession\022\".workspace.v1.CreateSessionReq" +
+      "uest\032\032.workspace.v1.SessionReply\"=\202\323\344\223\0027" +
+      "\",/v1/workspace/projects/{project_id}/se" +
+      "ssions:\007payload\022\221\001\n\024UpdateSessionContext" +
+      "\022).workspace.v1.UpdateSessionContextRequ" +
+      "est\032\030.workspace.v1.EmptyReply\"4\202\323\344\223\002.\032#/" +
+      "v1/workspace/sessions/{id}/context:\007payl" +
+      "oad\022n\n\nGetSession\022\037.workspace.v1.GetSess" +
+      "ionRequest\032\032.workspace.v1.SessionReply\"#" +
+      "\202\323\344\223\002\035\022\033/v1/workspace/sessions/{id}\022\226\001\n\023" +
+      "ListProjectSessions\022(.workspace.v1.ListP" +
+      "rojectSessionsRequest\032\037.workspace.v1.Lis" +
+      "tSessionsReply\"4\202\323\344\223\002.\022,/v1/workspace/pr" +
+      "ojects/{project_id}/sessions\022\220\001\n\021PushUrd" +
+      "Confluence\022&.workspace.v1.PushUrdConflue" +
+      "nceRequest\032$.workspace.v1.PushUrdConflue" +
+      "nceReply\"-\202\323\344\223\002\'\"\034/v1/urd/{id}/push-conf" +
+      "luence:\007payloadBY\n!com.blcvn.kratos.prot" +
+      "os.workspaceZ4github.com/blcvn/kratos-pr" +
+      "oto/go/workspace;workspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -89501,506 +91300,518 @@ public final class Workspace {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ConfluenceConfig_descriptor,
         new java.lang.String[] { "Enabled", "SpaceKey", "ParentPageId", });
-    internal_static_workspace_v1_Project_descriptor =
+    internal_static_workspace_v1_ProjectOverview_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_workspace_v1_ProjectOverview_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_workspace_v1_ProjectOverview_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_workspace_v1_Project_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_workspace_v1_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_Project_descriptor,
-        new java.lang.String[] { "Id", "UserId", "Name", "Description", "Status", "ConfluenceConfig", "CreatedAt", "UpdatedAt", "UserRole", });
+        new java.lang.String[] { "Id", "UserId", "Name", "Description", "Status", "ConfluenceConfig", "CreatedAt", "UpdatedAt", "UserRole", "Overview", });
     internal_static_workspace_v1_ProjectMember_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_workspace_v1_ProjectMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ProjectMember_descriptor,
-        new java.lang.String[] { "ProjectId", "UserId", "Role", "CreatedAt", });
+        new java.lang.String[] { "ProjectId", "UserId", "Role", "CreatedAt", "Name", "Email", });
     internal_static_workspace_v1_FeatureMember_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_workspace_v1_FeatureMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_FeatureMember_descriptor,
         new java.lang.String[] { "FeatureId", "UserId", "Role", "GrantedBy", "CreatedAt", "UpdatedAt", });
     internal_static_workspace_v1_Feature_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_workspace_v1_Feature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_Feature_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "ParentId", "Name", "Description", "Status", "CurrentStep", "Progress", "Order", "CreatedAt", "UpdatedAt", "IsFeatureGroup", "CurrentPhase", });
+        new java.lang.String[] { "Id", "ProjectId", "ParentId", "Name", "Description", "Status", "CurrentStep", "Progress", "Order", "CreatedAt", "UpdatedAt", "IsFeatureGroup", "CurrentPhase", "HasPrdDetail", });
+    internal_static_workspace_v1_GetRootFeatureRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_workspace_v1_GetRootFeatureRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_workspace_v1_GetRootFeatureRequest_descriptor,
+        new java.lang.String[] { "ProjectId", });
     internal_static_workspace_v1_Document_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_workspace_v1_Document_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_Document_descriptor,
         new java.lang.String[] { "Id", "FeatureId", "Name", "Type", "Description", "Status", "CreatedAt", "UpdatedAt", });
     internal_static_workspace_v1_DocumentSection_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_workspace_v1_DocumentSection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_DocumentSection_descriptor,
-        new java.lang.String[] { "Id", "DocumentId", "Type", "Status", "Description", "Version", "StorageType", "StorageRef", "Content", "CreatedAt", "UpdatedAt", "ConfluencePageId", "ConfluenceUrl", "ParentId", "ApprovedAt", "TaskRefId", "RefDocumentId", });
+        new java.lang.String[] { "Id", "DocumentId", "Type", "Status", "Description", "Version", "StorageType", "StorageRef", "Content", "CreatedAt", "UpdatedAt", "ConfluencePageId", "ConfluenceUrl", "ParentId", "ApprovedAt", "Name", "TaskRefId", "RefDocumentId", });
     internal_static_workspace_v1_ChatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_workspace_v1_ChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ChatMessage_descriptor,
         new java.lang.String[] { "Id", "FeatureId", "SessionId", "Role", "Content", "Metadata", "CreatedAt", });
     internal_static_workspace_v1_Session_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_workspace_v1_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_Session_descriptor,
         new java.lang.String[] { "Id", "ProjectId", "CurrentFeatureId", "Status", "CreatedAt", "UpdatedAt", });
     internal_static_workspace_v1_EmptyReply_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_workspace_v1_EmptyReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_EmptyReply_descriptor,
         new java.lang.String[] { "Result", });
     internal_static_workspace_v1_CreateProjectPayload_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_workspace_v1_CreateProjectPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateProjectPayload_descriptor,
         new java.lang.String[] { "Name", "Description", "ConfluenceConfig", });
     internal_static_workspace_v1_CreateProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_workspace_v1_CreateProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateProjectRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Payload", });
     internal_static_workspace_v1_ListProjectsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_workspace_v1_ListProjectsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListProjectsRequest_descriptor,
         new java.lang.String[] { "Metadata", "PageToken", "PageSize", });
     internal_static_workspace_v1_GetProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_workspace_v1_GetProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetProjectRequest_descriptor,
         new java.lang.String[] { "Metadata", "Id", });
     internal_static_workspace_v1_UpdateProjectPayload_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_workspace_v1_UpdateProjectPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateProjectPayload_descriptor,
         new java.lang.String[] { "Name", "Description", "Status", "ConfluenceConfig", });
     internal_static_workspace_v1_UpdateProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_workspace_v1_UpdateProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateProjectRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_DeleteProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_workspace_v1_DeleteProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_DeleteProjectRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", });
     internal_static_workspace_v1_ProjectReply_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_workspace_v1_ProjectReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ProjectReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_ListProjectsReply_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_workspace_v1_ListProjectsReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListProjectsReply_descriptor,
         new java.lang.String[] { "Result", "Payload", "NextPageToken", });
     internal_static_workspace_v1_AddProjectMemberPayload_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_workspace_v1_AddProjectMemberPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AddProjectMemberPayload_descriptor,
         new java.lang.String[] { "UserId", "Role", });
     internal_static_workspace_v1_AddProjectMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_workspace_v1_AddProjectMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AddProjectMemberRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "Payload", });
     internal_static_workspace_v1_ProjectMemberReply_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_workspace_v1_ProjectMemberReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ProjectMemberReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_RemoveProjectMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_workspace_v1_RemoveProjectMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_RemoveProjectMemberRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "UserId", });
     internal_static_workspace_v1_ListProjectMembersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_workspace_v1_ListProjectMembersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListProjectMembersRequest_descriptor,
         new java.lang.String[] { "Metadata", "ProjectId", });
     internal_static_workspace_v1_ListProjectMembersReply_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_workspace_v1_ListProjectMembersReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListProjectMembersReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_UpdateProjectMemberRolePayload_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_workspace_v1_UpdateProjectMemberRolePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateProjectMemberRolePayload_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_workspace_v1_UpdateProjectMemberRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_workspace_v1_UpdateProjectMemberRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateProjectMemberRoleRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "UserId", "Payload", });
     internal_static_workspace_v1_GetFeatureTreeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_workspace_v1_GetFeatureTreeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetFeatureTreeRequest_descriptor,
         new java.lang.String[] { "Metadata", "ProjectId", });
     internal_static_workspace_v1_GetFeatureTreeReply_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_workspace_v1_GetFeatureTreeReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetFeatureTreeReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_CreateFeaturePayload_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_workspace_v1_CreateFeaturePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateFeaturePayload_descriptor,
         new java.lang.String[] { "ParentId", "Name", "Description", "Order", "IsFeatureGroup", });
     internal_static_workspace_v1_CreateFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_workspace_v1_CreateFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "Payload", });
     internal_static_workspace_v1_CreateFeatureGroupPayload_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_workspace_v1_CreateFeatureGroupPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateFeatureGroupPayload_descriptor,
         new java.lang.String[] { "ParentId", "Name", "Description", "Order", });
     internal_static_workspace_v1_CreateFeatureGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_workspace_v1_CreateFeatureGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateFeatureGroupRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "Payload", });
     internal_static_workspace_v1_FeatureReply_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_workspace_v1_FeatureReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_FeatureReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_GetFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_workspace_v1_GetFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Id", });
     internal_static_workspace_v1_UpdateFeaturePayload_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_workspace_v1_UpdateFeaturePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateFeaturePayload_descriptor,
         new java.lang.String[] { "ParentId", "Name", "Description", "Status", "Progress", "Order", "CurrentPhase", "CurrentStep", });
     internal_static_workspace_v1_UpdateFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_workspace_v1_UpdateFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_DeleteFeatureRequest_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_workspace_v1_DeleteFeatureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_DeleteFeatureRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", });
     internal_static_workspace_v1_AddFeatureMemberPayload_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_workspace_v1_AddFeatureMemberPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AddFeatureMemberPayload_descriptor,
         new java.lang.String[] { "UserId", "Role", });
     internal_static_workspace_v1_AddFeatureMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_workspace_v1_AddFeatureMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AddFeatureMemberRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "Payload", });
     internal_static_workspace_v1_FeatureMemberReply_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_workspace_v1_FeatureMemberReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_FeatureMemberReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_ListFeatureMembersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_workspace_v1_ListFeatureMembersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListFeatureMembersRequest_descriptor,
         new java.lang.String[] { "Metadata", "FeatureId", });
     internal_static_workspace_v1_ListFeatureMembersReply_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_workspace_v1_ListFeatureMembersReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListFeatureMembersReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_UpdateFeatureMemberRolePayload_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_workspace_v1_UpdateFeatureMemberRolePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateFeatureMemberRolePayload_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_workspace_v1_UpdateFeatureMemberRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_workspace_v1_UpdateFeatureMemberRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateFeatureMemberRoleRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "UserId", "Payload", });
     internal_static_workspace_v1_RemoveFeatureMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_workspace_v1_RemoveFeatureMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_RemoveFeatureMemberRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "UserId", });
     internal_static_workspace_v1_CreateDocumentPayload_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_workspace_v1_CreateDocumentPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentPayload_descriptor,
         new java.lang.String[] { "Name", "Type", "Description", "Content", "SectionType", });
     internal_static_workspace_v1_CreateDocumentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_workspace_v1_CreateDocumentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "Payload", });
     internal_static_workspace_v1_ListDocumentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_workspace_v1_ListDocumentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListDocumentsRequest_descriptor,
         new java.lang.String[] { "Metadata", "FeatureId", });
     internal_static_workspace_v1_DocumentReply_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_workspace_v1_DocumentReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_DocumentReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_ListDocumentsReply_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_workspace_v1_ListDocumentsReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListDocumentsReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_ListDocumentSectionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_workspace_v1_ListDocumentSectionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListDocumentSectionsRequest_descriptor,
         new java.lang.String[] { "Metadata", "DocumentId", "IncludeContent", });
     internal_static_workspace_v1_ListDocumentSectionsReply_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_workspace_v1_ListDocumentSectionsReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListDocumentSectionsReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_GetDocumentSectionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_workspace_v1_GetDocumentSectionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetDocumentSectionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Id", });
     internal_static_workspace_v1_DocumentSectionReply_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_workspace_v1_DocumentSectionReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_DocumentSectionReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_CreateDocumentSectionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_workspace_v1_CreateDocumentSectionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentSectionPayload_descriptor,
         new java.lang.String[] { "Type", "Description", "StorageType", "ConfluencePageId", "ConfluenceUrl", "ParentId", "RefDocumentId", "TaskRefId", });
     internal_static_workspace_v1_CreateDocumentSectionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_workspace_v1_CreateDocumentSectionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentSectionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Payload", });
     internal_static_workspace_v1_UpdateDocumentSectionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_workspace_v1_UpdateDocumentSectionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateDocumentSectionPayload_descriptor,
         new java.lang.String[] { "Status", "Description", "ConfluencePageId", "ConfluenceUrl", "RefDocumentId", "TaskRefId", });
     internal_static_workspace_v1_UpdateDocumentSectionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_workspace_v1_UpdateDocumentSectionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateDocumentSectionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_UpdateDocumentSectionContentPayload_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_workspace_v1_UpdateDocumentSectionContentPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateDocumentSectionContentPayload_descriptor,
         new java.lang.String[] { "Content", "Status", "ExpectedVersion", });
     internal_static_workspace_v1_UpdateDocumentSectionContentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_workspace_v1_UpdateDocumentSectionContentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateDocumentSectionContentRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_CreateDocumentSectionVersionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_workspace_v1_CreateDocumentSectionVersionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentSectionVersionPayload_descriptor,
         new java.lang.String[] { "Type", "Content", "SectionId", });
     internal_static_workspace_v1_CreateDocumentSectionVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_workspace_v1_CreateDocumentSectionVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateDocumentSectionVersionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Payload", });
     internal_static_workspace_v1_UpsertDocumentAndSectionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_workspace_v1_UpsertDocumentAndSectionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpsertDocumentAndSectionPayload_descriptor,
         new java.lang.String[] { "DocType", "SectionType", "Content", "DocumentId", "SectionId", "MetadataJson", });
     internal_static_workspace_v1_UpsertDocumentAndSectionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_workspace_v1_UpsertDocumentAndSectionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpsertDocumentAndSectionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "Payload", });
     internal_static_workspace_v1_ListDocumentSectionVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_workspace_v1_ListDocumentSectionVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListDocumentSectionVersionsRequest_descriptor,
         new java.lang.String[] { "Metadata", "DocumentId", "Type", });
     internal_static_workspace_v1_GetCurrentDocumentSectionVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_workspace_v1_GetCurrentDocumentSectionVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetCurrentDocumentSectionVersionRequest_descriptor,
         new java.lang.String[] { "Metadata", "DocumentId", "Type", });
     internal_static_workspace_v1_SetCurrentDocumentSectionVersionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_workspace_v1_SetCurrentDocumentSectionVersionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_SetCurrentDocumentSectionVersionPayload_descriptor,
         new java.lang.String[] { "SectionId", });
     internal_static_workspace_v1_SetCurrentDocumentSectionVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_workspace_v1_SetCurrentDocumentSectionVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_SetCurrentDocumentSectionVersionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "DocumentId", "Payload", });
     internal_static_workspace_v1_ListChatMessagesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_workspace_v1_ListChatMessagesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListChatMessagesRequest_descriptor,
         new java.lang.String[] { "Metadata", "FeatureId", "Limit", "Offset", });
     internal_static_workspace_v1_ListChatMessagesReply_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_workspace_v1_ListChatMessagesReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListChatMessagesReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_AppendChatMessagePayload_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_workspace_v1_AppendChatMessagePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AppendChatMessagePayload_descriptor,
         new java.lang.String[] { "SessionId", "Role", "Content", "Metadata", });
     internal_static_workspace_v1_AppendChatMessageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_workspace_v1_AppendChatMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_AppendChatMessageRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "FeatureId", "Payload", });
     internal_static_workspace_v1_ChatMessageReply_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_workspace_v1_ChatMessageReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ChatMessageReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_CreateSessionPayload_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_workspace_v1_CreateSessionPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateSessionPayload_descriptor,
         new java.lang.String[] { });
     internal_static_workspace_v1_CreateSessionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_workspace_v1_CreateSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_CreateSessionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "ProjectId", "Payload", });
     internal_static_workspace_v1_SessionReply_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_workspace_v1_SessionReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_SessionReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_UpdateSessionContextPayload_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_workspace_v1_UpdateSessionContextPayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateSessionContextPayload_descriptor,
         new java.lang.String[] { "CurrentFeatureId", });
     internal_static_workspace_v1_UpdateSessionContextRequest_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_workspace_v1_UpdateSessionContextRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_UpdateSessionContextRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_GetSessionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_workspace_v1_GetSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_GetSessionRequest_descriptor,
         new java.lang.String[] { "Metadata", "Id", });
     internal_static_workspace_v1_ListProjectSessionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_workspace_v1_ListProjectSessionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListProjectSessionsRequest_descriptor,
         new java.lang.String[] { "Metadata", "ProjectId", "Limit", "Offset", });
     internal_static_workspace_v1_ListSessionsReply_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_workspace_v1_ListSessionsReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_ListSessionsReply_descriptor,
         new java.lang.String[] { "Result", "Payload", });
     internal_static_workspace_v1_PushUrdConfluencePayload_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_workspace_v1_PushUrdConfluencePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_PushUrdConfluencePayload_descriptor,
         new java.lang.String[] { "ConfluenceUrl", "Version", "Title", });
     internal_static_workspace_v1_PushUrdConfluenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_workspace_v1_PushUrdConfluenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_PushUrdConfluenceRequest_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Id", "Payload", });
     internal_static_workspace_v1_PushUrdConfluenceReply_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_workspace_v1_PushUrdConfluenceReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_workspace_v1_PushUrdConfluenceReply_descriptor,

@@ -247,6 +247,18 @@
         }
       }
     },
+    "v1BinaryPart": {
+      "type": "object",
+      "properties": {
+        "mime_type": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "v1ChatMessage": {
       "type": "object",
       "properties": {
@@ -255,6 +267,27 @@
         },
         "content": {
           "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChatMessagePart"
+          }
+        }
+      }
+    },
+    "v1ChatMessagePart": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/v1TextPart"
+        },
+        "image_url": {
+          "$ref": "#/definitions/v1ImageURLPart"
+        },
+        "binary": {
+          "$ref": "#/definitions/v1BinaryPart"
         }
       }
     },
@@ -294,6 +327,12 @@
         },
         "stream": {
           "type": "boolean"
+        },
+        "prompt_cache": {
+          "$ref": "#/definitions/v1PromptCacheConfig"
+        },
+        "thinking": {
+          "$ref": "#/definitions/v1ThinkingConfig"
         }
       }
     },
@@ -406,6 +445,17 @@
         }
       }
     },
+    "v1ImageURLPart": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    },
     "v1Metadata": {
       "type": "object",
       "properties": {
@@ -417,6 +467,20 @@
           "format": "int64"
         },
         "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PromptCacheConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "ttl": {
+          "type": "string"
+        },
+        "scope": {
           "type": "string"
         }
       }
@@ -499,6 +563,35 @@
         }
       },
       "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    },
+    "v1TextPart": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ThinkingConfig": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "budget_tokens": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "return_thinking": {
+          "type": "boolean"
+        },
+        "stream_thinking": {
+          "type": "boolean"
+        },
+        "interleave_thinking": {
+          "type": "boolean"
+        }
+      }
     }
   }
 }

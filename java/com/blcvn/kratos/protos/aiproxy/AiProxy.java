@@ -114,6 +114,36 @@ public final class AiProxy {
      * @return The stream.
      */
     boolean getStream();
+
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return Whether the promptCache field is set.
+     */
+    boolean hasPromptCache();
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return The promptCache.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache();
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder();
+
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return Whether the thinking field is set.
+     */
+    boolean hasThinking();
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return The thinking.
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking();
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     */
+    com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder();
   }
   /**
    * Protobuf type {@code aiproxy.v1.CompletePayload}
@@ -213,6 +243,32 @@ public final class AiProxy {
               }
               messages_.add(
                   input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ChatMessage.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder subBuilder = null;
+              if (promptCache_ != null) {
+                subBuilder = promptCache_.toBuilder();
+              }
+              promptCache_ = input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(promptCache_);
+                promptCache_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder subBuilder = null;
+              if (thinking_ != null) {
+                subBuilder = thinking_.toBuilder();
+              }
+              thinking_ = input.readMessage(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(thinking_);
+                thinking_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -448,6 +504,58 @@ public final class AiProxy {
       return stream_;
     }
 
+    public static final int PROMPT_CACHE_FIELD_NUMBER = 9;
+    private com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig promptCache_;
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return Whether the promptCache field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromptCache() {
+      return promptCache_ != null;
+    }
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     * @return The promptCache.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache() {
+      return promptCache_ == null ? com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+    }
+    /**
+     * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder() {
+      return getPromptCache();
+    }
+
+    public static final int THINKING_FIELD_NUMBER = 10;
+    private com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig thinking_;
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return Whether the thinking field is set.
+     */
+    @java.lang.Override
+    public boolean hasThinking() {
+      return thinking_ != null;
+    }
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     * @return The thinking.
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking() {
+      return thinking_ == null ? com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+    }
+    /**
+     * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder() {
+      return getThinking();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -485,6 +593,12 @@ public final class AiProxy {
       }
       for (int i = 0; i < messages_.size(); i++) {
         output.writeMessage(8, messages_.get(i));
+      }
+      if (promptCache_ != null) {
+        output.writeMessage(9, getPromptCache());
+      }
+      if (thinking_ != null) {
+        output.writeMessage(10, getThinking());
       }
       unknownFields.writeTo(output);
     }
@@ -529,6 +643,14 @@ public final class AiProxy {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, messages_.get(i));
       }
+      if (promptCache_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getPromptCache());
+      }
+      if (thinking_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getThinking());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -562,6 +684,16 @@ public final class AiProxy {
           .equals(other.getStopList())) return false;
       if (getStream()
           != other.getStream()) return false;
+      if (hasPromptCache() != other.hasPromptCache()) return false;
+      if (hasPromptCache()) {
+        if (!getPromptCache()
+            .equals(other.getPromptCache())) return false;
+      }
+      if (hasThinking() != other.hasThinking()) return false;
+      if (hasThinking()) {
+        if (!getThinking()
+            .equals(other.getThinking())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -596,6 +728,14 @@ public final class AiProxy {
       hash = (37 * hash) + STREAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getStream());
+      if (hasPromptCache()) {
+        hash = (37 * hash) + PROMPT_CACHE_FIELD_NUMBER;
+        hash = (53 * hash) + getPromptCache().hashCode();
+      }
+      if (hasThinking()) {
+        hash = (37 * hash) + THINKING_FIELD_NUMBER;
+        hash = (53 * hash) + getThinking().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -750,6 +890,18 @@ public final class AiProxy {
         bitField0_ = (bitField0_ & ~0x00000002);
         stream_ = false;
 
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = null;
+        } else {
+          promptCache_ = null;
+          promptCacheBuilder_ = null;
+        }
+        if (thinkingBuilder_ == null) {
+          thinking_ = null;
+        } else {
+          thinking_ = null;
+          thinkingBuilder_ = null;
+        }
         return this;
       }
 
@@ -797,6 +949,16 @@ public final class AiProxy {
         }
         result.stop_ = stop_;
         result.stream_ = stream_;
+        if (promptCacheBuilder_ == null) {
+          result.promptCache_ = promptCache_;
+        } else {
+          result.promptCache_ = promptCacheBuilder_.build();
+        }
+        if (thinkingBuilder_ == null) {
+          result.thinking_ = thinking_;
+        } else {
+          result.thinking_ = thinkingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -900,6 +1062,12 @@ public final class AiProxy {
         }
         if (other.getStream() != false) {
           setStream(other.getStream());
+        }
+        if (other.hasPromptCache()) {
+          mergePromptCache(other.getPromptCache());
+        }
+        if (other.hasThinking()) {
+          mergeThinking(other.getThinking());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1555,6 +1723,244 @@ public final class AiProxy {
         stream_ = false;
         onChanged();
         return this;
+      }
+
+      private com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig promptCache_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder> promptCacheBuilder_;
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       * @return Whether the promptCache field is set.
+       */
+      public boolean hasPromptCache() {
+        return promptCacheBuilder_ != null || promptCache_ != null;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       * @return The promptCache.
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig getPromptCache() {
+        if (promptCacheBuilder_ == null) {
+          return promptCache_ == null ? com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+        } else {
+          return promptCacheBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder setPromptCache(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig value) {
+        if (promptCacheBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          promptCache_ = value;
+          onChanged();
+        } else {
+          promptCacheBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder setPromptCache(
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder builderForValue) {
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = builderForValue.build();
+          onChanged();
+        } else {
+          promptCacheBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder mergePromptCache(com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig value) {
+        if (promptCacheBuilder_ == null) {
+          if (promptCache_ != null) {
+            promptCache_ =
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.newBuilder(promptCache_).mergeFrom(value).buildPartial();
+          } else {
+            promptCache_ = value;
+          }
+          onChanged();
+        } else {
+          promptCacheBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public Builder clearPromptCache() {
+        if (promptCacheBuilder_ == null) {
+          promptCache_ = null;
+          onChanged();
+        } else {
+          promptCache_ = null;
+          promptCacheBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder getPromptCacheBuilder() {
+        
+        onChanged();
+        return getPromptCacheFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder getPromptCacheOrBuilder() {
+        if (promptCacheBuilder_ != null) {
+          return promptCacheBuilder_.getMessageOrBuilder();
+        } else {
+          return promptCache_ == null ?
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.getDefaultInstance() : promptCache_;
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.PromptCacheConfig prompt_cache = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder> 
+          getPromptCacheFieldBuilder() {
+        if (promptCacheBuilder_ == null) {
+          promptCacheBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.PromptCacheConfigOrBuilder>(
+                  getPromptCache(),
+                  getParentForChildren(),
+                  isClean());
+          promptCache_ = null;
+        }
+        return promptCacheBuilder_;
+      }
+
+      private com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig thinking_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder> thinkingBuilder_;
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       * @return Whether the thinking field is set.
+       */
+      public boolean hasThinking() {
+        return thinkingBuilder_ != null || thinking_ != null;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       * @return The thinking.
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig getThinking() {
+        if (thinkingBuilder_ == null) {
+          return thinking_ == null ? com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+        } else {
+          return thinkingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder setThinking(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig value) {
+        if (thinkingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          thinking_ = value;
+          onChanged();
+        } else {
+          thinkingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder setThinking(
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder builderForValue) {
+        if (thinkingBuilder_ == null) {
+          thinking_ = builderForValue.build();
+          onChanged();
+        } else {
+          thinkingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder mergeThinking(com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig value) {
+        if (thinkingBuilder_ == null) {
+          if (thinking_ != null) {
+            thinking_ =
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.newBuilder(thinking_).mergeFrom(value).buildPartial();
+          } else {
+            thinking_ = value;
+          }
+          onChanged();
+        } else {
+          thinkingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public Builder clearThinking() {
+        if (thinkingBuilder_ == null) {
+          thinking_ = null;
+          onChanged();
+        } else {
+          thinking_ = null;
+          thinkingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder getThinkingBuilder() {
+        
+        onChanged();
+        return getThinkingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      public com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder getThinkingOrBuilder() {
+        if (thinkingBuilder_ != null) {
+          return thinkingBuilder_.getMessageOrBuilder();
+        } else {
+          return thinking_ == null ?
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.getDefaultInstance() : thinking_;
+        }
+      }
+      /**
+       * <code>.aiproxy.v1.ThinkingConfig thinking = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder> 
+          getThinkingFieldBuilder() {
+        if (thinkingBuilder_ == null) {
+          thinkingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfig.Builder, com.blcvn.kratos.protos.aiproxy.Base.ThinkingConfigOrBuilder>(
+                  getThinking(),
+                  getParentForChildren(),
+                  isClean());
+          thinking_ = null;
+        }
+        return thinkingBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9373,50 +9779,53 @@ public final class AiProxy {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ai-proxy/ai_proxy.proto\022\naiproxy.v1\032\023a" +
-      "i-proxy/base.proto\"\264\001\n\017CompletePayload\022\020" +
+      "i-proxy/base.proto\"\227\002\n\017CompletePayload\022\020" +
       "\n\010model_id\030\001 \001(\t\022\016\n\006prompt\030\002 \001(\t\022)\n\010mess" +
       "ages\030\010 \003(\0132\027.aiproxy.v1.ChatMessage\022\022\n\nm" +
       "ax_tokens\030\003 \001(\005\022\023\n\013temperature\030\004 \001(\001\022\r\n\005" +
       "top_p\030\005 \001(\001\022\014\n\004stop\030\006 \003(\t\022\016\n\006stream\030\007 \001(" +
-      "\010\"\221\001\n\017CompleteRequest\022&\n\010metadata\030\001 \001(\0132" +
-      "\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\013" +
-      "2\025.aiproxy.v1.Signature\022,\n\007payload\030\003 \001(\013" +
-      "2\033.aiproxy.v1.CompletePayload\"f\n\022HealthC" +
-      "heckRequest\022&\n\010metadata\030\001 \001(\0132\024.aiproxy." +
-      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy" +
-      ".v1.Signature\"l\n\030GetProviderStatusReques" +
-      "t\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metadat" +
-      "a\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Signat" +
-      "ure\"\274\001\n\020CompleteResponse\022&\n\010metadata\030\001 \001" +
-      "(\0132\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 " +
-      "\001(\0132\025.aiproxy.v1.Signature\022\"\n\006result\030\003 \001" +
-      "(\0132\022.aiproxy.v1.Result\0222\n\ncompletion\030\004 \001" +
-      "(\0132\036.aiproxy.v1.CompletionResponse\"\272\001\n\026S" +
-      "treamCompleteResponse\022&\n\010metadata\030\001 \001(\0132" +
-      "\024.aiproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\013" +
-      "2\025.aiproxy.v1.Signature\022\"\n\006result\030\003 \001(\0132" +
-      "\022.aiproxy.v1.Result\022*\n\005chunk\030\004 \001(\0132\033.aip" +
-      "roxy.v1.CompletionChunk\"\233\001\n\023HealthCheckR" +
-      "esponse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.M" +
-      "etadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1." +
-      "Signature\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1.R" +
-      "esult\022\016\n\006status\030\004 \001(\t\"\300\001\n\031GetProviderSta" +
-      "tusResponse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy." +
-      "v1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy" +
-      ".v1.Signature\022\"\n\006result\030\003 \001(\0132\022.aiproxy." +
-      "v1.Result\022-\n\tproviders\030\004 \003(\0132\032.aiproxy.v" +
-      "1.ProviderHealth2\336\002\n\016AIProxyService\022E\n\010C" +
-      "omplete\022\033.aiproxy.v1.CompleteRequest\032\034.a" +
-      "iproxy.v1.CompleteResponse\022S\n\016StreamComp" +
-      "lete\022\033.aiproxy.v1.CompleteRequest\032\".aipr" +
-      "oxy.v1.StreamCompleteResponse0\001\022N\n\013Healt" +
-      "hCheck\022\036.aiproxy.v1.HealthCheckRequest\032\037" +
-      ".aiproxy.v1.HealthCheckResponse\022`\n\021GetPr" +
-      "oviderStatus\022$.aiproxy.v1.GetProviderSta" +
-      "tusRequest\032%.aiproxy.v1.GetProviderStatu" +
-      "sResponseBT\n\037com.blcvn.kratos.protos.aip" +
-      "roxyZ1github.com/blcvn/kratos-proto/go/a" +
-      "i-proxy;aiproxyb\006proto3"
+      "\010\0223\n\014prompt_cache\030\t \001(\0132\035.aiproxy.v1.Pro" +
+      "mptCacheConfig\022,\n\010thinking\030\n \001(\0132\032.aipro" +
+      "xy.v1.ThinkingConfig\"\221\001\n\017CompleteRequest" +
+      "\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metadata" +
+      "\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Signatu" +
+      "re\022,\n\007payload\030\003 \001(\0132\033.aiproxy.v1.Complet" +
+      "ePayload\"f\n\022HealthCheckRequest\022&\n\010metada" +
+      "ta\030\001 \001(\0132\024.aiproxy.v1.Metadata\022(\n\tsignat" +
+      "ure\030\002 \001(\0132\025.aiproxy.v1.Signature\"l\n\030GetP" +
+      "roviderStatusRequest\022&\n\010metadata\030\001 \001(\0132\024" +
+      ".aiproxy.v1.Metadata\022(\n\tsignature\030\002 \001(\0132" +
+      "\025.aiproxy.v1.Signature\"\274\001\n\020CompleteRespo" +
+      "nse\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metad" +
+      "ata\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Sign" +
+      "ature\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1.Resul" +
+      "t\0222\n\ncompletion\030\004 \001(\0132\036.aiproxy.v1.Compl" +
+      "etionResponse\"\272\001\n\026StreamCompleteResponse" +
+      "\022&\n\010metadata\030\001 \001(\0132\024.aiproxy.v1.Metadata" +
+      "\022(\n\tsignature\030\002 \001(\0132\025.aiproxy.v1.Signatu" +
+      "re\022\"\n\006result\030\003 \001(\0132\022.aiproxy.v1.Result\022*" +
+      "\n\005chunk\030\004 \001(\0132\033.aiproxy.v1.CompletionChu" +
+      "nk\"\233\001\n\023HealthCheckResponse\022&\n\010metadata\030\001" +
+      " \001(\0132\024.aiproxy.v1.Metadata\022(\n\tsignature\030" +
+      "\002 \001(\0132\025.aiproxy.v1.Signature\022\"\n\006result\030\003" +
+      " \001(\0132\022.aiproxy.v1.Result\022\016\n\006status\030\004 \001(\t" +
+      "\"\300\001\n\031GetProviderStatusResponse\022&\n\010metada" +
+      "ta\030\001 \001(\0132\024.aiproxy.v1.Metadata\022(\n\tsignat" +
+      "ure\030\002 \001(\0132\025.aiproxy.v1.Signature\022\"\n\006resu" +
+      "lt\030\003 \001(\0132\022.aiproxy.v1.Result\022-\n\tprovider" +
+      "s\030\004 \003(\0132\032.aiproxy.v1.ProviderHealth2\336\002\n\016" +
+      "AIProxyService\022E\n\010Complete\022\033.aiproxy.v1." +
+      "CompleteRequest\032\034.aiproxy.v1.CompleteRes" +
+      "ponse\022S\n\016StreamComplete\022\033.aiproxy.v1.Com" +
+      "pleteRequest\032\".aiproxy.v1.StreamComplete" +
+      "Response0\001\022N\n\013HealthCheck\022\036.aiproxy.v1.H" +
+      "ealthCheckRequest\032\037.aiproxy.v1.HealthChe" +
+      "ckResponse\022`\n\021GetProviderStatus\022$.aiprox" +
+      "y.v1.GetProviderStatusRequest\032%.aiproxy." +
+      "v1.GetProviderStatusResponseBT\n\037com.blcv" +
+      "n.kratos.protos.aiproxyZ1github.com/blcv" +
+      "n/kratos-proto/go/ai-proxy;aiproxyb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9428,7 +9837,7 @@ public final class AiProxy {
     internal_static_aiproxy_v1_CompletePayload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiproxy_v1_CompletePayload_descriptor,
-        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Stream", });
+        new java.lang.String[] { "ModelId", "Prompt", "Messages", "MaxTokens", "Temperature", "TopP", "Stop", "Stream", "PromptCache", "Thinking", });
     internal_static_aiproxy_v1_CompleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_aiproxy_v1_CompleteRequest_fieldAccessorTable = new

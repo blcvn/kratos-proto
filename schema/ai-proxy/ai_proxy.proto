@@ -33,6 +33,8 @@ message CompletePayload {
   double top_p = 5;
   repeated string stop = 6;
   bool stream = 7;
+  PromptCacheConfig prompt_cache = 9;
+  ThinkingConfig thinking = 10;
 }
 
 message CompleteRequest {

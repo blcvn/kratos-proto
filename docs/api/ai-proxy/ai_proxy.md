@@ -27,7 +27,22 @@
     "messages": [
       {
         "role": "...",
-        "content": "..."
+        "content": "...",
+        "parts": [
+          {
+            "text": {
+              "text": "..."
+            },
+            "image_url": {
+              "url": "...",
+              "detail": "..."
+            },
+            "binary": {
+              "mime_type": "...",
+              "data": "..."
+            }
+          }
+        ]
       }
     ],
     "max_tokens": 1000,
@@ -36,7 +51,19 @@
     "stop": [
       "..."
     ],
-    "stream": true
+    "stream": true,
+    "prompt_cache": {
+      "enabled": true,
+      "ttl": "...",
+      "scope": "..."
+    },
+    "thinking": {
+      "mode": "...",
+      "budget_tokens": 1000,
+      "return_thinking": true,
+      "stream_thinking": true,
+      "interleave_thinking": true
+    }
   }
 }
 ```
