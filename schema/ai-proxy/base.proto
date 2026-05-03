@@ -59,6 +59,18 @@ message Signature {
 // Domain Models
 // =======================
 
+// CacheControl marks a ChatMessage for upstream prompt caching (e.g. Anthropic
+// ephemeral cache). Optional — when nil, the message is sent without cache
+// directives (legacy behavior).
+message CacheControl {
+  enum Type {
+    CACHE_TYPE_UNSPECIFIED = 0;
+    EPHEMERAL_5MIN = 1;  // 5-minute ephemeral cache
+    EPHEMERAL_1H = 2;    // 1-hour ephemeral cache
+  }
+  Type type = 1;
+}
+
 message ChatMessage {
   enum Role {
     ROLE_UNSPECIFIED = 0;
@@ -69,6 +81,7 @@ message ChatMessage {
   }
   Role role = 1;
   string content = 2;
+  CacheControl cache_control = 3;  // optional, opt-in for prompt caching
 }
 
 message CompletionRequest {
@@ -93,6 +106,10 @@ message CompletionResponse {
   bool from_cache = 6;
   string provider = 7;
   google.protobuf.Timestamp created_at = 8;
+  // Anthropic prompt cache token counters (zero when no cache_control was sent
+  // or when the upstream provider does not report cache usage).
+  int32 cache_creation_input_tokens = 12;  // tokens written into cache (cost)
+  int32 cache_read_input_tokens = 13;      // tokens served from cache (savings)
 }
 
 message CompletionChunk {
